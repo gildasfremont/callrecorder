@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>CallRecorder</title>
+<meta name="description" content="CallRecorder enregistre vos appels Zoom, Teams, Meet, FaceTime et WhatsApp sans que vous y pensiez, et les transcrit sur votre Mac.">
+<link rel="icon" href="img/icone.png">
+<style>
+  /* Deux registres : l'interface d'un utilitaire macOS (fond de fenêtre, groupes blancs, boutons système)
+     et le fichier texte (fenêtres d'éditeur, police à chasse fixe). Thème clair uniquement. */
+  :root {
+    --window: #ececec;
+    --group: #ffffff;
+    --text: #1d1d1f;
+    --secondary: #86868b;
+    --separator: #e0e0e0;
+    --border: rgba(0, 0, 0, .1);
+    --accent: #007aff;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--window);
+    color: var(--text);
+    font: 15px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+  .col { max-width: 680px; margin: 0 auto; }
+
+  /* Boutons système */
+  .button {
+    display: inline-block; font-size: 13px; font-weight: 500; line-height: 1;
+    padding: 7px 14px; border-radius: 6px;
+    background: #ffffff; color: var(--text);
+    border: 0; box-shadow: 0 0 0 .5px rgba(0,0,0,.18), 0 1px 1px rgba(0,0,0,.08);
+    cursor: pointer;
+  }
+  .button.default { background: linear-gradient(#3b97ff, #0a72f5); color: #fff; box-shadow: 0 0 0 .5px rgba(0,60,180,.5), 0 1px 1px rgba(0,0,0,.12); }
+  .button.large { font-size: 15px; padding: 10px 20px; border-radius: 8px; }
+  a.button:hover { text-decoration: none; filter: brightness(1.04); }
+
+  /* En-tête, comme un écran « À propos » */
+  .about { text-align: center; padding: 104px 0 0; }
+  .about img.icon { width: 128px; height: 128px; display: block; margin: 0 auto 20px; }
+  .about .name { font-size: 15px; font-weight: 600; margin: 0; }
+  .about .version { font-size: 12px; color: var(--secondary); margin: 2px 0 44px; }
+  .about h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.12; letter-spacing: -0.015em; font-weight: 700; margin: 0 0 20px; }
+  .about .lead { font-size: 17px; color: #515154; max-width: 520px; margin: 0 auto 36px; }
+  .about .req { font-size: 12px; color: var(--secondary); margin-top: 14px; }
+
+  /* Fenêtre Appels + fichier texte par-dessus */
+  .stage { position: relative; max-width: 960px; margin: 112px auto 0; padding-bottom: 150px; }
+  .stage > img {
+    width: 88%; height: auto; display: block;
+    border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
+    box-shadow: 0 22px 50px -16px rgba(0,0,0,.28);
+  }
+  .stage .textwin { position: absolute; right: 0; bottom: 0; width: 56%; }
+
+  /* Fenêtre d'éditeur de texte */
+  .textwin {
+    background: #ffffff; border-radius: 11px; overflow: hidden;
+    border: .5px solid rgba(0,0,0,.25);
+    box-shadow: 0 26px 60px -18px rgba(0,0,0,.32), 0 8px 18px -10px rgba(0,0,0,.18);
+  }
+  .textwin .titlebar {
+    position: relative; height: 34px; line-height: 34px; text-align: center;
+    padding: 0 72px; background: #f6f6f6; border-bottom: 1px solid #dedede;
+    font-size: 13px; font-weight: 600; color: #4d4d4d;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .textwin .lights { position: absolute; left: 13px; top: 11px; display: flex; gap: 8px; }
+  .textwin .lights i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+  .textwin .lights i:nth-child(1) { background: #ff5f57; }
+  .textwin .lights i:nth-child(2) { background: #febc2e; }
+  .textwin .lights i:nth-child(3) { background: #28c840; }
+  .textwin .body {
+    margin: 0; padding: 22px 24px 26px;
+    font: 13px/1.65 var(--mono);
+    white-space: pre-wrap; word-wrap: break-word;
+  }
+  .textwin.doc .body { white-space: normal; font-size: 14px; line-height: 1.75; padding: 36px 40px 40px; }
+  .textwin.doc .body p { margin: 0 0 1.75em; }
+  .textwin.doc .body p:last-child { margin-bottom: 0; }
+  .textwin.doc .body ul { list-style: none; padding: 0; margin: 0 0 1.75em; }
+  .textwin.doc .body li::before { content: "- "; }
+  .textwin.doc .body li { padding-left: 2ch; text-indent: -2ch; }
+
+  section { padding: 128px 0 0; }
+  .said { font-size: clamp(20px, 2.6vw, 24px); line-height: 1.45; text-align: center; max-width: 640px; margin: 0 auto; }
+
+  /* Groupes à la Réglages Système */
+  .group-label { font-size: 13px; font-weight: 600; color: #515154; margin: 0 0 8px 12px; }
+  .group {
+    background: var(--group); border-radius: 10px;
+    box-shadow: 0 0 0 .5px var(--border);
+  }
+  .row { padding: 14px 16px; }
+  .row + .row { border-top: 1px solid var(--separator); margin-left: 16px; padding-left: 0; }
+  .row h3 { font-size: 14px; font-weight: 500; margin: 0 0 2px; }
+  .row p { font-size: 13px; color: var(--secondary); margin: 0; }
+
+  .cmd {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 12px 12px 16px;
+  }
+  .cmd code { font: 13px/1.4 var(--mono); overflow-x: auto; white-space: nowrap; flex: 1; min-width: 0; }
+
+  .actions { text-align: center; margin-top: 40px; }
+  .actions .req { font-size: 12px; color: var(--secondary); margin-top: 14px; }
+
+  footer { padding: 128px 0 64px; }
+  footer p { font-size: 12px; color: var(--secondary); max-width: 680px; margin: 0 auto 8px; text-align: center; }
+
+  @media (max-width: 760px) {
+    .about { padding-top: 64px; }
+    .about img.icon { width: 96px; height: 96px; }
+    .stage { margin-top: 72px; padding-bottom: 0; }
+    .stage > img { width: 100%; }
+    .stage .textwin { position: relative; width: 94%; margin: -40px 0 0 auto; }
+    .textwin .titlebar { text-align: left; padding-right: 12px; }
+    .textwin.doc .body { padding: 24px 20px 28px; font-size: 13.5px; }
+    section { padding-top: 96px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="about">
+    <img class="icon" src="img/icone.png" width="128" height="128" alt="">
+    <p class="name">CallRecorder</p>
+    <p class="version">Pour Mac avec puce Apple</p>
+    <h1>Tous vos appels, mot pour mot,<br>sans y penser.</h1>
+    <p class="lead">CallRecorder enregistre vos appels Zoom, Teams, Meet, FaceTime et WhatsApp, et les transcrit sur votre Mac.</p>
+    <a class="button default large" href="#installer">Télécharger</a>
+    <p class="req">macOS 15 ou plus récent · Mac M1 ou plus récent</p>
+  </div>
+
+  <div class="stage">
+    <img src="img/appels.png" width="1960" height="828" alt="La fenêtre Appels de CallRecorder : la liste des appels avec leur titre, les participants, la date, la durée, l'app et le statut.">
+    <div class="textwin" role="img" aria-label="Une transcription ouverte dans un éditeur de texte">
+      <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Découverte client · Atelier Verne.txt</div>
+<pre class="body">Découverte client · Atelier Verne
+Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
+
+[00:03:12] Interlocuteurs : Aujourd'hui les devis, on les fait sur Excel, et c'est moi qui relance à la main.
+
+[00:03:31] Moi : Vous en envoyez combien par mois ?
+
+[00:03:34] Interlocuteurs : Une quarantaine. Et on en perd sûrement une dizaine, faute de relance.
+
+[00:03:41] Moi : D'accord. Je vous envoie une proposition d'ici jeudi.
+
+[00:03:47] Interlocuteurs : Jeudi, c'est parfait. Mettez Claire en copie, c'est elle qui signe.</pre>
+    </div>
+  </div>
+
+  <section>
+    <p class="said">Quand une app d'appel ouvre le micro, CallRecorder enregistre. Quand l'appel se termine, il le transcrit sur votre Mac.</p>
+  </section>
+
+  <section>
+    <div class="col">
+      <div class="group">
+        <div class="row"><h3>Rien à lancer</h3><p>L'enregistrement démarre quand Zoom, Teams, Meet, FaceTime ou WhatsApp prend le micro, et s'arrête à la fin de l'appel. Siri et la dictée ne déclenchent rien.</p></div>
+        <div class="row"><h3>Transcrit sur votre Mac</h3><p>La transcription tourne en local, avec Whisper. L'audio de vos appels ne quitte pas votre ordinateur.</p></div>
+        <div class="row"><h3>Qui a dit quoi</h3><p>Votre micro et le son de l'app d'appel sont enregistrés sur deux pistes. Dans la transcription, « Moi » et « Interlocuteurs » sont séparés.</p></div>
+        <div class="row"><h3>Un titre et des participants</h3><p>En option, Claude retrouve le titre de la réunion et les participants à partir de l'écran, de votre agenda et de vos e-mails.</p></div>
+        <div class="row"><h3>Lisible par Claude</h3><p>Claude retrouve un appel, le lit, le résume, en tire un compte rendu ou un mail de suivi. Fonctionne aussi avec les autres assistants compatibles MCP.</p></div>
+        <div class="row"><h3>Le ménage se fait tout seul</h3><p>Les appels sont gardés 7 jours, puis supprimés, sauf ceux que vous conservez. Les transcriptions restent.</p></div>
+        <div class="row"><h3>Discret</h3><p>Une icône dans la barre des menus, rien dans le Dock. Arrêter ou supprimer un enregistrement se fait en un clic.</p></div>
+        <div class="row"><h3>Vos fichiers, chez vous</h3><p>De l'audio et du texte dans un dossier de votre Mac. Pas de compte, pas de serveur.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="col">
+      <div class="textwin doc">
+        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Pourquoi enregistrer tous ses appels.txt</div>
+        <div class="body">
+          <p>Une grande partie du travail se passe en visio. C'est là que les décisions se prennent, que les chiffres se donnent, que les clients disent avec leurs mots ce qu'ils veulent. Et presque rien n'en reste : quelques notes prises à la volée, souvent pendant que l'autre disait la chose importante, un souvenir qui s'efface en quelques jours, un compte rendu que personne n'a écrit.</p>
+          <p>Pendant l'appel, on ne sait pas ce qui comptera. Le délai donné en passant, la phrase qui débloque un projet, l'objection qui reviendra dans six mois : on s'en rend compte après. C'est pour ça que l'enregistrement doit être systématique. Un enregistrement qu'il faut penser à lancer manque le jour où on en a besoin, et une archive avec des trous ne sert pas à grand-chose.</p>
+          <p>Pendant longtemps, enregistrer ses appels n'apportait pas grand-chose : personne ne réécoute une heure d'audio pour retrouver une phrase. Ce qui a changé, ce sont les LLM. Une transcription, c'est du texte, et un assistant comme Claude lit du texte plus vite que nous. Vos appels deviennent de la documentation, qu'on peut interroger, résumer et croiser :</p>
+          <ul>
+            <li>« Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
+            <li>« Fais le compte rendu du point hebdo, avec la liste des actions et qui fait quoi. »</li>
+            <li>« Rédige le mail de suivi de la découverte client, en reprenant leurs mots. »</li>
+            <li>« Sur les cinq derniers entretiens, qui maîtrisait le mieux SwiftUI ? »</li>
+            <li>« Écris une première spec à partir des trois appels avec le client. »</li>
+          </ul>
+          <p>Un assistant n'est jamais meilleur que le contexte qu'on lui donne. Vos e-mails et vos documents, il peut déjà les lire. Ce qui lui manque, c'est l'oral, la partie de votre travail qui n'est écrite nulle part. CallRecorder l'écrit, appel après appel, sans que vous ayez à y penser.</p>
+          <p>Et pendant l'appel, vous écoutez au lieu de prendre des notes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="installer">
+    <div class="col">
+      <div class="textwin doc">
+        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Lisez-moi avant d'installer.txt</div>
+        <div class="body">
+          <p>L'installation est un peu pénible.</p>
+          <p>CallRecorder écoute votre micro et le son de vos apps d'appel, et peut lire ce qui s'affiche dans leur fenêtre. macOS protège tout ça et exige que vous donniez chaque autorisation vous-même, dans Réglages Système. Aucune app ne peut le faire à votre place.</p>
+          <p>CallRecorder n'est pas distribué par l'App Store, donc macOS affiche un avertissement au premier lancement. Et comme la transcription se fait sur votre Mac, il faut télécharger un modèle d'environ 550 Mo.</p>
+          <p>J'ai fait tout mon possible pour que ce ne soit pas relou :</p>
+          <ul>
+            <li>une seule ligne à coller dans le Terminal, qui installe tout et évite l'avertissement de macOS ;</li>
+            <li>un assistant qui vous guide, ouvre le bon panneau de Réglages Système et vous montre où cliquer ;</li>
+            <li>un appel de test à la fin : une voix vous parle, vous lui répondez, et vous voyez la transcription ;</li>
+            <li>des autorisations demandées une seule fois, mises à jour comprises.</li>
+          </ul>
+          <p>Lisez les instructions et allez au bout de l'assistant. Une autorisation oubliée, et l'app n'enregistre rien.</p>
+          <p>Ouvrez l'app Terminal, collez la ligne ci-dessous, puis appuyez sur Entrée. L'assistant de configuration s'ouvre. Cliquez sur Autoriser pour le micro et le son des apps, et, en option, pour l'enregistrement de l'écran. Le modèle de transcription se télécharge pendant ce temps. Faites ensuite l'appel de test : une voix parle dans les haut-parleurs, répondez-lui à voix haute. Si macOS demande l'accès à l'enregistrement audio, cliquez sur Autoriser.</p>
+          <p>Quand l'icône de CallRecorder apparaît dans la barre des menus, votre prochain appel sera enregistré.</p>
+          <p>Sans le Terminal : téléchargez le fichier .dmg, glissez CallRecorder dans Applications et ouvrez-le. Quand macOS affiche l'avertissement, cliquez sur OK, puis ouvrez Réglages Système &gt; Confidentialité et sécurité et cliquez sur « Ouvrir quand même ».</p>
+          <p>L'assistant se rouvre depuis le menu CallRecorder &gt; Configuration… Les mises à jour sont proposées dans l'app, et rien ne s'installe sans votre accord.</p>
+        </div>
+      </div>
+
+      <section style="padding-top: 56px">
+        <p class="group-label">Installer avec le Terminal</p>
+        <div class="group cmd"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><button class="button" type="button" data-copy="cmd">Copier</button></div>
+
+        <div class="actions">
+          <a class="button large" href="https://github.com/gildasfremont/callrecorder/releases/latest/download/CallRecorder.dmg">Télécharger le .dmg</a>
+          <p class="req">macOS 15 ou plus récent · Mac M1 ou plus récent · environ 600 Mo d'espace libre</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <footer>
+    <p>L'audio est enregistré et transcrit sur votre Mac, il n'est jamais envoyé sur Internet. Si vous activez l'option Claude, les captures de la fenêtre d'appel et le texte lu à l'écran lui sont transmis pour identifier l'appel.</p>
+    <p>Prévenez vos interlocuteurs que l'appel est enregistré, pour respecter la législation de votre pays.</p>
+  </footer>
+</div>
+
+<script>
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = document.getElementById(b.dataset.copy).textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        b.textContent = 'Copié';
+        setTimeout(function () { b.textContent = 'Copier'; }, 1600);
+      });
+    });
+  });
+</script>
+</body>
+</html>
