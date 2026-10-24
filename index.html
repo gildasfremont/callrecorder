@@ -133,7 +133,7 @@
   .caption { font-size: 15px; color: var(--secondary); margin: 10px 14px 48px; }
   .file { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 20px; }
   .file span { font: 15px var(--mono); }
-  .notes { font-size: 15px; color: var(--secondary); text-align: center; max-width: 620px; margin: 24px auto 0; }
+  .notes { font-size: 15px; color: var(--secondary); text-align: center; max-width: 620px; margin: 48px auto 0; }
 
   footer { padding: 128px 0 72px; }
   footer .col { font-size: 15px; color: var(--secondary); }
@@ -246,17 +246,15 @@ Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
       </div>
 
       <div class="install">
+        <div class="group">
+          <div class="file"><span>CallRecorder.dmg</span><a class="button" href="https://github.com/gildasfremont/callrecorder-site/releases/latest/download/CallRecorder.dmg">Télécharger</a></div>
+        </div>
+        <p class="caption">Glissez CallRecorder dans Applications et ouvrez-le. macOS affiche un avertissement, car l'app n'est pas distribuée par l'App Store : autorisez son ouverture dans Réglages Système&nbsp;&gt; Confidentialité et sécurité.</p>
+
         <p class="group-label">Avec le <span class="nobr"><img class="logo" src="img/logos/terminal.png" alt="">Terminal</span></p>
         <div class="group">
           <div class="cmd"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder-site/releases/latest/download/install.sh | zsh</code><button class="button" type="button" data-copy="cmd">Copier</button></div>
         </div>
-        <p class="caption">Collez la commande dans l'app Terminal et appuyez sur Entrée. L'assistant s'ouvre ensuite. Si CallRecorder est déjà installé, la même commande le réinstalle ou le met à jour, sans perdre vos appels, vos réglages ni vos autorisations.</p>
-
-        <p class="group-label">Sans le Terminal</p>
-        <div class="group">
-          <div class="file"><span>CallRecorder.dmg</span><a class="button" href="https://github.com/gildasfremont/callrecorder-site/releases/latest/download/CallRecorder.dmg">Télécharger</a></div>
-        </div>
-        <p class="caption">Glissez CallRecorder dans Applications et ouvrez-le. macOS affiche un avertissement, car l'app n'est pas distribuée par <span class="nobr">l'<img class="logo" src="img/logos/appstore.png" alt="">App Store</span> : autorisez son ouverture dans Réglages Système &gt; Confidentialité et sécurité.</p>
       </div>
 
       <p class="notes">Environ 600 Mo d'espace libre, dont 550 Mo pour le modèle de transcription.</p>
