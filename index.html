@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <title>CallRecorder</title>
-<meta name="description" content="CallRecorder enregistre vos appels Zoom, Teams, Meet, FaceTime et WhatsApp sans que vous y pensiez, et les transcrit sur votre Mac.">
+<meta name="description" content="CallRecorder enregistre vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp et les transcrit sur votre Mac.">
 <link rel="icon" href="img/icone.png">
 <style>
   /* Deux registres : l'interface d'un utilitaire macOS (fond de fenêtre, groupes blancs, boutons système)
@@ -53,7 +53,8 @@
   .about .name { font-size: 15px; font-weight: 600; margin: 0; }
   .about .version { font-size: 12px; color: var(--secondary); margin: 2px 0 44px; }
   .about h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.12; letter-spacing: -0.015em; font-weight: 700; margin: 0 0 20px; }
-  .about .lead { font-size: 17px; color: #515154; max-width: 520px; margin: 0 auto 36px; }
+  .about .lead { font-size: 17px; color: #515154; max-width: 540px; margin: 0 auto 14px; }
+  .about .lead:last-of-type { margin-bottom: 36px; }
   .about .req { font-size: 12px; color: var(--secondary); margin-top: 14px; }
 
   /* Fenêtre Appels + fichier texte par-dessus */
@@ -95,6 +96,16 @@
   .textwin.doc .body li { padding-left: 2ch; text-indent: -2ch; }
 
   section { padding: 128px 0 0; }
+  h2 { font-size: clamp(24px, 3.4vw, 30px); line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 16px; }
+  .intro { text-align: center; max-width: 620px; margin: 0 auto; }
+  .intro p { font-size: 17px; color: #515154; margin: 0 0 12px; }
+  .req.warn { color: #b25000; }
+  .group-text { padding: 16px; font-size: 13px; color: #515154; }
+  .group-text p { margin: 0 0 10px; }
+  .group-text p:last-child { margin: 0; }
+  .group + .group-label { margin-top: 36px; }
+  .group .cmd { border-top: 1px solid var(--separator); margin-left: 16px; padding-left: 0; }
+  .group .end { border-top: 1px solid var(--separator); margin-left: 16px; padding: 12px 16px 12px 0; text-align: right; }
   .said { font-size: clamp(20px, 2.6vw, 24px); line-height: 1.45; text-align: center; max-width: 640px; margin: 0 auto; }
 
   /* Groupes à la Réglages Système */
@@ -117,8 +128,10 @@
   .actions { text-align: center; margin-top: 40px; }
   .actions .req { font-size: 12px; color: var(--secondary); margin-top: 14px; }
 
-  footer { padding: 128px 0 64px; }
-  footer p { font-size: 12px; color: var(--secondary); max-width: 680px; margin: 0 auto 8px; text-align: center; }
+  footer { padding: 128px 0 72px; }
+  footer .col { font-size: 13px; color: var(--secondary); }
+  footer h3 { font-size: 13px; font-weight: 600; color: #515154; margin: 0 0 8px; }
+  footer p { margin: 0 0 8px; }
 
   @media (max-width: 760px) {
     .about { padding-top: 64px; }
@@ -139,10 +152,11 @@
     <img class="icon" src="img/icone.png" width="128" height="128" alt="">
     <p class="name">CallRecorder</p>
     <p class="version">Pour Mac avec puce Apple</p>
-    <h1>Tous vos appels, mot pour mot,<br>sans y penser.</h1>
-    <p class="lead">CallRecorder enregistre vos appels Zoom, Teams, Meet, FaceTime et WhatsApp, et les transcrit sur votre Mac.</p>
-    <a class="button default large" href="#installer">Télécharger</a>
-    <p class="req">macOS 15 ou plus récent · Mac M1 ou plus récent</p>
+    <h1>Gardez la trace de vos appels.</h1>
+    <p class="lead">CallRecorder enregistre vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp et les transcrit sur votre Mac.</p>
+    <p class="lead">Retrouvez ce qui a été dit, ou préparez un compte rendu sans réécouter l'appel.</p>
+    <a class="button default large" href="#installation">Télécharger CallRecorder</a>
+    <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
   </div>
 
   <div class="stage">
@@ -165,20 +179,23 @@ Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
   </div>
 
   <section>
-    <p class="said">Quand une app d'appel ouvre le micro, CallRecorder enregistre. Quand l'appel se termine, il le transcrit sur votre Mac.</p>
+    <div class="intro">
+      <h2>Vos appels, en texte</h2>
+      <p>CallRecorder démarre l'enregistrement lorsqu'une application d'appel utilise le micro et l'arrête à la fin de l'appel. La transcription est ensuite disponible sur votre Mac.</p>
+    </div>
   </section>
 
   <section>
     <div class="col">
       <div class="group">
-        <div class="row"><h3>Rien à lancer</h3><p>L'enregistrement démarre quand Zoom, Teams, Meet, FaceTime ou WhatsApp prend le micro, et s'arrête à la fin de l'appel. Siri et la dictée ne déclenchent rien.</p></div>
-        <div class="row"><h3>Transcrit sur votre Mac</h3><p>La transcription tourne en local, avec Whisper. L'audio de vos appels ne quitte pas votre ordinateur.</p></div>
-        <div class="row"><h3>Qui a dit quoi</h3><p>Votre micro et le son de l'app d'appel sont enregistrés sur deux pistes. Dans la transcription, « Moi » et « Interlocuteurs » sont séparés.</p></div>
-        <div class="row"><h3>Un titre et des participants</h3><p>En option, Claude retrouve le titre de la réunion et les participants à partir de l'écran, de votre agenda et de vos e-mails.</p></div>
-        <div class="row"><h3>Lisible par Claude</h3><p>Claude retrouve un appel, le lit, le résume, en tire un compte rendu ou un mail de suivi. Fonctionne aussi avec les autres assistants compatibles MCP.</p></div>
-        <div class="row"><h3>Le ménage se fait tout seul</h3><p>Les appels sont gardés 7 jours, puis supprimés, sauf ceux que vous conservez. Les transcriptions restent.</p></div>
-        <div class="row"><h3>Discret</h3><p>Une icône dans la barre des menus, rien dans le Dock. Arrêter ou supprimer un enregistrement se fait en un clic.</p></div>
-        <div class="row"><h3>Vos fichiers, chez vous</h3><p>De l'audio et du texte dans un dossier de votre Mac. Pas de compte, pas de serveur.</p></div>
+        <div class="row"><h3>Vous n'avez rien à paramétrer, rien à lancer</h3><p>Pas de bouton à cliquer au début de chaque réunion. CallRecorder détecte l'utilisation du micro par les applications prises en charge. Siri et la dictée ne déclenchent pas d'enregistrement.</p></div>
+        <div class="row"><h3>Les transcriptions restent sur votre Mac</h3><p>La transcription est effectuée par votre Mac. L'audio n'est pas envoyé sur Internet, et les captures d'écran qui servent à comprendre le contexte non plus, sauf si vous activez l'option Claude.</p></div>
+        <div class="row"><h3>Vos propos et ceux des autres sont séparés</h3><p>CallRecorder enregistre séparément le son de votre micro et celui de votre application d'appel. La transcription distingue vos propos de ceux des autres participants.</p></div>
+        <div class="row"><h3>Retrouvez le titre et les participants</h3><p>En option, Claude peut utiliser le contenu de la fenêtre d'appel avec votre agenda et vos e-mails pour retrouver les informations utiles à la transcription, comme le sujet de la réunion et les participants.</p></div>
+        <div class="row"><h3>Retrouvez vos appels avec Claude</h3><p>Claude peut rechercher un appel, lire sa transcription, en faire un résumé ou préparer un compte rendu et un e-mail de suivi. Tous les assistants compatibles avec MCP peuvent accéder aux transcriptions si vous leur en donnez l'accès.</p></div>
+        <div class="row"><h3>Les enregistrements audio sont supprimés automatiquement</h3><p>L'audio est conservé pendant 7 jours, puis supprimé, sauf si vous choisissez de le garder. Les transcriptions sont conservées, sauf si vous choisissez de les supprimer.</p></div>
+        <div class="row"><h3>L'application reste dans la barre des menus</h3><p>CallRecorder n'apparaît pas dans le Dock. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
+        <div class="row"><h3>Pas de compte ni de serveur</h3><p>Les fichiers audio et les transcriptions sont enregistrés dans un dossier sur votre Mac.</p></div>
       </div>
     </div>
   </section>
@@ -186,76 +203,119 @@ Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
   <section>
     <div class="col">
       <div class="textwin doc">
-        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Pourquoi enregistrer tous ses appels.txt</div>
+        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>À quoi servent les transcriptions.txt</div>
         <div class="body">
-          <p>Une grande partie du travail se passe en visio. C'est là que les décisions se prennent, que les chiffres se donnent, que les clients disent avec leurs mots ce qu'ils veulent. Et presque rien n'en reste : quelques notes prises à la volée, souvent pendant que l'autre disait la chose importante, un souvenir qui s'efface en quelques jours, un compte rendu que personne n'a écrit.</p>
-          <p>Pendant l'appel, on ne sait pas ce qui comptera. Le délai donné en passant, la phrase qui débloque un projet, l'objection qui reviendra dans six mois : on s'en rend compte après. C'est pour ça que l'enregistrement doit être systématique. Un enregistrement qu'il faut penser à lancer manque le jour où on en a besoin, et une archive avec des trous ne sert pas à grand-chose.</p>
-          <p>Pendant longtemps, enregistrer ses appels n'apportait pas grand-chose : personne ne réécoute une heure d'audio pour retrouver une phrase. Ce qui a changé, ce sont les LLM. Une transcription, c'est du texte, et un assistant comme Claude lit du texte plus vite que nous. Vos appels deviennent de la documentation, qu'on peut interroger, résumer et croiser :</p>
+          <p>Pendant un appel, il faut écouter, poser des questions et prendre des notes. On ne peut pas tout noter, et on ne sait pas toujours quelles informations seront utiles par la suite.</p>
+          <p>Une transcription permet de retrouver une information sans devoir réécouter toute la conversation.</p>
+          <p>Avec un assistant comme Claude, vous pouvez par exemple lui demander :</p>
           <ul>
-            <li>« Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
-            <li>« Fais le compte rendu du point hebdo, avec la liste des actions et qui fait quoi. »</li>
-            <li>« Rédige le mail de suivi de la découverte client, en reprenant leurs mots. »</li>
-            <li>« Sur les cinq derniers entretiens, qui maîtrisait le mieux SwiftUI ? »</li>
-            <li>« Écris une première spec à partir des trois appels avec le client. »</li>
+            <li>Qu'est-ce que j'ai promis à Paul jeudi ?</li>
+            <li>Résume la réunion et indique les actions à mener, avec un responsable pour chacune.</li>
+            <li>Prépare le mail de suivi de cet entretien en reprenant les termes employés par le client.</li>
+            <li>Compare les cinq derniers entretiens et résume ce que chaque interlocuteur a pensé de ma présentation.</li>
+            <li>Prépare une todo à partir de mes trois derniers appels avec mon équipe.</li>
           </ul>
-          <p>Un assistant n'est jamais meilleur que le contexte qu'on lui donne. Vos e-mails et vos documents, il peut déjà les lire. Ce qui lui manque, c'est l'oral, la partie de votre travail qui n'est écrite nulle part. CallRecorder l'écrit, appel après appel, sans que vous ayez à y penser.</p>
-          <p>Et pendant l'appel, vous écoutez au lieu de prendre des notes.</p>
+          <p>Un assistant ne peut utiliser que les informations auxquelles il a accès. Il peut déjà disposer de vos e-mails et de vos documents, mais pas nécessairement de ce qui s'est dit pendant vos appels.</p>
+          <p>CallRecorder ajoute ces conversations à vos documents de travail, sous forme de texte que vous pouvez retrouver et exploiter.</p>
+          <p>Et pendant l'appel, vous pouvez vous concentrer sur la discussion plutôt que sur la prise de notes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="installer">
+  <section id="installation">
     <div class="col">
-      <div class="textwin doc">
-        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Lisez-moi avant d'installer.txt</div>
-        <div class="body">
-          <p>L'installation est un peu pénible.</p>
-          <p>CallRecorder écoute votre micro et le son de vos apps d'appel, et peut lire ce qui s'affiche dans leur fenêtre. macOS protège tout ça et exige que vous donniez chaque autorisation vous-même, dans Réglages Système. Aucune app ne peut le faire à votre place.</p>
-          <p>CallRecorder n'est pas distribué par l'App Store, donc macOS affiche un avertissement au premier lancement. Et comme la transcription se fait sur votre Mac, il faut télécharger un modèle d'environ 550 Mo.</p>
-          <p>J'ai fait tout mon possible pour que ce ne soit pas relou :</p>
-          <ul>
-            <li>une seule ligne à coller dans le Terminal, qui installe tout et évite l'avertissement de macOS ;</li>
-            <li>un assistant qui vous guide, ouvre le bon panneau de Réglages Système et vous montre où cliquer ;</li>
-            <li>un appel de test à la fin : une voix vous parle, vous lui répondez, et vous voyez la transcription ;</li>
-            <li>des autorisations demandées une seule fois, mises à jour comprises.</li>
-          </ul>
-          <p>Lisez les instructions et allez au bout de l'assistant. Une autorisation oubliée, et l'app n'enregistre rien.</p>
-          <p>Ouvrez l'app Terminal, collez la ligne ci-dessous, puis appuyez sur Entrée. L'assistant de configuration s'ouvre. Cliquez sur Autoriser pour le micro et le son des apps, et, en option, pour l'enregistrement de l'écran. Le modèle de transcription se télécharge pendant ce temps. Faites ensuite l'appel de test : une voix parle dans les haut-parleurs, répondez-lui à voix haute. Si macOS demande l'accès à l'enregistrement audio, cliquez sur Autoriser.</p>
-          <p>Quand l'icône de CallRecorder apparaît dans la barre des menus, votre prochain appel sera enregistré.</p>
-          <p>Sans le Terminal : téléchargez le fichier .dmg, glissez CallRecorder dans Applications et ouvrez-le. Quand macOS affiche l'avertissement, cliquez sur OK, puis ouvrez Réglages Système &gt; Confidentialité et sécurité et cliquez sur « Ouvrir quand même ».</p>
-          <p>L'assistant se rouvre depuis le menu CallRecorder &gt; Configuration… Les mises à jour sont proposées dans l'app, et rien ne s'installe sans votre accord.</p>
+      <div class="intro">
+        <h2>Installation</h2>
+        <p>La première installation demande quelques étapes. macOS impose des autorisations pour accéder au micro, au son des applications et, si vous activez cette fonction, au contenu de leur fenêtre.</p>
+        <p>CallRecorder vous guide dans les réglages système et vérifie que l'enregistrement fonctionne avant de terminer la configuration.</p>
+      </div>
+
+      <div style="height: 56px"></div>
+
+      <p class="group-label">Installer avec le Terminal</p>
+      <div class="group">
+        <div class="group-text"><p>Copiez la commande ci-dessous dans l'application Terminal et appuyez sur Entrée. L'assistant d'installation s'ouvre.</p></div>
+        <div class="cmd"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><button class="button" type="button" data-copy="cmd">Copier la commande</button></div>
+        <div class="group-text" style="border-top: 1px solid var(--separator); margin-left: 16px; padding-left: 0;">
+          <p>L'assistant vous guide pour accorder les autorisations nécessaires et télécharger le modèle de transcription (environ 550 Mo). Il vous propose ensuite un appel de test pour vérifier que l'enregistrement et la transcription fonctionnent.</p>
+          <p>Suivez toutes les étapes : si une autorisation manque, CallRecorder ne pourra pas enregistrer le son correspondant.</p>
         </div>
       </div>
 
-      <section style="padding-top: 56px">
-        <p class="group-label">Installer avec le Terminal</p>
-        <div class="group cmd"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><button class="button" type="button" data-copy="cmd">Copier</button></div>
-
-        <div class="actions">
-          <a class="button large" href="https://github.com/gildasfremont/callrecorder/releases/latest/download/CallRecorder.dmg">Télécharger le .dmg</a>
-          <p class="req">macOS 15 ou plus récent · Mac M1 ou plus récent · environ 600 Mo d'espace libre</p>
+      <p class="group-label">Installer sans le Terminal</p>
+      <div class="group">
+        <div class="group-text">
+          <p>Téléchargez le fichier DMG, faites glisser CallRecorder dans le dossier Applications et ouvrez-le.</p>
+          <p>Comme l'application n'est pas distribuée par l'App Store, macOS affiche un avertissement. Vous pouvez ensuite autoriser son ouverture dans Réglages Système, rubrique Confidentialité et sécurité.</p>
         </div>
-      </section>
+        <div class="end"><a class="button" href="https://github.com/gildasfremont/callrecorder/releases/latest/download/CallRecorder.dmg">Télécharger le fichier DMG</a></div>
+      </div>
+
+      <div class="actions">
+        <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
+        <p class="req">Environ 600 Mo d'espace libre</p>
+        <p class="req">Vous pouvez relancer l'assistant depuis le menu CallRecorder &gt; Configuration… Les mises à jour sont proposées dans l'application et ne sont pas installées sans votre accord.</p>
+      </div>
     </div>
   </section>
 
   <footer>
-    <p>L'audio est enregistré et transcrit sur votre Mac, il n'est jamais envoyé sur Internet. Si vous activez l'option Claude, les captures de la fenêtre d'appel et le texte lu à l'écran lui sont transmis pour identifier l'appel.</p>
-    <p>Prévenez vos interlocuteurs que l'appel est enregistré, pour respecter la législation de votre pays.</p>
+    <div class="col">
+      <h3>Données et confidentialité</h3>
+      <p>L'audio est enregistré et transcrit sur votre Mac. Il n'est pas envoyé sur Internet.</p>
+      <p>Si vous activez l'option Claude pour identifier les appels, les captures de la fenêtre d'appel et le texte lu à l'écran sont transmis à Claude. Cette option est distincte de la transcription locale.</p>
+      <p>Pensez à informer vos interlocuteurs de l'enregistrement et à respecter la législation applicable.</p>
+    </div>
   </footer>
 </div>
 
 <script>
   document.querySelectorAll('[data-copy]').forEach(function (b) {
+    var label = b.textContent;
     b.addEventListener('click', function () {
       var text = document.getElementById(b.dataset.copy).textContent;
       navigator.clipboard.writeText(text).then(function () {
-        b.textContent = 'Copié';
-        setTimeout(function () { b.textContent = 'Copier'; }, 1600);
+        b.textContent = 'Copiée';
+        setTimeout(function () { b.textContent = label; }, 1600);
       });
     });
   });
+
+  // Compatibilité : Mac, puce Apple, macOS 15. Le navigateur ne donne pas toujours ces informations :
+  // dans le doute, la configuration requise reste affichée telle quelle.
+  (async function () {
+    var ua = navigator.userAgent;
+    var mac = /Macintosh/.test(ua) && navigator.maxTouchPoints < 2;   // un iPad se présente comme un Mac
+    var arch = null, major = null;
+    if (mac && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
+      try {
+        var v = await navigator.userAgentData.getHighEntropyValues(['architecture', 'platformVersion']);
+        if (v.architecture) arch = v.architecture === 'arm' ? 'arm' : 'intel';
+        if (v.platformVersion) major = parseInt(v.platformVersion, 10);
+      } catch (e) {}
+    }
+    if (mac && !arch) {
+      try {
+        var gl = document.createElement('canvas').getContext('webgl');
+        var info = gl && gl.getExtension('WEBGL_debug_renderer_info');
+        var renderer = info ? gl.getParameter(info.UNMASKED_RENDERER_WEBGL) : '';
+        if (/Apple M\d/.test(renderer)) arch = 'arm';
+        else if (/Intel|AMD|Radeon|NVIDIA/i.test(renderer)) arch = 'intel';
+      } catch (e) {}
+    }
+    var message = null, warn = false;
+    if (!mac) { message = 'CallRecorder fonctionne uniquement sur Mac. Ouvrez cette page sur votre Mac pour le télécharger.'; warn = true; }
+    else if (arch === 'intel') { message = 'Ce Mac a un processeur Intel. CallRecorder nécessite un Mac avec puce Apple (M1 ou plus récent).'; warn = true; }
+    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais CallRecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l\'installer.'; warn = true; }
+    else if (arch === 'arm' && major) message = 'Ce Mac est compatible avec CallRecorder.';
+    else if (arch === 'arm') message = 'Ce Mac a une puce Apple. Vérifiez que macOS 15 ou plus récent est installé.';
+    if (!message) return;
+    document.querySelectorAll('[data-compat]').forEach(function (el) {
+      el.textContent = message;
+      el.classList.toggle('warn', warn);
+    });
+  })();
 </script>
 </body>
 </html>
