@@ -7,6 +7,9 @@
 <title>CallRecorder</title>
 <meta name="description" content="CallRecorder enregistre vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp et les transcrit sur votre Mac.">
 <link rel="icon" href="img/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <style>
   /* Deux registres : l'interface d'un utilitaire macOS (fond de fenêtre, groupes blancs, boutons système)
      et le fichier texte (fenêtres d'éditeur, police à chasse fixe). Thème clair uniquement. */
@@ -20,6 +23,8 @@
     --border: rgba(0, 0, 0, .14);
     --accent: #0064d2;
     --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+    /* Titres : une grotesque récente et soignée, en graisse moyenne ; le reste garde la police du système. */
+    --display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   }
 
   * { box-sizing: border-box; }
@@ -68,7 +73,7 @@
 
   /* En-tête, comme un écran « À propos » */
   .about { text-align: center; padding: 120px 0 0; }
-  .about h1 { font-size: clamp(40px, 7.4vw, 84px); line-height: 1.04; letter-spacing: -0.03em; font-weight: 800; max-width: 980px; margin: 0 auto 48px; }
+  .about h1 { font-family: var(--display); font-size: clamp(40px, 7.4vw, 84px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 980px; margin: 0 auto 48px; }
   /* Mini logos des marques citées, dans le fil du texte */
   img.logo { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: .22em; }
   .nobr { white-space: nowrap; }
@@ -118,7 +123,7 @@
   /* Rythme vertical : 160 px entre les parties, 56 px entre un titre de partie et son contenu. */
   section { padding: 160px 0 0; }
   section.follow { padding-top: 56px; }
-  h2 { font-size: clamp(28px, 4vw, 38px); line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 20px; }
+  h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; margin: 0 0 20px; }
   .intro { text-align: center; max-width: 700px; margin: 0 auto; }
   .intro p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); margin: 0 0 14px; }
   .intro p:last-child { margin-bottom: 0; }
@@ -201,7 +206,7 @@
 
 <div class="wrap">
   <div class="about">
-    <h1>CallRecorder enregistre tous vos appels et les transcrit sur votre Mac.</h1>
+    <h1>CallRecorder enregistre tous vos appels et en fait un fichier texte compatible avec Claude.</h1>
     <a class="button hero" href="#installation"><img class="button-icon" src="img/icone.png" alt="">Installer CallRecorder</a>
     <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
   </div>
@@ -209,7 +214,7 @@
   <div class="stage">
     <img src="img/appels.png" width="1960" height="828" alt="La fenêtre Appels de CallRecorder : la liste des appels avec leur titre, les participants, la date, la durée, l'app et le statut.">
     <div class="textwin" role="img" aria-label="Une transcription ouverte dans un éditeur de texte">
-      <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Découverte client · Atelier Verne.txt</div>
+      <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Découverte client · Atelier Verne.md</div>
 <pre class="body">Découverte client · Atelier Verne
 Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
 
@@ -267,7 +272,7 @@ Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
   <section>
     <div class="col">
       <div class="textwin doc">
-        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>À quoi servent les transcriptions.txt</div>
+        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>À quoi servent les transcriptions.md</div>
         <div class="body">
           <p>Pendant un appel, il faut écouter, poser des questions et prendre des notes. On ne peut pas tout noter, et on ne sait pas toujours quelles informations seront utiles par la suite.</p>
           <p>Une transcription permet de retrouver une information sans devoir réécouter toute la conversation.</p>
