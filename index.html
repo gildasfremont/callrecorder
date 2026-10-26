@@ -11,8 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <style>
-  /* Deux registres : l'interface d'un utilitaire macOS (fond de fenêtre, groupes blancs, boutons système)
-     et le fichier texte (fenêtres d'éditeur, police à chasse fixe). Thème clair uniquement. */
+  /* L'interface d'un utilitaire macOS : fond de fenêtre, groupes blancs, boutons système, captures de l'app. Thème clair uniquement. */
   :root {
     --window: #ececec;
     --group: #ffffff;
@@ -71,7 +70,7 @@
   .button-icon { width: 40px; height: 40px; flex: none; margin: 0; filter: drop-shadow(0 1px 2px rgba(0,0,0,.25)); }
   a.button:hover { text-decoration: none; filter: brightness(1.04); }
 
-  /* En-tête, comme un écran « À propos » */
+  /* En-tête, comme un écran « À propos » */
   .about { text-align: center; padding: 120px 0 0; }
   .about h1 { font-family: var(--display); font-size: clamp(40px, 7.4vw, 84px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 980px; margin: 0 auto 48px; }
   /* Mini logos des marques citées, dans le fil du texte */
@@ -82,43 +81,18 @@
   h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
   .about .req { font-size: 15px; color: var(--secondary); margin-top: 16px; }
 
-  /* Fenêtre Appels + fichier texte par-dessus */
+  /* Fenêtre Appels, et la fenêtre d'un appel par-dessus */
   .stage { position: relative; max-width: 1048px; margin: 96px auto 0; padding-bottom: 150px; }
   .stage > img {
     width: 88%; height: auto; display: block;
     border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
     box-shadow: 0 22px 50px -16px rgba(0,0,0,.28);
   }
-  .stage .textwin { position: absolute; right: 0; bottom: 0; width: 56%; }
-
-  /* Fenêtre d'éditeur de texte */
-  .textwin {
-    background: #ffffff; border-radius: 11px; overflow: hidden;
-    border: .5px solid rgba(0,0,0,.25);
+  .stage .detail {
+    position: absolute; right: 0; bottom: 0; width: 60%; height: auto; display: block;
+    border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
     box-shadow: 0 26px 60px -18px rgba(0,0,0,.32), 0 8px 18px -10px rgba(0,0,0,.18);
   }
-  .textwin .titlebar {
-    position: relative; height: 38px; line-height: 38px; text-align: center;
-    padding: 0 72px; background: #f6f6f6; border-bottom: 1px solid #dedede;
-    font-size: 14px; font-weight: 600; color: #3a3a3d;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  }
-  .textwin .lights { position: absolute; left: 14px; top: 13px; display: flex; gap: 8px; }
-  .textwin .lights i { width: 12px; height: 12px; border-radius: 50%; display: block; }
-  .textwin .lights i:nth-child(1) { background: #ff5f57; }
-  .textwin .lights i:nth-child(2) { background: #febc2e; }
-  .textwin .lights i:nth-child(3) { background: #28c840; }
-  .textwin .body {
-    margin: 0; padding: 22px 24px 26px;
-    font: 14px/1.65 var(--mono);
-    white-space: pre-wrap; word-wrap: break-word;
-  }
-  .textwin.doc .body { white-space: normal; font-size: 16px; line-height: 1.75; padding: 44px 48px 48px; }
-  .textwin.doc .body p { margin: 0 0 1.75em; }
-  .textwin.doc .body p:last-child { margin-bottom: 0; }
-  .textwin.doc .body ul { list-style: none; padding: 0; margin: 0 0 1.75em; }
-  .textwin.doc .body li::before { content: "- "; }
-  .textwin.doc .body li { padding-left: 2ch; text-indent: -2ch; }
 
   /* Rythme vertical : 160 px entre les parties, 56 px entre un titre de partie et son contenu. */
   section { padding: 160px 0 0; }
@@ -183,22 +157,51 @@
   footer p { margin: 0 0 8px; }
   footer .signature { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--separator); color: var(--text); }
 
+  /* Guides : une question par ligne, la réponse se déplie. */
+  details.row { padding: 0; }
+  details.row summary {
+    list-style: none; cursor: pointer; padding: 18px 44px 18px 20px; position: relative;
+    font-size: 17px; font-weight: 600;
+  }
+  details.row + details.row summary { padding-left: 0; }
+  details.row summary::-webkit-details-marker { display: none; }
+  details.row summary::after {
+    content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+    border-right: 2px solid #9a9aa0; border-bottom: 2px solid #9a9aa0; transform: rotate(45deg); transition: transform .15s;
+  }
+  details.row[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+  details.row .answer { padding: 0 20px 20px; font-size: 16px; color: var(--body); }
+  details.row + details.row .answer { padding-left: 0; }
+  details.row .answer p { margin: 0 0 10px; }
+  details.row .answer ol { margin: 0 0 10px; padding-left: 1.3em; }
+  details.row .answer li { margin: 4px 0; }
+  details.row .answer img { width: 100%; max-width: 560px; height: auto; display: block; margin: 14px 0 6px; border-radius: 9px; border: .5px solid rgba(0,0,0,.2); }
+  .answer b { font-weight: 600; color: var(--text); }
+
+  /* Versions : la plus récente en haut, la date et les nouveautés, une capture quand il y a quelque chose à voir. */
+  .version { display: grid; grid-template-columns: 132px 1fr; gap: 6px 20px; }
+  .version .num { font-weight: 600; }
+  .version .num small { display: block; font-weight: 400; font-size: 14px; color: var(--secondary); }
+  .version p { color: var(--body); }
+  .version a.thumb { display: block; margin-top: 12px; width: 240px; max-width: 100%; }
+  .version a.thumb img { width: 100%; height: auto; display: block; border-radius: 7px; border: .5px solid rgba(0,0,0,.2); box-shadow: 0 8px 20px -10px rgba(0,0,0,.3); }
+  .version .latest { display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: #e6f0fc; color: var(--accent); font-size: 12px; font-weight: 600; vertical-align: 2px; }
+
   /* En dessous de 980 px, la transcription passe sous la capture au lieu de la recouvrir. */
   @media (max-width: 980px) {
     .stage { padding-bottom: 0; }
     .stage > img { width: 100%; }
-    .stage .textwin { position: relative; width: 80%; margin: -48px 0 0 auto; }
+    .stage .detail { position: relative; width: 80%; margin: -48px 0 0 auto; }
   }
 
   @media (max-width: 760px) {
     .about { padding-top: 64px; }
     .stage { margin-top: 72px; padding-bottom: 0; }
     .stage > img { width: 100%; }
-    .stage .textwin { position: relative; width: 94%; margin: -40px 0 0 auto; }
-    .textwin .titlebar { text-align: left; padding-right: 12px; }
-    .textwin.doc .body { padding: 26px 20px 30px; font-size: 15px; }
+    .stage .detail { position: relative; width: 94%; margin: -40px 0 0 auto; }
     section { padding-top: 112px; }
     section.follow { padding-top: 40px; }
+    .version { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -212,22 +215,8 @@
   </div>
 
   <div class="stage">
-    <img src="img/appels.png" width="1960" height="828" alt="La fenêtre Appels de CallRecorder : la liste des appels avec leur titre, les participants, la date, la durée, l'app et le statut.">
-    <div class="textwin" role="img" aria-label="Une transcription ouverte dans un éditeur de texte">
-      <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>Découverte client · Atelier Verne.md</div>
-<pre class="body">Découverte client · Atelier Verne
-Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
-
-[00:03:12] Interlocuteurs : Aujourd'hui les devis, on les fait sur Excel, et c'est moi qui relance à la main.
-
-[00:03:31] Moi : Vous en envoyez combien par mois ?
-
-[00:03:34] Interlocuteurs : Une quarantaine. Et on en perd sûrement une dizaine, faute de relance.
-
-[00:03:41] Moi : D'accord. Je vous envoie une proposition d'ici jeudi.
-
-[00:03:47] Interlocuteurs : Jeudi, c'est parfait. Mettez Claire en copie, c'est elle qui signe.</pre>
-    </div>
+    <img src="img/appels.png" width="2200" height="1504" alt="La fenêtre Appels de CallRecorder : un calendrier à gauche, et pour chaque appel son titre, les participants, l'enregistrement à écouter, un extrait de la transcription et une capture de l'écran.">
+    <img class="detail" src="img/transcription.png" width="2360" height="1568" alt="La fenêtre d'un appel, « À quoi servent les transcriptions » : la forme d'onde de l'enregistrement, puis les répliques horodatées de Paul et de moi, avec les captures d'écran prises pendant l'appel.">
   </div>
 
   <div class="dock" aria-label="Applications d'appel prises en charge">
@@ -258,36 +247,14 @@ Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
     <div class="col">
       <div class="group">
         <div class="row"><h3>Vous n'avez rien à paramétrer, rien à lancer</h3><p>Pas de bouton à cliquer au début de chaque réunion. CallRecorder détecte l'utilisation du micro par les applications prises en charge. Siri et la dictée ne déclenchent pas d'enregistrement.</p></div>
-        <div class="row"><h3>Les transcriptions restent sur votre Mac</h3><p>La transcription est effectuée par votre Mac. L'audio n'est pas envoyé sur Internet, et les captures d'écran qui servent à comprendre le contexte non plus, sauf si vous activez l'option <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>.</p></div>
+        <div class="row"><h3>Vos appels téléphoniques aussi</h3><p>Les appels de l'iPhone pris ou passés sur le Mac, dans l'app Téléphone. Et ceux d'un Pixel branché en USB, avec le numéro et le nom de l'interlocuteur. <a href="#guides">Comment faire</a></p></div>
+        <div class="row"><h3>Les transcriptions restent sur votre Mac</h3><p>La transcription est effectuée par votre Mac : par la reconnaissance vocale d'Apple sur macOS 26, et par Whisper pour la qualité max, plus juste sur les noms et le jargon. L'audio n'est pas envoyé sur Internet, et les captures d'écran qui servent à comprendre le contexte non plus, sauf si vous activez l'option <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>.</p></div>
         <div class="row"><h3>Vos propos et ceux des autres sont séparés</h3><p>CallRecorder enregistre séparément le son de votre micro et celui de votre application d'appel. La transcription distingue vos propos de ceux des autres participants.</p></div>
         <div class="row"><h3>Retrouvez le titre et les participants</h3><p>En option, <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span> peut utiliser le contenu de la fenêtre d'appel avec votre agenda et vos e-mails pour retrouver les informations utiles à la transcription, comme le sujet de la réunion et les participants.</p></div>
         <div class="row"><h3>Retrouvez vos appels avec <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span></h3><p>Claude peut rechercher un appel, lire sa transcription, en faire un résumé ou préparer un compte rendu et un e-mail de suivi. Tous les assistants compatibles avec MCP peuvent accéder aux transcriptions si vous leur en donnez l'accès.</p></div>
-        <div class="row"><h3>Les enregistrements audio sont supprimés automatiquement</h3><p>L'audio est conservé pendant 7 jours, puis supprimé, sauf si vous choisissez de le garder. Les transcriptions sont conservées, sauf si vous choisissez de les supprimer.</p></div>
+        <div class="row"><h3>L'audio part à la corbeille au bout de 7 jours</h3><p>Sauf si vous choisissez de le conserver. Les transcriptions et les captures d'écran restent, sauf si vous supprimez l'appel.</p></div>
         <div class="row"><h3>L'application reste dans la barre des menus</h3><p>CallRecorder n'apparaît pas dans le Dock. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
         <div class="row"><h3>Pas de compte ni de serveur</h3><p>Les fichiers audio et les transcriptions sont enregistrés dans un dossier sur votre Mac.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="col">
-      <div class="textwin doc">
-        <div class="titlebar"><span class="lights"><i></i><i></i><i></i></span>À quoi servent les transcriptions.md</div>
-        <div class="body">
-          <p>Pendant un appel, il faut écouter, poser des questions et prendre des notes. On ne peut pas tout noter, et on ne sait pas toujours quelles informations seront utiles par la suite.</p>
-          <p>Une transcription permet de retrouver une information sans devoir réécouter toute la conversation.</p>
-          <p>Avec un assistant comme <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>, vous pouvez par exemple lui demander :</p>
-          <ul>
-            <li>Qu'est-ce que j'ai promis à Paul jeudi ?</li>
-            <li>Résume la réunion et indique les actions à mener, avec un responsable pour chacune.</li>
-            <li>Prépare le mail de suivi de cet entretien en reprenant les termes employés par le client.</li>
-            <li>Compare les cinq derniers entretiens et résume ce que chaque interlocuteur a pensé de ma présentation.</li>
-            <li>Prépare une todo à partir de mes trois derniers appels avec mon équipe.</li>
-          </ul>
-          <p>Un assistant ne peut utiliser que les informations auxquelles il a accès. Il peut déjà disposer de vos e-mails et de vos documents, mais pas nécessairement de ce qui s'est dit pendant vos appels.</p>
-          <p>CallRecorder ajoute ces conversations à vos documents de travail, sous forme de texte que vous pouvez retrouver et exploiter.</p>
-          <p>Et pendant l'appel, vous pouvez vous concentrer sur la discussion plutôt que sur la prise de notes.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -312,7 +279,88 @@ Samedi 24 octobre 2026, 13h57 · 47 min · Google Meet
         </div>
       </div>
 
-      <p class="notes">Environ 600 Mo d'espace libre, dont 550 Mo pour le modèle de transcription.</p>
+      <p class="notes">Sur macOS 26, la transcription utilise la reconnaissance vocale d'Apple : rien de plus à télécharger. Sur macOS 15, et pour la qualité max, le modèle Whisper (0,6 Go) se télécharge.</p>
+    </div>
+  </section>
+
+  <section id="guides">
+    <div class="col">
+      <div class="intro">
+        <h2>Guides</h2>
+        <p>Les questions qu'on se pose une fois CallRecorder installé.</p>
+      </div>
+      <div class="group" style="margin-top:56px">
+        <details class="row"><summary>Enregistrer les appels de l'iPhone</summary><div class="answer">
+          <p>CallRecorder enregistre les appels de l'iPhone que vous prenez ou passez <b>sur le Mac</b>, dans l'app Téléphone : leur son passe par le micro et les haut-parleurs du Mac.</p>
+          <ol>
+            <li>Sur l'iPhone, ouvrez Réglages &gt; Téléphone &gt; Appels sur d'autres appareils, et cochez votre Mac. Les deux appareils doivent utiliser le même compte Apple.</li>
+            <li>Sur le Mac, appelez depuis l'app Téléphone, ou décrochez l'appel qui s'y affiche.</li>
+          </ol>
+          <p>Un appel décroché sur l'iPhone lui-même ne passe pas par le Mac : il n'est pas enregistré.</p>
+          <img src="img/guides/telephones.png" loading="lazy" alt="La partie Téléphones de la configuration : iPhone et Android.">
+        </div></details>
+        <details class="row"><summary>Enregistrer les appels d'un téléphone Android</summary><div class="answer">
+          <p>Rien à installer sur le Mac. L'appel reste sur le téléphone : branché au Mac en USB, il lui transmet la voix des deux côtés. Les Pixel, du 4a au 10, sont pris en charge ; les Galaxy sont à l'essai.</p>
+          <ol>
+            <li>Sur le téléphone, ouvrez Paramètres &gt; À propos du téléphone et touchez sept fois Numéro de build, puis activez le <b>Débogage USB</b> dans Paramètres &gt; Système &gt; Options pour les développeurs.</li>
+            <li>Branchez le téléphone au Mac et acceptez « Autoriser le débogage USB ». La ligne Android affiche <b>Prêt</b>.</li>
+          </ol>
+          <p>Seuls les appels du réseau mobile sont captés : pas WhatsApp, Signal ni les appels Wi-Fi. Le numéro et le nom de l'interlocuteur sont repris du journal d'appels du téléphone, même s'il est rebranché après l'appel.</p>
+          <img src="img/guides/telephones.png" loading="lazy" alt="La partie Téléphones de la configuration : iPhone et Android.">
+        </div></details>
+        <details class="row"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
+          <ol>
+            <li>Dans la configuration, ligne <b>Accès de Claude à vos appels</b>, cliquez sur Activer : Claude Code et Claude Desktop sont reliés à vos appels.</li>
+            <li>Quittez et rouvrez Claude.</li>
+            <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
+          </ol>
+          <p>Pour ChatGPT, Cursor ou un autre assistant compatible MCP, l'assistant de configuration donne la consigne et la configuration MCP à copier dans ses réglages.</p>
+          <img src="img/guides/claude.png" loading="lazy" alt="L'écran Votre assistant IA de l'assistant de configuration : Claude actif, et la configuration MCP à copier pour un autre assistant.">
+        </div></details>
+        <details class="row"><summary>Retrouver et réécouter un appel</summary><div class="answer">
+          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b>. Le calendrier, à gauche, mène à un jour ; chaque appel a son bouton de lecture. Cliquez sur un appel pour ouvrir sa fenêtre.</p>
+          <img src="img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : le calendrier à gauche, et les appels du jour avec leur extrait et une capture.">
+        </div></details>
+        <details class="row"><summary>Transcrire en qualité max</summary><div class="answer">
+          <p>La qualité max est plus juste sur les noms propres et le jargon, mais plus lente. Dans la fenêtre de l'appel, cliquez sur <b>Nouvelle version…</b> et choisissez la qualité max. Son modèle (0,6 Go) se télécharge la première fois ; les versions précédentes restent disponibles.</p>
+          <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel : la version de la transcription, Nouvelle version…, la forme d'onde, Copier et Télécharger.">
+        </div></details>
+        <details class="row"><summary>Copier ou exporter une transcription</summary><div class="answer">
+          <p>Dans la fenêtre de l'appel, <b>Copier</b> met toute la transcription dans le presse-papiers. <b>Télécharger</b> l'enregistre en texte, Word, Markdown ou sous-titres. Les transcriptions sont aussi dans le dossier CallRecordings de votre dossier personnel, en Markdown.</p>
+          <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel, avec Copier et Télécharger.">
+        </div></details>
+        <details class="row"><summary>Garder l'enregistrement audio d'un appel</summary><div class="answer">
+          <p>L'audio part à la corbeille au bout de 7 jours. Pour le garder, ouvrez le menu de l'appel, près de « Supprimé dans… », et choisissez <b>Conserver</b>.</p>
+        </div></details>
+        <details class="row"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
+          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, supprimez-le depuis la fenêtre Appels : vous avez 5 secondes pour annuler.</p>
+        </div></details>
+        <details class="row"><summary>Revoir les autorisations</summary><div class="answer">
+          <p>Icône de CallRecorder &gt; <b>Configuration…</b> Chaque autorisation s'y active ou se retire. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
+          <img src="img/guides/configuration.png" loading="lazy" alt="La configuration : le micro, le son des apps, l'écran et la transcription automatique, chacun avec son bouton.">
+        </div></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="versions">
+    <div class="col">
+      <div class="intro">
+        <h2>Versions</h2>
+        <p>CallRecorder se met à jour tout seul. Pour vérifier tout de suite : icône de CallRecorder &gt; Rechercher une mise à jour.</p>
+      </div>
+      <div class="group" style="margin-top:56px">
+        <div class="row version"><div class="num">0.5.3<span class="latest">Dernière</span><small>26 octobre 2026</small></div><div><p>Les appels Android s'enregistrent sans rien installer : l'outil scrcpy est livré dans l'app.</p></div></div>
+        <div class="row version"><div class="num">0.5.2<small>26 octobre 2026</small></div><div><p>Appels Android : le numéro et le nom de l'interlocuteur, retrouvés même quand le téléphone est rebranché après l'appel.</p></div></div>
+        <div class="row version"><div class="num">0.5.0<small>26 octobre 2026</small></div><div><p>Enregistre les appels de l'iPhone (app Téléphone du Mac) et des Pixel branchés en USB. Transcription rapide par la reconnaissance vocale d'Apple sur macOS 26 ; qualité max par Whisper, nourrie des mots lus à l'écran.</p><a class="thumb" href="img/configuration-telephones.png"><img src="img/configuration-telephones.png" loading="lazy" alt="La partie Téléphones de la configuration"></a></div></div>
+        <div class="row version"><div class="num">0.4.0<small>25 octobre 2026</small></div><div><p>Nouvelle fenêtre des appels : calendrier, cartes avec l'enregistrement à écouter, les captures et un extrait de la transcription. Une fenêtre par appel, avec la transcription liée à l'enregistrement, les captures, la copie et l'export. Après 7 jours, seul l'audio part à la corbeille. Suppression d'un appel annulable pendant 5 secondes.</p><a class="thumb" href="img/appels.png"><img src="img/appels.png" loading="lazy" alt="La nouvelle fenêtre des appels"></a></div></div>
+        <div class="row version"><div class="num">0.3.5<small>25 octobre 2026</small></div><div><p>Fond de l'installation simplifié.</p><a class="thumb" href="img/installation.png"><img src="img/installation.png" loading="lazy" alt="Le fond de la fenêtre d'installation"></a></div></div>
+        <div class="row version"><div class="num">0.3.4<small>25 octobre 2026</small></div><div><p>Un panneau collé à Réglages Système indique quoi faire pour chaque autorisation. Claude relancé après la connexion, assistant remis au premier plan, journal d'installation (désactivable), répliques mieux découpées.</p></div></div>
+        <div class="row version"><div class="num">0.3.3<small>24 octobre 2026</small></div><div><p>Relance fiable après une mise à jour.</p></div></div>
+        <div class="row version"><div class="num">0.3.2<small>24 octobre 2026</small></div><div><p>Relance fiable après l'autorisation de l'écran.</p></div></div>
+        <div class="row version"><div class="num">0.3.1<small>24 octobre 2026</small></div><div><p>Enregistre aussi les appels Slack, Webex et Loom.</p></div></div>
+        <div class="row version"><div class="num">0.3.0<small>24 octobre 2026</small></div><div><p>Première version publique : enregistrement automatique, transcription sur le Mac, assistant de configuration avec appel de test.</p></div></div>
+      </div>
     </div>
   </section>
 
