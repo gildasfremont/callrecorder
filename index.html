@@ -215,8 +215,8 @@
   </div>
 
   <div class="stage">
-    <img src="img/appels.png" width="2200" height="1504" alt="La fenêtre Appels de CallRecorder : un calendrier à gauche, et pour chaque appel son titre, les participants, l'enregistrement à écouter, un extrait de la transcription et une capture de l'écran.">
-    <img class="detail" src="img/transcription.png" width="2360" height="1562" alt="La fenêtre d'un appel, « À quoi servent les transcriptions » : la forme d'onde de l'enregistrement, puis les répliques horodatées de Paul et de moi, avec les captures d'écran prises pendant l'appel.">
+    <img src="img/appels.png" width="2200" height="1504" alt="La fenêtre Appels de CallRecorder : un calendrier à gauche, et une ligne par appel avec la première capture de l'écran, l'app, l'heure, le titre, les participants et la durée.">
+    <img class="detail" src="img/transcription.png" width="2360" height="1574" alt="La fenêtre d'un appel, « À quoi servent les transcriptions » : la forme d'onde de l'enregistrement, puis les répliques horodatées de Paul et de moi, avec les captures d'écran prises pendant l'appel.">
   </div>
 
   <div class="dock" aria-label="Applications d'appel prises en charge">
@@ -318,22 +318,22 @@
           <img src="img/guides/claude.png" loading="lazy" alt="L'écran Votre assistant IA de l'assistant de configuration : Claude actif, et la configuration MCP à copier pour un autre assistant.">
         </div></details>
         <details class="row"><summary>Retrouver et réécouter un appel</summary><div class="answer">
-          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b>. Le calendrier, à gauche, mène à un jour ; chaque appel a son bouton de lecture. Cliquez sur un appel pour ouvrir sa fenêtre.</p>
-          <img src="img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : le calendrier à gauche, et les appels du jour avec leur extrait et une capture.">
+          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b>. Le calendrier, à gauche, mène à un jour. Cliquez sur un appel pour ouvrir sa fenêtre : la lecture est en haut, et un clic sur la forme d'onde ou sur une réplique va au bon moment.</p>
+          <img src="img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : le calendrier à gauche, et une ligne par appel avec sa première capture, son titre et sa durée.">
         </div></details>
         <details class="row"><summary>Transcrire en qualité max</summary><div class="answer">
-          <p>La qualité max est plus juste sur les noms propres et le jargon, mais plus lente. Dans la fenêtre de l'appel, ouvrez les <b>Transcriptions</b>, en haut à droite, cliquez sur <b>Nouvelle transcription…</b> et choisissez la qualité max. Son modèle (0,6 Go) se télécharge la première fois ; les transcriptions précédentes restent dans la liste.</p>
-          <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel : Copier, Télécharger et Transcriptions, puis l'enregistrement.">
+          <p>La qualité max est plus juste sur les noms propres et le jargon, mais plus lente. Dans la fenêtre de l'appel, cliquez sur <b>Transcriptions</b>, au bout de l'enregistrement, puis sur <b>Nouvelle transcription…</b> et choisissez la qualité max. Vérifiez les noms et les mots à reconnaître, ou cliquez sur <b>Faire remplir par Claude</b>, puis sur <b>Lancer</b>. Son modèle (0,6 Go) se télécharge la première fois ; les transcriptions précédentes restent dans la liste.</p>
+          <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel : Copier et Télécharger, puis l'enregistrement avec le bouton Transcriptions au bout.">
         </div></details>
         <details class="row"><summary>Copier ou exporter une transcription</summary><div class="answer">
           <p>Dans la fenêtre de l'appel, <b>Copier</b> met toute la transcription dans le presse-papiers. <b>Télécharger</b> l'enregistre en texte, Word, Markdown ou sous-titres. Les transcriptions sont aussi dans le dossier CallRecordings de votre dossier personnel, en Markdown.</p>
           <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel, avec Copier et Télécharger.">
         </div></details>
         <details class="row"><summary>Garder l'enregistrement audio d'un appel</summary><div class="answer">
-          <p>L'audio part à la corbeille au bout de 7 jours. Pour le garder, ouvrez le menu de l'appel, près de « Supprimé dans… », et choisissez <b>Conserver</b>.</p>
+          <p>L'audio part à la corbeille au bout de 7 jours ; la transcription et les captures restent. Le menu <b>⋯</b> de la fenêtre de l'appel indique la date. Pour garder l'audio, demandez-le à Claude (« Garde l'enregistrement de cet appel ») ou tapez <code>calls keep</code> suivi de l'identifiant de l'appel dans le Terminal.</p>
         </div></details>
         <details class="row"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
-          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, supprimez-le depuis la fenêtre Appels : vous avez 5 secondes pour annuler.</p>
+          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, survolez-le dans la fenêtre Appels et cliquez sur la corbeille : vous avez 5 secondes pour annuler. Le menu <b>⋯</b> de sa fenêtre permet aussi de le supprimer.</p>
         </div></details>
         <details class="row"><summary>Revoir les autorisations</summary><div class="answer">
           <p>Icône de CallRecorder &gt; <b>Configuration…</b> Chaque autorisation s'y active ou se retire. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
@@ -350,7 +350,8 @@
         <p>CallRecorder se met à jour tout seul. Pour vérifier tout de suite : icône de CallRecorder &gt; Rechercher une mise à jour.</p>
       </div>
       <div class="group" style="margin-top:56px">
-        <div class="row version"><div class="num">0.5.4<span class="latest">Dernière</span><small>26 octobre 2026</small></div><div><p>Cartes des appels : toute la carte ouvre la fenêtre de l'appel, avec un extrait de quelques répliques. Fenêtre de l'appel : les captures dans une colonne à droite, les répliques espacées selon le temps écoulé.</p></div></div>
+        <div class="row version"><div class="num">0.5.5<span class="latest">Dernière</span><small>26 octobre 2026</small></div><div><p>Une ligne par appel, avec sa première capture, l'app et la durée. Fenêtre de l'appel : la transcription calée sur l'enregistrement, les captures à côté des répliques, les silences visibles, un texte plus lisible. Plusieurs transcriptions par appel ; une nouvelle se prépare au centre de la fenêtre, avec les mots à reconnaître et Faire remplir par Claude, et on la regarde se faire. Nombreuses corrections.</p><a class="thumb" href="img/transcription.png"><img src="img/transcription.png" loading="lazy" alt="La fenêtre d'un appel"></a></div></div>
+        <div class="row version"><div class="num">0.5.4<small>26 octobre 2026</small></div><div><p>Cartes des appels : toute la carte ouvre la fenêtre de l'appel, avec un extrait de quelques répliques. Fenêtre de l'appel : les captures dans une colonne à droite, les répliques espacées selon le temps écoulé.</p></div></div>
         <div class="row version"><div class="num">0.5.3<small>26 octobre 2026</small></div><div><p>Les appels Android s'enregistrent sans rien installer : l'outil scrcpy est livré dans l'app.</p></div></div>
         <div class="row version"><div class="num">0.5.2<small>26 octobre 2026</small></div><div><p>Appels Android : le numéro et le nom de l'interlocuteur, retrouvés même quand le téléphone est rebranché après l'appel.</p></div></div>
         <div class="row version"><div class="num">0.5.0<small>26 octobre 2026</small></div><div><p>Enregistre les appels de l'iPhone (app Téléphone du Mac) et des Pixel branchés en USB. Transcription rapide par la reconnaissance vocale d'Apple sur macOS 26 ; qualité max par Whisper, nourrie des mots lus à l'écran.</p><a class="thumb" href="img/configuration-telephones.png"><img src="img/configuration-telephones.png" loading="lazy" alt="La partie Téléphones de la configuration"></a></div></div>
