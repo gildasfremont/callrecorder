@@ -262,7 +262,7 @@
     <div class="col">
       <div class="intro">
         <h2>Installation</h2>
-        <p>Un assistant vous guide dans les autorisations de macOS, puis vérifie l'enregistrement avec un appel de test. Suivez-le jusqu'au bout : sans autorisation, CallRecorder ne peut pas enregistrer.</p>
+        <p>CallRecorder s'ouvre sur sa fenêtre Appels, avec un seul appel dans la liste : l'<b>appel de test</b>. Lancez-le : il demande le micro et le son des apps, puis vous parle une trentaine de secondes et vérifie que vos deux voix s'enregistrent. Il rejoint ensuite vos appels. Sans ces autorisations, CallRecorder ne peut pas enregistrer. Le reste se fait tout seul : l'ouverture au démarrage du Mac, et l'accès de Claude à vos appels s'il est installé.</p>
         <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
       </div>
 
@@ -309,7 +309,7 @@
         </div></details>
         <details class="row"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
           <ol>
-            <li>Dans les Réglages, page <b>Claude et autres assistants</b>, ligne <b>Accès de Claude à vos appels</b>, cliquez sur <b>Donner l'accès</b> : Claude Code et Claude Desktop sont reliés à vos appels.</li>
+            <li>Si Claude était installé quand vous avez installé CallRecorder, c'est déjà fait. Sinon, dans les Réglages, ouvrez <b>Transcriptions et accès aux appels</b> et activez <b>Accès de Claude à vos appels</b> : Claude Code et Claude Desktop sont reliés à vos appels.</li>
             <li>Quittez et rouvrez Claude.</li>
             <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
           </ol>
@@ -335,11 +335,11 @@
           <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, choisissez-le dans la fenêtre Appels et appuyez sur <b>⌘⌫</b>, ou faites un clic droit &gt; <b>Supprimer l'appel</b> : il part à la corbeille du Mac. Édition &gt; <b>Annuler</b> (⌘Z) le remet.</p>
         </div></details>
         <details class="row"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
-          <p>Dans les <b>Réglages</b>, en bas à gauche de la fenêtre Appels, ouvrez <b>Apps enregistrées</b>, tout en bas : chaque app a son interrupteur. Dans un navigateur, chaque site se coupe à part : Google Meet, Zoom, Teams, WhatsApp Web, Slack… Il est reconnu au titre de la fenêtre ; <b>Autres sites</b> couvre les appels qu'on ne reconnaît pas.</p>
+          <p>Dans les <b>Réglages</b>, en bas à gauche de la fenêtre Appels, ouvrez <b>Apps et sites</b>, sous <b>Appels enregistrés</b> : chaque app a son interrupteur. Dans un navigateur, chaque site se coupe à part : Google Meet, Zoom, Teams, WhatsApp Web, Slack… Il est reconnu au titre de la fenêtre ; <b>Autres sites</b> couvre les appels qu'on ne reconnaît pas.</p>
         </div></details>
         <details class="row"><summary>Revoir les autorisations et les réglages</summary><div class="answer">
-          <p>En bas à gauche de la fenêtre Appels, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des appels. Chaque autorisation s'y active ou se retire, comme la durée de conservation de l'audio et l'icône de la barre des menus. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
-          <img src="img/guides/configuration.png" loading="lazy" alt="Les Réglages, dans la fenêtre Appels : le micro, le son des apps, l'écran et la transcription automatique, chacun avec son bouton.">
+          <p>S'il manque le micro ou le son des apps, un bandeau en tête de la liste des appels le dit : <b>Faire l'appel de test</b> les redemande et vérifie l'enregistrement. En bas à gauche de la fenêtre Appels, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des appels. En haut, une ligne dit si vos appels sont bien enregistrés, et sinon ce qui manque. Chaque autorisation s'y donne d'un clic ; on y règle aussi Claude, la durée de conservation de l'audio et l'icône de la barre des menus. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
+          <img src="img/guides/configuration.png" loading="lazy" alt="Les Réglages, dans la fenêtre Appels : le micro, le son des apps et l'écran autorisés, les apps et les téléphones enregistrés, Claude, puis la conservation de l'audio.">
         </div></details>
       </div>
     </div>
