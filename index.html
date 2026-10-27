@@ -81,10 +81,10 @@
   h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
   .about .req { font-size: 15px; color: var(--secondary); margin-top: 16px; }
 
-  /* Fenêtre Appels, et la fenêtre d'un appel par-dessus */
-  .stage { position: relative; max-width: 1048px; margin: 96px auto 0; padding-bottom: 150px; }
+  /* La fenêtre Appels : la liste à gauche, l'appel choisi à droite */
+  .stage { position: relative; max-width: 1048px; margin: 96px auto 0; }
   .stage > img {
-    width: 88%; height: auto; display: block;
+    width: 100%; height: auto; display: block;
     border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
     box-shadow: 0 22px 50px -16px rgba(0,0,0,.28);
   }
@@ -215,8 +215,7 @@
   </div>
 
   <div class="stage">
-    <img src="img/appels.png" width="2200" height="1504" alt="La fenêtre Appels de CallRecorder : un calendrier à gauche, et une ligne par appel avec la première capture de l'écran, l'app, l'heure, le titre, les participants et la durée.">
-    <img class="detail" src="img/transcription.png" width="2360" height="1574" alt="La fenêtre d'un appel, « À quoi servent les transcriptions » : la forme d'onde de l'enregistrement, puis les répliques horodatées de Paul et de moi, avec les captures d'écran prises pendant l'appel.">
+    <img src="img/appels.png" width="2560" height="1568" alt="La fenêtre Appels de CallRecorder : à gauche, une ligne par appel avec sa première capture, l'app, l'heure, le titre et la durée ; à droite, l'appel « À quoi servent les transcriptions » avec la forme d'onde de l'enregistrement, les répliques horodatées de Paul et de moi, et les captures d'écran prises pendant l'appel.">
   </div>
 
   <div class="dock" aria-label="Applications d'appel prises en charge">
@@ -248,9 +247,9 @@
       <div class="group">
         <div class="row"><h3>Vous n'avez rien à paramétrer, rien à lancer</h3><p>Pas de bouton à cliquer au début de chaque réunion. CallRecorder détecte l'utilisation du micro par les applications prises en charge. Siri et la dictée ne déclenchent pas d'enregistrement.</p></div>
         <div class="row"><h3>Vos appels téléphoniques aussi</h3><p>Les appels de l'iPhone pris ou passés sur le Mac, dans l'app Téléphone. Et ceux d'un Pixel branché en USB, avec le numéro et le nom de l'interlocuteur. <a href="#guides">Comment faire</a></p></div>
-        <div class="row"><h3>Les transcriptions restent sur votre Mac</h3><p>La transcription est effectuée par votre Mac : par la reconnaissance vocale d'Apple sur macOS 26, et par Whisper pour la qualité max, plus juste sur les noms et le jargon. L'audio n'est pas envoyé sur Internet, et les captures d'écran qui servent à comprendre le contexte non plus, sauf si vous activez l'option <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>.</p></div>
+        <div class="row"><h3>Les transcriptions restent sur votre Mac</h3><p>La transcription est effectuée par votre Mac, par la reconnaissance vocale d'Apple. L'audio n'est pas envoyé sur Internet, et les captures d'écran qui servent à comprendre le contexte non plus, sauf si vous activez l'option <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>.</p></div>
         <div class="row"><h3>Vos propos et ceux des autres sont séparés</h3><p>CallRecorder enregistre séparément le son de votre micro et celui de votre application d'appel. La transcription distingue vos propos de ceux des autres participants.</p></div>
-        <div class="row"><h3>Retrouvez le titre et les participants</h3><p>En option, <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span> peut utiliser le contenu de la fenêtre d'appel avec votre agenda et vos e-mails pour retrouver les informations utiles à la transcription, comme le sujet de la réunion et les participants.</p></div>
+        <div class="row"><h3>Des transcriptions améliorées par <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span></h3><p>En option, après chaque appel, Claude relit la transcription avec ce que la fenêtre d'appel affichait, votre agenda et vos e-mails. Il corrige les noms propres et retrouve le titre de l'appel et les participants. Le résultat est une nouvelle version : la transcription d'origine reste.</p></div>
         <div class="row"><h3>Retrouvez vos appels avec <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span></h3><p>Claude peut rechercher un appel, lire sa transcription, en faire un résumé ou préparer un compte rendu et un e-mail de suivi. Tous les assistants compatibles avec MCP peuvent accéder aux transcriptions si vous leur en donnez l'accès.</p></div>
         <div class="row"><h3>L'audio part à la corbeille au bout de 7 jours</h3><p>Sauf si vous choisissez de le conserver. Les transcriptions et les captures d'écran restent, sauf si vous supprimez l'appel.</p></div>
         <div class="row"><h3>L'application reste dans la barre des menus</h3><p>CallRecorder n'apparaît pas dans le Dock. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
@@ -279,7 +278,7 @@
         </div>
       </div>
 
-      <p class="notes">Sur macOS 26, la transcription utilise la reconnaissance vocale d'Apple : rien de plus à télécharger. Sur macOS 15, et pour la qualité max, le modèle Whisper (0,6 Go) se télécharge.</p>
+      <p class="notes">Sur macOS 26, la transcription utilise la reconnaissance vocale d'Apple : rien de plus à télécharger. Sur macOS 15, un modèle de transcription (0,6 Go) se télécharge au premier lancement.</p>
     </div>
   </section>
 
@@ -310,34 +309,37 @@
         </div></details>
         <details class="row"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
           <ol>
-            <li>Dans la configuration, ligne <b>Accès de Claude à vos appels</b>, cliquez sur Activer : Claude Code et Claude Desktop sont reliés à vos appels.</li>
+            <li>Dans les Réglages, page <b>Claude et autres assistants</b>, ligne <b>Accès de Claude à vos appels</b>, cliquez sur <b>Donner l'accès</b> : Claude Code et Claude Desktop sont reliés à vos appels.</li>
             <li>Quittez et rouvrez Claude.</li>
             <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
           </ol>
-          <p>Pour ChatGPT, Cursor ou un autre assistant compatible MCP, l'assistant de configuration donne la consigne et la configuration MCP à copier dans ses réglages.</p>
-          <img src="img/guides/claude.png" loading="lazy" alt="L'écran Votre assistant IA de l'assistant de configuration : Claude actif, et la configuration MCP à copier pour un autre assistant.">
+          <p>Pour ChatGPT, Cursor ou un autre assistant compatible MCP, la même page donne la consigne et la configuration MCP à copier dans ses réglages.</p>
+          <img src="img/guides/claude.png" loading="lazy" alt="La page Claude des Réglages : améliorer chaque transcription, le modèle de Claude et l'accès de Claude à vos appels.">
         </div></details>
         <details class="row"><summary>Retrouver et réécouter un appel</summary><div class="answer">
-          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b>. Le calendrier, à gauche, mène à un jour. Cliquez sur un appel pour ouvrir sa fenêtre : la lecture est en haut, et un clic sur la forme d'onde ou sur une réplique va au bon moment.</p>
-          <img src="img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : le calendrier à gauche, et une ligne par appel avec sa première capture, son titre et sa durée.">
+          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b> À gauche, la liste des appels ; l'icône du calendrier, en haut, mène à un jour. Cliquez sur un appel : il s'affiche à droite, avec la lecture en haut. <b>Espace</b> lit ou met en pause, et un clic sur la forme d'onde ou sur une réplique va au bon moment. Un double-clic ouvre l'appel dans sa propre fenêtre.</p>
+          <img src="img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : une ligne par appel à gauche, avec sa première capture, son titre et sa durée, et l'appel choisi à droite.">
         </div></details>
-        <details class="row"><summary>Transcrire en qualité max</summary><div class="answer">
-          <p>La qualité max est plus juste sur les noms propres et le jargon, mais plus lente. Dans la fenêtre de l'appel, cliquez sur <b>Transcriptions</b>, au bout de l'enregistrement, puis sur <b>Nouvelle transcription…</b> et choisissez la qualité max. Vérifiez les noms et les mots à reconnaître, ou cliquez sur <b>Faire remplir par Claude</b>, puis sur <b>Lancer</b>. Son modèle (0,6 Go) se télécharge la première fois ; les transcriptions précédentes restent dans la liste.</p>
-          <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel : Copier et Télécharger, puis l'enregistrement avec le bouton Transcriptions au bout.">
+        <details class="row"><summary>Retranscrire, ou améliorer avec Claude</summary><div class="answer">
+          <p>Ouvrez le menu des transcriptions de l'appel, en haut à droite (<b>v1 · Transcription</b>). <b>Nouvelle transcription</b> fait réécouter l'appel. <b>Améliorer avec Claude</b> fait relire la dernière transcription par Claude, avec l'écran de l'appel, votre agenda et vos e-mails. Chaque passage est une nouvelle version, et les précédentes restent dans ce menu.</p>
+          <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut d'un appel : son titre, Copier, Télécharger et le menu des transcriptions, puis l'enregistrement.">
         </div></details>
         <details class="row"><summary>Copier ou exporter une transcription</summary><div class="answer">
-          <p>Dans la fenêtre de l'appel, <b>Copier</b> met toute la transcription dans le presse-papiers. <b>Télécharger</b> l'enregistre en texte, Word, Markdown ou sous-titres. Les transcriptions sont aussi dans le dossier CallRecordings de votre dossier personnel, en Markdown.</p>
+          <p>Dans la fenêtre de l'appel, <b>Copier</b> (⇧⌘C) met toute la transcription dans le presse-papiers. <b>Télécharger</b> l'enregistre en texte, Word, Markdown ou sous-titres. Les transcriptions sont aussi dans le dossier CallRecordings de votre dossier personnel, en Markdown.</p>
           <img src="img/guides/fenetre-appel.png" loading="lazy" alt="Le haut de la fenêtre d'un appel, avec Copier et Télécharger.">
         </div></details>
         <details class="row"><summary>Garder l'enregistrement audio d'un appel</summary><div class="answer">
-          <p>L'audio part à la corbeille au bout de 7 jours ; la transcription et les captures restent. Le menu <b>⋯</b> de la fenêtre de l'appel indique la date. Pour garder l'audio, demandez-le à Claude (« Garde l'enregistrement de cet appel ») ou tapez <code>calls keep</code> suivi de l'identifiant de l'appel dans le Terminal.</p>
+          <p>L'audio part à la corbeille au bout de 7 jours, une durée que vous pouvez changer dans les Réglages ; la transcription et les captures restent. Le menu <b>⋯</b> de la fenêtre de l'appel indique la date. Pour garder l'audio, demandez-le à Claude (« Garde l'enregistrement de cet appel ») ou tapez <code>calls keep</code> suivi de l'identifiant de l'appel dans le Terminal.</p>
         </div></details>
         <details class="row"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
-          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, survolez-le dans la fenêtre Appels et cliquez sur la corbeille : vous avez 5 secondes pour annuler. Le menu <b>⋯</b> de sa fenêtre permet aussi de le supprimer.</p>
+          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, choisissez-le dans la fenêtre Appels et appuyez sur <b>⌘⌫</b>, ou faites un clic droit &gt; <b>Supprimer l'appel</b> : il part à la corbeille du Mac. Édition &gt; <b>Annuler</b> (⌘Z) le remet.</p>
         </div></details>
-        <details class="row"><summary>Revoir les autorisations</summary><div class="answer">
-          <p>Icône de CallRecorder &gt; <b>Configuration…</b> Chaque autorisation s'y active ou se retire. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
-          <img src="img/guides/configuration.png" loading="lazy" alt="La configuration : le micro, le son des apps, l'écran et la transcription automatique, chacun avec son bouton.">
+        <details class="row"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
+          <p>Dans les <b>Réglages</b>, en bas à gauche de la fenêtre Appels, ouvrez <b>Apps enregistrées</b>, tout en bas : chaque app a son interrupteur. Dans un navigateur, chaque site se coupe à part : Google Meet, Zoom, Teams, WhatsApp Web, Slack… Il est reconnu au titre de la fenêtre ; <b>Autres sites</b> couvre les appels qu'on ne reconnaît pas.</p>
+        </div></details>
+        <details class="row"><summary>Revoir les autorisations et les réglages</summary><div class="answer">
+          <p>En bas à gauche de la fenêtre Appels, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des appels. Chaque autorisation s'y active ou se retire, comme la durée de conservation de l'audio et l'icône de la barre des menus. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
+          <img src="img/guides/configuration.png" loading="lazy" alt="Les Réglages, dans la fenêtre Appels : le micro, le son des apps, l'écran et la transcription automatique, chacun avec son bouton.">
         </div></details>
       </div>
     </div>
@@ -350,7 +352,8 @@
         <p>CallRecorder se met à jour tout seul. Pour vérifier tout de suite : icône de CallRecorder &gt; Rechercher une mise à jour.</p>
       </div>
       <div class="group" style="margin-top:56px">
-        <div class="row version"><div class="num">0.5.5<span class="latest">Dernière</span><small>26 octobre 2026</small></div><div><p>Une ligne par appel, avec sa première capture, l'app et la durée. Fenêtre de l'appel : la transcription calée sur l'enregistrement, les captures à côté des répliques, les silences visibles, un texte plus lisible. Plusieurs transcriptions par appel ; une nouvelle se prépare au centre de la fenêtre, avec les mots à reconnaître et Faire remplir par Claude, et on la regarde se faire. Nombreuses corrections.</p><a class="thumb" href="img/transcription.png"><img src="img/transcription.png" loading="lazy" alt="La fenêtre d'un appel"></a></div></div>
+        <div class="row version"><div class="num">0.6.0<span class="latest">Dernière</span><small>27 octobre 2026</small></div><div><p>Une seule fenêtre : vos appels à gauche, en liste ou en calendrier, et l'appel choisi à droite, qui s'ouvre aussitôt. Les transcriptions d'un appel dans un menu. Choisissez les apps et les sites dont les appels sont enregistrés. Des menus et des raccourcis comme dans toute app Mac : Espace pour lire, ⌘Z pour remettre un appel supprimé, les Réglages en bas à gauche de la fenêtre (⌘,). S'il manque le micro ou le son des apps, les Réglages s'ouvrent et montrent quoi autoriser. Après chaque appel, Claude peut améliorer la transcription : noms propres corrigés, titre et participants, dans une nouvelle version. Plus de qualité max : la transcription d'Apple, relue par Claude, fait aussi bien que Whisper. Plus lisible avec VoiceOver, Réduire les animations et Augmenter le contraste.</p><a class="thumb" href="img/appels.png"><img src="img/appels.png" loading="lazy" alt="La fenêtre Appels, avec l'appel choisi à droite"></a></div></div>
+        <div class="row version"><div class="num">0.5.5<small>26 octobre 2026</small></div><div><p>Une ligne par appel, avec sa première capture, l'app et la durée. Fenêtre de l'appel : la transcription calée sur l'enregistrement, les captures à côté des répliques, les silences visibles, un texte plus lisible. Plusieurs transcriptions par appel ; une nouvelle se prépare au centre de la fenêtre, avec les mots à reconnaître et Faire remplir par Claude, et on la regarde se faire. Nombreuses corrections.</p><a class="thumb" href="img/transcription.png"><img src="img/transcription.png" loading="lazy" alt="La fenêtre d'un appel"></a></div></div>
         <div class="row version"><div class="num">0.5.4<small>26 octobre 2026</small></div><div><p>Cartes des appels : toute la carte ouvre la fenêtre de l'appel, avec un extrait de quelques répliques. Fenêtre de l'appel : les captures dans une colonne à droite, les répliques espacées selon le temps écoulé.</p></div></div>
         <div class="row version"><div class="num">0.5.3<small>26 octobre 2026</small></div><div><p>Les appels Android s'enregistrent sans rien installer : l'outil scrcpy est livré dans l'app.</p></div></div>
         <div class="row version"><div class="num">0.5.2<small>26 octobre 2026</small></div><div><p>Appels Android : le numéro et le nom de l'interlocuteur, retrouvés même quand le téléphone est rebranché après l'appel.</p></div></div>
@@ -370,7 +373,7 @@
     <div class="col">
       <h3>Données et confidentialité</h3>
       <p>L'audio est enregistré et transcrit sur votre Mac. Il n'est pas envoyé sur Internet.</p>
-      <p>Si vous activez l'option Claude pour identifier les appels, les captures de la fenêtre d'appel et le texte lu à l'écran sont transmis à Claude. Cette option est distincte de la transcription locale.</p>
+      <p>Si vous activez l'amélioration par Claude, la transcription, les captures de la fenêtre d'appel et le texte lu à l'écran sont transmis à Claude. Cette option est distincte de la transcription, qui reste faite sur votre Mac.</p>
       <p>Pendant l'installation, CallRecorder envoie son journal de fonctionnement à Gildas Frémont pour l'aider à corriger les problèmes : votre nom et vos dossiers y sont masqués, l'audio et les transcriptions n'en font jamais partie. Vous pouvez décocher cet envoi dans la configuration. Il s'arrête de lui-même après votre premier appel transcrit.</p>
       <p>Pensez à informer vos interlocuteurs de l'enregistrement et à respecter la législation applicable.</p>
       <p class="signature">CallRecorder est conçu et développé par Gildas Frémont · <a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></p>
