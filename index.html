@@ -418,12 +418,12 @@
       <div class="group">
         <div class="row"><h3>Vous n'avez rien à paramétrer, rien à lancer</h3><p>Pas de bouton à cliquer au début de chaque réunion. CallRecorder détecte l'utilisation du micro par les applications prises en charge. Siri et la dictée ne déclenchent pas d'enregistrement.</p></div>
         <div class="row"><h3>Vos appels téléphoniques aussi</h3><p>Les appels de l'iPhone pris ou passés sur le Mac, dans l'app Téléphone. Et ceux d'un Pixel branché en USB, avec le numéro et le nom de l'interlocuteur. <a href="#guides">Comment faire</a></p></div>
-        <div class="row"><h3>Les transcriptions restent sur votre Mac</h3><p>La transcription est effectuée par votre Mac, par la reconnaissance vocale d'Apple. L'audio n'est pas envoyé sur Internet, et les captures d'écran qui servent à comprendre le contexte non plus, sauf si vous activez l'option <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>.</p></div>
+        <div class="row"><h3>La transcription se fait sur votre Mac</h3><p>L'audio n'est pas envoyé sur Internet. Une transcription n'est transmise à Claude que si vous lui posez une question sur vos appels ; les captures d'écran qui servent à comprendre le contexte, seulement si vous activez l'option <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span>.</p></div>
         <div class="row"><h3>Vos propos et ceux des autres sont séparés</h3><p>CallRecorder enregistre séparément le son de votre micro et celui de votre application d'appel. La transcription distingue vos propos de ceux des autres participants.</p></div>
         <div class="row"><h3>Des transcriptions améliorées par <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span></h3><p>En option, après chaque appel, Claude relit la transcription avec ce que la fenêtre d'appel affichait, votre agenda et vos e-mails. Il corrige les noms propres et retrouve le titre de l'appel et les participants. Le résultat est une nouvelle version : la transcription d'origine reste.</p></div>
         <div class="row"><h3>Retrouvez vos appels avec <span class="nobr"><img class="logo" src="img/logos/claude.png" alt="">Claude</span></h3><p>Claude peut rechercher un appel, lire sa transcription, en faire un résumé ou préparer un compte rendu et un e-mail de suivi. Tous les assistants compatibles avec MCP peuvent accéder aux transcriptions si vous leur en donnez l'accès.</p></div>
         <div class="row"><h3>L'audio part à la corbeille au bout de 7 jours</h3><p>Sauf si vous choisissez de le conserver. Les transcriptions et les captures d'écran restent, sauf si vous supprimez l'appel.</p></div>
-        <div class="row"><h3>L'application reste dans la barre des menus</h3><p>CallRecorder n'apparaît pas dans le Dock. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
+        <div class="row"><h3>L'application vit dans la barre des menus</h3><p>CallRecorder n'apparaît dans le Dock que lorsque sa fenêtre est ouverte. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
         <div class="row"><h3>Pas de compte ni de serveur</h3><p>Les fichiers audio et les transcriptions sont enregistrés dans un dossier sur votre Mac.</p></div>
       </div>
     </div>
@@ -432,7 +432,7 @@
   <section class="llms">
     <div class="intro">
       <h2>Demandez-leur ce qui s'est dit, même il y a trois semaines.</h2>
-      <p>Claude a accès à vos appels dès l'installation. Codex et les autres assistants compatibles avec MCP aussi, si vous leur en donnez l'accès. Ils lisent les transcriptions comme vos e-mails et vos documents.</p>
+      <p>Si Claude est installé sur votre Mac, il a accès à vos appels dès l'installation de CallRecorder. Codex et les autres assistants compatibles avec MCP aussi, si vous leur en donnez l'accès. Ils lisent les transcriptions comme vos e-mails et vos documents.</p>
     </div>
     <ul class="prompts">
       <li>Qu'est-ce que j'ai promis à Paul jeudi ?</li>
@@ -499,7 +499,7 @@
             <li>Quittez et rouvrez Claude.</li>
             <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
           </ol>
-          <p>Pour ChatGPT, Cursor ou un autre assistant compatible MCP, la même page donne la consigne et la configuration MCP à copier dans ses réglages.</p>
+          <p>Pour Codex, Cursor ou un autre assistant compatible MCP, la même page donne la consigne et la configuration MCP à copier dans ses réglages.</p>
           <img src="img/guides/claude.png" loading="lazy" alt="La page Claude des Réglages : améliorer chaque transcription, le modèle de Claude et l'accès de Claude à vos appels.">
         </div></details>
         <details class="row"><summary>Retrouver et réécouter un appel</summary><div class="answer">
@@ -561,8 +561,9 @@
     <div class="col">
       <h3>Données et confidentialité</h3>
       <p>L'audio est enregistré et transcrit sur votre Mac. Il n'est pas envoyé sur Internet.</p>
+      <p>Quand vous interrogez Claude ou un autre assistant sur vos appels, il lit les transcriptions dont il a besoin pour répondre : elles lui sont alors transmises, comme vos e-mails ou vos documents.</p>
       <p>Si vous activez l'amélioration par Claude, la transcription, les captures de la fenêtre d'appel et le texte lu à l'écran sont transmis à Claude. Cette option est distincte de la transcription, qui reste faite sur votre Mac.</p>
-      <p>Pendant l'installation, CallRecorder envoie son journal de fonctionnement à Gildas Frémont pour l'aider à corriger les problèmes : votre nom et vos dossiers y sont masqués, l'audio et les transcriptions n'en font jamais partie. Vous pouvez décocher cet envoi dans la configuration. Il s'arrête de lui-même après votre premier appel transcrit.</p>
+      <p>Pendant l'installation, CallRecorder envoie son journal de fonctionnement à Gildas Frémont pour l'aider à corriger les problèmes : votre nom et vos dossiers y sont masqués, l'audio et les transcriptions n'en font jamais partie. Vous pouvez couper cet envoi dans les Réglages. Il s'arrête de lui-même après votre premier appel transcrit.</p>
       <p>Pensez à informer vos interlocuteurs de l'enregistrement et à respecter la législation applicable.</p>
       <p class="signature">CallRecorder est conçu et développé par Gildas Frémont · <a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></p>
     </div>
