@@ -221,6 +221,12 @@
   .phones ol { margin: 0; padding-left: 1.3em; font-size: 16px; color: var(--body); }
   .phones li { margin: 6px 0; }
   .phones .note { font-size: 14px; color: var(--secondary); margin: 12px 0 0; }
+  .phones h3 { display: flex; align-items: center; gap: 14px; font-size: 19px; margin-bottom: 14px; }
+  .phone-icon { width: 56px; height: 56px; flex: none; }
+  .phone-icon img { width: 100%; height: 100%; display: block; }
+  .phone-icon.tile img { width: 86%; height: 86%; margin: 7%; }
+  .phone-icon.glyph { background: #fff; border-radius: 22.5%; box-shadow: 0 0 0 .5px rgba(0,0,0,.18), 0 1px 3px rgba(0,0,0,.12); }
+  .phone-icon.glyph img { width: 80%; height: 80%; margin: 10%; }
   @media (max-width: 640px) { .phones .pair-steps { grid-template-columns: 1fr; } }
   .or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
   .term { background: #1e1e1e; color: #e8e8e8; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 .5px rgba(0,0,0,.6), 0 14px 30px -14px rgba(0,0,0,.45); }
@@ -468,7 +474,7 @@
       </div>
       <div class="pair-steps">
         <div class="group">
-          <h3>iPhone</h3>
+          <h3><span class="phone-icon tile"><img src="img/dock/telephone.png" alt=""></span>iPhone</h3>
           <ol>
             <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
             <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone.</li>
@@ -476,7 +482,7 @@
           <p class="note">Un appel décroché sur l'iPhone lui-même n'est pas enregistré.</p>
         </div>
         <div class="group">
-          <h3>Android</h3>
+          <h3><span class="phone-icon tile glyph"><img src="img/logos/android.svg" alt=""></span>Android</h3>
           <ol>
             <li>Sur le téléphone, activez le Débogage USB dans les Options pour les développeurs.</li>
             <li>Branchez-le au Mac et acceptez « Autoriser le débogage USB ».</li>
