@@ -213,6 +213,15 @@
   .intro .req.warn { color: #b25000; }
   .install { margin-top: 56px; }
   /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
+  /* Téléphones : deux mini procédures côte à côte, sous l'installation. */
+  .phones { padding-top: 96px; }
+  .phones .pair-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+  .phones .group { padding: 20px 22px; }
+  .phones h3 { font-size: 17px; font-weight: 600; margin: 0 0 10px; }
+  .phones ol { margin: 0; padding-left: 1.3em; font-size: 16px; color: var(--body); }
+  .phones li { margin: 6px 0; }
+  .phones .note { font-size: 14px; color: var(--secondary); margin: 12px 0 0; }
+  @media (max-width: 640px) { .phones .pair-steps { grid-template-columns: 1fr; } }
   .or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
   .term { background: #1e1e1e; color: #e8e8e8; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 .5px rgba(0,0,0,.6), 0 14px 30px -14px rgba(0,0,0,.45); }
   .term-bar { display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: #2d2d2d; border-bottom: 1px solid #000; }
@@ -415,7 +424,6 @@
     <div class="col">
       <div class="group">
         <div class="row"><h3>Vous n'avez rien à paramétrer, rien à lancer</h3><p>Pas de bouton à cliquer au début de chaque réunion. CallRecorder détecte l'utilisation du micro par les applications prises en charge. Siri et la dictée ne déclenchent pas d'enregistrement.</p></div>
-        <div class="row"><h3>Vos appels téléphoniques aussi</h3><p>Les appels de l'iPhone pris ou passés sur le Mac, dans l'app Téléphone. Et ceux d'un Pixel branché en USB, avec le numéro et le nom de l'interlocuteur. <a href="#guides">Comment faire</a></p></div>
         <div class="row"><h3>La transcription se fait sur votre Mac</h3><p>L'audio ne quitte pas votre Mac : il est transcrit sur place.</p></div>
         <div class="row"><h3>Votre Mac ne se remplit pas</h3><p>Une heure d'appel, c'est environ 30 Mo d'audio pour 100 Ko de texte. L'audio part à la corbeille au bout de 7 jours, sauf si vous choisissez de le garder ; la transcription et les captures d'écran restent tant que vous ne supprimez pas l'appel.</p></div>
         <div class="row"><h3>L'application vit dans la barre des menus</h3><p>CallRecorder n'apparaît dans le Dock que lorsque sa fenêtre est ouverte. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
@@ -452,30 +460,39 @@
     </div>
   </section>
 
+  <section id="telephones" class="phones">
+    <div class="col">
+      <div class="intro">
+        <h2>Vos appels téléphoniques aussi</h2>
+        <p>Ceux de l'iPhone passés par le Mac, et ceux d'un Android branché en USB.</p>
+      </div>
+      <div class="pair-steps">
+        <div class="group">
+          <h3>iPhone</h3>
+          <ol>
+            <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
+            <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone.</li>
+          </ol>
+          <p class="note">Un appel décroché sur l'iPhone lui-même n'est pas enregistré.</p>
+        </div>
+        <div class="group">
+          <h3>Android</h3>
+          <ol>
+            <li>Sur le téléphone, activez le Débogage USB dans les Options pour les développeurs.</li>
+            <li>Branchez-le au Mac et acceptez « Autoriser le débogage USB ».</li>
+          </ol>
+          <p class="note">Pixel 4a à 10, Galaxy à l'essai. Appels du réseau mobile seulement, avec le numéro et le nom de l'interlocuteur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="guides">
     <div class="col">
       <div class="intro">
         <h2>Guides</h2>
       </div>
       <div class="group" style="margin-top:56px">
-        <details class="row"><summary>Enregistrer les appels de l'iPhone</summary><div class="answer">
-          <p>CallRecorder enregistre les appels de l'iPhone que vous prenez ou passez <b>sur le Mac</b>, dans l'app Téléphone : leur son passe par le micro et les haut-parleurs du Mac.</p>
-          <ol>
-            <li>Sur l'iPhone, ouvrez Réglages &gt; Téléphone &gt; Appels sur d'autres appareils, et cochez votre Mac. Les deux appareils doivent utiliser le même compte Apple.</li>
-            <li>Sur le Mac, appelez depuis l'app Téléphone, ou décrochez l'appel qui s'y affiche.</li>
-          </ol>
-          <p>Un appel décroché sur l'iPhone lui-même ne passe pas par le Mac : il n'est pas enregistré.</p>
-          <img src="img/guides/telephones.png" loading="lazy" alt="La partie Téléphones de la configuration : iPhone et Android.">
-        </div></details>
-        <details class="row"><summary>Enregistrer les appels d'un téléphone Android</summary><div class="answer">
-          <p>Rien à installer sur le Mac. L'appel reste sur le téléphone : branché au Mac en USB, il lui transmet la voix des deux côtés. Les Pixel, du 4a au 10, sont pris en charge ; les Galaxy sont à l'essai.</p>
-          <ol>
-            <li>Sur le téléphone, ouvrez Paramètres &gt; À propos du téléphone et touchez sept fois Numéro de build, puis activez le <b>Débogage USB</b> dans Paramètres &gt; Système &gt; Options pour les développeurs.</li>
-            <li>Branchez le téléphone au Mac et acceptez « Autoriser le débogage USB ». La ligne Android affiche <b>Prêt</b>.</li>
-          </ol>
-          <p>Seuls les appels du réseau mobile sont captés : pas WhatsApp, Signal ni les appels Wi-Fi. Le numéro et le nom de l'interlocuteur sont repris du journal d'appels du téléphone, même s'il est rebranché après l'appel.</p>
-          <img src="img/guides/telephones.png" loading="lazy" alt="La partie Téléphones de la configuration : iPhone et Android.">
-        </div></details>
         <details class="row"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
           <ol>
             <li>Si Claude était installé quand vous avez installé CallRecorder, c'est déjà fait. Sinon, dans les Réglages, ouvrez <b>Transcriptions et accès aux appels</b> et activez <b>Accès de Claude à vos appels</b> : Claude Code et Claude Desktop sont reliés à vos appels.</li>
