@@ -220,6 +220,7 @@
   .phones h3 { font-size: 17px; font-weight: 600; margin: 0 0 10px; }
   .phones ol { margin: 0; padding-left: 1.3em; font-size: 16px; color: var(--body); }
   .phones li { margin: 6px 0; }
+  .phones .lede { font-size: 16px; color: var(--secondary); margin: 0 0 12px; }
   .phones .note { font-size: 14px; color: var(--secondary); margin: 12px 0 0; }
   /* Comme sur apple.com : le logo posé sur la ligne de base, à peine plus haut que les majuscules. */
   .phones .os-logo { height: .76em; width: auto; vertical-align: baseline; margin-right: .35em; }
@@ -472,19 +473,23 @@
       <div class="pair-steps">
         <div class="group">
           <h3><img class="os-logo" src="img/logos/apple.svg" alt="">iPhone</h3>
+          <p class="lede">Grâce à Continuité, le Mac sert de combiné à votre iPhone : la voix passe par son micro et ses haut-parleurs, et CallRecorder l'enregistre.</p>
           <ol>
-            <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
-            <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone.</li>
+            <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
+            <li>Vérifiez que l'iPhone et le Mac utilisent le même compte Apple et sont sur le même Wi-Fi.</li>
+            <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone, ou décrochez l'appel qui s'y affiche.</li>
           </ol>
-          <p class="note">Un appel décroché sur l'iPhone lui-même n'est pas enregistré.</p>
+          <p class="note">Un appel décroché sur l'iPhone lui-même ne passe pas par le Mac : il n'est pas enregistré.</p>
         </div>
         <div class="group">
           <h3><img class="os-logo" src="img/logos/android.svg" alt="">Android</h3>
+          <p class="lede">L'appel reste sur le téléphone. Branché au Mac en USB, il lui transmet la voix des deux côtés : rien à installer sur le Mac.</p>
           <ol>
-            <li>Sur le téléphone, activez le Débogage USB dans les Options pour les développeurs.</li>
+            <li>Sur le téléphone : Paramètres&nbsp;&gt; À propos du téléphone, touchez sept fois Numéro de build.</li>
+            <li>Dans Paramètres&nbsp;&gt; Système&nbsp;&gt; Options pour les développeurs, activez le Débogage USB.</li>
             <li>Branchez-le au Mac et acceptez « Autoriser le débogage USB ».</li>
           </ol>
-          <p class="note">Pixel 4a à 10, Galaxy à l'essai. Appels du réseau mobile seulement, avec le numéro et le nom de l'interlocuteur.</p>
+          <p class="note">Pixel 4a à 10, Galaxy à l'essai. Appels du réseau mobile seulement, pas WhatsApp ni Signal. Le numéro et le nom de l'interlocuteur sont repris du journal d'appels.</p>
         </div>
       </div>
     </div>
