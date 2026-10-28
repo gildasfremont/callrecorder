@@ -273,6 +273,7 @@
   details.row .answer p { margin: 0 0 10px; }
   details.row .answer ol { margin: 0 0 10px; padding-left: 1.3em; }
   details.row .answer li { margin: 4px 0; }
+  details.row .answer code { font: 14px/1.4 var(--mono); background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
   details.row .answer img { width: 100%; max-width: 560px; height: auto; display: block; margin: 14px 0 6px; border-radius: 9px; border: .5px solid rgba(0,0,0,.2); }
   .answer b { font-weight: 600; color: var(--text); }
 
@@ -507,8 +508,17 @@
             <li>Quittez et rouvrez Claude.</li>
             <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
           </ol>
-          <p>Pour Codex, Cursor ou un autre assistant compatible MCP, la même page donne la consigne et la configuration MCP à copier dans ses réglages.</p>
           <img src="img/guides/claude.png" loading="lazy" alt="La page Claude des Réglages : améliorer chaque transcription, le modèle de Claude et l'accès de Claude à vos appels.">
+        </div></details>
+        <details class="row"><summary>Relier vos appels à un autre assistant</summary><div class="answer">
+          <p>Codex, Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels comme Claude. CallRecorder est un serveur MCP local&nbsp;: rien ne passe par Internet tant que l'assistant ne lit pas une transcription.</p>
+          <ol>
+            <li>Dans les Réglages de CallRecorder, ouvrez <b>Transcriptions et accès aux appels</b>&nbsp;: la partie <b>Autre assistant</b>, en bas, donne la consigne et la configuration.</li>
+            <li>Si l'assistant sait modifier sa configuration lui-même (Codex, Cursor en mode agent), cliquez sur <b>Copier la consigne</b> et collez-la-lui dans une conversation.</li>
+            <li>Sinon, cliquez sur <b>Copier la configuration MCP</b> et collez-la dans le fichier de l'assistant, par exemple <code>~/.cursor/mcp.json</code> ou <code>~/.gemini/settings.json</code>.</li>
+            <li>Redémarrez l'assistant et demandez-lui&nbsp;: « Liste mes derniers appels ».</li>
+          </ol>
+          <p>La configuration tient en trois lignes&nbsp;: un serveur nommé <code>calls</code>, la commande <code>/Applications/CallRecorder.app/Contents/MacOS/CallRecorder</code> et l'argument <code>mcp</code>. Avec Codex, une commande suffit&nbsp;: <code>codex mcp add calls -- /Applications/CallRecorder.app/Contents/MacOS/CallRecorder mcp</code></p>
         </div></details>
         <details class="row"><summary>Retrouver et réécouter un appel</summary><div class="answer">
           <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b> À gauche, la liste des appels ; l'icône du calendrier, en haut, mène à un jour. Cliquez sur un appel : il s'affiche à droite, avec la lecture en haut. <b>Espace</b> lit ou met en pause, et un clic sur la forme d'onde ou sur une réplique va au bon moment. Un double-clic ouvre l'appel dans sa propre fenêtre.</p>
