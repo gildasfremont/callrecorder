@@ -221,10 +221,9 @@
   .phones ol { margin: 0; padding-left: 1.3em; font-size: 16px; color: var(--body); }
   .phones li { margin: 6px 0; }
   .phones .note { font-size: 14px; color: var(--secondary); margin: 12px 0 0; }
-  .phones h3 { display: flex; align-items: center; gap: 8px; }
-  .phones .os-logo { height: 18px; width: auto; }
-  .phones .os-logo[src*="apple"] { position: relative; top: -3px; }
-  .phones .os-logo[src*="android"] { height: 14px; }
+  /* Comme sur apple.com : le logo posé sur la ligne de base, à peine plus haut que les majuscules. */
+  .phones .os-logo { height: .76em; width: auto; vertical-align: baseline; margin-right: .35em; }
+  .phones .os-logo[src*="android"] { height: .64em; }
   @media (max-width: 640px) { .phones .pair-steps { grid-template-columns: 1fr; } }
   .or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
   .term { background: #1e1e1e; color: #e8e8e8; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 .5px rgba(0,0,0,.6), 0 14px 30px -14px rgba(0,0,0,.45); }
