@@ -83,14 +83,15 @@
 
   /* La fenêtre Appels : la liste à gauche, l'appel choisi à droite */
   .stage { position: relative; max-width: 1048px; margin: 96px auto 0; }
+  /* L'arrondi des fenêtres de macOS 26 (26 points sur une fenêtre de 1280 × 789), à l'échelle de l'image. */
   .stage > img {
     width: 100%; height: auto; display: block;
-    border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
+    border-radius: 2.03% / 3.3%; border: .5px solid rgba(0,0,0,.25);
     box-shadow: 0 22px 50px -16px rgba(0,0,0,.28);
   }
   .stage .detail {
     position: absolute; right: 0; bottom: 0; width: 60%; height: auto; display: block;
-    border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
+    border-radius: 2.2% / 3.3%; border: .5px solid rgba(0,0,0,.25);
     box-shadow: 0 26px 60px -18px rgba(0,0,0,.32), 0 8px 18px -10px rgba(0,0,0,.18);
   }
 
@@ -329,7 +330,7 @@
   </div>
 
   <div class="stage">
-    <img id="appels" src="img/appels.png" width="2560" height="1556" alt="La fenêtre Appels de CallRecorder : à gauche, les appels clients d’octobre et le point hebdo, une ligne par appel avec sa première capture, l’app, l’heure, le titre et la durée ; à droite, l’appel Teams « Point hebdo produit » avec Camille, Hugo et Inès : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
+    <img id="appels" src="img/appels.png" width="2560" height="1578" alt="La fenêtre Appels de CallRecorder : à gauche, les appels clients d’octobre et le point hebdo, une ligne par appel avec sa première capture, l’app, l’heure, le titre et la durée ; à droite, l’appel Teams « Point hebdo produit » avec Camille, Hugo et Inès : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
     <div class="claude" data-tab="pro" role="img" aria-label="Par-dessus, une conversation avec Claude : on lui demande si les clients trouvent vraiment l'onboarding trop long, comme on l'a dit au point hebdo. Claude lit les onze appels clients du mois et répond que non : sept clients bloquent sur la connexion de leur banque, citations à l'appui.">
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
