@@ -177,11 +177,6 @@
   .row h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
   .row p { font-size: 16px; color: var(--secondary); margin: 0; }
 
-  .cmd {
-    display: flex; align-items: center; gap: 12px;
-    padding: 14px 14px 14px 20px;
-  }
-  .cmd code { font: 15px/1.4 var(--mono); overflow-x: auto; white-space: nowrap; flex: 1; min-width: 0; }
 
   /* Dock sous l'illustration : les apps et services dont les appels sont enregistrés. Le nom s'affiche au survol. */
   .dock {
@@ -215,6 +210,7 @@
   .install { margin-top: 56px; }
   /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
   /* Téléphones : deux mini procédures côte à côte, sous l'installation. */
+  .meeting { display: block; margin: 32px auto 0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.06); }
   .phones { padding-top: 96px; }
   .phones .pair-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
   .phones .group { padding: 20px 22px; }
@@ -228,22 +224,58 @@
   .phones .os-logo[src*="android"] { height: .64em; }
   @media (max-width: 640px) { .phones .pair-steps { grid-template-columns: 1fr; } }
   .or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
-  .term { background: #1e1e1e; color: #e8e8e8; border-radius: 10px; overflow: hidden; box-shadow: 0 0 0 .5px rgba(0,0,0,.6), 0 14px 30px -14px rgba(0,0,0,.45); }
-  .term-bar { display: flex; align-items: center; gap: 8px; padding: 9px 12px; background: #2d2d2d; border-bottom: 1px solid #000; }
-  .term-bar i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
-  .term-bar i:nth-child(2) { background: #febc2e; } .term-bar i:nth-child(3) { background: #28c840; }
-  .term-bar span { flex: 1; text-align: center; margin-right: 52px; font-size: 13px; font-weight: 600; color: #a8a8a8; }
-  .term .prompt { font: 15px/1.4 var(--mono); color: #7ee787; }
-  .term .button { background: #3a3a3a; color: #f2f2f2; box-shadow: 0 0 0 1px rgba(255,255,255,.12); }
   .install .group-label { margin-top: 0; }
   .caption { font-size: 15px; color: var(--secondary); margin: 12px 14px 40px; }
+  .steps li b { font-weight: 600; color: var(--text); }
+  /* Les étapes dans un cadre, comme un groupe des Réglages ; l'aide en dessous, hors du cadre. */
+  .install .steps { background: var(--group); border-radius: 16px; box-shadow: 0 0 0 1px var(--border); padding: 30px 32px 4px; }
+  @media (max-width: 640px) { .install .steps { padding: 24px 18px 2px; } }
+  .install .caption { text-align: center; }
+  .install-tabs { margin: 0 auto 24px; }
+  .install-tabs button { white-space: nowrap; display: inline-flex; align-items: center; gap: 7px; }
+  .install-tabs img { width: 16px; height: 16px; border-radius: 4px; }
+  /* Bêta en chapeau, au-dessus du coin de l'onglet : il ne prend pas de place dans la ligne. */
+  .install-tabs button { position: relative; }
+  .install-tabs .beta {
+    position: absolute; top: -8px; left: 50%; transform: translateX(-50%); pointer-events: none;
+    padding: 2px 6px 1px; border-radius: 999px; background: #fff; color: #6e6e73;
+    font-size: 9px; font-weight: 600; line-height: 1.2; letter-spacing: .08em; text-transform: uppercase;
+    box-shadow: 0 0 0 .5px rgba(0,0,0,.2), 0 1px 2px rgba(0,0,0,.08);
+  }
+  .install [hidden] { display: none; }
+  /* Le bouton de copie : bleu, l'icône des deux feuilles, une coche une fois copié. */
+  .copy-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 14px 8px 12px; vertical-align: middle; transition: filter .15s, transform .1s; }
+  .copy-btn:hover { filter: brightness(1.08); }
+  .copy-btn:active { transform: scale(.97); }
+  .copy-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .copy-btn .ico { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  .copy-btn .ico.done, .copy-btn.copied .ico:not(.done) { display: none; }
+  .copy-btn.copied .ico.done { display: block; stroke-width: 2; }
+  /* Copier la commande : ce qui part dans le presse-papiers s'élève du bouton et s'efface. */
+  .copy { position: relative; display: inline-block; }
+  .copy .ghost {
+    position: absolute; left: 0; bottom: calc(100% + 8px); pointer-events: none; z-index: 2;
+    font: 13px/1.4 var(--mono); color: #e8e8e8; background: #1e1e1e; padding: 5px 10px; border-radius: 7px;
+    box-shadow: 0 8px 20px -8px rgba(0,0,0,.45); white-space: nowrap;
+    max-width: calc(100vw - 80px); overflow: hidden; text-overflow: ellipsis;
+    animation: ghost 2.4s ease-out forwards;
+  }
+  @keyframes ghost {
+    0% { opacity: 0; transform: translateY(8px); }
+    12%, 65% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-14px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    @keyframes ghost { 0%, 100% { opacity: 0; } 15%, 65% { opacity: 1; } }
+  }
   .caption:has(+ .caption) { margin-bottom: 0; }
   /* Les trois gestes de l'installation, numérotés ; les touches dessinées comme sur le clavier. */
   .steps { list-style: none; counter-reset: step; margin: 0 0 28px; padding: 0; }
-  .steps li { counter-increment: step; position: relative; padding-left: 40px; font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 14px; }
-  .steps li::before {
-    content: counter(step); position: absolute; left: 0; top: 1px; width: 26px; height: 26px; border-radius: 50%;
-    display: grid; place-items: center; background: var(--text); color: var(--group); font-size: 14px; font-weight: 600;
+  .steps > li { counter-increment: step; position: relative; padding-left: 40px; font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 26px; }
+  .steps > li::before {
+    content: counter(step); position: absolute; left: 0; top: 2px; width: 24px; height: 24px; border-radius: 50%;
+    display: grid; place-items: center; color: var(--secondary); font-size: 13px; font-weight: 500;
+    box-shadow: inset 0 0 0 1px var(--border);
   }
   kbd {
     font: 600 14px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); white-space: nowrap;
@@ -444,7 +476,7 @@
         <div class="row"><h3>Vous n'avez rien à paramétrer, rien à lancer</h3><p>Pas de bouton à cliquer au début de chaque réunion. CallRecorder détecte l'utilisation du micro par les applications prises en charge. Siri et la dictée ne déclenchent pas d'enregistrement.</p></div>
         <div class="row"><h3>La transcription se fait sur votre Mac</h3><p>L'audio ne quitte pas votre Mac : il est transcrit sur place.</p></div>
         <div class="row"><h3>Votre Mac ne se remplit pas</h3><p>Une heure d'appel, c'est environ 30 Mo d'audio pour 100 Ko de texte. L'audio part à la corbeille au bout de 7 jours, sauf si vous choisissez de le garder ; la transcription et les captures d'écran restent tant que vous ne supprimez pas l'appel.</p></div>
-        <div class="row"><h3>L'application vit dans la barre des menus</h3><p>CallRecorder n'apparaît dans le Dock que lorsque sa fenêtre est ouverte. Vous pouvez arrêter ou supprimer un enregistrement en cliquant sur l'icône.</p></div>
+        <div class="row"><h3>L'application vit dans la barre des menus</h3><p>CallRecorder n'apparaît dans le Dock que lorsque sa fenêtre est ouverte. Un clic sur l'icône ouvre vos appels.</p></div>
         <div class="row"><h3>Pas de compte ni de serveur</h3><p>Les fichiers audio et les transcriptions sont enregistrés dans un dossier sur votre Mac.</p></div>
       </div>
     </div>
@@ -459,17 +491,53 @@
       </div>
 
       <div class="install">
-        <ol class="steps">
-          <li>Ouvrez le Terminal&nbsp;: appuyez sur <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</li>
-          <li>Cliquez sur <b>Copier</b> ci-dessous, puis collez dans le Terminal avec <kbd>⌘</kbd>&#8239;<kbd>V</kbd>.</li>
-          <li>Appuyez sur <kbd>Entrée</kbd>. Au bout d'une minute environ, une fenêtre CallRecorder s'ouvre&nbsp;: suivez-la.</li>
-        </ol>
-        <div class="term">
-          <div class="term-bar"><i></i><i></i><i></i><span>Terminal</span></div>
-          <div class="cmd"><span class="prompt">%</span><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder-site/releases/latest/download/install.sh | zsh</code><button class="button" type="button" data-copy="cmd" data-done="Copiée : ⌘V dans le Terminal">Copier</button></div>
+        <div class="tabs install-tabs" role="tablist" aria-label="Votre assistant">
+          <button role="tab" aria-selected="true" data-scenario="claude"><img src="img/logos/claude.png" alt="">Claude</button>
+          <button role="tab" aria-selected="false" data-scenario="codex"><img src="img/logos/codex.png" alt="">Codex<span class="beta">Bêta</span></button>
+          <button role="tab" aria-selected="false" data-scenario="seul">Aucun</button>
         </div>
-        <p class="caption">Au premier lancement, CallRecorder demande l'enregistrement du micro et du son des apps et donne l'accès aux transcriptions à Claude et, en bêta, à Codex.</p>
-        <p class="caption">Un message d'erreur&nbsp;? Dans le Terminal, sélectionnez tout le texte avec <kbd>⌘</kbd>&#8239;<kbd>A</kbd>, copiez-le avec <kbd>⌘</kbd>&#8239;<kbd>C</kbd> et collez-le dans Claude&nbsp;: il vous dira quoi faire.</p>
+        <code id="cmd" hidden>curl -fsSL https://github.com/gildasfremont/callrecorder-site/releases/latest/download/install.sh | zsh</code>
+          <ol class="steps" data-scenario="claude">
+            <li><span class="copy"><button class="button default copy-btn" type="button" data-copy="cmd" data-done="Copiée"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.8"/><path d="M10.5 3.2V3a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.3"/></svg><svg class="ico done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5"/></svg><span class="label">Copier cette ligne</span></button></span> dans le Terminal (<kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, «&nbsp;Terminal&nbsp;», <kbd>Entrée</kbd>).</li>
+            <li>Laissez Claude se fermer et se rouvrir.</li>
+            <li>Dans CallRecorder, cliquez sur <b>Autoriser le micro</b>.</li>
+            <li>Autorisez le micro.</li>
+            <li>Autorisez le son des apps.</li>
+            <li>Autorisez l'écran dans Réglages Système, puis <b>Quitter et rouvrir</b>.</li>
+            <li>Répondez à l'interlocuteur de test.</li>
+            <li>Demandez à Claude&nbsp;: «&nbsp;Résume mon dernier appel&nbsp;».</li>
+          </ol>
+          <ol class="steps" data-scenario="codex" hidden>
+            <li><span class="copy"><button class="button default copy-btn" type="button" data-copy="cmd" data-done="Copiée"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.8"/><path d="M10.5 3.2V3a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.3"/></svg><svg class="ico done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5"/></svg><span class="label">Copier cette ligne</span></button></span> dans le Terminal (<kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, «&nbsp;Terminal&nbsp;», <kbd>Entrée</kbd>).</li>
+            <li>Dans CallRecorder, cliquez sur <b>Autoriser le micro</b>.</li>
+            <li>Autorisez le micro.</li>
+            <li>Autorisez le son des apps.</li>
+            <li>Autorisez l'écran dans Réglages Système, puis <b>Quitter et rouvrir</b>.</li>
+            <li>Répondez à l'interlocuteur de test.</li>
+            <li>Dans une nouvelle conversation Codex, demandez&nbsp;: «&nbsp;Résume mon dernier appel&nbsp;».</li>
+          </ol>
+          <ol class="steps" data-scenario="seul" hidden>
+            <li><span class="copy"><button class="button default copy-btn" type="button" data-copy="cmd" data-done="Copiée"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8" rx="1.8"/><path d="M10.5 3.2V3a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.3"/></svg><svg class="ico done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5 6.5 12 13 4.5"/></svg><span class="label">Copier cette ligne</span></button></span> dans le Terminal (<kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, «&nbsp;Terminal&nbsp;», <kbd>Entrée</kbd>).</li>
+            <li>Dans CallRecorder, cliquez sur <b>Autoriser le micro</b>.</li>
+            <li>Autorisez le micro.</li>
+            <li>Autorisez le son des apps.</li>
+            <li>Autorisez l'écran dans Réglages Système, puis <b>Quitter et rouvrir</b>.</li>
+            <li>Répondez à l'interlocuteur de test.</li>
+            <li>Retrouvez vos appels depuis l'icône de CallRecorder, dans la barre des menus.</li>
+          </ol>
+        <p class="caption" data-scenario="claude">Claude ne voit pas vos appels&nbsp;? Quittez et rouvrez Claude.</p>
+        <p class="caption" data-scenario="codex" hidden>Codex ne voit pas vos appels&nbsp;? Ouvrez une nouvelle conversation.</p>
+        <p class="caption">Une erreur&nbsp;? Collez le texte du Terminal dans votre assistant.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reunions">
+    <div class="col">
+      <div class="intro">
+        <h2>Vos réunions en face à face aussi</h2>
+        <p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table, cliquez sur «&nbsp;Enregistrer une réunion&nbsp;», et la conversation est transcrite comme un appel.</p>
+        <img class="meeting" src="img/reunion.png" width="210" height="44" alt="Le bouton « Enregistrer une réunion », en bas de la liste des appels">
       </div>
     </div>
   </section>
@@ -530,7 +598,7 @@
           <p>La configuration tient en trois lignes&nbsp;: un serveur nommé <code>calls</code>, la commande <code>/Applications/CallRecorder.app/Contents/MacOS/CallRecorder</code> et l'argument <code>mcp</code>.</p>
         </div></details>
         <details class="row"><summary>Retrouver et réécouter un appel</summary><div class="answer">
-          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Appels…</b> À gauche, la liste des appels ; l'icône du calendrier, en haut, mène à un jour. Cliquez sur un appel : il s'affiche à droite, avec la lecture en haut. <b>Espace</b> lit ou met en pause, et un clic sur la forme d'onde ou sur une réplique va au bon moment. Un double-clic ouvre l'appel dans sa propre fenêtre.</p>
+          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus : vos appels s'affichent, et un clic sur l'un d'eux ouvre la fenêtre Appels. À gauche, la liste des appels ; l'icône du calendrier, en haut, mène à un jour. Cliquez sur un appel : il s'affiche à droite, avec la lecture en haut. <b>Espace</b> lit ou met en pause, et un clic sur la forme d'onde ou sur une réplique va au bon moment. Un double-clic ouvre l'appel dans sa propre fenêtre.</p>
           <img src="img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : une ligne par appel à gauche, avec sa première capture, son titre et sa durée, et l'appel choisi à droite.">
         </div></details>
         <details class="row"><summary>Retranscrire, ou améliorer avec Claude</summary><div class="answer">
@@ -545,7 +613,7 @@
           <p>L'audio part à la corbeille au bout de 7 jours, une durée que vous pouvez changer dans les Réglages ; la transcription et les captures restent. Le menu <b>⋯</b> de la fenêtre de l'appel indique la date. Pour garder l'audio, demandez-le à Claude (« Garde l'enregistrement de cet appel ») ou tapez <code>calls keep</code> suivi de l'identifiant de l'appel dans le Terminal.</p>
         </div></details>
         <details class="row"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
-          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter</b> termine l'enregistrement, <b>Supprimer cet appel</b> l'efface. Après l'appel, choisissez-le dans la fenêtre Appels et appuyez sur <b>⌘⌫</b>, ou faites un clic droit &gt; <b>Supprimer l'appel</b> : il part à la corbeille du Mac. Édition &gt; <b>Annuler</b> (⌘Z) le remet.</p>
+          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter l'enregistrement</b>, en bas, le termine. Pour l'effacer, faites un clic droit sur l'icône &gt; <b>Supprimer cet appel</b>. Après l'appel, choisissez-le dans la fenêtre Appels et appuyez sur <b>⌘⌫</b>, ou faites un clic droit &gt; <b>Supprimer l'appel</b> : il part à la corbeille du Mac. Édition &gt; <b>Annuler</b> (⌘Z) le remet.</p>
         </div></details>
         <details class="row"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
           <p>Dans les <b>Réglages</b>, en bas à gauche de la fenêtre Appels, ouvrez <b>Apps et sites</b>, sous <b>Appels enregistrés</b> : chaque app a son interrupteur. Dans un navigateur, chaque site se coupe à part : Google Meet, Zoom, Teams, WhatsApp Web, Slack… Il est reconnu au titre de la fenêtre ; <b>Autres sites</b> couvre les appels qu'on ne reconnaît pas.</p>
@@ -565,7 +633,8 @@
         <p>CallRecorder se met à jour tout seul ou avec <span class="nobr"><img class="logo" src="img/icone.png?v=2" alt="">CallRecorder</span> &gt; Rechercher une mise à jour.</p>
       </div>
       <div class="group" style="margin-top:56px">
-        <div class="row version"><div class="num">0.8.0<span class="latest">Dernière</span><small>29 octobre 2026</small></div><div><p>Codex reçoit l'accès à vos appels comme Claude, sans rien régler. C'est une bêta&nbsp;: si vous l'utilisez, dites-nous ce qui coince. L'installation se fait désormais par le Terminal, en trois étapes guidées. En cas d'échec, l'installation dit en français quoi faire.</p><a class="thumb" href="img/versions/0.8.0.png"><img src="img/versions/0.8.0.png" loading="lazy" alt="La page Claude des Réglages de la 0.8.0 : l'accès de Claude et Codex à vos appels"></a></div></div>
+        <div class="row version"><div class="num">0.9.0<span class="latest">Dernière</span><small>29 octobre 2026</small></div><div><p>Enregistrez vos réunions en face à face&nbsp;: un clic sur «&nbsp;Enregistrer une réunion&nbsp;», et la conversation est transcrite comme un appel. Un clic sur l'icône de la barre des menus ouvre vos appels. La transcription est prête quelques secondes après la fin d'un appel, chaque passage dans sa langue.</p><a class="thumb" href="img/versions/0.9.0.png"><img src="img/versions/0.9.0.png" loading="lazy" alt="La fenêtre Appels de la 0.9.0 : Enregistrer une réunion au-dessus des Réglages"></a></div></div>
+        <div class="row version"><div class="num">0.8.0<small>29 octobre 2026</small></div><div><p>Codex reçoit l'accès à vos appels comme Claude, sans rien régler. C'est une bêta&nbsp;: si vous l'utilisez, dites-moi ce qui coince. L'installation se fait désormais par le Terminal, en trois étapes guidées. En cas d'échec, l'installation dit en français quoi faire.</p><a class="thumb" href="img/versions/0.8.0.png"><img src="img/versions/0.8.0.png" loading="lazy" alt="La page Claude des Réglages de la 0.8.0 : l'accès de Claude et Codex à vos appels"></a></div></div>
         <div class="row version"><div class="num">0.7.1<small>29 octobre 2026</small></div><div><p>La liste des appels flotte dans un panneau de verre, comme la barre latérale de Finder sur macOS 26. Le titre de l'appel, précédé du logo de son app ou de son site, se coupe quand la fenêtre rétrécit. Copier, Télécharger et les versions de la transcription flottent en bas à droite, sur le texte. Icônes plus grandes et survols plus nets.</p><a class="thumb" href="img/versions/0.7.1.png"><img src="img/versions/0.7.1.png" loading="lazy" alt="La fenêtre Appels de la 0.7.1 : la liste dans son panneau de verre, les actions en bas à droite"></a></div></div>
         <div class="row version"><div class="num">0.7.0<small>29 octobre 2026</small></div><div><p>Groupes : rangez vos appels dans Réglages › Groupes, filtrez la recherche par groupe, et gardez un groupe hors de Claude. Fenêtre Appels repensée : la liste sous la barre d'outils, la recherche qui s'ouvre depuis la loupe (⌘F), et la liste qui se replie pour ne garder que l'appel. Réglages aux mesures de Réglages Système. Menu des versions d'une transcription plus lisible, avec la date à droite.</p><a class="thumb" href="img/versions/0.7.0.png"><img src="img/versions/0.7.0.png" loading="lazy" alt="La fenêtre Appels de la 0.7.0 : la liste sous la barre d'outils"></a></div></div>
         <div class="row version"><div class="num">0.6.2<small>27 octobre 2026</small></div><div><p>Corrections : la fenêtre Appels revient à l'écran si elle s'ouvrait en dehors ; les Réglages n'encombrent plus le journal du système ; après l'appel de test, une alerte prévient si votre voix ou celle de l'interlocuteur n'a pas été captée, et propose de recommencer.</p><a class="thumb" href="img/versions/0.6.2.png"><img src="img/versions/0.6.2.png" loading="lazy" alt="La fenêtre Appels de la 0.6.2"></a></div></div>
@@ -602,14 +671,32 @@
 
 <script>
   document.querySelectorAll('[data-copy]').forEach(function (b) {
-    var label = b.textContent;
+    var label = (b.querySelector('.label') || b).textContent;
     b.addEventListener('click', function () {
       var text = document.getElementById(b.dataset.copy).textContent;
-      navigator.clipboard.writeText(text).then(function () {
-        // Ce qu'il faut faire ensuite, le temps de passer au Terminal.
-        b.textContent = b.dataset.done || 'Copiée';
-        setTimeout(function () { b.textContent = label; }, b.dataset.done ? 6000 : 1600);
+      // Sans accès au presse-papiers (navigateur restrictif), l'ancienne méthode.
+      navigator.clipboard.writeText(text).catch(function () {
+        var t = document.createElement('textarea');
+        t.value = text; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove();
       });
+      var text_ = b.querySelector('.label') || b;
+      // La largeur reste celle de « Copier la commande » : la phrase qui suit ne bouge pas.
+      b.style.minWidth = b.offsetWidth + 'px';
+      text_.textContent = b.dataset.done || 'Copiée';
+      b.classList.add('copied');
+      clearTimeout(b._reset);
+      b._reset = setTimeout(function () { text_.textContent = label; b.classList.remove('copied'); }, 2200);
+      // Ce qui a été copié, qui s'élève du bouton et s'efface.
+      var wrap = b.closest('.copy');
+      if (wrap) {
+        var g = document.createElement('span');
+        g.className = 'ghost';
+        g.textContent = text;
+        g.setAttribute('aria-hidden', 'true');
+        wrap.appendChild(g);
+        g.addEventListener('animationend', function () { g.remove(); });
+      }
     });
   });
 
@@ -648,6 +735,14 @@
   })();
 </script>
 <script>
+  // Installation : avec Claude, avec Codex ou CallRecorder seul, les étapes et l'aide de chacun.
+  document.querySelectorAll(".install-tabs button").forEach(button => button.addEventListener("click", () => {
+    const name = button.dataset.scenario;
+    document.querySelectorAll(".install-tabs button").forEach(b => b.setAttribute("aria-selected", b === button));
+    document.querySelectorAll(".install [data-scenario]:not(button)").forEach(el => el.hidden = el.dataset.scenario !== name);
+  }));
+</script>
+<script>
   // Onglets Pro / Perso / Asso : la capture et la conversation avec Claude de chaque exemple.
   (() => {
     const img = document.getElementById("appels");
@@ -658,9 +753,9 @@
     };
     const srcs = { pro: "img/appels.png", perso: "img/appels-perso.png", asso: "img/appels-asso.png" };
     Object.values(srcs).forEach(src => { new Image().src = src; });
-    document.querySelectorAll(".tabs button").forEach(button => button.addEventListener("click", () => {
+    document.querySelectorAll(".tabs:not(.install-tabs) button").forEach(button => button.addEventListener("click", () => {
       const tab = button.dataset.tab;
-      document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b === button));
+      document.querySelectorAll(".tabs:not(.install-tabs) button").forEach(b => b.setAttribute("aria-selected", b === button));
       document.querySelectorAll(".claude").forEach(c => c.hidden = c.dataset.tab !== tab);
       img.src = srcs[tab];
       img.alt = alts[tab];
