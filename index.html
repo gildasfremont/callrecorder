@@ -237,6 +237,7 @@
   .term .button { background: #3a3a3a; color: #f2f2f2; box-shadow: 0 0 0 1px rgba(255,255,255,.12); }
   .install .group-label { margin-top: 0; }
   .caption { font-size: 15px; color: var(--secondary); margin: 12px 14px 40px; }
+  .caption:has(+ .caption) { margin-bottom: 0; }
   /* Les trois gestes de l'installation, numérotés ; les touches dessinées comme sur le clavier. */
   .steps { list-style: none; counter-reset: step; margin: 0 0 28px; padding: 0; }
   .steps li { counter-increment: step; position: relative; padding-left: 40px; font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 14px; }
@@ -454,7 +455,6 @@
     <div class="col">
       <div class="intro">
         <h2>Installation</h2>
-        <p>Au premier lancement, CallRecorder demande l'enregistrement du micro et du son des apps et donne l'accès aux transcriptions à Claude et, en bêta, à Codex.</p>
         <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
       </div>
 
@@ -468,6 +468,7 @@
           <div class="term-bar"><i></i><i></i><i></i><span>Terminal</span></div>
           <div class="cmd"><span class="prompt">%</span><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder-site/releases/latest/download/install.sh | zsh</code><button class="button" type="button" data-copy="cmd" data-done="Copiée : ⌘V dans le Terminal">Copier</button></div>
         </div>
+        <p class="caption">Au premier lancement, CallRecorder demande l'enregistrement du micro et du son des apps et donne l'accès aux transcriptions à Claude et, en bêta, à Codex.</p>
         <p class="caption">Un message d'erreur&nbsp;? Dans le Terminal, sélectionnez tout le texte avec <kbd>⌘</kbd>&#8239;<kbd>A</kbd>, copiez-le avec <kbd>⌘</kbd>&#8239;<kbd>C</kbd> et collez-le dans Claude&nbsp;: il vous dira quoi faire.</p>
       </div>
     </div>
