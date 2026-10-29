@@ -210,7 +210,7 @@
   .install { margin-top: 56px; }
   /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
   /* Téléphones : deux mini procédures côte à côte, sous l'installation. */
-  .meeting { display: block; margin: 32px auto 0; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.06); }
+  .meeting { display: block; width: min(520px, 100%); height: auto; margin: 0 auto 32px; }
   .phones { padding-top: 96px; }
   .phones .pair-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
   .phones .group { padding: 20px 22px; }
@@ -535,9 +535,9 @@
   <section id="reunions">
     <div class="col">
       <div class="intro">
+        <img class="meeting" src="img/reunion-face-a-face.png" width="520" height="411" alt="Deux personnes face à face à une table, un Mac posé entre elles ; ce qu'elles disent s'écrit sur un long rouleau de transcription.">
         <h2>Vos réunions en face à face aussi</h2>
         <p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table, cliquez sur «&nbsp;Enregistrer une réunion&nbsp;», et la conversation est transcrite comme un appel.</p>
-        <img class="meeting" src="img/reunion.png" width="210" height="44" alt="Le bouton « Enregistrer une réunion », en bas de la liste des appels">
       </div>
     </div>
   </section>
