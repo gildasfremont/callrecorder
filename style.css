@@ -451,7 +451,7 @@ html { scroll-padding-top: 24px; }
 .benefits img { position: absolute; height: auto; }
 /* Chaque objet à sa place : coupé par le bord droit ou le bas, à peu près du même poids. */
 .benefits li.o-jack { min-height: 180px; }
-.benefits li.o-jack img { width: 44%; left: 0; bottom: 50%; transform: translateY(50%); }
+.benefits li.o-jack img { width: 37%; left: 0; bottom: 50%; transform: translateY(50%); }
 .benefits li.o-micro { min-height: 300px; }
 .benefits li.o-micro > div { width: 50%; }
 .benefits li.o-micro img { width: 47%; right: -14px; bottom: -6px; }
