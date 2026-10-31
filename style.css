@@ -14,7 +14,7 @@
 }
 
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
 body {
   margin: 0;
   background: var(--window);
@@ -431,16 +431,24 @@ html { scroll-padding-top: 24px; }
   .with-toc .feature figure { margin-left: auto; }
 }
 
-/* Accueil : les bénéfices, une carte chacun, trois puis deux. L'icône dans une pastille bleutée, le titre dit tout. */
-.benefits { list-style: none; margin: 0 auto; padding: 0; max-width: 980px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-.benefits li { grid-column: span 2; background: var(--group); border-radius: 18px; box-shadow: 0 0 0 1px var(--border), 0 10px 30px -18px rgba(20,40,80,.25); padding: 26px 26px 28px; display: flex; flex-direction: column; gap: 18px; }
-.benefits li:nth-child(n+4) { grid-column: span 3; }
-
-.benefits svg { width: 44px; height: 44px; padding: 10px; border-radius: 12px; background: #e6eef9; fill: none; stroke: var(--accent); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.benefits svg .fill { fill: var(--accent); stroke: none; }
-.benefits span { font-family: var(--display); font-size: clamp(19px, 2vw, 22px); line-height: 1.3; font-weight: 500; letter-spacing: -0.005em; text-wrap: balance; }
-@media (max-width: 760px) {
-  .benefits { grid-template-columns: 1fr; gap: 12px; }
-  .benefits li, .benefits li:nth-child(n+4) { grid-column: auto; flex-direction: row; align-items: center; padding: 18px 20px; gap: 16px; }
-  .benefits svg { flex: none; width: 40px; height: 40px; padding: 9px; }
+/* Accueil : les bénéfices sur une seule ligne, toutes les cartes pareilles : le titre et un paragraphe, puis l'objet détouré
+   en bas, qui remonte dans la carte et que le bord coupe. La rangée sort de la colonne et prend toute la largeur de la fenêtre ; trop étroite, elle défile à l'horizontale.
+   Sur téléphone, les cartes s'empilent. */
+.benefits {
+  list-style: none; margin: 0 calc(50% - 50vw); padding: 4px max(16px, calc(50vw - 660px)) 20px;
+  display: flex; justify-content: safe center; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-padding: 0 max(16px, calc(50vw - 660px)); scrollbar-width: thin;
+}
+.benefits li { flex: 0 0 232px; scroll-snap-align: start; background: var(--group); border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 1px var(--border), 0 10px 30px -18px rgba(20,40,80,.25); display: flex; flex-direction: column; }
+.benefits img { display: block; width: 100%; height: 220px; margin: auto 0 -44px; padding: 20px 14px 0; object-fit: contain; object-position: center bottom; }
+.benefits li > div { padding: 20px 24px 24px; }
+.benefits p { margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: var(--secondary); }
+.benefits span { display: block; font-family: var(--display); font-size: 20px; line-height: 1.3; font-weight: 500; letter-spacing: -0.005em; text-wrap: balance; }
+@media (max-width: 640px) {
+  .benefits { margin: 0; padding: 0; flex-direction: column; overflow: visible; gap: 12px; }
+  .benefits li { flex-basis: auto; }
+  .benefits img { height: 200px; margin-bottom: -40px; }
+  .benefits li > div { padding: 16px 20px 20px; }
+  .benefits span { font-size: 18px; }
+  .benefits p { font-size: 14px; }
 }
