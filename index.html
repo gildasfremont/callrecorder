@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=67">
+<link rel="stylesheet" href="style.css?v=69">
 </head>
 <body>
 
@@ -42,7 +42,7 @@
   </div>
 
   <div class="stage">
-    <img id="appels" src="img/appels.png" width="2560" height="1582" alt="La fenêtre Appels de CallRecorder : à gauche, les appels d\'octobre d\'un directeur financier, une ligne par appel avec sa première capture, l\'app, l\'heure, le titre et la durée ; à droite, la revue budgétaire sur Teams avec Sophie, Karim et Julie : l\'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
+    <img id="appels" src="img/appels.png" width="2560" height="1582" alt="La fenêtre Appels de CallRecorder : à gauche, les appels d'octobre d'un directeur financier, une ligne par appel avec sa première capture, l'app, l'heure, le titre et la durée ; à droite, la revue budgétaire sur Teams avec Sophie, Karim et Julie : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
     <div class="claude" data-tab="appel" role="img" aria-label="Par-dessus, une conversation avec Claude : avant le conseil, on lui demande ce que les banques ont vraiment dit au téléphone sur la ligne de crédit. Claude lit la revue budgétaire et quatre appels avec les banques : deux renouvellent, à des conditions différentes, la troisième ne décidera pas avant décembre.">
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
@@ -165,7 +165,7 @@
     <div class="col">
       <div class="intro">
         <p class="tag">En présentiel</p>
-        <img class="meeting" src="img/reunion-face-a-face.png" width="340" height="269" alt="Deux personnes face à face à une table, un Mac posé entre elles ; ce qu'elles disent s'écrit sur un long rouleau de transcription.">
+        <img class="meeting" src="img/reunion.webp?v=7" width="900" height="605" alt="Deux personnes dessinées à l'encre et à l'aquarelle, face à face à une table : lui, en veste bleue, se gratte la tête ; elle, en chemise vermillon, parle avec les mains ; leurs bulles se rejoignent en une bande de papier qui descend, où leurs lignes alternent dans leurs couleurs.">
         <h2>Pas besoin d'être connecté, transcrivez vos échanges IRL</h2>
         <p>Un rendez-vous dans une salle, sans visio&nbsp;: le Mac posé sur la table suffit, la conversation est transcrite comme un appel.</p>
       </div>
@@ -286,7 +286,7 @@
     }
     var message = null, warn = false;
     if (arch === 'intel') { message = 'Ce Mac a un processeur Intel. CallRecorder nécessite un Mac avec puce Apple (M1 ou plus récent).'; warn = true; }
-    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais CallRecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l\'installer.'; warn = true; }
+    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais CallRecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l'installer.'; warn = true; }
     else if (arch === 'arm' && major) message = 'Ce Mac est compatible avec CallRecorder.';
     else if (arch === 'arm') message = 'Ce Mac a une puce Apple. Vérifiez que macOS 15 ou plus récent est installé.';
     if (!message) return;
