@@ -1,11 +1,11 @@
-/* L'interface d'un utilitaire macOS : fond de fenêtre, groupes blancs, boutons système, captures de l'app. Thème clair uniquement. */
+/* L'interface d'un utilitaire macOS sur un fond bleu très pâle : groupes blancs, boutons système, captures de l'app. Thème clair uniquement. */
 :root {
-  --window: #ececec;
+  --window: #edf2f8;
   --group: #ffffff;
   --text: #1d1d1f;
-  --secondary: #5c5c61;
-  --body: #3a3a3d;
-  --separator: #dcdcdc;
+  --secondary: #566175;
+  --body: #333b49;
+  --separator: #d9e2ee;
   --border: rgba(0, 0, 0, .14);
   --accent: #0064d2;
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
@@ -83,7 +83,7 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 }
 
 /* Onglets au-dessus de l'illustration : un contrôle segmenté de macOS. */
-.tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(0,0,0,.07); }
+.tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(30,60,120,.07); }
 .tabs button { font: 500 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--text); background: none; border: 0; border-radius: 8px; padding: 8px 22px; cursor: pointer; }
 .tabs button[aria-selected="true"] { background: #fff; box-shadow: 0 0 0 .5px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.12); }
 .tabs + .stage { margin-top: 28px; }
@@ -197,11 +197,11 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 .install { margin-top: 56px; }
 /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
 /* Les réunions : une bande blanche sur toute la largeur de la page (l'ombre et le découpage la font déborder de .wrap). */
-#reunions { margin-top: 120px; padding: 96px 0; background: var(--group); box-shadow: 0 0 0 100vmax var(--group); clip-path: inset(0 -100vmax); }
+.band { margin-top: 120px; padding: 96px 0; background: var(--group); box-shadow: 0 0 0 100vmax var(--group); clip-path: inset(0 -100vmax); }
 .meeting { display: block; width: min(340px, 100%); height: auto; margin: 0 auto 28px; }
 /* Téléphones : deux mini procédures côte à côte. Juste après la bande des réunions, le même écart qu'au-dessus d'elle. */
 .phones { padding-top: 120px; }
-@media (max-width: 760px) { #reunions { margin-top: 88px; padding: 64px 0; } .phones { padding-top: 88px; } }
+@media (max-width: 760px) { .band { margin-top: 88px; padding: 64px 0; } .phones { padding-top: 88px; } }
 .phones .pair-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; }
 .phones .group { padding: 20px 22px; }
 .phones h3 { font-size: 17px; font-weight: 600; margin: 0 0 10px; }
@@ -256,7 +256,7 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 /* Les touches, petites : un repère, pas un dessin de clavier. */
 .steps kbd { font-size: 12px; padding: 2px 5px; border-radius: 5px; vertical-align: 1px; }
 /* L'aide, au pied du cadre, sur un fond à peine gris (pas de filet). */
-.install .help { margin: 0 -32px; padding: 16px 32px; background: #f5f5f7; font-size: 15px; color: var(--secondary); }
+.install .help { margin: 0 -32px; padding: 16px 32px; background: #f4f7fb; font-size: 15px; color: var(--secondary); }
 .install .help p { margin: 0; }
 .install .help p + p { margin-top: 4px; }
 .install .steps { margin-bottom: 8px; }
@@ -414,8 +414,8 @@ html { scroll-padding-top: 24px; }
 /* La barre du haut se cache quand on descend et revient dès qu'on remonte (nav.js). Son fond couvre toute la largeur. */
 .nav {
   position: sticky; top: 0; z-index: 10; padding: 12px 0;
-  background: rgba(236,236,236,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-  box-shadow: 0 0 0 100vmax rgba(236,236,236,.88); clip-path: inset(0 -100vmax);
+  background: rgba(237,242,248,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 0 0 100vmax rgba(237,242,248,.88); clip-path: inset(0 -100vmax);
   transition: transform .25s ease;
 }
 .nav.hidden { transform: translateY(-100%); }
