@@ -199,7 +199,8 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
 /* Les réunions : une bande blanche sur toute la largeur de la page (l'ombre et le découpage la font déborder de .wrap). */
 .band { margin-top: 120px; padding: 96px 0; background: var(--group); box-shadow: 0 0 0 100vmax var(--group); clip-path: inset(0 -100vmax); }
-.meeting { display: block; width: min(340px, 100%); height: auto; margin: 0 auto 28px; }
+/* L'enregistreur, coupé sous l'écran : il se fond dans la bande blanche au lieu d'y laisser une coupe nette. */
+.meeting { display: block; width: auto; height: 260px; margin: 0 auto 32px; -webkit-mask-image: linear-gradient(#000 78%, transparent); mask-image: linear-gradient(#000 78%, transparent); }
 /* Téléphones : deux mini procédures côte à côte. Juste après la bande des réunions, le même écart qu'au-dessus d'elle. */
 .phones { padding-top: 120px; }
 @media (max-width: 760px) { .band { margin-top: 88px; padding: 64px 0; } .phones { padding-top: 88px; } }
@@ -445,26 +446,25 @@ html { scroll-padding-top: 24px; }
 /* Chaque objet à sa place : coupé par le bord droit ou le bas, à peu près du même poids. */
 .benefits li.o-jack { min-height: 180px; }
 .benefits li.o-jack img { width: 44%; left: 0; bottom: 50%; transform: translateY(50%); }
-/* La bonnette au-dessus du texte, qui descend dessous ; un bout de perche sort par la droite. */
-.benefits li.o-perche > div { width: 50%; padding-top: 240px; }
-.benefits li.o-perche img { width: 640px; left: 250px; top: 14px; }
+.benefits li.o-micro { min-height: 300px; }
+.benefits li.o-micro > div { width: 50%; }
+.benefits li.o-micro img { width: 47%; right: -14px; bottom: -6px; }
 .benefits li.o-telephone { min-height: 250px; }
 .benefits li.o-telephone img { width: 34%; right: 60px; bottom: 0; }
 .benefits li.o-ordinateur { min-height: 260px; }
 .benefits li.o-ordinateur img { width: 42%; right: 30px; bottom: -40px; }
 /* Le rythme : le texte change de côté d'une carte à l'autre, l'objet prend l'autre. */
 .benefits li.text-right > div { margin-left: auto; padding: 32px 36px 32px 0; }
-.benefits li.o-ordinateur img { right: auto; left: 30px; }
+.benefits li.o-telephone img { right: auto; left: 60px; }
 @media (max-width: 640px) {
   .benefits { gap: 12px; }
   .benefits li, .benefits li[class] { min-height: 0; display: flex; flex-direction: column; }
-  .benefits li > div, .benefits li.text-right > div, .benefits li.o-perche > div { width: auto; margin-left: 0; padding: 18px 20px 12px; }
+  .benefits li > div, .benefits li.text-right > div, .benefits li.o-micro > div { width: auto; margin-left: 0; padding: 18px 20px 12px; }
   .benefits span { font-size: 18px; }
   .benefits p { font-size: 14px; }
   .benefits img { position: relative; align-self: flex-end; margin-top: auto; }
   .benefits li.o-jack img { width: 70%; left: auto; align-self: flex-start; bottom: auto; margin-bottom: 28px; transform: none; }
-  .benefits li.o-perche > div { padding-top: 168px; }
-  .benefits li.o-perche img { position: absolute; width: 400px; max-width: none; left: 24px; top: 14px; margin: 0; }
-  .benefits li.o-telephone img { width: 62%; right: 40px; }
-  .benefits li.o-ordinateur img { width: 82%; left: auto; right: -20px; bottom: auto; margin-bottom: -28px; }
+  .benefits li.o-micro img { width: 84%; right: -10px; }
+  .benefits li.o-telephone img { width: 62%; left: auto; right: 40px; }
+  .benefits li.o-ordinateur img { width: 82%; right: -20px; bottom: auto; margin-bottom: -28px; }
 }
