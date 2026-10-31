@@ -312,7 +312,7 @@
       reunion: "La fenêtre Appels de CallRecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.",
       note: "La fenêtre Appels de CallRecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure."
     };
-    const srcs = { appel: "img/appels.png", reunion: "La fenêtre Appels de CallRecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.", note: "La fenêtre Appels de CallRecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure." };
+    const srcs = { appel: "img/appels.png", reunion: "img/appels-reunion.png", note: "img/appels-note.png" };
     Object.values(srcs).forEach(src => { new Image().src = src; });
     document.querySelectorAll(".tabs:not(.install-tabs) button").forEach(button => button.addEventListener("click", () => {
       const tab = button.dataset.tab;
