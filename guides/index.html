@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Guides · CallRecorder</title>
+<meta name="description" content="Les guides de CallRecorder : donner l'accès à Claude, enregistrer un téléphone ou une réunion, retrouver un appel, ranger, exporter.">
+<link rel="icon" href="../img/icone.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="../style.css?v=7">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a class="home" href="../" aria-label="CallRecorder, accueil"><img src="../img/icone.png?v=4" alt=""></a>
+    <div class="links">
+      <a href="../fonctionnalites/">Fonctionnalités</a>
+      <a class="button" href="../#installation">Installer</a>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <h1>Guides</h1>
+    <p>Chaque geste de CallRecorder, pas à pas.</p>
+  </header>
+
+  <section>
+    <div class="col">
+      <p class="group-label">Démarrer</p>
+      <div class="group">
+        <details class="row" id="claude"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
+          <ol>
+            <li>Si Claude était installé quand vous avez installé CallRecorder, c'est déjà fait. Sinon, dans les Réglages, ouvrez <b>Outils et intégrations › Claude</b> et activez <b>Accès de Claude à vos appels</b> : Claude Code, Claude Desktop et Codex (en bêta) sont reliés à vos appels.</li>
+            <li>Quittez et relancez Claude.</li>
+            <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
+          </ol>
+          <img src="../img/guides/claude.png" loading="lazy" alt="La page Claude des Réglages : améliorer chaque transcription, le modèle de Claude et l'accès de Claude à vos appels.">
+        </div></details>
+        <details class="row" id="autre-assistant"><summary>Relier vos appels à un autre assistant</summary><div class="answer">
+          <p>Codex est relié comme Claude, sans rien faire&nbsp;; c'est encore une bêta. Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels de la même façon. CallRecorder est un serveur MCP local&nbsp;: rien ne passe par Internet tant que l'assistant ne lit pas une transcription.</p>
+          <ol>
+            <li>Dans les Réglages de CallRecorder, ouvrez <b>Outils et intégrations › Claude</b>&nbsp;: la partie <b>Autre assistant</b>, en bas, donne la consigne et la configuration.</li>
+            <li>Si l'assistant sait modifier sa configuration lui-même (Cursor en mode agent, par exemple), cliquez sur <b>Copier la consigne</b> et collez-la-lui dans une conversation.</li>
+            <li>Sinon, cliquez sur <b>Copier la configuration MCP</b> et collez-la dans le fichier de l'assistant, par exemple <code>~/.cursor/mcp.json</code> ou <code>~/.gemini/settings.json</code>.</li>
+            <li>Redémarrez l'assistant et demandez-lui&nbsp;: « Liste mes derniers appels ».</li>
+          </ol>
+          <p>La configuration tient en trois lignes&nbsp;: un serveur nommé <code>calls</code>, la commande <code>/Applications/CallRecorder.app/Contents/MacOS/CallRecorder</code> et l'argument <code>mcp</code>.</p>
+        </div></details>
+        <details class="row" id="autorisations"><summary>Revoir les autorisations et les réglages</summary><div class="answer">
+          <p>S'il manque le micro ou le son des apps, une carte en tête de la liste des appels le dit, avec <b>Ouvrir les Réglages</b> : l'appel de test y est, en haut. En bas à gauche de la fenêtre Appels, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des appels. En haut, une ligne dit si vos appels sont bien enregistrés, et sinon ce qui manque. Chaque autorisation s'y donne d'un clic ; on y règle aussi Claude, la durée de conservation de l'audio, le dossier des appels et l'icône de la barre des menus. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
+          <img src="../img/guides/configuration.png" loading="lazy" alt="Les Réglages, dans la fenêtre Appels : le micro, le son des apps et l'écran autorisés, les apps et les téléphones enregistrés, Claude, puis la conservation de l'audio.">
+        </div></details>
+        <details class="row" id="apps-sites"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
+          <p>Dans les <b>Réglages</b>, en bas à gauche de la fenêtre Appels, ouvrez <b>Apps et sites</b>, sous <b>Appels enregistrés</b> : chaque app a son interrupteur. Dans un navigateur, chaque site se coupe à part : Google Meet, Zoom, Teams, WhatsApp Web, Slack… Il est reconnu au titre de la fenêtre ; <b>Autres sites</b> couvre les appels qu'on ne reconnaît pas.</p>
+        </div></details>
+      </div>
+      <p class="group-label">Enregistrer</p>
+      <div class="group">
+        <details class="row" id="note-vocale"><summary>Prendre une note vocale</summary><div class="answer">
+          <ol>
+            <li>Dans les <b>Réglages</b>, sous <b>Général</b>, activez <b>Prise de note rapide</b>.</li>
+            <li>Autorisez CallRecorder dans <b>Réglages Système › Confidentialité et sécurité › Accessibilité</b>, pour qu'il entende fn + D&nbsp;: le bouton <b>Ouvrir Réglages Système</b> y mène.</li>
+            <li>Dans n'importe quelle app, appuyez sur <b>fn + D</b>&nbsp;: CallRecorder ouvre vos notes et enregistre. Parlez, puis <b>Entrée</b>.</li>
+          </ol>
+          <p>La note est transcrite aussitôt et rangée dans <b>Notes</b>, en tête de la liste des appels, avec son heure. Claude et les autres assistants la lisent comme un appel.</p>
+        </div></details>
+        <details class="row" id="reunion"><summary>Enregistrer une réunion en face à face</summary><div class="answer">
+          <p>Posez le Mac sur la table, entre vous. Cliquez sur l'icône de CallRecorder dans la barre des menus, puis sur <b>Enregistrer une réunion</b> (le même bouton est en bas à gauche de la fenêtre Appels). Pour finir, <b>Arrêter l'enregistrement</b>, au même endroit&nbsp;: la transcription suit.</p>
+          <p>Chaque voix reçoit un numéro et une couleur, «&nbsp;Voix 1&nbsp;», «&nbsp;Voix 2&nbsp;»…, selon l'endroit d'où vient le son. Pour lui donner son vrai nom, surlignez une de ses répliques, puis le chevron de <b>Modifier</b>.</p>
+        </div></details>
+        <details class="row" id="iphone"><summary>Enregistrer les appels de votre iPhone</summary><div class="answer">
+          <p>Grâce à Continuité, le Mac sert de combiné à votre iPhone : la voix passe par son micro et ses haut-parleurs, et CallRecorder l'enregistre.</p>
+          <ol>
+            <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
+            <li>Vérifiez que l'iPhone et le Mac utilisent le même compte Apple et sont sur le même Wi-Fi.</li>
+            <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone, ou décrochez l'appel qui s'y affiche.</li>
+          </ol>
+          <p>Un appel décroché sur l'iPhone lui-même ne passe pas par le Mac : il n'est pas enregistré.</p>
+        </div></details>
+        <details class="row" id="android"><summary>Enregistrer les appels d'un Android</summary><div class="answer">
+          <p>L'appel reste sur le téléphone. Branché au Mac en USB, il lui transmet la voix des deux côtés : rien à installer sur le Mac.</p>
+          <ol>
+            <li>Sur le téléphone : Paramètres&nbsp;&gt; À propos du téléphone, touchez sept fois Numéro de build.</li>
+            <li>Dans Paramètres&nbsp;&gt; Système&nbsp;&gt; Options pour les développeurs, activez le Débogage USB.</li>
+            <li>Branchez-le au Mac et acceptez « Autoriser le débogage USB ».</li>
+          </ol>
+          <p>Pixel 4a à 10, Galaxy à l'essai. Appels du réseau mobile seulement, pas WhatsApp ni Signal. Le numéro et le nom de l'interlocuteur sont repris du journal d'appels.</p>
+        </div></details>
+        <details class="row" id="arreter"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
+          <p>Pendant l'appel, cliquez sur l'icône de CallRecorder dans la barre des menus : <b>Arrêter l'enregistrement</b>, en bas, le termine. Pour l'effacer, faites un clic droit sur l'icône &gt; <b>Supprimer cet appel</b>. Après l'appel, choisissez-le dans la fenêtre Appels et appuyez sur <b>⌘⌫</b>, ou faites un clic droit &gt; <b>Supprimer l'appel</b> : il part à la corbeille du Mac. Édition &gt; <b>Annuler</b> (⌘Z) le remet.</p>
+        </div></details>
+      </div>
+      <p class="group-label">Au quotidien</p>
+      <div class="group">
+        <details class="row" id="retrouver"><summary>Retrouver et réécouter un appel</summary><div class="answer">
+          <p>Cliquez sur l'icône de CallRecorder dans la barre des menus : vos appels s'affichent, et un clic sur l'un d'eux ouvre la fenêtre Appels. À gauche, la liste des appels ; l'icône du calendrier, en haut, mène à un jour. Cliquez sur un appel : il s'affiche à droite, avec la lecture en haut. <b>Espace</b> lit ou met en pause, et un clic sur la forme d'onde ou sur une réplique va au bon moment. Un double-clic ouvre l'appel dans sa propre fenêtre.</p>
+          <img src="../img/guides/appels.png" loading="lazy" alt="La fenêtre Appels : une ligne par appel à gauche, avec sa première capture, son titre et sa durée, et l'appel choisi à droite.">
+        </div></details>
+        <details class="row" id="passages"><summary>Faire une note d'un passage, l'envoyer à Claude ou le corriger</summary><div class="answer">
+          <p>Dans la transcription d'un appel, surlignez quelques mots&nbsp;: trois boutons apparaissent en bas à gauche, et la lecture ne joue plus que ce passage.</p>
+          <ul>
+            <li><b>Créer une note</b> le range dans vos notes, avec l'appel d'où il vient, qui parle et à quel moment. Un clic sur ce sous-titre ramène à la réplique. En haut à droite de l'appel, la pile de ses notes mène aux notes tirées de cet appel&nbsp;; dans <b>Notes</b>, le bouton de filtre liste les appels annotés.</li>
+            <li><b>Envoyer à Claude</b> ouvre une conversation avec le passage et ce qui l'entoure&nbsp;: les répliques d'avant et d'après, ce qui était à l'écran. Le chevron propose Cowork, ChatGPT ou de copier le tout.</li>
+            <li><b>Modifier</b> corrige la réplique sur place (Entrée pour garder, Échap pour annuler)&nbsp;: c'est une nouvelle transcription, la précédente reste dans le menu des transcriptions. Le chevron l'attribue à une autre personne, ou montre ce que chaque transcription avait entendu.</li>
+          </ul>
+          <img src="../img/guides/notes.png" loading="lazy" alt="La page Notes : des passages tirés d'appels, chacun avec l'appel d'où il vient, qui parle et le moment.">
+          <p>Pour écouter une seule voix, ouvrez le chevron au bout du lecteur et choisissez <b>Séparer les pistes</b>&nbsp;: une rangée par voix, et le haut-parleur de chacune la coupe à l'écoute.</p>
+          <img src="../img/guides/pistes.png" loading="lazy" alt="Le lecteur d'un appel, pistes séparées : Moi et Interlocuteurs, chacune avec son haut-parleur.">
+        </div></details>
+        <details class="row" id="retranscrire"><summary>Retranscrire, ou améliorer avec Claude</summary><div class="answer">
+          <p>Ouvrez le menu des transcriptions de l'appel, en haut à droite (<b>v1 · Transcription</b>). <b>Nouvelle transcription</b> fait réécouter l'appel. <b>Améliorer avec Claude</b> fait relire la dernière transcription par Claude, avec l'écran de l'appel, votre agenda et vos e-mails. Chaque passage est une nouvelle version, et les précédentes restent dans ce menu.</p>
+          <img src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : Copier, Exporter et le menu des transcriptions (v1 · Transcription).">
+        </div></details>
+        <details class="row" id="exporter"><summary>Copier ou exporter une transcription</summary><div class="answer">
+          <p>Dans la fenêtre de l'appel, <b>Copier</b> (⇧⌘C) met toute la transcription dans le presse-papiers. <b>Exporter</b> l'enregistre en texte, Word, Markdown ou sous-titres (aussi dans Fichier › Exporter la transcription). Les transcriptions sont aussi dans le dossier CallRecordings de votre dossier personnel, en Markdown.</p>
+          <img src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : les boutons Copier et Exporter, puis le menu des transcriptions.">
+        </div></details>
+      </div>
+      <p class="group-label">Ranger et garder</p>
+      <div class="group">
+        <details class="row" id="groupes"><summary>Ranger vos appels en groupes</summary><div class="answer">
+          <p>Dans les <b>Réglages</b>, ouvrez <b>Groupes</b>, sous <b>Appels enregistrés</b>. Un groupe réunit des appels qui vont ensemble&nbsp;: un client, un recrutement, le perso. Glissez-y des appels depuis la liste. Chaque groupe montre ses 5 derniers appels&nbsp;; les plus anciens s'empilent par mois, et un clic sur une pile la déplie. Le chevron au bout du titre replie tout le groupe.</p>
+          <p>Donnez un sous-titre à un groupe (menu <b>⋯</b> › <b>Ajouter un sous-titre</b>) pour dire ce qu'il rassemble, par exemple «&nbsp;Refonte de la boutique en ligne, du devis à la mise en ligne&nbsp;». Après chaque appel, Claude s'en sert comme consigne&nbsp;: quand il est sûr, il range l'appel dans le groupe qui lui correspond, et une petite icône Claude le signale, avec sa raison au survol. Il ne touche jamais à un appel que vous avez déjà rangé, et ne voit pas les groupes gardés hors des IA.</p>
+        </div></details>
+        <details class="row" id="en-ligne"><summary>Héberger vos appels en ligne (Google Drive, iCloud, Dropbox)</summary><div class="answer">
+          <p>Par défaut, vos appels sont rangés dans le dossier CallRecordings de votre Mac. Placez ce dossier dans Google Drive, iCloud Drive ou Dropbox : il est alors hébergé en ligne, sauvegardé si votre Mac se perd, et vous retrouvez vos transcriptions sur votre téléphone et vos autres ordinateurs. Pas de compte CallRecorder : c'est votre propre espace en ligne.</p>
+          <ol>
+            <li>Installez l'app du service sur votre Mac, par exemple <a href="https://www.google.com/drive/download/">Google Drive pour ordinateur</a>, et connectez-vous. iCloud Drive est déjà là si vous l'avez activé dans Réglages Système.</li>
+            <li>Dans les Réglages de CallRecorder, sous <b>Général</b>, à la ligne <b>Dossier des appels</b>, cliquez sur <b>Changer…</b></li>
+            <li>Dans la barre latérale de la fenêtre qui s'ouvre, cliquez sur <b>Google Drive</b> (ou iCloud Drive, Dropbox), ouvrez <b>Mon Drive</b> ou un dossier à l'intérieur, puis cliquez sur <b>Déplacer ici</b>.</li>
+          </ol>
+          <p>CallRecorder y déplace le dossier CallRecordings avec tous vos appels, puis redémarre. La ligne indique alors où ils sont, par exemple <b>Google Drive › Mon Drive › CallRecordings</b>.</p>
+          <img src="../img/guides/dossier.png" loading="lazy" alt="La partie Général des Réglages : la ligne Dossier des appels indique Google Drive › Mon Drive › CallRecordings, avec le bouton Changer….">
+          <p>Les nouveaux appels sont envoyés en ligne à mesure qu'ils s'enregistrent. Quand l'audio d'un appel arrive à expiration, il part dans la corbeille du service. Le changement de dossier attend la fin de l'appel ou de la transcription en cours. Pour revenir en arrière, choisissez à nouveau votre dossier personnel.</p>
+          <p>Vos appels sont alors stockés chez Google, Apple ou Dropbox, et plus seulement sur votre Mac. Tous y partent, y compris ceux des groupes gardés hors des IA&nbsp;: pour n'envoyer que certains groupes, faites plutôt une copie (Réglages › Outils et intégrations › Autres outils).</p>
+        </div></details>
+        <details class="row" id="garder-audio"><summary>Garder l'enregistrement audio d'un appel</summary><div class="answer">
+          <p>L'audio part à la corbeille au bout de 7 jours, une durée que vous pouvez changer dans les Réglages&nbsp;; la transcription et les captures restent. Le chevron au bout du lecteur de l'appel indique la date. Pour garder l'audio, choisissez <b>Garder l'enregistrement</b> dans ce chevron, au clic droit de l'appel dans la liste, ou dans le menu <b>Appel</b>. Claude peut aussi le faire («&nbsp;Garde l'enregistrement de cet appel&nbsp;»).</p>
+        </div></details>
+      </div>
+      <p class="group-label">Si ça coince</p>
+      <div class="group">
+        <details class="row" id="claude-ne-voit-pas"><summary>Claude ne voit pas vos appels</summary><div class="answer">
+          <p>Quittez Claude complètement (⌘Q) et relancez-le&nbsp;: il ne découvre l'accès à vos appels qu'au démarrage. Si rien ne change, vérifiez dans les Réglages de CallRecorder, <b>Outils et intégrations › Claude</b>, que <b>Accès de Claude à vos appels</b> est activé.</p>
+        </div></details>
+        <details class="row" id="erreur-installation"><summary>Une erreur pendant l'installation</summary><div class="answer">
+          <p>Copiez tout le texte du Terminal et collez-le dans Claude ou un autre assistant&nbsp;: l'installation explique chaque échec en français, l'assistant vous dira quoi faire. Vous pouvez ensuite relancer la même ligne.</p>
+        </div></details>
+        <details class="row" id="mises-a-jour"><summary>Mettre CallRecorder à jour</summary><div class="answer">
+          <p>CallRecorder vous propose chaque nouvelle version. Pour vérifier vous-même&nbsp;: <b>Réglages › Général › Rechercher une mise à jour</b>. Quand une version attend, une étiquette «&nbsp;Mise à jour&nbsp;» apparaît au bout du bouton Réglages. Ce qui change à chaque version est dans le <a href="../versions/">journal des versions</a>.</p>
+        </div></details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="col">
+      <div class="links">
+        <a href="../fonctionnalites/">Fonctionnalités</a>
+        <a href="../guides/">Guides</a>
+        <a href="../versions/">Versions</a>
+        <a href="../confidentialite/">Données et confidentialité</a>
+      </div>
+      <p>L'audio est enregistré et transcrit sur votre Mac. Un assistant ne lit que les transcriptions dont il a besoin pour vous répondre.</p>
+      <p class="signature">CallRecorder est conçu et développé par Gildas Frémont · <a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></p>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Un lien vers un guide (guides/#groupes) l'ouvre directement.
+  function openFromHash() {
+    var d = location.hash && document.getElementById(location.hash.slice(1));
+    if (d && d.tagName === "DETAILS") { d.open = true; d.scrollIntoView(); }
+  }
+  openFromHash();
+  window.addEventListener("hashchange", openFromHash);
+</script>
+<script src="../nav.js"></script>
+</body>
+</html>

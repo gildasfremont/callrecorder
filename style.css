@@ -1,0 +1,431 @@
+/* L'interface d'un utilitaire macOS : fond de fenêtre, groupes blancs, boutons système, captures de l'app. Thème clair uniquement. */
+:root {
+  --window: #ececec;
+  --group: #ffffff;
+  --text: #1d1d1f;
+  --secondary: #5c5c61;
+  --body: #3a3a3d;
+  --separator: #dcdcdc;
+  --border: rgba(0, 0, 0, .14);
+  --accent: #0064d2;
+  --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
+  /* Titres : une grotesque récente et soignée, en graisse moyenne ; le reste garde la police du système. */
+  --display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--window);
+  color: var(--text);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.col { max-width: 760px; margin: 0 auto; }
+
+/* Boutons système */
+.button {
+  display: inline-block; font-size: 15px; font-weight: 500; line-height: 1;
+  padding: 9px 16px; border-radius: 7px;
+  background: #ffffff; color: var(--text);
+  border: 0; box-shadow: 0 0 0 1px rgba(0,0,0,.16), 0 1px 1px rgba(0,0,0,.08);
+  cursor: pointer;
+}
+.button.default { background: linear-gradient(#2a86f5, #0064d2); color: #fff; box-shadow: 0 0 0 .5px rgba(0,60,180,.5), 0 1px 1px rgba(0,0,0,.12); }
+.button.large { font-size: 18px; padding: 14px 26px; border-radius: 10px; }
+/* Bouton principal du haut : plus grand, avec l'icône de l'app. */
+.button.hero {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: clamp(18px, 2.2vw, 21px); font-weight: 600; letter-spacing: -.01em;
+  padding: 12px 14px 12px 24px; border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.04);
+  transition: box-shadow .15s ease, background .15s ease;
+}
+.button.hero::after {
+  content: ""; flex: none; width: 34px; height: 34px; margin-left: 10px; border-radius: 50%;
+  background: #f0f0f2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%231d1d1f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3v9M4 8.5 8 12.5l4-4'/%3E%3C/svg%3E") center / 16px no-repeat;
+  transition: background-color .15s ease;
+}
+.button.hero:hover { filter: none; box-shadow: 0 0 0 1px rgba(0,0,0,.14), 0 4px 12px rgba(0,0,0,.08); }
+.button.hero:hover::after { background-color: #e4e4e7; }
+.button.hero:active { background: #f7f7f8; }
+.button-icon { width: 40px; height: 40px; flex: none; margin: 0; filter: drop-shadow(0 1px 2px rgba(0,0,0,.25)); }
+a.button:hover { text-decoration: none; filter: brightness(1.04); }
+
+/* En-tête, comme un écran « À propos » */
+.about { text-align: center; padding: 120px 0 0; }
+.about h1 { font-family: var(--display); font-size: clamp(40px, 7.4vw, 84px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 980px; margin: 0 auto 48px; }
+/* Mini logos des marques citées, dans le fil du texte */
+img.logo { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: .22em; }
+.nobr { white-space: nowrap; }
+/* Retours à la ligne : titres et textes centrés équilibrés, paragraphes sans mot seul en fin de bloc. */
+p, li, h3 { text-wrap: pretty; hyphens: manual; }
+h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
+.about .req { font-size: 15px; color: var(--secondary); margin-top: 16px; }
+
+/* La fenêtre Appels : la liste à gauche, l'appel choisi à droite */
+.stage { position: relative; max-width: 1048px; margin: 96px auto 0; }
+/* L'arrondi des fenêtres de macOS 26 (26 points sur une fenêtre de 1280 × 789), à l'échelle de l'image. */
+.stage > img {
+  width: 100%; height: auto; display: block;
+  border-radius: 2.03% / 3.3%; border: .5px solid rgba(0,0,0,.25);
+  box-shadow: 0 22px 50px -16px rgba(0,0,0,.28);
+}
+.stage .detail {
+  position: absolute; right: 0; bottom: 0; width: 60%; height: auto; display: block;
+  border-radius: 2.2% / 3.3%; border: .5px solid rgba(0,0,0,.25);
+  box-shadow: 0 26px 60px -18px rgba(0,0,0,.32), 0 8px 18px -10px rgba(0,0,0,.18);
+}
+
+/* Onglets au-dessus de l'illustration : un contrôle segmenté de macOS. */
+.tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(0,0,0,.07); }
+.tabs button { font: 500 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--text); background: none; border: 0; border-radius: 8px; padding: 8px 22px; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: #fff; box-shadow: 0 0 0 .5px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.12); }
+.tabs + .stage { margin-top: 28px; }
+.claude[hidden] { display: none; }
+
+/* Par-dessus la fenêtre Appels : une conversation avec Claude qui s'appuie sur un appel enregistré. */
+.stage { container-type: inline-size; }
+.claude {
+  position: absolute; right: max(-6%, calc((100% - 100vw) / 2 + 16px)); bottom: -8%; width: 58%;
+  font: clamp(12px, 1.6cqw, 17px)/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  color: #29261b; background: #faf9f5; text-align: left;
+  border-radius: 11px; border: .5px solid rgba(0,0,0,.25);
+  box-shadow: 0 30px 70px -20px rgba(0,0,0,.38), 0 10px 22px -12px rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.claude .bar { display: flex; align-items: center; gap: 6px; padding: .8em 1em; border-bottom: 1px solid #ebe8de; }
+.claude .bar i { width: .85em; height: .85em; border-radius: 50%; background: #dcdad3; }
+.claude .bar span { flex: 1; text-align: center; margin-right: 3em; font-weight: 600; color: #6b6759; font-size: .92em; }
+.claude .body { padding: 1.2em 1.4em 1.4em; }
+.claude .ask { margin: 0 0 1.1em auto; width: fit-content; max-width: 85%; padding: .6em .95em; border-radius: 1em; background: #f0eee6; }
+.claude .tool { display: inline-flex; align-items: center; gap: .5em; margin: 0 0 .9em; padding: .35em .75em; border-radius: .6em; border: 1px solid #e6e2d6; color: #6b6759; font-size: .9em; }
+.claude .tool img { width: 1.25em; height: 1.25em; }
+.claude .answer { display: flex; gap: .7em; }
+.claude .answer > img { width: 1.4em; height: 1.4em; flex: none; margin-top: .1em; }
+.claude p { margin: 0 0 .55em; }
+.claude .mail { background: #fff; border: 1px solid #e6e2d6; border-radius: .7em; padding: .75em .95em; }
+.claude .mail b { display: block; margin-bottom: .35em; }
+.claude ul { margin: .35em 0 0; padding-left: 1.2em; }
+.claude li { margin: .15em 0; }
+.claude .sub { color: #8a8576; }
+.claude .quotes { list-style: none; padding: 0; margin: 0; }
+.claude .quotes li + li { margin-top: .4em; }
+.claude .next { margin: .7em 0 0; }
+/* En tête : la pile des outils d'appel × les assistants. */
+.pair { display: flex; justify-content: center; align-items: flex-start; gap: clamp(12px, 3vw, 28px); margin: 0 0 56px; }
+.pair figure { margin: 0; text-align: center; display: flex; flex-direction: column; align-self: stretch; }
+.pair figcaption { margin-top: auto !important; padding-top: 6px; white-space: nowrap; }
+.pair figure > img { width: clamp(46px, 11vw, 112px); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 8px 14px rgba(0,0,0,.14)); }
+.pair figcaption { font-size: 14px; color: var(--secondary); margin-top: 6px; }
+.pair .times { font-family: var(--display); font-size: clamp(24px, 5vw, 52px); line-height: clamp(46px, 11vw, 112px); color: var(--secondary); margin: 0 clamp(4px, 1.5vw, 16px); }
+/* Les icônes en éventail, comme des cartes tenues en main. */
+.pile { display: flex; justify-content: center; padding: 0 0 0 calc(clamp(34px, 9.6vw, 98px) * .22); }
+.pile span {
+  width: clamp(34px, 9.6vw, 98px); aspect-ratio: 1; margin-left: calc(clamp(34px, 9.6vw, 98px) * -.22);
+  margin-top: clamp(4px, .7vw, 7px); border-radius: 23%; overflow: hidden; background: #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 8px 18px -6px rgba(0,0,0,.28);
+}
+.pile span:nth-child(1) { transform: rotate(-9deg) translateY(6px); }
+.pile span:nth-child(2) { transform: rotate(-4deg) translateY(1px); }
+.pile span:nth-child(4) { transform: rotate(4deg) translateY(1px); }
+.pile span:nth-child(5) { transform: rotate(9deg) translateY(6px); }
+.pile img { width: 100%; height: 100%; display: block; }
+.pile .meet img { padding: 18%; box-sizing: border-box; }
+.about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: 720px; margin: -24px auto 40px; }
+@media (max-width: 640px) {
+  .pair { gap: 8px; }
+  .claude { position: relative; right: auto; bottom: auto; width: auto; margin: -24px 8px 0; font-size: 12.5px; }
+}
+
+/* Rythme vertical : 160 px entre les parties, 56 px entre un titre de partie et son contenu. */
+section { padding: 160px 0 0; }
+section.follow { padding-top: 56px; }
+h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; margin: 0 0 20px; }
+.intro { text-align: center; max-width: 700px; margin: 0 auto; }
+.intro p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); margin: 0 0 14px; }
+.intro p:last-child { margin-bottom: 0; }
+.req.warn { color: #b25000; }
+.said { font-size: clamp(20px, 2.6vw, 24px); line-height: 1.45; text-align: center; max-width: 640px; margin: 0 auto; }
+
+/* Groupes à la Réglages Système */
+.group-label { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 10px 14px; }
+.group {
+  background: var(--group); border-radius: 12px;
+  box-shadow: 0 0 0 1px var(--border);
+}
+.row { padding: 18px 20px; }
+.row + .row { border-top: 1px solid var(--separator); margin-left: 20px; padding-left: 0; }
+.row h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+.row p { font-size: 16px; color: var(--secondary); margin: 0; }
+
+
+/* Dock sous l'illustration : les apps et services dont les appels sont enregistrés. Le nom s'affiche au survol. */
+.dock {
+  display: flex; justify-content: center; align-items: flex-end; gap: 2px;
+  width: fit-content; max-width: 100%; margin: 104px auto 0; padding: 6px 8px;
+  background: rgba(255,255,255,.6); border: 1px solid rgba(0,0,0,.08); border-radius: 22px;
+  box-shadow: 0 16px 40px -18px rgba(0,0,0,.3);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+}
+.dock .app { position: relative; display: block; width: clamp(22px, 5.6vw, 56px); height: clamp(22px, 5.6vw, 56px); flex: none; }
+.dock .app img { width: 100%; height: 100%; display: block; transition: transform .15s; }
+/* Icônes de l'App Store, carrées : arrondies et rentrées comme celles de macOS. */
+.dock .app.tile img { width: 80%; height: 80%; margin: 10%; border-radius: 22.5%; box-shadow: 0 1px 2px rgba(0,0,0,.2); }
+.dock .app.glyph img { background: #fff; padding: 14%; box-sizing: border-box; }
+.dock-label { text-align: center; font-size: 14px; color: var(--secondary); margin: 168px 0 10px; }
+.dock + .dock-label { margin-top: 16px; }
+.dock-label + .dock { margin-top: 0; }
+.dock .app:hover img { transform: translateY(-6px) scale(1.12); }
+.dock .app::after {
+  content: attr(data-name); position: absolute; bottom: calc(100% + 14px); left: 50%; transform: translateX(-50%);
+  padding: 4px 10px; border-radius: 7px; background: rgba(240,240,240,.95); color: var(--text);
+  font-size: 13px; white-space: nowrap; box-shadow: 0 0 0 1px rgba(0,0,0,.12), 0 4px 12px rgba(0,0,0,.15);
+  display: none; pointer-events: none;
+}
+.dock .app:hover::after { display: block; }
+.dock .sep { width: 1px; align-self: stretch; margin: 6px 6px; background: rgba(0,0,0,.18); flex: none; }
+
+/* Installation : intitulé au-dessus du groupe, commande dans le groupe, explication en dessous. */
+.intro .req { font-size: 15px; color: var(--secondary); margin: 20px 0 0; }
+.intro .req.warn { color: #b25000; }
+.install { margin-top: 56px; }
+/* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
+/* Les réunions : une bande blanche sur toute la largeur de la page (l'ombre et le découpage la font déborder de .wrap). */
+#reunions { margin-top: 120px; padding: 96px 0; background: var(--group); box-shadow: 0 0 0 100vmax var(--group); clip-path: inset(0 -100vmax); }
+.meeting { display: block; width: min(340px, 100%); height: auto; margin: 0 auto 28px; }
+/* Téléphones : deux mini procédures côte à côte. Juste après la bande des réunions, le même écart qu'au-dessus d'elle. */
+.phones { padding-top: 120px; }
+@media (max-width: 760px) { #reunions { margin-top: 88px; padding: 64px 0; } .phones { padding-top: 88px; } }
+.phones .pair-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; }
+.phones .group { padding: 20px 22px; }
+.phones h3 { font-size: 17px; font-weight: 600; margin: 0 0 10px; }
+.phones ol { margin: 0; padding-left: 1.3em; font-size: 16px; color: var(--body); }
+.phones li { margin: 6px 0; }
+.phones .lede { font-size: 16px; color: var(--secondary); margin: 0 0 12px; }
+.phones .note { font-size: 14px; color: var(--secondary); margin: 12px 0 0; }
+/* Comme sur apple.com : le logo posé sur la ligne de base, à peine plus haut que les majuscules. */
+.phones .os-logo { height: .76em; width: auto; vertical-align: baseline; margin-right: .35em; }
+.phones .os-logo[src*="android"] { height: .64em; }
+@media (max-width: 640px) { .phones .pair-steps { grid-template-columns: 1fr; } }
+.or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
+.install .group-label { margin-top: 0; }
+.steps li b { font-weight: 600; color: var(--text); }
+/* Les étapes dans un cadre, comme un groupe des Réglages ; l'aide en dessous, hors du cadre. */
+.install .card { background: var(--group); border-radius: 16px; box-shadow: 0 0 0 1px var(--border); padding: 30px 32px 0; overflow: hidden; }
+@media (max-width: 640px) { .install .card { padding: 24px 18px 0; } .install .help { margin: 0 -18px; padding: 14px 18px; } }
+/* La ligne à copier, sous la configuration requise, telle qu'elle apparaîtra dans le Terminal. */
+/* La ligne à copier, en tête du cadre, telle qu'elle apparaîtra dans le Terminal : un clic n'importe où la copie. */
+.cmdline {
+  position: relative; display: block; width: 100%; margin: 56px 0 24px; padding: 12px 16px; border: 0; border-radius: 10px;
+  background: #1e1e1e; text-align: left; cursor: pointer; transition: background .15s, transform .1s;
+}
+.cmdline:hover { background: #2c2c2e; }
+.cmdline:active { transform: scale(.995); }
+.cmdline:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.cmdline code { display: block; font: 13px/1.4 var(--mono); color: #e8e8e8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+/* Au survol, « Copier » en bout de ligne, sur un fondu qui recouvre la fin de la commande. */
+.cmdline .hint {
+  position: absolute; top: 0; right: 0; bottom: 0; display: flex; align-items: center; padding: 0 16px 0 48px;
+  border-radius: 0 10px 10px 0; background: linear-gradient(to right, rgba(44,44,46,0), #2c2c2e 40%);
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: #fff; opacity: 0; transition: opacity .15s;
+}
+.cmdline:hover .hint, .cmdline:focus-visible .hint { opacity: 1; }
+/* « Copié », qui monte au-dessus du clic et s'efface. */
+.cmdline .copied {
+  position: absolute; left: 50%; bottom: calc(100% + 6px); translate: -50% 0; pointer-events: none;
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: #fff;
+  padding: 6px 10px; border-radius: 7px; box-shadow: 0 0 0 .5px rgba(0,0,0,.15), 0 8px 20px -8px rgba(0,0,0,.35);
+  animation: rise 1.6s ease-out forwards;
+}
+@keyframes rise {
+  0% { opacity: 0; transform: translateY(6px); }
+  15%, 55% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  @keyframes rise { 0%, 100% { opacity: 0; } 15%, 55% { opacity: 1; } }
+}
+.steps .sub { display: block; font-size: 16px; line-height: 1.55; color: var(--secondary); margin-top: 2px; }
+.steps .sub b { font-weight: 600; color: var(--body); }
+/* Les touches, petites : un repère, pas un dessin de clavier. */
+.steps kbd { font-size: 12px; padding: 2px 5px; border-radius: 5px; vertical-align: 1px; }
+/* L'aide, au pied du cadre, sur un fond à peine gris (pas de filet). */
+.install .help { margin: 0 -32px; padding: 16px 32px; background: #f5f5f7; font-size: 15px; color: var(--secondary); }
+.install .help p { margin: 0; }
+.install .help p + p { margin-top: 4px; }
+.install .steps { margin-bottom: 8px; }
+/* Les onglets en haut à gauche du cadre des étapes. */
+.install-tabs { margin: 0 0 28px; }
+.install-tabs button { white-space: nowrap; display: inline-flex; align-items: center; gap: 7px; }
+.install-tabs img { width: 16px; height: 16px; border-radius: 4px; }
+.install [hidden] { display: none; }
+/* Les trois gestes de l'installation, numérotés ; les touches dessinées comme sur le clavier. */
+.steps { list-style: none; counter-reset: step; margin: 0 0 28px; padding: 0; }
+.steps > li { counter-increment: step; position: relative; padding-left: 40px; font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 22px; }
+.steps > li::before {
+  content: counter(step); position: absolute; left: 0; top: 2px; width: 24px; height: 24px; border-radius: 50%;
+  display: grid; place-items: center; color: var(--secondary); font-size: 13px; font-weight: 500;
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+kbd {
+  font: 600 14px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); white-space: nowrap;
+  padding: 3px 7px; border-radius: 6px; background: var(--group); box-shadow: 0 0 0 1px var(--border), 0 1px 0 1px var(--border);
+}
+/* Le téléchargement : l'icône, le nom, la version et la taille, un bouton bleu. */
+.download { display: flex; align-items: center; gap: 16px; padding: 16px 16px 16px 18px; }
+.download > img { width: 64px; height: 64px; flex: none; filter: drop-shadow(0 2px 4px rgba(0,0,0,.2)); }
+.download div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.download b { font-size: 18px; font-weight: 600; }
+.download span { font-size: 14px; color: var(--secondary); }
+.download .dl { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; padding: 11px 18px; border-radius: 9px; }
+.download .dl::before { content: ""; width: 14px; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v9M4 7.5 8 11.5l4-4M3 14h10'/%3E%3C/svg%3E") center / contain no-repeat; }
+@media (max-width: 480px) { .download { flex-wrap: wrap; } .download .dl { width: 100%; justify-content: center; } }
+.file { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 20px; }
+.file span { font: 15px var(--mono); }
+.notes { font-size: 15px; color: var(--secondary); text-align: center; max-width: 620px; margin: 40px auto 0; }
+
+footer { padding: 160px 0 96px; }
+footer .col { font-size: 15px; color: var(--secondary); }
+footer h3 { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 10px; }
+footer p { margin: 0 0 8px; }
+footer .signature { margin-top: 40px; color: var(--text); }
+
+/* Guides : une question par ligne, la réponse se déplie. */
+details.row { padding: 0; }
+details.row summary {
+  list-style: none; cursor: pointer; padding: 18px 44px 18px 20px; position: relative;
+  font-size: 17px; font-weight: 600;
+}
+details.row + details.row summary { padding-left: 0; }
+details.row summary::-webkit-details-marker { display: none; }
+details.row summary::after {
+  content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+  border-right: 2px solid #9a9aa0; border-bottom: 2px solid #9a9aa0; transform: rotate(45deg); transition: transform .15s;
+}
+details.row[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+details.row .answer { padding: 0 20px 20px; font-size: 16px; color: var(--body); }
+details.row + details.row .answer { padding-left: 0; }
+details.row .answer p { margin: 0 0 10px; }
+details.row .answer ol { margin: 0 0 10px; padding-left: 1.3em; }
+details.row .answer li { margin: 4px 0; }
+details.row .answer code { font: 14px/1.4 var(--mono); background: rgba(0,0,0,.05); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+details.row .answer img { width: 100%; max-width: 560px; height: auto; display: block; margin: 14px 0 6px; border-radius: 9px; border: .5px solid rgba(0,0,0,.2); }
+.answer b { font-weight: 600; color: var(--text); }
+
+/* Versions : la plus récente en haut, la date et les nouveautés, une capture quand il y a quelque chose à voir. */
+.version { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 6px 20px; }
+.version .num { font-weight: 600; }
+.version .num small { display: block; font-weight: 400; font-size: 14px; color: var(--secondary); }
+.version p { color: var(--body); }
+.version a.thumb { display: block; margin-top: 12px; width: 240px; max-width: 100%; }
+.version a.thumb img { width: 100%; height: auto; display: block; border-radius: 7px; border: .5px solid rgba(0,0,0,.2); box-shadow: 0 8px 20px -10px rgba(0,0,0,.3); }
+.version .latest { display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: #e6f0fc; color: var(--accent); font-size: 12px; font-weight: 600; vertical-align: 2px; }
+
+/* En dessous de 980 px, la transcription passe sous la capture au lieu de la recouvrir. */
+@media (max-width: 980px) {
+  .stage { padding-bottom: 0; }
+  .stage > img { width: 100%; }
+  .stage .detail { position: relative; width: 80%; margin: -48px 0 0 auto; }
+}
+
+@media (max-width: 760px) {
+  .about { padding-top: 64px; }
+  .stage { margin-top: 72px; padding-bottom: 0; }
+  .stage > img { width: 100%; }
+  .stage .detail { position: relative; width: 94%; margin: -40px 0 0 auto; }
+  section { padding-top: 112px; }
+  section.follow { padding-top: 40px; }
+  .version { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Barre du haut : le nom à gauche, la doc et l'installation à droite. Sur toutes les pages. */
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 0; }
+.nav .home { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); }
+.nav .home img { display: block; width: 32px; height: 32px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.2)); }
+.nav .links { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; }
+.nav .links a { color: var(--text); }
+.nav .links a[aria-current="page"] { color: var(--secondary); }
+.nav .links .button { padding: 8px 14px; }
+.about { padding-top: 96px; }
+@media (max-width: 760px) { .about { padding-top: 56px; } }
+
+/* En-tête des pages intérieures : un titre et une phrase, centrés. */
+.page-head { text-align: center; padding: 96px 0 0; }
+.page-head h1 { font-family: var(--display); font-size: clamp(36px, 5.6vw, 60px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 500; margin: 0 0 20px; }
+.page-head p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); max-width: 640px; margin: 0 auto; text-wrap: balance; }
+.page-head + section { padding-top: 80px; }
+section.tight { padding-top: 64px; }
+.group + .group-label { margin-top: 48px; }
+
+/* Lien discret vers la suite, sous un bloc. */
+.more { text-align: center; font-size: 17px; margin: 40px 0 0; }
+.more a::after { content: " →"; }
+
+/* Accueil : la dernière version, sous l'installation. */
+.latest-line { text-align: center; font-size: 15px; color: var(--secondary); margin: 40px auto 0; max-width: 640px; text-wrap: balance; }
+.latest-line b { color: var(--text); font-weight: 600; }
+
+/* Fonctionnalités : une par bloc, le texte puis la capture, plus large que le texte. */
+.feature { padding-top: 120px; }
+.feature:first-of-type { padding-top: 80px; }
+.feature .col > h2 { text-align: left; }
+.feature .col > p { font-size: 17px; color: var(--body); margin: 0 0 12px; }
+.feature .col > p b { color: var(--text); font-weight: 600; }
+.feature .meta { font-size: 15px; color: var(--secondary); margin: 16px 0 0 !important; }
+.feature .meta a + a::before { content: " · "; color: var(--secondary); }
+.feature figure { margin: 40px auto 0; max-width: 960px; }
+.feature figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: .5px solid rgba(0,0,0,.2); box-shadow: 0 22px 50px -16px rgba(0,0,0,.25); }
+.feature figure.narrow { max-width: 620px; }
+.feature figure.strip { max-width: 760px; }
+.feature figure.strip img { border-radius: 9px; }
+.feature figure.plain img { border: 0; box-shadow: none; border-radius: 0; }
+.feature figure + figure { margin-top: 20px; }
+@media (max-width: 760px) { .feature { padding-top: 88px; } }
+
+/* Versions, sur leur page : les captures plus grandes. */
+.versions-page .version a.thumb { width: 420px; }
+
+/* Pied de page court, le même partout. */
+footer .links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 24px; }
+footer .links a { color: var(--text); }
+.legal p { font-size: 17px; color: var(--body); margin: 0 0 16px; }
+.legal h2 { font-size: 24px; margin: 48px 0 12px; }
+
+/* Fonctionnalités : un menu vertical à gauche, qui reste à l'écran et suit la lecture. Sous 1000 px, il disparaît. */
+.toc { display: none; }
+@media (min-width: 1000px) {
+  .with-toc { display: grid; grid-template-columns: 188px minmax(0, 1fr); gap: 48px; align-items: start; }
+  .toc { display: block; position: sticky; top: 32px; padding-top: 80px; }
+  .toc nav { display: flex; flex-direction: column; gap: 2px; }
+  .toc a { font-size: 15px; color: var(--secondary); padding: 6px 12px; border-radius: 7px; }
+  .toc a:hover { color: var(--text); text-decoration: none; background: rgba(0,0,0,.04); }
+  .toc a[aria-current] { color: var(--text); font-weight: 500; background: rgba(0,0,0,.06); }
+  .with-toc .col { margin: 0; }
+  .with-toc .feature figure { margin-left: 0; }
+}
+html { scroll-padding-top: 24px; }
+
+/* La barre du haut se cache quand on descend et revient dès qu'on remonte (nav.js). Son fond couvre toute la largeur. */
+.nav {
+  position: sticky; top: 0; z-index: 10; padding: 12px 0;
+  background: rgba(236,236,236,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 0 0 100vmax rgba(236,236,236,.88); clip-path: inset(0 -100vmax);
+  transition: transform .25s ease;
+}
+.nav.hidden { transform: translateY(-100%); }
+@media (prefers-reduced-motion: reduce) { .nav { transition: none; } }
+
+/* Grand écran : le menu sort dans la marge de gauche, le contenu reste centré sous le titre de la page. */
+@media (min-width: 1600px) {
+  .with-toc { display: block; position: relative; }
+  .toc { position: absolute; top: 0; bottom: 0; left: -236px; width: 188px; padding-top: 80px; }
+  .toc nav { position: sticky; top: 32px; }
+  .with-toc .col { margin: 0 auto; }
+  .with-toc .feature figure { margin-left: auto; }
+}
