@@ -431,15 +431,16 @@ html { scroll-padding-top: 24px; }
   .with-toc .feature figure { margin-left: auto; }
 }
 
-/* Accueil : les bénéfices, une carte chacun, trois par ligne. L'icône dans une pastille bleutée, le titre dit tout. */
+/* Accueil : les bénéfices, une carte chacun, trois puis deux. L'icône dans une pastille bleutée, le titre dit tout. */
 .benefits { list-style: none; margin: 0 auto; padding: 0; max-width: 980px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .benefits li { grid-column: span 2; background: var(--group); border-radius: 18px; box-shadow: 0 0 0 1px var(--border), 0 10px 30px -18px rgba(20,40,80,.25); padding: 26px 26px 28px; display: flex; flex-direction: column; gap: 18px; }
+.benefits li:nth-child(n+4) { grid-column: span 3; }
 
 .benefits svg { width: 44px; height: 44px; padding: 10px; border-radius: 12px; background: #e6eef9; fill: none; stroke: var(--accent); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .benefits svg .fill { fill: var(--accent); stroke: none; }
 .benefits span { font-family: var(--display); font-size: clamp(19px, 2vw, 22px); line-height: 1.3; font-weight: 500; letter-spacing: -0.005em; text-wrap: balance; }
 @media (max-width: 760px) {
   .benefits { grid-template-columns: 1fr; gap: 12px; }
-  .benefits li { grid-column: auto; flex-direction: row; align-items: center; padding: 18px 20px; gap: 16px; }
+  .benefits li, .benefits li:nth-child(n+4) { grid-column: auto; flex-direction: row; align-items: center; padding: 18px 20px; gap: 16px; }
   .benefits svg { flex: none; width: 40px; height: 40px; padding: 9px; }
 }
