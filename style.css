@@ -199,6 +199,8 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
 /* Les réunions : une bande blanche sur toute la largeur de la page (l'ombre et le découpage la font déborder de .wrap). */
 .band { margin-top: 120px; padding: 96px 0; background: var(--group); box-shadow: 0 0 0 100vmax var(--group); clip-path: inset(0 -100vmax); }
+/* Le cartouche au-dessus d'un titre de partie : de quoi elle parle, en deux mots. */
+.intro p.tag { display: inline-block; margin: 0 0 32px; padding: 5px 12px; border-radius: 999px; background: #e6eef9; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
 /* L'enregistreur, coupé sous l'écran : il se fond dans la bande blanche au lieu d'y laisser une coupe nette. */
 .meeting { display: block; width: auto; height: 260px; margin: 0 auto 32px; -webkit-mask-image: linear-gradient(#000 78%, transparent); mask-image: linear-gradient(#000 78%, transparent); }
 /* Téléphones : deux mini procédures côte à côte. Juste après la bande des réunions, le même écart qu'au-dessus d'elle. */
