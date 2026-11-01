@@ -1,127 +1,68 @@
-// La note vocale de la bulle du bas : enregistrée dans le navigateur en WAV 16 kHz mono, envoyée au service des notes.
-// Pendant qu'on parle, la reconnaissance vocale de Chrome et Edge sur ordinateur affiche le texte. Ailleurs, l'audio seul :
-// sur Safari et sur mobile, la reconnaissance prend le micro et l'enregistrement ne reçoit plus que du silence.
+// Le message de la bulle du bas : tapé, ou dicté par la reconnaissance vocale du navigateur (Chrome, Edge, Safari),
+// puis envoyé en texte au service des notes. Sans reconnaissance (Firefox…), la dictée du clavier fait l'affaire.
 (function () {
-  var voice = document.querySelector('.voice');
-  if (!voice) return;
+  var form = document.querySelector('.message');
+  if (!form) return;
   var endpoint = 'https://callrecorder-notes.vercel.app/api/note';
-  var maxSeconds = 90, rate = 16000;
-  var bars = voice.querySelector('.bars'), time = voice.querySelector('time'), msg = voice.querySelector('.rec-msg');
-  var heard = voice.querySelector('.rec-text');
-  var ua = navigator.userAgent;
-  var desktopChrome = /Chrome\//.test(ua) && !/Mobile|Android|CriOS/.test(ua) && navigator.maxTouchPoints < 2;
-  var Recognition = desktopChrome ? window.SpeechRecognition || window.webkitSpeechRecognition : null;
-  var ctx, stream, node, chunks, started, timer, rec, loudest;
+  var box = form.querySelector('textarea'), dictate = form.querySelector('.dictate'), status = form.querySelector('.message-status');
+  var send = form.querySelector('[type=submit]');
+  var Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var rec = null;
 
-  function state(s, text) { voice.dataset.state = s; msg.textContent = text || ''; }
-
-  function stop() {
-    clearInterval(timer);
-    if (rec) { rec.onend = null; try { rec.stop(); } catch (e) {} rec = null; }
-    if (node) node.disconnect();
-    if (stream) stream.getTracks().forEach(function (t) { t.stop(); });
-    if (ctx) ctx.close();
-    node = stream = ctx = null;
+  function stopDictation() {
+    if (!rec) return;
+    rec.onend = null;
+    try { rec.stop(); } catch (e) {}
+    rec = null;
+    dictate.classList.remove('on');
+    dictate.querySelector('span').textContent = 'Dicter';
   }
 
-  function wav(samples, from) {
-    var n = Math.floor(samples.length * rate / from), out = new DataView(new ArrayBuffer(44 + n * 2));
-    function str(o, s) { for (var i = 0; i < s.length; i++) out.setUint8(o + i, s.charCodeAt(i)); }
-    str(0, 'RIFF'); out.setUint32(4, 36 + n * 2, true); str(8, 'WAVE'); str(12, 'fmt ');
-    out.setUint32(16, 16, true); out.setUint16(20, 1, true); out.setUint16(22, 1, true);
-    out.setUint32(24, rate, true); out.setUint32(28, rate * 2, true); out.setUint16(32, 2, true); out.setUint16(34, 16, true);
-    str(36, 'data'); out.setUint32(40, n * 2, true);
-    for (var i = 0; i < n; i++) {
-      // Moyenne des échantillons d'origine qui tombent dans chaque échantillon à 16 kHz.
-      var a = Math.floor(i * from / rate), b = Math.max(a + 1, Math.floor((i + 1) * from / rate)), sum = 0;
-      for (var j = a; j < b; j++) sum += samples[j] || 0;
-      var v = Math.max(-1, Math.min(1, sum / (b - a)));
-      out.setInt16(44 + i * 2, v < 0 ? v * 0x8000 : v * 0x7fff, true);
-    }
-    return new Blob([out], { type: 'audio/wav' });
-  }
-
-  function bar(level) {
-    var i = document.createElement('i');
-    i.style.height = Math.max(3, Math.min(24, level * 160)) + 'px';
-    bars.appendChild(i);
-    if (bars.children.length > 80) bars.removeChild(bars.firstChild);
-  }
-
-  voice.querySelector('.rec-start').addEventListener('click', function () {
-    if (!navigator.mediaDevices || !window.AudioContext && !window.webkitAudioContext) {
-      return state('error', 'Votre navigateur ne sait pas enregistrer. Écrivez-moi sur LinkedIn.');
-    }
-    navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true } }).then(function (s) {
-      stream = s;
-      ctx = new (window.AudioContext || window.webkitAudioContext)();
-      var src = ctx.createMediaStreamSource(s);
-      node = ctx.createScriptProcessor(4096, 1, 1);
-      chunks = [];
-      loudest = 0;
-      node.onaudioprocess = function (e) {
-        var d = e.inputBuffer.getChannelData(0), sum = 0;
-        chunks.push(new Float32Array(d));
-        for (var i = 0; i < d.length; i++) sum += d[i] * d[i];
-        var level = Math.sqrt(sum / d.length);
-        bar(level);
-        // Garde-fou : un silence complet pendant que la reconnaissance tourne, c'est qu'elle a pris le micro.
-        loudest = Math.max(loudest, level);
-        if (rec && loudest < 0.002 && Date.now() - started > 2000) { rec.onend = null; try { rec.abort(); } catch (err) {} rec = null; heard.textContent = ''; }
+  if (Recognition) {
+    dictate.hidden = false;
+    dictate.addEventListener('click', function () {
+      if (rec) return stopDictation();
+      // Le texte dicté s'ajoute à ce qui est déjà écrit, et reste modifiable.
+      var before = box.value.trim(), said = '';
+      rec = new Recognition();
+      rec.lang = 'fr-FR';
+      rec.continuous = true;
+      rec.interimResults = true;
+      rec.onresult = function (e) {
+        var now = '';
+        for (var i = e.resultIndex; i < e.results.length; i++) {
+          if (e.results[i].isFinal) said += e.results[i][0].transcript.trim() + ' ';
+          else now += e.results[i][0].transcript;
+        }
+        box.value = ((before ? before + ' ' : '') + said + now).trim();
       };
-      src.connect(node); node.connect(ctx.destination);
-      bars.textContent = ''; time.textContent = '0:00';
-      started = Date.now();
-      timer = setInterval(function () {
-        var t = Math.floor((Date.now() - started) / 1000);
-        time.textContent = Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0');
-        if (t >= maxSeconds) send();
-      }, 250);
-      state('rec');
-      listen();
-    }).catch(function () {
-      state('error', 'Le micro n’est pas accessible. Autorisez-le pour ce site, ou écrivez-moi sur LinkedIn.');
+      rec.onerror = function (e) {
+        stopDictation();
+        if (e.error === 'not-allowed' || e.error === 'service-not-allowed') status.textContent = 'Le micro n’est pas accessible : tapez votre message, ou autorisez le micro pour ce site.';
+        else if (e.error !== 'no-speech' && e.error !== 'aborted') status.textContent = 'La dictée n’a pas marché : tapez votre message.';
+      };
+      // Chrome s'arrête après un silence : on relance tant que le bouton est enfoncé.
+      rec.onend = function () { if (rec) try { rec.start(); } catch (e) { stopDictation(); } };
+      status.textContent = '';
+      dictate.classList.add('on');
+      dictate.querySelector('span').textContent = 'Arrêter';
+      try { rec.start(); } catch (e) { stopDictation(); }
     });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    stopDictation();
+    var text = box.value.trim();
+    if (!text) return box.focus();
+    send.disabled = true;
+    status.textContent = 'Envoi…';
+    fetch(endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text: text }) }).then(function (r) {
+      if (r.ok) { box.value = ''; status.textContent = 'Merci, c’est envoyé. Je vous lis très vite.'; }
+      else if (r.status === 429) status.textContent = 'Beaucoup de messages aujourd’hui : réessayez demain, ou écrivez-moi sur LinkedIn.';
+      else status.textContent = 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.';
+    }).catch(function () {
+      status.textContent = 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.';
+    }).then(function () { send.disabled = false; });
   });
-
-  // Le texte dit jusqu'ici, puis ce qui est en train de se dire. Chrome s'arrête après un silence : on relance tant
-  // que l'enregistrement continue.
-  function listen() {
-    heard.textContent = '';
-    if (!Recognition) return;
-    var said = '';
-    rec = new Recognition();
-    rec.lang = 'fr-FR';
-    rec.continuous = true;
-    rec.interimResults = true;
-    rec.onresult = function (e) {
-      var now = '';
-      for (var i = e.resultIndex; i < e.results.length; i++) {
-        if (e.results[i].isFinal) said += e.results[i][0].transcript + ' ';
-        else now += e.results[i][0].transcript;
-      }
-      heard.textContent = (said + now).trim();
-    };
-    rec.onend = function () { if (rec && voice.dataset.state === 'rec') try { rec.start(); } catch (e) {} };
-    rec.onerror = function (e) { if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { rec.onend = null; rec = null; } };
-    try { rec.start(); } catch (e) { rec = null; }
-  }
-
-  voice.querySelector('.rec-cancel').addEventListener('click', function () { stop(); heard.textContent = ''; state('idle'); });
-  voice.querySelector('.rec-send').addEventListener('click', send);
-
-  function send() {
-    if (voice.dataset.state !== 'rec') return;
-    var from = ctx.sampleRate, seconds = (Date.now() - started) / 1000;
-    stop();
-    if (seconds < 1.5) return state('idle');
-    var total = chunks.reduce(function (n, c) { return n + c.length; }, 0), all = new Float32Array(total), o = 0;
-    chunks.forEach(function (c) { all.set(c, o); o += c.length; });
-    state('sending', 'Envoi…');
-    fetch(endpoint, { method: 'POST', headers: { 'content-type': 'audio/wav' }, body: wav(all, from) }).then(function (r) {
-      if (r.ok) state('done', 'Merci, c’est envoyé. Je la lirai transcrite très vite.');
-      else if (r.status === 429) state('error', 'Beaucoup de notes aujourd’hui : réessayez demain, ou écrivez-moi sur LinkedIn.');
-      else state('error', 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.');
-    }).catch(function () { state('error', 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.'); });
-  }
 })();

@@ -316,25 +316,18 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .author .bubble span { display: block; margin-top: 8px; font-size: 15px; }
 .author .bubble { min-width: 0; }
 .author .bubble p { margin: 0; }
-.voice .button { white-space: nowrap; }
-.voice { margin-top: 14px; }
-.voice .button { display: inline-flex; align-items: center; gap: 7px; }
-.voice svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
-.voice .rec-live, .voice .rec-msg { display: none; }
-.voice[data-state="rec"] .rec-start, .voice[data-state="sending"] .rec-start, .voice[data-state="done"] .rec-start { display: none; }
-.voice[data-state="rec"] .rec-live, .voice[data-state="sending"] .rec-live { display: flex; align-items: center; gap: 10px; }
-.voice[data-state="sending"] .rec-live { opacity: .5; pointer-events: none; }
-.voice[data-state="done"] .rec-msg, .voice[data-state="error"] .rec-msg, .voice[data-state="sending"] .rec-msg { display: block; margin-top: 10px; font-size: 15px; }
-.author .voice .rec-text { display: none; margin: 10px 0 0; font-size: 15px; line-height: 1.45; color: var(--secondary); }
-.voice[data-state="rec"] .rec-text:not(:empty), .voice[data-state="sending"] .rec-text:not(:empty), .voice[data-state="done"] .rec-text:not(:empty) { display: block; }
-.voice[data-state="rec"] .rec-text:not(:empty)::after { content: "…"; }
-.voice .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #e0352b; animation: rec 1.2s ease-in-out infinite; }
-@keyframes rec { 50% { opacity: .3; } }
-.voice .bars { flex: 1 1 0; display: flex; align-items: center; gap: 2px; height: 24px; min-width: 0; overflow: hidden; }
-.voice .bars i { flex: none; width: 3px; border-radius: 2px; background: var(--accent); }
-.voice time { font-size: 14px; font-variant-numeric: tabular-nums; color: var(--text); }
-@media (prefers-reduced-motion: reduce) { .voice .dot { animation: none; } }
-@media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .bubble { margin-bottom: 56px; font-size: 15px; padding: 16px 18px; } .voice .rec-live { flex-wrap: wrap; } .voice .bars { flex-basis: 100%; order: -1; } .voice .rec-live { gap: 8px; } .voice .button { padding: 8px 11px; } .voice .rec-start { white-space: normal; text-align: left; } }
+/* Le message pour Gildas : tapé, ou dicté par la reconnaissance vocale du navigateur. */
+.message { margin-top: 14px; }
+.message textarea { display: block; box-sizing: border-box; width: 100%; min-height: 84px; resize: vertical; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--window); color: var(--text); font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+.message textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.message-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
+.message .button { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.message .button[hidden] { display: none; }
+.message svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+.message .dictate.on { color: #e0352b; }
+.author .message-status { font-size: 15px; margin-top: 10px; }
+.author .message-status:empty { display: none; }
+@media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .bubble { margin-bottom: 56px; font-size: 15px; padding: 16px 18px; } .author .bubble { flex: 1; } }
 
 /* Guides : une question par ligne, la réponse se déplie. */
 details.row { padding: 0; }
