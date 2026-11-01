@@ -1,104 +1,127 @@
-// Le message de la bulle du bas : tapé, ou dicté par la reconnaissance vocale du navigateur (Chrome, Edge, Safari),
-// puis envoyé en texte au service des notes. Sans reconnaissance (Firefox…), la dictée du clavier fait l'affaire.
+// Le message de la bulle du bas : « Laissez-moi un message » ouvre la dictée du navigateur (Chrome, Edge, Safari).
+// En haut, l'état : on écoute ou non, Arrêter / Reprendre, et ce qui ne va pas. Dessous, le texte, modifiable ; puis
+// Envoyer, qui part en texte au service des notes. Sans reconnaissance vocale (Firefox…), juste le texte et Envoyer.
 (function () {
-  var form = document.querySelector('.message');
-  if (!form) return;
+  var form = document.querySelector('.message'), open = document.querySelector('.open-message');
+  if (!form || !open) return;
   var endpoint = 'https://callrecorder-notes.vercel.app/api/note';
-  var box = form.querySelector('textarea'), dictate = form.querySelector('.dictate'), status = form.querySelector('.message-status');
-  var send = form.querySelector('[type=submit]');
+  var box = form.querySelector('textarea'), bar = form.querySelector('.rec-bar'), state = form.querySelector('.rec-state');
+  var toggle = form.querySelector('.rec-toggle'), send = form.querySelector('.send'), thanks = form.querySelector('.sent-status');
   var Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   var rec = null, heard = false, check = null;
+  toggle.hidden = !Recognition;
+
+  // kind : 'on' (on écoute), 'problem' (ce qui ne va pas), rien (à l'arrêt).
+  function say(text, kind) {
+    state.textContent = text;
+    state.className = 'rec-state' + (kind ? ' ' + kind : '');
+  }
+
+  // La zone grandit avec le texte, et Envoyer ne s'allume qu'avec un message.
+  function fit() {
+    box.style.height = 'auto';
+    box.style.height = box.scrollHeight + 'px';
+    send.disabled = !box.value.trim();
+  }
+  box.addEventListener('input', fit);
 
   // « Par défaut - Micro MacBook Air (Built-in) » → « Micro MacBook Air ».
   function micName(label) { return label.replace(/^(Par défaut|Default)\s*-\s*/i, '').replace(/\s*\([^)]*\)\s*$/, '').trim(); }
 
-  // Rien entendu : souvent, le navigateur écoute un autre micro que celui du système (des écouteurs débranchés de
-  // l'oreille, un micro virtuel). Chrome le dit : on compare son micro à celui du système, et on nomme les deux.
+  // Rien entendu : souvent, le navigateur écoute un autre micro que celui du système (des écouteurs pas portés, un
+  // micro virtuel). Chrome le dit : on compare son micro à celui du système, et on nomme les deux.
   function diagnose() {
     if (!rec || heard || !navigator.mediaDevices) return;
     navigator.mediaDevices.enumerateDevices().then(function (list) {
       var system = list.filter(function (d) { return d.kind === 'audioinput' && d.deviceId === 'default'; })[0];
-      if (!system || !system.label) {
-        status.textContent = 'Je ne vous entends pas encore : vérifiez votre micro, ou tapez votre message.';
-        return;
-      }
+      if (!system || !system.label) return say('Je ne vous entends pas : vérifiez votre micro, ou tapez votre message.', 'problem');
       return navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
         var used = micName(stream.getAudioTracks()[0].label);
         stream.getTracks().forEach(function (t) { t.stop(); });
         if (!rec || heard) return;
         var wanted = micName(system.label);
-        status.textContent = used && used !== wanted
-          ? 'Votre navigateur écoute « ' + used + ' », pas « ' + wanted + ' ». Choisissez « ' + wanted + ' » avec l’icône du micro dans la barre d’adresse, puis relancez Dicter.'
-          : 'Je ne vous entends pas encore : parlez près de « ' + wanted + ' », ou tapez votre message.';
+        say(used && used !== wanted
+          ? 'Votre navigateur écoute « ' + used + ' ». Choisissez « ' + wanted + ' » dans l’icône micro de la barre d’adresse.'
+          : 'Je ne vous entends pas : parlez près de « ' + wanted + ' », ou tapez votre message.', 'problem');
       });
     }).catch(function () {});
   }
 
-  function stopDictation() {
+  function stop(message, kind) {
     clearTimeout(check);
-    if (status.textContent === 'Je vous écoute…') status.textContent = '';
-    if (!rec) return;
-    rec.onend = null;
-    try { rec.stop(); } catch (e) {}
-    rec = null;
-    dictate.classList.remove('on');
-    dictate.querySelector('span').textContent = 'Dicter';
+    if (rec) {
+      rec.onend = null;
+      try { rec.stop(); } catch (e) {}
+      rec = null;
+    }
+    toggle.textContent = 'Reprendre';
+    say(message || 'Dictée arrêtée.', kind);
   }
 
-  if (Recognition) {
-    dictate.hidden = false;
-    dictate.addEventListener('click', function () {
-      if (rec) return stopDictation();
-      // Le texte dicté s'ajoute à ce qui est déjà écrit, et reste modifiable.
-      var before = box.value.trim(), said = '';
-      heard = false;
-      rec = new Recognition();
-      rec.lang = 'fr-FR';
-      rec.continuous = true;
-      rec.interimResults = true;
-      rec.onsoundstart = function () { heard = true; };
-      rec.onresult = function (e) {
-        // Le texte arrive : plus besoin d'« écoute » ni de conseil sur le micro.
-        status.textContent = '';
-        heard = true;
-        var now = '';
-        for (var i = e.resultIndex; i < e.results.length; i++) {
-          if (e.results[i].isFinal) said += e.results[i][0].transcript.trim() + ' ';
-          else now += e.results[i][0].transcript;
-        }
-        box.value = ((before ? before + ' ' : '') + said + now).trim();
-      };
-      rec.onerror = function (e) {
-        // Un silence ou une relance : la dictée continue (onend la relance).
-        if (e.error === 'no-speech' || e.error === 'aborted') return;
-        stopDictation();
-        if (e.error === 'not-allowed' || e.error === 'service-not-allowed') status.textContent = 'Le micro n’est pas accessible : autorisez-le pour ce site, ou tapez votre message.';
-        else if (e.error === 'audio-capture') status.textContent = 'Aucun micro trouvé : tapez votre message.';
-        else status.textContent = 'La dictée n’a pas marché : tapez votre message.';
-      };
-      // Chrome s'arrête après un silence : on relance tant que le bouton est enfoncé.
-      rec.onend = function () { if (rec) try { rec.start(); } catch (e) { stopDictation(); } };
-      status.textContent = 'Je vous écoute…';
-      dictate.classList.add('on');
-      dictate.querySelector('span').textContent = 'Arrêter';
-      try { rec.start(); } catch (e) { stopDictation(); }
-      check = setTimeout(diagnose, 4000);
-    });
+  function start() {
+    // Le texte dicté s'ajoute à ce qui est déjà écrit, et reste modifiable.
+    var before = box.value.trim(), said = '';
+    heard = false;
+    rec = new Recognition();
+    rec.lang = 'fr-FR';
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.onsoundstart = function () { heard = true; };
+    rec.onresult = function (e) {
+      if (!heard || state.classList.contains('problem')) say('J’écoute…', 'on');
+      heard = true;
+      var now = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) said += e.results[i][0].transcript.trim() + ' ';
+        else now += e.results[i][0].transcript;
+      }
+      box.value = ((before ? before + ' ' : '') + said + now).trim();
+      fit();
+      box.scrollTop = box.scrollHeight;
+    };
+    rec.onerror = function (e) {
+      // Un silence ou une relance : la dictée continue (onend la relance).
+      if (e.error === 'no-speech' || e.error === 'aborted') return;
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') stop('Le micro n’est pas autorisé pour ce site : autorisez-le, ou tapez votre message.', 'problem');
+      else if (e.error === 'audio-capture') stop('Aucun micro trouvé : tapez votre message.', 'problem');
+      else stop('La dictée n’a pas marché : tapez votre message.', 'problem');
+    };
+    // Chrome s'arrête après un silence : on relance tant qu'on n'a pas arrêté.
+    rec.onend = function () { if (rec) try { rec.start(); } catch (e) { stop(); } };
+    toggle.textContent = 'Arrêter';
+    say('J’écoute…', 'on');
+    try { rec.start(); } catch (e) { stop('La dictée n’a pas démarré : tapez votre message.', 'problem'); }
+    check = setTimeout(diagnose, 4000);
   }
+
+  toggle.addEventListener('click', function () { if (rec) { stop(); box.focus(); } else start(); });
+
+  open.addEventListener('click', function () {
+    open.hidden = true;
+    form.hidden = false;
+    fit();
+    if (Recognition) { bar.hidden = false; start(); }
+    else box.focus();
+  });
+
+  // ⌘/Ctrl + Entrée envoie.
+  box.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); form.requestSubmit ? form.requestSubmit() : send.click(); }
+  });
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    stopDictation();
     var text = box.value.trim();
     if (!text) return box.focus();
+    if (rec) stop();
     send.disabled = true;
-    status.textContent = 'Envoi…';
     fetch(endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text: text }) }).then(function (r) {
-      if (r.ok) { box.value = ''; status.textContent = 'Merci, c’est envoyé. Je vous lis très vite.'; }
-      else if (r.status === 429) status.textContent = 'Beaucoup de messages aujourd’hui : réessayez demain, ou écrivez-moi sur LinkedIn.';
-      else status.textContent = 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.';
+      if (r.ok) { box.value = ''; form.classList.add('sent'); thanks.textContent = 'Merci, c’est envoyé. Je vous lis très vite.'; return; }
+      bar.hidden = false;
+      say(r.status === 429 ? 'Beaucoup de messages aujourd’hui : réessayez demain, ou écrivez-moi sur LinkedIn.' : 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.', 'problem');
     }).catch(function () {
-      status.textContent = 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.';
-    }).then(function () { send.disabled = false; });
+      bar.hidden = false;
+      say('L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.', 'problem');
+    }).then(fit);
   });
 })();

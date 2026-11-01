@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=82">
+<link rel="stylesheet" href="style.css?v=92">
 </head>
 <body>
 
@@ -247,14 +247,17 @@
       <div class="author">
         <img src="img/gildas.webp" width="480" height="498" loading="lazy" alt="Portrait dessiné à l'encre et à l'aquarelle de Gildas Frémont, bras croisés, en pull irlandais.">
         <div class="bubble">
-          <p>Bonjour, merci de vous intéresser à CallRecorder. Je m'appelle Gildas Frémont, je le conçois et le développe. Une question, une idée&nbsp;? Écrivez-moi ici, ou dictez votre message.</p>
-          <form class="message">
-            <textarea name="text" rows="3" maxlength="3000" placeholder="Votre message" aria-label="Votre message pour Gildas" required></textarea>
-            <div class="message-actions">
-              <button class="button dictate" type="button" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="1.5" width="5" height="8.5" rx="2.5"/><path d="M3 7.5a5 5 0 0 0 10 0M8 12.5v2"/></svg><span>Dicter</span></button>
-              <button class="button default" type="submit">Envoyer</button>
+          <p>Bonjour, merci de vous intéresser à CallRecorder. Je l'ai d'abord créé autour de mes besoins et je suis heureux de l'améliorer grâce à vos retours.</p>
+          <p class="sign">Gildas Frémont</p>
+          <button class="button open-message" type="button">Laissez-moi un message</button>
+          <form class="message" hidden>
+            <div class="rec-bar" hidden>
+              <p class="rec-state" role="status"></p>
+              <button class="rec-toggle" type="button">Arrêter</button>
             </div>
-            <p class="message-status" role="status"></p>
+            <textarea name="text" rows="3" maxlength="3000" placeholder="Votre message" aria-label="Votre message pour Gildas" required></textarea>
+            <div class="message-actions"><button class="button send" type="submit" disabled>Envoyer</button></div>
+            <p class="sent-status" role="status"></p>
           </form>
           <span><a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></span>
         </div>
@@ -354,6 +357,6 @@
   if (moved[location.hash]) location.replace(moved[location.hash]);
 </script>
 <script src="nav.js"></script>
-<script src="note.js?v=8"></script>
+<script src="note.js?v=14"></script>
 </body>
 </html>
