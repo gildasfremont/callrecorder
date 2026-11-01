@@ -95,7 +95,8 @@
     check = setTimeout(diagnose, 4000);
   }
 
-  toggle.addEventListener('click', function () { if (rec) { stop(); box.focus(); } else start(); });
+  // Le curseur reste dans le texte : sans lui, la dictée reprise n'écrit nulle part.
+  toggle.addEventListener('click', function () { if (rec) stop(); else start(); box.focus(); });
 
   // Le curseur va dans le texte : on peut dicter, ou corriger et taper aussitôt.
   function begin() {

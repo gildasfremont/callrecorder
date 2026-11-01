@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=93">
+<link rel="stylesheet" href="style.css?v=95">
 </head>
 <body>
 
@@ -35,11 +35,11 @@
   <div class="about">
     <div class="pair" aria-hidden="true">
       <figure>
-        <div class="pile"><span><img src="img/encre/zoom.webp?v=2" alt=""></span><span><img src="img/encre/teams.webp?v=2" alt=""></span><span><img src="img/encre/meet.webp?v=2" alt=""></span><span><img src="img/encre/whatsapp.webp?v=2" alt=""></span><span><img src="img/encre/slack.webp?v=2" alt=""></span></div>
+        <div class="pile"><span><img src="img/encre/zoom.webp?v=4" alt=""></span><span><img src="img/encre/teams.webp?v=4" alt=""></span><span><img src="img/encre/meet.webp?v=4" alt=""></span><span><img src="img/encre/whatsapp.webp?v=4" alt=""></span><span><img src="img/encre/slack.webp?v=4" alt=""></span></div>
         
       </figure>
-      <span class="times">×</span>
-      <figure><img class="encre" src="img/encre/claude-app.webp?v=2" alt=""></figure>
+      <span class="times"><img src="img/encre/croix.webp?v=2" width="96" height="100" alt="×"></span>
+      <figure><img class="encre" src="img/encre/claude-app.webp?v=4" alt=""></figure>
     </div>
     <h1>Enregistrez, sans y penser</h1>
     <p class="lead">Transcrivez tout sur votre Mac, prêt pour votre assistant IA.</p>
@@ -339,7 +339,7 @@
       reunion: "La fenêtre Appels de CallRecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.",
       note: "La fenêtre Appels de CallRecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure."
     };
-    const srcs = { appel: "img/appels.webp", reunion: "img/appels-reunion.webp", note: "img/appels-note.webp" };
+    const srcs = { appel: "img/appels.webp", reunion: "img/appels-reunion.webp?v=2", note: "img/appels-note.webp" };
     Object.values(srcs).forEach(src => { new Image().src = src; });
     document.querySelectorAll(".tabs:not(.install-tabs) button").forEach(button => button.addEventListener("click", () => {
       const tab = button.dataset.tab;
@@ -356,6 +356,6 @@
   if (moved[location.hash]) location.replace(moved[location.hash]);
 </script>
 <script src="nav.js"></script>
-<script src="note.js?v=15"></script>
+<script src="note.js?v=16"></script>
 </body>
 </html>
