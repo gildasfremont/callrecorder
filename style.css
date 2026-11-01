@@ -332,8 +332,9 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .message-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
 .message .send:disabled { opacity: .45; cursor: default; }
 .message.sent .rec-bar, .message.sent textarea, .message.sent .message-actions { display: none; }
-.author .sent-status { margin: 0; }
-.author .sent-status:empty { display: none; }
+.author .sent-status { display: none; margin: 0; }
+.author .message.sent .sent-status { display: block; }
+.author .sent-status .another { display: block; margin-top: 6px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; cursor: pointer; }
 @media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .bubble { margin-bottom: 56px; font-size: 15px; padding: 16px 18px; } .author .bubble { flex: 1; } }
 
 /* Guides : une question par ligne, la réponse se déplie. */

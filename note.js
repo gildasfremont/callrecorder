@@ -6,7 +6,8 @@
   if (!form || !open) return;
   var endpoint = 'https://callrecorder-notes.vercel.app/api/note';
   var box = form.querySelector('textarea'), bar = form.querySelector('.rec-bar'), state = form.querySelector('.rec-state');
-  var toggle = form.querySelector('.rec-toggle'), send = form.querySelector('.send'), thanks = form.querySelector('.sent-status');
+  var toggle = form.querySelector('.rec-toggle'), send = form.querySelector('.send'), thanks = form.querySelector('.sent-status span');
+  var another = form.querySelector('.another');
   var Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   var rec = null, heard = false, check = null;
   toggle.hidden = !Recognition;
@@ -96,13 +97,20 @@
 
   toggle.addEventListener('click', function () { if (rec) { stop(); box.focus(); } else start(); });
 
+  // Le curseur va dans le texte : on peut dicter, ou corriger et taper aussitôt.
+  function begin() {
+    form.classList.remove('sent');
+    fit();
+    box.focus();
+    if (Recognition) { bar.hidden = false; start(); }
+  }
+
   open.addEventListener('click', function () {
     open.hidden = true;
     form.hidden = false;
-    fit();
-    if (Recognition) { bar.hidden = false; start(); }
-    else box.focus();
+    begin();
   });
+  another.addEventListener('click', begin);
 
   // ⌘/Ctrl + Entrée envoie.
   box.addEventListener('keydown', function (e) {
