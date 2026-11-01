@@ -297,7 +297,7 @@
     }
     var message = null, warn = false;
     if (arch === 'intel') { message = 'Ce Mac a un processeur Intel. CallRecorder nécessite un Mac avec puce Apple (M1 ou plus récent).'; warn = true; }
-    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais CallRecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l'installer.'; warn = true; }
+    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais CallRecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l’installer.'; warn = true; }
     else if (arch === 'arm' && major) message = 'Ce Mac est compatible avec CallRecorder.';
     else if (arch === 'arm') message = 'Ce Mac a une puce Apple. Vérifiez que macOS 15 ou plus récent est installé.';
     if (!message) return;
