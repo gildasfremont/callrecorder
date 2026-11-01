@@ -1,5 +1,6 @@
 // La note vocale de la bulle du bas : enregistrée dans le navigateur en WAV 16 kHz mono, envoyée au service des notes.
-// Pendant qu'on parle, la reconnaissance vocale du navigateur (Chrome, Safari) affiche le texte ; ailleurs, l'audio seul.
+// Pendant qu'on parle, la reconnaissance vocale de Chrome et Edge sur ordinateur affiche le texte. Ailleurs, l'audio seul :
+// sur Safari et sur mobile, la reconnaissance prend le micro et l'enregistrement ne reçoit plus que du silence.
 (function () {
   var voice = document.querySelector('.voice');
   if (!voice) return;
@@ -7,8 +8,10 @@
   var maxSeconds = 90, rate = 16000;
   var bars = voice.querySelector('.bars'), time = voice.querySelector('time'), msg = voice.querySelector('.rec-msg');
   var heard = voice.querySelector('.rec-text');
-  var Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  var ctx, stream, node, chunks, started, timer, rec;
+  var ua = navigator.userAgent;
+  var desktopChrome = /Chrome\//.test(ua) && !/Mobile|Android|CriOS/.test(ua) && navigator.maxTouchPoints < 2;
+  var Recognition = desktopChrome ? window.SpeechRecognition || window.webkitSpeechRecognition : null;
+  var ctx, stream, node, chunks, started, timer, rec, loudest;
 
   function state(s, text) { voice.dataset.state = s; msg.textContent = text || ''; }
 
@@ -55,11 +58,16 @@
       var src = ctx.createMediaStreamSource(s);
       node = ctx.createScriptProcessor(4096, 1, 1);
       chunks = [];
+      loudest = 0;
       node.onaudioprocess = function (e) {
         var d = e.inputBuffer.getChannelData(0), sum = 0;
         chunks.push(new Float32Array(d));
         for (var i = 0; i < d.length; i++) sum += d[i] * d[i];
-        bar(Math.sqrt(sum / d.length));
+        var level = Math.sqrt(sum / d.length);
+        bar(level);
+        // Garde-fou : un silence complet pendant que la reconnaissance tourne, c'est qu'elle a pris le micro.
+        loudest = Math.max(loudest, level);
+        if (rec && loudest < 0.002 && Date.now() - started > 2000) { rec.onend = null; try { rec.abort(); } catch (err) {} rec = null; heard.textContent = ''; }
       };
       src.connect(node); node.connect(ctx.destination);
       bars.textContent = ''; time.textContent = '0:00';
