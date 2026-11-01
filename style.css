@@ -90,7 +90,7 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 /* Onglets au-dessus de l'illustration : un contrôle segmenté de macOS. */
 .tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(30,60,120,.07); }
 .tabs button { font: 500 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--text); background: none; border: 0; border-radius: 8px; padding: 8px 22px; white-space: nowrap; cursor: pointer; }
-@media (max-width: 640px) { .tabs button { padding: 8px 16px; } }
+@media (max-width: 640px) { .tabs button { padding: 8px 12px; font-size: 14px; } }
 .tabs button[aria-selected="true"] { background: #fff; box-shadow: 0 0 0 .5px rgba(20,40,80,.12), 0 1px 3px rgba(20,40,80,.12); }
 .tabs + .stage { margin-top: 28px; }
 .claude[hidden] { display: none; }

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=79">
+<link rel="stylesheet" href="style.css?v=80">
 </head>
 <body>
 
@@ -46,7 +46,7 @@
   </div>
 
   <div class="tabs" role="tablist" aria-label="Ce que CallRecorder transcrit">
-    <button role="tab" aria-selected="true" data-tab="appel">Appels</button>
+    <button role="tab" aria-selected="true" data-tab="appel">Appels et visios</button>
     <button role="tab" aria-selected="false" data-tab="reunion">Réunions</button>
     <button role="tab" aria-selected="false" data-tab="note">Notes vocales</button>
   </div>
@@ -329,7 +329,7 @@
   }));
 </script>
 <script>
-  // Onglets Appels / Réunions / Notes vocales : la capture et la conversation avec Claude de chaque exemple.
+  // Onglets Appels et visios / Réunions / Notes vocales : la capture et la conversation avec Claude de chaque exemple.
   (() => {
     const img = document.getElementById("appels");
     const alts = {
