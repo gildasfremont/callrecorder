@@ -9,10 +9,10 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="CallRecorder">
-<meta property="og:title" content="CallRecorder · Enregistrez, sans y penser">
+<meta property="og:title" content="CallRecorder · Ne perdez plus ce qui s’est dit">
 <meta property="og:description" content="CallRecorder enregistre vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp et les transcrit sur votre Mac.">
 <meta property="og:url" content="https://gildasfremont.github.io/callrecorder/">
-<meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg">
+<meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=95">
+<link rel="stylesheet" href="style.css?v=101">
 </head>
 <body>
 
@@ -33,16 +33,14 @@
     </div>
   </nav>
   <div class="about">
-    <div class="pair" aria-hidden="true">
-      <figure>
-        <div class="pile"><span><img src="img/encre/zoom.webp?v=4" alt=""></span><span><img src="img/encre/teams.webp?v=4" alt=""></span><span><img src="img/encre/meet.webp?v=4" alt=""></span><span><img src="img/encre/whatsapp.webp?v=4" alt=""></span><span><img src="img/encre/slack.webp?v=4" alt=""></span></div>
-        
-      </figure>
-      <span class="times"><img src="img/encre/croix.webp?v=2" width="96" height="100" alt="×"></span>
-      <figure><img class="encre" src="img/encre/claude-app.webp?v=4" alt=""></figure>
+    <!-- Le micro ; son fil sort par le bord droit de l'écran. -->
+    <div class="hero-art" aria-hidden="true">
+      <div class="hero-stage">
+        <img class="hero-micro" src="img/micro.webp?v=1" width="1450" height="679" alt="">
+      </div>
     </div>
-    <h1>Enregistrez, sans y penser</h1>
-    <p class="lead">Transcrivez tout sur votre Mac, prêt pour votre assistant IA.</p>
+    <h1>Ne perdez plus ce qui s’est dit</h1>
+    <p class="lead">Enregistrez vos échanges sans y penser. Ils sont transcrits sur votre Mac et accessibles à votre assistant IA.</p>
   </div>
 
   <div class="tabs" role="tablist" aria-label="Ce que CallRecorder transcrit">
@@ -131,8 +129,13 @@
     <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
   </div>
 
-  <p class="dock-label">Fonctionne aussi avec</p>
-  <div class="dock" aria-label="Autres applications d'appel prises en charge">
+  <p class="dock-label">Enregistre sur</p>
+  <div class="dock" aria-label="Applications d'appel prises en charge">
+      <span class="app tile" data-name="Zoom"><img src="img/pile/zoom.png" alt="Zoom"></span>
+      <span class="app tile" data-name="Microsoft Teams"><img src="img/pile/teams.png" alt="Microsoft Teams"></span>
+      <span class="app tile glyph" data-name="Google Meet"><img src="img/pile/meet.png" alt="Google Meet"></span>
+      <span class="app tile" data-name="WhatsApp"><img src="img/pile/whatsapp.png" alt="WhatsApp"></span>
+      <span class="app tile" data-name="Slack"><img src="img/pile/slack.png" alt="Slack"></span>
       <span class="app" data-name="FaceTime"><img src="img/logos/facetime.png" alt="FaceTime"></span>
       <span class="app tile" data-name="Téléphone (iPhone)"><img src="img/dock/telephone.png" alt="Téléphone"></span>
       <span class="app tile" data-name="Webex"><img src="img/dock/webex.png" alt="Webex"></span>
@@ -144,8 +147,9 @@
       <span class="app" data-name="Safari"><img src="img/logos/safari.png" alt="Safari"></span>
       <span class="app" data-name="Google Chrome"><img src="img/logos/chrome.png" alt="Google Chrome"></span>
   </div>
-  <p class="dock-label">et s'intègre avec</p>
-  <div class="dock llm-dock" aria-label="Autres assistants compatibles avec CallRecorder">
+  <p class="dock-label">et retranscrit pour</p>
+  <div class="dock llm-dock" aria-label="Assistants compatibles avec CallRecorder">
+      <span class="app" data-name="Claude"><img src="img/logos/claude-app.png" alt="Claude"></span>
       <span class="app" data-name="Codex"><img src="img/logos/codex.png" alt="Codex"></span>
       <span class="app tile" data-name="Cursor"><img src="img/dock/cursor.png" alt="Cursor"></span>
       <span class="app tile glyph" data-name="VS Code"><img src="img/dock/vscode.png" alt="VS Code"></span>
@@ -164,7 +168,7 @@
   <section class="follow">
     <ul class="benefits">
         <li class="o-jack text-right"><div><span>Une seule installation, puis plus rien à régler</span><p>Une ligne à copier, deux autorisations, et c'est tout. Ensuite, il démarre avec votre Mac et se fait oublier.</p></div><img src="img/benefices/jack.webp?v=2" width="1200" height="198" loading="lazy" alt="Une fiche jack dessinée à l'encre et à l'aquarelle, qui entre par la gauche et pointe vers le texte."></li>
-        <li class="o-micro"><div><span>Vous parlez, tout est conservé, aucun lien à cliquer</span><p>Zoom, Teams, Meet, FaceTime, WhatsApp, votre téléphone, vos réunions et vos notes vocales&nbsp;: tout est enregistré dès que ça commence, et transcrit dès que ça se termine.</p></div><img src="img/benefices/micro.webp?v=2" width="1200" height="842" loading="lazy" alt="Un micro de radio dessiné à l'encre et à l'aquarelle, sur son bras articulé aux molettes moletées."></li>
+        <li class="o-micro"><div><span>Une mémoire professionnelle qui se constitue toute seule</span><p>Zoom, Teams, Meet, FaceTime, WhatsApp, votre téléphone, vos réunions et vos notes vocales&nbsp;: tout est enregistré dès que ça commence, et transcrit dès que ça se termine.</p></div><img src="img/benefices/micro.webp?v=2" width="1200" height="842" loading="lazy" alt="Un micro de radio dessiné à l'encre et à l'aquarelle, sur son bras articulé aux molettes moletées."></li>
         <li class="o-telephone text-right"><div><span>Raccrochez&nbsp;: votre assistant est déjà au courant</span><p>Demandez ce qui a été promis, décidé ou oublié&nbsp;: Claude, Codex et les autres assistants lisent vos appels et vous répondent, citations à l'appui. Rien à copier-coller.</p></div><img src="img/benefices/telephone.webp?v=5" width="1099" height="660" loading="lazy" alt="Le haut d'un téléphone dessiné à l'encre et à l'aquarelle, ouvert sur Claude, une question en cours."></li>
         <li class="o-ordinateur"><div><span>L'audio ne quitte jamais votre Mac</span><p>La transcription se fait sur place, sans compte ni serveur. Votre assistant ne lit que ce dont il a besoin pour vous répondre.</p></div><img src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l'encre et à l'aquarelle, une liste d'appels à l'écran."></li>
     </ul>
