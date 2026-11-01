@@ -1,16 +1,20 @@
 // La note vocale de la bulle du bas : enregistrée dans le navigateur en WAV 16 kHz mono, envoyée au service des notes.
+// Pendant qu'on parle, la reconnaissance vocale du navigateur (Chrome, Safari) affiche le texte ; ailleurs, l'audio seul.
 (function () {
   var voice = document.querySelector('.voice');
   if (!voice) return;
   var endpoint = 'https://callrecorder-notes.vercel.app/api/note';
   var maxSeconds = 90, rate = 16000;
   var bars = voice.querySelector('.bars'), time = voice.querySelector('time'), msg = voice.querySelector('.rec-msg');
-  var ctx, stream, node, chunks, started, timer;
+  var heard = voice.querySelector('.rec-text');
+  var Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  var ctx, stream, node, chunks, started, timer, rec;
 
   function state(s, text) { voice.dataset.state = s; msg.textContent = text || ''; }
 
   function stop() {
     clearInterval(timer);
+    if (rec) { rec.onend = null; try { rec.stop(); } catch (e) {} rec = null; }
     if (node) node.disconnect();
     if (stream) stream.getTracks().forEach(function (t) { t.stop(); });
     if (ctx) ctx.close();
@@ -66,12 +70,36 @@
         if (t >= maxSeconds) send();
       }, 250);
       state('rec');
+      listen();
     }).catch(function () {
       state('error', 'Le micro n’est pas accessible. Autorisez-le pour ce site, ou écrivez-moi sur LinkedIn.');
     });
   });
 
-  voice.querySelector('.rec-cancel').addEventListener('click', function () { stop(); state('idle'); });
+  // Le texte dit jusqu'ici, puis ce qui est en train de se dire. Chrome s'arrête après un silence : on relance tant
+  // que l'enregistrement continue.
+  function listen() {
+    heard.textContent = '';
+    if (!Recognition) return;
+    var said = '';
+    rec = new Recognition();
+    rec.lang = 'fr-FR';
+    rec.continuous = true;
+    rec.interimResults = true;
+    rec.onresult = function (e) {
+      var now = '';
+      for (var i = e.resultIndex; i < e.results.length; i++) {
+        if (e.results[i].isFinal) said += e.results[i][0].transcript + ' ';
+        else now += e.results[i][0].transcript;
+      }
+      heard.textContent = (said + now).trim();
+    };
+    rec.onend = function () { if (rec && voice.dataset.state === 'rec') try { rec.start(); } catch (e) {} };
+    rec.onerror = function (e) { if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { rec.onend = null; rec = null; } };
+    try { rec.start(); } catch (e) { rec = null; }
+  }
+
+  voice.querySelector('.rec-cancel').addEventListener('click', function () { stop(); heard.textContent = ''; state('idle'); });
   voice.querySelector('.rec-send').addEventListener('click', send);
 
   function send() {

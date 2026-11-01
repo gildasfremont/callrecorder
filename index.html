@@ -6,17 +6,27 @@
 <meta name="color-scheme" content="light only">
 <title>CallRecorder</title>
 <meta name="description" content="CallRecorder enregistre vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp et les transcrit sur votre Mac.">
-<link rel="icon" href="img/icone.png?v=4">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="CallRecorder">
+<meta property="og:title" content="CallRecorder · Enregistrez, sans y penser">
+<meta property="og:description" content="CallRecorder enregistre vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp et les transcrit sur votre Mac.">
+<meta property="og:url" content="https://gildasfremont.github.io/callrecorder/">
+<meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icone-encre-64.png?v=7">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=77">
+<link rel="stylesheet" href="style.css?v=78">
 </head>
 <body>
 
 <div class="wrap">
   <nav class="nav" aria-label="Site">
-    <a class="home" href="./" aria-label="CallRecorder, accueil"><img src="img/icone.png?v=4" alt=""></a>
+    <a class="home" href="./" aria-label="CallRecorder, accueil"><img src="img/icone-encre.webp?v=7" alt=""></a>
     <div class="links">
       <a href="fonctionnalites/">Fonctionnalités</a>
       <a class="button" href="#installation">Installer</a>
@@ -47,7 +57,7 @@
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
         <div class="ask">Pour le conseil du 20&nbsp;: qu'est-ce que les banques m'ont vraiment dit sur la ligne de crédit ce mois-ci&nbsp;?</div>
-        <div class="tool"><img src="img/icone.png?v=4" alt="">5 appels lus : la revue budgétaire et 4 appels avec les banques</div>
+        <div class="tool"><img src="img/icone-encre.webp?v=7" alt="">5 appels lus : la revue budgétaire et 4 appels avec les banques</div>
         <div class="answer">
           <img src="img/logos/claude.png" alt="">
           <div>
@@ -68,7 +78,7 @@
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
         <div class="ask">À la revue de jeudi, qu'est-ce que Transports Morel s'est engagé à faire, et pour quand&nbsp;?</div>
-        <div class="tool"><img src="img/icone.png?v=4" alt="">1 réunion lue : revue mensuelle avec Transports Morel, 29 oct.</div>
+        <div class="tool"><img src="img/icone-encre.webp?v=7" alt="">1 réunion lue : revue mensuelle avec Transports Morel, 29 oct.</div>
         <div class="answer">
           <img src="img/logos/claude.png" alt="">
           <div>
@@ -89,7 +99,7 @@
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
         <div class="ask">Range ce que je me suis dicté cette semaine.</div>
-        <div class="tool"><img src="img/icone.png?v=4" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
+        <div class="tool"><img src="img/icone-encre.webp?v=7" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
         <div class="answer">
           <img src="img/logos/claude.png" alt="">
           <div>
@@ -241,6 +251,7 @@
           <div class="voice" data-state="idle">
             <button class="button rec-start" type="button"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="1.5" width="5" height="8.5" rx="2.5"/><path d="M3 7.5a5 5 0 0 0 10 0M8 12.5v2"/></svg>Laisser une note vocale</button>
             <div class="rec-live"><i class="dot"></i><div class="bars"></div><time>0:00</time><button class="button rec-cancel" type="button">Annuler</button><button class="button default rec-send" type="button">Envoyer</button></div>
+            <p class="rec-text" aria-live="polite"></p>
             <p class="rec-msg" role="status"></p>
           </div>
           <span><a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></span>
@@ -341,6 +352,6 @@
   if (moved[location.hash]) location.replace(moved[location.hash]);
 </script>
 <script src="nav.js"></script>
-<script src="note.js?v=2"></script>
+<script src="note.js?v=3"></script>
 </body>
 </html>

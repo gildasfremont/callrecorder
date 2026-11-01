@@ -325,6 +325,9 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .voice[data-state="rec"] .rec-live, .voice[data-state="sending"] .rec-live { display: flex; align-items: center; gap: 10px; }
 .voice[data-state="sending"] .rec-live { opacity: .5; pointer-events: none; }
 .voice[data-state="done"] .rec-msg, .voice[data-state="error"] .rec-msg, .voice[data-state="sending"] .rec-msg { display: block; margin-top: 10px; font-size: 15px; }
+.author .voice .rec-text { display: none; margin: 10px 0 0; font-size: 15px; line-height: 1.45; color: var(--secondary); }
+.voice[data-state="rec"] .rec-text:not(:empty), .voice[data-state="sending"] .rec-text:not(:empty), .voice[data-state="done"] .rec-text:not(:empty) { display: block; }
+.voice[data-state="rec"] .rec-text:not(:empty)::after { content: "…"; }
 .voice .dot { flex: none; width: 10px; height: 10px; border-radius: 50%; background: #e0352b; animation: rec 1.2s ease-in-out infinite; }
 @keyframes rec { 50% { opacity: .3; } }
 .voice .bars { flex: 1 1 0; display: flex; align-items: center; gap: 2px; height: 24px; min-width: 0; overflow: hidden; }
