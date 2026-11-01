@@ -313,17 +313,17 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .author img { flex: none; width: 168px; height: auto; }
 .author .bubble { position: relative; margin: 0 0 96px; max-width: 420px; padding: 20px 24px; border-radius: 20px; background: var(--group); color: var(--text); font-size: 16px; line-height: 1.5; }
 .author .bubble::before { content: ""; position: absolute; left: -10px; bottom: 22px; width: 22px; height: 22px; background: var(--group); border-radius: 0 0 0 6px; transform: rotate(45deg); }
-.author .bubble span { display: block; margin-top: 8px; font-size: 15px; }
+.author .bubble > span { display: block; margin-top: 8px; font-size: 15px; }
 .author .bubble { min-width: 0; }
 .author .bubble p { margin: 0; }
 /* Le message pour Gildas : tapé, ou dicté par la reconnaissance vocale du navigateur. */
 .message { margin-top: 14px; }
-.message textarea { display: block; box-sizing: border-box; width: 100%; min-height: 84px; resize: vertical; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--window); color: var(--text); font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+.message textarea { display: block; box-sizing: border-box; width: 100%; min-height: 84px; resize: none; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--window); color: var(--text); font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
 .message textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 .message-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
-.message .button { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.message .button { display: inline-flex; align-items: center; justify-content: center; gap: 6px; height: 34px; padding: 0 14px; font-size: 15px; line-height: 1; white-space: nowrap; }
 .message .button[hidden] { display: none; }
-.message svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+.message svg { display: block; flex: none; width: 15px; height: 15px; margin-left: -2px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
 .message .dictate.on { color: #e0352b; }
 .author .message-status { font-size: 15px; margin-top: 10px; }
 .author .message-status:empty { display: none; }
