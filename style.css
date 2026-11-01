@@ -143,6 +143,10 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .pile span:nth-child(5) { transform: rotate(9deg) translateY(6px); }
 .pile img { width: 100%; height: 100%; display: block; }
 .pile .meet img { padding: 18%; box-sizing: border-box; }
+/* Les icônes à l'encre et au lavis : l'image déborde de la tuile pour garder le trait du bord. */
+.pile span:has(img[src*="encre/"]) { background: none; box-shadow: none; overflow: visible; border-radius: 0; }
+.pile img[src*="encre/"] { width: 112.5%; height: auto; margin: -6.25%; max-width: none; filter: drop-shadow(0 6px 8px rgba(20,40,80,.16)); }
+.pair figure > img.encre { box-sizing: border-box; padding: calc(clamp(46px, 11vw, 112px) * .025); filter: drop-shadow(0 6px 10px rgba(20,40,80,.16)); }
 .about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: 720px; margin: -24px auto 0; }
 @media (max-width: 640px) {
   .pair { gap: 8px; }
