@@ -4,29 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
-<title>CallRecorder</title>
-<meta name="description" content="CallRecorder se souvient de vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp, de vos réunions et de vos notes vocales : une mémoire que vos assistants IA consultent.">
+<title>Callrecorder</title>
+<meta name="description" content="Callrecorder se souvient de vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp, de vos réunions et de vos notes vocales : une mémoire que vos assistants IA consultent.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:site_name" content="CallRecorder">
-<meta property="og:title" content="CallRecorder · Souvenez-vous de tout ce qui s’est dit">
-<meta property="og:description" content="CallRecorder se souvient de vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp, de vos réunions et de vos notes vocales : une mémoire que vos assistants IA consultent.">
+<meta property="og:site_name" content="Callrecorder">
+<meta property="og:title" content="Callrecorder · Souvenez-vous de tout ce qui s’est dit">
+<meta property="og:description" content="Callrecorder se souvient de vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp, de vos réunions et de vos notes vocales : une mémoire que vos assistants IA consultent.">
 <meta property="og:url" content="https://gildasfremont.github.io/callrecorder/">
 <meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg?v=5">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="img/icone-encre-64.png?v=7">
+<link rel="icon" href="img/icone-micro-64.png?v=8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
-<link rel="stylesheet" href="style.css?v=110">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
+<link rel="stylesheet" href="style.css?v=128">
 </head>
 <body>
 
 <div class="wrap">
   <nav class="nav nav-home" aria-label="Site">
-    <a class="home" href="./" aria-label="CallRecorder, accueil"><img src="img/icone-encre.webp?v=7" alt=""></a>
+    <a class="home" href="./" aria-label="Callrecorder, accueil"><span class="marque" aria-hidden="true">callrecorder</span></a>
     <div class="links">
       <a href="fonctionnalites/">Fonctionnalités</a>
       <a class="button" href="#installation">Installer</a>
@@ -36,22 +37,22 @@
     <h1>Souvenez-vous de tout ce qui s’est dit</h1>
     <p class="lead">Une mémoire de vos échanges, constituée sans y penser et accessible à vos assistants IA.</p>
     <!-- Un micro de radio tendu vers le titre ; son mât descend derrière la fenêtre Appels. -->
-    <img class="app-mic" src="img/micro-mat.webp?v=2" width="1200" height="3600" alt="" aria-hidden="true">
+    <img class="app-mic" src="img/micro-mat.webp?v=4" width="724" height="2172" alt="" aria-hidden="true">
   </div>
 
-  <div class="tabs" role="tablist" aria-label="Ce dont CallRecorder se souvient">
+  <div class="tabs" role="tablist" aria-label="Ce dont Callrecorder se souvient">
     <button role="tab" aria-selected="true" data-tab="appel">Appels et visios</button>
     <button role="tab" aria-selected="false" data-tab="reunion">Réunions</button>
     <button role="tab" aria-selected="false" data-tab="note">Notes vocales</button>
   </div>
 
   <div class="stage">
-    <img id="appels" src="img/appels.webp" width="2560" height="1582" alt="La fenêtre Appels de CallRecorder : à gauche, les appels d'octobre d'un directeur financier, une ligne par appel avec sa première capture, l'app, l'heure, le titre et la durée ; à droite, la revue budgétaire sur Teams avec Sophie, Karim et Julie : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
+    <img id="appels" src="img/appels.webp" width="2560" height="1582" alt="La fenêtre Appels de Callrecorder : à gauche, les appels d'octobre d'un directeur financier, une ligne par appel avec sa première capture, l'app, l'heure, le titre et la durée ; à droite, la revue budgétaire sur Teams avec Sophie, Karim et Julie : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
     <div class="claude" data-tab="appel" role="img" aria-label="Par-dessus, une conversation avec Claude : avant le conseil, on lui demande ce que les banques ont vraiment dit au téléphone sur la ligne de crédit. Claude lit la revue budgétaire et quatre appels avec les banques : deux renouvellent, à des conditions différentes, la troisième ne décidera pas avant décembre.">
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
         <div class="ask">Pour le conseil du 20&nbsp;: qu'est-ce que les banques m'ont vraiment dit sur la ligne de crédit ce mois-ci&nbsp;?</div>
-        <div class="tool"><img src="img/icone-encre.webp?v=7" alt="">5 appels lus : la revue budgétaire et 4 appels avec les banques</div>
+        <div class="tool"><img src="img/icone-micro.webp?v=8" alt="">5 appels lus : la revue budgétaire et 4 appels avec les banques</div>
         <div class="answer">
           <img src="img/logos/claude.png" alt="">
           <div>
@@ -72,7 +73,7 @@
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
         <div class="ask">À la revue de jeudi, qu'est-ce que Transports Morel s'est engagé à faire, et pour quand&nbsp;?</div>
-        <div class="tool"><img src="img/icone-encre.webp?v=7" alt="">1 réunion lue : revue mensuelle avec Transports Morel, 29 oct.</div>
+        <div class="tool"><img src="img/icone-micro.webp?v=8" alt="">1 réunion lue : revue mensuelle avec Transports Morel, 29 oct.</div>
         <div class="answer">
           <img src="img/logos/claude.png" alt="">
           <div>
@@ -93,7 +94,7 @@
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
         <div class="ask">Range ce que je me suis dicté cette semaine.</div>
-        <div class="tool"><img src="img/icone-encre.webp?v=7" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
+        <div class="tool"><img src="img/icone-micro.webp?v=8" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
         <div class="answer">
           <img src="img/logos/claude.png" alt="">
           <div>
@@ -121,7 +122,7 @@
   </div>
 
   <div class="cta">
-    <a class="button hero" href="#installation">Installer CallRecorder</a>
+    <a class="button hero" href="#installation">Installer Callrecorder</a>
     <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
   </div>
 
@@ -144,7 +145,7 @@
       <span class="app" data-name="Google Chrome"><img src="img/logos/chrome.png" alt="Google Chrome"></span>
   </div>
   <p class="dock-label">et s’en souvient pour</p>
-  <div class="dock llm-dock" aria-label="Assistants compatibles avec CallRecorder">
+  <div class="dock llm-dock" aria-label="Assistants compatibles avec Callrecorder">
       <span class="app" data-name="Claude"><img src="img/logos/claude-app.png" alt="Claude"></span>
       <span class="app" data-name="Codex"><img src="img/logos/codex.png" alt="Codex"></span>
       <span class="app tile" data-name="Cursor"><img src="img/dock/cursor.png" alt="Cursor"></span>
@@ -168,7 +169,7 @@
         <li id="reunions" class="o-reunion text-right"><div><span>Ce qui se dit autour d'une table</span><p>Un rendez-vous dans une salle, sans visio&nbsp;: le Mac posé sur la table suffit, la conversation rejoint votre mémoire comme un appel.</p></div><img src="img/reunion.webp?v=8" width="900" height="600" loading="lazy" alt="Deux personnes dessinées à l'encre et à l'aquarelle, face à face à une table : lui, en veste bleue, se gratte la tête ; elle, en chemise vermillon, parle avec les mains ; chacun a sa bulle ; sur la table, une bande de papier où leurs lignes alternent dans leurs couleurs."></li>
         <li id="telephones" class="o-telephones"><div><span>Vos appels téléphoniques</span><p>Ceux de votre iPhone comme ceux d'un Android&nbsp;: ils rejoignent votre mémoire comme vos autres appels.</p></div>
           <dl class="os">
-            <div><dt><img src="img/logos/apple.svg" alt="">iPhone</dt><dd>Prenez vos appels sur le Mac, CallRecorder s'en souvient. Rien à installer sur l'iPhone.</dd></div>
+            <div><dt><img src="img/logos/apple.svg" alt="">iPhone</dt><dd>Prenez vos appels sur le Mac, Callrecorder s'en souvient. Rien à installer sur l'iPhone.</dd></div>
             <div><dt><img src="img/logos/android.svg" alt="">Android</dt><dd>L'appel reste sur le téléphone, branché au Mac&nbsp;: les deux voix sont retenues.</dd></div>
           </dl>
         </li>
@@ -195,13 +196,13 @@
           </div>
           <ol class="steps" data-scenario="claude">
             <li><b>Installer</b><span class="sub">Copiez la ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>. Claude se ferme et se rouvre tout seul.</span></li>
-            <li><b>Autoriser</b><span class="sub">Dans CallRecorder&nbsp;: le micro, le son des apps, puis l'écran dans Réglages Système et <b>Quitter et rouvrir</b>.</span></li>
+            <li><b>Autoriser</b><span class="sub">Dans Callrecorder&nbsp;: le micro, le son des apps, puis l'écran dans Réglages Système et <b>Quitter et rouvrir</b>.</span></li>
             <li><b>Vérifier</b><span class="sub">Répondez à l'interlocuteur de test, puis demandez à Claude&nbsp;: «&nbsp;Résume mon dernier appel&nbsp;».</span></li>
           </ol>
           <ol class="steps" data-scenario="seul" hidden>
             <li><b>Installer</b><span class="sub">Copiez la ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
-            <li><b>Autoriser</b><span class="sub">Dans CallRecorder&nbsp;: le micro, le son des apps, puis l'écran dans Réglages Système et <b>Quitter et rouvrir</b>.</span></li>
-            <li><b>Vérifier</b><span class="sub">Répondez à l'interlocuteur de test. Vos appels sont ensuite dans l'icône de CallRecorder, dans la barre des menus.</span></li>
+            <li><b>Autoriser</b><span class="sub">Dans Callrecorder&nbsp;: le micro, le son des apps, puis l'écran dans Réglages Système et <b>Quitter et rouvrir</b>.</span></li>
+            <li><b>Vérifier</b><span class="sub">Répondez à l'interlocuteur de test. Vos appels sont ensuite dans l'icône de Callrecorder, dans la barre des menus.</span></li>
           </ol>
           <div class="help">
             <p data-scenario="claude">Claude ne voit pas vos appels&nbsp;? Quittez et relancez Claude.</p>
@@ -225,7 +226,7 @@
       <div class="author">
         <img src="img/gildas.webp" width="480" height="498" loading="lazy" alt="Portrait dessiné à l'encre et à l'aquarelle de Gildas Frémont, bras croisés, en pull irlandais.">
         <div class="bubble">
-          <p>Bonjour, merci de vous intéresser à CallRecorder. Je l'ai initialement créé pour gérer mes appels, je l'améliore maintenant grâce à vos remarques.</p>
+          <p>Bonjour, merci de vous intéresser à Callrecorder. Je l'ai initialement créé pour gérer mes appels, je l'améliore maintenant grâce à vos remarques.</p>
           <button class="button open-message" type="button">Laisser un message</button>
           <form class="message" hidden>
             <div class="rec-bar" hidden>
@@ -289,9 +290,9 @@
       } catch (e) {}
     }
     var message = null, warn = false;
-    if (arch === 'intel') { message = 'Ce Mac a un processeur Intel. CallRecorder nécessite un Mac avec puce Apple (M1 ou plus récent).'; warn = true; }
-    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais CallRecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l’installer.'; warn = true; }
-    else if (arch === 'arm' && major) message = 'Ce Mac est compatible avec CallRecorder.';
+    if (arch === 'intel') { message = 'Ce Mac a un processeur Intel. Callrecorder nécessite un Mac avec puce Apple (M1 ou plus récent).'; warn = true; }
+    else if (arch === 'arm' && major && major < 15) { message = 'Ce Mac a une puce Apple, mais Callrecorder nécessite macOS 15 ou plus récent. Mettez macOS à jour avant de l’installer.'; warn = true; }
+    else if (arch === 'arm' && major) message = 'Ce Mac est compatible avec Callrecorder.';
     else if (arch === 'arm') message = 'Ce Mac a une puce Apple. Vérifiez que macOS 15 ou plus récent est installé.';
     if (!message) return;
     document.querySelectorAll('[data-compat]').forEach(function (el) {
@@ -314,8 +315,8 @@
     const img = document.getElementById("appels");
     const alts = {
       appel: img.alt,
-      reunion: "La fenêtre Appels de CallRecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.",
-      note: "La fenêtre Appels de CallRecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure."
+      reunion: "La fenêtre Appels de Callrecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.",
+      note: "La fenêtre Appels de Callrecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure."
     };
     const srcs = { appel: "img/appels.webp", reunion: "img/appels-reunion.webp?v=2", note: "img/appels-note.webp" };
     Object.values(srcs).forEach(src => { new Image().src = src; });

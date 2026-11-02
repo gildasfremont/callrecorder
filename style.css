@@ -382,9 +382,16 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display: 
 }
 
 /* Barre du haut : le nom à gauche, la doc et l'installation à droite. Sur toutes les pages. */
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0 0; }
-.nav .home { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--text); }
-.nav .home img { display: block; width: 32px; height: 32px; filter: drop-shadow(0 1px 1px rgba(20,40,80,.2)); }
+/* Le logo du site est le cartouche ; son nom et les liens partagent la même ligne de base. */
+.nav { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 20px 0 0; }
+.nav .home { display: inline-flex; align-items: baseline; color: var(--text); }
+.nav .home:hover { text-decoration: none; }
+.nav .home .marque { font-family: Archivo, var(--display); font-weight: 500; font-stretch: 112%; font-size: 16px; letter-spacing: -0.01em; user-select: none;
+  /* Cartouche : trait de l'épaisseur des fûts d'Archivo 500 (0,115 em), coins continus façon Apple. */
+  --trait: 0.115em; box-sizing: border-box; height: 26px; line-height: calc(26px - 2 * var(--trait)); padding: 0 0.5em 0 0.55em;
+  margin: 3px 0; background: #fff; border: var(--trait) solid var(--text); border-radius: 0.45em; }
+@supports (corner-shape: squircle) { .nav .home .marque { border-radius: 0.75em; corner-shape: squircle; } }
+@media (max-width: 480px) { .nav { gap: 8px; } .nav .links { gap: 12px; } }
 .nav .links { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; }
 .nav .links a { color: var(--text); }
 .nav .links a[aria-current="page"] { color: var(--secondary); }
