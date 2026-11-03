@@ -1,6 +1,7 @@
-// Le message de la bulle du bas : « Laissez-moi un message » ouvre la dictée du navigateur (Chrome, Edge, Safari).
-// En haut, l'état : on écoute ou non, Arrêter / Reprendre, et ce qui ne va pas. Dessous, le texte, modifiable ; puis
-// Envoyer, qui part en texte au service des notes. Sans reconnaissance vocale (Firefox…), juste le texte et Envoyer.
+// Le message de la bulle du bas : « Laisser un message » ouvre la zone de texte, rien ne s'enregistre tout seul.
+// En haut, Dicter lance la dictée du navigateur (Chrome, Edge, Safari) ; l'état dit si on écoute, Arrêter / Reprendre,
+// et ce qui ne va pas. Dessous, le texte, modifiable ; puis Envoyer, qui part en texte au service des notes. Sans
+// reconnaissance vocale (Firefox…), juste le texte et Envoyer.
 (function () {
   var form = document.querySelector('.message'), open = document.querySelector('.open-message');
   if (!form || !open) return;
@@ -98,12 +99,12 @@
   // Le curseur reste dans le texte : sans lui, la dictée reprise n'écrit nulle part.
   toggle.addEventListener('click', function () { if (rec) stop(); else start(); box.focus(); });
 
-  // Le curseur va dans le texte : on peut dicter, ou corriger et taper aussitôt.
+  // Le curseur va dans le texte : on tape, ou on lance la dictée. Elle ne démarre jamais toute seule.
   function begin() {
     form.classList.remove('sent');
     fit();
     box.focus();
-    if (Recognition) { bar.hidden = false; start(); }
+    if (Recognition) { bar.hidden = false; toggle.textContent = 'Dicter'; say(''); }
   }
 
   open.addEventListener('click', function () {
