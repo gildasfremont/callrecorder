@@ -326,9 +326,11 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .author { display: flex; align-items: flex-end; gap: 28px; margin: 64px 0 -96px; }
 .author img { display: block; }
 .author img { flex: none; width: 168px; height: auto; }
-.author .bubble { position: relative; margin: 0 0 96px; max-width: 420px; padding: 20px 24px; border-radius: 20px; background: var(--group); color: var(--text); font-size: 16px; line-height: 1.5; }
+/* La bulle et, dessous, les liens : une colonne qui finit au-dessus du bas du portrait. */
+.author .says { min-width: 0; max-width: 420px; margin: 0 0 64px; }
+.author .bubble { position: relative; margin: 0; padding: 20px 24px; border-radius: 20px; background: var(--group); color: var(--text); font-size: 16px; line-height: 1.5; }
+.author .contact { margin: 10px 0 0 24px; font-size: 15px; }
 .author .bubble::before { content: ""; position: absolute; left: -10px; bottom: 22px; width: 22px; height: 22px; background: var(--group); border-radius: 0 0 0 6px; transform: rotate(45deg); }
-.author .bubble > span { display: block; margin-top: 8px; font-size: 15px; }
 .author .bubble { min-width: 0; }
 .author .bubble p { margin: 0; }
 /* Le message pour Gildas : en haut, l'état de la dictée (et ce qui ne va pas), puis le texte, puis Envoyer. */
@@ -350,7 +352,7 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .author .sent-status { display: none; margin: 0; }
 .author .message.sent .sent-status { display: block; }
 .author .sent-status .another { display: block; margin-top: 6px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; cursor: pointer; }
-@media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .bubble { margin-bottom: 56px; font-size: 15px; padding: 16px 18px; } .author .bubble { flex: 1; } }
+@media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .says { flex: 1; margin-bottom: 28px; } .author .bubble { font-size: 15px; padding: 16px 18px; } .author .contact { margin-left: 18px; } }
 
 /* Guides : une question par ligne, la réponse se déplie. */
 details.row { padding: 0; }
