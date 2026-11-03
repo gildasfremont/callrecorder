@@ -60,9 +60,10 @@ a.button:hover { text-decoration: none; filter: brightness(1.04); }
 /* En-tête, comme un écran « À propos » */
 .about { position: relative; text-align: left; padding: 0; }
 /* Le micro de radio se règle sur le titre : même corps, donc même échelle à toutes les largeurs, et sa tête à hauteur
-   du milieu du titre. Le titre lui laisse la droite. Le mât descend derrière les onglets et la fenêtre Appels. */
+   du milieu du titre. Le titre est court, le micro rentre de deux cadratins vers lui plutôt que de rester collé au bord
+   droit. Le mât descend derrière les onglets et la fenêtre Appels. */
 .about .app-mic {
-  position: absolute; z-index: -1; right: 0; font-size: clamp(40px, 7.4vw, 84px);
+  position: absolute; z-index: -1; right: 2em; font-size: clamp(40px, 7.4vw, 84px);
   width: 3.4em; height: auto; top: calc(var(--about-top) + 1.04em - 3.4em * .479); pointer-events: none;
 }
 .about h1 { font-family: var(--display); font-size: clamp(40px, 7.4vw, 84px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: min(700px, 100% - 3.6em); margin: 0 0 48px; }
@@ -157,10 +158,11 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .pile img[src*="encre/"] { width: 112.5%; height: auto; margin: -6.25%; max-width: none; filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
 .pair figure > img.encre { box-sizing: border-box; padding: calc(clamp(46px, 11vw, 112px) * .025); filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
 .about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: 560px; margin: -24px 0 0; }
-/* Sur un téléphone, le titre prend toute la largeur : seule la tête du micro entre par la droite, sous le sous-titre. */
+/* Sur un téléphone, le titre prend toute la largeur mais reste court : la tête du micro entre par la droite à sa
+   hauteur, au-dessus du sous-titre, comme sur grand écran. */
 @media (max-width: 640px) {
   .about h1 { max-width: none; }
-  .about .app-mic { width: 200px; right: -110px; top: calc(100% + 20px - 200px * .479); }
+  .about .app-mic { width: 180px; right: -72px; top: calc(var(--about-top) + 1.04em + 12px - 180px * .479); }
 }
 @media (max-width: 640px) {
   .pair { gap: 8px; }
