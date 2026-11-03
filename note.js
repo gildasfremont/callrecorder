@@ -57,6 +57,8 @@
       rec = null;
     }
     toggle.textContent = 'Reprendre';
+    toggle.classList.remove('on');
+    toggle.setAttribute('aria-pressed', 'false');
     say(message || 'Dictée arrêtée.', kind);
   }
 
@@ -91,6 +93,8 @@
     // Chrome s'arrête après un silence : on relance tant qu'on n'a pas arrêté.
     rec.onend = function () { if (rec) try { rec.start(); } catch (e) { stop(); } };
     toggle.textContent = 'Arrêter';
+    toggle.classList.add('on');
+    toggle.setAttribute('aria-pressed', 'true');
     say('J’écoute…', 'on');
     try { rec.start(); } catch (e) { stop('La dictée n’a pas démarré : tapez votre message.', 'problem'); }
     check = setTimeout(diagnose, 4000);
@@ -104,7 +108,7 @@
     form.classList.remove('sent');
     fit();
     box.focus();
-    if (Recognition) { bar.hidden = false; toggle.textContent = 'Dicter'; say(''); }
+    if (Recognition) { bar.hidden = false; toggle.textContent = 'Dicter'; toggle.classList.remove('on'); toggle.setAttribute('aria-pressed', 'false'); say(''); }
   }
 
   open.addEventListener('click', function () {
