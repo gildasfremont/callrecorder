@@ -1,7 +1,7 @@
 // Le message de la bulle du bas : « Laisser un message » ouvre la zone de texte, rien ne s'enregistre tout seul.
-// En haut, Dicter lance la dictée du navigateur (Chrome, Edge, Safari) ; l'état dit si on écoute, Arrêter / Reprendre,
-// et ce qui ne va pas. Dessous, le texte, modifiable ; puis Envoyer, qui part en texte au service des notes. Sans
-// reconnaissance vocale (Firefox…), juste le texte et Envoyer.
+// En bas à gauche, face à Envoyer, Dicter lance la dictée du navigateur (Chrome, Edge, Safari) ; Pause la suspend.
+// Au-dessus du texte, seulement ce qui ne va pas. Envoyer part en texte au service des notes. Sans reconnaissance
+// vocale (Firefox…), juste le texte et Envoyer.
 (function () {
   var form = document.querySelector('.message'), open = document.querySelector('.open-message');
   if (!form || !open) return;
@@ -13,10 +13,11 @@
   var rec = null, heard = false, check = null;
   toggle.hidden = !Recognition;
 
-  // kind : 'on' (on écoute), 'problem' (ce qui ne va pas), rien (à l'arrêt).
+  // Ce qui ne va pas, au-dessus du texte ; rien à dire, la ligne disparaît.
   function say(text, kind) {
-    state.textContent = text;
+    state.textContent = text || '';
     state.className = 'rec-state' + (kind ? ' ' + kind : '');
+    bar.hidden = !text;
   }
 
   // La zone grandit avec le texte, et Envoyer ne s'allume qu'avec un message.
@@ -56,10 +57,9 @@
       try { rec.stop(); } catch (e) {}
       rec = null;
     }
-    toggle.textContent = 'Reprendre';
+    toggle.textContent = 'Dicter';
     toggle.classList.remove('on');
-    toggle.setAttribute('aria-pressed', 'false');
-    say(message || 'Dictée arrêtée.', kind);
+    say(message, kind);
   }
 
   function start() {
@@ -72,7 +72,7 @@
     rec.interimResults = true;
     rec.onsoundstart = function () { heard = true; };
     rec.onresult = function (e) {
-      if (!heard || state.classList.contains('problem')) say('J’écoute…', 'on');
+      if (state.classList.contains('problem')) say();
       heard = true;
       var now = '';
       for (var i = e.resultIndex; i < e.results.length; i++) {
@@ -92,10 +92,9 @@
     };
     // Chrome s'arrête après un silence : on relance tant qu'on n'a pas arrêté.
     rec.onend = function () { if (rec) try { rec.start(); } catch (e) { stop(); } };
-    toggle.textContent = 'Arrêter';
+    toggle.textContent = 'Pause';
     toggle.classList.add('on');
-    toggle.setAttribute('aria-pressed', 'true');
-    say('J’écoute…', 'on');
+    say();
     try { rec.start(); } catch (e) { stop('La dictée n’a pas démarré : tapez votre message.', 'problem'); }
     check = setTimeout(diagnose, 4000);
   }
@@ -108,7 +107,8 @@
     form.classList.remove('sent');
     fit();
     box.focus();
-    if (Recognition) { bar.hidden = false; toggle.textContent = 'Dicter'; toggle.classList.remove('on'); toggle.setAttribute('aria-pressed', 'false'); say(''); }
+    if (Recognition) { toggle.textContent = 'Dicter'; toggle.classList.remove('on'); }
+    say();
   }
 
   open.addEventListener('click', function () {
@@ -131,10 +131,8 @@
     send.disabled = true;
     fetch(endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ text: text }) }).then(function (r) {
       if (r.ok) { box.value = ''; form.classList.add('sent'); thanks.textContent = 'Merci, c’est envoyé. Je vous lis très vite.'; return; }
-      bar.hidden = false;
       say(r.status === 429 ? 'Beaucoup de messages aujourd’hui : réessayez demain, ou écrivez-moi sur LinkedIn.' : 'L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.', 'problem');
     }).catch(function () {
-      bar.hidden = false;
       say('L’envoi n’a pas marché. Réessayez, ou écrivez-moi sur LinkedIn.', 'problem');
     }).then(fit);
   });

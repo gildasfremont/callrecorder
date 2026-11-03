@@ -338,11 +338,13 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .author .open-message { display: inline-block; margin-top: 14px; }
 .author .open-message[hidden], .message[hidden], .rec-bar[hidden] { display: none; }
 .message { margin-top: 14px; }
-.rec-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 14px; color: var(--secondary); }
-.author .rec-state { flex: 1; margin: 0; line-height: 1.4; }
+/* Au-dessus du texte, seulement ce qui ne va pas (micro, envoi). Pendant la dictée, le bouton suffit. */
+.rec-bar { margin-bottom: 8px; font-size: 14px; color: var(--secondary); }
+.author .rec-state { margin: 0; line-height: 1.4; }
 .rec-state.problem { color: #8a5a00; }
-/* Dicter : une pastille avec un micro, qui dit qu'on va enregistrer. Pendant l'écoute, elle passe au rouge, pulse,
-   et son icône devient un carré d'arrêt. L'icône est un masque : le texte du bouton change sans la perdre. */
+/* Dicter : une pastille avec un micro, en bas à gauche face à Envoyer, qui dit qu'on va enregistrer. Pendant l'écoute,
+   elle passe au rouge, pulse, et devient Pause avec deux barres. L'icône est un masque : le texte change sans la perdre.
+   Sur téléphone, les deux boutons se resserrent ; si la place manque encore, Envoyer passe à la ligne, à droite. */
 .rec-toggle {
   flex: none; display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px 6px 11px;
   border: 1px solid var(--border); border-radius: 999px; background: var(--window); color: var(--accent);
@@ -353,17 +355,25 @@ footer .signature { margin-top: 40px; color: var(--text); }
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'%3E%3Crect x='9' y='2.5' width='6' height='11.5' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'%3E%3Crect x='9' y='2.5' width='6' height='11.5' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .rec-toggle:hover { border-color: var(--accent); }
+.rec-toggle[hidden] { display: none; }
 .rec-toggle.on { background: #e0352b; border-color: #e0352b; color: #fff; animation: rec-pulse 1.6s ease-out infinite; }
-.rec-toggle.on::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='6' y='6' width='12' height='12' rx='2.5'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='6' y='6' width='12' height='12' rx='2.5'/%3E%3C/svg%3E"); }
+.rec-toggle.on::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='6' y='5' width='4.5' height='14' rx='1.5'/%3E%3Crect x='13.5' y='5' width='4.5' height='14' rx='1.5'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='6' y='5' width='4.5' height='14' rx='1.5'/%3E%3Crect x='13.5' y='5' width='4.5' height='14' rx='1.5'/%3E%3C/svg%3E"); }
 @keyframes rec-pulse { 0% { box-shadow: 0 0 0 0 rgba(224,53,43,.45); } 70%, 100% { box-shadow: 0 0 0 9px rgba(224,53,43,0); } }
 .message textarea { display: block; box-sizing: border-box; width: 100%; min-height: 84px; max-height: 240px; resize: none; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--window); color: var(--text); font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
 .message textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.message-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
+.message-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 10px; }
+.message-actions .send { margin-left: auto; }
 .message .send:disabled { opacity: .45; cursor: default; }
 .message.sent .rec-bar, .message.sent textarea, .message.sent .message-actions { display: none; }
 .author .sent-status { display: none; margin: 0; }
 .author .message.sent .sent-status { display: block; }
 .author .sent-status .another { display: block; margin-top: 6px; padding: 0; border: 0; background: none; color: var(--accent); font: inherit; cursor: pointer; }
+@media (max-width: 640px) {
+  .message-actions { column-gap: 8px; }
+  .rec-toggle { font-size: 14px; gap: 5px; padding: 5px 11px 5px 9px; }
+  .rec-toggle::before { width: 14px; height: 14px; }
+  .message .send { padding: 9px 13px; }
+}
 @media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .says { flex: 1; margin-bottom: 28px; } .author .bubble { font-size: 15px; padding: 16px 18px; } .author .contact { margin-left: 18px; } }
 
 /* Guides : une question par ligne, la réponse se déplie. */
