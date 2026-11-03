@@ -81,10 +81,12 @@ a.button:hover { text-decoration: none; filter: brightness(1.04); }
 /* Le mât ne se montre que s'il descend derrière la fenêtre Appels, qui a la largeur du contenu. Son bord droit est à
    micro-gauche + .935 micro. Sous 540 px, corps, micro et titre ne bougent plus (40 px, 180 px, 216 px) et le micro est
    calé à son écart minimal du titre : le mât finit à 404 px du bord gauche du contenu. Il faut donc 404 px de contenu,
-   16 px de marge en plus, soit un écran de 452 px. En dessous, le dessin s'arrête net juste sous la bague de
-   l'articulation du bras (qui finit à 20.7 % de la hauteur de l'image) : l'objet ne pend pas dans le vide. */
+   16 px de marge en plus, soit un écran de 452 px. En dessous, le micro entre par le bord droit de l'écran, qui coupe
+   le bras aux sept dixièmes de l'image, avant l'articulation : rien n'est découpé dans le dessin, c'est l'écran qui
+   coupe. Le bord de l'écran est à 16 px du contenu (la marge de .wrap). Sur un écran très étroit, l'écart minimal au
+   titre l'emporte et la coupe remonte le long du bras. */
 @media (max-width: 452px) {
-  .about .app-mic { clip-path: inset(0 0 79% 0); }
+  .about { --micro-gauche: max(var(--titre) + .5 * var(--corps), 100% + 16px - .7 * var(--micro)); }
 }
 .about h1 { font-family: var(--display); font-size: var(--corps); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 7em; margin: 0 0 48px; }
 /* Mini logos des marques citées, dans le fil du texte */
