@@ -57,21 +57,28 @@ a:hover { text-decoration: underline; }
 .button-icon { width: 40px; height: 40px; flex: none; margin: 0; filter: drop-shadow(0 1px 2px rgba(20,40,80,.25)); }
 a.button:hover { text-decoration: none; filter: brightness(1.04); }
 
-/* En-tête, comme un écran « À propos » */
-.about { position: relative; text-align: left; padding: 0; }
-/* Le micro de radio se règle sur le titre, à toutes les largeurs par le même calcul. Même corps que le titre, donc
-   même échelle. Le titre tient toujours sur deux lignes ; sa ligne la plus longue, « vous de tout », fait 5.4 cadratins.
-   Le micro se centre dans l'espace qui reste à droite de cette ligne, sans jamais s'en approcher à moins d'un
-   demi-cadratin : sur téléphone, il déborde alors du bord droit et seule sa tête entre. Sa tête, au septième de sa
-   hauteur, vient au milieu des deux lignes. Le mât descend derrière les onglets et la fenêtre Appels. */
-.about .app-mic {
-  position: absolute; z-index: -1; font-size: clamp(40px, 7.4vw, 84px); pointer-events: none;
-  --titre: 5.4em; --micro: max(3.4em, 180px);
-  width: var(--micro); height: auto;
-  left: max(var(--titre) + .5em, (100% + var(--titre) - var(--micro)) / 2);
-  top: calc(var(--about-top) + 1.04em - var(--micro) * .412);
+/* En-tête, comme un écran « À propos ». Le titre, le sous-titre et le micro se règlent sur un même corps, celui du
+   titre, par le même calcul à toutes les largeurs.
+   Le micro de radio a le corps du titre, donc son échelle. Le titre tient toujours sur deux lignes ; sa ligne la plus
+   longue, « vous de tout », fait 5.4 cadratins. Le micro se centre dans l'espace qui reste à droite de cette ligne, sans
+   jamais s'en approcher à moins d'un demi-cadratin : sur téléphone, il déborde alors du bord droit et seule sa tête
+   entre. Sa tête, au septième de sa hauteur, vient au milieu des deux lignes. Le mât descend derrière les onglets et la
+   fenêtre Appels. Le texte ne passe jamais sur le dessin : le sous-titre s'arrête avant le mât, qui commence à 85 % de
+   la largeur de l'image, avec une marge. */
+.about {
+  position: relative; text-align: left; padding: 0;
+  --corps: clamp(40px, 7.4vw, 84px);
+  --titre: calc(5.4 * var(--corps));
+  --micro: max(3.4 * var(--corps), 180px);
+  --micro-gauche: max(var(--titre) + .5 * var(--corps), (100% + var(--titre) - var(--micro)) / 2);
+  --mat-gauche: calc(var(--micro-gauche) + .848 * var(--micro));
 }
-.about h1 { font-family: var(--display); font-size: clamp(40px, 7.4vw, 84px); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 7em; margin: 0 0 48px; }
+.about .app-mic {
+  position: absolute; z-index: -1; pointer-events: none;
+  width: var(--micro); height: auto; left: var(--micro-gauche);
+  top: calc(var(--about-top) + 1.04 * var(--corps) - .412 * var(--micro));
+}
+.about h1 { font-family: var(--display); font-size: var(--corps); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 7em; margin: 0 0 48px; }
 /* Mini logos des marques citées, dans le fil du texte */
 img.logo { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: .22em; }
 .nobr { white-space: nowrap; }
@@ -162,7 +169,7 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .pile span:has(img[src*="encre/"]) { background: none; box-shadow: none; overflow: visible; border-radius: 0; }
 .pile img[src*="encre/"] { width: 112.5%; height: auto; margin: -6.25%; max-width: none; filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
 .pair figure > img.encre { box-sizing: border-box; padding: calc(clamp(46px, 11vw, 112px) * .025); filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
-.about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: 560px; margin: -24px 0 0; }
+.about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: min(560px, var(--mat-gauche) - 24px); margin: -24px 0 0; }
 @media (max-width: 640px) {
   .pair { gap: 8px; }
   .claude { position: relative; right: auto; bottom: auto; width: auto; margin: -24px 8px 0; font-size: 12.5px; }
