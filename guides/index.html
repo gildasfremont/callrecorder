@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="../style.css?v=132">
+<link rel="stylesheet" href="../style.css?v=133">
 </head>
 <body>
 
@@ -196,7 +196,7 @@
               <p class="rec-state" role="status"></p>
             </div>
             <textarea name="text" rows="3" maxlength="3000" placeholder="Votre message" aria-label="Votre message pour Gildas" required></textarea>
-            <div class="message-actions"><button class="rec-toggle" type="button" hidden>Dicter</button><button class="button send" type="submit" disabled>Envoyer</button></div>
+            <div class="message-actions"><button class="rec-toggle" type="button" hidden>Dicter</button><span class="rec-key" aria-hidden="true">Espace pour dicter</span><button class="button send" type="submit" disabled>Envoyer</button></div>
             <p class="sent-status" role="status"><span></span> <button class="another" type="button">Envoyer un autre message</button></p>
           </form>
         </div>
@@ -217,7 +217,7 @@
   window.addEventListener("hashchange", openFromHash);
 </script>
 <script src="../nav.js?v=2"></script>
-<script src="../note.js?v=19"></script>
+<script src="../note.js?v=20"></script>
 <script src="../visite.js?v=1"></script>
 </body>
 </html>
