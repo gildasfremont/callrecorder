@@ -45,7 +45,7 @@
       <div class="group">
         <details class="row" id="claude"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
           <ol>
-            <li>Si Claude était installé quand vous avez installé Callrecorder, c'est déjà fait. Sinon, dans les Réglages, ouvrez <b>Outils et intégrations › Claude</b> et activez <b>Accès de Claude à vos appels</b> : Claude Code, Claude Desktop et Codex (en bêta) sont reliés à vos appels.</li>
+            <li>Si Claude était installé quand vous avez installé Callrecorder, c'est déjà fait. Sinon, dans les Réglages, ouvrez <b>Intégrations › Agents</b> et activez <b>Accès de Claude à vos appels</b> : Claude Code, Claude Desktop et Codex (en bêta) sont reliés à vos appels.</li>
             <li>Quittez et relancez Claude.</li>
             <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
           </ol>
@@ -54,7 +54,7 @@
         <details class="row" id="autre-assistant"><summary>Relier vos appels à un autre assistant</summary><div class="answer">
           <p>Codex est relié comme Claude, sans rien faire&nbsp;; c'est encore une bêta. Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels de la même façon. Callrecorder est un serveur MCP local&nbsp;: rien ne passe par Internet tant que l'assistant ne lit pas une transcription.</p>
           <ol>
-            <li>Dans les Réglages de Callrecorder, ouvrez <b>Outils et intégrations › Claude</b>&nbsp;: la partie <b>Autre assistant</b>, en bas, donne la consigne et la configuration.</li>
+            <li>Dans les Réglages de Callrecorder, ouvrez <b>Intégrations › Agents</b>&nbsp;: la partie <b>Autre assistant</b>, en bas, donne la consigne et la configuration.</li>
             <li>Si l'assistant sait modifier sa configuration lui-même (Cursor en mode agent, par exemple), cliquez sur <b>Copier la consigne</b> et collez-la-lui dans une conversation.</li>
             <li>Sinon, cliquez sur <b>Copier la configuration MCP</b> et collez-la dans le fichier de l'assistant, par exemple <code>~/.cursor/mcp.json</code> ou <code>~/.gemini/settings.json</code>.</li>
             <li>Redémarrez l'assistant et demandez-lui&nbsp;: « Liste mes derniers appels ».</li>
@@ -62,7 +62,7 @@
           <p>La configuration tient en trois lignes&nbsp;: un serveur nommé <code>calls</code>, la commande <code>/Applications/CallRecorder.app/Contents/MacOS/CallRecorder</code> et l'argument <code>mcp</code>.</p>
         </div></details>
         <details class="row" id="autorisations"><summary>Revoir les autorisations et les réglages</summary><div class="answer">
-          <p>S'il manque le micro ou le son des apps, une carte en tête de la liste des appels le dit, avec <b>Ouvrir les Réglages</b> : l'appel de test y est, en haut. En bas à gauche de la fenêtre Appels, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des appels. En haut, une ligne dit si vos appels sont bien enregistrés, et sinon ce qui manque. Chaque autorisation s'y donne d'un clic ; on y règle aussi Claude, la durée de conservation de l'audio, le dossier des appels, l'espace qu'ils occupent sur le Mac et l'icône de la barre des menus. Quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire.</p>
+          <p>S'il manque le micro ou le son des apps, une carte en tête de la liste des conversations le dit, avec <b>Ouvrir les Réglages</b>. En bas à gauche de la fenêtre Appels, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des conversations. En haut, une ligne dit si vos conversations sont bien enregistrées, et sinon ce qui manque, avec <b>Copier la commande</b> : collée dans le Terminal, elle redemande les autorisations une à une, comme à l'installation, et vérifie l'enregistrement par un texte lu, transcrit et affiché en regard. Chaque autorisation se donne aussi d'un clic dans <b>Autorisations</b>, et quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire. On règle là aussi les agents, la durée de conservation de l'audio, le dossier des conversations, l'espace qu'elles occupent sur le Mac et l'icône de la barre des menus.</p>
           <img src="../img/guides/configuration.webp" loading="lazy" alt="Les Réglages, dans la fenêtre Appels : le micro, le son des apps et l'écran autorisés, les apps et les téléphones enregistrés, Claude, puis la conservation de l'audio.">
         </div></details>
         <details class="row" id="apps-sites"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
@@ -155,7 +155,7 @@
           <p>Callrecorder y déplace le dossier CallRecordings avec tous vos appels, puis redémarre. La ligne indique alors où ils sont, par exemple <b>Google Drive › Mon Drive › CallRecordings</b>.</p>
           <img src="../img/guides/dossier.png" loading="lazy" alt="La partie Général des Réglages : la ligne Dossier des appels indique Google Drive › Mon Drive › CallRecordings, avec le bouton Changer….">
           <p>Les nouveaux appels sont envoyés en ligne à mesure qu'ils s'enregistrent. Quand l'audio d'un appel arrive à expiration, il part dans la corbeille du service. Le changement de dossier attend la fin de l'appel ou de la transcription en cours. Pour revenir en arrière, choisissez à nouveau votre dossier personnel.</p>
-          <p>Vos appels sont alors stockés chez Google, Apple ou Dropbox, et plus seulement sur votre Mac. Tous y partent, y compris ceux des groupes gardés hors des IA&nbsp;: pour n'envoyer que certains groupes, faites plutôt une copie (Réglages › Outils et intégrations › Autres outils).</p>
+          <p>Vos appels sont alors stockés chez Google, Apple ou Dropbox, et plus seulement sur votre Mac. Tous y partent, y compris ceux des groupes gardés hors des IA&nbsp;: pour n'envoyer que certains groupes, faites plutôt une copie (Réglages › Intégrations › Base de données externe).</p>
         </div></details>
         <details class="row" id="garder-audio"><summary>Garder l'enregistrement audio d'un appel</summary><div class="answer">
           <p>L'audio part à la corbeille au bout de 7 jours, une durée que vous pouvez changer dans les Réglages&nbsp;; la transcription et les captures restent. Le chevron au bout du lecteur de l'appel indique la date. Pour garder l'audio, choisissez <b>Garder l'enregistrement</b> dans ce chevron, au clic droit de l'appel dans la liste, ou dans le menu <b>Appel</b>. Claude peut aussi le faire («&nbsp;Garde l'enregistrement de cet appel&nbsp;»).</p>
@@ -164,13 +164,13 @@
       <p class="group-label">Si ça coince</p>
       <div class="group">
         <details class="row" id="claude-ne-voit-pas"><summary>Claude ne voit pas vos appels</summary><div class="answer">
-          <p>Quittez Claude complètement (⌘Q) et relancez-le&nbsp;: il ne découvre l'accès à vos appels qu'au démarrage. Si rien ne change, vérifiez dans les Réglages de Callrecorder, <b>Outils et intégrations › Claude</b>, que <b>Accès de Claude à vos appels</b> est activé.</p>
+          <p>Quittez Claude complètement (⌘Q) et relancez-le&nbsp;: il ne découvre l'accès à vos appels qu'au démarrage. Si rien ne change, vérifiez dans les Réglages de Callrecorder, <b>Intégrations › Agents</b>, que <b>Accès de Claude à vos appels</b> est activé.</p>
         </div></details>
         <details class="row" id="erreur-installation"><summary>Une erreur pendant l'installation</summary><div class="answer">
           <p>Copiez tout le texte du Terminal et collez-le dans Claude ou un autre assistant&nbsp;: l'installation explique chaque échec en français, l'assistant vous dira quoi faire. Vous pouvez ensuite relancer la même ligne.</p>
         </div></details>
         <details class="row" id="mises-a-jour"><summary>Mettre Callrecorder à jour</summary><div class="answer">
-          <p>Callrecorder vous propose chaque nouvelle version. Pour vérifier vous-même&nbsp;: <b>Réglages › Général › Rechercher une mise à jour</b>. Quand une version attend, une étiquette «&nbsp;Mise à jour&nbsp;» apparaît au bout du bouton Réglages. Ce qui change à chaque version est dans le <a href="../versions/">journal des versions</a>.</p>
+          <p>Callrecorder vous propose chaque nouvelle version. Pour vérifier vous-même&nbsp;: <b>Réglages › Paramètres › Rechercher une mise à jour</b>. Quand une version attend, une étiquette «&nbsp;Mise à jour&nbsp;» apparaît au bout du bouton Réglages. Ce qui change à chaque version est dans le <a href="../versions/">journal des versions</a>.</p>
         </div></details>
       </div>
     </div>
