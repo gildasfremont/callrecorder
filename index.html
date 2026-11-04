@@ -36,7 +36,7 @@
   <div class="about">
     <h1>Souvenez-vous de tout</h1>
     <p class="lead">Vos conversations mémorisées, transcrites sur votre Mac sans y penser et accessibles à vos assistants IA.</p>
-    <!-- Un micro de radio tendu vers le titre ; son mât descend derrière la fenêtre Appels. -->
+    <!-- Un micro de radio tendu vers le titre ; son mât descend derrière la fenêtre Conversations. -->
     <img class="app-mic" src="img/micro-mat.webp?v=4" width="724" height="2172" alt="" aria-hidden="true">
   </div>
 
@@ -47,7 +47,7 @@
   </div>
 
   <div class="stage">
-    <img id="appels" src="img/appels.webp" width="2560" height="1582" alt="La fenêtre Appels de Callrecorder : à gauche, les appels d'octobre d'un directeur financier, une ligne par appel avec sa première capture, l'app, l'heure, le titre et la durée ; à droite, la revue budgétaire sur Teams avec Sophie, Karim et Julie : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
+    <img id="appels" src="img/appels.webp" width="2560" height="1582" alt="La fenêtre Conversations de Callrecorder : à gauche, les appels d'octobre d'un directeur financier, une ligne par appel avec sa première capture, l'app, l'heure, le titre et la durée ; à droite, la revue budgétaire sur Teams avec Sophie, Karim et Julie : l'enregistrement, les répliques horodatées de chacun et les captures de la visio.">
     <div class="claude" data-tab="appel" role="img" aria-label="Par-dessus, une conversation avec Claude : avant le conseil, on lui demande ce que les banques ont vraiment dit au téléphone sur la ligne de crédit. Claude lit la revue budgétaire et quatre appels avec les banques : deux renouvellent, à des conditions différentes, la troisième ne décidera pas avant décembre.">
       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
       <div class="body">
@@ -316,8 +316,8 @@
     const img = document.getElementById("appels");
     const alts = {
       appel: img.alt,
-      reunion: "La fenêtre Appels de Callrecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.",
-      note: "La fenêtre Appels de Callrecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure."
+      reunion: "La fenêtre Conversations de Callrecorder : la revue mensuelle avec un transporteur, enregistrée en salle, sa transcription où chaque voix a un numéro, entre des appels de l'entrepôt et le comité de direction.",
+      note: "La fenêtre Conversations de Callrecorder : la page Notes, avec les notes vocales dictées dans la semaine par une responsable marketing, chacune avec son heure."
     };
     const srcs = { appel: "img/appels.webp", reunion: "img/appels-reunion.webp?v=2", note: "img/appels-note.webp" };
     Object.values(srcs).forEach(src => { new Image().src = src; });
