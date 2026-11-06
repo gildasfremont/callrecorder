@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <title>Données et confidentialité · Callrecorder</title>
-<meta name="description" content="Où vont l'audio et les transcriptions de vos appels avec Callrecorder.">
+<meta name="description" content="Où vont l'audio et les transcriptions de vos conversations.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Callrecorder">
 <meta property="og:title" content="Données et confidentialité · Callrecorder">
-<meta property="og:description" content="Où vont l'audio et les transcriptions de vos appels avec Callrecorder.">
+<meta property="og:description" content="Où vont l'audio et les transcriptions de vos conversations.">
 <meta property="og:url" content="https://gildasfremont.github.io/callrecorder/confidentialite/">
 <meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/confidentialite.jpg?v=3">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="../style.css?v=133">
+<link rel="stylesheet" href="../style.css?v=134">
 </head>
 <body>
 
@@ -36,18 +36,21 @@
 
   <header class="page-head">
     <h1>Données et confidentialité</h1>
-    <p>Ce qui reste sur votre Mac, et ce qui en sort, quand et pourquoi.</p>
   </header>
 
   <section class="legal">
     <div class="col">
-      <p>L'audio est enregistré et transcrit sur votre Mac. Il n'en sort que si vous placez le dossier des conversations dans Google Drive, iCloud Drive ou Dropbox, ou si vous y copiez des groupes (Réglages › Intégrations › Base de données externe) : ce service en garde alors une copie.</p>
+      <p>L'audio est enregistré et transcrit sur votre Mac. Callrecorder y garde la transcription, des captures de la fenêtre d'appel et le texte qu'elles montrent. L'audio part à la corbeille au bout de 7 jours, une durée réglable, sauf celui que vous gardez. Le reste demeure jusqu'à ce que vous le supprimiez.</p>
+      <p>Votre empreinte de voix, apprise sur vos notes et vos appels au casque, reconnaît vos phrases. Réglages › Paramètres › Reconnaître ma voix la coupe et l'efface, sauf les copies gardées dans le dossier de chaque conversation où elle vous a reconnu. Les voix des autres servent à les distinguer le temps de la transcription&nbsp;: aucune empreinte n'en est gardée.</p>
+      <p>L'audio ne quitte le Mac que si vous placez le dossier des conversations dans Google Drive, iCloud Drive ou Dropbox, ou si vous y copiez des groupes (Réglages › Intégrations › Base de données externe) : ce service en garde alors une copie.</p>
       <p>Callrecorder ne lit les messages de WhatsApp que si vous activez Réglages › Intégrations › Vocaux WhatsApp. Il n'y prend que les vocaux que vous vous envoyez à vous-même. macOS vous demande alors d'autoriser l'accès aux données de WhatsApp.</p>
       <p>Claude Code, Claude Desktop et Codex, s'ils sont installés, reçoivent d'office l'accès à vos conversations. Un assistant relié peut lire toutes celles qui ne sont pas gardées hors des IA : transcriptions, texte lu à l'écran, captures. Ce qu'il lit part chez son éditeur, sauf s'il tourne sur votre Mac. Pour couper cet accès : Réglages › Intégrations › Agents.</p>
       <p>Si Claude Code est connecté à votre compte sur ce Mac, il relit chaque conversation, d'office&nbsp;: la transcription, les captures de la fenêtre d'appel, le texte lu à l'écran, les titres de vos groupes et votre nom partent chez Anthropic, sur votre forfait. Les groupes gardés hors des IA n'y partent pas. Pour couper cette relecture&nbsp;: Réglages › Intégrations › Agents, à la ligne «&nbsp;Améliorer chaque transcription&nbsp;». La transcription, elle, reste faite sur votre Mac.</p>
+      <p><b>Envoyer à Claude</b> ouvre Claude ou ChatGPT avec le passage choisi, les répliques autour et ce qui était à l'écran. Rien ne part sans ce clic.</p>
       <p>Pendant l'installation, trois jours au plus, Callrecorder envoie d'office son journal de fonctionnement à Gildas Frémont pour l'aider à corriger les problèmes : votre nom et vos dossiers y sont masqués, l'audio et les transcriptions n'en font jamais partie. Il s'arrête de lui-même après votre premier appel transcrit. Ensuite, Callrecorder envoie chaque jour la version de l'app et de macOS, un identifiant tiré au hasard et des chiffres : appels enregistrés, ratés, transcrits et lus, leur durée, leur nombre par app. Jamais leur contenu ni leur nom. Ces envois sont gardés 90 jours. Vous pouvez couper ces envois dans les Réglages, à la ligne «&nbsp;Envoyer des informations à Gildas&nbsp;».</p>
       <p>Si vous laissez un message depuis ce site, il est envoyé à Gildas Frémont et conservé en privé sur un serveur (Vercel, à Paris) jusqu'à ce que son Callrecorder le récupère, puis effacé du serveur. Seuls sont gardés le texte, sa date et une empreinte de votre adresse IP, qui sert à limiter les envois abusifs. Si vous dictez votre message, votre navigateur fait transcrire votre voix par son propre service (Google pour Chrome, Microsoft pour Edge, Apple pour Safari) : seul le texte est envoyé.</p>
       <p>Pour savoir combien de personnes le visitent et d'où elles viennent, ce site compte ses pages vues, sans cookie : la page, le site d'où vous venez, et si vous copiez la ligne d'installation ou ouvrez le message. Vos visites du jour sont reconnues par une empreinte de votre adresse IP et de votre navigateur, qui change chaque jour et n'est jamais gardée : seuls les totaux du jour le sont, pendant 13 mois.</p>
+      <p>GitHub héberge ce site et les versions de l'app&nbsp;: il voit votre adresse IP quand vous visitez le site ou que Callrecorder cherche une mise à jour. Ce site charge ses polices depuis Google Fonts&nbsp;: Google reçoit aussi votre adresse IP. Au besoin, Callrecorder télécharge ses modèles de voix et de transcription depuis Hugging Face, qui voit alors votre adresse IP.</p>
       <p>Pensez à informer vos interlocuteurs de l'enregistrement et à respecter la législation applicable.</p>
     </div>
   </section>
