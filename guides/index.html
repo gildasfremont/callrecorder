@@ -52,7 +52,7 @@
           <img src="../img/guides/claude.webp" loading="lazy" alt="La page Claude des Réglages : améliorer chaque transcription, le modèle de Claude et l'accès de Claude à vos appels.">
         </div></details>
         <details class="row" id="autre-assistant"><summary>Relier vos appels à un autre assistant</summary><div class="answer">
-          <p>Codex est relié comme Claude, sans rien faire&nbsp;; c'est encore une bêta. Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels de la même façon. Callrecorder est un serveur MCP local&nbsp;: rien ne passe par Internet tant que l'assistant ne lit pas une transcription.</p>
+          <p>Codex est relié comme Claude, sans rien faire&nbsp;; c'est encore une bêta. Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels de la même façon. Callrecorder est un serveur MCP local.</p>
           <ol>
             <li>Dans les Réglages de Callrecorder, ouvrez <b>Intégrations › Agents</b>&nbsp;: la partie <b>Autre assistant</b>, en bas, donne la consigne et la configuration.</li>
             <li>Si l'assistant sait modifier sa configuration lui-même (Cursor en mode agent, par exemple), cliquez sur <b>Copier la consigne</b> et collez-la-lui dans une conversation.</li>
@@ -73,7 +73,7 @@
       <div class="group">
         <details class="row" id="note-vocale"><summary>Prendre une note vocale</summary><div class="answer">
           <ol>
-            <li>Dans les <b>Réglages</b>, sous <b>Général</b>, activez <b>Prise de note rapide</b>.</li>
+            <li>Dans <b>Réglages › Paramètres</b>, activez <b>Prise de note rapide</b>.</li>
             <li>Autorisez Callrecorder dans <b>Réglages Système › Confidentialité et sécurité › Accessibilité</b>, pour qu'il entende fn + D&nbsp;: le bouton <b>Ouvrir Réglages Système</b> y mène.</li>
             <li>Dans n'importe quelle app, appuyez sur <b>fn + D</b>&nbsp;: Callrecorder ouvre vos notes et enregistre. Parlez, puis <b>Entrée</b>.</li>
           </ol>
@@ -96,7 +96,7 @@
           <ol>
             <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
             <li>Vérifiez que l'iPhone et le Mac utilisent le même compte Apple et sont sur le même Wi-Fi.</li>
-            <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone, ou décrochez l'appel qui s'y affiche.</li>
+            <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone (FaceTime avant macOS 26), ou décrochez l'appel qui s'y affiche.</li>
           </ol>
           <p>Un appel décroché sur l'iPhone lui-même ne passe pas par le Mac : il n'est pas enregistré.</p>
         </div></details>
@@ -122,7 +122,7 @@
           <img src="../img/guides/pistes.webp" loading="lazy" alt="Le lecteur d'un appel, pistes séparées : Moi et Interlocuteurs, chacune avec son haut-parleur.">
         </div></details>
         <details class="row" id="retranscrire"><summary>Retranscrire, ou améliorer avec Claude</summary><div class="answer">
-          <p>Ouvrez le menu des transcriptions de l'appel, en haut à droite (<b>v1 · Transcription</b>). <b>Nouvelle transcription</b> fait réécouter l'appel. <b>Améliorer avec Claude</b> fait relire la dernière transcription par Claude, avec l'écran de l'appel, votre agenda et vos e-mails. Chaque passage est une nouvelle version, et les précédentes restent dans ce menu.</p>
+          <p>Ouvrez le menu des transcriptions de l'appel, en haut à droite (<b>v1 · Transcription</b>). <b>Nouvelle transcription</b> fait réécouter l'appel. <b>Améliorer avec Claude</b> fait relire la dernière transcription par Claude, avec l'écran de l'appel. Chaque passage est une nouvelle version, et les précédentes restent dans ce menu.</p>
           <img src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : Copier, Exporter et le menu des transcriptions (v1 · Transcription).">
         </div></details>
         <details class="row" id="exporter"><summary>Copier ou exporter une transcription</summary><div class="answer">
@@ -133,14 +133,14 @@
       <p class="group-label">Ranger et garder</p>
       <div class="group">
         <details class="row" id="groupes"><summary>Ranger vos appels en groupes</summary><div class="answer">
-          <p>Dans les <b>Réglages</b>, ouvrez <b>Groupes</b>, sous <b>Enregistrements</b>. Un groupe réunit des appels qui vont ensemble&nbsp;: un client, un recrutement, le perso. Glissez-y des appels depuis la liste. Chaque groupe montre ses 5 derniers appels&nbsp;; les plus anciens s'empilent par mois, et un clic sur une pile la déplie. Le chevron au bout du titre replie tout le groupe.</p>
+          <p>Dans les <b>Réglages</b>, ouvrez <b>Groupes</b>. Un groupe réunit des appels qui vont ensemble&nbsp;: un client, un recrutement, le perso. Glissez-y des appels depuis la liste. Chaque groupe montre ses 5 derniers appels&nbsp;; les plus anciens s'empilent par mois, et un clic sur une pile la déplie. Le chevron au bout du titre replie tout le groupe.</p>
           <p>Donnez un sous-titre à un groupe (menu <b>⋯</b> › <b>Ajouter un sous-titre</b>) pour dire ce qu'il rassemble, par exemple «&nbsp;Refonte de la boutique en ligne, du devis à la mise en ligne&nbsp;». Après chaque appel, Claude s'en sert comme consigne&nbsp;: quand il est sûr, il range l'appel dans le groupe qui lui correspond, et une petite icône Claude le signale, avec sa raison au survol. Il ne touche jamais à un appel que vous avez déjà rangé, et ne voit pas les groupes gardés hors des IA.</p>
         </div></details>
         <details class="row" id="en-ligne"><summary>Héberger vos appels en ligne (Google Drive, iCloud, Dropbox)</summary><div class="answer">
           <p>Par défaut, vos appels sont rangés dans le dossier CallRecordings de votre Mac. Placez ce dossier dans Google Drive, iCloud Drive ou Dropbox : il est alors hébergé en ligne, sauvegardé si votre Mac se perd, et vous retrouvez vos transcriptions sur votre téléphone et vos autres ordinateurs. Pas de compte Callrecorder : c'est votre propre espace en ligne.</p>
           <ol>
             <li>Installez l'app du service sur votre Mac, par exemple <a href="https://www.google.com/drive/download/">Google Drive pour ordinateur</a>, et connectez-vous. iCloud Drive est déjà là si vous l'avez activé dans Réglages Système.</li>
-            <li>Dans les Réglages de Callrecorder, sous <b>Général</b>, à la ligne <b>Dossier des appels</b>, cliquez sur <b>Changer…</b></li>
+            <li>Dans <b>Réglages › Paramètres</b>, à la ligne <b>Dossier des conversations</b>, cliquez sur <b>Changer…</b></li>
             <li>Dans la barre latérale de la fenêtre qui s'ouvre, cliquez sur <b>Google Drive</b> (ou iCloud Drive, Dropbox), ouvrez <b>Mon Drive</b> ou un dossier à l'intérieur, puis cliquez sur <b>Déplacer ici</b>.</li>
           </ol>
           <p>Callrecorder y déplace le dossier CallRecordings avec tous vos appels, puis redémarre. La ligne indique alors où ils sont, par exemple <b>Google Drive › Mon Drive › CallRecordings</b>.</p>
@@ -175,7 +175,7 @@
         <a href="../versions/">Versions</a>
         <a href="../confidentialite/">Données et confidentialité</a>
       </div>
-      <p>L'audio est enregistré et transcrit sur votre Mac. Un assistant ne lit que les transcriptions dont il a besoin pour vous répondre.</p>
+      <p>L'audio est enregistré et transcrit sur votre Mac. Un assistant relié peut lire vos conversations, sauf celles gardées hors des IA.</p>
       <div class="author">
         <img src="../img/gildas.webp" width="480" height="498" loading="lazy" alt="Portrait dessiné à l'encre et à l'aquarelle de Gildas Frémont, bras croisés, en pull irlandais.">
         <div class="says">

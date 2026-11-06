@@ -463,8 +463,6 @@ section.tight { padding-top: 64px; }
 .more a::after { content: " →"; }
 
 /* Accueil : la dernière version, sous l'installation. */
-.latest-line { text-align: center; font-size: 15px; color: var(--secondary); margin: 40px auto 0; max-width: 640px; text-wrap: balance; }
-.latest-line b { color: var(--text); font-weight: 600; }
 
 /* Fonctionnalités : une par bloc, le texte puis la capture, plus large que le texte. */
 .feature { padding-top: 120px; }
