@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
 <title>Fonctionnalités · Callrecorder</title>
-<meta name="description" content="Tout ce que fait Callrecorder : retenir vos échanges sans y penser, les garder avec leur source, et les rendre à Claude et aux autres assistants.">
+<meta name="description" content="Tout ce que fait Callrecorder : retenir vos conversations sans y penser, les garder avec leur source, et les rendre à Claude et aux autres assistants.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Callrecorder">
 <meta property="og:title" content="Fonctionnalités · Callrecorder">
-<meta property="og:description" content="Tout ce que fait Callrecorder : retenir vos échanges sans y penser, les garder avec leur source, et les rendre à Claude et aux autres assistants.">
+<meta property="og:description" content="Tout ce que fait Callrecorder : retenir vos conversations sans y penser, les garder avec leur source, et les rendre à Claude et aux autres assistants.">
 <meta property="og:url" content="https://gildasfremont.github.io/callrecorder/fonctionnalites/">
 <meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/fonctionnalites.jpg?v=3">
 <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="../style.css?v=133">
+<link rel="stylesheet" href="../style.css?v=134">
 </head>
 <body>
 
@@ -36,25 +36,34 @@
 
   <header class="page-head">
     <h1>Fonctionnalités</h1>
-    <p>Comment Callrecorder retient vos échanges, les garde avec leur source et les rend à vos assistants.</p>
   </header>
 
   <div class="with-toc">
     <aside class="toc">
       <nav aria-label="Fonctionnalités">
+        <a href="#assistants">Assistants IA</a>
         <a href="#enregistrement">Appels</a>
         <a href="#reunions">Réunions</a>
         <a href="#telephones">Téléphones</a>
         <a href="#notes">Notes vocales</a>
         <a href="#transcription">Transcription</a>
-        <a href="#retrouver">Retrouver un appel</a>
-        <a href="#assistants">Assistants IA</a>
+        <a href="#retrouver">Retrouver une conversation</a>
         <a href="#groupes">Groupes</a>
         <a href="#fichiers">Vos fichiers</a>
         <a href="#mises-a-jour">Mises à jour</a>
       </nav>
     </aside>
     <div class="features">
+  <section class="feature" id="assistants">
+    <div class="col">
+      <h2>Claude, Codex et les autres assistants consultent votre mémoire</h2>
+      <p>Demandez à Claude «&nbsp;Qu'est-ce que j'ai promis à Paul jeudi&nbsp;?&nbsp;»&nbsp;: il retrouve l'appel, le lit et vous répond, citations à l'appui. Claude Code, Claude Desktop et Codex (en bêta) sont reliés dès l'installation.</p>
+      <p>Callrecorder est un serveur MCP local&nbsp;: Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles s'y branchent en trois lignes de configuration.</p>
+      <p class="meta"><a href="../guides/#claude">Donner à Claude l'accès à vos appels</a><a href="../guides/#autre-assistant">Relier un autre assistant</a></p>
+    </div>
+    <figure class="strip"><img src="../img/versions/0.8.0.webp" width="1640" height="420" loading="lazy" alt="La page Claude des Réglages : l'accès de Claude et de Codex à vos appels."></figure>
+  </section>
+
   <section class="feature" id="enregistrement">
     <div class="col">
       <h2>Chaque appel est retenu tout seul</h2>
@@ -68,10 +77,10 @@
   <section class="feature" id="reunions">
     <div class="col">
       <h2>Les réunions en face à face aussi</h2>
-      <p>Un rendez-vous sans visio&nbsp;: posez le Mac sur la table et lancez l'enregistrement d'une réunion, depuis la barre des menus ou la fenêtre Conversations. La conversation est transcrite comme un appel, chaque voix distinguée par l'endroit d'où vient le son&nbsp;: «&nbsp;Voix 1&nbsp;», «&nbsp;Voix 2&nbsp;»…</p>
+      <p>Un rendez-vous sans visio&nbsp;: posez le Mac sur la table et lancez l'enregistrement d'une réunion, depuis la barre des menus ou la fenêtre Conversations. La conversation est transcrite comme un appel&nbsp;: chaque voix reçoit un numéro et une couleur, et la vôtre devient «&nbsp;Moi&nbsp;» une fois apprise sur vos notes et vos appels au casque.</p>
       <p class="meta"><a href="../guides/#reunion">Enregistrer une réunion</a></p>
     </div>
-    <figure><img src="../img/appels-reunion.webp?v=2" width="2560" height="1582" loading="lazy" alt="La revue mensuelle avec un transporteur, enregistrée en salle : la transcription alterne le micro du Mac, « Voix 1 » et « Voix 2 ».\"></figure>
+    <figure><img src="../img/appels-reunion.webp?v=2" width="2560" height="1582" loading="lazy" alt="La revue mensuelle avec un transporteur, enregistrée en salle : la transcription alterne le micro du Mac, « Voix 1 » et « Voix 2 »."></figure>
   </section>
 
   <section class="feature" id="telephones">
@@ -101,30 +110,20 @@
       <p>À côté de ce qui se disait, les captures de la visio&nbsp;: l'écran partagé, la diapositive du moment. En réunion, chaque voix reçoit un numéro et une couleur.</p>
       <p>Pour n'écouter qu'une voix, séparez les pistes&nbsp;: une rangée par voix, chacune qu'on coupe à l'écoute.</p>
       <p>Claude peut ensuite la relire avec ce qui était à l'écran&nbsp;: les noms propres sont corrigés, l'appel reçoit un titre et ses participants. Chaque relecture est une nouvelle version, les précédentes restent dans le menu des transcriptions. Cette relecture se coupe dans les Réglages&nbsp;: la transcription, elle, reste faite sur le Mac.</p>
-      <p class="meta"><a href="../guides/#retrouver">Retrouver et réécouter un appel</a><a href="../guides/#retranscrire">Retranscrire, ou améliorer avec Claude</a><a href="../confidentialite/">Ce qui est transmis à Claude</a></p>
+      <p class="meta"><a href="../guides/#retrouver">Retrouver et réécouter une conversation</a><a href="../guides/#retranscrire">Retranscrire, ou améliorer avec Claude</a><a href="../confidentialite/">Ce qui est transmis à Claude</a></p>
     </div>
-    <figure class=""><img src="../img/transcription.webp" width="2360" height="1582" loading="lazy" alt="La fenêtre d'un appel Teams, la revue budgétaire : le lecteur en haut, puis les répliques horodatées de Sophie, Karim et Julie, avec les captures de la visio entre elles.\"></figure>
+    <figure class=""><img src="../img/transcription.webp" width="2360" height="1582" loading="lazy" alt="La fenêtre d'un appel Teams, la revue budgétaire : le lecteur en haut, puis les répliques horodatées de Sophie, Karim et Julie, avec les captures de la visio entre elles."></figure>
     <figure class="strip"><img src="../img/guides/claude.webp" width="1380" height="245" loading="lazy" alt="La page Agents des Réglages : améliorer chaque transcription, et le modèle de Claude."></figure>
-    <figure class="strip"><img src="../img/guides/pistes.webp" width="1610" height="142" loading="lazy" alt="Le lecteur d'un appel, pistes séparées : Vous et Interlocuteurs, chacune avec son haut-parleur."></figure>
+    <figure class="strip"><img src="../img/guides/pistes.webp" width="1610" height="142" loading="lazy" alt="Le lecteur d'un appel, pistes séparées : Moi et Interlocuteurs, chacune avec son haut-parleur."></figure>
   </section>
 
   <section class="feature" id="retrouver">
     <div class="col">
-      <h2>Vos appels se retrouvent par jour, par nom ou par mot</h2>
-      <p>Une ligne par appel, avec sa première capture, son app, son titre et sa durée. Le calendrier montre les jours où vous avez parlé à quelqu'un. La recherche (⌘F) fouille les transcriptions et se limite aux groupes de votre choix.</p>
-      <p class="meta"><a href="../guides/#retrouver">Retrouver et réécouter un appel</a></p>
+      <h2>Vos conversations se retrouvent par jour, par nom ou par mot</h2>
+      <p>Une ligne par conversation, avec sa première capture, son app, son titre et sa durée. Le calendrier montre les jours où vous avez parlé à quelqu'un. La recherche (⌘F) fouille les transcriptions et se limite aux groupes de votre choix.</p>
+      <p class="meta"><a href="../guides/#retrouver">Retrouver et réécouter une conversation</a></p>
     </div>
     <figure class=""><img src="../img/calendrier.webp" width="2560" height="1582" loading="lazy" alt="La fenêtre Conversations en calendrier : les jours d'octobre où il y a eu des appels sont marqués d'un point ; à droite, l'appel du 30."></figure>
-  </section>
-
-  <section class="feature" id="assistants">
-    <div class="col">
-      <h2>Claude, Codex et les autres assistants consultent votre mémoire</h2>
-      <p>Demandez à Claude «&nbsp;Qu'est-ce que j'ai promis à Paul jeudi&nbsp;?&nbsp;»&nbsp;: il retrouve l'appel, le lit et vous répond, citations à l'appui. Claude Code, Claude Desktop et Codex (en bêta) sont reliés dès l'installation.</p>
-      <p>Callrecorder est un serveur MCP local&nbsp;: Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles s'y branchent en trois lignes de configuration.</p>
-      <p class="meta"><a href="../guides/#claude">Donner à Claude l'accès à vos appels</a><a href="../guides/#autre-assistant">Relier un autre assistant</a></p>
-    </div>
-    <figure class="strip"><img src="../img/versions/0.8.0.webp" width="1640" height="420" loading="lazy" alt="La page Claude des Réglages : l'accès de Claude et de Codex à vos appels."></figure>
   </section>
 
   <section class="feature" id="groupes">
@@ -141,17 +140,17 @@
     <div class="col">
       <h2>Votre mémoire reste faite de fichiers à vous</h2>
       <p>Tout est dans un dossier de votre Mac, en Markdown&nbsp;; ce dossier peut vivre dans Google Drive, iCloud Drive ou Dropbox. Une copie de certains groupes peut aussi partir dans un dossier en ligne, avec un index, pour ChatGPT, Zapier ou un script.</p>
-      <p>Chaque transcription s'exporte en texte, Word, Markdown ou sous-titres. L'audio part à la corbeille au bout de 7 jours, une durée réglable&nbsp;; Claude peut en garder un.</p>
+      <p>Chaque transcription s'exporte en texte, Word, Markdown ou sous-titres. L'audio part à la corbeille au bout de 7 jours, une durée réglable. Vous pouvez garder celui d'un appel.</p>
       <p class="meta"><a href="../guides/#en-ligne">Héberger vos appels en ligne</a><a href="../guides/#exporter">Exporter</a><a href="../guides/#garder-audio">Garder l'audio</a></p>
     </div>
-    <figure class=""><img src="../img/versions/0.11.0.webp" width="2560" height="1578" loading="lazy" alt="Réglages › Autres outils : une copie des appels dans un dossier en ligne, et ce qu'il y a dans une copie."></figure>
+    <figure class=""><img src="../img/versions/0.11.0.webp" width="2560" height="1578" loading="lazy" alt="Réglages › Intégrations › Base de données externe : une copie des appels dans un dossier en ligne, et ce qu'il y a dans une copie."></figure>
   </section>
 
   <section class="feature" id="mises-a-jour">
     <div class="col">
       <h2>Les nouvelles versions viennent à vous</h2>
-      <p>Callrecorder vous propose chaque nouvelle version, et l'installe d'un clic. Le journal dit ce que chacune apporte, capture à l'appui.</p>
-      <p class="meta"><a href="../versions/">Toutes les versions</a></p>
+      <p>Callrecorder vous propose chaque nouvelle version, et l'installe d'un clic. Le journal dit ce qui change.</p>
+      <p class="meta"><a href="../versions/">Journal des versions</a></p>
     </div>
 
   </section>

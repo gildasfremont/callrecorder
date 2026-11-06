@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Callrecorder">
-<meta property="og:title" content="Callrecorder · Souvenez-vous de tout">
+<meta property="og:title" content="Callrecorder · Souvenez-vous de tout ce qui s'est dit">
 <meta property="og:description" content="Callrecorder se souvient de vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp, de vos réunions et de vos notes vocales : une mémoire que vos assistants IA consultent.">
 <meta property="og:url" content="https://gildasfremont.github.io/callrecorder/">
 <meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg?v=7">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="style.css?v=133">
+<link rel="stylesheet" href="style.css?v=134">
 </head>
 <body>
 
@@ -34,7 +34,7 @@
     </div>
   </nav>
   <div class="about">
-    <h1>Souvenez-vous de tout</h1>
+    <h1>Souvenez-vous de tout ce qui s'est dit</h1>
     <p class="lead">Vos conversations mémorisées, transcrites sur votre Mac sans y penser et accessibles à vos assistants IA.</p>
     <!-- Un micro de radio tendu vers le titre ; son mât descend derrière la fenêtre Conversations. -->
     <img class="app-mic" src="img/micro-mat.webp?v=4" width="724" height="2172" alt="" aria-hidden="true">
@@ -157,8 +157,8 @@
 
   <section>
     <div class="intro">
-      <h2>Oubliez-le, il n'oublie rien</h2>
-      <p>Chaque appel rejoint votre mémoire, que votre assistant consulte quand vous lui posez une question.</p>
+      <h2>Vos appels rejoignent votre mémoire</h2>
+      <p>Votre assistant la consulte quand vous lui posez une question.</p>
     </div>
   </section>
 
@@ -167,11 +167,7 @@
         <li class="o-jack text-right"><div><span>Une seule installation</span><p>Une ligne à copier, deux autorisations, celle de l'écran si vous voulez les captures. Ensuite, il démarre avec votre Mac.</p></div><img src="img/benefices/jack.webp?v=2" width="1200" height="198" loading="lazy" alt="Une fiche jack dessinée à l'encre et à l'aquarelle, qui entre par la gauche et pointe vers le texte."></li>
         <li class="o-cassettes"><div><span>Une mémoire qui se constitue toute seule</span><p>Zoom, Teams, Meet, FaceTime, WhatsApp et les appels de votre iPhone pris sur le Mac&nbsp;: chaque appel est retenu dès qu'il commence, et transcrit dès qu'il se termine.</p></div><img src="img/benefices/cassettes.webp?v=3" width="1000" height="746" loading="lazy" alt="Une pile de six cassettes audio dessinées à l'encre et à l'aquarelle ; sur la tranche de chacune, un bout de scotch porte le logo d’une app et le nom de l’appel tapé à la machine : Revue budgétaire sur Teams, Banque Ferrand sur Zoom, Codir du lundi sur Meet, Karim sur WhatsApp, Point produit sur Slack, Banque Aurore sur Teams."></li>
         <li id="reunions" class="o-reunion text-right"><div><span>Ce qui se dit autour d'une table</span><p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table et cliquez sur Enregistrer une réunion. La conversation rejoint votre mémoire comme un appel.</p></div><img src="img/reunion.webp?v=8" width="900" height="600" loading="lazy" alt="Deux personnes dessinées à l'encre et à l'aquarelle, face à face à une table : lui, en veste bleue, se gratte la tête ; elle, en chemise vermillon, parle avec les mains ; chacun a sa bulle ; sur la table, une bande de papier où leurs lignes alternent dans leurs couleurs."></li>
-        <li id="telephones" class="o-telephones"><div><span>Vos appels téléphoniques</span><p>Ceux de votre iPhone rejoignent votre mémoire comme vos autres appels.</p></div>
-          <dl class="os">
-            <div><dt><img src="img/logos/apple.svg" alt="">iPhone</dt><dd>Prenez vos appels sur le Mac, Callrecorder s'en souvient. Rien à installer sur l'iPhone.</dd></div>
-          </dl>
-        </li>
+        <li id="telephones" class="o-telephones"><div><span>Les appels de votre iPhone</span><p>Prenez-les sur le Mac, ils rejoignent votre mémoire. Rien à installer sur l'iPhone.</p></div></li>
         <li class="o-telephone text-right"><div><span>Raccrochez&nbsp;: votre assistant est déjà au courant</span><p>Demandez ce qui a été promis, décidé ou oublié&nbsp;: Claude, Codex et les autres assistants consultent votre mémoire et vous répondent, avec l'appel et l'heure de chaque citation. Rien à copier-coller.</p></div><img src="img/benefices/telephone.webp?v=5" width="1099" height="660" loading="lazy" alt="Le haut d'un téléphone dessiné à l'encre et à l'aquarelle, ouvert sur Claude, une question en cours."></li>
         <li class="o-ordinateur"><div><span>L'audio reste sur votre Mac</span><p>La transcription se fait sur place, sans compte ni serveur. L'audio ne part en ligne que si vous y placez vos conversations.</p></div><img src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l'encre et à l'aquarelle, une liste d'appels à l'écran."></li>
     </ul>
@@ -190,18 +186,18 @@
         <button class="cmdline" type="button" data-copy="cmd" title="Copier la ligne"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><span class="hint" aria-hidden="true">Copier</span></button>
         <div class="card">
           <div class="tabs install-tabs" role="tablist" aria-label="Votre assistant">
-            <button role="tab" aria-selected="true" data-scenario="claude"><img src="img/logos/claude.png" alt="">Avec Claude</button>
-            <button role="tab" aria-selected="false" data-scenario="seul">Sans</button>
+            <button role="tab" aria-selected="true" data-scenario="claude"><img src="img/logos/claude.png" alt="">Claude installé</button>
+            <button role="tab" aria-selected="false" data-scenario="seul">Pas de Claude</button>
           </div>
           <ol class="steps" data-scenario="claude">
             <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
-            <li><b>Suivre</b><span class="sub">Le Terminal demande les autorisations une à une (le micro, le son des apps, puis l'écran, facultatif)&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Claude se ferme et se rouvre tout seul.</span></li>
+            <li><b>Suivre</b><span class="sub">Le Terminal demande les autorisations une à une (le micro, le son des apps, puis l'écran, facultatif)&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Claude reçoit l'accès à vos conversations et, si Claude Code est connecté à votre compte, relit chacune d'elles&nbsp;: tout se coupe dans Réglages › Intégrations › Agents. Claude Desktop, s'il est ouvert, se ferme et se rouvre tout seul.</span></li>
             <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip&nbsp;: sa transcription s'affiche en regard, et la lecture devient votre première conversation. Demandez ensuite à Claude&nbsp;: «&nbsp;Résume ma dernière conversation&nbsp;».</span></li>
           </ol>
           <ol class="steps" data-scenario="seul" hidden>
             <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
-            <li><b>Suivre</b><span class="sub">Le Terminal demande les autorisations une à une (le micro, le son des apps, puis l'écran, facultatif)&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande.</span></li>
-            <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip&nbsp;: sa transcription s'affiche en regard, et la lecture devient votre première conversation, dans l'icône de Callrecorder, dans la barre des menus.</span></li>
+            <li><b>Suivre</b><span class="sub">Le Terminal demande les autorisations une à une (le micro, le son des apps, puis l'écran, facultatif)&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Codex, s'il est installé, reçoit l'accès à vos conversations&nbsp;: cela se coupe dans Réglages › Intégrations › Agents.</span></li>
+            <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip&nbsp;: sa transcription s'affiche en regard. Cette lecture est votre première conversation&nbsp;: cliquez sur l'icône de Callrecorder, dans la barre des menus.</span></li>
           </ol>
           <div class="help">
             <p data-scenario="claude">Claude ne voit pas vos appels&nbsp;? Quittez et relancez Claude.</p>

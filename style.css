@@ -59,8 +59,8 @@ a.button:hover { text-decoration: none; filter: brightness(1.04); }
 
 /* En-tête, comme un écran « À propos ». Le titre, le sous-titre et le micro se règlent sur un même corps, celui du
    titre, par le même calcul à toutes les largeurs.
-   Le micro de radio a le corps du titre, donc son échelle. Le titre tient toujours sur deux lignes ; sa ligne la plus
-   longue, « vous de tout », fait 5.4 cadratins. Le micro se centre dans l'espace qui reste à droite de cette ligne, sans
+   Le micro de radio a le corps du titre, donc son échelle. Le titre tient sur trois lignes ; sa deuxième ligne,
+   « vous de tout », fait 5.4 cadratins et sert de repère, la troisième passe sous le micro. Le micro se centre dans l'espace qui reste à droite de cette ligne, sans
    jamais s'en approcher à moins d'un demi-cadratin : sur téléphone, il déborde alors du bord droit et seule sa tête
    entre. Sa tête, au septième de sa hauteur, vient au milieu des deux lignes. Le mât descend derrière les onglets et la
    fenêtre Appels. Le texte ne passe jamais sur le dessin : le sous-titre s'arrête avant le mât, qui commence à 85 % de
@@ -544,13 +544,8 @@ html { scroll-padding-top: 24px; }
 .benefits li.o-reunion > div { width: 46%; }
 .benefits li.o-reunion img { width: 50%; left: 20px; bottom: -34px; }
 /* Les téléphones : pas d'objet, le titre à gauche, l'iPhone et l'Android côte à côte à droite. */
-.benefits li.o-telephones { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; min-height: 0; padding: 32px 36px; }
+.benefits li.o-telephones { min-height: 0; padding: 32px 36px; }
 .benefits li.o-telephones > div { width: auto; padding: 0; }
-.benefits .os { display: grid; gap: 16px; margin: 0; }
-.benefits .os dt { font-size: 16px; font-weight: 600; color: var(--text); }
-.benefits .os dt img { position: static; height: .9em; width: auto; vertical-align: -0.08em; margin-right: .4em; }
-.benefits .os dt img[src*="android"] { height: .8em; }
-.benefits .os dd { margin: 4px 0 0; font-size: 15px; line-height: 1.5; color: var(--secondary); }
 .benefits li.o-telephone { min-height: 250px; }
 .benefits li.o-telephone img { width: 34%; right: 60px; bottom: 0; }
 .benefits li.o-ordinateur { min-height: 260px; }
@@ -571,7 +566,6 @@ html { scroll-padding-top: 24px; }
   .benefits li.o-reunion img { width: 92%; left: auto; align-self: center; bottom: auto; margin-bottom: -24px; }
   .benefits li.o-telephones, .benefits li.o-telephones[class] { display: flex; gap: 16px; padding: 18px 20px 20px; }
   .benefits li.o-telephones > div { padding: 0; }
-  .benefits .os dd { font-size: 14px; }
-  .benefits li.o-ordinateur img { width: 82%; right: -20px; bottom: auto; margin-bottom: -28px; }
+    .benefits li.o-ordinateur img { width: 82%; right: -20px; bottom: auto; margin-bottom: -28px; }
 }
 
