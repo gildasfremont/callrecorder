@@ -125,6 +125,9 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .tabs + .stage { margin-top: 28px; }
 .stage .claude { z-index: 2; }
 .claude[hidden] { display: none; }
+/* Devant la liste du Mac, un Pixel 7 sur la même liste : l'app Android. L'image garde son contour, l'ombre le suit. */
+.stage > img.pixel { position: absolute; z-index: 3; left: max(-4%, calc((100% - 100vw) / 2 + 8px)); top: 15cqw; width: 23cqw; height: auto; border: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 22px 28px rgba(20,40,80,.3)) drop-shadow(0 6px 10px rgba(20,40,80,.16)); }
+.stage .pixel[hidden] { display: none; }
 
 /* Par-dessus la fenêtre Appels : une conversation avec Claude qui s'appuie sur un appel enregistré. */
 .stage { container-type: inline-size; }
