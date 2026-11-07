@@ -9,6 +9,10 @@ Après une modification, pousser la branche de travail, ouvrir la pull request e
 la fusionner dans `main` sans demander confirmation. La mise en ligne suit toute
 seule.
 
+## Ce que Gildas a tranché ne revient pas
+
+Un texte ou un titre changé exprès ne revient pas à son ancienne forme sans que Gildas le demande. Le 6 novembre 2026, une relecture a remis le titre long de l'accueil, raccourci par Gildas trois jours plus tôt. Avant de changer un texte, regarder d'où il vient (`git log -S '<texte>'`). Avant de fusionner : `python3 scripts/retours.py`, depuis la branche de travail. S'il signale un retour voulu, le dire dans le message d'un commit : « Revient sur <hash> : <raison> ».
+
 ## Les captures
 
 Une capture garde la forme et la matière de ce qu'elle montre.
