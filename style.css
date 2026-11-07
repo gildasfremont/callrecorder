@@ -571,12 +571,12 @@ html { scroll-padding-top: 24px; }
 
 /* Une image qui porte son contour (coins transparents, fenêtre, pastille) : ni cadre, ni arrondi imposé, ni ombre
    rectangulaire. L'ombre suit sa forme, et sa matière reste celle de la capture. Voir CLAUDE.md, « Les captures ». */
-.stage > img.decoupe, .stage .detail.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe {
+.stage > img.decoupe, .stage .detail.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe, details.row .answer img.decoupe {
   border: 0; border-radius: 0; box-shadow: none;
   filter: drop-shadow(0 1px 1px rgba(20,40,80,.14)) drop-shadow(0 14px 22px rgba(20,40,80,.22));
 }
 /* Un extrait a du texte posé sur le fond : une ombre seulement large, pour ne pas le salir. */
-.feature figure img.decoupe.extrait, .version a.thumb img.decoupe.extrait { filter: drop-shadow(0 10px 18px rgba(20,40,80,.1)); }
+.feature figure img.decoupe.extrait, .version a.thumb img.decoupe.extrait, details.row .answer img.decoupe.extrait { filter: drop-shadow(0 10px 18px rgba(20,40,80,.1)); }
 /* Un petit objet garde sa taille : agrandi, il perd sa netteté. Son ombre reste à son échelle. */
 .version a.thumb.nue { width: auto; display: inline-block; margin: 14px 0 12px; }
 .version a.thumb img.decoupe.petite { width: 144px; height: auto; filter: drop-shadow(0 1px 1px rgba(20,40,80,.16)) drop-shadow(0 6px 10px rgba(20,40,80,.16)); }
