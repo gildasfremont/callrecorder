@@ -414,6 +414,7 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display: 
 .version { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 6px 20px; }
 .version .num { font-weight: 600; }
 .version .num small { display: block; font-weight: 400; font-size: 14px; color: var(--secondary); }
+.version .num a.detail { display: block; margin-top: 2px; font-weight: 400; font-size: 14px; }
 .version p { color: var(--body); }
 .version a.thumb { display: block; margin-top: 12px; width: 240px; max-width: 100%; }
 .version a.thumb img { width: 100%; height: auto; display: block; border-radius: 7px; border: .5px solid rgba(20,40,80,.2); box-shadow: 0 8px 20px -10px rgba(20,40,80,.3); }
