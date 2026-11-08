@@ -1,6 +1,6 @@
 /* La page d'une version sur le site (versions/<version>/ et versions/a-venir/), au-dessus de style.css du site.
    Elle n'ajoute rien que le site n'ait déjà : ses couleurs, sa grotesque pour les titres, ses groupes blancs, son
-   sommaire (.with-toc, .toc) et sa bascule (.tabs), repris tels quels. Pas de filets, pas de capitales. */
+   sommaire (.with-toc, .toc) et ses bascules (.tabs), repris tels quels. Pas de filets, pas de capitales. */
 
 .page-version .page-head .statut { margin: 0 auto 18px; max-width: none; text-align: center; }
 .page-version .statut span { display: inline-block; padding: 2px 9px; border-radius: 6px; background: #e6f0fc; color: var(--accent); font-size: 13px; font-weight: 600; }
@@ -51,10 +51,7 @@
 /* Tous les écrans du téléphone */
 .page-version .dz-ecrans { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 36px 24px; }
 
-/* La bascule des écrans : celle de l'accueil du site. Dans le sommaire sur grand écran, sous le titre ailleurs. */
-.page-version .bascule { margin: 0; }
-.page-version .bascule-titre { font-size: 13px; color: var(--secondary); margin: 28px 0 8px 12px; }
-.page-version .bascule-haut { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 36px; }
-.page-version .bascule-haut .bascule-titre { margin: 0; }
-@media (min-width: 1000px) { .page-version .bascule-haut { display: none; } }
-.page-version .tabs.bascule button { padding: 7px 18px; font-size: 14px; }
+/* La bascule clair/sombre : sous chaque écran qui existe aussi en sombre, seulement là. */
+.page-version figure > .bascule { margin: 12px 0 0; }
+.page-version figure.dz-duo > .bascule { grid-column: 1 / -1; margin-top: -8px; }
+.page-version .tabs.bascule button { padding: 5px 14px; font-size: 13px; }
