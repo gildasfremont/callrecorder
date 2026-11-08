@@ -1,0 +1,445 @@
+[
+ {
+  "page": "accueil",
+  "largeur": 375,
+  "regle": "color-contrast",
+  "impact": "serious",
+  "aide": "Elements must meet minimum color contrast ratio thresholds",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+  "noeuds": 3,
+  "exemples": [
+   {
+    "cible": ".claude[data-tab=\"appel\"][role=\"img\"] > .body > .answer > div > .mail > .quotes > li:nth-child(1) > .sub",
+    "resume": "Fix any of the following: Element has insufficient color contrast of 3.68 (foreground color: #8a8576, background color: #ffffff, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+   },
+   {
+    "cible": ".claude[data-tab=\"appel\"][role=\"img\"] > .body > .answer > div > .mail > .quotes > li:nth-child(2) > .sub",
+    "resume": "Fix any of the following: Element has insufficient color contrast of 3.68 (foreground color: #8a8576, background color: #ffffff, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+   },
+   {
+    "cible": ".claude[data-tab=\"appel\"][role=\"img\"] > .body > .answer > div > .mail > .quotes > li:nth-child(3) > .sub",
+    "resume": "Fix any of the following: Element has insufficient color contrast of 3.68 (foreground color: #8a8576, background color: #ffffff, font size: 9.4pt (12.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+   }
+  ]
+ },
+ {
+  "page": "accueil",
+  "largeur": 375,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "accueil",
+  "largeur": 375,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 22,
+  "exemples": [
+   {
+    "cible": "h1",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": ".lead",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": ".wrap > .tabs[role=\"tablist\"]",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#appels",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "fonctionnalites",
+  "largeur": 375,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "fonctionnalites",
+  "largeur": 375,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": ".features",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "guides",
+  "largeur": 375,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "guides",
+  "largeur": 375,
+  "regle": "link-in-text-block",
+  "impact": "serious",
+  "aide": "Links must be distinguishable without relying on color",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/link-in-text-block?application=axeAPI",
+  "noeuds": 2,
+  "exemples": [
+   {
+    "cible": "li:nth-child(1) > a",
+    "resume": "Fix any of the following: The link has insufficient color contrast of 2.05:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0064d2, surrounding text: #2c3a50) The link has no styling (such as underline)"
+   },
+   {
+    "cible": "p > a[href$=\"versions/\"]",
+    "resume": "Fix any of the following: The link has insufficient color contrast of 1.11:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0064d2, surrounding text: #566175) The link has no styling (such as underline)"
+   }
+  ]
+ },
+ {
+  "page": "guides",
+  "largeur": 375,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 24,
+  "exemples": [
+   {
+    "cible": ".group-label:nth-child(1)",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#claude > .answer",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#autre-assistant > .answer",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#autorisations > .answer",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "versions",
+  "largeur": 375,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "versions",
+  "largeur": 375,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "section",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "confidentialite",
+  "largeur": 375,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "confidentialite",
+  "largeur": 375,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "section",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "accueil",
+  "largeur": 1440,
+  "regle": "color-contrast",
+  "impact": "serious",
+  "aide": "Elements must meet minimum color contrast ratio thresholds",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/color-contrast?application=axeAPI",
+  "noeuds": 2,
+  "exemples": [
+   {
+    "cible": ".claude[data-tab=\"appel\"][role=\"img\"] > .body > .answer > div > .mail > .quotes > li:nth-child(2) > .sub",
+    "resume": "Fix any of the following: Element has insufficient color contrast of 3.68 (foreground color: #8a8576, background color: #ffffff, font size: 12.6pt (16.768px), font weight: normal). Expected contrast ratio of 4.5:1"
+   },
+   {
+    "cible": ".claude[data-tab=\"appel\"][role=\"img\"] > .body > .answer > div > .mail > .quotes > li:nth-child(3) > .sub",
+    "resume": "Fix any of the following: Element has insufficient color contrast of 3.68 (foreground color: #8a8576, background color: #ffffff, font size: 12.6pt (16.768px), font weight: normal). Expected contrast ratio of 4.5:1"
+   }
+  ]
+ },
+ {
+  "page": "accueil",
+  "largeur": 1440,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "accueil",
+  "largeur": 1440,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 22,
+  "exemples": [
+   {
+    "cible": "h1",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": ".lead",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": ".wrap > .tabs[role=\"tablist\"]",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#appels",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "fonctionnalites",
+  "largeur": 1440,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "fonctionnalites",
+  "largeur": 1440,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": ".features",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "fonctionnalites",
+  "largeur": 1440,
+  "regle": "target-size",
+  "impact": "serious",
+  "aide": "All touch targets must be 24px large, or leave sufficient space",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/target-size?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "a[href$=\"#enregistrement\"]",
+    "resume": "Fix any of the following: Target has insufficient size because it is partially obscured (smallest space is 188px by 16.3px, should be at least 24px by 24px) Target has insufficient space to its closest neighbors. Safe cl"
+   }
+  ]
+ },
+ {
+  "page": "guides",
+  "largeur": 1440,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "guides",
+  "largeur": 1440,
+  "regle": "link-in-text-block",
+  "impact": "serious",
+  "aide": "Links must be distinguishable without relying on color",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/link-in-text-block?application=axeAPI",
+  "noeuds": 2,
+  "exemples": [
+   {
+    "cible": "li:nth-child(1) > a",
+    "resume": "Fix any of the following: The link has insufficient color contrast of 2.05:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0064d2, surrounding text: #2c3a50) The link has no styling (such as underline)"
+   },
+   {
+    "cible": "p > a[href$=\"versions/\"]",
+    "resume": "Fix any of the following: The link has insufficient color contrast of 1.11:1 with the surrounding text. (Minimum contrast is 3:1, link text: #0064d2, surrounding text: #566175) The link has no styling (such as underline)"
+   }
+  ]
+ },
+ {
+  "page": "guides",
+  "largeur": 1440,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 24,
+  "exemples": [
+   {
+    "cible": ".group-label:nth-child(1)",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#claude > .answer",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#autre-assistant > .answer",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   },
+   {
+    "cible": "#autorisations > .answer",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "versions",
+  "largeur": 1440,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "versions",
+  "largeur": 1440,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "section",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ },
+ {
+  "page": "confidentialite",
+  "largeur": 1440,
+  "regle": "landmark-one-main",
+  "impact": "moderate",
+  "aide": "Document should have one main landmark",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/landmark-one-main?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "html",
+    "resume": "Fix all of the following: Document does not have a main landmark"
+   }
+  ]
+ },
+ {
+  "page": "confidentialite",
+  "largeur": 1440,
+  "regle": "region",
+  "impact": "moderate",
+  "aide": "All page content should be contained by landmarks",
+  "url_regle": "https://dequeuniversity.com/rules/axe/4.10/region?application=axeAPI",
+  "noeuds": 1,
+  "exemples": [
+   {
+    "cible": "section",
+    "resume": "Fix any of the following: Some page content is not contained by landmarks"
+   }
+  ]
+ }
+]

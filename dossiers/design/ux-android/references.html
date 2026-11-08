@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Références UX Android</title>
+<meta name="description" content="Règles WCAG, Android et Material 3 citées par le dossier, vérifiées.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- dossier:cadre (scripts/dossiers.py habille) -->
+<link rel="stylesheet" href="../../commun/dossier.css">
+<header class="dz-cadre"><div class="dz-in"><nav class="dz-fil" aria-label="Dossiers"><a href="../../index.html">Dossiers</a><span aria-hidden="true">›</span><span>Relectures design</span><span aria-hidden="true">›</span><b>Android · ux</b><span>8 novembre 2026</span></nav><nav class="dz-parties" aria-label="Parties du dossier"><a href="index.html">Synthèse</a><a href="inventaire.html">Preuves</a><a href="prototypes.html">Avant et après</a><a href="problemes.html">Risques</a><a href="index.html">Pas vérifié</a></nav></div></header>
+<!-- /dossier:cadre -->
+<header class="haut"><div class="haut-in"><span class="marque">UX Android · Callrecorder</span><nav><a href="index.html">Synthèse</a><a href="inventaire.html">Inventaire</a><a href="mesures.html">Mesures</a><a href="problemes.html">Problèmes et recos</a><a href="prototypes.html">Prototypes</a><a href="systeme.html">Système et migration</a><a href="plan.html">Plan</a><a href="references.html" aria-current="page">Références</a></nav></div></header>
+<main>
+<h1>Références : les règles citées, vérifiées en ligne le 8 novembre 2026</h1>
+<p class="lead">Chaque reco cite une règle précise de cette liste. Les pages d'Android et de WCAG ont été ouvertes pendant ce travail et les passages clés relus ; ceux qui fondent un choix sont cités ci-dessous. Material 3 (m3.material.io) se charge en JavaScript : ses pages sont citées par leur adresse, et l'échelle typographique par la documentation de material-components-android.</p>
+<div class="tw"><table class="">
+<thead><tr><th>Règle</th><th>Citée par</th><th>Passage</th></tr></thead><tbody>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#contrast-minimum">WCAG 2.2 · 1.4.3 Contraste minimum (AA)</a></td><td><a href="problemes.html#P03">P03</a> <a href="problemes.html#P08">P08</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#non-text-contrast">WCAG 2.2 · 1.4.11 Contraste des éléments non textuels (AA)</a></td><td><a href="problemes.html#P03">P03</a> <a href="problemes.html#P08">P08</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#resize-text">WCAG 2.2 · 1.4.4 Redimensionnement du texte (AA)</a></td><td><a href="problemes.html#P04">P04</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#info-and-relationships">WCAG 2.2 · 1.3.1 Information et relations (A)</a></td><td><a href="problemes.html#P09">P09</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#name-role-value">WCAG 2.2 · 4.1.2 Nom, rôle et valeur (A)</a></td><td><a href="problemes.html#P09">P09</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#status-messages">WCAG 2.2 · 4.1.3 Messages d&#x27;état (AA)</a></td><td><a href="problemes.html#P07">P07</a> <a href="problemes.html#P19">P19</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#target-size-minimum">WCAG 2.2 · 2.5.8 Taille de cible minimale (AA)</a></td><td><a href="problemes.html#P10">P10</a></td><td></td></tr>
+<tr><td><a href="https://www.w3.org/TR/WCAG22/#predictable">WCAG 2.2 · 3.3.4 / 3.2 Prévisibilité</a></td><td><a href="problemes.html#P02">P02</a></td><td></td></tr>
+<tr><td><a href="https://developer.android.com/guide/topics/ui/accessibility/apps">Android · Make apps more accessible : cibles de 48 × 48 dp</a></td><td><a href="problemes.html#P10">P10</a></td><td>« we recommend that each interactive UI element have a focusable area, or touch target size, of at least 48dp×48dp. »</td></tr>
+<tr><td><a href="https://developer.android.com/guide/topics/ui/accessibility/principles">Android · Principes d&#x27;accessibilité : titres, états, rôles</a></td><td><a href="problemes.html#P09">P09</a></td><td></td></tr>
+<tr><td><a href="https://developer.android.com/about/versions/14/features">Android 14 · police jusqu&#x27;à 200 %, échelle non linéaire</a></td><td><a href="problemes.html#P04">P04</a></td><td>« Starting in Android 14, the system supports font scaling up to 200% […] the system applies a nonlinear scaling curve. »</td></tr>
+<tr><td><a href="https://developer.android.com/guide/navigation/custom-back/predictive-back-gesture">Android · Retour prédictif</a></td><td><a href="problemes.html#P11">P11</a></td><td></td></tr>
+<tr><td><a href="https://developer.android.com/about/versions/16/behavior-changes-16">Android 16 · changements : onBackPressed n&#x27;est plus appelé (targetSdk 36)</a></td><td><a href="problemes.html#P11">P11</a></td><td>« For apps targeting Android 16 (API level 36) or higher and running on an Android 16 or higher device, the predictive back system animations […] are enabled by default. Additionally, onBackPressed is not called and KeyEvent.KEYCODE_BACK is not dispatched anymore. »</td></tr>
+<tr><td><a href="https://developer.android.com/develop/ui/views/notifications/build-notification">Android · Créer une notification : visibilité sur l&#x27;écran verrouillé</a></td><td><a href="problemes.html#P06">P06</a></td><td>« VISIBILITY_PUBLIC: the notification&#x27;s full content shows on the lock screen. […] VISIBILITY_PRIVATE: only basic information, such as the notification&#x27;s icon and the content title, shows on the lock screen. »</td></tr>
+<tr><td><a href="https://developer.android.com/develop/ui/views/notifications/live-update">Android 16 · Live Updates (notifications mises en avant)</a></td><td><a href="problemes.html#P06">P06</a></td><td>« Must request promotion using EXTRA_REQUEST_PROMOTED_ONGOING or NotificationCompat.Builder#setRequestPromotedOngoing. Must be ongoing. Must have a contentTitle set. […] Must NOT setColorized to TRUE. »</td></tr>
+<tr><td><a href="https://developer.android.com/reference/android/app/Notification.Builder#setUsesChronometer(boolean)">Android · Notification.Builder.setUsesChronometer</a></td><td><a href="problemes.html#P06">P06</a></td><td></td></tr>
+<tr><td><a href="https://developer.android.com/training/permissions/requesting">Android · Demander des autorisations : au moment où elles servent</a></td><td><a href="problemes.html#P12">P12</a></td><td></td></tr>
+<tr><td><a href="https://developer.android.com/develop/ui/views/notifications/channels">Android · Canaux de notification : nom et description visibles</a></td><td><a href="problemes.html#P20">P20</a></td><td></td></tr>
+<tr><td><a href="https://developer.android.com/develop/ui/views/theming/dynamic-colors">Android · Couleur dynamique (Android 12)</a></td><td><a href="problemes.html#P14">P14</a></td><td>« Dynamic Color, which was added in Android 12, enables users to personalize their devices to align tonally with the color scheme of their personal wallpaper. »</td></tr>
+<tr><td><a href="https://support.google.com/android/answer/12623953">Aide Android · Paramètres restreints</a></td><td></td><td></td></tr>
+<tr><td><a href="https://github.com/material-components/material-components-android/blob/master/docs/theming/Typography.md">Material 3 · échelle typographique (material-components-android, Typography.md)</a></td><td><a href="problemes.html#P23">P23</a></td><td>titleLarge 22 sp ; titleMedium 16 sp medium ; titleSmall 14 sp medium ; bodyLarge 16 ; bodyMedium 14 ; bodySmall 12 ; labelLarge 14 medium ; labelMedium 12 medium ; labelSmall 11 medium.</td></tr>
+<tr><td><a href="https://m3.material.io/components/snackbar/overview">Material 3 · Snackbar : message bref, action d&#x27;annulation</a></td><td><a href="problemes.html#P15">P15</a> <a href="problemes.html#P19">P19</a></td><td>« Snackbars provide brief messages about app processes at the bottom of the screen. […] can also offer the ability to perform an action, such as undoing an action. »</td></tr>
+<tr><td><a href="https://m3.material.io/components/search/overview">Material 3 · Search : barre, vue de résultats, aucun résultat</a></td><td><a href="problemes.html#P01">P01</a> <a href="problemes.html#P13">P13</a></td><td></td></tr>
+<tr><td><a href="https://m3.material.io/components/lists/overview">Material 3 · Lists : en-tête, texte de soutien, élément cliquable entier</a></td><td></td><td></td></tr>
+<tr><td><a href="https://m3.material.io/components/top-app-bar/specs">Material 3 · Top app bar : titre en titleLarge, hauteur 64 dp</a></td><td><a href="problemes.html#P04">P04</a></td><td></td></tr>
+<tr><td><a href="https://m3.material.io/components/date-pickers/specs">Material 3 · Date pickers : jour choisi plein, aujourd&#x27;hui cerclé</a></td><td><a href="problemes.html#P08">P08</a> <a href="problemes.html#P21">P21</a></td><td></td></tr>
+<tr><td><a href="https://m3.material.io/components/radio-button/specs">Material 3 · Radio button : non choisi en onSurfaceVariant</a></td><td><a href="problemes.html#P16">P16</a></td><td></td></tr>
+<tr><td><a href="https://m3.material.io/components/progress-indicators/overview">Material 3 · Progress indicators</a></td><td><a href="problemes.html#P22">P22</a></td><td></td></tr>
+<tr><td><a href="https://m3.material.io/styles/shape/corner-radius-scale">Material 3 · Shape : full pour les pilules</a></td><td><a href="problemes.html#P23">P23</a></td><td></td></tr>
+<tr><td><a href="https://m2.material.io/design/communication/empty-states.html">Material Design (2) · Empty states</a></td><td><a href="problemes.html#P01">P01</a></td><td></td></tr>
+<tr><td><a href="https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html">APCA in a Nutshell (Myndex)</a></td><td><a href="problemes.html#P08">P08</a></td><td></td></tr>
+<tr><td><a href="../../depot/TEXTES.md">TEXTES.md du dépôt : formes « État vide », « Erreur », principe 4</a></td><td><a href="problemes.html#P01">P01</a> <a href="problemes.html#P05">P05</a> <a href="problemes.html#P07">P07</a> <a href="problemes.html#P12">P12</a> <a href="problemes.html#P13">P13</a> <a href="problemes.html#P16">P16</a> <a href="problemes.html#P17">P17</a> <a href="problemes.html#P18">P18</a> <a href="problemes.html#P24">P24</a></td><td></td></tr>
+<tr><td><a href="../../depot/DESIGN.md">DESIGN.md du dépôt : Téléphone, cibles de 48 dp, capsule</a></td><td><a href="problemes.html#P02">P02</a> <a href="problemes.html#P03">P03</a> <a href="problemes.html#P10">P10</a> <a href="problemes.html#P14">P14</a> <a href="problemes.html#P17">P17</a> <a href="problemes.html#P23">P23</a></td><td></td></tr>
+</tbody></table></div>
+<h2>Conventions d'apps de référence</h2>
+<p>Ce travail s'est fait sans téléphone. Les conventions d'apps de Google ne sont citées que lorsqu'une documentation de Google les décrit (Live Updates : appels, minuteurs, trajets ; Snackbar : annulation ; retour prédictif : l'aperçu de l'écran d'en dessous). Les autres comparaisons (« l'Enregistreur de Google montre un chronomètre », « Google Photos réduit sa barre en icônes ») restent à vérifier sur un Pixel avant d'être opposées à un choix ; aucune reco ne repose sur elles seules.</p>
+<h2>Sources du dépôt</h2><ul><li>DESIGN.md (Téléphone, Écarts connus) ; TEXTES.md (principes 1 à 8, Vocabulaire, Par élément) ; SPEC-telephone.md (Votre voix pendant les appels ; Notifications).</li><li>Captures du Mac 0.24.0 : <code>design/recos/captures-mac-0.24.0/</code> (lecture.webp, enregistrement.webp, telephones.webp).</li><li>Code du Mac pour le vocabulaire : CallsWindow.swift:255, CallCard.swift:228, StatusPage.swift:123, Onboarding.swift:442, SettingsParts.swift:86-88.</li></ul>
+</main>
+<footer>Dossier de relecture UX de l'app Android, branche <code>recos-ux-android</code>, 8 novembre 2026. Aucun code de l'app modifié.
+Données brutes dans <a href="donnees/">donnees/</a>, outils de mesure dans <a href="outils/">outils/</a>.</footer>
+</body>
+</html>

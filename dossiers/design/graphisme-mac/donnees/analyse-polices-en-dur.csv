@@ -1,0 +1,27 @@
+fichier,ligne,extrait,hors_ecran,style,taille_pt,graisse,options,source,equivalent
+AddPhone.swift,130,"Image(systemName: ""checkmark.circle.fill"").font(.system(size: 36)).foregroundStyle(Color.accentColor)",,system,36,regular,,.system(size: 36),aucun style à cette taille
+CallApps.swift,48,"Image(systemName: app.symbol).font(.system(size: 18, weight: .semibold)).foregroundStyle(.white)",,system,18,semibold,,".system(size: 18, weight: .semibold)",aucun style à cette taille
+CallCard.swift,300,".font(.system(size: 9, weight: .semibold))",,system,9,semibold,,".system(size: 9, weight: .semibold)",aucun style à cette taille
+CallFacts.swift,211,"icon: AnyView(Image(systemName: icon(e)).font(.system(size: 13)).foregroundStyle(.secondary).frame(width: 22, height: 22).accessibilityHidden(true))) {",,system,13,regular,,.system(size: 13),body/headline
+CaptureViewer.swift,183,".font(.system(size: 10, weight: .medium)).foregroundStyle(.white)",,system,10,medium,,".system(size: 10, weight: .medium)",caption
+Coverage.swift,82,"Image(systemName: ""exclamationmark.triangle"").font(.system(size: 15)).frame(width: 24)",,system,15,regular,,.system(size: 15),title3
+DotCalendar.swift,94,"if n > 2 { Text(""+"").font(.system(size: 9, weight: .bold)) }",,system,9,bold,,".system(size: 9, weight: .bold)",aucun style à cette taille
+JournalPane.swift,230,"logo: AnyView(Image(systemName: ""waveform"").font(.system(size: 15)).foregroundStyle(.secondary)),",,system,15,regular,,.system(size: 15),title3
+JournalPane.swift,496,.font(.system(size: 10)),,system,10,regular,,.system(size: 10),caption
+KindThumb.swift,60,".font(.system(size: 13, weight: .semibold).monospacedDigit())",,system,13,semibold,monospacedDigit,".system(size: 13, weight: .semibold).monospacedDigit()",body/headline
+NotesPane.swift,85,"logo: filtered.map { AnyView(CallLogo(meta: $0)) } ?? AnyView(Image(systemName: ""note.text"").font(.system(size: 15)).foregroundStyle(.secondary)),",,system,15,regular,,.system(size: 15),title3
+NotesPane.swift,403,"Text(""+"").font(.system(size: 12, weight: .medium)).foregroundStyle(.secondary).fixedSize()",,system,12,medium,,".system(size: 12, weight: .medium)",callout
+NotesPane.swift,413,".font(.system(size: 20, weight: .semibold))",,system,20,semibold,,".system(size: 20, weight: .semibold)",aucun style à cette taille
+NotesPane.swift,444,".font(.system(size: 11, weight: .medium))",,system,11,medium,,".system(size: 11, weight: .medium)",subheadline
+Onboarding.swift,229,"AnyView(Image(systemName: symbol).font(.system(size: 15)).foregroundStyle(.tint).frame(width: 22, height: 22).accessibilityHidden(true))",,system,15,regular,,.system(size: 15),title3
+Onboarding.swift,466,"Image(systemName: site.symbol).font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22, height: 22)",,system,15,regular,,.system(size: 15),title3
+TranscriptReader.swift,535,.font(.system(size: 11)),,system,11,regular,,.system(size: 11),subheadline
+TranscriptReader.swift,1324,"Text(""\(voice)"").font(.system(size: 13, weight: .semibold))",,system,13,semibold,,".system(size: 13, weight: .semibold)",body/headline
+TranscriptReader.swift,1326,"Image(systemName: ""person.fill"").font(.system(size: 12))",,system,12,regular,,.system(size: 12),callout
+TranscriptReader.swift,1329,"Image(systemName: ""person.fill"").font(.system(size: 12)).help(capture.map(Self.arrival) ?? """")",,system,12,regular,,.system(size: 12),callout
+TranscriptReader.swift,1331,"Image(systemName: me ? ""mic.fill"" : ""speaker.wave.2.fill"").font(.system(size: 12))",,system,12,regular,,.system(size: 12),callout
+TranscriptReader.swift,1334,"Text(initials).font(.system(size: 12, weight: .semibold))",,system,12,semibold,,".system(size: 12, weight: .semibold)",callout
+TranscriptReader.swift,1336,"Text(initials).font(.system(size: 12, weight: .semibold))",,system,12,semibold,,".system(size: 12, weight: .semibold)",callout
+TranscriptReader.swift,1338,"Image(systemName: me ? ""person.fill"" : ""person.2.fill"").font(.system(size: 12))",,system,12,regular,,.system(size: 12),callout
+TranscriptReader.swift,1408,.font(.system(size: 13)),,system,13,regular,,.system(size: 13),body/headline
+TranscriptReader.swift,1993,".font(.system(size: 11, weight: .bold).monospacedDigit())",,system,11,bold,monospacedDigit,".system(size: 11, weight: .bold).monospacedDigit()",subheadline

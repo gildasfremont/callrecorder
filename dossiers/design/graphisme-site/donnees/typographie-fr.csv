@@ -1,0 +1,6 @@
+page,apostrophe droite ',apostrophe courbe ’,« : » après espace sécable,« : » après insécable,« ; ? ! » après espace sécable,« ; ? ! » après insécable U+00A0,« ; ? ! » après fine U+202F,« ; ? ! » collés,guillemet ouvrant + espace sécable,guillemet ouvrant + insécable,espace sécable + guillemet fermant,insécable + guillemet fermant,"guillemets droits """,points de suspension ...,« › » après espace sécable,« · » après espace sécable,nombre + espace sécable + unité
+accueil,37,1,2,21,0,4,0,0,6,4,6,4,0,0,4,2,0
+fonctionnalites,48,0,0,19,0,4,0,0,0,3,0,3,0,0,0,1,1
+guides,117,0,13,20,3,5,0,0,0,8,0,8,0,0,16,2,1
+versions,116,0,15,22,4,8,0,0,0,10,0,10,0,0,18,1,0
+confidentialite,42,0,4,7,0,0,0,0,0,2,0,2,0,0,10,1,2

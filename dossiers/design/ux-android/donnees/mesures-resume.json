@@ -1,0 +1,19 @@
+{
+ "etats_captures": 246,
+ "ecrans": 7,
+ "etats_distincts": 41,
+ "couples_contraste": 180,
+ "couples_wcag_echec": 14,
+ "couples_apca_sous_seuil": 99,
+ "cibles_relevees": 1824,
+ "cibles_sous_48dp_100": 18,
+ "cibles_distinctes_sous_48dp_100": 5,
+ "a11y_manques": 226,
+ "police_problemes": {
+  "130": 54,
+  "200": 126,
+  "100": 20
+ },
+ "textes_rendus_100": 880,
+ "contrastes_statiques": 38
+}

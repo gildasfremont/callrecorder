@@ -1,0 +1,30 @@
+fichier,ligne,valeur,role,contexte
+phone/android/app/src/main/java/fyi/gildas/callrecorder/CallService.kt,129,#FFD32F2F,,background = GradientDrawable().apply { shape = GradientDrawable.OVAL; setColor(0xFFD32F2F.toInt()) }
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,274,#FFFFFFFF,,playButton.setImageDrawable(a.getDrawable(res)?.mutate()?.apply { setTint(0xFFFFFFFF.toInt()) })
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,355,#00FFFFFF,masque binaire,"h.mark.background = look.mass(18, color = (color and 0x00FFFFFF) or 0x1F000000)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,355,#1F000000,,"h.mark.background = look.mass(18, color = (color and 0x00FFFFFF) or 0x1F000000)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,253,#00FFFFFF,,setColor((LinkService.ACCENT and 0x00FFFFFF) or 0x1F000000)
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,253,#1F000000,,setColor((LinkService.ACCENT and 0x00FFFFFF) or 0x1F000000)
+phone/android/app/src/main/java/fyi/gildas/callrecorder/LinkService.kt,40,#FF0064D2,,const val ACCENT = 0xFF0064D2.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,20,#FF1E1E1E,,val background = if (dark) 0xFF1E1E1E.toInt() else 0xFFF5F5F5.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,20,#FFF5F5F5,,val background = if (dark) 0xFF1E1E1E.toInt() else 0xFFF5F5F5.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,21,#FFF5F5F7,,val text = if (dark) 0xFFF5F5F7.toInt() else 0xFF1D1D1F.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,21,#FF1D1D1F,,val text = if (dark) 0xFFF5F5F7.toInt() else 0xFF1D1D1F.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,25,#F02C2C2E,,val floating = if (dark) 0xF02C2C2E.toInt() else 0xF0FFFFFF.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,25,#F0FFFFFF,,val floating = if (dark) 0xF02C2C2E.toInt() else 0xF0FFFFFF.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,49,#FF32D74B,,OK -> if (l.dark) 0xFF32D74B.toInt() else 0xFF147333.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,49,#FF147333,,OK -> if (l.dark) 0xFF32D74B.toInt() else 0xFF147333.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,50,#FF409CFF,,INFO -> if (l.dark) 0xFF409CFF.toInt() else LinkService.ACCENT
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,51,#FFFF9F0A,,WARNING -> if (l.dark) 0xFFFF9F0A.toInt() else 0xFFA0470A.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,51,#FFA0470A,,WARNING -> if (l.dark) 0xFFFF9F0A.toInt() else 0xFFA0470A.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,52,#FFFF453A,,LIVE -> if (l.dark) 0xFFFF453A.toInt() else 0xFFC41E14.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,52,#FFC41E14,,LIVE -> if (l.dark) 0xFFFF453A.toInt() else 0xFFC41E14.toInt()
+phone/android/app/src/main/java/fyi/gildas/callrecorder/MainActivity.kt,344,Color.TRANSPARENT,,window.statusBarColor = android.graphics.Color.TRANSPARENT
+phone/android/app/src/main/java/fyi/gildas/callrecorder/MainActivity.kt,345,Color.TRANSPARENT,,window.navigationBarColor = android.graphics.Color.TRANSPARENT
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,56,#FF000000,masque binaire,"fun flat(radius: Number = 12) = RippleDrawable(ColorStateList.valueOf(look.ink(0.12)), null, look.mass(radius, color = 0xFF000000.toInt()))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,87,#FF25D366,,"""whatsapp"" -> 0xFF25D366.toInt()"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,88,#FF3B45FD,,"""signal"" -> 0xFF3B45FD.toInt()"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,89,#FF26A5E4,,"""telegram"" -> 0xFF26A5E4.toInt()"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,90,#FF00897B,,"""meet"" -> 0xFF00897B.toInt()"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SetupScreen.kt,24,#FFFFFFFF,,setTextColor(0xFFFFFFFF.toInt())
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SetupScreen.kt,31,#FFFFFFFF,,setTint(0xFFFFFFFF.toInt())

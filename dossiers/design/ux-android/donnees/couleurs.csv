@@ -1,0 +1,93 @@
+fichier,ligne,valeur,forme,code
+java/fyi/gildas/callrecorder/CallService.kt,129,#FFD32F2F,littérale,background = GradientDrawable().apply { shape = GradientDrawable.OVAL; setColor(0xFFD32F2F.toInt()) }
+java/fyi/gildas/callrecorder/ConversationScreen.kt,57,look.secondary,nommée,"private val detail = label("""", 13f, look.secondary, oneLine = true)"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,61,look.secondary,nommée,"private val empty = label("""", 15f, look.secondary).apply { gravity = Gravity.CENTER; setPadding(dp(32), dp(32), dp(32), dp(32)) }"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,65,look.text,nommée,setTextColor(look.text)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,66,look.secondary,nommée,setHintTextColor(look.secondary)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,81,LinkService.ACCENT,nommée,"background = pressable(look.mass(22, color = LinkService.ACCENT))"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,87,LinkService.ACCENT,nommée,progressTintList = ColorStateList.valueOf(LinkService.ACCENT)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,88,LinkService.ACCENT,nommée,thumbTintList = ColorStateList.valueOf(LinkService.ACCENT)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,89,ink(0.12),opacité du texte,progressBackgroundTintList = ColorStateList.valueOf(look.ink(0.12))
+java/fyi/gildas/callrecorder/ConversationScreen.kt,98,look.secondary,nommée,"private val time = label("""", 12f, look.secondary)"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,130,look.floating,nommée,"background = look.mass(24, color = look.floating)"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,142,look.secondary,nommée,"more = iconButton(R.drawable.ic_plus, look.secondary, ""Plus"") { menu(more) }"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,177,look.text,nommée,"addView(icon(res, look.text, 22))"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,202,Tone.LIVE,nommée,"paintPlate(kind, R.drawable.ic_micro, Look.Tone.LIVE.color(look))"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,274,#FFFFFFFF,littérale,playButton.setImageDrawable(a.getDrawable(res)?.mutate()?.apply { setTint(0xFFFFFFFF.toInt()) })
+java/fyi/gildas/callrecorder/ConversationScreen.kt,325,ink(0.5),opacité du texte,"val at = label("""", 13f, look.ink(0.5))"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,347,Tone.INFO,nommée,val color = if (l.me) Look.Tone.INFO.color(look) else Look.Tone.WARNING.color(look)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,347,Tone.WARNING,nommée,val color = if (l.me) Look.Tone.INFO.color(look) else Look.Tone.WARNING.color(look)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,352,look.secondary,nommée,h.said.setTextColor(if (l.pending) look.secondary else look.text)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,352,look.text,nommée,h.said.setTextColor(if (l.pending) look.secondary else look.text)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,355,#1F000000,littérale,"h.mark.background = look.mass(18, color = (color and 0x00FFFFFF) or 0x1F000000)"
+java/fyi/gildas/callrecorder/ConversationScreen.kt,357,look.text,nommée,h.who.setTextColor(if (l.me) color else look.text)
+java/fyi/gildas/callrecorder/ConversationScreen.kt,418,Tone.LIVE,nommée,dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Look.Tone.LIVE.color(look))
+java/fyi/gildas/callrecorder/HomeScreen.kt,60,look.text,nommée,"private val listButton = iconButton(R.drawable.ic_liste, look.text, ""Liste"") { setCalendar(false) }"
+java/fyi/gildas/callrecorder/HomeScreen.kt,61,look.secondary,nommée,"private val calendarButton = iconButton(R.drawable.ic_calendrier, look.secondary, ""Calendrier"") { setCalendar(true) }"
+java/fyi/gildas/callrecorder/HomeScreen.kt,72,look.text,nommée,setTextColor(look.text)
+java/fyi/gildas/callrecorder/HomeScreen.kt,73,look.secondary,nommée,setHintTextColor(look.secondary)
+java/fyi/gildas/callrecorder/HomeScreen.kt,115,look.text,nommée,b.setImageDrawable(b.drawable.mutate().apply { setTint(if (on) look.text else look.secondary) })
+java/fyi/gildas/callrecorder/HomeScreen.kt,115,look.secondary,nommée,b.setImageDrawable(b.drawable.mutate().apply { setTint(if (on) look.text else look.secondary) })
+java/fyi/gildas/callrecorder/HomeScreen.kt,124,look.secondary,nommée,"topBar.addView(iconButton(R.drawable.ic_fermer, look.secondary, ""Fermer la recherche"") { closeSearch() })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,128,look.secondary,nommée,"topBar.addView(iconButton(R.drawable.ic_chercher, look.secondary, ""Rechercher"") { openSearch() })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,230,Tone.LIVE,nommée,val red = Look.Tone.LIVE.color(look)
+java/fyi/gildas/callrecorder/HomeScreen.kt,232,look.secondary,nommée,"foot.addView(footRow(R.drawable.ic_photo, ""Prendre une photo"", look.secondary) { a.takePhoto() })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,234,look.secondary,nommée,"foot.addView(footRow(R.drawable.ic_enregistrer, ""Enregistrer une réunion"", look.secondary) { record() })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,235,look.secondary,nommée,"foot.addView(footRow(R.drawable.ic_reglages, ""Réglages"", look.secondary) { a.push(SettingsScreen(a)) })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,240,look.title,nommée,"is Row.Day -> label(r.text, 14f, look.title, bold = true).apply { setPadding(dp(12), dp(12), dp(12), dp(6)) }"
+java/fyi/gildas/callrecorder/HomeScreen.kt,242,LinkService.ACCENT,nommée,"tint = LinkService.ACCENT, plate = accentPlate(), metaColor = LinkService.ACCENT) { a.push(ConversationScreen(a, null)) }"
+java/fyi/gildas/callrecorder/HomeScreen.kt,242,LinkService.ACCENT,nommée,"tint = LinkService.ACCENT, plate = accentPlate(), metaColor = LinkService.ACCENT) { a.push(ConversationScreen(a, null)) }"
+java/fyi/gildas/callrecorder/HomeScreen.kt,244,Tone.LIVE,nommée,"tint = Look.Tone.LIVE.color(look), plate = null, metaColor = Look.Tone.LIVE.color(look),"
+java/fyi/gildas/callrecorder/HomeScreen.kt,244,Tone.LIVE,nommée,"tint = Look.Tone.LIVE.color(look), plate = null, metaColor = Look.Tone.LIVE.color(look),"
+java/fyi/gildas/callrecorder/HomeScreen.kt,246,look.secondary,nommée,"is Row.Talk -> talkRow(kindIcon(r.item.app), r.item.title, r.found ?: meta(r.item), tint = kindTint(r.item.app), plate = null, metaColor = l"
+java/fyi/gildas/callrecorder/HomeScreen.kt,253,#1F000000,littérale,setColor((LinkService.ACCENT and 0x00FFFFFF) or 0x1F000000)
+java/fyi/gildas/callrecorder/HomeScreen.kt,253,LinkService.ACCENT,nommée,setColor((LinkService.ACCENT and 0x00FFFFFF) or 0x1F000000)
+java/fyi/gildas/callrecorder/HomeScreen.kt,283,look.secondary,nommée,"addView(iconButton(R.drawable.ic_retour, look.secondary, ""Mois précédent"", 18) { moveMonth(-1) })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,285,look.secondary,nommée,"addView(iconButton(R.drawable.chevron, look.secondary, ""Mois suivant"", 18) { moveMonth(1) })"
+java/fyi/gildas/callrecorder/HomeScreen.kt,289,look.title,nommée,"for (d in listOf(""L"", ""M"", ""M"", ""J"", ""V"", ""S"", ""D"")) addView(label(d, 12f, look.title).apply { gravity = Gravity.CENTER; importantForAccessi"
+java/fyi/gildas/callrecorder/HomeScreen.kt,316,LinkService.ACCENT,nommée,"addView(label(n.toString(), 15f, if (today) LinkService.ACCENT else look.text).apply { gravity = Gravity.CENTER; if (today) setTypeface(type"
+java/fyi/gildas/callrecorder/HomeScreen.kt,316,look.text,nommée,"addView(label(n.toString(), 15f, if (today) LinkService.ACCENT else look.text).apply { gravity = Gravity.CENTER; if (today) setTypeface(type"
+java/fyi/gildas/callrecorder/HomeScreen.kt,318,ink(0.45),opacité du texte,background = GradientDrawable().apply { shape = GradientDrawable.OVAL; setColor(if (has) look.ink(0.45) else 0) }
+java/fyi/gildas/callrecorder/LinkService.kt,40,#FF0064D2,littérale,const val ACCENT = 0xFF0064D2.toInt()
+java/fyi/gildas/callrecorder/Look.kt,20,#FF1E1E1E,littérale,val background = if (dark) 0xFF1E1E1E.toInt() else 0xFFF5F5F5.toInt()
+java/fyi/gildas/callrecorder/Look.kt,20,#FFF5F5F5,littérale,val background = if (dark) 0xFF1E1E1E.toInt() else 0xFFF5F5F5.toInt()
+java/fyi/gildas/callrecorder/Look.kt,21,#FFF5F5F7,littérale,val text = if (dark) 0xFFF5F5F7.toInt() else 0xFF1D1D1F.toInt()
+java/fyi/gildas/callrecorder/Look.kt,21,#FF1D1D1F,littérale,val text = if (dark) 0xFFF5F5F7.toInt() else 0xFF1D1D1F.toInt()
+java/fyi/gildas/callrecorder/Look.kt,25,#F02C2C2E,littérale,val floating = if (dark) 0xF02C2C2E.toInt() else 0xF0FFFFFF.toInt()
+java/fyi/gildas/callrecorder/Look.kt,25,#F0FFFFFF,littérale,val floating = if (dark) 0xF02C2C2E.toInt() else 0xF0FFFFFF.toInt()
+java/fyi/gildas/callrecorder/Look.kt,48,ink(0.45),opacité du texte,"NEUTRAL, STOPPED -> l.ink(0.45)"
+java/fyi/gildas/callrecorder/Look.kt,49,#FF32D74B,littérale,OK -> if (l.dark) 0xFF32D74B.toInt() else 0xFF147333.toInt()
+java/fyi/gildas/callrecorder/Look.kt,49,#FF147333,littérale,OK -> if (l.dark) 0xFF32D74B.toInt() else 0xFF147333.toInt()
+java/fyi/gildas/callrecorder/Look.kt,50,#FF409CFF,littérale,INFO -> if (l.dark) 0xFF409CFF.toInt() else LinkService.ACCENT
+java/fyi/gildas/callrecorder/Look.kt,50,LinkService.ACCENT,nommée,INFO -> if (l.dark) 0xFF409CFF.toInt() else LinkService.ACCENT
+java/fyi/gildas/callrecorder/Look.kt,51,#FFFF9F0A,littérale,WARNING -> if (l.dark) 0xFFFF9F0A.toInt() else 0xFFA0470A.toInt()
+java/fyi/gildas/callrecorder/Look.kt,51,#FFA0470A,littérale,WARNING -> if (l.dark) 0xFFFF9F0A.toInt() else 0xFFA0470A.toInt()
+java/fyi/gildas/callrecorder/Look.kt,52,#FFFF453A,littérale,LIVE -> if (l.dark) 0xFFFF453A.toInt() else 0xFFC41E14.toInt()
+java/fyi/gildas/callrecorder/Look.kt,52,#FFC41E14,littérale,LIVE -> if (l.dark) 0xFFFF453A.toInt() else 0xFFC41E14.toInt()
+java/fyi/gildas/callrecorder/MainActivity.kt,73,look.background,nommée,root = FrameLayout(this).apply { setBackgroundColor(look.background) }
+java/fyi/gildas/callrecorder/Pastille.kt,42,look.floating,nommée,background = GradientDrawable().apply { cornerRadius = look.dp(24).toFloat(); setColor(look.floating) }
+java/fyi/gildas/callrecorder/Pastille.kt,44,look.secondary,nommée,"addView(button(R.drawable.ic_photo, look.secondary, ""Prendre une photo"", photo))"
+java/fyi/gildas/callrecorder/Pastille.kt,45,Tone.LIVE,nommée,"addView(button(R.drawable.ic_arreter, Look.Tone.LIVE.color(look), ""Arrêter l'enregistrement"", stop))"
+java/fyi/gildas/callrecorder/Screen.kt,37,look.text,nommée,"fun label(text: CharSequence = """", size: Float = 16f, color: Int = look.text, bold: Boolean = false, oneLine: Boolean = false) = TextView(a)"
+java/fyi/gildas/callrecorder/Screen.kt,53,ink(0.12),opacité du texte,"fun pressable(d: GradientDrawable) = RippleDrawable(ColorStateList.valueOf(look.ink(0.12)), d, null)"
+java/fyi/gildas/callrecorder/Screen.kt,56,#FF000000,littérale,"fun flat(radius: Number = 12) = RippleDrawable(ColorStateList.valueOf(look.ink(0.12)), null, look.mass(radius, color = 0xFF000000.toInt()))"
+java/fyi/gildas/callrecorder/Screen.kt,56,ink(0.12),opacité du texte,"fun flat(radius: Number = 12) = RippleDrawable(ColorStateList.valueOf(look.ink(0.12)), null, look.mass(radius, color = 0xFF000000.toInt()))"
+java/fyi/gildas/callrecorder/Screen.kt,87,#FF25D366,littérale,"""whatsapp"" -> 0xFF25D366.toInt()"
+java/fyi/gildas/callrecorder/Screen.kt,88,#FF3B45FD,littérale,"""signal"" -> 0xFF3B45FD.toInt()"
+java/fyi/gildas/callrecorder/Screen.kt,89,#FF26A5E4,littérale,"""telegram"" -> 0xFF26A5E4.toInt()"
+java/fyi/gildas/callrecorder/Screen.kt,90,#FF00897B,littérale,"""meet"" -> 0xFF00897B.toInt()"
+java/fyi/gildas/callrecorder/Screen.kt,91,ink(0.55),opacité du texte,else -> look.ink(0.55)
+java/fyi/gildas/callrecorder/Screen.kt,111,look.text,nommée,"addView(iconButton(R.drawable.ic_retour, look.text, ""Retour"") { a.close() })"
+java/fyi/gildas/callrecorder/Screen.kt,147,look.secondary,nommée,"addView(label(value, 15f, valueColor ?: look.secondary))"
+java/fyi/gildas/callrecorder/Screen.kt,148,ink(0.4),opacité du texte,"addView(icon(R.drawable.chevron, look.ink(0.4), 16), LinearLayout.LayoutParams(dp(16), dp(16)).apply { marginStart = dp(6) })"
+java/fyi/gildas/callrecorder/SettingsScreen.kt,33,look.secondary,nommée,"setSpan(android.text.style.ForegroundColorSpan(look.secondary), from, length, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)"
+java/fyi/gildas/callrecorder/SettingsScreen.kt,36,look.text,nommée,setTextColor(look.text)
+java/fyi/gildas/callrecorder/SettingsScreen.kt,38,LinkService.ACCENT,nommée,buttonTintList = ColorStateList.valueOf(LinkService.ACCENT)
+java/fyi/gildas/callrecorder/SettingsScreen.kt,46,Tone.WARNING,nommée,private val warningColor = Look.Tone.WARNING.color(look)
+java/fyi/gildas/callrecorder/SettingsScreen.kt,62,LinkService.ACCENT,nommée,setTextColor(LinkService.ACCENT)
+java/fyi/gildas/callrecorder/SettingsScreen.kt,87,look.secondary,nommée,"private val callsDetail = label("""", 13f, look.secondary)"
+java/fyi/gildas/callrecorder/SettingsScreen.kt,121,look.title,nommée,"private fun heading(text: String, top: Int) = label(text, 14f, look.title, bold = true).apply { setPadding(dp(4), dp(top), dp(4), dp(8)) }"
+java/fyi/gildas/callrecorder/SetupScreen.kt,17,look.secondary,nommée,"private val text = label("""", 15f, look.secondary).apply { gravity = Gravity.CENTER; setLineSpacing(0f, 1.15f) }"
+java/fyi/gildas/callrecorder/SetupScreen.kt,24,#FFFFFFFF,littérale,setTextColor(0xFFFFFFFF.toInt())
+java/fyi/gildas/callrecorder/SetupScreen.kt,25,LinkService.ACCENT,nommée,"background = pressable(look.mass(24, color = LinkService.ACCENT))"
+java/fyi/gildas/callrecorder/SetupScreen.kt,31,#FFFFFFFF,littérale,setTint(0xFFFFFFFF.toInt())

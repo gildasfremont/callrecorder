@@ -1,0 +1,1365 @@
+variante,ecran,classe,nom,w,h,min48,min24,x,y,etat,titre
+base,accueil-ecoute,ImageButton,Liste,52,48,True,True,14,8,,False
+base,accueil-ecoute,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,accueil-ecoute,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,accueil-ecoute,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+base,accueil-ecoute,LinearLayout,,388,64,True,True,12,68,,False
+base,accueil-ecoute,LinearLayout,,388,64,True,True,12,169,,False
+base,accueil-ecoute,LinearLayout,,388,64,True,True,12,270,,False
+base,accueil-ecoute,LinearLayout,,388,64,True,True,12,371,,False
+base,accueil-ecoute,LinearLayout,,388,64,True,True,12,472,,False
+base,accueil-ecoute,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,accueil-ecoute,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base,accueil-enregistre,ImageButton,Liste,52,48,True,True,14,8,,False
+base,accueil-enregistre,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,accueil-enregistre,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,accueil-enregistre,ListView,Aujourd'hui · dimanche 8 novembre   Samedi 7 novembre  Vendr,412,731,True,True,0,64,,False
+base,accueil-enregistre,LinearLayout,,388,64,True,True,12,169,,False
+base,accueil-enregistre,LinearLayout,,388,64,True,True,12,270,,False
+base,accueil-enregistre,LinearLayout,,388,64,True,True,12,371,,False
+base,accueil-enregistre,LinearLayout,,388,64,True,True,12,472,,False
+base,accueil-enregistre,LinearLayout,Arrêter l'enregistrement,388,48,True,True,12,803,,False
+base,accueil-enregistre,LinearLayout,Prendre une photo,388,48,True,True,12,851,,False
+base,accueil-vide,ImageButton,Liste,52,48,True,True,14,8,,False
+base,accueil-vide,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,accueil-vide,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,accueil-vide,ListView,,412,731,True,True,0,64,,False
+base,accueil-vide,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,accueil-vide,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base,accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+base,accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+base,accueil,LinearLayout,,388,64,True,True,12,105,,False
+base,accueil,LinearLayout,,388,64,True,True,12,206,,False
+base,accueil,LinearLayout,,388,64,True,True,12,307,,False
+base,accueil,LinearLayout,,388,64,True,True,12,408,,False
+base,accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base,aucune-parole,ImageButton,Retour,48,48,True,True,4,8,,False
+base,aucune-parole,ImageButton,Plus,48,48,True,True,360,8,,False
+base,aucune-parole,ListView,,412,766.7,True,True,0,148.3,,False
+base,aucune-parole,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,aucune-parole,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,aucune-parole,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,aucune-parole,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,avant-transcription,ImageButton,Retour,48,48,True,True,4,8,,False
+base,avant-transcription,ImageButton,Plus,48,48,True,True,360,8,,False
+base,avant-transcription,ListView,,412,766.7,True,True,0,148.3,,False
+base,avant-transcription,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,avant-transcription,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,avant-transcription,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,avant-transcription,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,calendrier,ImageButton,Liste,52,48,True,True,14,8,,False
+base,calendrier,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,calendrier,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,calendrier,ListView,Aujourd'hui · dimanche 8 novembre,412,731,True,True,0,64,,False
+base,calendrier,ImageButton,Mois précédent,48,48,True,True,20,72,,False
+base,calendrier,ImageButton,Mois suivant,48,48,True,True,344,72,,False
+base,calendrier,LinearLayout,Dimanche 1 novembre,53.3,48,True,True,338.7,136.3,,False
+base,calendrier,LinearLayout,Lundi 2 novembre,53,48,True,True,20,184.3,,False
+base,calendrier,LinearLayout,Mardi 3 novembre,53,48,True,True,73,184.3,,False
+base,calendrier,LinearLayout,Mercredi 4 novembre,53,48,True,True,126,184.3,,False
+base,calendrier,LinearLayout,"Jeudi 5 novembre, des conversations",53,48,True,True,179,184.3,,False
+base,calendrier,LinearLayout,"Vendredi 6 novembre, des conversations",53.3,48,True,True,232,184.3,,False
+base,calendrier,LinearLayout,"Samedi 7 novembre, des conversations",53.3,48,True,True,285.3,184.3,,False
+base,calendrier,LinearLayout,"Aujourd'hui · dimanche 8 novembre, des conversations",53.3,48,True,True,338.7,184.3,,False
+base,calendrier,LinearLayout,Lundi 9 novembre,53,48,True,True,20,232.3,,False
+base,calendrier,LinearLayout,Mardi 10 novembre,53,48,True,True,73,232.3,,False
+base,calendrier,LinearLayout,Mercredi 11 novembre,53,48,True,True,126,232.3,,False
+base,calendrier,LinearLayout,Jeudi 12 novembre,53,48,True,True,179,232.3,,False
+base,calendrier,LinearLayout,Vendredi 13 novembre,53.3,48,True,True,232,232.3,,False
+base,calendrier,LinearLayout,Samedi 14 novembre,53.3,48,True,True,285.3,232.3,,False
+base,calendrier,LinearLayout,Dimanche 15 novembre,53.3,48,True,True,338.7,232.3,,False
+base,calendrier,LinearLayout,Lundi 16 novembre,53,48,True,True,20,280.3,,False
+base,calendrier,LinearLayout,Mardi 17 novembre,53,48,True,True,73,280.3,,False
+base,calendrier,LinearLayout,Mercredi 18 novembre,53,48,True,True,126,280.3,,False
+base,calendrier,LinearLayout,Jeudi 19 novembre,53,48,True,True,179,280.3,,False
+base,calendrier,LinearLayout,Vendredi 20 novembre,53.3,48,True,True,232,280.3,,False
+base,calendrier,LinearLayout,Samedi 21 novembre,53.3,48,True,True,285.3,280.3,,False
+base,calendrier,LinearLayout,Dimanche 22 novembre,53.3,48,True,True,338.7,280.3,,False
+base,calendrier,LinearLayout,Lundi 23 novembre,53,48,True,True,20,328.3,,False
+base,calendrier,LinearLayout,Mardi 24 novembre,53,48,True,True,73,328.3,,False
+base,calendrier,LinearLayout,Mercredi 25 novembre,53,48,True,True,126,328.3,,False
+base,calendrier,LinearLayout,Jeudi 26 novembre,53,48,True,True,179,328.3,,False
+base,calendrier,LinearLayout,Vendredi 27 novembre,53.3,48,True,True,232,328.3,,False
+base,calendrier,LinearLayout,Samedi 28 novembre,53.3,48,True,True,285.3,328.3,,False
+base,calendrier,LinearLayout,Dimanche 29 novembre,53.3,48,True,True,338.7,328.3,,False
+base,calendrier,LinearLayout,Lundi 30 novembre,53,48,True,True,20,376.3,,False
+base,calendrier,LinearLayout,,388,64,True,True,12,465.3,,False
+base,calendrier,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,calendrier,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,accueil-ecoute,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,accueil-ecoute,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,accueil-ecoute,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,accueil-ecoute,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+clair,accueil-ecoute,LinearLayout,,388,64,True,True,12,68,,False
+clair,accueil-ecoute,LinearLayout,,388,64,True,True,12,169,,False
+clair,accueil-ecoute,LinearLayout,,388,64,True,True,12,270,,False
+clair,accueil-ecoute,LinearLayout,,388,64,True,True,12,371,,False
+clair,accueil-ecoute,LinearLayout,,388,64,True,True,12,472,,False
+clair,accueil-ecoute,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,accueil-ecoute,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,accueil-enregistre,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,accueil-enregistre,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,accueil-enregistre,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,accueil-enregistre,ListView,Aujourd'hui · dimanche 8 novembre   Samedi 7 novembre  Vendr,412,731,True,True,0,64,,False
+clair,accueil-enregistre,LinearLayout,,388,64,True,True,12,169,,False
+clair,accueil-enregistre,LinearLayout,,388,64,True,True,12,270,,False
+clair,accueil-enregistre,LinearLayout,,388,64,True,True,12,371,,False
+clair,accueil-enregistre,LinearLayout,,388,64,True,True,12,472,,False
+clair,accueil-enregistre,LinearLayout,Arrêter l'enregistrement,388,48,True,True,12,803,,False
+clair,accueil-enregistre,LinearLayout,Prendre une photo,388,48,True,True,12,851,,False
+clair,accueil-vide,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,accueil-vide,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,accueil-vide,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,accueil-vide,ListView,,412,731,True,True,0,64,,False
+clair,accueil-vide,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,accueil-vide,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+clair,accueil,LinearLayout,,388,64,True,True,12,105,,False
+clair,accueil,LinearLayout,,388,64,True,True,12,206,,False
+clair,accueil,LinearLayout,,388,64,True,True,12,307,,False
+clair,accueil,LinearLayout,,388,64,True,True,12,408,,False
+clair,accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,aucune-parole,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,aucune-parole,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,aucune-parole,ListView,,412,766.7,True,True,0,148.3,,False
+clair,aucune-parole,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,aucune-parole,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,aucune-parole,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,aucune-parole,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,avant-transcription,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,avant-transcription,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,avant-transcription,ListView,,412,766.7,True,True,0,148.3,,False
+clair,avant-transcription,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,avant-transcription,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,avant-transcription,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,avant-transcription,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,calendrier,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,calendrier,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,calendrier,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,calendrier,ListView,Aujourd'hui · dimanche 8 novembre,412,731,True,True,0,64,,False
+clair,calendrier,ImageButton,Mois précédent,48,48,True,True,20,72,,False
+clair,calendrier,ImageButton,Mois suivant,48,48,True,True,344,72,,False
+clair,calendrier,LinearLayout,Dimanche 1 novembre,53.3,48,True,True,338.7,136.3,,False
+clair,calendrier,LinearLayout,Lundi 2 novembre,53,48,True,True,20,184.3,,False
+clair,calendrier,LinearLayout,Mardi 3 novembre,53,48,True,True,73,184.3,,False
+clair,calendrier,LinearLayout,Mercredi 4 novembre,53,48,True,True,126,184.3,,False
+clair,calendrier,LinearLayout,"Jeudi 5 novembre, des conversations",53,48,True,True,179,184.3,,False
+clair,calendrier,LinearLayout,"Vendredi 6 novembre, des conversations",53.3,48,True,True,232,184.3,,False
+clair,calendrier,LinearLayout,"Samedi 7 novembre, des conversations",53.3,48,True,True,285.3,184.3,,False
+clair,calendrier,LinearLayout,"Aujourd'hui · dimanche 8 novembre, des conversations",53.3,48,True,True,338.7,184.3,,False
+clair,calendrier,LinearLayout,Lundi 9 novembre,53,48,True,True,20,232.3,,False
+clair,calendrier,LinearLayout,Mardi 10 novembre,53,48,True,True,73,232.3,,False
+clair,calendrier,LinearLayout,Mercredi 11 novembre,53,48,True,True,126,232.3,,False
+clair,calendrier,LinearLayout,Jeudi 12 novembre,53,48,True,True,179,232.3,,False
+clair,calendrier,LinearLayout,Vendredi 13 novembre,53.3,48,True,True,232,232.3,,False
+clair,calendrier,LinearLayout,Samedi 14 novembre,53.3,48,True,True,285.3,232.3,,False
+clair,calendrier,LinearLayout,Dimanche 15 novembre,53.3,48,True,True,338.7,232.3,,False
+clair,calendrier,LinearLayout,Lundi 16 novembre,53,48,True,True,20,280.3,,False
+clair,calendrier,LinearLayout,Mardi 17 novembre,53,48,True,True,73,280.3,,False
+clair,calendrier,LinearLayout,Mercredi 18 novembre,53,48,True,True,126,280.3,,False
+clair,calendrier,LinearLayout,Jeudi 19 novembre,53,48,True,True,179,280.3,,False
+clair,calendrier,LinearLayout,Vendredi 20 novembre,53.3,48,True,True,232,280.3,,False
+clair,calendrier,LinearLayout,Samedi 21 novembre,53.3,48,True,True,285.3,280.3,,False
+clair,calendrier,LinearLayout,Dimanche 22 novembre,53.3,48,True,True,338.7,280.3,,False
+clair,calendrier,LinearLayout,Lundi 23 novembre,53,48,True,True,20,328.3,,False
+clair,calendrier,LinearLayout,Mardi 24 novembre,53,48,True,True,73,328.3,,False
+clair,calendrier,LinearLayout,Mercredi 25 novembre,53,48,True,True,126,328.3,,False
+clair,calendrier,LinearLayout,Jeudi 26 novembre,53,48,True,True,179,328.3,,False
+clair,calendrier,LinearLayout,Vendredi 27 novembre,53.3,48,True,True,232,328.3,,False
+clair,calendrier,LinearLayout,Samedi 28 novembre,53.3,48,True,True,285.3,328.3,,False
+clair,calendrier,LinearLayout,Dimanche 29 novembre,53.3,48,True,True,338.7,328.3,,False
+clair,calendrier,LinearLayout,Lundi 30 novembre,53,48,True,True,20,376.3,,False
+clair,calendrier,LinearLayout,,388,64,True,True,12,465.3,,False
+clair,calendrier,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,calendrier,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,conversation-recherche,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,conversation-recherche,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,conversation-recherche,ImageButton,Lire,44,44,False,True,24,78,,False
+clair,conversation-recherche,EditText,,388,41.7,False,True,12,140,,False
+clair,conversation-recherche,ListView,,412,733.3,True,True,0,181.7,,False
+clair,conversation-recherche,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,conversation-recherche,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,conversation-recherche,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,conversation-recherche,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,conversation,ImageButton,Lire,44,44,False,True,24,78,,False
+clair,conversation,ListView,,412,783,True,True,0,132,,False
+clair,conversation,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,conversation,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,conversation,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,conversation,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,direct-rien,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,direct-rien,ListView,,412,766.7,True,True,0,148.3,,False
+clair,icones-entete-sans-texte,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,icones-entete-sans-texte,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,icones-entete-sans-texte,ListView,,412,766.7,True,True,0,148.3,,False
+clair,icones-entete-sans-texte,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,icones-entete-sans-texte,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,icones-entete-sans-texte,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,icones-entete-sans-texte,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,icones-entete,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,icones-entete,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,icones-entete,ListView,,412,851,True,True,0,64,,False
+clair,icones-entete,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,icones-entete,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,icones-entete,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,icones-entete,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,icones-recherche,EditText,Rechercher,332,42.7,False,True,20,10.7,,False
+clair,icones-recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+clair,icones-recherche,ListView,,412,731,True,True,0,64,,False
+clair,icones-recherche,LinearLayout,,388,64,True,True,12,68,,False
+clair,icones-recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,icones-recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,icones,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,icones,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,icones,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,icones,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre,412,731,True,True,0,64,,False
+clair,icones,LinearLayout,,388,64,True,True,12,105,,False
+clair,icones,LinearLayout,,388,64,True,True,12,206,,False
+clair,icones,LinearLayout,,388,64,True,True,12,270,,False
+clair,icones,LinearLayout,,388,64,True,True,12,334,,False
+clair,icones,LinearLayout,,388,64,True,True,12,398,,False
+clair,icones,LinearLayout,,388,64,True,True,12,462,,False
+clair,icones,LinearLayout,,388,64,True,True,12,526,,False
+clair,icones,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,icones,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,journal-vide,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,journal-vide,ListView,,412,766.7,True,True,0,148.3,,False
+clair,journal-vide,LinearLayout,Rechercher,76,56,True,True,130,831,,False
+clair,journal-vide,LinearLayout,Copier,76,56,True,True,206,831,,False
+clair,mise-en-route,Button,Scanner le code du Mac,243.7,48,True,True,84,521.3,,False
+clair,pas-encore-transcrite,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,pas-encore-transcrite,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,pas-encore-transcrite,ListView,,412,766.7,True,True,0,148.3,,False
+clair,pas-encore-transcrite,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair,pas-encore-transcrite,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair,pas-encore-transcrite,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair,pas-encore-transcrite,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair,recherche,EditText,Rechercher,332,42.7,False,True,20,10.7,,False
+clair,recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+clair,recherche,ListView,,412,731,True,True,0,64,,False
+clair,recherche,LinearLayout,,388,64,True,True,12,68,,False
+clair,recherche,LinearLayout,,388,64,True,True,12,132,,False
+clair,recherche,LinearLayout,,388,64,True,True,12,196,,False
+clair,recherche,LinearLayout,,388,64,True,True,12,260,,False
+clair,recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair,recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair,reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,82.3,True,True,24,111,non sélectionné,False
+clair,reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,64,True,True,24,193.3,sélectionné,False
+clair,reglages,Button,Relier un calendrier,137.7,48,True,True,58,276.3,,False
+clair,reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,82.3,True,True,24,328.3,non sélectionné,False
+clair,reglages,LinearLayout,Enregistrer les appels,380,57.3,True,True,16,422.7,Éteint,False
+clair,reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,535,,False
+clair,reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,585,,False
+clair,site-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,site-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,site-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,site-accueil,ListView,Samedi 31 octobre  Mercredi 28 octobre  Mardi 27 octobre  Ve,412,672,True,True,0,64,,False
+clair,site-accueil,LinearLayout,,388,64,True,True,12,105,,False
+clair,site-accueil,LinearLayout,,388,64,True,True,12,206,,False
+clair,site-accueil,LinearLayout,,388,64,True,True,12,307,,False
+clair,site-accueil,LinearLayout,,388,64,True,True,12,408,,False
+clair,site-accueil,LinearLayout,,388,64,True,True,12,509,,False
+clair,site-accueil,LinearLayout,,388,64,True,True,12,610,,False
+clair,site-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+clair,site-accueil,LinearLayout,Réglages,388,48,True,True,12,792,,False
+clair,site-notes,ImageButton,Liste,52,48,True,True,14,8,,False
+clair,site-notes,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair,site-notes,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair,site-notes,ListView,Vendredi 30 octobre  Jeudi 29 octobre  Mercredi 28 octobre,412,672,True,True,0,64,,False
+clair,site-notes,LinearLayout,,388,64,True,True,12,68,,False
+clair,site-notes,LinearLayout,,388,64,True,True,12,169,,False
+clair,site-notes,LinearLayout,,388,64,True,True,12,270,,False
+clair,site-notes,LinearLayout,,388,64,True,True,12,371,,False
+clair,site-notes,LinearLayout,,388,64,True,True,12,435,,False
+clair,site-notes,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+clair,site-notes,LinearLayout,Réglages,388,48,True,True,12,792,,False
+clair,site-reunion,ImageButton,Retour,48,48,True,True,4,8,,False
+clair,site-reunion,ImageButton,Plus,48,48,True,True,360,8,,False
+clair,site-reunion,ImageButton,Lire,44,44,False,True,24,78,,False
+clair,site-reunion,ListView,,412,724,True,True,0,132,,False
+clair,site-reunion,LinearLayout,Rechercher,76,56,True,True,54,772,,False
+clair,site-reunion,LinearLayout,Copier,76,56,True,True,130,772,,False
+clair,site-reunion,LinearLayout,Télécharger,76,56,True,True,206,772,,False
+clair,site-reunion,LinearLayout,Détails,76,56,True,True,282,772,,False
+clair+nuit,sombre-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+clair+nuit,sombre-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+clair+nuit,sombre-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+clair+nuit,sombre-accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+clair+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,105,,False
+clair+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,206,,False
+clair+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,307,,False
+clair+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,408,,False
+clair+nuit,sombre-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+clair+nuit,sombre-accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+clair+nuit,sombre-conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+clair+nuit,sombre-conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+clair+nuit,sombre-conversation,ListView,,412,851,True,True,0,64,,False
+clair+nuit,sombre-conversation,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+clair+nuit,sombre-conversation,LinearLayout,Copier,76,56,True,True,130,831,,False
+clair+nuit,sombre-conversation,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+clair+nuit,sombre-conversation,LinearLayout,Détails,76,56,True,True,282,831,,False
+clair+nuit,sombre-reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+clair+nuit,sombre-reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,82.3,True,True,24,111,non sélectionné,False
+clair+nuit,sombre-reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,64,True,True,24,193.3,sélectionné,False
+clair+nuit,sombre-reglages,Button,Relier un calendrier,137.7,48,True,True,58,276.3,,False
+clair+nuit,sombre-reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,82.3,True,True,24,328.3,non sélectionné,False
+clair+nuit,sombre-reglages,LinearLayout,Enregistrer les appels,380,57.3,True,True,16,422.7,Éteint,False
+clair+nuit,sombre-reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,535,,False
+clair+nuit,sombre-reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,585,,False
+base,conversation-en-direct,ImageButton,Retour,48,48,True,True,4,8,,False
+base,conversation-en-direct,ListView,,412,851,True,True,0,64,,False
+base,conversation-recherche,ImageButton,Retour,48,48,True,True,4,8,,False
+base,conversation-recherche,ImageButton,Plus,48,48,True,True,360,8,,False
+base,conversation-recherche,ImageButton,Lire,44,44,False,True,24,78,,False
+base,conversation-recherche,EditText,,388,41.7,False,True,12,140,,False
+base,conversation-recherche,ListView,,412,733.3,True,True,0,181.7,,False
+base,conversation-recherche,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,conversation-recherche,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,conversation-recherche,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,conversation-recherche,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+base,conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+base,conversation,ImageButton,Lire,44,44,False,True,24,78,,False
+base,conversation,ListView,,412,783,True,True,0,132,,False
+base,conversation,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,conversation,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,conversation,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,conversation,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,direct-rien,ImageButton,Retour,48,48,True,True,4,8,,False
+base,direct-rien,ListView,,412,766.7,True,True,0,148.3,,False
+etroit,accueil-ecoute,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,accueil-ecoute,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,accueil-ecoute,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,accueil-ecoute,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,360,596,True,True,0,64,,False
+etroit,accueil-ecoute,LinearLayout,,336,64,True,True,12,68,,False
+etroit,accueil-ecoute,LinearLayout,,336,64,True,True,12,169,,False
+etroit,accueil-ecoute,LinearLayout,,336,64,True,True,12,270,,False
+etroit,accueil-ecoute,LinearLayout,,336,64,True,True,12,371,,False
+etroit,accueil-ecoute,LinearLayout,,336,64,True,True,12,472,,False
+etroit,accueil-ecoute,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,accueil-ecoute,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,accueil-enregistre,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,accueil-enregistre,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,accueil-enregistre,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,accueil-enregistre,ListView,Aujourd'hui · dimanche 8 novembre   Samedi 7 novembre  Vendr,360,596,True,True,0,64,,False
+etroit,accueil-enregistre,LinearLayout,,336,64,True,True,12,169,,False
+etroit,accueil-enregistre,LinearLayout,,336,64,True,True,12,270,,False
+etroit,accueil-enregistre,LinearLayout,,336,64,True,True,12,371,,False
+etroit,accueil-enregistre,LinearLayout,,336,64,True,True,12,472,,False
+etroit,accueil-enregistre,LinearLayout,Arrêter l'enregistrement,336,48,True,True,12,668,,False
+etroit,accueil-enregistre,LinearLayout,Prendre une photo,336,48,True,True,12,716,,False
+etroit,accueil-vide,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,accueil-vide,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,accueil-vide,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,accueil-vide,ListView,,360,596,True,True,0,64,,False
+etroit,accueil-vide,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,accueil-vide,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,accueil,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,360,596,True,True,0,64,,False
+etroit,accueil,LinearLayout,,336,64,True,True,12,105,,False
+etroit,accueil,LinearLayout,,336,64,True,True,12,206,,False
+etroit,accueil,LinearLayout,,336,64,True,True,12,307,,False
+etroit,accueil,LinearLayout,,336,64,True,True,12,408,,False
+etroit,accueil,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,accueil,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,aucune-parole,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,aucune-parole,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,aucune-parole,ListView,,360,631.7,True,True,0,148.3,,False
+etroit,aucune-parole,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,aucune-parole,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,aucune-parole,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,aucune-parole,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,avant-transcription,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,avant-transcription,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,avant-transcription,ListView,,360,631.7,True,True,0,148.3,,False
+etroit,avant-transcription,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,avant-transcription,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,avant-transcription,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,avant-transcription,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,calendrier,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,calendrier,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,calendrier,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,calendrier,ListView,Aujourd'hui · dimanche 8 novembre,360,596,True,True,0,64,,False
+etroit,calendrier,ImageButton,Mois précédent,48,48,True,True,20,72,,False
+etroit,calendrier,ImageButton,Mois suivant,48,48,True,True,292,72,,False
+etroit,calendrier,LinearLayout,Dimanche 1 novembre,46,48,False,True,294,136.3,,False
+etroit,calendrier,LinearLayout,Lundi 2 novembre,45.7,48,False,True,20,184.3,,False
+etroit,calendrier,LinearLayout,Mardi 3 novembre,45.7,48,False,True,65.7,184.3,,False
+etroit,calendrier,LinearLayout,Mercredi 4 novembre,45.7,48,False,True,111.3,184.3,,False
+etroit,calendrier,LinearLayout,"Jeudi 5 novembre, des conversations",45.7,48,False,True,157,184.3,,False
+etroit,calendrier,LinearLayout,"Vendredi 6 novembre, des conversations",45.7,48,False,True,202.7,184.3,,False
+etroit,calendrier,LinearLayout,"Samedi 7 novembre, des conversations",45.7,48,False,True,248.3,184.3,,False
+etroit,calendrier,LinearLayout,"Aujourd'hui · dimanche 8 novembre, des conversations",46,48,False,True,294,184.3,,False
+etroit,calendrier,LinearLayout,Lundi 9 novembre,45.7,48,False,True,20,232.3,,False
+etroit,calendrier,LinearLayout,Mardi 10 novembre,45.7,48,False,True,65.7,232.3,,False
+etroit,calendrier,LinearLayout,Mercredi 11 novembre,45.7,48,False,True,111.3,232.3,,False
+etroit,calendrier,LinearLayout,Jeudi 12 novembre,45.7,48,False,True,157,232.3,,False
+etroit,calendrier,LinearLayout,Vendredi 13 novembre,45.7,48,False,True,202.7,232.3,,False
+etroit,calendrier,LinearLayout,Samedi 14 novembre,45.7,48,False,True,248.3,232.3,,False
+etroit,calendrier,LinearLayout,Dimanche 15 novembre,46,48,False,True,294,232.3,,False
+etroit,calendrier,LinearLayout,Lundi 16 novembre,45.7,48,False,True,20,280.3,,False
+etroit,calendrier,LinearLayout,Mardi 17 novembre,45.7,48,False,True,65.7,280.3,,False
+etroit,calendrier,LinearLayout,Mercredi 18 novembre,45.7,48,False,True,111.3,280.3,,False
+etroit,calendrier,LinearLayout,Jeudi 19 novembre,45.7,48,False,True,157,280.3,,False
+etroit,calendrier,LinearLayout,Vendredi 20 novembre,45.7,48,False,True,202.7,280.3,,False
+etroit,calendrier,LinearLayout,Samedi 21 novembre,45.7,48,False,True,248.3,280.3,,False
+etroit,calendrier,LinearLayout,Dimanche 22 novembre,46,48,False,True,294,280.3,,False
+etroit,calendrier,LinearLayout,Lundi 23 novembre,45.7,48,False,True,20,328.3,,False
+etroit,calendrier,LinearLayout,Mardi 24 novembre,45.7,48,False,True,65.7,328.3,,False
+etroit,calendrier,LinearLayout,Mercredi 25 novembre,45.7,48,False,True,111.3,328.3,,False
+etroit,calendrier,LinearLayout,Jeudi 26 novembre,45.7,48,False,True,157,328.3,,False
+etroit,calendrier,LinearLayout,Vendredi 27 novembre,45.7,48,False,True,202.7,328.3,,False
+etroit,calendrier,LinearLayout,Samedi 28 novembre,45.7,48,False,True,248.3,328.3,,False
+etroit,calendrier,LinearLayout,Dimanche 29 novembre,46,48,False,True,294,328.3,,False
+etroit,calendrier,LinearLayout,Lundi 30 novembre,45.7,48,False,True,20,376.3,,False
+etroit,calendrier,LinearLayout,,336,64,True,True,12,465.3,,False
+etroit,calendrier,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,calendrier,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,conversation-recherche,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,conversation-recherche,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,conversation-recherche,ImageButton,Lire,44,44,False,True,24,78,,False
+etroit,conversation-recherche,EditText,,336,41.7,False,True,12,140,,False
+etroit,conversation-recherche,ListView,,360,598.3,True,True,0,181.7,,False
+etroit,conversation-recherche,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,conversation-recherche,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,conversation-recherche,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,conversation-recherche,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,conversation,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,conversation,ImageButton,Lire,44,44,False,True,24,78,,False
+etroit,conversation,ListView,,360,648,True,True,0,132,,False
+etroit,conversation,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,conversation,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,conversation,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,conversation,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,direct-rien,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,direct-rien,ListView,,360,631.7,True,True,0,148.3,,False
+etroit,icones-entete-sans-texte,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,icones-entete-sans-texte,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,icones-entete-sans-texte,ListView,,360,631.7,True,True,0,148.3,,False
+etroit,icones-entete-sans-texte,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,icones-entete-sans-texte,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,icones-entete-sans-texte,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,icones-entete-sans-texte,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,icones-entete,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,icones-entete,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,icones-entete,ListView,,360,716,True,True,0,64,,False
+etroit,icones-entete,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,icones-entete,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,icones-entete,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,icones-entete,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,icones-recherche,EditText,Rechercher,280,42.7,False,True,20,10.7,,False
+etroit,icones-recherche,ImageButton,Fermer la recherche,48,48,True,True,300,8,,False
+etroit,icones-recherche,ListView,,360,596,True,True,0,64,,False
+etroit,icones-recherche,LinearLayout,,336,64,True,True,12,68,,False
+etroit,icones-recherche,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,icones-recherche,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,icones,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,icones,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,icones,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,icones,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre,360,596,True,True,0,64,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,105,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,206,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,270,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,334,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,398,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,462,,False
+etroit,icones,LinearLayout,,336,64,True,True,12,526,,False
+etroit,icones,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,icones,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,journal-vide,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,journal-vide,ListView,,360,631.7,True,True,0,148.3,,False
+etroit,journal-vide,LinearLayout,Rechercher,76,56,True,True,104,696,,False
+etroit,journal-vide,LinearLayout,Copier,76,56,True,True,180,696,,False
+etroit,mise-en-route,Button,Scanner le code du Mac,243.7,48,True,True,58,453.7,,False
+etroit,pas-encore-transcrite,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,pas-encore-transcrite,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,pas-encore-transcrite,ListView,,360,631.7,True,True,0,148.3,,False
+etroit,pas-encore-transcrite,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit,pas-encore-transcrite,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit,pas-encore-transcrite,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit,pas-encore-transcrite,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit,recherche,EditText,Rechercher,280,42.7,False,True,20,10.7,,False
+etroit,recherche,ImageButton,Fermer la recherche,48,48,True,True,300,8,,False
+etroit,recherche,ListView,,360,596,True,True,0,64,,False
+etroit,recherche,LinearLayout,,336,64,True,True,12,68,,False
+etroit,recherche,LinearLayout,,336,64,True,True,12,132,,False
+etroit,recherche,LinearLayout,,336,64,True,True,12,196,,False
+etroit,recherche,LinearLayout,,336,64,True,True,12,260,,False
+etroit,recherche,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit,recherche,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit,reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",316,82.3,True,True,24,111,non sélectionné,False
+etroit,reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",316,82.3,True,True,24,193.3,sélectionné,False
+etroit,reglages,Button,Relier un calendrier,137.7,48,True,True,58,311,,False
+etroit,reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",316,100.7,True,True,24,363,non sélectionné,False
+etroit,reglages,LinearLayout,Enregistrer les appels,328,57.3,True,True,16,475.7,Éteint,False
+etroit,reglages,LinearLayout,"Calendrier, Non relié",320,48,True,True,20,588,,False
+etroit,reglages,LinearLayout,"Mac, MacBook Air",320,48,True,True,20,638,,False
+etroit,site-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,site-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,site-accueil,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,site-accueil,ListView,Samedi 31 octobre  Mercredi 28 octobre  Mardi 27 octobre  Ve,360,545.7,True,True,0,64,,False
+etroit,site-accueil,LinearLayout,,336,64,True,True,12,105,,False
+etroit,site-accueil,LinearLayout,,336,64,True,True,12,206,,False
+etroit,site-accueil,LinearLayout,,336,64,True,True,12,307,,False
+etroit,site-accueil,LinearLayout,,336,64,True,True,12,408,,False
+etroit,site-accueil,LinearLayout,,336,64,True,True,12,509,,False
+etroit,site-accueil,LinearLayout,Enregistrer une réunion,336,48,True,True,12,617.7,,False
+etroit,site-accueil,LinearLayout,Réglages,336,48,True,True,12,665.7,,False
+etroit,site-notes,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit,site-notes,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit,site-notes,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit,site-notes,ListView,Vendredi 30 octobre  Jeudi 29 octobre  Mercredi 28 octobre,360,545.7,True,True,0,64,,False
+etroit,site-notes,LinearLayout,,336,64,True,True,12,68,,False
+etroit,site-notes,LinearLayout,,336,64,True,True,12,169,,False
+etroit,site-notes,LinearLayout,,336,64,True,True,12,270,,False
+etroit,site-notes,LinearLayout,,336,64,True,True,12,371,,False
+etroit,site-notes,LinearLayout,,336,64,True,True,12,435,,False
+etroit,site-notes,LinearLayout,Enregistrer une réunion,336,48,True,True,12,617.7,,False
+etroit,site-notes,LinearLayout,Réglages,336,48,True,True,12,665.7,,False
+etroit,site-reunion,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit,site-reunion,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit,site-reunion,ImageButton,Lire,44,44,False,True,24,78,,False
+etroit,site-reunion,ListView,,360,597.7,True,True,0,132,,False
+etroit,site-reunion,LinearLayout,Rechercher,76,56,True,True,28,645.7,,False
+etroit,site-reunion,LinearLayout,Copier,76,56,True,True,104,645.7,,False
+etroit,site-reunion,LinearLayout,Télécharger,76,56,True,True,180,645.7,,False
+etroit,site-reunion,LinearLayout,Détails,76,56,True,True,256,645.7,,False
+etroit+nuit,sombre-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+etroit+nuit,sombre-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+etroit+nuit,sombre-accueil,ImageButton,Rechercher,48,48,True,True,300,8,,False
+etroit+nuit,sombre-accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,360,596,True,True,0,64,,False
+etroit+nuit,sombre-accueil,LinearLayout,,336,64,True,True,12,105,,False
+etroit+nuit,sombre-accueil,LinearLayout,,336,64,True,True,12,206,,False
+etroit+nuit,sombre-accueil,LinearLayout,,336,64,True,True,12,307,,False
+etroit+nuit,sombre-accueil,LinearLayout,,336,64,True,True,12,408,,False
+etroit+nuit,sombre-accueil,LinearLayout,Enregistrer une réunion,336,48,True,True,12,668,,False
+etroit+nuit,sombre-accueil,LinearLayout,Réglages,336,48,True,True,12,716,,False
+etroit+nuit,sombre-conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit+nuit,sombre-conversation,ImageButton,Plus,48,48,True,True,308,8,,False
+etroit+nuit,sombre-conversation,ListView,,360,716,True,True,0,64,,False
+etroit+nuit,sombre-conversation,LinearLayout,Rechercher,76,56,True,True,28,696,,False
+etroit+nuit,sombre-conversation,LinearLayout,Copier,76,56,True,True,104,696,,False
+etroit+nuit,sombre-conversation,LinearLayout,Télécharger,76,56,True,True,180,696,,False
+etroit+nuit,sombre-conversation,LinearLayout,Détails,76,56,True,True,256,696,,False
+etroit+nuit,sombre-reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+etroit+nuit,sombre-reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",316,82.3,True,True,24,111,non sélectionné,False
+etroit+nuit,sombre-reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",316,82.3,True,True,24,193.3,sélectionné,False
+etroit+nuit,sombre-reglages,Button,Relier un calendrier,137.7,48,True,True,58,311,,False
+etroit+nuit,sombre-reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",316,100.7,True,True,24,363,non sélectionné,False
+etroit+nuit,sombre-reglages,LinearLayout,Enregistrer les appels,328,57.3,True,True,16,475.7,Éteint,False
+etroit+nuit,sombre-reglages,LinearLayout,"Calendrier, Non relié",320,48,True,True,20,588,,False
+etroit+nuit,sombre-reglages,LinearLayout,"Mac, MacBook Air",320,48,True,True,20,638,,False
+base,icones-entete-sans-texte,ImageButton,Retour,48,48,True,True,4,8,,False
+base,icones-entete-sans-texte,ImageButton,Plus,48,48,True,True,360,8,,False
+base,icones-entete-sans-texte,ListView,,412,766.7,True,True,0,148.3,,False
+base,icones-entete-sans-texte,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,icones-entete-sans-texte,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,icones-entete-sans-texte,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,icones-entete-sans-texte,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,icones-entete,ImageButton,Retour,48,48,True,True,4,8,,False
+base,icones-entete,ImageButton,Plus,48,48,True,True,360,8,,False
+base,icones-entete,ListView,,412,851,True,True,0,64,,False
+base,icones-entete,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,icones-entete,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,icones-entete,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,icones-entete,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,icones-recherche,EditText,Rechercher,332,42.7,False,True,20,10.7,,False
+base,icones-recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+base,icones-recherche,ListView,,412,731,True,True,0,64,,False
+base,icones-recherche,LinearLayout,,388,64,True,True,12,68,,False
+base,icones-recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,icones-recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base,icones,ImageButton,Liste,52,48,True,True,14,8,,False
+base,icones,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,icones,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,icones,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre,412,731,True,True,0,64,,False
+base,icones,LinearLayout,,388,64,True,True,12,105,,False
+base,icones,LinearLayout,,388,64,True,True,12,206,,False
+base,icones,LinearLayout,,388,64,True,True,12,270,,False
+base,icones,LinearLayout,,388,64,True,True,12,334,,False
+base,icones,LinearLayout,,388,64,True,True,12,398,,False
+base,icones,LinearLayout,,388,64,True,True,12,462,,False
+base,icones,LinearLayout,,388,64,True,True,12,526,,False
+base,icones,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,icones,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base,journal-vide,ImageButton,Retour,48,48,True,True,4,8,,False
+base,journal-vide,ListView,,412,766.7,True,True,0,148.3,,False
+base,journal-vide,LinearLayout,Rechercher,76,56,True,True,130,831,,False
+base,journal-vide,LinearLayout,Copier,76,56,True,True,206,831,,False
+large,accueil-ecoute,ImageButton,Liste,52,48,True,True,14,8,,False
+large,accueil-ecoute,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,accueil-ecoute,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,accueil-ecoute,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,600,776,True,True,0,64,,False
+large,accueil-ecoute,LinearLayout,,576,64,True,True,12,68,,False
+large,accueil-ecoute,LinearLayout,,576,64,True,True,12,169,,False
+large,accueil-ecoute,LinearLayout,,576,64,True,True,12,270,,False
+large,accueil-ecoute,LinearLayout,,576,64,True,True,12,371,,False
+large,accueil-ecoute,LinearLayout,,576,64,True,True,12,472,,False
+large,accueil-ecoute,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,accueil-ecoute,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,accueil-enregistre,ImageButton,Liste,52,48,True,True,14,8,,False
+large,accueil-enregistre,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,accueil-enregistre,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,accueil-enregistre,ListView,Aujourd'hui · dimanche 8 novembre   Samedi 7 novembre  Vendr,600,776,True,True,0,64,,False
+large,accueil-enregistre,LinearLayout,,576,64,True,True,12,169,,False
+large,accueil-enregistre,LinearLayout,,576,64,True,True,12,270,,False
+large,accueil-enregistre,LinearLayout,,576,64,True,True,12,371,,False
+large,accueil-enregistre,LinearLayout,,576,64,True,True,12,472,,False
+large,accueil-enregistre,LinearLayout,Arrêter l'enregistrement,576,48,True,True,12,848,,False
+large,accueil-enregistre,LinearLayout,Prendre une photo,576,48,True,True,12,896,,False
+large,accueil-vide,ImageButton,Liste,52,48,True,True,14,8,,False
+large,accueil-vide,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,accueil-vide,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,accueil-vide,ListView,,600,776,True,True,0,64,,False
+large,accueil-vide,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,accueil-vide,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+large,accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,accueil,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,600,776,True,True,0,64,,False
+large,accueil,LinearLayout,,576,64,True,True,12,105,,False
+large,accueil,LinearLayout,,576,64,True,True,12,206,,False
+large,accueil,LinearLayout,,576,64,True,True,12,307,,False
+large,accueil,LinearLayout,,576,64,True,True,12,408,,False
+large,accueil,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,accueil,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,aucune-parole,ImageButton,Retour,48,48,True,True,4,8,,False
+large,aucune-parole,ImageButton,Plus,48,48,True,True,548,8,,False
+large,aucune-parole,ListView,,600,811.7,True,True,0,148.3,,False
+large,aucune-parole,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,aucune-parole,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,aucune-parole,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,aucune-parole,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,avant-transcription,ImageButton,Retour,48,48,True,True,4,8,,False
+large,avant-transcription,ImageButton,Plus,48,48,True,True,548,8,,False
+large,avant-transcription,ListView,,600,811.7,True,True,0,148.3,,False
+large,avant-transcription,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,avant-transcription,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,avant-transcription,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,avant-transcription,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,calendrier,ImageButton,Liste,52,48,True,True,14,8,,False
+large,calendrier,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,calendrier,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,calendrier,ListView,Aujourd'hui · dimanche 8 novembre,600,776,True,True,0,64,,False
+large,calendrier,ImageButton,Mois précédent,48,48,True,True,20,72,,False
+large,calendrier,ImageButton,Mois suivant,48,48,True,True,532,72,,False
+large,calendrier,LinearLayout,Dimanche 1 novembre,80,48,True,True,500,136.3,,False
+large,calendrier,LinearLayout,Lundi 2 novembre,80,48,True,True,20,184.3,,False
+large,calendrier,LinearLayout,Mardi 3 novembre,80,48,True,True,100,184.3,,False
+large,calendrier,LinearLayout,Mercredi 4 novembre,80,48,True,True,180,184.3,,False
+large,calendrier,LinearLayout,"Jeudi 5 novembre, des conversations",80,48,True,True,260,184.3,,False
+large,calendrier,LinearLayout,"Vendredi 6 novembre, des conversations",80,48,True,True,340,184.3,,False
+large,calendrier,LinearLayout,"Samedi 7 novembre, des conversations",80,48,True,True,420,184.3,,False
+large,calendrier,LinearLayout,"Aujourd'hui · dimanche 8 novembre, des conversations",80,48,True,True,500,184.3,,False
+large,calendrier,LinearLayout,Lundi 9 novembre,80,48,True,True,20,232.3,,False
+large,calendrier,LinearLayout,Mardi 10 novembre,80,48,True,True,100,232.3,,False
+large,calendrier,LinearLayout,Mercredi 11 novembre,80,48,True,True,180,232.3,,False
+large,calendrier,LinearLayout,Jeudi 12 novembre,80,48,True,True,260,232.3,,False
+large,calendrier,LinearLayout,Vendredi 13 novembre,80,48,True,True,340,232.3,,False
+large,calendrier,LinearLayout,Samedi 14 novembre,80,48,True,True,420,232.3,,False
+large,calendrier,LinearLayout,Dimanche 15 novembre,80,48,True,True,500,232.3,,False
+large,calendrier,LinearLayout,Lundi 16 novembre,80,48,True,True,20,280.3,,False
+large,calendrier,LinearLayout,Mardi 17 novembre,80,48,True,True,100,280.3,,False
+large,calendrier,LinearLayout,Mercredi 18 novembre,80,48,True,True,180,280.3,,False
+large,calendrier,LinearLayout,Jeudi 19 novembre,80,48,True,True,260,280.3,,False
+large,calendrier,LinearLayout,Vendredi 20 novembre,80,48,True,True,340,280.3,,False
+large,calendrier,LinearLayout,Samedi 21 novembre,80,48,True,True,420,280.3,,False
+large,calendrier,LinearLayout,Dimanche 22 novembre,80,48,True,True,500,280.3,,False
+large,calendrier,LinearLayout,Lundi 23 novembre,80,48,True,True,20,328.3,,False
+large,calendrier,LinearLayout,Mardi 24 novembre,80,48,True,True,100,328.3,,False
+large,calendrier,LinearLayout,Mercredi 25 novembre,80,48,True,True,180,328.3,,False
+large,calendrier,LinearLayout,Jeudi 26 novembre,80,48,True,True,260,328.3,,False
+large,calendrier,LinearLayout,Vendredi 27 novembre,80,48,True,True,340,328.3,,False
+large,calendrier,LinearLayout,Samedi 28 novembre,80,48,True,True,420,328.3,,False
+large,calendrier,LinearLayout,Dimanche 29 novembre,80,48,True,True,500,328.3,,False
+large,calendrier,LinearLayout,Lundi 30 novembre,80,48,True,True,20,376.3,,False
+large,calendrier,LinearLayout,,576,64,True,True,12,465.3,,False
+large,calendrier,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,calendrier,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,conversation-recherche,ImageButton,Retour,48,48,True,True,4,8,,False
+large,conversation-recherche,ImageButton,Plus,48,48,True,True,548,8,,False
+large,conversation-recherche,ImageButton,Lire,44,44,False,True,24,78,,False
+large,conversation-recherche,EditText,,576,41.7,False,True,12,140,,False
+large,conversation-recherche,ListView,,600,778.3,True,True,0,181.7,,False
+large,conversation-recherche,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,conversation-recherche,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,conversation-recherche,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,conversation-recherche,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+large,conversation,ImageButton,Plus,48,48,True,True,548,8,,False
+large,conversation,ImageButton,Lire,44,44,False,True,24,78,,False
+large,conversation,ListView,,600,828,True,True,0,132,,False
+large,conversation,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,conversation,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,conversation,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,conversation,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,direct-rien,ImageButton,Retour,48,48,True,True,4,8,,False
+large,direct-rien,ListView,,600,811.7,True,True,0,148.3,,False
+large,icones-entete-sans-texte,ImageButton,Retour,48,48,True,True,4,8,,False
+large,icones-entete-sans-texte,ImageButton,Plus,48,48,True,True,548,8,,False
+large,icones-entete-sans-texte,ListView,,600,811.7,True,True,0,148.3,,False
+large,icones-entete-sans-texte,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,icones-entete-sans-texte,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,icones-entete-sans-texte,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,icones-entete-sans-texte,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,icones-entete,ImageButton,Retour,48,48,True,True,4,8,,False
+large,icones-entete,ImageButton,Plus,48,48,True,True,548,8,,False
+large,icones-entete,ListView,,600,896,True,True,0,64,,False
+large,icones-entete,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,icones-entete,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,icones-entete,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,icones-entete,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,icones-recherche,EditText,Rechercher,520,42.7,False,True,20,10.7,,False
+large,icones-recherche,ImageButton,Fermer la recherche,48,48,True,True,540,8,,False
+large,icones-recherche,ListView,,600,776,True,True,0,64,,False
+large,icones-recherche,LinearLayout,,576,64,True,True,12,68,,False
+large,icones-recherche,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,icones-recherche,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,icones,ImageButton,Liste,52,48,True,True,14,8,,False
+large,icones,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,icones,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,icones,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre,600,776,True,True,0,64,,False
+large,icones,LinearLayout,,576,64,True,True,12,105,,False
+large,icones,LinearLayout,,576,64,True,True,12,206,,False
+large,icones,LinearLayout,,576,64,True,True,12,270,,False
+large,icones,LinearLayout,,576,64,True,True,12,334,,False
+large,icones,LinearLayout,,576,64,True,True,12,398,,False
+large,icones,LinearLayout,,576,64,True,True,12,462,,False
+large,icones,LinearLayout,,576,64,True,True,12,526,,False
+large,icones,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,icones,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,journal-vide,ImageButton,Retour,48,48,True,True,4,8,,False
+large,journal-vide,ListView,,600,811.7,True,True,0,148.3,,False
+large,journal-vide,LinearLayout,Rechercher,76,56,True,True,224,876,,False
+large,journal-vide,LinearLayout,Copier,76,56,True,True,300,876,,False
+large,mise-en-route,Button,Scanner le code du Mac,243.7,48,True,True,178,533.3,,False
+large,pas-encore-transcrite,ImageButton,Retour,48,48,True,True,4,8,,False
+large,pas-encore-transcrite,ImageButton,Plus,48,48,True,True,548,8,,False
+large,pas-encore-transcrite,ListView,,600,811.7,True,True,0,148.3,,False
+large,pas-encore-transcrite,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large,pas-encore-transcrite,LinearLayout,Copier,76,56,True,True,224,876,,False
+large,pas-encore-transcrite,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large,pas-encore-transcrite,LinearLayout,Détails,76,56,True,True,376,876,,False
+large,recherche,EditText,Rechercher,520,42.7,False,True,20,10.7,,False
+large,recherche,ImageButton,Fermer la recherche,48,48,True,True,540,8,,False
+large,recherche,ListView,,600,776,True,True,0,64,,False
+large,recherche,LinearLayout,,576,64,True,True,12,68,,False
+large,recherche,LinearLayout,,576,64,True,True,12,132,,False
+large,recherche,LinearLayout,,576,64,True,True,12,196,,False
+large,recherche,LinearLayout,,576,64,True,True,12,260,,False
+large,recherche,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large,recherche,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large,reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+large,reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",556,64,True,True,24,111,non sélectionné,False
+large,reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",556,64,True,True,24,175,sélectionné,False
+large,reglages,Button,Relier un calendrier,137.7,48,True,True,58,258,,False
+large,reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",556,82.3,True,True,24,310,non sélectionné,False
+large,reglages,LinearLayout,Enregistrer les appels,568,57.3,True,True,16,404.3,Éteint,False
+large,reglages,LinearLayout,"Calendrier, Non relié",560,48,True,True,20,516.7,,False
+large,reglages,LinearLayout,"Mac, MacBook Air",560,48,True,True,20,566.7,,False
+large,site-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+large,site-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,site-accueil,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,site-accueil,ListView,Samedi 31 octobre  Mercredi 28 octobre  Mardi 27 octobre  Ve,600,714,True,True,0,64,,False
+large,site-accueil,LinearLayout,,576,64,True,True,12,105,,False
+large,site-accueil,LinearLayout,,576,64,True,True,12,206,,False
+large,site-accueil,LinearLayout,,576,64,True,True,12,307,,False
+large,site-accueil,LinearLayout,,576,64,True,True,12,408,,False
+large,site-accueil,LinearLayout,,576,64,True,True,12,509,,False
+large,site-accueil,LinearLayout,,576,64,True,True,12,610,,False
+large,site-accueil,LinearLayout,Enregistrer une réunion,576,48,True,True,12,786,,False
+large,site-accueil,LinearLayout,Réglages,576,48,True,True,12,834,,False
+large,site-notes,ImageButton,Liste,52,48,True,True,14,8,,False
+large,site-notes,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large,site-notes,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large,site-notes,ListView,Vendredi 30 octobre  Jeudi 29 octobre  Mercredi 28 octobre,600,714,True,True,0,64,,False
+large,site-notes,LinearLayout,,576,64,True,True,12,68,,False
+large,site-notes,LinearLayout,,576,64,True,True,12,169,,False
+large,site-notes,LinearLayout,,576,64,True,True,12,270,,False
+large,site-notes,LinearLayout,,576,64,True,True,12,371,,False
+large,site-notes,LinearLayout,,576,64,True,True,12,435,,False
+large,site-notes,LinearLayout,Enregistrer une réunion,576,48,True,True,12,786,,False
+large,site-notes,LinearLayout,Réglages,576,48,True,True,12,834,,False
+large,site-reunion,ImageButton,Retour,48,48,True,True,4,8,,False
+large,site-reunion,ImageButton,Plus,48,48,True,True,548,8,,False
+large,site-reunion,ImageButton,Lire,44,44,False,True,24,78,,False
+large,site-reunion,ListView,,600,766,True,True,0,132,,False
+large,site-reunion,LinearLayout,Rechercher,76,56,True,True,148,814,,False
+large,site-reunion,LinearLayout,Copier,76,56,True,True,224,814,,False
+large,site-reunion,LinearLayout,Télécharger,76,56,True,True,300,814,,False
+large,site-reunion,LinearLayout,Détails,76,56,True,True,376,814,,False
+large+nuit,sombre-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+large+nuit,sombre-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+large+nuit,sombre-accueil,ImageButton,Rechercher,48,48,True,True,540,8,,False
+large+nuit,sombre-accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,600,776,True,True,0,64,,False
+large+nuit,sombre-accueil,LinearLayout,,576,64,True,True,12,105,,False
+large+nuit,sombre-accueil,LinearLayout,,576,64,True,True,12,206,,False
+large+nuit,sombre-accueil,LinearLayout,,576,64,True,True,12,307,,False
+large+nuit,sombre-accueil,LinearLayout,,576,64,True,True,12,408,,False
+large+nuit,sombre-accueil,LinearLayout,Enregistrer une réunion,576,48,True,True,12,848,,False
+large+nuit,sombre-accueil,LinearLayout,Réglages,576,48,True,True,12,896,,False
+large+nuit,sombre-conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+large+nuit,sombre-conversation,ImageButton,Plus,48,48,True,True,548,8,,False
+large+nuit,sombre-conversation,ListView,,600,896,True,True,0,64,,False
+large+nuit,sombre-conversation,LinearLayout,Rechercher,76,56,True,True,148,876,,False
+large+nuit,sombre-conversation,LinearLayout,Copier,76,56,True,True,224,876,,False
+large+nuit,sombre-conversation,LinearLayout,Télécharger,76,56,True,True,300,876,,False
+large+nuit,sombre-conversation,LinearLayout,Détails,76,56,True,True,376,876,,False
+large+nuit,sombre-reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+large+nuit,sombre-reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",556,64,True,True,24,111,non sélectionné,False
+large+nuit,sombre-reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",556,64,True,True,24,175,sélectionné,False
+large+nuit,sombre-reglages,Button,Relier un calendrier,137.7,48,True,True,58,258,,False
+large+nuit,sombre-reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",556,82.3,True,True,24,310,non sélectionné,False
+large+nuit,sombre-reglages,LinearLayout,Enregistrer les appels,568,57.3,True,True,16,404.3,Éteint,False
+large+nuit,sombre-reglages,LinearLayout,"Calendrier, Non relié",560,48,True,True,20,516.7,,False
+large+nuit,sombre-reglages,LinearLayout,"Mac, MacBook Air",560,48,True,True,20,566.7,,False
+base,mise-en-route,Button,Scanner le code du Mac,243.7,48,True,True,84,521.3,,False
+base,pas-encore-transcrite,ImageButton,Retour,48,48,True,True,4,8,,False
+base,pas-encore-transcrite,ImageButton,Plus,48,48,True,True,360,8,,False
+base,pas-encore-transcrite,ListView,,412,766.7,True,True,0,148.3,,False
+base,pas-encore-transcrite,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base,pas-encore-transcrite,LinearLayout,Copier,76,56,True,True,130,831,,False
+base,pas-encore-transcrite,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base,pas-encore-transcrite,LinearLayout,Détails,76,56,True,True,282,831,,False
+base,recherche,EditText,Rechercher,332,42.7,False,True,20,10.7,,False
+base,recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+base,recherche,ListView,,412,731,True,True,0,64,,False
+base,recherche,LinearLayout,,388,64,True,True,12,68,,False
+base,recherche,LinearLayout,,388,64,True,True,12,132,,False
+base,recherche,LinearLayout,,388,64,True,True,12,196,,False
+base,recherche,LinearLayout,,388,64,True,True,12,260,,False
+base,recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base,recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base,reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+base,reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,82.3,True,True,24,111,non sélectionné,False
+base,reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,64,True,True,24,193.3,sélectionné,False
+base,reglages,Button,Relier un calendrier,137.7,48,True,True,58,276.3,,False
+base,reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,82.3,True,True,24,328.3,non sélectionné,False
+base,reglages,LinearLayout,Enregistrer les appels,380,57.3,True,True,16,422.7,Éteint,False
+base,reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,535,,False
+base,reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,585,,False
+base,site-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+base,site-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,site-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,site-accueil,ListView,Samedi 31 octobre  Mercredi 28 octobre  Mardi 27 octobre  Ve,412,672,True,True,0,64,,False
+base,site-accueil,LinearLayout,,388,64,True,True,12,105,,False
+base,site-accueil,LinearLayout,,388,64,True,True,12,206,,False
+base,site-accueil,LinearLayout,,388,64,True,True,12,307,,False
+base,site-accueil,LinearLayout,,388,64,True,True,12,408,,False
+base,site-accueil,LinearLayout,,388,64,True,True,12,509,,False
+base,site-accueil,LinearLayout,,388,64,True,True,12,610,,False
+base,site-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+base,site-accueil,LinearLayout,Réglages,388,48,True,True,12,792,,False
+base,site-notes,ImageButton,Liste,52,48,True,True,14,8,,False
+base,site-notes,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base,site-notes,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base,site-notes,ListView,Vendredi 30 octobre  Jeudi 29 octobre  Mercredi 28 octobre,412,672,True,True,0,64,,False
+base,site-notes,LinearLayout,,388,64,True,True,12,68,,False
+base,site-notes,LinearLayout,,388,64,True,True,12,169,,False
+base,site-notes,LinearLayout,,388,64,True,True,12,270,,False
+base,site-notes,LinearLayout,,388,64,True,True,12,371,,False
+base,site-notes,LinearLayout,,388,64,True,True,12,435,,False
+base,site-notes,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+base,site-notes,LinearLayout,Réglages,388,48,True,True,12,792,,False
+base,site-reunion,ImageButton,Retour,48,48,True,True,4,8,,False
+base,site-reunion,ImageButton,Plus,48,48,True,True,360,8,,False
+base,site-reunion,ImageButton,Lire,44,44,False,True,24,78,,False
+base,site-reunion,ListView,,412,724,True,True,0,132,,False
+base,site-reunion,LinearLayout,Rechercher,76,56,True,True,54,772,,False
+base,site-reunion,LinearLayout,Copier,76,56,True,True,130,772,,False
+base,site-reunion,LinearLayout,Télécharger,76,56,True,True,206,772,,False
+base,site-reunion,LinearLayout,Détails,76,56,True,True,282,772,,False
+base+nuit,sombre-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+base+nuit,sombre-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+base+nuit,sombre-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+base+nuit,sombre-accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+base+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,105,,False
+base+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,206,,False
+base+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,307,,False
+base+nuit,sombre-accueil,LinearLayout,,388,64,True,True,12,408,,False
+base+nuit,sombre-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+base+nuit,sombre-accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+base+nuit,sombre-conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+base+nuit,sombre-conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+base+nuit,sombre-conversation,ListView,,412,851,True,True,0,64,,False
+base+nuit,sombre-conversation,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+base+nuit,sombre-conversation,LinearLayout,Copier,76,56,True,True,130,831,,False
+base+nuit,sombre-conversation,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+base+nuit,sombre-conversation,LinearLayout,Détails,76,56,True,True,282,831,,False
+base+nuit,sombre-reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+base+nuit,sombre-reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,82.3,True,True,24,111,non sélectionné,False
+base+nuit,sombre-reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,64,True,True,24,193.3,sélectionné,False
+base+nuit,sombre-reglages,Button,Relier un calendrier,137.7,48,True,True,58,276.3,,False
+base+nuit,sombre-reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,82.3,True,True,24,328.3,non sélectionné,False
+base+nuit,sombre-reglages,LinearLayout,Enregistrer les appels,380,57.3,True,True,16,422.7,Éteint,False
+base+nuit,sombre-reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,535,,False
+base+nuit,sombre-reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,585,,False
+sombre,accueil-ecoute,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,accueil-ecoute,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,accueil-ecoute,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,accueil-ecoute,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+sombre,accueil-ecoute,LinearLayout,,388,64,True,True,12,68,,False
+sombre,accueil-ecoute,LinearLayout,,388,64,True,True,12,169,,False
+sombre,accueil-ecoute,LinearLayout,,388,64,True,True,12,270,,False
+sombre,accueil-ecoute,LinearLayout,,388,64,True,True,12,371,,False
+sombre,accueil-ecoute,LinearLayout,,388,64,True,True,12,472,,False
+sombre,accueil-ecoute,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,accueil-ecoute,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,accueil-enregistre,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,accueil-enregistre,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,accueil-enregistre,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,accueil-enregistre,ListView,Aujourd'hui · dimanche 8 novembre   Samedi 7 novembre  Vendr,412,731,True,True,0,64,,False
+sombre,accueil-enregistre,LinearLayout,,388,64,True,True,12,169,,False
+sombre,accueil-enregistre,LinearLayout,,388,64,True,True,12,270,,False
+sombre,accueil-enregistre,LinearLayout,,388,64,True,True,12,371,,False
+sombre,accueil-enregistre,LinearLayout,,388,64,True,True,12,472,,False
+sombre,accueil-enregistre,LinearLayout,Arrêter l'enregistrement,388,48,True,True,12,803,,False
+sombre,accueil-enregistre,LinearLayout,Prendre une photo,388,48,True,True,12,851,,False
+sombre,accueil-vide,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,accueil-vide,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,accueil-vide,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,accueil-vide,ListView,,412,731,True,True,0,64,,False
+sombre,accueil-vide,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,accueil-vide,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+sombre,accueil,LinearLayout,,388,64,True,True,12,105,,False
+sombre,accueil,LinearLayout,,388,64,True,True,12,206,,False
+sombre,accueil,LinearLayout,,388,64,True,True,12,307,,False
+sombre,accueil,LinearLayout,,388,64,True,True,12,408,,False
+sombre,accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,aucune-parole,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,aucune-parole,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,aucune-parole,ListView,,412,766.7,True,True,0,148.3,,False
+sombre,aucune-parole,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,aucune-parole,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,aucune-parole,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,aucune-parole,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,avant-transcription,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,avant-transcription,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,avant-transcription,ListView,,412,766.7,True,True,0,148.3,,False
+sombre,avant-transcription,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,avant-transcription,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,avant-transcription,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,avant-transcription,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,calendrier,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,calendrier,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,calendrier,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,calendrier,ListView,Aujourd'hui · dimanche 8 novembre,412,731,True,True,0,64,,False
+sombre,calendrier,ImageButton,Mois précédent,48,48,True,True,20,72,,False
+sombre,calendrier,ImageButton,Mois suivant,48,48,True,True,344,72,,False
+sombre,calendrier,LinearLayout,Dimanche 1 novembre,53.3,48,True,True,338.7,136.3,,False
+sombre,calendrier,LinearLayout,Lundi 2 novembre,53,48,True,True,20,184.3,,False
+sombre,calendrier,LinearLayout,Mardi 3 novembre,53,48,True,True,73,184.3,,False
+sombre,calendrier,LinearLayout,Mercredi 4 novembre,53,48,True,True,126,184.3,,False
+sombre,calendrier,LinearLayout,"Jeudi 5 novembre, des conversations",53,48,True,True,179,184.3,,False
+sombre,calendrier,LinearLayout,"Vendredi 6 novembre, des conversations",53.3,48,True,True,232,184.3,,False
+sombre,calendrier,LinearLayout,"Samedi 7 novembre, des conversations",53.3,48,True,True,285.3,184.3,,False
+sombre,calendrier,LinearLayout,"Aujourd'hui · dimanche 8 novembre, des conversations",53.3,48,True,True,338.7,184.3,,False
+sombre,calendrier,LinearLayout,Lundi 9 novembre,53,48,True,True,20,232.3,,False
+sombre,calendrier,LinearLayout,Mardi 10 novembre,53,48,True,True,73,232.3,,False
+sombre,calendrier,LinearLayout,Mercredi 11 novembre,53,48,True,True,126,232.3,,False
+sombre,calendrier,LinearLayout,Jeudi 12 novembre,53,48,True,True,179,232.3,,False
+sombre,calendrier,LinearLayout,Vendredi 13 novembre,53.3,48,True,True,232,232.3,,False
+sombre,calendrier,LinearLayout,Samedi 14 novembre,53.3,48,True,True,285.3,232.3,,False
+sombre,calendrier,LinearLayout,Dimanche 15 novembre,53.3,48,True,True,338.7,232.3,,False
+sombre,calendrier,LinearLayout,Lundi 16 novembre,53,48,True,True,20,280.3,,False
+sombre,calendrier,LinearLayout,Mardi 17 novembre,53,48,True,True,73,280.3,,False
+sombre,calendrier,LinearLayout,Mercredi 18 novembre,53,48,True,True,126,280.3,,False
+sombre,calendrier,LinearLayout,Jeudi 19 novembre,53,48,True,True,179,280.3,,False
+sombre,calendrier,LinearLayout,Vendredi 20 novembre,53.3,48,True,True,232,280.3,,False
+sombre,calendrier,LinearLayout,Samedi 21 novembre,53.3,48,True,True,285.3,280.3,,False
+sombre,calendrier,LinearLayout,Dimanche 22 novembre,53.3,48,True,True,338.7,280.3,,False
+sombre,calendrier,LinearLayout,Lundi 23 novembre,53,48,True,True,20,328.3,,False
+sombre,calendrier,LinearLayout,Mardi 24 novembre,53,48,True,True,73,328.3,,False
+sombre,calendrier,LinearLayout,Mercredi 25 novembre,53,48,True,True,126,328.3,,False
+sombre,calendrier,LinearLayout,Jeudi 26 novembre,53,48,True,True,179,328.3,,False
+sombre,calendrier,LinearLayout,Vendredi 27 novembre,53.3,48,True,True,232,328.3,,False
+sombre,calendrier,LinearLayout,Samedi 28 novembre,53.3,48,True,True,285.3,328.3,,False
+sombre,calendrier,LinearLayout,Dimanche 29 novembre,53.3,48,True,True,338.7,328.3,,False
+sombre,calendrier,LinearLayout,Lundi 30 novembre,53,48,True,True,20,376.3,,False
+sombre,calendrier,LinearLayout,,388,64,True,True,12,465.3,,False
+sombre,calendrier,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,calendrier,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,conversation-en-direct,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,conversation-en-direct,ListView,,412,851,True,True,0,64,,False
+sombre,conversation-recherche,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,conversation-recherche,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,conversation-recherche,ImageButton,Lire,44,44,False,True,24,78,,False
+sombre,conversation-recherche,EditText,,388,41.7,False,True,12,140,,False
+sombre,conversation-recherche,ListView,,412,733.3,True,True,0,181.7,,False
+sombre,conversation-recherche,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,conversation-recherche,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,conversation-recherche,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,conversation-recherche,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,conversation,ImageButton,Lire,44,44,False,True,24,78,,False
+sombre,conversation,ListView,,412,783,True,True,0,132,,False
+sombre,conversation,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,conversation,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,conversation,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,conversation,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,direct-rien,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,direct-rien,ListView,,412,766.7,True,True,0,148.3,,False
+sombre,icones-entete-sans-texte,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,icones-entete-sans-texte,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,icones-entete-sans-texte,ListView,,412,766.7,True,True,0,148.3,,False
+sombre,icones-entete-sans-texte,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,icones-entete-sans-texte,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,icones-entete-sans-texte,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,icones-entete-sans-texte,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,icones-entete,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,icones-entete,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,icones-entete,ListView,,412,851,True,True,0,64,,False
+sombre,icones-entete,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,icones-entete,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,icones-entete,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,icones-entete,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,icones-recherche,EditText,Rechercher,332,42.7,False,True,20,10.7,,False
+sombre,icones-recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+sombre,icones-recherche,ListView,,412,731,True,True,0,64,,False
+sombre,icones-recherche,LinearLayout,,388,64,True,True,12,68,,False
+sombre,icones-recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,icones-recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,icones,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,icones,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,icones,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,icones,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre,412,731,True,True,0,64,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,105,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,206,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,270,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,334,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,398,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,462,,False
+sombre,icones,LinearLayout,,388,64,True,True,12,526,,False
+sombre,icones,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,icones,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,journal-vide,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,journal-vide,ListView,,412,766.7,True,True,0,148.3,,False
+sombre,journal-vide,LinearLayout,Rechercher,76,56,True,True,130,831,,False
+sombre,journal-vide,LinearLayout,Copier,76,56,True,True,206,831,,False
+sombre,mise-en-route,Button,Scanner le code du Mac,243.7,48,True,True,84,521.3,,False
+sombre,pas-encore-transcrite,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,pas-encore-transcrite,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,pas-encore-transcrite,ListView,,412,766.7,True,True,0,148.3,,False
+sombre,pas-encore-transcrite,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,pas-encore-transcrite,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,pas-encore-transcrite,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,pas-encore-transcrite,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,recherche,EditText,Rechercher,332,42.7,False,True,20,10.7,,False
+sombre,recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+sombre,recherche,ListView,,412,731,True,True,0,64,,False
+sombre,recherche,LinearLayout,,388,64,True,True,12,68,,False
+sombre,recherche,LinearLayout,,388,64,True,True,12,132,,False
+sombre,recherche,LinearLayout,,388,64,True,True,12,196,,False
+sombre,recherche,LinearLayout,,388,64,True,True,12,260,,False
+sombre,recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,82.3,True,True,24,111,non sélectionné,False
+sombre,reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,64,True,True,24,193.3,sélectionné,False
+sombre,reglages,Button,Relier un calendrier,137.7,48,True,True,58,276.3,,False
+sombre,reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,82.3,True,True,24,328.3,non sélectionné,False
+sombre,reglages,LinearLayout,Enregistrer les appels,380,57.3,True,True,16,422.7,Éteint,False
+sombre,reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,535,,False
+sombre,reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,585,,False
+sombre,site-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,site-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,site-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,site-accueil,ListView,Samedi 31 octobre  Mercredi 28 octobre  Mardi 27 octobre  Ve,412,672,True,True,0,64,,False
+sombre,site-accueil,LinearLayout,,388,64,True,True,12,105,,False
+sombre,site-accueil,LinearLayout,,388,64,True,True,12,206,,False
+sombre,site-accueil,LinearLayout,,388,64,True,True,12,307,,False
+sombre,site-accueil,LinearLayout,,388,64,True,True,12,408,,False
+sombre,site-accueil,LinearLayout,,388,64,True,True,12,509,,False
+sombre,site-accueil,LinearLayout,,388,64,True,True,12,610,,False
+sombre,site-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+sombre,site-accueil,LinearLayout,Réglages,388,48,True,True,12,792,,False
+sombre,site-notes,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,site-notes,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,site-notes,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,site-notes,ListView,Vendredi 30 octobre  Jeudi 29 octobre  Mercredi 28 octobre,412,672,True,True,0,64,,False
+sombre,site-notes,LinearLayout,,388,64,True,True,12,68,,False
+sombre,site-notes,LinearLayout,,388,64,True,True,12,169,,False
+sombre,site-notes,LinearLayout,,388,64,True,True,12,270,,False
+sombre,site-notes,LinearLayout,,388,64,True,True,12,371,,False
+sombre,site-notes,LinearLayout,,388,64,True,True,12,435,,False
+sombre,site-notes,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+sombre,site-notes,LinearLayout,Réglages,388,48,True,True,12,792,,False
+sombre,site-reunion,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,site-reunion,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,site-reunion,ImageButton,Lire,44,44,False,True,24,78,,False
+sombre,site-reunion,ListView,,412,724,True,True,0,132,,False
+sombre,site-reunion,LinearLayout,Rechercher,76,56,True,True,54,772,,False
+sombre,site-reunion,LinearLayout,Copier,76,56,True,True,130,772,,False
+sombre,site-reunion,LinearLayout,Télécharger,76,56,True,True,206,772,,False
+sombre,site-reunion,LinearLayout,Détails,76,56,True,True,282,772,,False
+sombre,sombre-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+sombre,sombre-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+sombre,sombre-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+sombre,sombre-accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+sombre,sombre-accueil,LinearLayout,,388,64,True,True,12,105,,False
+sombre,sombre-accueil,LinearLayout,,388,64,True,True,12,206,,False
+sombre,sombre-accueil,LinearLayout,,388,64,True,True,12,307,,False
+sombre,sombre-accueil,LinearLayout,,388,64,True,True,12,408,,False
+sombre,sombre-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+sombre,sombre-accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+sombre,sombre-conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,sombre-conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+sombre,sombre-conversation,ListView,,412,851,True,True,0,64,,False
+sombre,sombre-conversation,LinearLayout,Rechercher,76,56,True,True,54,831,,False
+sombre,sombre-conversation,LinearLayout,Copier,76,56,True,True,130,831,,False
+sombre,sombre-conversation,LinearLayout,Télécharger,76,56,True,True,206,831,,False
+sombre,sombre-conversation,LinearLayout,Détails,76,56,True,True,282,831,,False
+sombre,sombre-reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+sombre,sombre-reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,82.3,True,True,24,111,non sélectionné,False
+sombre,sombre-reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,64,True,True,24,193.3,sélectionné,False
+sombre,sombre-reglages,Button,Relier un calendrier,137.7,48,True,True,58,276.3,,False
+sombre,sombre-reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,82.3,True,True,24,328.3,non sélectionné,False
+sombre,sombre-reglages,LinearLayout,Enregistrer les appels,380,57.3,True,True,16,422.7,Éteint,False
+sombre,sombre-reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,535,,False
+sombre,sombre-reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,585,,False
+texte200,accueil-ecoute,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,accueil-ecoute,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,accueil-ecoute,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,accueil-ecoute,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+texte200,accueil-ecoute,LinearLayout,,388,91,True,True,12,68,,False
+texte200,accueil-ecoute,LinearLayout,,388,90.3,True,True,12,242.3,,False
+texte200,accueil-ecoute,LinearLayout,,388,90.3,True,True,12,385.7,,False
+texte200,accueil-ecoute,LinearLayout,,388,90.3,True,True,12,529,,False
+texte200,accueil-ecoute,LinearLayout,,388,90.3,True,True,12,672.3,,False
+texte200,accueil-ecoute,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,accueil-ecoute,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,accueil-enregistre,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,accueil-enregistre,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,accueil-enregistre,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,accueil-enregistre,ListView,Aujourd'hui · dimanche 8 novembre   Samedi 7 novembre  Vendr,412,731,True,True,0,64,,False
+texte200,accueil-enregistre,LinearLayout,,388,90.3,True,True,12,242.3,,False
+texte200,accueil-enregistre,LinearLayout,,388,90.3,True,True,12,385.7,,False
+texte200,accueil-enregistre,LinearLayout,,388,90.3,True,True,12,529,,False
+texte200,accueil-enregistre,LinearLayout,,388,90.3,True,True,12,672.3,,False
+texte200,accueil-enregistre,LinearLayout,Arrêter l'enregistrement,388,48,True,True,12,803,,False
+texte200,accueil-enregistre,LinearLayout,Prendre une photo,388,48,True,True,12,851,,False
+texte200,accueil-vide,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,accueil-vide,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,accueil-vide,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,accueil-vide,ListView,,412,731,True,True,0,64,,False
+texte200,accueil-vide,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,accueil-vide,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+texte200,accueil,LinearLayout,,388,90.3,True,True,12,151.3,,False
+texte200,accueil,LinearLayout,,388,90.3,True,True,12,294.7,,False
+texte200,accueil,LinearLayout,,388,90.3,True,True,12,438,,False
+texte200,accueil,LinearLayout,,388,90.3,True,True,12,581.3,,False
+texte200,accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,aucune-parole,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,aucune-parole,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,aucune-parole,ListView,,412,751,True,True,0,164,,False
+texte200,aucune-parole,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,aucune-parole,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,aucune-parole,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,aucune-parole,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,avant-transcription,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,avant-transcription,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,avant-transcription,ListView,,412,719.3,True,True,0,195.7,,False
+texte200,avant-transcription,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,avant-transcription,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,avant-transcription,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,avant-transcription,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,calendrier,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,calendrier,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,calendrier,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,calendrier,ListView,Aujourd'hui · dimanche 8 novembre,412,731,True,True,0,64,,False
+texte200,calendrier,ImageButton,Mois précédent,48,48,True,True,20,72,,False
+texte200,calendrier,ImageButton,Mois suivant,48,48,True,True,344,72,,False
+texte200,calendrier,LinearLayout,Dimanche 1 novembre,53.3,48,True,True,338.7,152.3,,False
+texte200,calendrier,LinearLayout,Lundi 2 novembre,53,48,True,True,20,200.3,,False
+texte200,calendrier,LinearLayout,Mardi 3 novembre,53,48,True,True,73,200.3,,False
+texte200,calendrier,LinearLayout,Mercredi 4 novembre,53,48,True,True,126,200.3,,False
+texte200,calendrier,LinearLayout,"Jeudi 5 novembre, des conversations",53,48,True,True,179,200.3,,False
+texte200,calendrier,LinearLayout,"Vendredi 6 novembre, des conversations",53.3,48,True,True,232,200.3,,False
+texte200,calendrier,LinearLayout,"Samedi 7 novembre, des conversations",53.3,48,True,True,285.3,200.3,,False
+texte200,calendrier,LinearLayout,"Aujourd'hui · dimanche 8 novembre, des conversations",53.3,48,True,True,338.7,200.3,,False
+texte200,calendrier,LinearLayout,Lundi 9 novembre,53,48,True,True,20,248.3,,False
+texte200,calendrier,LinearLayout,Mardi 10 novembre,53,48,True,True,73,248.3,,False
+texte200,calendrier,LinearLayout,Mercredi 11 novembre,53,48,True,True,126,248.3,,False
+texte200,calendrier,LinearLayout,Jeudi 12 novembre,53,48,True,True,179,248.3,,False
+texte200,calendrier,LinearLayout,Vendredi 13 novembre,53.3,48,True,True,232,248.3,,False
+texte200,calendrier,LinearLayout,Samedi 14 novembre,53.3,48,True,True,285.3,248.3,,False
+texte200,calendrier,LinearLayout,Dimanche 15 novembre,53.3,48,True,True,338.7,248.3,,False
+texte200,calendrier,LinearLayout,Lundi 16 novembre,53,48,True,True,20,296.3,,False
+texte200,calendrier,LinearLayout,Mardi 17 novembre,53,48,True,True,73,296.3,,False
+texte200,calendrier,LinearLayout,Mercredi 18 novembre,53,48,True,True,126,296.3,,False
+texte200,calendrier,LinearLayout,Jeudi 19 novembre,53,48,True,True,179,296.3,,False
+texte200,calendrier,LinearLayout,Vendredi 20 novembre,53.3,48,True,True,232,296.3,,False
+texte200,calendrier,LinearLayout,Samedi 21 novembre,53.3,48,True,True,285.3,296.3,,False
+texte200,calendrier,LinearLayout,Dimanche 22 novembre,53.3,48,True,True,338.7,296.3,,False
+texte200,calendrier,LinearLayout,Lundi 23 novembre,53,48,True,True,20,344.3,,False
+texte200,calendrier,LinearLayout,Mardi 24 novembre,53,48,True,True,73,344.3,,False
+texte200,calendrier,LinearLayout,Mercredi 25 novembre,53,48,True,True,126,344.3,,False
+texte200,calendrier,LinearLayout,Jeudi 26 novembre,53,48,True,True,179,344.3,,False
+texte200,calendrier,LinearLayout,Vendredi 27 novembre,53.3,48,True,True,232,344.3,,False
+texte200,calendrier,LinearLayout,Samedi 28 novembre,53.3,48,True,True,285.3,344.3,,False
+texte200,calendrier,LinearLayout,Dimanche 29 novembre,53.3,48,True,True,338.7,344.3,,False
+texte200,calendrier,LinearLayout,Lundi 30 novembre,53,48,True,True,20,392.3,,False
+texte200,calendrier,LinearLayout,,388,90.3,True,True,12,527.7,,False
+texte200,calendrier,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,calendrier,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,conversation-recherche,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,conversation-recherche,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,conversation-recherche,ImageButton,Lire,44,44,False,True,24,85,,False
+texte200,conversation-recherche,EditText,,388,57.3,True,True,12,154.3,,False
+texte200,conversation-recherche,ListView,,412,703.3,True,True,0,211.7,,False
+texte200,conversation-recherche,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,conversation-recherche,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,conversation-recherche,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,conversation-recherche,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,conversation,ImageButton,Lire,44,44,False,True,24,85,,False
+texte200,conversation,ListView,,412,768.7,True,True,0,146.3,,False
+texte200,conversation,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,conversation,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,conversation,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,conversation,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,direct-rien,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,direct-rien,ListView,,412,751,True,True,0,164,,False
+texte200,icones-entete-sans-texte,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,icones-entete-sans-texte,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,icones-entete-sans-texte,ListView,,412,719.3,True,True,0,195.7,,False
+texte200,icones-entete-sans-texte,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,icones-entete-sans-texte,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,icones-entete-sans-texte,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,icones-entete-sans-texte,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,icones-entete,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,icones-entete,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,icones-entete,ListView,,412,851,True,True,0,64,,False
+texte200,icones-entete,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,icones-entete,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,icones-entete,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,icones-entete,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,icones-recherche,EditText,Rechercher,332,58.3,True,True,20,2.7,,False
+texte200,icones-recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+texte200,icones-recherche,ListView,,412,731,True,True,0,64,,False
+texte200,icones-recherche,LinearLayout,,388,90.3,True,True,12,68,,False
+texte200,icones-recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,icones-recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,icones,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,icones,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,icones,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,icones,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre,412,731,True,True,0,64,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,151.3,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,294.7,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,385,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,475.3,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,565.7,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,656,,False
+texte200,icones,LinearLayout,,388,90.3,True,True,12,746.3,,False
+texte200,icones,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,icones,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,journal-vide,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,journal-vide,ListView,,412,719.3,True,True,0,195.7,,False
+texte200,journal-vide,LinearLayout,Rechercher,120.7,57.3,True,True,107.7,829.7,,False
+texte200,journal-vide,LinearLayout,Copier,76,57.3,True,True,228.3,829.7,,False
+texte200,mise-en-route,Button,Scanner le code du Mac,348,48,True,True,32,563.3,,False
+texte200,pas-encore-transcrite,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,pas-encore-transcrite,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,pas-encore-transcrite,ListView,,412,751,True,True,0,164,,False
+texte200,pas-encore-transcrite,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200,pas-encore-transcrite,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200,pas-encore-transcrite,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200,pas-encore-transcrite,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200,recherche,EditText,Rechercher,332,58.3,True,True,20,2.7,,False
+texte200,recherche,ImageButton,Fermer la recherche,48,48,True,True,352,8,,False
+texte200,recherche,ListView,,412,731,True,True,0,64,,False
+texte200,recherche,LinearLayout,,388,90.3,True,True,12,68,,False
+texte200,recherche,LinearLayout,,388,90.3,True,True,12,158.3,,False
+texte200,recherche,LinearLayout,,388,90.3,True,True,12,248.7,,False
+texte200,recherche,LinearLayout,,388,90.3,True,True,12,339,,False
+texte200,recherche,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200,recherche,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200,reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,153.3,True,True,24,127,non sélectionné,False
+texte200,reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,157.7,True,True,24,280.3,sélectionné,False
+texte200,reglages,Button,Relier un calendrier,240,48,True,True,58,503.3,,False
+texte200,reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,184,True,True,24,555.3,non sélectionné,False
+texte200,reglages,LinearLayout,Enregistrer les appels,380,118.3,True,True,16,751.3,Éteint,False
+texte200,reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,940.7,,False
+texte200,reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,990.7,,False
+texte200,site-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,site-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,site-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,site-accueil,ListView,Samedi 31 octobre  Mercredi 28 octobre  Mardi 27 octobre  Ve,412,672,True,True,0,64,,False
+texte200,site-accueil,LinearLayout,,388,90.3,True,True,12,121,,False
+texte200,site-accueil,LinearLayout,,388,90.3,True,True,12,264.3,,False
+texte200,site-accueil,LinearLayout,,388,90.3,True,True,12,407.7,,False
+texte200,site-accueil,LinearLayout,,388,90.3,True,True,12,551,,False
+texte200,site-accueil,LinearLayout,,388,90.3,True,True,12,694.3,,False
+texte200,site-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+texte200,site-accueil,LinearLayout,Réglages,388,48,True,True,12,792,,False
+texte200,site-notes,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200,site-notes,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200,site-notes,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200,site-notes,ListView,Vendredi 30 octobre  Jeudi 29 octobre  Mercredi 28 octobre,412,672,True,True,0,64,,False
+texte200,site-notes,LinearLayout,,388,91,True,True,12,68,,False
+texte200,site-notes,LinearLayout,,388,90.3,True,True,12,212,,False
+texte200,site-notes,LinearLayout,,388,90.3,True,True,12,355.3,,False
+texte200,site-notes,LinearLayout,,388,90.3,True,True,12,498.7,,False
+texte200,site-notes,LinearLayout,,388,90.3,True,True,12,589,,False
+texte200,site-notes,LinearLayout,Enregistrer une réunion,388,48,True,True,12,744,,False
+texte200,site-notes,LinearLayout,Réglages,388,48,True,True,12,792,,False
+texte200,site-reunion,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200,site-reunion,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200,site-reunion,ImageButton,Lire,44,44,False,True,24,85,,False
+texte200,site-reunion,ListView,,412,709.7,True,True,0,146.3,,False
+texte200,site-reunion,LinearLayout,Rechercher,120.7,57.3,True,True,7,770.7,,False
+texte200,site-reunion,LinearLayout,Copier,76,57.3,True,True,127.7,770.7,,False
+texte200,site-reunion,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,770.7,,False
+texte200,site-reunion,LinearLayout,Détails,76,57.3,True,True,329,770.7,,False
+texte200+nuit,sombre-accueil,ImageButton,Liste,52,48,True,True,14,8,,False
+texte200+nuit,sombre-accueil,ImageButton,Calendrier,52,48,True,True,68,8,,False
+texte200+nuit,sombre-accueil,ImageButton,Rechercher,48,48,True,True,352,8,,False
+texte200+nuit,sombre-accueil,ListView,Aujourd'hui · dimanche 8 novembre  Samedi 7 novembre  Vendre,412,731,True,True,0,64,,False
+texte200+nuit,sombre-accueil,LinearLayout,,388,90.3,True,True,12,151.3,,False
+texte200+nuit,sombre-accueil,LinearLayout,,388,90.3,True,True,12,294.7,,False
+texte200+nuit,sombre-accueil,LinearLayout,,388,90.3,True,True,12,438,,False
+texte200+nuit,sombre-accueil,LinearLayout,,388,90.3,True,True,12,581.3,,False
+texte200+nuit,sombre-accueil,LinearLayout,Enregistrer une réunion,388,48,True,True,12,803,,False
+texte200+nuit,sombre-accueil,LinearLayout,Réglages,388,48,True,True,12,851,,False
+texte200+nuit,sombre-conversation,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200+nuit,sombre-conversation,ImageButton,Plus,48,48,True,True,360,8,,False
+texte200+nuit,sombre-conversation,ListView,,412,851,True,True,0,64,,False
+texte200+nuit,sombre-conversation,LinearLayout,Rechercher,120.7,57.3,True,True,7,829.7,,False
+texte200+nuit,sombre-conversation,LinearLayout,Copier,76,57.3,True,True,127.7,829.7,,False
+texte200+nuit,sombre-conversation,LinearLayout,Télécharger,125.3,57.3,True,True,203.7,829.7,,False
+texte200+nuit,sombre-conversation,LinearLayout,Détails,76,57.3,True,True,329,829.7,,False
+texte200+nuit,sombre-reglages,ImageButton,Retour,48,48,True,True,4,8,,False
+texte200+nuit,sombre-reglages,RadioButton,"Manuel ⏎ Quand vous touchez Enregistrer une réunion, ici ou su",368,153.3,True,True,24,127,non sélectionné,False
+texte200+nuit,sombre-reglages,RadioButton,"Événements du calendrier ⏎ Pendant vos rendez-vous, une heure ",368,157.7,True,True,24,280.3,sélectionné,False
+texte200+nuit,sombre-reglages,Button,Relier un calendrier,240,48,True,True,58,503.3,,False
+texte200+nuit,sombre-reglages,RadioButton,"Tout le temps ⏎ Toute la journée, rangée dans le Journal. Les ",368,184,True,True,24,555.3,non sélectionné,False
+texte200+nuit,sombre-reglages,LinearLayout,Enregistrer les appels,380,118.3,True,True,16,751.3,Éteint,False
+texte200+nuit,sombre-reglages,LinearLayout,"Calendrier, Non relié",372,48,True,True,20,940.7,,False
+texte200+nuit,sombre-reglages,LinearLayout,"Mac, MacBook Air",372,48,True,True,20,990.7,,False

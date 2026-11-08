@@ -1,0 +1,32 @@
+fichier,ligne,valeur,role,contexte
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,56,17,couleur look.text (défaut) · graisse non,"private val title = label(if (journal) ""Journal"" else """", 17f, oneLine = true)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,57,13,couleur look.secondary · graisse non,"private val detail = label("""", 13f, look.secondary, oneLine = true)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,61,15,couleur look.secondary · graisse non,"private val empty = label("""", 15f, look.secondary).apply { gravity = Gravity.CENTER; setPadding(dp(32), dp(32), dp(32), dp(32)) }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,98,12,couleur look.secondary · graisse non,"private val time = label("""", 12f, look.secondary)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,178,12,couleur look.text (défaut) · graisse non,"addView(label(text, 12f), LinearLayout.LayoutParams(-2, -2).apply { topMargin = dp(3) })"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,320,13,couleur look.text (défaut) · graisse medium,"val mark = label("""", 13f, bold = true).apply {"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,324,15,couleur look.text (défaut) · graisse medium,"val who = label("""", 15f, bold = true)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,325,13,couleur look.ink(0.5) · graisse non,"val at = label("""", 13f, look.ink(0.5))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,326,16,couleur look.text (défaut) · graisse non,"val said = label("""", 16f).apply { setLineSpacing(0f, 1.15f); setTextIsSelectable(true) }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,64,16,textSize direct,textSize = 16f
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,240,14,couleur look.title · graisse medium,"is Row.Day -> label(r.text, 14f, look.title, bold = true).apply { setPadding(dp(12), dp(12), dp(12), dp(6)) }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,272,16,couleur look.text (défaut) · graisse non,"addView(label(title, 16f, oneLine = true))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,273,14,couleur metaColor · graisse non,"addView(label(meta, 14f, metaColor, oneLine = true).also { it.tag = tag }, LinearLayout.LayoutParams(-2, -2).apply { topMargin = dp(2) })"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,284,16,couleur look.text (défaut) · graisse medium,"addView(label(Dates.month(month.timeInMillis), 16f, bold = true).apply { gravity = Gravity.CENTER }, LinearLayout.LayoutParams(0, -2, 1f))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,289,12,couleur look.title · graisse non,"for (d in listOf(""L"", ""M"", ""M"", ""J"", ""V"", ""S"", ""D"")) addView(label(d, 12f, look.title).apply { gravity = Gravity.CENTER; importantForAccessibility = View.IMPORTANT_FOR_ACCESSIBILIT"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,316,15,couleur if (today) LinkService.ACCENT else look.text · graisse non,"addView(label(n.toString(), 15f, if (today) LinkService.ACCENT else look.text).apply { gravity = Gravity.CENTER; if (today) setTypeface(typeface, Typeface.BOLD) })"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,71,16,textSize direct,textSize = 16f
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,133,16,couleur color · graisse non,"addView(label(text, 16f, color), LinearLayout.LayoutParams(-2, -2).apply { marginStart = dp(8) })"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,146,16 (défaut),couleur look.text (défaut) · graisse non,"addView(label(name), LinearLayout.LayoutParams(0, -2, 1f))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,147,15,couleur valueColor ?: look.secondary · graisse non,"addView(label(value, 15f, valueColor ?: look.secondary))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,55,14,couleur warningColor · graisse non,"addView(label(""Aucun calendrier relié : rien ne se déclenchera."", 14f, warningColor))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,87,13,couleur look.secondary · graisse non,"private val callsDetail = label("""", 13f, look.secondary)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,110,16 (défaut),couleur look.text (défaut) · graisse non,"addView(label(""Enregistrer les appels""))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,121,14,couleur look.title · graisse medium,"private fun heading(text: String, top: Int) = label(text, 14f, look.title, bold = true).apply { setPadding(dp(4), dp(top), dp(4), dp(8)) }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,125,17,couleur look.text (défaut) · graisse non,"addView(bar(label(""Réglages"", 17f)), LinearLayout.LayoutParams(-1, dp(64)))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,32,×0.875,RelativeSizeSpan,"setSpan(android.text.style.RelativeSizeSpan(0.875f), from, length, android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,35,16,textSize direct,textSize = 16f
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,58,14,textSize direct,textSize = 14f
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SetupScreen.kt,16,17,couleur look.text (défaut) · graisse medium,"private val title = label("""", 17f, bold = true).apply { gravity = Gravity.CENTER }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SetupScreen.kt,17,15,couleur look.secondary · graisse non,"private val text = label("""", 15f, look.secondary).apply { gravity = Gravity.CENTER; setLineSpacing(0f, 1.15f) }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SetupScreen.kt,20,16,textSize direct,textSize = 16f

@@ -1,0 +1,110 @@
+fichier,ligne,extrait,hors_ecran,sorte,valeur,source
+AddPhone.swift,113,.background(Circle().fill(done || now ? Color.accentColor : Color.secondary.opacity(0.15))),,forme,Circle,Circle()
+AddPhone.swift,165,.padding(8).background(RoundedRectangle(cornerRadius: 8).fill(.white)),,cornerRadius,8,cornerRadius: 8
+CallApps.swift,50,.background(RoundedRectangle(cornerRadius: 9).fill(app.color)),,cornerRadius,9,cornerRadius: 9
+CallCard.swift,140,.contentShape(Circle()),,forme,Circle,Circle()
+CallCard.swift,304,.background(Circle().fill((me ? TranscriptReaderView.me : TranscriptReaderView.them).opacity(0.16))),,forme,Circle,Circle()
+CallCard.swift,326,.background(Circle().fill(Color(nsColor: .windowBackgroundColor)).padding(-1.5)),,forme,Circle,Circle()
+CallCard.swift,342,let shape = RoundedRectangle(cornerRadius: Thumb.radius),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+CallsWindow.swift,298,"RoundedRectangle(cornerRadius: radius, style: .continuous).fill(.regularMaterial)",,cornerRadius,radius,cornerRadius: radius
+CaptureViewer.swift,180,.clipShape(RoundedRectangle(cornerRadius: Thumb.radius)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+CaptureViewer.swift,186,.background(RoundedRectangle(cornerRadius: 3).fill(.black.opacity(0.6))),,cornerRadius,3,cornerRadius: 3
+CaptureViewer.swift,189,.overlay(RoundedRectangle(cornerRadius: Thumb.radius),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+CaptureViewer.swift,261,.clipShape(RoundedRectangle(cornerRadius: 10)),,cornerRadius,10,cornerRadius: 10
+ColumnTools.swift,110,.clipShape(Capsule()),,forme,Capsule,Capsule()
+ColumnTools.swift,121,content.background(Capsule().fill(Chip.fill)),,forme,Capsule,Capsule()
+ColumnTools.swift,135,if glass > 0 { GlassCircle().opacity(glass) },,forme,Circle,Circle()
+ColumnTools.swift,143,"Color.clear.glassEffect(.regular.interactive(), in: Circle())",,forme,Circle,Circle()
+ColumnTools.swift,145,Circle().fill(.regularMaterial),,forme,Circle,Circle()
+ColumnTools.swift,171,.background(Capsule().fill(off ? .clear : pressed ? Hover.pressed : hover ? Hover.fill : .clear),,forme,Capsule,Capsule()
+ColumnTools.swift,200,.background(Capsule().fill(on ? Chosen.fill : .clear)),,forme,Capsule,Capsule()
+ColumnTools.swift,201,.contentShape(Capsule()),,forme,Capsule,Capsule()
+DotCalendar.swift,93,"ForEach(0..<min(n, 2), id: \.self) { _ in Circle().frame(width: 5, height: 5) }",,forme,Circle,Circle()
+DotCalendar.swift,101,if isSelected { RoundedRectangle(cornerRadius: Row.radius).fill(Color.accentColor) },,cornerRadius,Row.radius,cornerRadius: Row.radius
+DotCalendar.swift,102,else if isToday { RoundedRectangle(cornerRadius: Row.radius).strokeBorder(Color.secondary.opacity(0.6)) },,cornerRadius,Row.radius,cornerRadius: Row.radius
+EmptyCalls.swift,32,"Circle().fill(Palette.warning).frame(width: 8, height: 8).padding(.horizontal, 3).accessibilityHidden(true)",,forme,Circle,Circle()
+EmptyCalls.swift,40,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+GroupsView.swift,93,.contentShape(Capsule()),,forme,Capsule,Capsule()
+GroupsView.swift,186,.background(Capsule().fill(on ? Color.accentColor : Chip.fill)),,forme,Capsule,Capsule()
+GroupsView.swift,188,.contentShape(Capsule()),,forme,Capsule,Capsule()
+GroupsView.swift,388,"Image(systemName: ""ellipsis"").frame(width: MoreButton.size, height: MoreButton.size).contentShape(Circle())",,forme,Circle,Circle()
+GroupsView.swift,445,".background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary.opacity(0.12), style: StrokeStyle(lineWidth: 1, dash: [5, 5])))",,cornerRadius,10,cornerRadius: 10
+GroupsView.swift,465,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Color.accentColor.opacity(targeted ? 0.08 : 0))),,cornerRadius,Card.radius,cornerRadius: Card.radius
+GroupsView.swift,649,".background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: Thumb.radius))",,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+Hover.swift,20,RoundedRectangle(cornerRadius: radius),,cornerRadius,radius,cornerRadius: radius
+Hover.swift,55,static func hover(_ radius: CGFloat = Row.radius) -> Self { HoverButtonStyle(shape: RoundedRectangle(cornerRadius: radius)) },,cornerRadius,radius,cornerRadius: radius
+Hover.swift,60,static var hoverCircle: Self { HoverButtonStyle(shape: Circle()) },,forme,Circle,Circle()
+Hover.swift,99,".overlay(RoundedRectangle(cornerRadius: radius).strokeBorder(Color.primary.opacity(hover ? 0.35 : 0), lineWidth: 1))",,cornerRadius,radius,cornerRadius: radius
+JournalPane.swift,536,".background(RoundedRectangle(cornerRadius: 8).fill(JournalRow.fill(playing: playing, focused: focused, hovered: hovered)))",,cornerRadius,8,cornerRadius: 8
+JournalPane.swift,589,".background(RoundedRectangle(cornerRadius: 8).fill(JournalRow.fill(playing: false, focused: focused, hovered: hovered)))",,cornerRadius,8,cornerRadius: 8
+JournalPane.swift,647,"c.fill(Path(roundedRect: rect, cornerRadius: 2), with: .color(.primary.opacity(b.weight)))",,cornerRadius,2,cornerRadius: 2
+JournalPane.swift,655,Capsule().fill(Color.accentColor),,forme,Capsule,Capsule()
+JournalPane.swift,666,".background(.regularMaterial, in: RoundedRectangle(cornerRadius: 8))",,cornerRadius,8,cornerRadius: 8
+KindThumb.swift,37,let shape = RoundedRectangle(cornerRadius: Thumb.radius * scale),,cornerRadius,Thumb.radius * scale,cornerRadius: Thumb.radius * scale
+KindThumb.swift,70,"UnevenRoundedRectangle(topLeadingRadius: 10, topTrailingRadius: 10)",,uneven,10,topLeadingRadius: 10
+KindThumb.swift,70,"UnevenRoundedRectangle(topLeadingRadius: 10, topTrailingRadius: 10)",,uneven,10,topTrailingRadius: 10
+KindThumb.swift,73,"UnevenRoundedRectangle(topLeadingRadius: 8, topTrailingRadius: 8)",,uneven,8,topLeadingRadius: 8
+KindThumb.swift,73,"UnevenRoundedRectangle(topLeadingRadius: 8, topTrailingRadius: 8)",,uneven,8,topTrailingRadius: 8
+KindThumb.swift,78,"Capsule().fill(.black).frame(width: 10, height: 3.5).padding(.top, 7)",,forme,Capsule,Capsule()
+KindThumb.swift,80,"Circle().fill(.black).frame(width: 3.5, height: 3.5).padding(.top, 7)",,forme,Circle,Circle()
+LevelMeter.swift,43,Capsule().fill(tint.opacity(0.75)),,forme,Capsule,Capsule()
+NotesPane.swift,134,.contentShape(Circle()),,forme,Circle,Circle()
+NotesPane.swift,149,.contentShape(Circle()),,forme,Circle,Circle()
+NotesPane.swift,167,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+NotesPane.swift,168,.contentShape(RoundedRectangle(cornerRadius: Card.radius)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+NotesPane.swift,201,.background(RoundedRectangle(cornerRadius: Row.radius).fill(model.notesCall == e.call.id ? Color.accentColor.opacity(0.12) : .clear)),,cornerRadius,Row.radius,cornerRadius: Row.radius
+NotesPane.swift,243,.contentShape(Circle()),,forme,Circle,Circle()
+NotesPane.swift,257,.contentShape(Circle()),,forme,Circle,Circle()
+NotesPane.swift,288,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+NotesPane.swift,289,.contentShape(RoundedRectangle(cornerRadius: Card.radius)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+NotesPane.swift,361,"Circle().fill(Palette.live).frame(width: 9, height: 9)",,forme,Circle,Circle()
+NotesPane.swift,380,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Palette.live.opacity(0.08))),,cornerRadius,Card.radius,cornerRadius: Card.radius
+NotesPane.swift,415,.contentShape(Circle()),,forme,Circle,Circle()
+NotesPane.swift,450,.background(RoundedRectangle(cornerRadius: 4).fill(Color.primary.opacity(0.08))),,cornerRadius,4,cornerRadius: 4
+Onboarding.swift,85,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+Onboarding.swift,632,.background(Circle().fill(done ? Color.accentColor : Color.secondary.opacity(0.15))),,forme,Circle,Circle()
+Onboarding.swift,793,.background(RoundedRectangle(cornerRadius: 6).fill(Color(nsColor: .textBackgroundColor))),,cornerRadius,6,cornerRadius: 6
+PeopleView.swift,128,.background(RoundedRectangle(cornerRadius: Row.radius).fill(.quaternary.opacity(0.6))),,cornerRadius,Row.radius,cornerRadius: Row.radius
+PeopleView.swift,191,.background(RoundedRectangle(cornerRadius: 10).fill(isOpen ? AnyShapeStyle(.quaternary.opacity(0.5)) : AnyShapeStyle(.clear))),,cornerRadius,10,cornerRadius: 10
+PeopleView.swift,374,.contentShape(Circle()),,forme,Circle,Circle()
+RecordingsPanel.swift,61,.background(RoundedRectangle(cornerRadius: Self.radius).fill(on ? Chosen.fill : .clear)),,cornerRadius,Self.radius,cornerRadius: Self.radius
+RecordingsPanel.swift,116,.background(Capsule().fill(Color.accentColor.opacity(0.14))),,forme,Capsule,Capsule()
+SettingsGuide.swift,107,".frame(width: 22, height: 22).contentShape(Circle())",,forme,Circle,Circle()
+SettingsGuide.swift,113,".background(.regularMaterial, in: RoundedRectangle(cornerRadius: Card.radius))",,cornerRadius,Card.radius,cornerRadius: Card.radius
+SettingsParts.swift,41,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+SettingsParts.swift,169,.background(RoundedRectangle(cornerRadius: Row.radius).fill(hover && open != nil ? Hover.fill : .clear).padding(4)),,cornerRadius,Row.radius,cornerRadius: Row.radius
+SettingsParts.swift,196,"else if let icon { Image(systemName: icon).font(.caption.bold()) } else { Circle().fill(tone == .secondary ? Color.secondary : tone).frame(width: 7, height: 7) ",,forme,Circle,Circle()
+SettingsParts.swift,201,.background(Capsule().fill((tone == .secondary ? Color.secondary : tone).opacity(0.16))),,forme,Capsule,Capsule()
+SignalsView.swift,111,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+SignalsView.swift,208,.background(RoundedRectangle(cornerRadius: Card.radius).fill(model.toConfirm.isEmpty ? Color.clear : Palette.warning.opacity(0.1))),,cornerRadius,Card.radius,cornerRadius: Card.radius
+StoragePages.swift,115,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,cornerRadius,Card.radius,cornerRadius: Card.radius
+StoragePages.swift,139,RoundedRectangle(cornerRadius: StorageBar.radius),,cornerRadius,StorageBar.radius,cornerRadius: StorageBar.radius
+StoragePages.swift,144,.clipShape(RoundedRectangle(cornerRadius: StorageBar.radius)),,cornerRadius,StorageBar.radius,cornerRadius: StorageBar.radius
+StoragePages.swift,165,.background(Capsule().fill(on ? Color.accentColor : Chip.fill)),,forme,Capsule,Capsule()
+StoragePages.swift,167,.contentShape(Capsule()),,forme,Capsule,Capsule()
+TranscriptReader.swift,923,.clipShape(Capsule()),,forme,Capsule,Capsule()
+TranscriptReader.swift,1076,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Palette.warning.opacity(0.14))),,cornerRadius,Card.radius,cornerRadius: Card.radius
+TranscriptReader.swift,1278,.background(RoundedRectangle(cornerRadius: Row.radius).fill(playing ? Color.accentColor.opacity(0.12) : reader.focus == line.id ? Color.accentColor.opacity(0.08,,cornerRadius,Row.radius,cornerRadius: Row.radius
+TranscriptReader.swift,1321,Circle().fill(tint.opacity(colorScheme == .dark ? 0.24 : 0.14)),,forme,Circle,Circle()
+TranscriptReader.swift,1364,.background(Capsule().fill(.black.opacity(0.6))),,forme,Capsule,Capsule()
+TranscriptReader.swift,1371,RoundedRectangle(cornerRadius: Thumb.radius).fill(.black.opacity(0.5)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1385,RoundedRectangle(cornerRadius: Thumb.radius).fill(Color(nsColor: .windowBackgroundColor)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1386,.overlay(RoundedRectangle(cornerRadius: Thumb.radius).strokeBorder(Thumb.edge)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1393,.clipShape(RoundedRectangle(cornerRadius: Thumb.radius)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1394,.overlay(RoundedRectangle(cornerRadius: Thumb.radius).strokeBorder(Thumb.edge)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1411,.background(Circle().fill(Chip.fill)),,forme,Circle,Circle()
+TranscriptReader.swift,1633,.background(Circle().fill(pressed ? Hover.pressed : hover ? Hover.fill : .clear).padding(4)),,forme,Circle,Circle()
+TranscriptReader.swift,1672,.contentShape(Capsule()),,forme,Capsule,Capsule()
+TranscriptReader.swift,1682,"content.glassEffect(.regular.interactive(), in: Capsule())",,forme,Capsule,Capsule()
+TranscriptReader.swift,1684,content.background(Capsule().fill(.regularMaterial)),,forme,Capsule,Capsule()
+TranscriptReader.swift,1693,let shape = RoundedRectangle(cornerRadius: Card.radius),,cornerRadius,Card.radius,cornerRadius: Card.radius
+TranscriptReader.swift,1745,"RoundedRectangle(cornerRadius: 4).fill(fill(scheme)).frame(width: width, height: height)",,cornerRadius,4,cornerRadius: 4
+TranscriptReader.swift,1747,"static func dot(_ scheme: ColorScheme, size: CGFloat) -> some View { Circle().fill(fill(scheme)).frame(width: size, height: size) }",,forme,Circle,Circle()
+TranscriptReader.swift,1881,.clipShape(RoundedRectangle(cornerRadius: Thumb.radius)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1882,.overlay(RoundedRectangle(cornerRadius: Thumb.radius).strokeBorder(Thumb.edge)),,cornerRadius,Thumb.radius,cornerRadius: Thumb.radius
+TranscriptReader.swift,1887,.background(Capsule().fill(.black.opacity(0.6))),,forme,Capsule,Capsule()
+TranscriptReader.swift,1968,".background(Circle().fill(Color.accentColor).shadow(color: .black.opacity(0.15), radius: 1, y: 1))",,forme,Circle,Circle()
+TranscriptReader.swift,1969,.contentShape(Circle()),,forme,Circle,Circle()
+TranscriptReader.swift,1987,.clipShape(RoundedRectangle(cornerRadius: 2.5)),,cornerRadius,2.5,cornerRadius: 2.5
+TranscriptReader.swift,1988,.overlay(RoundedRectangle(cornerRadius: 2.5).strokeBorder(Thumb.edge)),,cornerRadius,2.5,cornerRadius: 2.5
+Waveform.swift,153,"ctx.fill(Path(roundedRect: CGRect(x: a - 2, y: 0, width: max(4, b - a + 4), height: size.height), cornerRadius: 3),",,cornerRadius,3,cornerRadius: 3

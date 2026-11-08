@@ -1,0 +1,23 @@
+controle,ou,largeur_pt,hauteur_pt,methode,frequence,hig_mac_defaut_28,hig_mac_minimum_20,wcag_258_24
+Bouton de barre (rond de verre),"WindowBar.swift:109, TranscriptReader.swift:1623",36,36,code : BarIconSize.round,à chaque conversation,oui,oui,oui
+Liste / Calendrier (cartouche),ColumnTools.swift:199,36,28,code : BarIconSize.cartouche ; capture 36×23 visible,chaque session,oui,oui,oui
+Retour des Réglages,WindowBar.swift,36,36,capture reglages.webp : 36×36,chaque page de Réglages,oui,oui,oui
+"Bouton ⋯ d'une ligne, d'une carte","Style.swift:62 ; CallCard.swift:139, GroupsView.swift:388, NotesPane.swift:133/148/242",24,24,code : MoreButton.size,chaque ligne survolée,NON,oui,oui
+Copier une note,"NotesPane.swift:126, NotesPane.swift:236",24,24,code : MoreButton.size,chaque note,NON,oui,oui
+Lecture d'une note,"NotesPane.swift:119, NotesPane.swift:225",26,26,code : PlayButton(size: 26),chaque note,NON,oui,oui
+Lecture du lecteur,TranscriptReader.swift:481,30,30,code : PlayButton défaut 30 ; capture 30×30,chaque conversation,oui,oui,oui
+Couper une piste (haut-parleur),TranscriptReader.swift:533-536,22,22,"code : .frame(width: 22, height: 22)",lecteur,NON,oui,NON
+Chevron du lecteur (déplier),AudioPlayer.swift / TranscriptReader.swift,11,7,"capture lecture.webp : glyphe 11×6,5, pas de cadre",lecteur,NON,NON,NON
+"Chevron « Taille, corbeille »",CallWindow.swift:180-187,10,10,"code : .caption2, menu .borderlessButton sans cadre",fenêtre d'un appel,NON,NON,NON
+Chevron « Envoyer ailleurs »,TranscriptReader.swift:772,22,36,"code : PillButton (hauteur 36), padding .leading -8",passage surligné,NON,oui,NON
+Filtre de groupe (pastille),GroupsView.swift:181-188,52,23,capture recherche.webp : 23 de haut,recherche,NON,oui,NON
+Jour du calendrier,DotCalendar.swift:98,54,32,code : minHeight 32 ; largeur = colonne / 7,calendrier,oui,oui,oui
+Interrupteur « Accessible à Claude »,GroupsView.swift:381-382,36,17,"capture groupes.webp : 36×16,5 (controlSize .mini)","page Groupes, 1 par groupe",NON,NON,NON
+Interrupteur d'un réglage,Onboarding.swift:699,36,17,capture claude.webp : 36×17 (controlSize .mini),Réglages,NON,NON,NON
+Fermer la bulle du guide,SettingsGuide.swift:105-108,22,22,code,guide des Réglages,NON,oui,NON
+Chevron d'un groupe,GroupsView.swift:399,22,22,code,page Groupes,NON,oui,NON
+Arrêter une copie (moins),Onboarding.swift:509,15,15,"code : symbole seul, .borderless, police par défaut",Réglages › Copies,NON,NON,NON
+Avatar (« Qui est cette voix ? »),TranscriptReader.swift:1206,32,32,capture : 32×32,voix inconnue,oui,oui,oui
+Boutons de la pastille volante,Pastille.swift:84,36,36,code : height − 4,pendant chaque enregistrement,oui,oui,oui
+« + » Nouvelle note,NotesPane.swift:413,46,46,code,page Notes,oui,oui,oui
+"Boutons texte des Réglages (Ajouter…, Ouvrir Téléphone)",SettingsParts.swift,78,24,capture telephones.webp : 24 de haut (taille .regular),Réglages,NON,oui,oui

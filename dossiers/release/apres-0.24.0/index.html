@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark"><title>Release après v0.24.0</title>
+<link rel="stylesheet" href="../../commun/dossier.css"></head>
+<body class="dz"><div class="dz-wrap">
+<h1>Prochaine release</h1>
+<p class="dz-chapo">Ce qui change si l'on publie <code>main</code> (caae4cd) à la place de la prod 0.24.0 : 77 commits. Les images sortent du banc Android et du comparateur, joués sur les deux versions avec le corpus fictif.</p>
+<nav class="dz-toc" aria-label="Sommaire"><a href="#synthese">Synthèse</a><a href="#avant-apres">Avant et après</a><a href="#textes">Textes</a><a href="#interrupteurs">Interrupteurs</a><a href="#risques">Risques</a><a href="#pas-verifie">Pas vérifié</a><a href="#preuves">Preuves</a></nav>
+<section id="synthese" class="dz-synthese"><h3>Synthèse</h3>
+<ul class="dz-chiffres">
+<li><b>77</b><span>commits</span></li><li><b>38</b><span>sujets</span></li>
+<li><b>17</b><span>écrans Android changés</span></li>
+<li><b>4</b><span>différences au comparateur</span></li>
+<li><b>206</b><span>textes changés</span></li><li><b>0</b><span>interrupteurs ouverts à tous</span></li>
+</ul><ul>
+<li><strong>Lecture rédigée :</strong> <a href="redige.html">ce que ça change pour l'utilisateur, surface par surface</a>. Écrite pour 3b4357d ; 38 commits sont arrivés depuis, à relire.</li>
+<li><strong>Les sujets :</strong> Téléphone (8), Dossier UX Mac (7), Recos UX Android, dossier (5), Recos design (4), Recos graphisme Mac (4), Dossier graphisme du site (4), …</li>
+<li><strong>Où :</strong> Design (952 fichiers), Android (23 fichiers), Cœur et MCP (15 fichiers), Mac, interface (13 fichiers), Scripts (12 fichiers), Textes et specs (11 fichiers), Tests (10 fichiers), Mac, capture (5 fichiers), Site (copie) (1 fichiers).</li>
+<li><strong>Interrupteurs :</strong> 0 ouverts à tous, 0 refermés, 3 retirés du code.</li>
+<li><strong>À regarder :</strong> 19 commits touchent à la confidentialité, aux données ou aux formats (plus bas).</li>
+</ul></section>
+<h2 id="avant-apres">Avant et après</h2><p class="dz-sous">À gauche la prod, à droite la release. Seuls les écrans qui changent.</p>
+<h3 style="margin:24px 0 12px">Téléphone Android</h3>
+<div class="dz-images">
+<figure><img loading="lazy" src="images/android-accueil-ecoute.webp" alt="accueil-ecoute : avant à gauche, après à droite"><figcaption>accueil-ecoute</figcaption></figure>
+<figure><img loading="lazy" src="images/android-accueil-enregistre.webp" alt="accueil-enregistre : avant à gauche, après à droite"><figcaption>accueil-enregistre</figcaption></figure>
+<figure><img loading="lazy" src="images/android-accueil.webp" alt="accueil : avant à gauche, après à droite"><figcaption>accueil</figcaption></figure>
+<figure><img loading="lazy" src="images/android-calendrier.webp" alt="calendrier : avant à gauche, après à droite"><figcaption>calendrier</figcaption></figure>
+<figure><img loading="lazy" src="images/android-conversation-en-direct.webp" alt="conversation-en-direct : avant à gauche, après à droite"><figcaption>conversation-en-direct</figcaption></figure>
+<figure><img loading="lazy" src="images/android-conversation.webp" alt="conversation : avant à gauche, après à droite"><figcaption>conversation</figcaption></figure>
+<figure><img loading="lazy" src="images/android-reglages.webp" alt="reglages : avant à gauche, après à droite"><figcaption>reglages</figcaption></figure>
+<figure><img loading="lazy" src="images/android-sombre-accueil.webp" alt="sombre-accueil : avant à gauche, après à droite"><figcaption>sombre-accueil</figcaption></figure>
+<figure><img loading="lazy" src="images/android-sombre-conversation.webp" alt="sombre-conversation : avant à gauche, après à droite"><figcaption>sombre-conversation</figcaption></figure>
+<figure><img loading="lazy" src="images/android-sombre-reglages.webp" alt="sombre-reglages : avant à gauche, après à droite"><figcaption>sombre-reglages</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-icones-entete-sans-texte.webp" alt="icones-entete-sans-texte, nouvel écran du banc"><figcaption>icones-entete-sans-texte (nouveau)</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-icones-entete.webp" alt="icones-entete, nouvel écran du banc"><figcaption>icones-entete (nouveau)</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-icones-recherche.webp" alt="icones-recherche, nouvel écran du banc"><figcaption>icones-recherche (nouveau)</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-icones.webp" alt="icones, nouvel écran du banc"><figcaption>icones (nouveau)</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-site-accueil.webp" alt="site-accueil, nouvel écran du banc"><figcaption>site-accueil (nouveau)</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-site-notes.webp" alt="site-notes, nouvel écran du banc"><figcaption>site-notes (nouveau)</figcaption></figure>
+<figure><img loading="lazy" src="images/android-nouveau-site-reunion.webp" alt="site-reunion, nouvel écran du banc"><figcaption>site-reunion (nouveau)</figcaption></figure>
+</div>
+<p class="dz-note">2 écrans identiques au pixel près.</p>
+<h3 style="margin:24px 0 12px">Mac</h3>
+<p>Le comparateur ne trouve aucune image changée sur le corpus fictif.</p>
+<h2 id="textes">Textes, avant et après</h2><p class="dz-sous">Les textes de l'app Mac et du téléphone qui changent dans le code (206), apparentés quand ils se ressemblent. Tirés du diff, sans les journaux ni les commentaires.</p>
+<div class="dz-table"><table><thead><tr><th>Où</th><th>Avant</th><th>Après</th></tr></thead><tbody>
+<tr><td class="dz-src">PhoneInbox.swift:609</td><td class="dz-avant">—</td><td>: t.meta.id, </td></tr>
+<tr><td class="dz-src">PhoneInbox.swift:639</td><td class="dz-avant">—</td><td>: recID, </td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:81</td><td class="dz-avant">—</td><td>signatures do not match</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:81</td><td class="dz-avant">—</td><td>, apk.path], timeout: 120, errors: true) ?? </td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>version illisible</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>elle n&#x27;est pas plus ancienne que celle du Mac</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>le téléphone n&#x27;est pas relié à ce Mac, ou pas connecté</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>\(waiting) enregistrement(s) encore sur le téléphone</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>, d.serial, </td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>, command], timeout: 10) ?? </td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>getprop \($0)</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>dumpsys package \(package)</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>, apk.path], timeout: 120, errors: true) ?? </td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>], timeout: 10)?.contains(</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>Callrecorder n&#x27;a pas été mis à jour sur \(device)</td></tr>
+<tr><td class="dz-src">PhoneSetup.swift:112</td><td class="dz-avant">—</td><td>L&#x27;app du téléphone vient d&#x27;une autre installation. Elle reste en place, avec ce qu&#x27;elle a enregistré.</td></tr>
+<tr><td class="dz-src">PhoneTranscripts.swift:37</td><td class="dz-avant">—</td><td>: m.app, </td></tr>
+<tr><td class="dz-src">InstallLog.swift:38</td><td class="dz-avant">—</td><td>journal local ; des chiffres en partent chaque jour vers Gildas, pour couper : Réglages › Paramètres</td></tr>
+<tr><td class="dz-src">InstallLog.swift:38</td><td class="dz-avant">—</td><td>journal local, rien n&#x27;est envoyé</td></tr>
+<tr><td class="dz-src">InstallLog.swift:160</td><td class="dz-avant">—</td><td>( hors sujet, caché : ).*$</td></tr>
+<tr><td class="dz-src">InstallLog.swift:160</td><td class="dz-avant">—</td><td>$1&lt;raison masquée&gt;</td></tr>
+<tr><td class="dz-src">InstallLog.swift:160</td><td class="dz-avant">—</td><td>(réponse de Claude illisible : ).*$</td></tr>
+<tr><td class="dz-src">InstallLog.swift:160</td><td class="dz-avant">—</td><td>$1&lt;réponse masquée&gt;</td></tr>
+<tr><td class="dz-src">InstallLog.swift:163</td><td class="dz-avant">—</td><td>(voix d&#x27;un contact : \S+ ressemblances ).*$</td></tr>
+<tr><td class="dz-src">InstallLog.swift:163</td><td class="dz-avant">—</td><td>$1&lt;noms masqués&gt;</td></tr>
+<tr><td class="dz-src">InstallLog.swift:163</td><td class="dz-avant">—</td><td>(voix d&#x27;un contact : \S+ ).+( reconnue \()</td></tr>
+<tr><td class="dz-src">InstallLog.swift:163</td><td class="dz-avant">—</td><td>$1&lt;nom masqué&gt;$2</td></tr>
+<tr><td class="dz-src">InstallLog.swift:167</td><td class="dz-avant">—</td><td>&lt;nom local&gt;</td></tr>
+<tr><td class="dz-src">InstallLog.swift:171</td><td class="dz-avant">—</td><td>&lt;nom du Mac&gt;</td></tr>
+<tr><td class="dz-src">Journal.swift:31</td><td class="dz-avant">—</td><td>journal : une heure d&#x27;écoute active</td></tr>
+<tr><td class="dz-src">Journal.swift:31</td><td class="dz-avant">—</td><td>journal : enregistré sans vous</td></tr>
+<tr><td class="dz-src">Journal.swift:31</td><td class="dz-avant">—</td><td>journal : rangé par le tri (\(why))</td></tr>
+<tr><td class="dz-src">MCP.swift:73</td><td class="dz-avant">Liste les appels enregistrés, du plus récent au plus ancien. Chaque appel a un id, son titre (celui que montre la fenêtre Conversations), l&#x27;app (zoom, teams, chrome ; </td><td>en JSON compact où un champ vide est absent. Chaque appel a un id, son titre (celui que montre la fenêtre Conversations), l&#x27;app (zoom, teams, chrome ; </td></tr>
+<tr><td class="dz-src">MCP.swift:73</td><td class="dz-avant">—</td><td>Liste les appels enregistrés, du plus récent au plus ancien : la même liste que celle de l&#x27;utilisateur dans la fenêtre Conversations, 50 à la fois (limit, offset pour la suite), </td></tr>
+<tr><td class="dz-src">MCP.swift:84</td><td class="dz-avant">les heures du Journal (l&#x27;écoute active du téléphone, importedFrom ecoute ; les conversations qui en sont sorties, elles, sont toujours là) </td><td>les heures du Journal (l&#x27;écoute active du téléphone, importedFrom ecoute ; les conversations qui en sont sorties, elles, sont toujours là), </td></tr>
+<tr><td class="dz-src">MCP.swift:84</td><td class="dz-avant">et les enregistrements écartés comme hors sujet. false par défaut.</td><td>et les enregistrements écartés comme hors sujet. false par défaut. Avec group, ce qui est au Journal est déjà là, comme dans la liste de l&#x27;utilisateur.</td></tr>
+<tr><td class="dz-src">MCP.swift:84</td><td class="dz-avant">—</td><td>ce qui a été enregistré sans l&#x27;utilisateur ou rangé au Journal (une réunion d&#x27;une minute, sans échange, personne en face), </td></tr>
+<tr><td class="dz-src">MCP.swift:84</td><td class="dz-avant">—</td><td>Combien d&#x27;appels au plus (50 par défaut, 500 au plus)</td></tr>
+<tr><td class="dz-src">MCP.swift:84</td><td class="dz-avant">—</td><td>Combien des plus récents sauter : pour la suite d&#x27;une liste coupée (0 par défaut)</td></tr>
+<tr><td class="dz-src">MCP.swift:106</td><td class="dz-avant">horodaté, plus jusqu&#x27;à 4 captures d&#x27;écran réparties sur le moment demandé, et la relecture de Claude si elle existe. Utile pour savoir avec qui et de quoi on parlait. </td><td>horodaté, et la relecture de Claude si elle existe ; avec images=true, jusqu&#x27;à 4 captures d&#x27;écran réparties sur le moment demandé. Utile pour savoir avec qui et de quoi on parlait. </td></tr>
+<tr><td class="dz-src">MCP.swift:111</td><td class="dz-avant">Joindre les captures (true par défaut)</td><td>Joindre les captures (environ 6 000 jetons) ; false par défaut</td></tr>
+<tr><td class="dz-src">MCP.swift:289</td><td class="dz-avant">] as? String ?? </td><td>—</td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>] as? String ?? </td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>: refused]], </td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>: known ? name : </td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>: chars, </td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>: result[</td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>Callrecorder a été mis à jour depuis le début de cette conversation : rien n&#x27;a été changé. </td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>Dites à l&#x27;utilisateur de relancer la conversation (ou Claude Desktop) pour que la nouvelle version prenne la main. </td></tr>
+<tr><td class="dz-src">MCP.swift:297</td><td class="dz-avant">—</td><td>Les lectures restent possibles d&#x27;ici là.</td></tr>
+<tr><td class="dz-src">MCP.swift:406</td><td class="dz-avant">—</td><td>] as? String ?? </td></tr>
+<tr><td class="dz-src">MCP.swift:896</td><td class="dz-avant">journal : une heure d&#x27;écoute active</td><td>—</td></tr>
+<tr><td class="dz-src">MCP.swift:917</td><td class="dz-avant">—</td><td>] as? Int ?? 50, 500)), offset = max(0, a[</td></tr>
+<tr><td class="dz-src">MCP.swift:917</td><td class="dz-avant">—</td><td>\(rows.count) en tout ; ci-dessus \(offset + 1) à \(offset + page.count), des plus récents aux plus anciens. </td></tr>
+<tr><td class="dz-src">MCP.swift:917</td><td class="dz-avant">—</td><td>La suite : offset=\(offset + page.count), ou since et until pour une période.</td></tr>
+<tr><td class="dz-src">MCP.swift:917</td><td class="dz-avant">—</td><td>] as? String ?? </td></tr>
+<tr><td class="dz-src">MCP.swift:950</td><td class="dz-avant">journal : une heure d&#x27;écoute active</td><td>—</td></tr>
+<tr><td class="dz-src">Merge.swift:108</td><td class="dz-avant">—</td><td>le son de \(m.id) ne se lit pas, rien n&#x27;a bougé</td></tr>
+<tr><td class="dz-src">Qualifier.swift:141</td><td class="dz-avant">—</td><td>: roots.map { </td></tr>
+<tr><td class="dz-src">Qualifier.swift:141</td><td class="dz-avant">—</td><td>, prompt, </td></tr>
+<tr><td class="dz-src">Qualifier.swift:571</td><td class="dz-avant">, prompt, </td><td>—</td></tr>
+<tr><td class="dz-src">Transcribe.swift:193</td><td class="dz-avant">Fusion des micros du Mac et du téléphone</td><td>—</td></tr>
+<tr><td class="dz-src">Transcribe.swift:193</td><td class="dz-avant">fusion, %.0f %% du micro du Mac</td><td>—</td></tr>
+<tr><td class="dz-src">Transcribe.swift:245</td><td class="dz-avant">\(fusion.how), piste \(file)</td><td>—</td></tr>
+<tr><td class="dz-src">Triage.swift:1</td><td class="dz-avant">—</td><td>réunion de moins d&#x27;une minute</td></tr>
+<tr><td class="dz-src">Triage.swift:1</td><td class="dz-avant">—</td><td>réunion sans échange</td></tr>
+<tr><td class="dz-src">Triage.swift:1</td><td class="dz-avant">—</td><td>personne en face</td></tr>
+<tr><td class="dz-src">TriageTrial.swift:1</td><td class="dz-avant">—</td><td>%2d  %5.1f min  vérité %4.0f s / %4.0f s → %@  trouvé %@  voix %@  fenêtres %d %%</td></tr>
+<tr><td class="dz-src">TriageTrial.swift:1</td><td class="dz-avant">—</td><td>pas d&#x27;échange</td></tr>
+<tr><td class="dz-src">TriageTrial.swift:1</td><td class="dz-avant">—</td><td>\(i + 1)  impossible : \(error)</td></tr>
+<tr><td class="dz-src">TriageTrial.swift:1</td><td class="dz-avant">—</td><td>Règle juste \(right) fois sur \(all.count) ; \(exchanges.filter(\.found).count) échanges trouvés sur \(exchanges.count), </td></tr>
+<tr><td class="dz-src">TriageTrial.swift:1</td><td class="dz-avant">—</td><td>\(all.filter { !$0.expected &amp;&amp; $0.found }.count) trouvés à tort sur \(all.count - exchanges.count) ; </td></tr>
+<tr><td class="dz-src">TriageTrial.swift:1</td><td class="dz-avant">—</td><td>fenêtres bien attribuées : \(windows &gt; 0 ? good * 100 / windows : 0) %</td></tr>
+<tr><td class="dz-src">Usage.swift:26</td><td class="dz-avant">—</td><td>] == nil { row[</td></tr>
+<tr><td class="dz-src">Usage.swift:26</td><td class="dz-avant">—</td><td>un agent</td></tr>
+<tr><td class="dz-src">Usage.swift:126</td><td class="dz-avant">Bilan d&#x27;usage des \(days) derniers jours (journal local, rien n&#x27;est envoyé)</td><td>Bilan d&#x27;usage des \(days) derniers jours (\(InstallLog.sentNote))</td></tr>
+<tr><td class="dz-src">Usage.swift:128</td><td class="dz-avant">—</td><td>] as? String ?? </td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">  Personne en face (son des apps muet) : \(silent.count) (\(pct(silent.count, measured.count)))</td><td>  Personne en face (son des apps muet) : \(silent.count) (\(pct(silent.count, withApps.count)))</td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>Venus du téléphone</td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>  \(phone.count) enregistrement\(phone.count &gt; 1 ? </td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>), \(CLI.duration(phone.reduce(0) { $0 + num($1, </td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>) })) au total</td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>  Rangés à part : \(p[</td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>] ?? 0), ajoutés à une réunion du Mac : \(p[</td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>] ?? 0), sans parole : \(p[</td></tr>
+<tr><td class="dz-src">Usage.swift:136</td><td class="dz-avant">—</td><td>  Dont heures d&#x27;écoute : \(e)</td></tr>
+<tr><td class="dz-src">Usage.swift:187</td><td class="dz-avant">  Enrichies par Claude : \(ok.filter { $0[</td><td>  Relues par Claude : \(reviews[</td></tr>
+<tr><td class="dz-src">Usage.swift:187</td><td class="dz-avant">] as? Bool == true }.count) sur \(ok.count)</td><td>—</td></tr>
+<tr><td class="dz-src">Usage.swift:187</td><td class="dz-avant">—</td><td>] ?? 0) réussies, \(reviews[</td></tr>
+<tr><td class="dz-src">Usage.swift:187</td><td class="dz-avant">—</td><td>] ?? 0) sans parole, \(reviews[</td></tr>
+<tr><td class="dz-src">Usage.swift:187</td><td class="dz-avant">—</td><td>] ?? 0) en panne</td></tr>
+<tr><td class="dz-src">Usage.swift:204</td><td class="dz-avant">—</td><td>  Séances des agents : </td></tr>
+<tr><td class="dz-src">Usage.swift:204</td><td class="dz-avant">—</td><td>\(agentLabel($0.key)) \($0.value)</td></tr>
+<tr><td class="dz-src">Usage.swift:269</td><td class="dz-avant">—</td><td>] as? String ?? </td></tr>
+<tr><td class="dz-src">Usage.swift:269</td><td class="dz-avant">—</td><td>] as? Bool == true { n[</td></tr>
+<tr><td class="dz-src">App.swift:535</td><td class="dz-avant">Il reste \(left) Go sur ce Mac</td><td>—</td></tr>
+<tr><td class="dz-src">App.swift:535</td><td class="dz-avant">Videz la corbeille pour continuer à enregistrer. Une durée de conservation plus courte y envoie les anciens enregistrements.</td><td>—</td></tr>
+<tr><td class="dz-src">App.swift:535</td><td class="dz-avant"> Le téléphone garde ses enregistrements en attendant.</td><td>—</td></tr>
+<tr><td class="dz-src">App.swift:543</td><td class="dz-avant">—</td><td>Faites de la place pour continuer à enregistrer.</td></tr>
+<tr><td class="dz-src">App.swift:543</td><td class="dz-avant">—</td><td>Videz la corbeille pour continuer à enregistrer.</td></tr>
+<tr><td class="dz-src">App.swift:543</td><td class="dz-avant">—</td><td> Le téléphone garde ses enregistrements en attendant.</td></tr>
+<tr><td class="dz-src">App.swift:543</td><td class="dz-avant">—</td><td>Il reste \(left) Go sur ce Mac</td></tr>
+<tr><td class="dz-src">CLI.swift:305</td><td class="dz-avant">—</td><td>calls tri --passe [--essai]</td></tr>
+<tr><td class="dz-src">CLI.swift:305</td><td class="dz-avant">—</td><td>Le tri vers le Journal est coupé (interrupteur « journalTriage ») : rien n&#x27;est rangé. --essai dit ce qui le serait.</td></tr>
+<tr><td class="dz-src">CLI.swift:305</td><td class="dz-avant">—</td><td> ; rien n&#x27;a changé.</td></tr>
+<tr><td class="dz-src">CLI.swift:305</td><td class="dz-avant">—</td><td> ; « Garder dans la liste » en fait revenir un.</td></tr>
+<tr><td class="dz-src">CallCard.swift:51</td><td class="dz-avant">—</td><td>Garder dans la liste</td></tr>
+<tr><td class="dz-src">CallCard.swift:187</td><td class="dz-avant">—</td><td>Moins d&#x27;une minute</td></tr>
+<tr><td class="dz-src">CallCard.swift:187</td><td class="dz-avant">—</td><td>Pas d&#x27;échange entre deux personnes</td></tr>
+<tr><td class="dz-src">CallCard.swift:187</td><td class="dz-avant">—</td><td>Personne ne parle en face</td></tr>
+<tr><td class="dz-src">CallCard.swift:187</td><td class="dz-avant">—</td><td>Va partir au Journal</td></tr>
+<tr><td class="dz-src">CallCard.swift:216</td><td class="dz-avant">—</td><td> · au Journal dans \(max(1, Int(ceil(due.timeIntervalSinceNow / 60)))) min</td></tr>
+<tr><td class="dz-src">CallCard.swift:216</td><td class="dz-avant">—</td><td>. Pour la garder ici : clic droit, puis Garder dans la liste.</td></tr>
+<tr><td class="dz-src">CallsModel.swift:478</td><td class="dz-avant">—</td><td>: m.toJournal?.why ?? </td></tr>
+<tr><td class="dz-src">CallsModel.swift:630</td><td class="dz-avant">Réunir \(calls.count) enregistrements en une conversation ?</td><td>Réunir \(count) enregistrements en une conversation ?</td></tr>
+<tr><td class="dz-src">CallsSnapshots.swift:135</td><td class="dz-avant">—</td><td>Réunir : \(model.error.map { </td></tr>
+<tr><td class="dz-src">ClaudeReceipt.swift:10</td><td class="dz-avant">Gardée hors des IA : Claude ne l&#x27;a pas reçue.</td><td>Gardée hors des IA, elle ne part vers aucun agent.</td></tr>
+<tr><td class="dz-src">ClaudeReceipt.swift:10</td><td class="dz-avant">—</td><td>Claude l&#x27;a relue avant qu&#x27;elle soit gardée hors des IA.</td></tr>
+<tr><td class="dz-src">PeopleView.swift:234</td><td class="dz-avant">Reliée par Claude</td><td>Reliée par \(Usage.agentLabel(card.agent))</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>, app: app, bundleID: app, start: start, end: start.addingTimeInterval(seconds), status: </td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une réunion de 45 s reste dans la liste</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une réunion de 10 min part avant l&#x27;analyse des voix</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : un Chrome sans personne en face reste dans la liste</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : un Chrome où quelqu&#x27;un parle en face part au Journal</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une note part au Journal</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : un appel WhatsApp part au Journal</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une heure d&#x27;écoute est triée</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : 200 s et 120 s de deux voix ne font pas un échange</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une voix seule fait un échange</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : moins de 5 min de parole font un échange</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une voix coupée en plusieurs groupes défait l&#x27;échange</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : l&#x27;échange entendu par le téléphone ne compte pas</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une réunion sans échange reste dans la liste</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une réunion part sans analyse des voix</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : une réunion de 40 s reste après la transcription</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>) else { return check(false, </td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : la réunion part au Journal sans passer une heure dans la liste</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : la réunion reste dans la liste après une heure</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>)?.toJournal?.at == m.toJournal?.at, </td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri : gardée, la réunion part quand même</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>)?.toJournal?.stays == true, </td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>hors-sujet : quelques secondes sans parole</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : il range sans l&#x27;interrupteur</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : l&#x27;essai range \(trial.map(\.id))</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : l&#x27;essai a écrit</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : la passe ne range pas ce que l&#x27;essai annonce</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : un enregistrement a disparu</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : il touche à autre chose que les faux départs</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : \(id) ne se relit pas</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : \(id) ne part pas de sa fin</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : une seconde passe change quelque chose</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : « Garder dans la liste » ne le fait pas revenir</td></tr>
+<tr><td class="dz-src">SelfTest.swift:79</td><td class="dz-avant">—</td><td>tri du passé : il range de nouveau ce qu&#x27;on a gardé</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>Il reste 4,2 Go sur ce Mac</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>Faites de la place pour continuer à enregistrer.</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>disque : avertissement (\(low))</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>, level: .critical, cleanup: false, phone: false).body.contains(</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>disque : le téléphone nommé sans téléphone lié</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>, level: .critical, cleanup: false, phone: true).body.hasSuffix(</td></tr>
+<tr><td class="dz-src">SelfTest.swift:288</td><td class="dz-avant">—</td><td>disque : le téléphone lié oublié</td></tr>
+<tr><td class="dz-src">SelfTest.swift:662</td><td class="dz-avant">fusion : le micro qui entend le mieux n&#x27;est pas choisi</td><td>—</td></tr>
+<tr><td class="dz-src">SelfTest.swift:662</td><td class="dz-avant">fusion : un micro éteint par le traitement gagne</td><td>—</td></tr>
+<tr><td class="dz-src">SelfTest.swift:662</td><td class="dz-avant">fusion : du vide ne rend pas du vide</td><td>—</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>, hoursAgo: 28) { $0.hidden = </td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>le téléphone a entendu une réunion</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>] as? String ?? </td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>list_calls : \(listed.symmetricDifference(window.subtracting(off)).sorted()) d&#x27;écart avec la fenêtre</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>list_calls : le banc ne couvre plus le tri</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>] as? String }) == Set([</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>list_calls : include_hidden</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>] as? String).map { ($0, r[</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>journal : rangé par le tri (\(Triage.short))</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>journal : enregistré sans vous</td></tr>
+<tr><td class="dz-src">SelfTestInterface.swift:127</td><td class="dz-avant">—</td><td>list_calls : les raisons de include_hidden (\(why))</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:79</td><td class="dz-avant">Quand le téléphone enregistre seul</td><td>—</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:83</td><td class="dz-avant">Pendant vos appels, et une heure au plus à chaque rendez-vous.</td><td>Pendant vos appels, et une heure au plus à chaque événement du calendrier.</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:83</td><td class="dz-avant">Une heure au plus à chaque rendez-vous.</td><td>Une heure au plus à chaque événement du calendrier.</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:83</td><td class="dz-avant"> Ce qui n&#x27;a rien à voir avec le rendez-vous est gardé, mais n&#x27;apparaît pas.</td><td> Ce qui n&#x27;a rien à voir avec l&#x27;événement est gardé, mais n&#x27;apparaît pas.</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:95</td><td class="dz-avant">Votre voix pendant les appels du téléphone</td><td>Enregistrer les appels du téléphone</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:98</td><td class="dz-avant">Sur le téléphone, ouvrez Callrecorder et touchez « Garder votre voix pendant les appels ».</td><td>Sur le téléphone : Réglages › Enregistrer les appels.</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:98</td><td class="dz-avant">Pendant un appel WhatsApp, Signal ou du réseau mobile, le téléphone garde votre voix quand il enregistre, et un point rouge le dit. Celle de la personne en face n&#x27;est pas enregistrée ainsi.</td><td>—</td></tr>
+<tr><td class="dz-src">SettingsParts.swift:98</td><td class="dz-avant">—</td><td>Tous les appels, téléphone ou app.</td></tr>
+<tr><td class="dz-src">TranscriptReader.swift:592</td><td class="dz-avant">Les détails de cette conversation : ses transcriptions, le son, les voix (⌘I)</td><td>Ouvrir le détail de cette conversation (⌘I)</td></tr>
+<tr><td class="dz-src">AndroidManifest.xml:63</td><td class="dz-avant">CallRecorder : votre voix pendant les appels</td><td>CallRecorder : enregistrer les appels</td></tr>
+<tr><td class="dz-src">Conversations.kt:71</td><td class="dz-avant">—</td><td> -&gt; when (m.optJSONObject(</td></tr>
+<tr><td class="dz-src">Conversations.kt:126</td><td class="dz-avant">—</td><td>, title).put(</td></tr>
+<tr><td class="dz-src">Conversations.kt:126</td><td class="dz-avant">—</td><td>, appOf(m) ?: </td></tr>
+<tr><td class="dz-src">Conversations.kt:185</td><td class="dz-avant">—</td><td>).ifEmpty { before ?: </td></tr>
+<tr><td class="dz-src">LinkService.kt:671</td><td class="dz-avant">—</td><td>${Link.linkedName(this) ?: </td></tr>
+<tr><td class="dz-src">LinkService.kt:671</td><td class="dz-avant">—</td><td>} ne reconnaît pas ce téléphone. S&#x27;il l&#x27;a oublié, scannez son code.</td></tr>
+<tr><td class="dz-src">MainActivity.kt:220</td><td class="dz-avant">, host, port, uri.getQueryParameter(</td><td>—</td></tr>
+<tr><td class="dz-src">MainActivity.kt:220</td><td class="dz-avant">—</td><td>Il est relié à un autre Mac, lui aussi nommé « $current ». Ce qu&#x27;il enregistre partira vers le nouveau.</td></tr>
+<tr><td class="dz-src">MainActivity.kt:220</td><td class="dz-avant">—</td><td>Il est relié à « $current ». Ce qu&#x27;il enregistre partira vers « $name ».</td></tr>
+<tr><td class="dz-src">MainActivity.kt:220</td><td class="dz-avant">—</td><td>« $name » est hors du réseau local, à l&#x27;adresse $host.</td></tr>
+<tr><td class="dz-src">MainActivity.kt:220</td><td class="dz-avant">—</td><td>Relier ce téléphone à « $name » ?</td></tr>
+<tr><td class="dz-src">MainActivity.kt:220</td><td class="dz-avant">—</td><td>Relier à « $name »</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:22</td><td class="dz-avant">—</td><td>Quand vous touchez Enregistrer une réunion, ici ou sur le Mac.</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:22</td><td class="dz-avant">—</td><td>Pendant vos rendez-vous, une heure au plus.</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:22</td><td class="dz-avant">—</td><td>Toute la journée, rangée dans le Journal. Les personnes autour sont enregistrées aussi.</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:95</td><td class="dz-avant">Votre voix pendant les appels</td><td>Enregistrer les appels</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:110</td><td class="dz-avant">Votre voix pendant les appels</td><td>Enregistrer les appels</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:160</td><td class="dz-avant">Tout, en continu : la journée est rangée dans le Journal. Les personnes autour de vous sont enregistrées sans le savoir.</td><td>—</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:160</td><td class="dz-avant">Une heure au plus à chaque événement du calendrier. Ce qui n&#x27;a rien à voir avec l&#x27;événement est gardé, mais n&#x27;apparaît pas.</td><td>—</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:160</td><td class="dz-avant">Seulement quand vous touchez Enregistrer une réunion, ici ou sur le Mac.</td><td>—</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:172</td><td class="dz-avant">Android coupe le micro pendant un appel WhatsApp, Signal ou téléphone. Allumé, votre voix est gardée, </td><td>Tous les appels, téléphone ou app.</td></tr>
+<tr><td class="dz-src">SettingsScreen.kt:172</td><td class="dz-avant">et la pastille le montre ; celle d&#x27;en face aussi quand le Mac a lancé le capteur.</td><td>—</td></tr>
+</tbody></table></div>
+<h2 id="interrupteurs">Interrupteurs</h2><p class="dz-sous">Ce qui s'ouvre à tous avec cette release, d'après <code>Features.swift</code>.</p><div class="dz-grille">
+<article class="dz-carte"><h3>Retirés du code</h3><p>ecouteLossless, fusion, signalMark</p></article>
+</div>
+
+<h2 id="risques">Risques</h2><p class="dz-sous">Les commits qui touchent à la confidentialité, aux données, aux autorisations ou aux formats de la mémoire. Chacun est à relire : le tri est fait sur les mots, pas sur le sens.</p><div class="dz-grille">
+<article class="dz-carte"><h3>Téléphone : pas de mise à jour pendant un enregistrement, sauf l&#x27;écoute du Journal</h3><p class="dz-risque">Demandé par Gildas : le Mac ne remplace pas l&#x27;app d&#x27;un téléphone pendant un
+enregistrement lancé à la main, un appel ou une réunion (`main`, `bluetooth`, `appel`,
+`agenda`, `mac`). Pendant l&#x27;écoute active du Journal (`ecoute`), si : ses minutes
+finies partent au fil de l&#x27;eau, la mise à jour n&#x27;y coupe que la dernière, et l&#x27;écoute
+qui ne s&#x27;arrête jamais l&#x27;empêcherait toujours. Les heures d&#x27;écoute finies doivent,
+elles, être arrivées au Mac.</p><p class="dz-src">caae4cd</p></article>
+<article class="dz-carte"><h3>Téléphone : le Mac met à jour une app signée autrement, une fois tout reçu</h3><p class="dz-risque">Revient en partie sur b99d1c2, à la demande de Gildas : le Mac peut remplacer une app
+du téléphone signée autrement (Android exige alors de la désinstaller), mais jamais en
+effaçant ce qu&#x27;elle n&#x27;a pas encore envoyé. Il la remplace seulement si :
+- elle est plus ancienne que la sienne (versionCode ; scripts/android.sh pose
+  CallRecorder.apk.json à côté de l&#x27;APK) ;
+- le téléphone est relié à ce Mac et connecté (il a prouvé la clé du lien) ;
+- son dernier état ne garde plus rien : aucun enregistrement en attente, aucun en
+  cours, aucun en route vers le Mac (PhoneLink.waiting).
+Sinon il réessaie toutes les deux minutes pendant une heure, le temps que le téléphone
+envoie ; puis l&#x27;app reste en place, et la notification d&#x27;avant le dit. Une app aussi
+récente ou plus, ou de version illisible, reste toujours.</p><p class="dz-src">703c131</p></article>
+<article class="dz-carte"><h3>Téléphone : « je ne connais pas ce téléphone » ne coupe plus le lien</h3><p class="dz-risque">`unlinked` (et `refused`, d&#x27;un Mac très ancien) arrive avant toute preuve : n&#x27;importe
+quelle machine du réseau pouvait le dire. Le téléphone relié passait alors en « code à
+scanner », arrêtait de chercher le Mac jusqu&#x27;à la prochaine ouverture de l&#x27;app, et le
+code suivant du même Mac reliait sans question. Relié, il garde maintenant sa clé et
+son Mac, et réessaie plus tard comme si le Mac était loin ; l&#x27;écran dit seulement :
+« &lt;Mac&gt; ne reconnaît pas ce téléphone. S&#x27;il l&#x27;a oublié, scannez son code. »
+Jamais relié (pas de clé), rien ne change : il attend le code du Mac.</p><p class="dz-src">ddf88f1</p></article>
+<article class="dz-carte"><h3>Recos graphisme Mac : dossier (synthèse, inventaire, mesures, 35 fiches, système et migration, plan)</h3><p class="dz-risque">Claude-Session: https://claude.ai/code/session_01DbHumr5cCfN1EnWMb3JiXg</p><p class="dz-src">f6f8bf8</p></article>
+<article class="dz-carte"><h3>Graphisme Android : dossier complet</h3><p class="dz-risque">Synthèse, inventaire (46 états, 553 valeurs avec fichier:ligne), mesures
+(WCAG 2.2 et APCA de chaque texte et icône, cibles, 200 %, sémantique,
+typographie), 25 fiches problème avec options, choix, référence,
+spécification avant → après et critères d&#x27;acceptation, 52 prototypes
+(avant/après, clair/sombre), système unifié et 78 changements de
+migration, plan en 4 lots. La première liste reste à côté.</p><p class="dz-src">7308f31</p></article>
+<article class="dz-carte"><h3>Dossier UX Mac : système unifié et migration, plan en sept lots, synthèse</h3><p class="dz-risque">Claude-Session: https://claude.ai/code/session_01DbHumuaWbSk7EeX3BRa1zH</p><p class="dz-src">db571fc</p></article>
+<article class="dz-carte"><h3>Recos UX Android, dossier : système et migration, plan, références, synthèse</h3><p class="dz-risque">Claude-Session: https://claude.ai/code/session_01DbHumrmNrfEbeMRcBekKRr</p><p class="dz-src">a7d409a</p></article>
+<article class="dz-carte"><h3>Recos UX Android : relecture de détail de l&#x27;app Android, dix-huit recos avec croquis</h3><p class="dz-risque">États vides, Arrêter dans la conversation en cours, texte des appels, police agrandie,
+notification d&#x27;enregistrement, lien perdu, autorisations, retour prédictif, dates,
+TalkBack, cibles, pastille, Réglages, nom de l&#x27;app, initiales, suppression, canaux,
+flèches du calendrier. Images du banc, dont un banc complémentaire gardé hors du dépôt.</p><p class="dz-src">cd47a2c</p></article>
+<article class="dz-carte"><h3>Tri vers le Journal : le passé aussi, par une passe unique (#91)</h3><p class="dz-risque">Triage.backfill range au Journal les enregistrements d&#x27;avant le tri comme le
+tri l&#x27;aurait fait à leur fin : une réunion de moins d&#x27;une minute, une réunion
+de moins de 2 min (jamais 5 min de parole, donc jamais un échange : pas besoin
+d&#x27;analyser les voix), un Chrome sans personne en face. Le départ est posé une
+heure après la fin, déjà passée : ils sont au Journal tout de suite.</p><p class="dz-src">244d6cb · #91</p></article>
+<article class="dz-carte"><h3>Ce qui part du Mac : dit vrai, et le journal envoyé sans ce qu&#x27;on sait des autres</h3><p class="dz-risque">Le bilan d&#x27;usage (calls usage, usage_report) et le README disaient « rien n&#x27;est
+envoyé » : faux quand « Envoyer des informations à Gildas » est allumé, ce qui
+est le cas d&#x27;office en prod. Le texte suit maintenant le réglage, avec la
+formule de la fin de l&#x27;installation ; la dev n&#x27;envoie rien et le dit.</p><p class="dz-src">5138be3</p></article>
+<article class="dz-carte"><h3>Son : l&#x27;essai fusion retiré, mesuré perdant (1 à 6 % de mots perdus)</h3><p class="dz-risque">Transcrire une réunion du Mac et du téléphone une seule fois, au meilleur
+micro, ne gagnait rien sur les deux réunions réelles et perdait des mots
+(SPEC-voix, « La fusion »). Le code, son passage dans la transcription,
+son selftest et l&#x27;interrupteur partent ; les chiffres et la raison restent
+dans ESSAIS.md, « Retirés ». La fusion de conversations (Merge) ne change pas.</p><p class="dz-src">e7b41ab</p></article>
+<article class="dz-carte"><h3>Relecture : Claude ne lit que le dossier de la conversation</h3><p class="dz-risque">La relecture par Claude (et les deux autres usages de `claude -p` : réserves,
+passages du Journal) n&#x27;avait que l&#x27;outil Read, mais autorisé partout. Elle ne
+peut plus lire que le dossier de la conversation, et toujours pas son relevé
+d&#x27;activité : des règles de permission de Claude Code, passées en JSON par
+`--settings` (`Read(//&lt;dossier&gt;/**)`, et le refus de `activity.jsonl`). Plus de
+`--allowedTools` ni de `--disallowedTools`, dont la liste se coupe aux espaces :
+un dossier dans « Mon Drive » y devenait deux règles fausses. Le chemin figure
+sous ses deux formes d&#x27;accents.</p><p class="dz-src">17ee7f1</p></article>
+<article class="dz-carte"><h3>Téléphone : le Mac ne désinstalle plus jamais l&#x27;app d&#x27;office</h3><p class="dz-risque">Branché à un téléphone dont l&#x27;app est signée autrement (installée à la main,
+d&#x27;un autre Mac, une version de débogage), le Mac la désinstallait pour poser la
+sienne, ce qui effaçait ce qu&#x27;elle avait enregistré et pas encore envoyé. Elle
+reste maintenant en place, telle quelle : rien n&#x27;est effacé, pas de mise à jour,
+et le Mac le dit une fois par une notification (« Callrecorder n&#x27;a pas été mis à
+jour sur &lt;téléphone&gt; »). La suite (autorisations, lien, ouverture) continue.</p><p class="dz-src">b99d1c2</p></article>
+<article class="dz-carte"><h3>Téléphone : ni la clé du lien ni les voix dans les sauvegardes d&#x27;Android</h3><p class="dz-risque">Le manifeste dit enfin ce qu&#x27;Android emporte de l&#x27;app (dataExtractionRules pour
+Android 12 et plus, fullBackupContent pour Android 10 et 11) :
+- sauvegarde Google : seule la place de la pastille. Ni la clé du lien, ni les
+  voix, ni les enregistrements, ni les conversations, ni l&#x27;agenda, ni le journal,
+  faits de la voix et des noms d&#x27;autres personnes ;
+- passage vers un nouveau téléphone : tout, sauf la clé du lien (link.xml, avec
+  l&#x27;identifiant du téléphone et l&#x27;empreinte de votre voix) et les voix (voix/).
+  Ce qui n&#x27;est pas encore arrivé au Mac suit le téléphone : rien ne se perd.</p><p class="dz-src">7b9e75b</p></article>
+<article class="dz-carte"><h3>Téléphone : un code du Mac ne remplace jamais le Mac relié sans le demander</h3><p class="dz-risque">Un code du Mac (QR code ou lien callrecorder://, que n&#x27;importe quelle page peut
+ouvrir) qui désigne un autre Mac que celui relié ne change plus rien sans une
+confirmation à l&#x27;écran : « Relier ce téléphone à « B » ? », avec « Il est relié
+à « A ». Ce qu&#x27;il enregistre partira vers « B ». », ou « un autre Mac, lui aussi
+nommé … » si les deux portent le même nom. Confirmé, l&#x27;ancienne clé reste jusqu&#x27;à
+ce que le nouveau Mac ait prouvé son jeton, comme avant. Une adresse hors du
+réseau local demande aussi, même au premier code. Le premier code d&#x27;une adresse
+locale relie sans question, comme avant.</p><p class="dz-src">4ddbc93</p></article>
+<article class="dz-carte"><h3>Téléphone : rien de ce que dit le Mac ne compte avant sa preuve</h3><p class="dz-risque">Avant que le Mac ait prouvé qu&#x27;il connaît la clé du lien, le téléphone n&#x27;écoute
+que sa preuve (`challenge`) et sa réponse à l&#x27;accueil (`status`). Le reste
+(commandes, réglages, agenda, conversations, demandes d&#x27;envoi) est ignoré, noté
+une fois au journal, et rien n&#x27;y répond. Seul l&#x27;enregistrement demandé par le Mac
+attendait déjà la preuve ; c&#x27;est maintenant le cas de tout.</p><p class="dz-src">43bfa8a</p></article>
+<article class="dz-carte"><h3>Interrupteurs : jamais coupés en dev, retirés quand on ne s&#x27;en sert pas</h3><p class="dz-risque">Règle de Gildas, écrite dans CLAUDE.md : un interrupteur ne dure pas. Il est
+allumé en dev, et un essai qui ne sert pas est retiré du code plutôt que gardé
+coupé « pour plus tard ».</p><p class="dz-src">113d006</p></article>
+<article class="dz-carte"><h3>Interrupteurs : la dev essaie tout, Gildas est le cobaye</h3><p class="dz-risque">Quatre essais coupés même en dev s&#x27;allument en dev, toujours coupés en bêta et en
+prod : les trois micros du téléphone gardés séparés et les directions qui en
+découlent (`phoneMics`), l&#x27;écoute sans perte jusqu&#x27;à sa transcription
+(`ecouteCompressLater`), les capsules brutes du Mac (`rawRoomMic`, 96 Mo par
+heure) et la transcription du meilleur micro (`fusion`). `ecouteLossless` reste
+coupé : il ferait doublon avec `ecouteCompressLater` et garderait quatre fois plus
+de son. Chacun se coupe encore sur un Mac par `defaults write … feature.&lt;nom&gt; -bool false`.</p><p class="dz-src">5cac243</p></article>
+<article class="dz-carte"><h3>Détail : une fiche à lignes plutôt qu&#x27;un « i »</h3><p class="dz-risque">Le bouton Détail (⌘I) ouvre ce qu&#x27;on sait de la conversation : ses transcriptions,
+le son, les voix, ce qui s&#x27;est fait pendant. C&#x27;est une fiche, pas une information :
+symbole `list.bullet.rectangle` au lieu de `info.circle`. Même icône que la
+maquette du téléphone (canvas Android, « Une conversation »), demandée par Gildas.</p><p class="dz-src">7d4ba7f</p></article>
+<article class="dz-carte"><h3>Formats de la mémoire et MCP</h3><p class="dz-risque">3 fichiers du cœur changent : à reporter dans #32 si le format change.</p><p class="dz-src">Sources/CallCore/MCP.swift · Sources/CallCore/People.swift · Sources/CallCore/Store.swift</p></article>
+</div>
+<h2 id="pas-verifie">Pas vérifié</h2><div class="dz-carte" style="margin-top:16px"><ul>
+<li>Le banc Android ouvre les vrais écrans sur des conversations fictives : ni le micro, ni le son, ni le lien avec le Mac n'y passent.</li>
+<li>Le comparateur joue la CLI, le MCP et quelques images du Mac sur le corpus fictif, sans téléphone relié : le reste de l'interface n'y est pas photographié.</li>
+<li>Le comparateur est repris d'une sortie déjà jouée, pas rejoué sur caae4cd.</li>
+<li>Une réunion de moins d&#x27;une minute, une réunion sans vrai échange (deux voix <span class="dz-src">8a86843</span></li>
+</ul></div>
+<h2 id="preuves">Preuves</h2><p class="dz-sous">Les commits par sujet, et la sortie du comparateur.</p>
+<details><summary>Téléphone · 8</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>pas de mise à jour pendant un enregistrement, sauf l&#x27;écoute du Journal <span class="dz-src">caae4cd · 2026-11-08</span></li><li>le Mac met à jour une app signée autrement, une fois tout reçu <span class="dz-src">703c131 · 2026-11-08</span></li><li>« je ne connais pas ce téléphone » ne coupe plus le lien <span class="dz-src">ddf88f1 · 2026-11-08</span></li><li>le Mac ne désinstalle plus jamais l&#x27;app d&#x27;office <span class="dz-src">b99d1c2 · 2026-11-08</span></li><li>ni la clé du lien ni les voix dans les sauvegardes d&#x27;Android <span class="dz-src">7b9e75b · 2026-11-08</span></li><li>un code du Mac ne remplace jamais le Mac relié sans le demander <span class="dz-src">4ddbc93 · 2026-11-08</span></li><li>rien de ce que dit le Mac ne compte avant sa preuve <span class="dz-src">43bfa8a · 2026-11-08</span></li><li>un appel WhatsApp a son logo, un appel du réseau mobile son combiné <span class="dz-src">8c4cbee · 2026-11-07 · #104</span></li></ul></details>
+<details><summary>Dossier UX Mac · 7</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>système unifié et migration, plan en sept lots, synthèse <span class="dz-src">db571fc · 2026-11-08</span></li><li>16 prototypes, avant et après, en clair et en sombre <span class="dz-src">5cb1e56 · 2026-11-08</span></li><li>28 problèmes analysés, avec spécifications et critères d&#x27;acceptation <span class="dz-src">5c152a9 · 2026-11-08</span></li><li>pages Inventaire et Mesures, générées depuis les données <span class="dz-src">08b0252 · 2026-11-08</span></li><li>26 captures annotées <span class="dz-src">d9b18d8 · 2026-11-08</span></li><li>écrans et états, raccourcis comparés aux conventions, vocabulaire, écarts aux échelles <span class="dz-src">9374e4a · 2026-11-08</span></li><li>inventaire et mesures tirés du code et des captures <span class="dz-src">0196045 · 2026-11-08</span></li></ul></details>
+<details><summary>Recos UX Android, dossier · 5</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>relecture des affirmations non vérifiables <span class="dz-src">85195c0 · 2026-11-08</span></li><li>système et migration, plan, références, synthèse <span class="dz-src">a7d409a · 2026-11-08</span></li><li>mesures, problèmes et recos, prototypes <span class="dz-src">7e00ce9 · 2026-11-08</span></li><li>inventaire (états, composants, textes, valeurs) et captures annotées <span class="dz-src">54246fe · 2026-11-08</span></li><li>banc d&#x27;inventaire, relevé du code et mesures brutes <span class="dz-src">d2f4fad · 2026-11-08</span></li></ul></details>
+<details><summary>Recos design · 4</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>un canvas visuel des six dossiers, avec la liste des cartes et des fusions <span class="dz-src">e38bb8c · 2026-11-08</span></li><li>un sommaire pour les six dossiers et les captures Mac 0.24.0 <span class="dz-src">cdd8d38 · 2026-11-08</span></li><li>relecture graphique de l&#x27;app Mac 0.24.0, 26 recos avec croquis <span class="dz-src">30260d2 · 2026-11-08</span></li><li>les captures de l&#x27;app Mac 0.24.0, pour les relectures de graphisme et d&#x27;UX <span class="dz-src">7151a45 · 2026-11-08</span></li></ul></details>
+<details><summary>Recos graphisme Mac · 4</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>prototypes des 11 écrans, avant et après, clair et sombre <span class="dz-src">cae7c5d · 2026-11-08</span></li><li>dossier (synthèse, inventaire, mesures, 35 fiches, système et migration, plan) <span class="dz-src">f6f8bf8 · 2026-11-08</span></li><li>captures annotées et rythme des Réglages mesuré <span class="dz-src">112f8fe · 2026-11-08</span></li><li>inventaire tiré du code et mesures (contrastes, cibles, accessibilité) <span class="dz-src">d4ca4d3 · 2026-11-08</span></li></ul></details>
+<details><summary>Dossier graphisme du site · 4</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>synthèse, inventaire, mesures, 23 problèmes, prototypes, système et plan <span class="dz-src">c362b25 · 2026-11-08</span></li><li>mesures de l&#x27;après, captures à leur taille réelle <span class="dz-src">7f6e95b · 2026-11-08</span></li><li>prototypes avant / après des cinq pages, états des composants <span class="dz-src">6b0f068 · 2026-11-08</span></li><li>mesures brutes et captures de preuve <span class="dz-src">8c50bfa · 2026-11-08</span></li></ul></details>
+<details><summary>Recos UX du site · 4</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>mesures finales du prototype (34 critères sur 34), références dans les preuves <span class="dz-src">06cad8c · 2026-11-08</span></li><li>P35, correctifs dans l&#x27;ordre du plan, corrections de l&#x27;analyse <span class="dz-src">f7caacc · 2026-11-08</span></li><li>dossier complet, premier état (inventaire, mesures, 35 problèmes, prototype) <span class="dz-src">444626e · 2026-11-08</span></li><li>25 recos de détail, avec croquis avant/après <span class="dz-src">644d64a · 2026-11-08</span></li></ul></details>
+<details><summary>Graphisme Android · 3</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>les ancres ne passent plus sous la barre de navigation <span class="dz-src">f095884 · 2026-11-08</span></li><li>dossier complet <span class="dz-src">7308f31 · 2026-11-08</span></li><li>relevés bruts et preuves annotées <span class="dz-src">ba659bc · 2026-11-08</span></li></ul></details>
+<details><summary>Interrupteurs · 3</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>six prêts à trancher en une ligne <span class="dz-src">86f46f6 · 2026-11-08 · #82</span></li><li>jamais coupés en dev, retirés quand on ne s&#x27;en sert pas <span class="dz-src">113d006 · 2026-11-06</span></li><li>la dev essaie tout, Gildas est le cobaye <span class="dz-src">5cac243 · 2026-11-06</span></li></ul></details>
+<details><summary>Réglages · 3</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>Enregistrer les appels rejoint Enregistrement, sans titre à lui <span class="dz-src">a7ee4ed · 2026-11-07</span></li><li>chaque mode dit ce qu&#x27;il fait sous son nom <span class="dz-src">2c551b8 · 2026-11-07</span></li><li>« Enregistrer les appels », en une ligne <span class="dz-src">fd420af · 2026-11-07</span></li></ul></details>
+<details><summary>MCP · 2</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>savoir quel agent lit la mémoire, et l&#x27;usage réel à part des bancs (#16) <span class="dz-src">5a27107 · 2026-11-08 · #16</span></li><li>un serveur lancé par une ancienne version n&#x27;écrit plus rien <span class="dz-src">0c4643d · 2026-11-08</span></li></ul></details>
+<details><summary>Essais · 2</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>phoneVoices garde son interrupteur coupé jusqu&#x27;à son échéance, les fiches suivent main <span class="dz-src">3357b8d · 2026-11-07</span></li><li>une fiche par interrupteur, et la comparaison de la transcription Google <span class="dz-src">30df46e · 2026-11-06</span></li></ul></details>
+<details><summary>Tri (#91) · 2</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>le test de relecture de meta.json remplit toJournal <span class="dz-src">208c32e · 2026-11-07 · #91</span></li><li>relecture sans compilateur, et les specs suivent <span class="dz-src">9205c74 · 2026-11-07 · #91</span></li></ul></details>
+<details><summary>Divers · 2</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>Tri entre la liste et le Journal (#91), derrière journalTriage <span class="dz-src">8a86843 · 2026-11-07 · #91</span></li><li>Le gabarit du Pixel 7 de l&#x27;accueil du site <span class="dz-src">670ffe2 · 2026-11-07</span></li></ul></details>
+<details><summary>Recos graphisme Android · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>17 détails, croquis avant/après <span class="dz-src">2baac39 · 2026-11-08</span></li></ul></details>
+<details><summary>Relecture UX de l&#x27;app Mac · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>33 recommandations avec croquis <span class="dz-src">9d70ac9 · 2026-11-08</span></li></ul></details>
+<details><summary>Recos UX Android · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>relecture de détail de l&#x27;app Android, dix-huit recos avec croquis <span class="dz-src">cd47a2c · 2026-11-08</span></li></ul></details>
+<details><summary>Recos graphisme du site · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>18 recommandations, avec croquis avant / après <span class="dz-src">3e3ed43 · 2026-11-08</span></li></ul></details>
+<details><summary>Bilans · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>les relectures de Claude, le son muet et le téléphone comptent juste <span class="dz-src">3b4357d · 2026-11-08</span></li></ul></details>
+<details><summary>Tri vers le Journal · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>le passé aussi, par une passe unique (#91) <span class="dz-src">244d6cb · 2026-11-08 · #91</span></li></ul></details>
+<details><summary>list_calls · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>la même liste que l&#x27;utilisateur, en plus compact (#16) <span class="dz-src">8a890d2 · 2026-11-08 · #16</span></li></ul></details>
+<details><summary>Bilan d&#x27;usage · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>le texte d&#x27;avant tel quel quand rien n&#x27;est envoyé <span class="dz-src">5cabe39 · 2026-11-08</span></li></ul></details>
+<details><summary>Ce qui part du Mac · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>dit vrai, et le journal envoyé sans ce qu&#x27;on sait des autres <span class="dz-src">5138be3 · 2026-11-08</span></li></ul></details>
+<details><summary>Son · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>l&#x27;essai fusion retiré, mesuré perdant (1 à 6 % de mots perdus) <span class="dz-src">e7b41ab · 2026-11-08</span></li></ul></details>
+<details><summary>Relecture · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>Claude ne lit que le dossier de la conversation <span class="dz-src">17ee7f1 · 2026-11-08</span></li></ul></details>
+<details><summary>Incident #103 · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>le bouton du téléphone rejoint la réunion que le Mac lance par la balise, une réunion sans aucune voix quitte la liste <span class="dz-src">9c8365f · 2026-11-08 · #91 · #103</span></li></ul></details>
+<details><summary>CLAUDE.md · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>une PR par sujet, même dans une seule session <span class="dz-src">e56e293 · 2026-11-06 · #74</span></li></ul></details>
+<details><summary>Enregistrer les appels · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>tous les appels, pas seulement WhatsApp et Signal <span class="dz-src">25ea4c4 · 2026-11-07</span></li></ul></details>
+<details><summary>Manuel · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>les commentaires et le journal suivent le nom du réglage <span class="dz-src">c5dc276 · 2026-11-07</span></li></ul></details>
+<details><summary>Réglage Enregistrement · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>Manuel, Événements du calendrier, Tout le temps <span class="dz-src">2e26396 · 2026-11-06</span></li></ul></details>
+<details><summary>Téléphone (#104) · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>Signal, Telegram, Meet et la réunion ont leur icône, aussi dans l&#x27;en-tête et la recherche <span class="dz-src">ec86a06 · 2026-11-07 · #104</span></li></ul></details>
+<details><summary>Détail · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>une fiche à lignes plutôt qu&#x27;un « i » <span class="dz-src">7d4ba7f · 2026-11-06</span></li></ul></details>
+<details><summary>Pixel du site · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>un écran par onglet, à la hauteur réelle de l&#x27;app <span class="dz-src">b2fb475 · 2026-11-07</span></li></ul></details>
+<details><summary>Livraison · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>un texte retiré exprès ne revient pas sans le dire <span class="dz-src">5035adb · 2026-11-07</span></li></ul></details>
+<details><summary>Le Pixel 7 du site · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>cadre officiel de Google, composé par un script <span class="dz-src">3e61bf3 · 2026-11-07</span></li></ul></details>
+<details><summary>TEXTES · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>le titre de l&#x27;accueil est « Souvenez-vous de tout », la règle citait l&#x27;ancien <span class="dz-src">c7661d0 · 2026-11-07</span></li></ul></details>
+<details><summary>Partage · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>l&#x27;image de l&#x27;accueil dit « Souvenez-vous de tout » <span class="dz-src">83da07b · 2026-11-07</span></li></ul></details>
+<details><summary>Banc Android · 1</summary><ul style="margin:10px 0 0;padding-left:20px;display:grid;gap:6px"><li>l&#x27;écran du Pixel de l&#x27;accueil du site <span class="dz-src">768e78f · 2026-11-07</span></li></ul></details>
+<details><summary>Comparateur : cli usage --days 36500 --json</summary><pre>  @@ -18,2 +18,3 @@
+    &quot;moinsDe30s&quot;: 1,
+  + &quot;outilsAgents&quot;: {},
+    &quot;ouvertesParVous&quot;: 1,
+  @@ -24,2 +25,8 @@
+    },
+  + &quot;relecturesClaude&quot;: {
+  +  &quot;enPanne&quot;: 0,
+  +  &quot;reussies&quot;: 0,
+  +  &quot;sansParole&quot;: 0
+  + },
+  + &quot;seancesAgents&quot;: {},
+    &quot;sonDesAppsImpossible&quot;: 0,
+  @@ -27,2 +34,8 @@
+    &quot;supprimesParVous&quot;: 0,
+  + &quot;telephone&quot;: {
+  +  &quot;aPart&quot;: 0,
+  +  &quot;ecoute&quot;: 0,
+  +  &quot;reunionDuMac&quot;: 0,
+  +  &quot;sansParole&quot;: 0
+  + },
+    &quot;transcriptionsEchouees&quot;: 1,</pre></details>
+<details><summary>Comparateur : disque après le scénario</summary><pre>  @@ -906,17 +906,62 @@
+   {&quot;at&quot;: &quot;2026-10-23T16:00:00Z&quot;, &quot;by&quot;: &quot;fenêtre&quot;, &quot;id&quot;: &quot;2026-10-23_170000_facetime&quot;, &quot;kind&quot;: &quot;keep&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-12_100000_zoom&quot;,&quot;kind&quot;:&quot;open&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-12_100000_zoom&quot;,&quot;kind&quot;:&quot;open&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-15_090000_reunion&quot;,&quot;kind&quot;:&quot;open&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:3,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:1,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:0,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:0,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-12_100000_zoom&quot;,&quot;kind&quot;:&quot;keep&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:1,&quot;kind&quot;:&quot;group-create&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;people-rename&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;people-merge&quot;,&quot;names&quot;:3}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;people-forget&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;signal&quot;,&quot;new&quot;:true}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;privacy-signal-confirm&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;privacy-signal-withdraw&quot;}
+  -{&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;voice-identity&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;kind&quot;:&quot;mcp-session&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:2008,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:2562,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:760,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:899,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:632,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:1144,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_call&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:886,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_call&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-12_100000_zoom&quot;,&quot;kind&quot;:&quot;open&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:366,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;read_transcript&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-12_100000_zoom&quot;,&quot;kind&quot;:&quot;open&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:808,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;read_transcript&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-15_090000_reunion&quot;,&quot;kind&quot;:&quot;open&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:1214,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;read_transcript&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:3,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:2045,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;search_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:1,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:918,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;search_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:0,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:333,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;search_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:1286,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_people&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:354,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_people&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:910,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_person&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:284,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_excerpts&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:313,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_groups&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:396,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_privacy_signals&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:839,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_privacy_signals&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:99,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_reviews_to_redo&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:97,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_call_context&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:57,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_call_activity&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:799,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;usage_report&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:105,&quot;error&quot;:true,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_call&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:105,&quot;error&quot;:true,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;read_transcript&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:154,&quot;error&quot;:true,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;get_person&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:0,&quot;kind&quot;:&quot;search&quot;,&quot;words&quot;:1}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:331,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;search_calls&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:59,&quot;error&quot;:true,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;update_group&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;id&quot;:&quot;2026-10-12_100000_zoom&quot;,&quot;kind&quot;:&quot;keep&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:36,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;keep_call&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;calls&quot;:1,&quot;kind&quot;:&quot;group-create&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:42,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;create_group&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:27,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;set_call_group&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:23,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;update_group&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:54,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;delete_group&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;people-rename&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:54,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;rename_person&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;people-merge&quot;,&quot;names&quot;:3}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:79,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;merge_people&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;people-forget&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:117,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;forget_person&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;signal&quot;,&quot;new&quot;:true}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:225,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;record_privacy_signal&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;privacy-signal-confirm&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:128,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;confirm_privacy_signal&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;privacy-signal-withdraw&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:70,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;withdraw_privacy_signal&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;by&quot;:&quot;claude&quot;,&quot;kind&quot;:&quot;voice-identity&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:58,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;set_voice_identity&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:305,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_groups&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:746,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_people&quot;}
+  +{&quot;agent&quot;:&quot;claude&quot;,&quot;at&quot;:&quot;&lt;maintenant&gt;&quot;,&quot;banc&quot;:true,&quot;chars&quot;:1956,&quot;error&quot;:false,&quot;kind&quot;:&quot;mcp&quot;,&quot;tool&quot;:&quot;list_calls&quot;}</pre></details>
+<details><summary>Comparateur : mcp lectures</summary><pre>  @@ -286,3 +286,3 @@
+       },
+  -    &quot;description&quot;: &quot;Liste les appels enregistrés, du plus récent au plus ancien. Chaque appel a un id, son titre (celui que montre la fenêtre Conversations), l&#x27;app (zoom, teams, chrome ; « reunion » pour une réunion en salle, « note » pour une note dictée), son sujet en une phrase (topic, écrit par Claude à la relecture), les personnes nommées, le début et la fin en heure locale, la durée, le nombre de personnes (1 = monologue ou note, 2+ = au moins une personne en face ; pour une réunion, le nombre de voix), le téléphone qui a servi de micro (phone_mic) et son statut (recording, transcribing, transcribed, et l&#x27;état de l&#x27;audio : kept, trashed, ou la date de mise à la corbeille automatique). Pour « mon appel de mardi vers 14 h », filtre par date puis choisis l&#x27;appel dont le début est le plus proche.&quot;,
+  +    &quot;description&quot;: &quot;Liste les appels enregistrés, du plus récent au plus ancien : la même liste que celle de l&#x27;utilisateur dans la fenêtre Conversations, 50 à la fois (limit, offset pour la suite), en JSON compact où un champ vide est absent. Chaque appel a un id, son titre (celui que montre la fenêtre Conversations), l&#x27;app (zoom, teams, chrome ; « reunion » pour une réunion en salle, « note » pour une note dictée), son sujet en une phrase (topic, écrit par Claude à la relecture), les personnes nommées, le début et la fin en heure locale, la durée, le nombre de personnes (1 = monologue ou note, 2+ = au moins une personne en face ; pour une réunion, le nombre de voix), le téléphone qui a servi de micro (phone_mic) et son statut (recording, transcribing, transcribed, et l&#x27;état de l&#x27;audio : kept, trashed, ou la date de mise à la corbeille automatique). Pour « mon appel de mardi vers 14 h », filtre par date puis choisis l&#x27;appel dont le début est le plus proche.&quot;,
+       &quot;inputSchema&quot;: {
+  @@ -298,4 +298,12 @@
+         &quot;include_hidden&quot;: {
+  -       &quot;description&quot;: &quot;true : aussi ce que la liste de l&#x27;utilisateur ne montre pas, chacun avec pourquoi (hidden) : les heures du Journal (l&#x27;écoute active du téléphone, importedFrom ecoute ; les conversations qui en sont sorties, elles, sont toujours là) et les enregistrements écartés comme hors sujet. false par défaut.&quot;,
+  +       &quot;description&quot;: &quot;true : aussi ce que la liste de l&#x27;utilisateur ne montre pas, chacun avec pourquoi (hidden) : les heures du Journal (l&#x27;écoute active du téléphone, importedFrom ecoute ; les conversations qui en sont sorties, elles, sont toujours là), ce qui a été enregistré sans l&#x27;utilisateur ou rangé au Journal (une réunion d&#x27;une minute, sans échange, personne en face), et les enregistrements écartés comme hors sujet. false par défaut. Avec group, ce qui est au Journal est déjà là, comme dans la liste de l&#x27;utilisateur.&quot;,
+          &quot;type&quot;: &quot;boolean&quot;
+  +      },
+  +      &quot;limit&quot;: {
+  +       &quot;description&quot;: &quot;Combien d&#x27;appels au plus (50 par défaut, 500 au plus)&quot;,
+  +       &quot;type&quot;: &quot;integer&quot;
+  +      },
+  +      &quot;offset&quot;: {
+  +       &quot;description&quot;: &quot;Combien des plus récents sauter : pour la suite d&#x27;une liste coupée (0 par défaut)&quot;,
+  +       &quot;type&quot;: &quot;integer&quot;
+         },
+  @@ -390,3 +398,3 @@
+       },
+  -    &quot;description&quot;: &quot;Contexte visuel de l&#x27;appel : texte lu à l&#x27;écran (noms des participants sous les vignettes, titre, slides partagées), horodaté, plus jusqu&#x27;à 4 captures d&#x27;écran réparties sur le moment demandé, et la relecture de Claude si elle existe. Utile pour savoir avec qui et de quoi on parlait. Sur un long appel, from et to limitent la réponse au moment d&#x27;une réplique de read_transcript.&quot;,
+  +    &quot;description&quot;: &quot;Contexte visuel de l&#x27;appel : texte lu à l&#x27;écran (noms des participants sous les vignettes, titre, slides partagées), horodaté, et la relecture de Claude si elle existe ; avec images=true, jusqu&#x27;à 4 captures d&#x27;écran réparties sur le moment demandé. Utile pour savoir avec qui et de quoi on parlait. Sur un long appel, from et to limitent la réponse au moment d&#x27;une réplique de read_transcript.&quot;,
+       &quot;inputSchema&quot;: {
+  @@ -402,3 +410,3 @@
+         &quot;images&quot;: {
+  -       &quot;description&quot;: &quot;Joindre les captures (true par défaut)&quot;,
+  +       &quot;description&quot;: &quot;Joindre les captures (environ 6 000 jetons) ; false par défaut&quot;,
+          &quot;type&quot;: &quot;boolean&quot;
+  @@ -923,3 +931,2 @@
+     &quot;headset&quot;: true,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-23_170000_facetime&quot;,
+  @@ -929,4 +936,2 @@
+     ],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-23 17:00&quot;,
+  @@ -941,10 +946,5 @@
+     &quot;end&quot;: &quot;2026-10-20 16:06&quot;,
+  -  &quot;group&quot;: null,
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-20_160000_whatsapp&quot;,
+     &quot;participants&quot;: &quot;2+&quot;,
+  -  &quot;people&quot;: [],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-20 16:00&quot;,
+  @@ -952,3 +952,2 @@
+     &quot;title&quot;: &quot;Appel WhatsApp&quot;,
+  -  &quot;topic&quot;: null,
+     &quot;weekday&quot;: &quot;mardi&quot;
+  @@ -959,5 +958,3 @@
+     &quot;end&quot;: &quot;2026-10-18 11:38&quot;,
+  -  &quot;group&quot;: null,
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-18_113000_android&quot;,
+  @@ -972,3 +969,2 @@
+     },
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-18 11:30&quot;,
+  @@ -983,10 +979,5 @@
+     &quot;end&quot;: &quot;2026-10-16 18:16&quot;,
+  -  &quot;group&quot;: null,
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-16_181500_note&quot;,
+     &quot;participants&quot;: &quot;1 (monologue)&quot;,
+  -  &quot;people&quot;: [],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-16 18:15&quot;,
+  @@ -994,3 +985,2 @@
+     &quot;title&quot;: &quot;Note&quot;,
+  -  &quot;topic&quot;: null,
+     &quot;weekday&quot;: &quot;vendredi&quot;
+  @@ -1006,3 +996,2 @@
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-15_090000_reunion&quot;,
+  @@ -1012,4 +1001,2 @@
+     ],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-15 09:00&quot;,
+  @@ -1029,3 +1016,2 @@
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-12_100000_zoom&quot;,
+  @@ -1035,4 +1021,2 @@
+     ],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-12 10:00&quot;,
+  @@ -1057,3 +1041,2 @@
+     &quot;headset&quot;: true,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-23_170000_facetime&quot;,
+  @@ -1063,4 +1046,2 @@
+     ],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-23 17:00&quot;,
+  @@ -1075,3 +1056,2 @@
+     &quot;end&quot;: &quot;2026-10-22 11:00&quot;,
+  -  &quot;group&quot;: null,
+     &quot;headset&quot;: false,
+  @@ -1079,6 +1059,2 @@
+     &quot;id&quot;: &quot;2026-10-22_100000_reunion&quot;,
+  -  &quot;participants&quot;: null,
+  -  &quot;people&quot;: [],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-22 10:00&quot;,
+  @@ -1086,3 +1062,2 @@
+     &quot;title&quot;: &quot;Réunion&quot;,
+  -  &quot;topic&quot;: null,
+     &quot;weekday&quot;: &quot;jeudi&quot;
+  … et 159 lignes de plus dans … lectures</pre></details>
+<details><summary>Comparateur : mcp écritures</summary><pre>  @@ -106,10 +106,5 @@
+     &quot;end&quot;: &quot;2026-10-23 17:20&quot;,
+  -  &quot;group&quot;: null,
+     &quot;headset&quot;: true,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-23_170000_facetime&quot;,
+     &quot;participants&quot;: &quot;2+&quot;,
+  -  &quot;people&quot;: [],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-23 17:00&quot;,
+  @@ -124,10 +119,5 @@
+     &quot;end&quot;: &quot;2026-10-20 16:06&quot;,
+  -  &quot;group&quot;: null,
+  -  &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+  +  &quot;headset&quot;: false,
+     &quot;id&quot;: &quot;2026-10-20_160000_whatsapp&quot;,
+     &quot;participants&quot;: &quot;2+&quot;,
+  -  &quot;people&quot;: [],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-20 16:00&quot;,
+  @@ -135,3 +125,2 @@
+     &quot;title&quot;: &quot;Appel WhatsApp&quot;,
+  -  &quot;topic&quot;: null,
+     &quot;weekday&quot;: &quot;mardi&quot;
+  @@ -147,3 +136,2 @@
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-18_113000_android&quot;,
+  @@ -158,3 +146,2 @@
+     },
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-18 11:30&quot;,
+  @@ -169,10 +156,5 @@
+     &quot;end&quot;: &quot;2026-10-16 18:16&quot;,
+  -  &quot;group&quot;: null,
+  -  &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+  +  &quot;headset&quot;: false,
+     &quot;id&quot;: &quot;2026-10-16_181500_note&quot;,
+     &quot;participants&quot;: &quot;1 (monologue)&quot;,
+  -  &quot;people&quot;: [],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-16 18:15&quot;,
+  @@ -180,3 +162,2 @@
+     &quot;title&quot;: &quot;Note&quot;,
+  -  &quot;topic&quot;: null,
+     &quot;weekday&quot;: &quot;vendredi&quot;
+  @@ -192,3 +173,2 @@
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-15_090000_reunion&quot;,
+  @@ -198,4 +178,2 @@
+     ],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-15 09:00&quot;,
+  @@ -215,3 +193,2 @@
+     &quot;headset&quot;: false,
+  -  &quot;hidden&quot;: null,
+     &quot;id&quot;: &quot;2026-10-12_100000_zoom&quot;,
+  @@ -221,4 +198,2 @@
+     ],
+  -  &quot;phone&quot;: null,
+  -  &quot;phone_mic&quot;: null,
+     &quot;start&quot;: &quot;2026-10-12 10:00&quot;,
+</pre></details>
+<p class="dz-note">Sortie complète du comparateur : <a href="preuves/compare.txt">preuves/compare.txt</a>.</p>
+<p class="dz-note">Refait le 8 novembre 2026 par <code>python3 scripts/dossiers.py release --depuis v0.24.0 --jusqua main</code>, depuis <code>git log v0.24.0..caae4cd</code>, <code>scripts/compare.sh</code> et le banc Android (<code>testDebugUnitTest</code>), sans prendre l'écran.</p>
+</div></body></html>

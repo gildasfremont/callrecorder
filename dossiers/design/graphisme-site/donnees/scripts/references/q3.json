@@ -1,0 +1,188 @@
+[
+ {
+  "site": "apple",
+  "url": "https://www.apple.com/fr/macbook-air/",
+  "selectionne": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(29, 29, 31)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(29, 29, 31)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(29, 29, 31)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "checked": null
+  },
+  "nonChoisiRepos": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(110, 110, 115)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(29, 29, 31)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(110, 110, 115)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "checked": null
+  },
+  "nonChoisiSurvol": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(66, 66, 69)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(29, 29, 31)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(66, 66, 69)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "checked": null
+  }
+ },
+ {
+  "site": "raycast",
+  "url": "https://www.raycast.com/pricing",
+  "selectionne": {
+   "self": {
+    "bg": "rgba(255, 255, 255, 0.09)",
+    "color": "rgb(255, 255, 255)",
+    "opacity": "1",
+    "boxShadow": "rgba(255, 255, 255, 0.06) 0px 1px 0px 0px inset"
+   },
+   "parent": {
+    "bg": "rgba(255, 255, 255, 0.04)",
+    "color": "rgb(255, 255, 255)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": null,
+   "checked": null
+  },
+  "nonChoisiRepos": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(156, 156, 157)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(255, 255, 255, 0.04)",
+    "color": "rgb(255, 255, 255)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": null,
+   "checked": null
+  },
+  "nonChoisiSurvol": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(255, 255, 255)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(255, 255, 255, 0.04)",
+    "color": "rgb(255, 255, 255)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": null,
+   "checked": null
+  }
+ },
+ {
+  "site": "notion",
+  "url": "https://www.notion.com/fr/pricing",
+  "selectionne": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(0, 0, 0)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "checked": null
+  },
+  "nonChoisiRepos": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "checked": null
+  },
+  "nonChoisiSurvol": {
+   "self": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "parent": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "child": {
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgba(0, 0, 0, 0.5)",
+    "opacity": "1",
+    "boxShadow": "none"
+   },
+   "checked": null
+  }
+ }
+]

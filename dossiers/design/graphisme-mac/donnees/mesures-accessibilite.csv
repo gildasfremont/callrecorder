@@ -1,0 +1,20 @@
+fichier,ligne,sorte,accessibilityLabel,help
+Onboarding.swift,509,bouton d'icône,non,oui
+NotesPane.swift,126,bouton d'icône,non,non
+NotesPane.swift,236,bouton d'icône,non,non
+NotesPane.swift,410,bouton d'icône,oui,oui
+SettingsGuide.swift,105,bouton d'icône,non,oui
+TranscriptReader.swift,533,bouton d'icône,oui,oui
+TranscriptReader.swift,1258,onTapGesture (pas un bouton),oui,non
+TranscriptReader.swift,1963,bouton d'icône,non,non
+StoragePages.swift,147,onTapGesture (pas un bouton),non,non
+SettingsParts.swift,172,onTapGesture (pas un bouton),non,non
+JournalPane.swift,578,bouton d'icône,oui,oui
+ColumnTools.swift,196,bouton d'icône,oui,oui
+CallFacts.swift,214,bouton d'icône,oui,oui
+PeopleView.swift,193,onTapGesture (pas un bouton),oui,non
+Pastille.swift,82,bouton d'icône,oui,oui
+GroupsView.swift,369,onTapGesture (pas un bouton),non,non
+GroupsView.swift,399,bouton d'icône,oui,oui
+GroupsView.swift,436,onTapGesture (pas un bouton),non,non
+GroupsView.swift,555,onTapGesture (pas un bouton),non,non

@@ -1,0 +1,58 @@
+selecteur,ligne
+"img.logo",93
+".nobr",94
+".about .req",98
+".stage .detail",113
+".pair",161
+".pair figure",162
+".pair figcaption",163
+".pair figure > img",164
+".pair figcaption",165
+".pair .times",166
+".pair .times img",167
+".pile",169
+".pile span",170
+".pile span:nth-child(1)",175
+".pile span:nth-child(2)",176
+".pile span:nth-child(4)",177
+".pile span:nth-child(5)",178
+".pile img",179
+".pile .meet img",180
+".pile span:has(img[src*=""encre/""])",182
+".pile img[src*=""encre/""]",183
+".pair figure > img.encre",184
+".pair",187
+".req.warn",198
+".said",199
+".row h3",209
+".row h3:only-child",210
+".intro .req.warn",242
+".intro p.tag",246
+".or",247
+".install .group-label",248
+".cmdline .copied",271
+".download",312
+".download > img",313
+".download div",314
+".download b",315
+".download span",316
+".download .dl",317
+".download .dl::before",318
+".download",319
+".download .dl",319
+".file",320
+".file span",321
+".notes",322
+"footer h3",326
+"footer .signature",328
+".author .bubble .sign",340
+".rec-state.problem",347
+".message.sent .rec-bar, .message.sent textarea, .message.sent .message-actions",378
+".author .message.sent .sent-status",380
+"details.row[open] summary::after",403
+".stage .detail",426
+".stage .detail",432
+"section.tight",461
+".feature figure.plain img",483
+".legal h2",494
+".nav.hidden",517

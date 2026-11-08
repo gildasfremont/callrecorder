@@ -1,0 +1,125 @@
+diff --git a/confidentialite/index.html b/confidentialite/index.html
+index cc16ed0..d194a87 100644
+--- a/confidentialite/index.html
++++ b/confidentialite/index.html
+@@ -46,18 +46,23 @@
+ 
+   <section class="legal">
+     <div class="col">
++      <p class="avant-tout">Pensez à informer vos interlocuteurs de l'enregistrement et à respecter la législation applicable.</p>
++      <h2>Sur votre Mac</h2>
+       <p>L'audio est enregistré et transcrit sur votre Mac. Callrecorder y garde la transcription, des captures de la fenêtre d'appel et le texte qu'elles montrent. Un jour après la transcription, le son d'origine est effacé et une version plus légère reste pour l'écoute, sauf pour les conversations que vous gardez. L'audio part ensuite à la corbeille au bout de 7 jours, une durée réglable, ou, avec la suppression manuelle, sa version légère reste jusqu'à ce que vous la supprimiez. Le reste demeure jusqu'à ce que vous le supprimiez.</p>
+       <p>Votre empreinte de voix, apprise sur vos notes et vos appels au casque, reconnaît vos phrases. Réglages › Paramètres › Reconnaître ma voix la coupe et l'efface, sauf les copies gardées dans le dossier de chaque conversation où elle vous a reconnu. Les voix des autres servent à les distinguer le temps de la transcription&nbsp;: aucune empreinte n'en est gardée.</p>
+-      <p>L'audio ne quitte le Mac que si vous placez le dossier des conversations dans Google Drive, iCloud Drive ou Dropbox, ou si vous y copiez des groupes (Réglages › Intégrations › Base de données externe) : ce service en garde alors une copie.</p>
+       <p>Callrecorder ne lit les messages de WhatsApp que si vous activez Réglages › Intégrations › Vocaux WhatsApp. Il n'y prend que les vocaux que vous vous envoyez à vous-même. macOS vous demande alors d'autoriser l'accès aux données de WhatsApp.</p>
++      <h2>Ce qui part du Mac</h2>
++      <p>L'audio ne quitte le Mac que si vous placez le dossier des conversations dans Google Drive, iCloud Drive ou Dropbox, ou si vous y copiez des groupes (Réglages › Intégrations › Base de données externe) : ce service en garde alors une copie.</p>
+       <p>Claude Code, Claude Desktop et Codex, s'ils sont installés, reçoivent d'office l'accès à vos conversations. Un assistant relié peut lire toutes celles qui ne sont pas gardées hors des IA : transcriptions, texte lu à l'écran, captures. Ce qu'il lit part chez son éditeur, sauf s'il tourne sur votre Mac. Pour couper cet accès : Réglages › Intégrations › Agents.</p>
+       <p>Si Claude Code est connecté à votre compte sur ce Mac, il relit chaque conversation, d'office&nbsp;: la transcription, les captures de la fenêtre d'appel, le texte lu à l'écran, les titres de vos groupes et votre nom partent chez Anthropic, sur votre forfait. Les groupes gardés hors des IA n'y partent pas. Pour couper cette relecture&nbsp;: Réglages › Intégrations › Agents, à la ligne «&nbsp;Améliorer chaque transcription&nbsp;». La transcription, elle, reste faite sur votre Mac.</p>
+       <p><b>Envoyer à Claude</b> ouvre Claude ou ChatGPT avec le passage choisi, les répliques autour et ce qui était à l'écran. Rien ne part sans ce clic.</p>
++      <h2>Ce qui part chez Gildas</h2>
+       <p>Pendant l'installation, trois jours au plus, Callrecorder envoie d'office son journal de fonctionnement à Gildas Frémont pour l'aider à corriger les problèmes : votre nom et vos dossiers y sont masqués, l'audio et les transcriptions n'en font jamais partie. Il s'arrête de lui-même après votre premier appel transcrit. Ensuite, Callrecorder envoie chaque jour la version de l'app et de macOS, un identifiant tiré au hasard et des chiffres : appels enregistrés, ratés, transcrits et lus, leur durée, leur nombre par app. Jamais leur contenu ni leur nom. Ces envois sont gardés 90 jours. Vous pouvez couper ces envois dans les Réglages, à la ligne «&nbsp;Envoyer des informations à Gildas&nbsp;».</p>
+       <p>Si vous laissez un message depuis ce site, il est envoyé à Gildas Frémont et conservé en privé sur un serveur (Vercel, à Paris) jusqu'à ce que son Callrecorder le récupère, puis effacé du serveur. Seuls sont gardés le texte, sa date et une empreinte de votre adresse IP, qui sert à limiter les envois abusifs. Si vous dictez votre message, votre navigateur fait transcrire votre voix par son propre service (Google pour Chrome, Microsoft pour Edge, Apple pour Safari) : seul le texte est envoyé.</p>
++      <h2>Ce site</h2>
+       <p>Pour savoir combien de personnes le visitent et d'où elles viennent, ce site compte ses pages vues, sans cookie : la page, le site d'où vous venez, et si vous copiez la ligne d'installation ou ouvrez le message. Vos visites du jour sont reconnues par une empreinte de votre adresse IP et de votre navigateur, qui change chaque jour et n'est jamais gardée : seuls les totaux du jour le sont, pendant 13 mois.</p>
+       <p>GitHub héberge ce site et les versions de l'app&nbsp;: il voit votre adresse IP quand vous visitez le site ou que Callrecorder cherche une mise à jour. Ce site charge ses polices depuis Google Fonts&nbsp;: Google reçoit aussi votre adresse IP. Au besoin, Callrecorder télécharge ses modèles de voix et de transcription depuis Hugging Face, qui voit alors votre adresse IP.</p>
+-      <p>Pensez à informer vos interlocuteurs de l'enregistrement et à respecter la législation applicable.</p>
++      <p class="mise-a-jour">Mis à jour le 7 novembre 2026</p>
+     </div>
+   </section>
+ 
+diff --git a/fonctionnalites/index.html b/fonctionnalites/index.html
+index efa9b8a..8d89f2f 100644
+--- a/fonctionnalites/index.html
++++ b/fonctionnalites/index.html
+@@ -65,7 +65,7 @@
+       <h2>Claude, Codex et les autres assistants consultent votre mémoire</h2>
+       <p>Demandez à Claude «&nbsp;Qu'est-ce que j'ai promis à Paul jeudi&nbsp;?&nbsp;»&nbsp;: il retrouve l'appel, le lit et vous répond, citations à l'appui. Claude Code, Claude Desktop et Codex (en bêta) sont reliés dès l'installation.</p>
+       <p>Callrecorder est un serveur MCP local&nbsp;: Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles s'y branchent en trois lignes de configuration.</p>
+-      <p class="meta"><a href="../guides/#claude">Donner à Claude l'accès à vos appels</a><a href="../guides/#autre-assistant">Relier un autre assistant</a></p>
++      <p class="meta"><a href="../guides/#claude">Donner à Claude l'accès à vos conversations</a><a href="../guides/#autre-assistant">Relier un autre assistant</a></p>
+     </div>
+     <figure class="strip"><img class="decoupe extrait" src="../img/versions/0.8.0.webp" width="1360" height="382" loading="lazy" alt="La page Claude des Réglages : l'accès de Claude et de Codex à vos appels."></figure>
+   </section>
+@@ -137,7 +137,7 @@
+       <h2>Claude range chaque appel dans le bon groupe</h2>
+       <p>Un groupe réunit les appels qui vont ensemble&nbsp;: un client, un recrutement, le perso. Donnez-lui un sous-titre, et Claude y range les nouveaux appels après chaque conversation.</p>
+       <p>Un groupe peut rester hors des IA&nbsp;: Callrecorder ne montre ses conversations à aucun assistant et ne les copie pas. Si le dossier entier vit en ligne, elles y sont aussi.</p>
+-      <p class="meta"><a href="../guides/#groupes">Ranger vos appels en groupes</a></p>
++      <p class="meta"><a href="../guides/#groupes">Ranger vos conversations en groupes</a></p>
+     </div>
+     <figure class="narrow"><img src="../img/versions/0.12.0.webp" width="1370" height="1194" loading="lazy" alt="Le groupe Équipe produit : ses 5 derniers appels, puis les plus anciens en piles par mois, Octobre et Septembre."></figure>
+   </section>
+@@ -147,7 +147,7 @@
+       <h2>Votre mémoire reste faite de fichiers à vous</h2>
+       <p>Tout est dans un dossier de votre Mac, en Markdown&nbsp;; ce dossier peut vivre dans Google Drive, iCloud Drive ou Dropbox. Une copie de certains groupes peut aussi partir dans un dossier en ligne, avec un index, pour ChatGPT, Zapier ou un script.</p>
+       <p>Chaque transcription s'exporte en texte, Word, Markdown ou sous-titres. Une fois transcrite, une conversation s'allège&nbsp;: une heure de visio passe de 178 à 41&nbsp;Mo. L'audio part à la corbeille au bout de 7 jours, une durée réglable, ou reste jusqu'à ce que vous le supprimiez. Vous pouvez garder celui d'un appel.</p>
+-      <p class="meta"><a href="../guides/#en-ligne">Héberger vos appels en ligne</a><a href="../guides/#exporter">Exporter</a><a href="../guides/#garder-audio">Garder l'audio</a></p>
++      <p class="meta"><a href="../guides/#en-ligne">Héberger vos conversations en ligne</a><a href="../guides/#exporter">Exporter</a><a href="../guides/#garder-audio">Garder l'audio</a></p>
+     </div>
+     <figure class=""><img class="decoupe" srcset="../img/versions/0.11.0-800.webp 800w, ../img/versions/0.11.0-1280.webp 1280w, ../img/versions/0.11.0.webp 2560w" sizes="(max-width: 992px) calc(100vw - 32px), 960px" src="../img/versions/0.11.0.webp" width="2560" height="1578" loading="lazy" alt="Réglages › Intégrations › Base de données externe : une copie des appels dans un dossier en ligne, et ce qu'il y a dans une copie."></figure>
+   </section>
+diff --git a/guides/index.html b/guides/index.html
+index 0d735af..3b91d5d 100644
+--- a/guides/index.html
++++ b/guides/index.html
+@@ -48,7 +48,7 @@
+     <div class="col">
+       <p class="group-label">Démarrer</p>
+       <div class="group">
+-        <details class="row" id="claude"><summary>Donner à Claude l'accès à vos appels</summary><div class="answer">
++        <details class="row" id="claude"><summary>Donner à Claude l'accès à vos conversations</summary><div class="answer">
+           <ol>
+             <li>Si Claude était installé quand vous avez installé Callrecorder, c'est déjà fait. Sinon, dans les Réglages, ouvrez <b>Intégrations › Agents</b> et activez <b>Accès des agents à vos conversations</b> : Claude Code, Claude Desktop et Codex (en bêta) sont reliés à vos appels.</li>
+             <li>Quittez et relancez Claude.</li>
+@@ -56,7 +56,7 @@
+           </ol>
+           <img class="decoupe extrait" width="1370" height="237" src="../img/guides/claude.webp" loading="lazy" alt="La page Agents des Réglages : améliorer chaque transcription, et le modèle de Claude.">
+         </div></details>
+-        <details class="row" id="autre-assistant"><summary>Relier vos appels à un autre assistant</summary><div class="answer">
++        <details class="row" id="autre-assistant"><summary>Relier vos conversations à un autre assistant</summary><div class="answer">
+           <p>Codex est relié comme Claude, sans rien faire&nbsp;; c'est encore une bêta. Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels de la même façon. Callrecorder est un serveur MCP local.</p>
+           <ol>
+             <li>Dans les Réglages de Callrecorder, ouvrez <b>Intégrations › Agents</b>&nbsp;: la partie <b>Autre assistant</b>, en bas, donne la consigne et la configuration.</li>
+@@ -137,11 +137,11 @@
+       </div>
+       <p class="group-label">Ranger et garder</p>
+       <div class="group">
+-        <details class="row" id="groupes"><summary>Ranger vos appels en groupes</summary><div class="answer">
++        <details class="row" id="groupes"><summary>Ranger vos conversations en groupes</summary><div class="answer">
+           <p>Dans les <b>Réglages</b>, ouvrez <b>Groupes</b>. Un groupe réunit des appels qui vont ensemble&nbsp;: un client, un recrutement, le perso. Glissez-y des appels depuis la liste. Chaque groupe montre ses 5 derniers appels&nbsp;; les plus anciens s'empilent par mois, et un clic sur une pile la déplie. Le chevron au bout du titre replie tout le groupe.</p>
+           <p>Donnez un sous-titre à un groupe (menu <b>⋯</b> › <b>Ajouter un sous-titre</b>) pour dire ce qu'il rassemble, par exemple «&nbsp;Refonte de la boutique en ligne, du devis à la mise en ligne&nbsp;». Après chaque appel, Claude s'en sert comme consigne&nbsp;: quand il est sûr, il range l'appel dans le groupe qui lui correspond, et une petite icône Claude le signale, avec sa raison au survol. Il ne touche jamais à un appel que vous avez déjà rangé, et ne voit pas les groupes gardés hors des IA.</p>
+         </div></details>
+-        <details class="row" id="en-ligne"><summary>Héberger vos appels en ligne (Google Drive, iCloud, Dropbox)</summary><div class="answer">
++        <details class="row" id="en-ligne"><summary>Héberger vos conversations en ligne (Google Drive, iCloud, Dropbox)</summary><div class="answer">
+           <p>Par défaut, vos appels sont rangés dans le dossier CallRecordings de votre Mac. Placez ce dossier dans Google Drive, iCloud Drive ou Dropbox : il est alors hébergé en ligne, sauvegardé si votre Mac se perd, et vous retrouvez vos transcriptions sur votre téléphone et vos autres ordinateurs. Pas de compte Callrecorder : c'est votre propre espace en ligne.</p>
+           <ol>
+             <li>Installez l'app du service sur votre Mac, par exemple <a href="https://www.google.com/drive/download/">Google Drive pour ordinateur</a>, et connectez-vous. iCloud Drive est déjà là si vous l'avez activé dans Réglages Système.</li>
+diff --git a/index.html b/index.html
+index 8bc2ac5..838fdf8 100644
+--- a/index.html
++++ b/index.html
+@@ -176,9 +176,8 @@
+   <section class="follow">
+     <ul class="benefits">
+         <li class="o-jack text-right"><div><h3>Une seule installation</h3><p>Une ligne à copier, deux autorisations, celle de l'écran si vous voulez les captures. Ensuite, il démarre avec votre Mac.</p></div><img srcset="img/benefices/jack-600.webp 600w, img/benefices/jack-800.webp 800w, img/benefices/jack-1200.webp 1200w" sizes="(max-width: 640px) 62vw, 320px" src="img/benefices/jack.webp?v=2" width="1200" height="198" loading="lazy" alt="Une fiche jack dessinée à l'encre et à l'aquarelle, qui entre par la gauche et pointe vers le texte."></li>
+-        <li class="o-cassettes"><div><h3>Une mémoire qui se constitue toute seule</h3><p>Zoom, Teams, Meet, FaceTime, WhatsApp et les appels de votre iPhone pris sur le Mac&nbsp;: chaque appel est retenu dès qu'il commence, et transcrit dès qu'il se termine.</p></div><img srcset="img/benefices/cassettes-600.webp 600w, img/benefices/cassettes-800.webp 800w, img/benefices/cassettes-1000.webp 1000w" sizes="(max-width: 640px) 68vw, 380px" src="img/benefices/cassettes.webp?v=3" width="1000" height="746" loading="lazy" alt="Une pile de six cassettes audio dessinées à l'encre et à l'aquarelle ; sur la tranche de chacune, un bout de scotch porte le logo d’une app et le nom de l’appel tapé à la machine : Revue budgétaire sur Teams, Banque Ferrand sur Zoom, Codir du lundi sur Meet, Karim sur WhatsApp, Point produit sur Slack, Banque Aurore sur Teams."></li>
++        <li id="telephones" class="o-cassettes"><div><h3>Une mémoire qui se constitue toute seule</h3><p>Zoom, Teams, Meet, FaceTime, WhatsApp et les appels de votre iPhone pris sur le Mac&nbsp;: chaque appel est retenu dès qu'il commence, et transcrit dès qu'il se termine. Rien à installer sur l'iPhone.</p></div><img srcset="img/benefices/cassettes-600.webp 600w, img/benefices/cassettes-800.webp 800w, img/benefices/cassettes-1000.webp 1000w" sizes="(max-width: 640px) 68vw, 380px" src="img/benefices/cassettes.webp?v=3" width="1000" height="746" loading="lazy" alt="Une pile de six cassettes audio dessinées à l'encre et à l'aquarelle ; sur la tranche de chacune, un bout de scotch porte le logo d’une app et le nom de l’appel tapé à la machine : Revue budgétaire sur Teams, Banque Ferrand sur Zoom, Codir du lundi sur Meet, Karim sur WhatsApp, Point produit sur Slack, Banque Aurore sur Teams."></li>
+         <li id="reunions" class="o-reunion text-right"><div><h3>Ce qui se dit autour d'une table</h3><p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table et cliquez sur Enregistrer une réunion. La conversation rejoint votre mémoire comme un appel.</p></div><img srcset="img/reunion-600.webp 600w, img/reunion-900.webp 900w" sizes="(max-width: 640px) 82vw, 430px" src="img/reunion.webp?v=8" width="900" height="600" loading="lazy" alt="Deux personnes dessinées à l'encre et à l'aquarelle, face à face à une table : lui, en veste bleue, se gratte la tête ; elle, en chemise vermillon, parle avec les mains ; chacun a sa bulle ; sur la table, une bande de papier où leurs lignes alternent dans leurs couleurs."></li>
+-        <li id="telephones" class="o-telephones"><div><h3>Les appels de votre iPhone</h3><p>Prenez-les sur le Mac, ils rejoignent votre mémoire. Rien à installer sur l'iPhone.</p></div></li>
+         <li class="o-telephone text-right"><div><h3>Raccrochez&nbsp;: votre assistant est déjà au courant</h3><p>Demandez ce qui a été promis, décidé ou oublié&nbsp;: Claude, Codex et les autres assistants consultent votre mémoire et vous répondent, avec l'appel et l'heure de chaque citation. Rien à copier-coller.</p></div><img srcset="img/benefices/telephone-600.webp 600w, img/benefices/telephone-800.webp 800w, img/benefices/telephone-1099.webp 1099w" sizes="(max-width: 640px) 55vw, 290px" src="img/benefices/telephone.webp?v=5" width="1099" height="660" loading="lazy" alt="Le haut d'un téléphone dessiné à l'encre et à l'aquarelle, ouvert sur Claude, une question en cours."></li>
+         <li class="o-ordinateur"><div><h3>L'audio reste sur votre Mac</h3><p>La transcription se fait sur place, sans compte ni serveur. L'audio ne part en ligne que si vous y placez vos conversations.</p></div><img srcset="img/benefices/ordinateur-600.webp 600w, img/benefices/ordinateur-800.webp 800w, img/benefices/ordinateur-1200.webp 1200w" sizes="(max-width: 640px) 72vw, 360px" src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l'encre et à l'aquarelle, une liste d'appels à l'écran."></li>
+     </ul>
+diff --git a/style.css b/style.css
+index bc43bb4..5ab54ce 100644
+--- a/style.css
++++ b/style.css
+@@ -474,6 +474,8 @@ footer .links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 24px;
+ footer .links a { color: var(--text); }
+ .legal p { font-size: 17px; color: var(--body); margin: 0 0 16px; }
+ .legal h2 { font-size: 24px; margin: 48px 0 12px; }
++.legal .avant-tout { font-weight: 600; color: var(--text); }
++.legal .mise-a-jour { margin-top: 48px; font-size: 15px; color: var(--secondary); }
+ 
+ /* Fonctionnalités : un menu vertical à gauche, qui reste à l'écran et suit la lecture. Sous 1000 px, il disparaît. */
+ /* Sous 1000 px, le sommaire est une rangée de pastilles collée en haut, qu'on fait défiler du doigt. */

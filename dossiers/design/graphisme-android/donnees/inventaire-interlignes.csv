@@ -1,0 +1,4 @@
+fichier,ligne,valeur,role,contexte
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,326,"0f, 1.15f",,"val said = label("""", 16f).apply { setLineSpacing(0f, 1.15f); setTextIsSelectable(true) }"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SettingsScreen.kt,37,dp(2,,"setLineSpacing(dp(2).toFloat(), 1f)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/SetupScreen.kt,17,"0f, 1.15f",,"private val text = label("""", 15f, look.secondary).apply { gravity = Gravity.CENTER; setLineSpacing(0f, 1.15f) }"

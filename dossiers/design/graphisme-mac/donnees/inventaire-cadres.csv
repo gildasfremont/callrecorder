@@ -1,0 +1,177 @@
+fichier,ligne,extrait,hors_ecran,largeur,hauteur,autre,source
+AddPhone.swift,58,".frame(maxHeight: .infinity, alignment: .top)",,,,maxHeight: .infinity,"maxHeight: .infinity, alignment: .top"
+AddPhone.swift,69,".frame(width: 480, height: 480)",,480,480,,"width: 480, height: 480"
+AddPhone.swift,112,".frame(width: 24, height: 24)",,24,24,,"width: 24, height: 24"
+AddPhone.swift,159,"Image(nsImage: image).interpolation(.none).resizable().frame(width: size, height: size)",,size,size,,"width: size, height: size"
+AddPhone.swift,161,"ProgressView().frame(width: size, height: size)",,size,size,,"width: size, height: size"
+AgentSpend.swift,20,Color.clear.frame(height: 0),,,0,,height: 0
+AskAI.swift,284,".frame(width: 400, alignment: .leading)",,400,,,"width: 400, alignment: .leading"
+AskAI.swift,286,.frame(maxHeight: 420),,,,maxHeight: 420,maxHeight: 420
+CallApps.swift,46,"Image(nsImage: NSWorkspace.shared.icon(forFile: path)).resizable().frame(width: size, height: size)",,size,size,,"width: size, height: size"
+CallApps.swift,49,".frame(width: 38, height: 38)",,38,38,,"width: 38, height: 38"
+CallCard.swift,139,".frame(width: MoreButton.size, height: MoreButton.size)",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+CallCard.swift,303,".frame(width: 22, height: 22)",,22,22,,"width: 22, height: 22"
+CallCard.swift,325,"AppIcon(bundleID: m.bundleID).frame(width: 14, height: 14)",,14,14,,"width: 14, height: 14"
+CallCard.swift,349,"if let logo { CallLogo(meta: logo).frame(width: 20, height: 20) }",,20,20,,"width: 20, height: 20"
+CallCard.swift,353,".frame(width: Thumb.row.width, height: Thumb.row.height)",,Thumb.row.width,Thumb.row.height,,"width: Thumb.row.width, height: Thumb.row.height"
+CallFacts.swift,41,".frame(maxWidth: TranscriptReaderView.readingWidth, alignment: .leading)",,,,maxWidth: TranscriptReaderView.readingWidth,"maxWidth: TranscriptReaderView.readingWidth, alignment: .leading"
+CallFacts.swift,44,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+CallFacts.swift,52,".frame(minWidth: 360, minHeight: 420)",,,,minWidth: 360;minHeight: 420,"minWidth: 360, minHeight: 420"
+CallFacts.swift,211,"icon: AnyView(Image(systemName: icon(e)).font(.system(size: 13)).foregroundStyle(.secondary).frame(width: 22, height: 22).accessibilityHidden(true))) {",,22,22,,"width: 22, height: 22"
+CallsWindow.swift,32,.frame(maxHeight: .infinity),,,,maxHeight: .infinity,maxHeight: .infinity
+CallsWindow.swift,50,.frame(width: model.listWidth),,model.listWidth,,,width: model.listWidth
+CallsWindow.swift,53,".frame(width: model.sidebarShown ? model.listWidth : 0, alignment: .trailing)",,model.sidebarShown ? model.listWidth : 0,,,"width: model.sidebarShown ? model.listWidth : 0, alignment: .trailing"
+CallsWindow.swift,60,.frame(width: model.listWidth).ignoresSafeArea(),,model.listWidth,,,width: model.listWidth
+CallsWindow.swift,64,".frame(maxWidth: .infinity, maxHeight: .infinity)",,,,maxWidth: .infinity;maxHeight: .infinity,"maxWidth: .infinity, maxHeight: .infinity"
+CallsWindow.swift,84,".frame(minWidth: 900, minHeight: 520)",,,,minWidth: 900;minHeight: 520,"minWidth: 900, minHeight: 520"
+CallsWindow.swift,99,".frame(maxWidth: .infinity, alignment: .center)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .center"
+CallsWindow.swift,124,".frame(maxWidth: .infinity, alignment: .center)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .center"
+CallsWindow.swift,270,.frame(width: Self.width),,Self.width,,,width: Self.width
+CallsWindow.swift,271,.frame(maxHeight: .infinity),,,,maxHeight: .infinity,maxHeight: .infinity
+CaptureViewer.swift,134,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+CaptureViewer.swift,135,".frame(height: max(240, g.size.height * 0.72))",,,max(240,,"height: max(240, g.size.height * 0.72)"
+CaptureViewer.swift,145,".frame(minWidth: 360, minHeight: 420)",,,,minWidth: 360;minHeight: 420,"minWidth: 360, minHeight: 420"
+CaptureViewer.swift,179,".frame(width: Thumb.strip.width, height: Thumb.strip.height)",,Thumb.strip.width,Thumb.strip.height,,"width: Thumb.strip.width, height: Thumb.strip.height"
+CaptureViewer.swift,200,.frame(width: Thumb.strip.width + 32),,Thumb.strip.width + 32,,,width: Thumb.strip.width + 32
+CaptureViewer.swift,227,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+CaptureViewer.swift,243,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+CaptureViewer.swift,248,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+ClaudeReceipt.swift,41,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+ColumnTools.swift,74,".frame(width: width, alignment: .leading)",,width,,,"width: width, alignment: .leading"
+ColumnTools.swift,108,".frame(width: full, alignment: .leading)",,full,,,"width: full, alignment: .leading"
+ColumnTools.swift,109,".frame(width: width, alignment: .leading)",,width,,,"width: width, alignment: .leading"
+ColumnTools.swift,113,.frame(height: BarIconSize.round),,,BarIconSize.round,,height: BarIconSize.round
+ColumnTools.swift,114,".frame(maxWidth: .infinity, alignment: .trailing)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .trailing"
+ColumnTools.swift,158,".frame(width: BarIconSize.round, height: BarIconSize.round)",,BarIconSize.round,BarIconSize.round,,"width: BarIconSize.round, height: BarIconSize.round"
+ColumnTools.swift,172,".frame(width: BarIconSize.cartouche.width, height: BarIconSize.cartouche.height))",,BarIconSize.cartouche.width,BarIconSize.cartouche.height,,"width: BarIconSize.cartouche.width, height: BarIconSize.cartouche.height"
+ColumnTools.swift,199,".frame(width: BarIconSize.cartouche.width, height: BarIconSize.cartouche.height)",,BarIconSize.cartouche.width,BarIconSize.cartouche.height,,"width: BarIconSize.cartouche.width, height: BarIconSize.cartouche.height"
+Coverage.swift,82,"Image(systemName: ""exclamationmark.triangle"").font(.system(size: 15)).frame(width: 24)",,24,,,width: 24
+DotCalendar.swift,47,".frame(maxWidth: .infinity, maxHeight: .infinity)",,,,maxWidth: .infinity;maxHeight: .infinity,"maxWidth: .infinity, maxHeight: .infinity"
+DotCalendar.swift,73,if let day = cells[i] { cell(day) } else { Color.clear.frame(height: 32) },,,32,,height: 32
+DotCalendar.swift,93,"ForEach(0..<min(n, 2), id: \.self) { _ in Circle().frame(width: 5, height: 5) }",,5,5,,"width: 5, height: 5"
+DotCalendar.swift,96,.frame(height: 6),,,6,,height: 6
+DotCalendar.swift,98,".frame(maxWidth: .infinity, minHeight: 32)",,,,maxWidth: .infinity;minHeight: 32,"maxWidth: .infinity, minHeight: 32"
+EmptyCalls.swift,32,"Circle().fill(Palette.warning).frame(width: 8, height: 8).padding(.horizontal, 3).accessibilityHidden(true)",,8,8,,"width: 8, height: 8"
+EmptyCalls.swift,39,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+ExportPage.swift,98,"TextField(""https://…"", text: $model.url).textFieldStyle(.roundedBorder).frame(width: 320).onSubmit(model.save)",,320,,,width: 320
+ExportPage.swift,101,"SecureField(""Facultatif"", text: $model.secret).textFieldStyle(.roundedBorder).frame(width: 320).onSubmit(model.save)",,320,,,width: 320
+GroupsView.swift,92,.frame(height: BarIconSize.cartouche.height),,,BarIconSize.cartouche.height,,height: BarIconSize.cartouche.height
+GroupsView.swift,267,".frame(maxWidth: 728, alignment: .leading)",,,,maxWidth: 728,"maxWidth: 728, alignment: .leading"
+GroupsView.swift,268,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+GroupsView.swift,388,"Image(systemName: ""ellipsis"").frame(width: MoreButton.size, height: MoreButton.size).contentShape(Circle())",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+GroupsView.swift,403,".frame(width: 22, height: 22)",,22,22,,"width: 22, height: 22"
+GroupsView.swift,413,.frame(height: 30),,,30,,height: 30
+GroupsView.swift,444,".frame(maxWidth: .infinity, minHeight: 48)",,,,maxWidth: .infinity;minHeight: 48,"maxWidth: .infinity, minHeight: 48"
+GroupsView.swift,558,"if let icon = Self.claudeIcon { Image(nsImage: icon).resizable().frame(width: 16, height: 16) }",,16,16,,"width: 16, height: 16"
+GroupsView.swift,561,".frame(width: 24, height: 24)",,24,24,,"width: 24, height: 24"
+GroupsView.swift,567,"Label(""Retirer du groupe"", systemImage: ""minus.circle"").labelStyle(.iconOnly).frame(width: 24, height: 24)",,24,24,,"width: 24, height: 24"
+GroupsView.swift,655,".frame(width: Thumb.row.width, height: Thumb.row.height, alignment: .bottomLeading)",,Thumb.row.width,Thumb.row.height,,"width: Thumb.row.width, height: Thumb.row.height, alignment: .bottomLeading"
+JournalPane.swift,207,".frame(maxWidth: TranscriptReaderView.readingWidth, alignment: .leading)",,,,maxWidth: TranscriptReaderView.readingWidth,"maxWidth: TranscriptReaderView.readingWidth, alignment: .leading"
+JournalPane.swift,210,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+JournalPane.swift,429,".frame(width: JournalRow.clock, alignment: .leading)",,JournalRow.clock,,,"width: JournalRow.clock, alignment: .leading"
+JournalPane.swift,439,".frame(width: JournalRow.clock, alignment: .leading)",,JournalRow.clock,,,"width: JournalRow.clock, alignment: .leading"
+JournalPane.swift,500,".frame(width: JournalRow.clock, height: Reading.size + Reading.spacing, alignment: .leading)",,JournalRow.clock,Reading.size + Reading.spacing,,"width: JournalRow.clock, height: Reading.size + Reading.spacing, alignment: .lea"
+JournalPane.swift,533,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+JournalPane.swift,563,.frame(width: 10),,10,,,width: 10
+JournalPane.swift,656,".frame(width: Self.band + 8, height: 3)",,Self.band + 8,3,,"width: Self.band + 8, height: 3"
+JournalPane.swift,660,"Color.clear.frame(width: 1, height: 1)",,1,1,,"width: 1, height: 1"
+JournalPane.swift,687,.frame(width: Self.width),,Self.width,,,width: Self.width
+JournalPane.swift,699,".frame(width: Self.labels - 4, alignment: .trailing)",,Self.labels - 4,,,"width: Self.labels - 4, alignment: .trailing"
+KindThumb.swift,45,".frame(width: Thumb.row.width * scale, height: Thumb.row.height * scale)",,Thumb.row.width * scale,Thumb.row.height * scale,,"width: Thumb.row.width * scale, height: Thumb.row.height * scale"
+KindThumb.swift,78,"Capsule().fill(.black).frame(width: 10, height: 3.5).padding(.top, 7)",,10,3.5,,"width: 10, height: 3.5"
+KindThumb.swift,80,"Circle().fill(.black).frame(width: 3.5, height: 3.5).padding(.top, 7)",,3.5,3.5,,"width: 3.5, height: 3.5"
+LevelMeter.swift,44,".frame(width: w, height: max(CGFloat(levels[i]) * geo.size.height, 2))",,w,max(CGFloat(levels[i]) * geo.size.height,,"width: w, height: max(CGFloat(levels[i]) * geo.size.height, 2)"
+LevelMeter.swift,47,".frame(maxWidth: .infinity, maxHeight: .infinity)",,,,maxWidth: .infinity;maxHeight: .infinity,"maxWidth: .infinity, maxHeight: .infinity"
+NotesPane.swift,70,".frame(maxWidth: TranscriptReaderView.readingWidth, alignment: .leading)",,,,maxWidth: TranscriptReaderView.readingWidth,"maxWidth: TranscriptReaderView.readingWidth, alignment: .leading"
+NotesPane.swift,73,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+NotesPane.swift,80,".frame(maxWidth: .infinity, alignment: .trailing)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .trailing"
+NotesPane.swift,133,".frame(width: MoreButton.size, height: MoreButton.size)",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+NotesPane.swift,148,".frame(width: MoreButton.size, height: MoreButton.size)",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+NotesPane.swift,164,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+NotesPane.swift,195,"CallLogo(meta: e.call).frame(width: 20, height: 20)",,20,20,,"width: 20, height: 20"
+NotesPane.swift,242,".frame(width: MoreButton.size, height: MoreButton.size)",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+NotesPane.swift,256,".frame(width: MoreButton.size, height: MoreButton.size)",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+NotesPane.swift,271,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+NotesPane.swift,275,"CallLogo(meta: n.call).frame(width: 14, height: 14)",,14,14,,"width: 14, height: 14"
+NotesPane.swift,361,"Circle().fill(Palette.live).frame(width: 9, height: 9)",,9,9,,"width: 9, height: 9"
+NotesPane.swift,362,".frame(width: 26, height: 26)",,26,26,,"width: 26, height: 26"
+NotesPane.swift,365,"LevelBars(levels: meter.levels, tint: Palette.live).frame(width: 140, height: 16)",,140,16,,"width: 140, height: 16"
+NotesPane.swift,376,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+NotesPane.swift,414,".frame(width: 46, height: 46)",,46,46,,"width: 46, height: 46"
+NotesPane.swift,449,.frame(minWidth: 22),,,,minWidth: 22,minWidth: 22
+Onboarding.swift,17,".frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)",,,,maxWidth: .infinity;maxHeight: .infinity,"maxWidth: .infinity, maxHeight: .infinity, alignment: .top"
+Onboarding.swift,206,.frame(maxWidth: 680),,,,maxWidth: 680,maxWidth: 680
+Onboarding.swift,207,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+Onboarding.swift,229,"AnyView(Image(systemName: symbol).font(.system(size: 15)).foregroundStyle(.tint).frame(width: 22, height: 22).accessibilityHidden(true))",,22,22,,"width: 22, height: 22"
+Onboarding.swift,464,"Image(nsImage: image).resizable().interpolation(.high).frame(width: 22, height: 22)",,22,22,,"width: 22, height: 22"
+Onboarding.swift,466,"Image(systemName: site.symbol).font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22, height: 22)",,22,22,,"width: 22, height: 22"
+Onboarding.swift,542,.frame(maxWidth: 680),,,,maxWidth: 680,maxWidth: 680
+Onboarding.swift,543,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+Onboarding.swift,631,".frame(width: 22, height: 22)",,22,22,,"width: 22, height: 22"
+Onboarding.swift,682,.frame(width: 260),,260,,,width: 260
+Onboarding.swift,792,".padding(10).frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+Pastille.swift,84,".frame(width: PastilleController.height - 4, height: PastilleController.height - 4)",,PastilleController.height - 4,PastilleController.height - 4,,"width: PastilleController.height - 4, height: PastilleController.height - 4"
+PeopleView.swift,101,".frame(maxWidth: 728, alignment: .leading)",,,,maxWidth: 728,"maxWidth: 728, alignment: .leading"
+PeopleView.swift,102,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+PeopleView.swift,373,".frame(width: MoreButton.size, height: MoreButton.size)",,MoreButton.size,MoreButton.size,,"width: MoreButton.size, height: MoreButton.size"
+RecordingsPanel.swift,52,Image(systemName: icon).font(.system(size: BarIconSize.font)).frame(width: 24),,24,,,width: 24
+RecordingsPanel.swift,59,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+RecordingsPanel.swift,106,".frame(width: Self.size.width, height: Self.size.height)",,Self.size.width,Self.size.height,,"width: Self.size.width, height: Self.size.height"
+SettingsGuide.swift,97,".resizable().frame(width: 40, height: 40)",,40,40,,"width: 40, height: 40"
+SettingsGuide.swift,107,".frame(width: 22, height: 22).contentShape(Circle())",,22,22,,"width: 22, height: 22"
+SettingsGuide.swift,112,".frame(width: 380, height: 72)",,380,72,,"width: 380, height: 72"
+SettingsParts.swift,165,.frame(minHeight: 40),,,,minHeight: 40,minHeight: 40
+SettingsParts.swift,195,"if let image { Image(nsImage: image).resizable().frame(width: 16, height: 16) }",,16,16,,"width: 16, height: 16"
+SettingsParts.swift,196,"else if let icon { Image(systemName: icon).font(.caption.bold()) } else { Circle().fill(tone == .secondary ? Color.secondary : tone).frame(width: 7, height: 7) ",,7,7,,"width: 7, height: 7"
+SignalsView.swift,110,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+StoragePages.swift,74,"Color.clear.frame(height: 0).alert(asked.map(confirmTitle) ?? """", isPresented: Binding(get: { asked != nil }, set: { if !$0 { asked = nil } }), presenting: aske",,,0,,height: 0
+StoragePages.swift,142,"Rectangle().fill(Color.accentColor).frame(width: width * CGFloat(gain) / CGFloat(max(1, bytes)))",,width * CGFloat(gain) / CGFloat(max(1,,,"width: width * CGFloat(gain) / CGFloat(max(1, bytes))"
+StoragePages.swift,145,.frame(width: width),,width,,,width: width
+StoragePages.swift,152,.frame(height: StorageBar.height),,,StorageBar.height,,height: StorageBar.height
+TranscriptReader.swift,506,.frame(height: 30),,,30,,height: 30
+TranscriptReader.swift,514,.frame(height: 30),,,30,,height: 30
+TranscriptReader.swift,536,".frame(width: 22, height: 22)",,22,22,,"width: 22, height: 22"
+TranscriptReader.swift,546,".frame(width: 72, alignment: .leading)",,72,,,"width: 72, alignment: .leading"
+TranscriptReader.swift,550,.frame(height: 20),,,20,,height: 20
+TranscriptReader.swift,563,".frame(width: BarIconSize.round, height: BarIconSize.round)",,BarIconSize.round,BarIconSize.round,,"width: BarIconSize.round, height: BarIconSize.round"
+TranscriptReader.swift,674,".frame(minWidth: 360, minHeight: 520)",,,,minWidth: 360;minHeight: 520,"minWidth: 360, minHeight: 520"
+TranscriptReader.swift,730,".frame(maxWidth: .infinity, alignment: .trailing)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .trailing"
+TranscriptReader.swift,767,"if let icon = ClaudeSetup.desktopIcon { Image(nsImage: icon).resizable().frame(width: 16, height: 16) }",,16,16,,"width: 16, height: 16"
+TranscriptReader.swift,921,".frame(width: g.size.width, alignment: .leading)",,g.size.width,,,"width: g.size.width, alignment: .leading"
+TranscriptReader.swift,922,".frame(width: open ? g.size.width : BarIconSize.round, alignment: .leading)",,open ? g.size.width : BarIconSize.round,,,"width: open ? g.size.width : BarIconSize.round, alignment: .leading"
+TranscriptReader.swift,925,".frame(maxWidth: .infinity, alignment: .trailing)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .trailing"
+TranscriptReader.swift,927,.frame(height: BarIconSize.round),,,BarIconSize.round,,height: BarIconSize.round
+TranscriptReader.swift,1008,".frame(maxWidth: .infinity, maxHeight: .infinity)",,,,maxWidth: .infinity;maxHeight: .infinity,"maxWidth: .infinity, maxHeight: .infinity"
+TranscriptReader.swift,1038,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+TranscriptReader.swift,1074,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+TranscriptReader.swift,1090,Rectangle().fill(Color.primary.opacity(0.1)).frame(height: 1),,,1,,height: 1
+TranscriptReader.swift,1108,".frame(maxWidth: Self.readingWidth, alignment: .leading)",,,,maxWidth: Self.readingWidth,"maxWidth: Self.readingWidth, alignment: .leading"
+TranscriptReader.swift,1111,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+TranscriptReader.swift,1217,".frame(width: 32, alignment: .leading)",,32,,,"width: 32, alignment: .leading"
+TranscriptReader.swift,1254,".frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+TranscriptReader.swift,1342,".frame(width: 32, height: 32)",,32,32,,"width: 32, height: 32"
+TranscriptReader.swift,1387,".frame(width: Thumb.transcript.width, height: Thumb.transcript.height)",,Thumb.transcript.width,Thumb.transcript.height,,"width: Thumb.transcript.width, height: Thumb.transcript.height"
+TranscriptReader.swift,1392,".frame(width: Thumb.transcript.width, height: Thumb.transcript.height)",,Thumb.transcript.width,Thumb.transcript.height,,"width: Thumb.transcript.width, height: Thumb.transcript.height"
+TranscriptReader.swift,1410,".frame(width: 32, height: 32)",,32,32,,"width: 32, height: 32"
+TranscriptReader.swift,1449,".textSelection(.enabled).frame(maxWidth: .infinity, alignment: .leading)",,,,maxWidth: .infinity,"maxWidth: .infinity, alignment: .leading"
+TranscriptReader.swift,1587,".frame(maxWidth: TranscriptReaderView.readingWidth, alignment: .leading)",,,,maxWidth: TranscriptReaderView.readingWidth,"maxWidth: TranscriptReaderView.readingWidth, alignment: .leading"
+TranscriptReader.swift,1590,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+TranscriptReader.swift,1623,".frame(width: BarIconSize.round, height: BarIconSize.round, alignment: .center)",,BarIconSize.round,BarIconSize.round,,"width: BarIconSize.round, height: BarIconSize.round, alignment: .center"
+TranscriptReader.swift,1671,.frame(height: BarIconSize.round),,,BarIconSize.round,,height: BarIconSize.round
+TranscriptReader.swift,1732,".frame(maxWidth: TranscriptReaderView.readingWidth, alignment: .leading)",,,,maxWidth: TranscriptReaderView.readingWidth,"maxWidth: TranscriptReaderView.readingWidth, alignment: .leading"
+TranscriptReader.swift,1735,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+TranscriptReader.swift,1745,"RoundedRectangle(cornerRadius: 4).fill(fill(scheme)).frame(width: width, height: height)",,width,height,,"width: width, height: height"
+TranscriptReader.swift,1747,"static func dot(_ scheme: ColorScheme, size: CGFloat) -> some View { Circle().fill(fill(scheme)).frame(width: size, height: size) }",,size,size,,"width: size, height: size"
+TranscriptReader.swift,1775,".frame(width: 30, height: 30)",,30,30,,"width: 30, height: 30"
+TranscriptReader.swift,1837,".frame(maxWidth: TranscriptReaderView.readingWidth, alignment: .leading)",,,,maxWidth: TranscriptReaderView.readingWidth,"maxWidth: TranscriptReaderView.readingWidth, alignment: .leading"
+TranscriptReader.swift,1840,.frame(maxWidth: .infinity),,,,maxWidth: .infinity,maxWidth: .infinity
+TranscriptReader.swift,1849,".frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)",,,,maxWidth: .infinity;maxHeight: .infinity,"maxWidth: .infinity, maxHeight: .infinity, alignment: .top"
+TranscriptReader.swift,1880,".frame(width: Thumb.transcript.width, height: Thumb.transcript.height)",,Thumb.transcript.width,Thumb.transcript.height,,"width: Thumb.transcript.width, height: Thumb.transcript.height"
+TranscriptReader.swift,1903,Image(systemName: icon).font(.caption).foregroundStyle(tint).frame(width: 14),,14,,,width: 14
+TranscriptReader.swift,1904,"Text(label).font(.caption).foregroundStyle(.secondary).lineLimit(1).frame(width: 110, alignment: .leading)",,110,,,"width: 110, alignment: .leading"
+TranscriptReader.swift,1905,"LevelBars(levels: levels, tint: tint).frame(height: 12)",,,12,,height: 12
+TranscriptReader.swift,1967,".frame(width: size, height: size)",,size,size,,"width: size, height: size"
+TranscriptReader.swift,1986,".frame(width: Self.sheet.width, height: Self.sheet.height)",,Self.sheet.width,Self.sheet.height,,"width: Self.sheet.width, height: Self.sheet.height"
+TranscriptReader.swift,1995,".frame(width: Self.sheet.width, height: Self.sheet.height)",,Self.sheet.width,Self.sheet.height,,"width: Self.sheet.width, height: Self.sheet.height"
+TranscriptReader.swift,1997,".frame(width: Self.sheet.width + 5, height: Self.sheet.height + 5, alignment: .bottomLeading)",,Self.sheet.width + 5,Self.sheet.height + 5,,"width: Self.sheet.width + 5, height: Self.sheet.height + 5, alignment: .bottomLe"
+WindowBar.swift,65,"if let logo { logo.frame(width: 20, height: 20) }",,20,20,,"width: 20, height: 20"

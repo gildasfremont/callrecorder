@@ -1,0 +1,16 @@
+valeur,occurrences,nomme
+Card.radius,15,oui
+Thumb.radius,11,oui
+8,6,non
+Row.radius,6,oui
+10,5,non
+radius,4,oui
+3,2,non
+4,2,non
+StorageBar.radius,2,oui
+2.5,2,non
+9,1,non
+2,1,non
+Thumb.radius * scale,1,oui
+6,1,non
+Self.radius,1,oui

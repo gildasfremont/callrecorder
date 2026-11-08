@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relecture UX Mac</title>
+<style>
+:root {
+  --bg: #f5f5f7; --paper: #ffffff; --ink: #1d1d1f; --muted: #6e6e73; --faint: #a1a1a6;
+  --line: rgba(0,0,0,.10); --card: rgba(0,0,0,.05); --chosen: rgba(0,0,0,.10);
+  --menu: #f2f2f2; --shadow: 0 8px 28px rgba(0,0,0,.16), 0 0 0 .5px rgba(0,0,0,.18);
+  --accent: #0a66d9; --live: #c41e14; --warn: #a0470a; --ok: #147333;
+  --gene-bg: #fbe9dc; --gene-ink: #8a3c00; --det-bg: #e9e9ee; --det-ink: #4a4a50;
+  --mark: rgba(255, 196, 0, .35); --del: rgba(196, 30, 20, .12);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1c1e; --paper: #262628; --ink: #f2f2f7; --muted: #a1a1a6; --faint: #6e6e73;
+    --line: rgba(255,255,255,.14); --card: rgba(255,255,255,.06); --chosen: rgba(255,255,255,.12);
+    --menu: #333336; --shadow: 0 8px 28px rgba(0,0,0,.5), 0 0 0 .5px rgba(255,255,255,.18);
+    --accent: #3b8ef0; --live: #ff453a; --warn: #ff9f0a; --ok: #30d158;
+    --gene-bg: #4a2c14; --gene-ink: #ffc58f; --det-bg: #3a3a3e; --det-ink: #d0d0d6;
+    --mark: rgba(255, 196, 0, .25); --del: rgba(255, 69, 58, .18);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1c1c1e; --paper: #262628; --ink: #f2f2f7; --muted: #a1a1a6; --faint: #6e6e73;
+  --line: rgba(255,255,255,.14); --card: rgba(255,255,255,.06); --chosen: rgba(255,255,255,.12);
+  --menu: #333336; --shadow: 0 8px 28px rgba(0,0,0,.5), 0 0 0 .5px rgba(255,255,255,.18);
+  --accent: #3b8ef0; --live: #ff453a; --warn: #ff9f0a; --ok: #30d158;
+  --gene-bg: #4a2c14; --gene-ink: #ffc58f; --det-bg: #3a3a3e; --det-ink: #d0d0d6;
+  --mark: rgba(255, 196, 0, .25); --del: rgba(255, 69, 58, .18);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+main { max-width: 960px; margin: 0 auto; padding: 32px 16px 80px; }
+h1 { font-size: 30px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -.01em; }
+h2 { font-size: 21px; margin: 48px 0 12px; padding-top: 8px; }
+h3 { font-size: 17px; margin: 0; line-height: 1.3; }
+p { margin: 0 0 10px; }
+a { color: var(--accent); }
+code { font: 12.5px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--card); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.sub { color: var(--muted); margin-bottom: 24px; }
+.intro { background: var(--paper); border-radius: 14px; padding: 18px 20px; border: 1px solid var(--line); }
+.intro ul { margin: 6px 0 0; padding-left: 20px; }
+.top5 { counter-reset: t; list-style: none; padding: 0; margin: 10px 0 0; }
+.top5 li { counter-increment: t; padding: 6px 0 6px 34px; position: relative; }
+.top5 li::before { content: counter(t); position: absolute; left: 0; top: 6px; width: 24px; height: 24px; border-radius: 12px;
+  background: var(--accent); color: #fff; font-weight: 600; font-size: 13px; text-align: center; line-height: 24px; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 0; }
+nav.toc a { font-size: 13px; text-decoration: none; background: var(--card); color: var(--ink); padding: 3px 10px; border-radius: 99px; }
+
+.reco { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; margin: 14px 0; }
+.reco > header { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 10px; }
+.reco .n { flex: none; width: 30px; height: 30px; border-radius: 15px; background: var(--ink); color: var(--paper);
+  font-weight: 700; font-size: 14px; text-align: center; line-height: 30px; }
+.reco header .h { flex: 1 1 300px; min-width: 0; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+.tag { font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 99px; background: var(--det-bg); color: var(--det-ink); }
+.tag.gene { background: var(--gene-bg); color: var(--gene-ink); }
+.tag.axe { background: transparent; border: 1px solid var(--line); color: var(--muted); font-weight: 500; }
+dl { display: grid; grid-template-columns: 110px 1fr; gap: 6px 14px; margin: 0 0 14px; }
+dt { color: var(--muted); font-size: 13px; padding-top: 2px; }
+dd { margin: 0; min-width: 0; }
+@media (max-width: 620px) { dl { grid-template-columns: 1fr; gap: 2px; } dt { padding-top: 8px; } }
+.contre { border-left: 3px solid var(--warn); padding: 4px 0 4px 12px; margin: 0 0 14px; font-size: 14px; }
+
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 720px) { .ba { grid-template-columns: 1fr; } }
+.ba figure { margin: 0; background: var(--bg); border-radius: 10px; padding: 12px; min-width: 0; overflow: hidden; }
+.ba figcaption { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; margin-bottom: 8px; }
+.ba figure.after figcaption { color: var(--ok); }
+.note { font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+
+/* Recadrage d'une capture (coordonnées sur une largeur de 1300) */
+.shot { position: relative; overflow: hidden; border-radius: 8px; width: var(--w); max-width: 100%; height: var(--h);
+  box-shadow: 0 0 0 1px var(--line); background: #fff; }
+.shot img { position: absolute; max-width: none; width: calc(1300px * var(--s));
+  left: calc(var(--x) * -1px * var(--s)); top: calc(var(--y) * -1px * var(--s)); }
+
+/* Pièces de maquette */
+.ui { font: 13px/1.35 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+.win { background: var(--paper); border-radius: 10px; box-shadow: 0 0 0 1px var(--line); overflow: hidden; }
+.bar { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-bottom: 1px solid var(--line); min-height: 36px; }
+.dots { display: flex; gap: 6px; } .dots i { width: 10px; height: 10px; border-radius: 5px; background: var(--faint); opacity: .5; display: block; }
+.ttl { font-weight: 600; }
+.menu { background: var(--menu); border-radius: 8px; box-shadow: var(--shadow); padding: 5px; width: 100%; max-width: 300px; }
+.mi { display: flex; justify-content: space-between; gap: 12px; padding: 2px 10px 2px 22px; border-radius: 4px; position: relative; white-space: nowrap; }
+.mi .k { color: var(--muted); font-feature-settings: "tnum"; }
+.mi.dis { color: var(--faint); }
+.mi.on::before { content: "✓"; position: absolute; left: 7px; }
+.mi.hl { background: var(--accent); color: #fff; } .mi.hl .k { color: rgba(255,255,255,.8); }
+.mi.more::after { content: "›"; color: var(--muted); }
+.mi.new { background: var(--mark); }
+.msep { height: 1px; background: var(--line); margin: 5px 10px; }
+.mhead { font-size: 11px; color: var(--muted); padding: 4px 10px 1px; font-weight: 600; }
+.menubar { display: flex; gap: 14px; padding: 4px 10px; background: var(--card); border-radius: 6px; margin-bottom: 6px; font-weight: 500; flex-wrap: wrap; }
+.menubar b { font-weight: 700; }
+.menubar .open { background: var(--accent); color: #fff; padding: 0 6px; border-radius: 4px; }
+.sg { background: var(--card); border-radius: 12px; padding: 2px 12px; }
+.sr { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 9px 0; }
+.sr + .sr { border-top: 0; }
+.sr .t { font-size: 13px; } .sr .d { font-size: 11.5px; color: var(--muted); }
+.sr .r { flex: none; display: flex; gap: 8px; align-items: center; color: var(--muted); }
+.gh { font-weight: 600; font-size: 13px; margin: 12px 0 6px 4px; display: flex; justify-content: space-between; gap: 10px; }
+.gh .x { font-weight: 400; color: var(--muted); }
+.foot { font-size: 11.5px; color: var(--muted); margin: 6px 4px 0; }
+.btn { display: inline-block; background: var(--chosen); border-radius: 6px; padding: 2px 10px; font-size: 13px; white-space: nowrap; }
+.btn.def { background: var(--accent); color: #fff; }
+.btn.red { color: var(--live); }
+.pop { display: inline-flex; align-items: center; gap: 6px; background: var(--chosen); border-radius: 6px; padding: 2px 8px; white-space: nowrap; }
+.pop::after { content: "⌃⌄"; font-size: 9px; letter-spacing: -2px; color: var(--muted); writing-mode: vertical-lr; }
+.tg { flex: none; width: 30px; height: 18px; border-radius: 9px; background: var(--accent); position: relative; display: inline-block; }
+.tg::after { content: ""; position: absolute; right: 2px; top: 2px; width: 14px; height: 14px; border-radius: 7px; background: #fff; }
+.tg.off { background: var(--chosen); } .tg.off::after { right: auto; left: 2px; }
+.link { color: var(--accent); }
+.chev { color: var(--faint); }
+.row { display: flex; gap: 10px; align-items: center; padding: 6px 8px; border-radius: 8px; }
+.row.sel { background: var(--chosen); }
+.thumb { flex: none; width: 48px; height: 30px; border-radius: 5px; background: var(--card); box-shadow: 0 0 0 1px var(--line);
+  display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.row .t { font-size: 13px; } .row .d { font-size: 11.5px; color: var(--muted); }
+.app { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 6px; color: #fff; font-weight: 700; font-size: 11px; flex: none; }
+.app.wa { background: #25d366; } .app.ft { background: #34c759; } .app.ch { background: conic-gradient(#ea4335 0 33%, #fbbc05 0 66%, #34a853 0); }
+.app.tm { background: #5b5fc7; } .app.cr { background: var(--ink); color: var(--paper); }
+.empty { text-align: center; padding: 26px 10px; color: var(--muted); }
+.empty .ic { font-size: 30px; opacity: .55; line-height: 1; }
+.empty .big { font-size: 19px; font-weight: 700; color: var(--muted); margin: 8px 0 4px; }
+.banner { display: flex; gap: 8px; align-items: center; padding: 7px 10px; border-radius: 8px; background: var(--del); font-size: 12.5px; }
+.notif { display: flex; gap: 10px; background: var(--menu); border-radius: 14px; box-shadow: var(--shadow); padding: 10px 12px; max-width: 360px; }
+.notif .t { font-weight: 600; } .notif .d { color: var(--ink); opacity: .85; }
+.notif .acts { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.pill { display: inline-flex; align-items: center; gap: 8px; background: var(--menu); border-radius: 99px; box-shadow: var(--shadow); padding: 6px 12px; }
+.rec { width: 8px; height: 8px; border-radius: 4px; background: var(--live); display: inline-block; flex: none; }
+.ic-b { width: 28px; height: 28px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; }
+.av { flex: none; width: 28px; height: 28px; border-radius: 14px; background: var(--card); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: var(--muted); }
+.line { display: flex; gap: 10px; margin: 8px 0; }
+.line .nm { font-weight: 600; font-size: 12.5px; } .line .tm { color: var(--muted); font-size: 11.5px; font-weight: 400; margin-left: 6px; }
+.line .tx { font-size: 13.5px; }
+.vo { font: 12.5px ui-monospace, SFMono-Regular, Menlo, monospace; background: #111; color: #e8e8e8; border-radius: 8px; padding: 8px 10px; }
+.vo b { color: #fff; }
+del { background: var(--del); text-decoration: line-through; text-decoration-color: var(--live); }
+ins { background: var(--mark); text-decoration: none; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; text-align: center; font-size: 11.5px; }
+.cal b { font-weight: 700; } .cal .today { background: var(--accent); color: #fff; border-radius: 6px; }
+.cal .wd { color: var(--muted); font-size: 10.5px; }
+.mhd { display: flex; justify-content: space-between; align-items: center; font-weight: 700; margin: 4px 2px 6px; }
+.stack { display: grid; gap: 10px; }
+.wave { flex: 1; height: 12px; border-radius: 3px; background: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 7px); opacity: .45; }
+.small { font-size: 12px; color: var(--muted); }
+.legend { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<!-- dossier:cadre (scripts/dossiers.py habille) -->
+<link rel="stylesheet" href="../commun/dossier.css">
+<header class="dz-cadre"><div class="dz-in"><nav class="dz-fil" aria-label="Dossiers"><a href="../index.html">Dossiers</a><span aria-hidden="true">›</span><span>Relectures design</span><span aria-hidden="true">›</span><b>Mac · ux</b><span>8 novembre 2026</span></nav><nav class="dz-parties" aria-label="Parties du dossier"><a href="ux-mac/index.html">Synthèse</a><a href="ux-mac/inventaire.html">Preuves</a><a href="ux-mac/prototypes.html">Avant et après</a><a href="ux-mac/problemes.html">Risques</a><a href="ux-mac/plan.html">Pas vérifié</a></nav></div></header>
+<!-- /dossier:cadre -->
+<main>
+
+<h1>App Mac : relecture UX, détail par détail</h1>
+<p class="sub">Callrecorder 0.24.0 · 8 novembre 2026 · regard d'un designer UX macOS</p>
+
+<section class="intro">
+<p><strong>Ce que j'ai regardé.</strong> Les 35 captures de la version publiée (corpus fictif, dans <code>captures-mac-0.24.0/</code>), puis, pour tout ce qu'elles ne montrent pas, les vues de <code>Sources/CallRecorder</code> : la barre des menus et son panneau (<code>App.swift</code>, <code>RecordingsPanel.swift</code>), la pastille (<code>Pastille.swift</code>), les menus et leurs raccourcis (<code>MainMenu.swift</code>), les notifications (<code>Recorded.swift</code>, <code>WeeklyAccess.swift</code>), les états vides et les alertes (<code>EmptyCalls.swift</code>, <code>Accessibility.swift</code>), les Réglages (<code>Onboarding.swift</code>, <code>Wizard.swift</code>) et les libellés VoiceOver. J'ai relu avant <code>DESIGN.md</code>, <code>TEXTES.md</code>, <code>MANIFESTE.md</code>, <code>UI-MANQUANTE.md</code> et <code>INCOHERENCES.md</code>, et cherché l'origine de chaque texte que je propose de changer (<code>git log -S</code>).</p>
+<p><strong>Comment.</strong> Écran par écran, contrôle par contrôle, avec trois questions : comprend-on ce qu'on voit (<em>sens</em>) ? un habitué du Mac le reconnaît-il, d'après les Human Interface Guidelines et les apps d'Apple, Notes, Mail, Dictaphone, Réglages Système (<em>familiarité</em>) ? est-ce que ça sert à ce que ça doit faire (<em>fonction</em>) ? Je n'ai pas touché aux parcours ni aux fonctions. Quand une proposition va contre un choix fait exprès, le commit est cité.</p>
+<p><strong>Limites.</strong> Les captures sont prises fenêtre inactive : les titres gris et les interrupteurs gris en viennent, je ne les compte pas comme défauts. Les captures hors écran n'affichent pas tout (le direct d'un enregistrement, la pastille, les menus) : là, je lis le code. Les deux lignes « Paul Mercier » en double viennent du corpus.</p>
+<p><strong>Gravité</strong> : <span class="tag gene">Gêne</span> on se trompe, on hésite ou on cherche ; <span class="tag">Détail</span> ça se remarque, sans bloquer. <strong>Effort</strong> : minutes (un texte, un raccourci) ou heures (une vue à reprendre).</p>
+
+<p style="margin-top:14px"><strong>Les cinq d'abord</strong></p>
+<ol class="top5">
+<li><a href="#r14">Pas de ⌘N, et le menu Fichier ne sait rien créer</a> : on ne peut ni lancer une réunion ni prendre une note au clavier dans la fenêtre.</li>
+<li><a href="#r9">« v1 · Transcription » au premier niveau</a> : un numéro de version montré à tous, contre « l'app ne montre que le final ».</li>
+<li><a href="#r19">Supprimer un appel en cours depuis la barre des menus, sans filet</a> : un clic, et ⌘Z ne peut pas l'annuler à cet endroit.</li>
+<li><a href="#r24">« Réglages › Paramètres » et « Base de données externe »</a> : deux synonymes empilés, et une page qui a trois noms.</li>
+<li><a href="#r10">Pendant l'enregistrement, le squelette de la transcription</a> : le même signe que « transcription en cours », alors que rien n'est en cours.</li>
+</ol>
+
+<nav class="toc" aria-label="Sections">
+<a href="#s-fenetre">Fenêtre Conversations</a><a href="#s-lecture">Lecture d'une conversation</a><a href="#s-menus">Menus et clavier</a>
+<a href="#s-barre">Barre des menus et pastille</a><a href="#s-notifs">Notifications</a><a href="#s-reglages">Réglages</a><a href="#s-a11y">VoiceOver</a>
+</nav>
+</section>
+
+<!-- ============================================================ -->
+<h2 id="s-fenetre">Fenêtre Conversations</h2>
+
+<article class="reco" id="r1">
+<header><span class="n">1</span><div class="h"><h3>L'état vide montre un combiné, la fenêtre parle de conversations</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>captures-mac-0.24.0/vide.webp</code>, <code>aucun.webp</code>, <code>recherche.webp</code> (au centre) · <code>EmptyCalls.swift:65-78</code></dd>
+<dt>Vu</dt><dd>« Aucune conversation sélectionnée » et « Aucune conversation encore » portent l'icône <code>phone</code>.</dd>
+<dt>Pourquoi</dt><dd><code>DESIGN.md</code> et <code>TEXTES.md</code> séparent « appel » (un vrai appel) et « conversation » (appels, réunions, notes). Le combiné dit « appel » à l'endroit même où le texte dit « conversation » ; une réunion en salle ou une note dictée n'est pas un appel. L'image arrive avant le mot, et c'est elle qu'on retient.</dd>
+<dt>Proposition</dt><dd>Prendre le signe de l'app plutôt que celui d'un type : <code>waveform</code>, déjà l'icône de la barre des menus au repos. Le même pour les trois variantes (sélection vide, liste vide, Terminal).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:336px;--h:140px;--x:690;--y:345;--s:.8"><img src="captures-mac-0.24.0/vide.webp" alt="Aucune conversation sélectionnée, avec un combiné"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="win ui"><div class="empty"><div class="ic" aria-hidden="true">
+<svg width="34" height="30" viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 15v0M9 9v12M15 4v22M21 10v10M27 7v16M33 13v4"/></svg>
+</div><div class="big">Aucune conversation sélectionnée</div></div></div>
+<p class="note">L'onde de l'icône de la barre des menus : le même signe partout pour « une conversation ».</p>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r2">
+<header><span class="n">2</span><div class="h"><h3>« Rien n'a été enregistré » est dit deux fois sur le même écran</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>captures-mac-0.24.0/transcrire.webp</code> · <code>TranscriptReader.swift:1072</code> (bandeau) et <code>:1441</code> (centre)</dd>
+<dt>Vu</dt><dd>Un bandeau rose « Le micro n'a rien enregistré. », et au centre « Rien n'a été enregistré : aucun son n'est arrivé. ». Deux phrases, deux tons, deux sujets (le micro, puis rien du tout) pour un seul fait. Et aucun geste : ni « Supprimer », ni « Pourquoi ? ».</dd>
+<dt>Pourquoi</dt><dd>« On ne dit pas deux fois la même chose dans une vue » (<code>TEXTES.md</code>, principe 1). Pire : les deux ne disent pas exactement la même chose, on se demande si le son des apps, lui, a marché. Sur la capture voisine <code>rien.webp</code>, le même cas a un état vide propre, avec un bouton.</dd>
+<dt>Proposition</dt><dd>Un seul état vide, celui de <code>rien.webp</code> : icône <code>mic.slash</code>, titre « Rien d'enregistré », la phrase de cause en dessous (celle qui dit ce qui manquait, micro ou son des apps), et le bouton « Supprimer la conversation ». Le bandeau ne sert que quand il y a <em>aussi</em> du texte (une piste muette sur deux).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:395px;--h:190px;--x:510;--y:58;--s:.5"><img src="captures-mac-0.24.0/transcrire.webp" alt="Bandeau et phrase centrale qui disent la même chose"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="win ui"><div class="empty"><div class="ic" aria-hidden="true"><svg width="30" height="32" viewBox="0 0 30 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="10" y="3" width="10" height="17" rx="5"/><path d="M5 15a10 10 0 0 0 20 0M15 25v4M4 3l22 26"/></svg></div>
+<div class="big">Rien d'enregistré</div><div>Aucun son n'est arrivé, ni du micro ni des apps.</div>
+<div style="margin-top:10px"><span class="btn">Supprimer la conversation</span></div></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r3">
+<header><span class="n">3</span><div class="h"><h3>« Rien à lire » : un bouton « Supprimer » sans objet</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>captures-mac-0.24.0/rien.webp</code> · <code>CallsWindow.swift:234-239</code></dd>
+<dt>Vu</dt><dd>« L'enregistrement est à la corbeille et n'a pas été transcrit. » puis un bouton « Supprimer ». Juste après une phrase qui parle de l'enregistrement, « Supprimer » se lit « supprimer l'enregistrement », qui est déjà à la corbeille.</dd>
+<dt>Pourquoi</dt><dd>« Bouton : un verbe à l'infinitif et son objet » (<code>TEXTES.md</code>). Le clic droit dit déjà « Supprimer l'appel » (<code>CallsModel.deleteLabel</code>) : le bouton doit dire pareil.</dd>
+<dt>Proposition</dt><dd><code>model.deleteLabel([m])</code> comme libellé : « Supprimer l'appel », « Supprimer la réunion »… Et l'icône <code>waveform.slash</code> peut rester.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:336px;--h:150px;--x:700;--y:345;--s:.8"><img src="captures-mac-0.24.0/rien.webp" alt="Rien à lire, bouton Supprimer"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="win ui"><div class="empty"><div class="big">Rien à lire</div><div>L'enregistrement est à la corbeille et n'a pas été transcrit.</div>
+<div style="margin-top:10px"><span class="btn">Supprimer l'appel</span></div></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r4">
+<header><span class="n">4</span><div class="h"><h3>« pas transcrite » sous un titre masculin, et une aide qui donne un chemin</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>vide.webp</code> (« Appel WhatsApp · 18:07 · 6 min · pas transcrite ») · <code>CallCard.swift:228-231</code>, <code>:222</code></dd>
+<dt>Vu</dt><dd>L'accord se fait avec « conversation », qu'on ne lit nulle part ; on lit « Appel … pas transcrite ». L'infobulle ajoute « Pour la transcrire : l'ouvrir, puis menu Conversation › Transcrire. » ; une autre « Pour la garder ici : clic droit, puis Garder dans la liste. ».</dd>
+<dt>Pourquoi</dt><dd>La faute d'accord apparente fait douter du reste. Une infobulle qui dicte un chemin de menu avoue que le geste n'est pas là où on l'attend (<code>TEXTES.md</code>, principe 2). Or le bouton « Transcrire » existe déjà dans la conversation ouverte.</dd>
+<dt>Proposition</dt><dd>« à transcrire », sans genre, et qui dit ce qui reste à faire. Infobulle réduite à la conséquence : « L'audio part à la corbeille dans 2 jours ». Le chemin se retire.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="ui win" style="padding:6px"><div class="row"><div class="thumb"><span class="app wa">✆</span></div><div><div class="t">Appel WhatsApp</div><div class="d">18:07 · 6 min · <del>pas transcrite</del></div></div></div>
+<div class="small" style="padding:0 8px 6px">Infobulle : <del>Pas transcrite. Pour la transcrire : l'ouvrir, puis menu Conversation › Transcrire.</del></div></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui win" style="padding:6px"><div class="row"><div class="thumb"><span class="app wa">✆</span></div><div><div class="t">Appel WhatsApp</div><div class="d">18:07 · 6 min · <ins>à transcrire</ins></div></div></div>
+<div class="small" style="padding:0 8px 6px">Infobulle : <ins>L'audio part à la corbeille dans 2 jours</ins></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r5">
+<header><span class="n">5</span><div class="h"><h3>Une vignette sans capture ressemble à une image qui n'a pas chargé</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>vide.webp</code>, <code>groupes.webp</code> · <code>KindThumb.swift</code>, <code>Thumb.fill</code> dans <code>Style.swift</code></dd>
+<dt>Vu</dt><dd>Sans capture, un logo de 14 pt au centre d'un cadre gris de 48×30 avec liseré. Dans <code>lecture.webp</code>, les lignes avec capture mettent le logo en badge dans le coin : deux grammaires dans la même liste.</dd>
+<dt>Pourquoi</dt><dd>Un cadre gris avec un petit pictogramme au milieu est le signe universel du « fichier sans aperçu » (Finder, Photos). Le liseré, justifié pour une capture claire (<code>DESIGN.md</code>), n'a rien à border ici.</dd>
+<dt>Proposition</dt><dd>Sans capture, pas de cadre : le logo de l'app à 24 pt, centré dans la colonne de 48. Avec capture, rien ne change. La colonne garde sa largeur, les titres restent alignés.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:368px;--h:112px;--x:12;--y:92;--s:.75"><img src="captures-mac-0.24.0/vide.webp" alt="Vignettes grises avec petit logo"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui win" style="padding:6px">
+<div class="row"><div style="width:48px;display:flex;justify-content:center"><span class="app ch" style="width:24px;height:24px;border-radius:12px"></span></div><div><div class="t">Point d'avancement · refonte du site</div><div class="d" style="color:var(--live)">22:55 · ● En cours · 12 min</div></div></div>
+<div class="row"><div style="width:48px;display:flex;justify-content:center"><span class="app tm" style="width:24px;height:24px">T</span></div><div><div class="t">Point hebdo produit</div><div class="d">21:07 · 34 min · Camille Martin, Hugo Lefèvre</div></div></div>
+</div>
+</figure>
+</div>
+<p class="contre">Va contre une valeur notée : <code>Thumb.fill</code> « Vignette sans capture » dans <code>DESIGN.md</code>. La proposition garde la valeur pour les vignettes de la bande des captures, et la retire seulement de la ligne de liste.</p>
+</article>
+
+<article class="reco" id="r6">
+<header><span class="n">6</span><div class="h"><h3>Le calendrier se lit à rebours, sous une ligne de jours détachée des mois</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Heures</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>captures-mac-0.24.0/calendrier.webp</code> · <code>DotCalendar.swift</code></dd>
+<dt>Vu</dt><dd>Novembre est au-dessus d'octobre ; « L M M J V S D » reste figé en haut, au-dessus des deux mois. Les jours avec conversations sont en gras avec des points, le reste en gris : à 11 px, le gras se voit mal, les points font le travail.</dd>
+<dt>Pourquoi</dt><dd>Partout sur le Mac (Calendrier en vue Année, le mini-calendrier de Calendrier, Photos par jours), le temps descend : octobre puis novembre, aujourd'hui en bas ou sous des flèches. L'œil cherche la semaine suivante <em>en dessous</em>. Ici, la liste et le calendrier partagent un ordre, c'est sans doute voulu : mais une grille de jours n'est pas une liste.</dd>
+<dt>Proposition</dt><dd>Ordre chronologique, ouvert défilé jusqu'au mois courant en bas ; l'en-tête des jours répété sous chaque nom de mois. Les jours sans conversation en <code>.tertiary</code>, ceux qui en ont en <code>.primary</code>, sans gras : les points suffisent.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:245px;--h:258px;--x:10;--y:55;--s:.5"><img src="captures-mac-0.24.0/calendrier.webp" alt="Calendrier, novembre au-dessus d'octobre"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui win" style="padding:10px;max-width:280px">
+<div class="mhd">Octobre 2026</div>
+<div class="cal"><span class="wd">L</span><span class="wd">M</span><span class="wd">M</span><span class="wd">J</span><span class="wd">V</span><span class="wd">S</span><span class="wd">D</span>
+<span></span><span></span><span></span><span class="small">1</span><span>2•</span><span class="small">3</span><span class="small">4</span>
+<span class="small">…</span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="mhd" style="margin-top:10px">Novembre 2026</div>
+<div class="cal"><span class="wd">L</span><span class="wd">M</span><span class="wd">M</span><span class="wd">J</span><span class="wd">V</span><span class="wd">S</span><span class="wd">D</span>
+<span></span><span></span><span></span><span></span><span></span><span></span><span class="small">1</span>
+<span class="small">2</span><span class="small">3</span><span class="small">4</span><span class="small">5</span><span class="small">6</span><span class="today">7••</span><span class="small">8</span></div>
+</div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r7">
+<header><span class="n">7</span><div class="h"><h3>Notes : un bouton « + » flottant, idiome Android</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>captures-mac-0.24.0/notes.webp</code> (en bas à droite) · <code>NotesPane.swift:386-420</code></dd>
+<dt>Vu</dt><dd>Un rond de 46 pt avec « + » flotte dans le coin. Sur chaque carte, l'heure de la prise de note (« 22:36 ») est en gras, le passage cité vient après, et l'heure dans l'appel (« 00:08 ») tout en bas : deux heures de nature différente sur la même carte.</dd>
+<dt>Pourquoi</dt><dd>Le bouton d'action flottant vient de Material Design. Sur le Mac, Notes et Dictaphone posent « Nouvelle note » / « Nouvel enregistrement » dans la barre d'outils et sous ⌘N. Sur la carte, ce qu'on cherche d'abord est ce qui a été dit, puis d'où ça vient : l'heure de prise de note est la moins utile des trois.</dd>
+<dt>Proposition</dt><dd>« Nouvelle note » dans la barre d'outils, à droite (<code>square.and.pencil</code>, comme Notes), avec ⌘N (voir <a href="#r14">14</a>). Sur la carte : la citation en premier, puis « Revue budgétaire · Karim Benali · 00:25 », l'heure de prise en <code>.caption</code> à droite.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:351px;--h:200px;--x:520;--y:90;--s:.45"><img src="captures-mac-0.24.0/notes.webp" alt="Page Notes, bouton + flottant en bas"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui win"><div class="bar"><span class="ttl" style="flex:1">Notes</span><span title="Filtrer">⏷</span><span title="Nouvelle note (⌘N)" style="font-size:16px">✎</span></div>
+<div style="padding:10px"><div class="sg" style="padding:10px 12px"><div style="display:flex;gap:10px;align-items:flex-start"><span class="ic-b" style="background:var(--accent);color:#fff;font-size:10px">▶</span>
+<div style="flex:1"><div>« la masse salariale dépasse de deux points. »</div><div class="small">Revue budgétaire · Karim Benali · 00:25</div></div><span class="small">22:27</span></div></div></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r8">
+<header><span class="n">8</span><div class="h"><h3>Visionneuse des captures : trois vignettes marquées « 15:48 »</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Fonction</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>captures-mac-0.24.0/captures.webp</code> · <code>CaptureViewer.swift:168</code>, <code>:182</code></dd>
+<dt>Vu</dt><dd>Chaque vignette porte l'heure de l'horloge (« 15:48 »), la même pour les trois, prises dans la même minute. Sous la grande image, la réplique porte l'heure dans l'appel (« 00:03 »).</dd>
+<dt>Pourquoi</dt><dd>Une étiquette identique sur toutes les vignettes ne distingue rien. Et deux échelles de temps dans la même vue (horloge en haut, position dans l'appel en bas) obligent à convertir.</dd>
+<dt>Proposition</dt><dd>La position dans l'appel partout dans la visionneuse : « 00:03 », « 00:17 », « 00:37 » sur les vignettes ; sous-titre « Capture 1 sur 3 · 00:03 ». L'heure de l'horloge reste dans le titre de la conversation.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:200px;--h:230px;--x:0;--y:0;--s:.75"><img src="captures-mac-0.24.0/captures.webp" alt="Vignettes toutes à 15:48"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui win" style="padding:10px;max-width:220px">
+<div class="ttl">Revue budgétaire</div><div class="small" style="margin-bottom:8px">Capture 1 sur 3 · <ins>00:03</ins></div>
+<div class="stack" style="gap:6px"><div class="thumb" style="width:84px;height:52px;box-shadow:0 0 0 2px var(--accent)"><ins>00:03</ins></div><div class="thumb" style="width:84px;height:52px"><ins>00:17</ins></div><div class="thumb" style="width:84px;height:52px"><ins>00:37</ins></div></div></div>
+</figure>
+</div>
+</article>
+
+<!-- ============================================================ -->
+<h2 id="s-lecture">Lecture d'une conversation</h2>
+
+<article class="reco" id="r9">
+<header><span class="n">9</span><div class="h"><h3>« v1 · Transcription » : la version montrée au premier niveau</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>lecture.webp</code>, <code>nouvelle.webp</code>, <code>fenetre-transcription.webp</code> (pastille en bas à droite) · <code>TranscriptReader.swift:596-606</code>, <code>:655-659</code></dd>
+<dt>Vu</dt><dd>Sur chaque conversation, le bouton le plus large de la barre flottante dit « v1 · Transcription » ou « v2 · Transcription ». Après une nouvelle transcription moins bonne (<code>nouvelle.webp</code> : « L'album attendre mais réalisons »), c'est elle qu'on lit, avec « v2 » comme seul indice.</dd>
+<dt>Pourquoi</dt><dd>« Montrer le final, garder le reste sur le disque. Une seule transcription affichée, jamais la liste des versions » (<code>DESIGN.md</code>). « v1 » est un mot du code : la personne ne sait pas ce qu'est une v1, ni s'il en existe d'autres, ni laquelle est la bonne. Dans la dev, l'interrupteur <code>callFacts</code> remplace déjà ce bouton par « Détail » (⌘I) : la prod garde l'ancien.</dd>
+<dt>Proposition</dt><dd>En prod tout de suite : le bouton dit ce qu'est le texte, sans numéro : « Transcription », « Relue par Claude », « Modifiée ». Le numéro n'existe que dans le menu, à côté de la date. Ensuite, sortir <code>callFacts</code> de son interrupteur (voir <code>ESSAIS.md</code>) : « Détail » remplace le menu.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:300px;--h:58px;--x:990;--y:745;--s:1"><img src="captures-mac-0.24.0/lecture.webp" alt="Bouton v1 · Transcription"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+<span class="pill">⌕</span><span class="pill">⧉ ⇪</span><span class="pill">Relue par Claude ⌄</span></div>
+<div class="menu ui" style="margin-top:10px">
+<div class="mi on">Relue par Claude <span class="k">aujourd'hui 15:52</span></div>
+<div class="mi">Transcription <span class="k">aujourd'hui 15:49</span></div>
+<div class="msep"></div><div class="mi">Afficher le contexte</div><div class="msep"></div>
+<div class="mi">Nouvelle transcription</div><div class="mi">Relire avec Claude</div></div>
+<p class="note">Le numéro disparaît ; la date distingue deux versions du même genre.</p>
+</figure>
+</div>
+<p class="contre">Le libellé « v<em>N</em> · genre » date de <code>e623f52</code> (27 octobre, 0.6.0) ; <code>35b9624</code> (5 novembre) a commencé à le retirer derrière <code>callFacts</code>. La proposition va dans le sens de ce second commit.</p>
+</article>
+
+<article class="reco" id="r10">
+<header><span class="n">10</span><div class="h"><h3>Pendant l'enregistrement, le squelette dit « en cours de transcription »</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Heures</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>enregistrement.webp</code> comparé à <code>encours.webp</code> · <code>TranscriptReader.swift:1806-1808</code></dd>
+<dt>Vu</dt><dd>Un appel qui s'enregistre et une nouvelle transcription qui tourne affichent le même squelette gris. Sur la capture, la carte du haut est réduite à « 12:02 Enregistrement en cours » (le direct n'est pas photographié) ; dans l'app, elle porte les jauges et « Arrêter ».</dd>
+<dt>Pourquoi</dt><dd>Un squelette promet un contenu qui arrive. Pendant un appel sans transcription en direct, rien n'arrivera avant la fin : la personne attend, regarde, croit à une panne. Les deux états n'ont pas le même avenir, ils ne doivent pas avoir la même image.</dd>
+<dt>Proposition</dt><dd>Pendant l'enregistrement, tant qu'aucune phrase n'est reconnue : un état vide calme, « La transcription commence à la fin de l'appel. » (ou, si le direct est actif, « Les paroles s'affichent ici. »). Le squelette reste réservé à « Transcription en cours ».</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:395px;--h:150px;--x:510;--y:58;--s:.5"><img src="captures-mac-0.24.0/enregistrement.webp" alt="Squelette pendant un enregistrement"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="win ui" style="padding:10px">
+<div class="sg" style="display:flex;gap:10px;align-items:center;padding:8px 10px"><span class="rec"></span><span style="color:var(--live);font-feature-settings:'tnum'">12:02</span>
+<div style="flex:1;display:grid;gap:4px"><div style="display:flex;gap:6px;align-items:center;color:var(--accent)"><span class="small" style="width:44px">Micro</span><span class="wave"></span></div><div style="display:flex;gap:6px;align-items:center;color:#c46a1c"><span class="small" style="width:44px">Chrome</span><span class="wave"></span></div></div>
+<span class="btn">Arrêter l'enregistrement</span></div>
+<div class="empty" style="padding:30px 10px"><div>La transcription commence à la fin de l'appel.</div></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r11">
+<header><span class="n">11</span><div class="h"><h3>Lecteur : les haut-parleurs sont des boutons, rien ne le dit</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>lecture.webp</code> (lecteur en haut) · <code>TranscriptReader.swift:531-547</code></dd>
+<dt>Vu</dt><dd>Devant « Moi » et « Interlocuteurs », une icône <code>speaker.wave.2.fill</code> colorée. C'est un bouton qui coupe la piste ; il a l'air d'un indicateur de volume. Le compteur « 00:00 / 34:00 » met un zéro de tête que QuickTime et Dictaphone n'affichent pas.</dd>
+<dt>Pourquoi</dt><dd>Couper une piste est rare mais précieux (réentendre une seule voix). Une icône sans fond ni survol visible ne se découvre pas. Et la cible, une icône de 12 pt, est petite.</dd>
+<dt>Proposition</dt><dd>Le nom de piste et son icône forment un seul bouton (cible 24 pt de haut, survol <code>Hover.fill</code>), barré et estompé quand il est coupé, avec l'infobulle déjà écrite (« Couper Moi à l'écoute »). Compteur « 0:00 / 34:00 ».</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:420px;--h:42px;--x:520;--y:62;--s:.55"><img src="captures-mac-0.24.0/lecture.webp" alt="Lecteur avec deux pistes"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui sg" style="padding:8px 10px;display:flex;gap:10px;align-items:center">
+<span class="ic-b" style="background:var(--accent);color:#fff;font-size:10px">▶</span><span class="small" style="font-feature-settings:'tnum'">0:00 / 34:00</span>
+<div style="flex:1;display:grid;gap:4px">
+<div style="display:flex;gap:6px;align-items:center;color:var(--accent)"><span style="background:var(--chosen);border-radius:6px;padding:1px 6px;font-size:11.5px">🔊 Moi</span><span class="wave"></span></div>
+<div style="display:flex;gap:6px;align-items:center;color:var(--muted)"><span style="border-radius:6px;padding:1px 6px;font-size:11.5px;text-decoration:line-through">🔇 Interlocuteurs</span><span class="wave" style="opacity:.15"></span></div>
+</div></div>
+<p class="note">Survol : un fond. Coupée : barrée, l'onde s'efface, comme aujourd'hui.</p>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r12">
+<header><span class="n">12</span><div class="h"><h3>La pile de notes, en haut à droite, ressemble à une date</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>lecture.webp</code>, <code>repliee.webp</code> (coin haut droit) · <code>TranscriptReader.swift:560-568</code></dd>
+<dt>Vu</dt><dd>Une petite feuille lignée avec « 3 » dessus. À cette taille, on lit une icône de Calendrier (un jour, le 3).</dd>
+<dt>Pourquoi</dt><dd>C'est le seul passage vers les notes tirées de la conversation. Un dessin propre à l'app qui en rappelle une d'Apple induit en erreur ; le chiffre sur la feuille est justement ce que fait l'icône Calendrier.</dd>
+<dt>Proposition</dt><dd>Le symbole des notes de l'app (<code>note.text</code>, déjà le logo de la page Notes d'après <code>INCOHERENCES.md</code>, 4.10) avec le nombre <em>à côté</em> : « 3 » en <code>.caption</code>, dans une capsule comme les boutons voisins. Libellé VoiceOver inchangé.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="shot" style="--w:110px;--h:70px;--x:1240;--y:6;--s:2"><img src="captures-mac-0.24.0/lecture.webp" alt="Pile de notes avec 3"></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<span class="pill ui">▤ 3</span>
+<p class="note">Infobulle : « Notes tirées de cette conversation ».</p>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r13">
+<header><span class="n">13</span><div class="h"><h3>« Arrêter » a trois noms selon l'endroit</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd>Carte de l'appel en cours : « Arrêter » (<code>TranscriptReader.swift:1800</code>) · menu de l'icône : « Arrêter » (<code>App.swift:861</code>) · colonne et pastille : « Arrêter l'enregistrement » (<code>RecordingsPanel.swift:20</code>, <code>App.swift:904</code>) · infobulle : « Arrêter la réunion »</dd>
+<dt>Vu</dt><dd>Une même action, quatre formulations.</dd>
+<dt>Pourquoi</dt><dd>« Un mot, un sens, partout » (<code>TEXTES.md</code>, principe 8). Sur le Mac, QuickTime et Dictaphone disent « Arrêter l'enregistrement » ; c'est aussi ce que VoiceOver lit.</dd>
+<dt>Proposition</dt><dd>« Arrêter l'enregistrement » partout où il y a la place ; « Terminer la note » reste pour une note. L'infobulle peut nommer l'objet : « Arrêter l'enregistrement de l'appel Teams ».</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="ui stack"><div class="menu"><div class="mhead">Enregistrement de Teams — 12:02</div><div class="mi"><del>Arrêter</del></div><div class="mi">Capturer l'appel <span class="k">fn S</span></div></div>
+<div><span class="btn"><del>Arrêter</del></span> <span class="small">carte en cours</span></div></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui stack"><div class="menu"><div class="mhead">Enregistrement de Teams — 12:02</div><div class="mi"><ins>Arrêter l'enregistrement</ins></div><div class="mi">Capturer l'appel <span class="k">fn S</span></div></div>
+<div><span class="btn"><ins>Arrêter l'enregistrement</ins></span> <span class="small">carte en cours</span></div></div>
+</figure>
+</div>
+</article>
+
+<!-- ============================================================ -->
+<h2 id="s-menus">Menus et clavier</h2>
+
+<article class="reco" id="r14">
+<header><span class="n">14</span><div class="h"><h3>Pas de ⌘N : le menu Fichier ne sait rien créer</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>MainMenu.swift:35-46</code> (Fichier) ; l'action n'existe que dans la colonne et le menu de l'icône (<code>RecordingsPanel.swift:31</code>, <code>App.swift:874</code>)</dd>
+<dt>Vu</dt><dd>Fichier contient « Ouvrir dans une nouvelle fenêtre », « Afficher dans le Finder », « Exporter la transcription », « Fermer ». Ni « Enregistrer une réunion », ni « Nouvelle note », ni « Arrêter l'enregistrement ». ⌘N ne fait rien.</dd>
+<dt>Pourquoi</dt><dd>Toute app Mac qui crée quelque chose le met en tête de Fichier avec ⌘N : Dictaphone (« Nouvel enregistrement »), Notes, Mail, TextEdit. C'est le premier réflexe clavier. L'action principale de l'app n'a aujourd'hui aucun raccourci dans la fenêtre, et fn D n'est connu que de ceux qui ont lu les Réglages.</dd>
+<dt>Proposition</dt><dd>En tête de Fichier : « Enregistrer une réunion » ⌘N (devient « Arrêter l'enregistrement » ⌘N pendant un enregistrement, comme Dictaphone), « Nouvelle note » ⇧⌘N (fn D rappelé à droite si activé), puis le reste. Le menu de l'icône de la barre des menus montre les mêmes raccourcis.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="ui"><div class="menubar"><b>CallRecorder</b><span class="open">Fichier</span><span>Édition</span><span>Présentation</span><span>Conversation</span><span>Fenêtre</span></div>
+<div class="menu"><div class="mi">Ouvrir dans une nouvelle fenêtre <span class="k">⌘O</span></div><div class="mi">Afficher dans le Finder <span class="k">⇧⌘R</span></div><div class="mi more">Exporter la transcription</div><div class="msep"></div><div class="mi">Fermer <span class="k">⌘W</span></div></div></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="ui"><div class="menubar"><b>Callrecorder</b><span class="open">Fichier</span><span>Édition</span><span>Présentation</span><span>Conversation</span><span>Fenêtre</span><span>Aide</span></div>
+<div class="menu"><div class="mi new">Enregistrer une réunion <span class="k">⌘N</span></div><div class="mi new">Nouvelle note <span class="k">⇧⌘N</span></div><div class="msep"></div>
+<div class="mi">Ouvrir dans une nouvelle fenêtre <span class="k">⌘O</span></div><div class="mi">Afficher dans le Finder <span class="k">⇧⌘R</span></div><div class="mi more">Exporter la transcription</div><div class="msep"></div><div class="mi">Fermer <span class="k">⌘W</span></div></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r15">
+<header><span class="n">15</span><div class="h"><h3>« Rechercher » est dans Présentation, pas dans Édition</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>MainMenu.swift:78-92</code></dd>
+<dt>Vu</dt><dd>Rechercher ⌘F, Rechercher dans la transcription ⌥⌘F, Occurrence suivante ⌘G et précédente ⇧⌘G sont dans Présentation, au milieu de Liste, Calendrier, Afficher le contexte et la barre latérale.</dd>
+<dt>Pourquoi</dt><dd>Dans toutes les apps d'Apple, la recherche vit dans Édition › Rechercher, un sous-menu (Mail, Notes, Safari, Pages). C'est là qu'un habitué la cherche, et là que le champ de recherche du menu Aide la trouve sous son nom attendu. Les raccourcis, eux, sont déjà les bons.</dd>
+<dt>Proposition</dt><dd>Édition › Rechercher › Rechercher dans les conversations ⌘F, Rechercher dans la transcription ⌥⌘F, Rechercher le suivant ⌘G, Rechercher le précédent ⇧⌘G (les libellés d'Apple). Présentation garde la mise en forme : Liste, Calendrier, contexte, barre latérale, plein écran.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="menu ui"><div class="mhead">Présentation</div><div class="mi on">Liste <span class="k">⌘1</span></div><div class="mi">Calendrier <span class="k">⌘2</span></div><div class="mi">Rechercher <span class="k">⌘F</span></div><div class="mi">Rechercher dans la transcription <span class="k">⌥⌘F</span></div><div class="mi dis">Occurrence suivante <span class="k">⌘G</span></div><div class="mi dis">Occurrence précédente <span class="k">⇧⌘G</span></div><div class="msep"></div><div class="mi">Afficher le contexte</div></div>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="menu ui"><div class="mhead">Édition</div><div class="mi">Copier la transcription <span class="k">⇧⌘C</span></div><div class="mi">Supprimer l'appel <span class="k">⌘⌫</span></div><div class="msep"></div><div class="mi more hl">Rechercher</div></div>
+<div class="menu ui" style="margin:6px 0 0 30px"><div class="mi">Rechercher dans les conversations <span class="k">⌘F</span></div><div class="mi">Rechercher dans la transcription <span class="k">⌥⌘F</span></div><div class="mi dis">Rechercher le suivant <span class="k">⌘G</span></div><div class="mi dis">Rechercher le précédent <span class="k">⇧⌘G</span></div></div>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r16">
+<header><span class="n">16</span><div class="h"><h3>Rouvrir la fenêtre principale : ⌘L au lieu de ⌘0</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>MainMenu.swift:150</code> (Fenêtre › Conversations ⌘L) et <code>App.swift:878</code></dd>
+<dt>Vu</dt><dd>La fenêtre Conversations se rouvre par ⌘L.</dd>
+<dt>Pourquoi</dt><dd>Les apps d'Apple à une fenêtre principale la rouvrent par ⌘0 dans le menu Fenêtre : Mail (« Visualiseur de messages »), Messages, Calendrier. ⌘L, partout ailleurs, veut dire « aller à l'adresse » ou « aller à la ligne ».</dd>
+<dt>Proposition</dt><dd>Fenêtre › Conversations ⌘0, dans la fenêtre comme dans le menu de l'icône. ⌘L libre.</dd>
+</dl>
+<p class="contre">Le raccourci vient de <code>b56f9b6</code> (4 novembre), qui renomme la fenêtre « Appels » en « Conversations » ; le commit ne dit rien du choix de ⌘L. Si ⌘L a été choisi exprès, garder les deux un temps.</p>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="menu ui"><div class="mi">Réduire <span class="k">⌘M</span></div><div class="mi">Zoom</div><div class="msep"></div><div class="mi">Conversations <span class="k"><del>⌘L</del></span></div></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="menu ui"><div class="mi">Réduire <span class="k">⌘M</span></div><div class="mi">Zoom</div><div class="msep"></div><div class="mi">Conversations <span class="k"><ins>⌘0</ins></span></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r17">
+<header><span class="n">17</span><div class="h"><h3>Pas de menu Aide, et le nom de l'app s'écrit « CallRecorder » dans les menus</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>MainMenu.swift:22-32</code>, <code>:143-152</code></dd>
+<dt>Vu</dt><dd>La barre des menus s'arrête à Fenêtre. « À propos de CallRecorder », « Masquer CallRecorder », « Quitter CallRecorder ».</dd>
+<dt>Pourquoi</dt><dd>Le menu Aide est le dernier de toute app Mac. Même vide, il porte le champ de recherche de macOS, qui retrouve n'importe quelle commande par son nom et la montre dans son menu : c'est le plus grand service rendu à qui ne connaît pas encore l'app. <code>DESIGN.md</code> veut « Callrecorder » dans le texte ; les menus sont du texte (le nom du bundle peut rester).</dd>
+<dt>Proposition</dt><dd>Aide › Aide de Callrecorder (ouvre les guides du site), Signaler un problème. Assigner <code>NSApp.helpMenu</code> pour avoir le champ de recherche. « Callrecorder » dans les intitulés.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="ui menubar"><b>CallRecorder</b><span>Fichier</span><span>Édition</span><span>Présentation</span><span>Conversation</span><span>Fenêtre</span></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui"><div class="menubar"><b>Callrecorder</b><span>Fichier</span><span>Édition</span><span>Présentation</span><span>Conversation</span><span>Fenêtre</span><span class="open">Aide</span></div>
+<div class="menu" style="margin-left:auto"><div style="padding:3px 6px 6px"><div style="background:var(--paper);border-radius:6px;padding:2px 8px;box-shadow:0 0 0 1px var(--line)">⌕ <span class="small">transcrire</span></div></div>
+<div class="mhead">Commandes</div><div class="mi hl">Conversation › Nouvelle transcription</div><div class="msep"></div><div class="mi">Aide de Callrecorder</div><div class="mi">Signaler un problème…</div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r18">
+<header><span class="n">18</span><div class="h"><h3>« Annuler supprimer la conversation » : l'intitulé d'annulation se lit mal</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>MainMenu.swift:176-180</code> (<code>titled</code>)</dd>
+<dt>Vu</dt><dd>Le verbe d'annulation et le nom de l'action sont collés, l'action passée en minuscule : « Annuler supprimer la conversation », « Rétablir ranger la conversation ».</dd>
+<dt>Pourquoi</dt><dd>macOS en français écrit « Annuler Supprimer », « Annuler Saisie » : l'action garde sa majuscule et se lit comme un nom propre de commande. Deux infinitifs à la suite en minuscules se lisent comme une faute.</dd>
+<dt>Proposition</dt><dd>Garder la majuscule de l'action (« Annuler Supprimer la conversation »), ou donner aux actions un nom (« Annuler la suppression », « Annuler le rangement »), comme le fait Finder (« Annuler le déplacement »).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="menu ui"><div class="mi">Annuler <del>supprimer la conversation</del> <span class="k">⌘Z</span></div><div class="mi dis">Rétablir <span class="k">⇧⌘Z</span></div></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="menu ui"><div class="mi">Annuler <ins>la suppression</ins> <span class="k">⌘Z</span></div><div class="mi dis">Rétablir <span class="k">⇧⌘Z</span></div></div></figure>
+</div>
+</article>
+
+<!-- ============================================================ -->
+<h2 id="s-barre">Barre des menus et pastille</h2>
+
+<article class="reco" id="r19">
+<header><span class="n">19</span><div class="h"><h3>Supprimer un appel en cours, depuis la barre des menus, sans filet</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Heures</span><span class="tag axe">Fonction</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>App.swift:868-871</code> et <code>:787-796</code> (<code>deleteClicked</code>)</dd>
+<dt>Vu</dt><dd>Pendant un enregistrement, le menu de l'icône propose « Supprimer cet appel » deux lignes sous « Arrêter », séparé par un trait. Un clic arrête et met à la corbeille, sans confirmation. Le commentaire dit « ⌘Z le remet » : mais l'app est en arrière-plan quand on passe par la barre des menus (on est dans Teams), ⌘Z va à Teams.</dd>
+<dt>Pourquoi</dt><dd>Les HIG demandent une confirmation pour une action destructrice qui ne s'annule pas là où on la fait. Ici, ni l'un ni l'autre. La conversation reste dans Réglages › Récemment supprimés, mais qui le sait au moment où ça arrive ? Et la ligne visée est à 40 pt d'« Arrêter » dans un menu qu'on ouvre à la hâte.</dd>
+<dt>Proposition</dt><dd>Garder la commande, ajouter le filet là où on est : une notification « Appel supprimé » avec le bouton « Remettre », qui fait ce que fait ⌘Z. Pas d'alerte (elle volerait le premier plan à l'appel en cours, ce que la pastille évite exprès, #79).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption>
+<div class="menu ui"><div class="mhead">Enregistrement de Teams — 12:02</div><div class="msep"></div><div class="mi">Arrêter</div><div class="mi">Capturer l'appel <span class="k">fn S</span></div><div class="msep"></div><div class="mi hl">Supprimer cet appel</div></div>
+<p class="note">→ plus rien. ⌘Z part à l'app au premier plan.</p>
+</figure>
+<figure class="after"><figcaption>Après</figcaption>
+<div class="notif ui"><span class="app cr">≋</span><div><div class="t">Appel supprimé</div><div class="d">Point hebdo produit · 12 min</div><div class="acts"><span class="btn">Remettre</span></div></div></div>
+<p class="note">Même identifiant de notification que la fin d'appel : elle la remplace.</p>
+</figure>
+</div>
+</article>
+
+<article class="reco" id="r20">
+<header><span class="n">20</span><div class="h"><h3>Un clic gauche n'offre pas « Quitter »</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>App.swift:926-941</code> (<code>statusClicked</code>), <code>RecordingsPanel.swift</code></dd>
+<dt>Vu</dt><dd>Clic : le panneau des conversations. Clic droit ou ⌃-clic : le menu, avec Quitter, la version et les mises à jour. Rien dans le panneau n'indique qu'un autre menu existe. L'app est en <code>.accessory</code> : pas d'icône dans le Dock, donc pas de « Quitter » par là non plus.</dd>
+<dt>Pourquoi</dt><dd>Les icônes d'Apple ouvrent un seul menu au clic (Wi-Fi, Son, Batterie). Une app sans Dock dont le menu est caché derrière un clic droit se quitte par le Moniteur d'activité. Les tiers qui ouvrent un panneau (Fantastical, Dropbox) y posent un bouton ⋯ avec Réglages et Quitter.</dd>
+<dt>Proposition</dt><dd>Dans le pied du panneau, à droite de « Réglages », un bouton ⋯ qui ouvre exactement le menu du clic droit. Le clic droit reste.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="ui win" style="padding:8px;max-width:300px"><div class="row"><span style="width:24px;text-align:center">◉</span><span class="small" style="color:var(--ink)">Enregistrer une réunion</span></div><div class="row"><span style="width:24px;text-align:center">⚙︎</span><span class="small" style="color:var(--ink)">Réglages</span></div></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui win" style="padding:8px;max-width:300px"><div class="row"><span style="width:24px;text-align:center">◉</span><span class="small" style="color:var(--ink)">Enregistrer une réunion</span></div><div class="row" style="justify-content:space-between"><span><span style="display:inline-block;width:24px;text-align:center">⚙︎</span><span class="small" style="color:var(--ink)">Réglages</span></span><ins class="ic-b">⋯</ins></div></div>
+<div class="menu ui" style="margin-top:6px"><div class="mi">Rechercher une mise à jour</div><div class="mi dis">Version 0.24.0</div><div class="msep"></div><div class="mi">Quitter Callrecorder <span class="k">⌘Q</span></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r21">
+<header><span class="n">21</span><div class="h"><h3>La pastille ne dit pas ce qu'elle enregistre, et n'a pas de clic droit</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Heures</span><span class="tag axe">Fonction</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>Pastille.swift:69-91</code>, <code>:164-180</code> (point rouge et chrono)</dd>
+<dt>Vu</dt><dd>Point rouge, chrono, Capturer, Arrêter. Le point et le chrono n'ont pas de libellé ; le panneau n'a pas de titre. Rien ne dit si c'est Teams ou la réunion en salle qui s'enregistre. Pour la masquer, il faut aller dans Réglages › Paramètres.</dd>
+<dt>Pourquoi</dt><dd>Sur un Mac qui a deux visios ouvertes, « qu'est-ce qui s'enregistre ? » est la question de la pastille. Tout objet flottant de macOS (le témoin de partage d'écran, l'image dans l'image) a un clic droit ou un survol qui en dit plus.</dd>
+<dt>Proposition</dt><dd>Infobulle sur le chrono : « Enregistrement de Teams depuis 22:55 ». Clic droit sur le fond : « Ouvrir la conversation », « Masquer la pastille » (le même réglage que dans les Réglages), sans prendre le premier plan. Libellé VoiceOver du panneau : « Callrecorder, enregistrement de Teams, 12 minutes » (voir <a href="#r33">33</a>).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="pill ui"><span class="rec"></span><span style="font-feature-settings:'tnum'">12:02</span><span>⌖</span><span style="color:var(--live)">◼︎</span></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="pill ui"><span class="rec"></span><span style="font-feature-settings:'tnum'">12:02</span><span>⌖</span><span style="color:var(--live)">◼︎</span></div>
+<div class="small" style="margin:6px 0 0 8px">Survol : « Enregistrement de Teams depuis 22:55 »</div>
+<div class="menu ui" style="margin-top:6px;max-width:240px"><div class="mi">Ouvrir la conversation</div><div class="msep"></div><div class="mi">Masquer la pastille</div></div></figure>
+</div>
+</article>
+
+<!-- ============================================================ -->
+<h2 id="s-notifs">Notifications</h2>
+
+<article class="reco" id="r22">
+<header><span class="n">22</span><div class="h"><h3>La notification de la semaine pose une question sans boutons</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Fonction</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>Sources/CallCapture/WeeklyAccess.swift:134-136</code>, <code>Recorded.swift:101-102</code></dd>
+<dt>Vu</dt><dd>Titre « CallRecorder », texte « macOS peut redemander l'accès à l'écran. Vérifier maintenant plutôt qu'en plein appel ? ». Pas d'action : cliquer vaut oui, ignorer vaut non, ce que rien n'indique.</dd>
+<dt>Pourquoi</dt><dd>Une question appelle une réponse ; une notification qui pose une question sans boutons laisse deviner. Le titre est le nom de l'app, que macOS affiche déjà au-dessus : la place du fait est perdue (<code>TEXTES.md</code> : « Notification : le fait, puis l'action »). « CallRecorder » est le nom technique.</dd>
+<dt>Proposition</dt><dd>Titre : « Renouveler l'accès à l'écran ». Texte : « macOS peut le redemander. Mieux vaut maintenant qu'en plein appel. » Actions : « Renouveler » (le défaut, comme le clic) et « Plus tard » (repousse d'une heure).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="notif ui"><span class="app cr">≋</span><div><div class="t"><del>CallRecorder</del></div><div class="d">macOS peut redemander l'accès à l'écran. Vérifier maintenant plutôt qu'en plein appel ?</div></div></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="notif ui"><span class="app cr">≋</span><div><div class="t">Renouveler l'accès à l'écran</div><div class="d">macOS peut le redemander. Mieux vaut maintenant qu'en plein appel.</div><div class="acts"><span class="btn">Renouveler</span><span class="btn">Plus tard</span></div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r23">
+<header><span class="n">23</span><div class="h"><h3>Fin d'appel : jusqu'à neuf actions dans « Options »</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Fonction</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>Recorded.swift:56-60</code></dd>
+<dt>Vu</dt><dd>Jusqu'à huit « Classer dans <em>groupe</em> » puis « Supprimer », dans le menu « Options » de la notification. Le groupe déjà choisi par Claude, s'il y en a un, est dans le texte (« · Pro ») et revient dans la liste.</dd>
+<dt>Pourquoi</dt><dd>Le menu Options de macOS est petit et se ferme au moindre écart ; huit lignes qui commencent toutes par « Classer dans » se lisent mal. Le geste le plus fréquent après un appel bien rangé est… rien.</dd>
+<dt>Proposition</dt><dd>Trois groupes au plus : les plus utilisés ces deux dernières semaines, sans celui où l'appel est déjà, libellés par le seul nom du groupe ; puis « Supprimer ». Le titre du menu, « Options », devient « Classer » si macOS le permet (<code>UNNotificationCategory</code> l'autorise depuis macOS 12).</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="menu ui"><div class="mi">Classer dans Perso</div><div class="mi">Classer dans Pro</div><div class="mi">Classer dans Client Atelier Verne</div><div class="mi">Classer dans Équipe produit</div><div class="mi">Classer dans Recrutement</div><div class="mi">…</div><div class="mi" style="color:var(--live)">Supprimer</div></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="menu ui"><div class="mhead">Classer</div><div class="mi">Équipe produit</div><div class="mi">Client Atelier Verne</div><div class="mi">Perso</div><div class="msep"></div><div class="mi" style="color:var(--live)">Supprimer</div></div></figure>
+</div>
+</article>
+
+<!-- ============================================================ -->
+<h2 id="s-reglages">Réglages</h2>
+
+<article class="reco" id="r24">
+<header><span class="n">24</span><div class="h"><h3>« Réglages › Paramètres » : deux synonymes empilés</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>reglages.webp</code>, <code>assistant-30-reglages.webp</code> · <code>Wizard.swift:79</code>, <code>Onboarding.swift:197</code></dd>
+<dt>Vu</dt><dd>L'accueil des Réglages a une entrée « Paramètres » (engrenage, comme le bouton Réglages lui-même) qui contient Apps et sites, Téléphones, la conservation, l'espace, l'ouverture au démarrage, la pastille, la version.</dd>
+<dt>Pourquoi</dt><dd>En français, « Réglages » et « Paramètres » sont le même mot ; l'un dans l'autre ne dit pas ce qu'on y trouve, et l'engrenage se répète. Réglages Système appelle ce fourre-tout « Général ».</dd>
+<dt>Proposition</dt><dd>« Général », icône <code>gearshape</code> gardée (c'est celle de Général dans Réglages Système). Le résumé dessous reste (« Audio gardé 10 jours »).</dd>
+</dl>
+<p class="contre">« Paramètres » vient de <code>f4a32e1</code> (2 novembre, « six entrées à l'accueil »). Le commit fixe la structure, pas le mot ; la proposition ne change que le mot.</p>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:146px;--x:300;--y:58;--s:.55"><img src="captures-mac-0.24.0/reglages.webp" alt="Réglages, entrée Paramètres"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui"><div class="gh">Réglages</div><div class="sg">
+<div class="sr"><div><div class="t">Autorisations</div><div class="d">Micro, son des apps et écran</div></div><span class="chev">›</span></div>
+<div class="sr"><div><div class="t">Groupes</div><div class="d">Perso, Pro</div></div><span class="chev">›</span></div>
+<div class="sr"><div><div class="t">Intégrations</div><div class="d">Rien de relié</div></div><span class="chev">›</span></div>
+<div class="sr"><div><div class="t"><ins>Général</ins></div><div class="d">Audio gardé 10 jours</div></div><span class="r">203 Mo <span class="chev">›</span></span></div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r25">
+<header><span class="n">25</span><div class="h"><h3>Une page, trois noms : « Base de données externe », « Copies », « Autres outils »</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>autres-outils.webp</code> · <code>Wizard.swift:81</code>, <code>Onboarding.swift:362</code>, <code>:494-531</code> ; légende des captures « Autres outils »</dd>
+<dt>Vu</dt><dd>L'entrée et le titre disent « Base de données externe » ; la page n'a qu'une section, « Copies », et un bouton « Ajouter une copie… » ; le texte parle de dossier, de Google Drive, d'iCloud Drive.</dd>
+<dt>Pourquoi</dt><dd>Personne ne pense à un dossier Google Drive comme à une « base de données ». Le mot du titre ne se retrouve pas dans la page : on doute d'être au bon endroit. « Un mot, un sens » (<code>TEXTES.md</code>).</dd>
+<dt>Proposition</dt><dd>Titre et entrée : « Copies dans un dossier » ; section supprimée (le titre la dit) ; état vide « Aucune copie » + « Ajouter une copie… ». Le résumé de l'entrée dit où : « Google Drive ».</dd>
+</dl>
+<p class="contre">« Autres outils » est devenu « Base de données externe » exprès dans <code>6a58bcc</code> (2 novembre), sans raison écrite. La proposition ne revient pas à « Autres outils ».</p>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:405px;--h:76px;--x:100;--y:12;--s:.45"><img src="captures-mac-0.24.0/autres-outils.webp" alt="Base de données externe, section Copies"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui win"><div class="bar"><span>‹</span><span class="ttl"><ins>Copies dans un dossier</ins></span></div><div style="padding:10px"><div class="sg"><div class="sr"><span class="t">Aucune copie</span><span class="btn">Ajouter une copie…</span></div></div>
+<div class="foot">Dans Google Drive ou iCloud Drive, les copies quittent ce Mac. Ce qui y est modifié n'est pas repris.</div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r26">
+<header><span class="n">26</span><div class="h"><h3>Groupes : « Accessible à Claude », alors que l'interrupteur vaut pour toutes les IA</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>groupes.webp</code> · <code>GroupsView.swift:312</code>, <code>:379</code>, <code>:384-385</code></dd>
+<dt>Vu</dt><dd>À droite de chaque groupe, « Accessible à Claude » et un interrupteur. Coupé, il garde le groupe hors de la relecture <em>et</em> des agents <em>et</em> des copies (l'infobulle le dit). Ailleurs, l'app dit « gardée hors des IA ».</dd>
+<dt>Pourquoi</dt><dd>« Agents : jamais Claude comme chapeau » (<code>TEXTES.md</code>, vocabulaire). Quelqu'un qui utilise Codex croira ses groupes protégés de Claude seulement. Le bon mot existe déjà dans l'app.</dd>
+<dt>Proposition</dt><dd>« Lu par les IA », interrupteur inchangé. Coupé, le compteur du groupe peut porter le même symbole que les autres endroits « hors des IA ».</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:414px;--h:30px;--x:560;--y:76;--s:.6"><img src="captures-mac-0.24.0/groupes.webp" alt="Accessible à Claude"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui gh" style="align-items:center">Perso <span class="x" style="flex:1">1</span><span class="x"><ins>Lu par les IA</ins></span><span class="tg"></span><span class="chev">⌄</span></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r27">
+<header><span class="n">27</span><div class="h"><h3>Agents : un bouton et un interrupteur sur la même ligne, trois lignes d'aide</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Heures</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>claude.webp</code>, <code>assistant-36c-reglages-claude-codex-non-relie.webp</code> · <code>Onboarding.swift:740-790</code></dd>
+<dt>Vu</dt><dd>« Accès des agents à vos conversations » porte « Relier Claude Desktop » <em>et</em> un interrupteur. Le texte dessous mêle quatre choses : qui est relié, ce qu'ils peuvent faire, où partent les données, et que Claude Desktop sera relancé. Plus bas, « Copier la configuration MCP » (mot du code) et un chemin <code>/tmp/…</code> dans la consigne.</dd>
+<dt>Pourquoi</dt><dd>Deux contrôles sur une ligne obligent à deviner lequel fait quoi : l'interrupteur coupe-t-il Claude Desktop seulement ? Une liste de qui est relié, en prose, cache l'état de chacun. Réglages Système montre ce cas en liste : une ligne par élément, son état à droite.</dd>
+<dt>Proposition</dt><dd>L'interrupteur seul sur sa ligne, avec une phrase de conséquence : « Ce qu'ils lisent part chez leur fournisseur. » En dessous, une ligne par agent trouvé sur ce Mac : « Claude Code — Relié », « Claude Desktop — Relier » (relance dite dans l'alerte qui suit, pas d'avance), « Codex — Relier ». « Copier la configuration MCP » devient « Copier la configuration » : l'agent sait ce que c'est.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:122px;--x:300;--y:150;--s:.55"><img src="captures-mac-0.24.0/claude.webp" alt="Ligne Accès des agents"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui"><div class="sg">
+<div class="sr"><div><div class="t">Accès des agents à vos conversations</div><div class="d">Ce qu'ils lisent part chez leur fournisseur.</div></div><span class="tg"></span></div>
+<div class="sr" style="padding-left:14px"><span class="t">Claude Code</span><span class="r">✓ Relié</span></div>
+<div class="sr" style="padding-left:14px"><span class="t">Claude Desktop</span><span class="btn">Relier</span></div>
+<div class="sr" style="padding-left:14px"><span class="t">Codex</span><span class="r">✓ Relié</span></div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r28">
+<header><span class="n">28</span><div class="h"><h3>Autorisations › Écran : l'instruction et le bouton ne disent pas le même geste</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>assistant-30b-reglages-ecran-a-relancer.webp</code> · <code>Onboarding.swift:652</code>, <code>:309</code></dd>
+<dt>Vu</dt><dd>« Dans Réglages Système, activez CallRecorder, puis « Quitter et rouvrir » » à gauche ; bouton « Relancer Callrecorder » à droite. Le même nom écrit de deux façons sur une ligne. Micro et Son ont « ✓ Autorisé » ; Écran n'a pas d'état.</dd>
+<dt>Pourquoi</dt><dd>On lit deux procédures : celle de macOS (« Quitter et rouvrir ») et celle de l'app (« Relancer »). Lequel faire, et dans quel ordre ? « CallRecorder » est légitime s'il cite la liste de Réglages Système, mais alors entre guillemets.</dd>
+<dt>Proposition</dt><dd>Détail : « Activez « CallRecorder » dans Réglages Système. » Un seul bouton à droite, qui suit l'état : « Ouvrir Réglages Système » tant que ce n'est pas fait, puis « Relancer Callrecorder ». Le bouton de macOS n'est plus cité : il fait la même chose.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:115px;--x:100;--y:12;--s:.44"><img src="captures-mac-0.24.0/assistant-30b-reglages-ecran-a-relancer.webp" alt="Ligne Écran avec Relancer Callrecorder"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui sg">
+<div class="sr"><div><div class="t">Micro</div><div class="d">Votre voix</div></div><span class="r">✓ Autorisé</span></div>
+<div class="sr"><div><div class="t">Écran</div><div class="d">Activez « CallRecorder » dans Réglages Système.</div></div><span class="btn">Relancer Callrecorder</span></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r29">
+<header><span class="n">29</span><div class="h"><h3>« Chaque semaine … Changer… » : un lien dans un titre, des dates en chiffres</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>assistant-30b-reglages-ecran-a-relancer.webp</code> (bas) · <code>Onboarding.swift:314-319</code>, <code>:659-663</code></dd>
+<dt>Vu</dt><dd>Titre de section « Chaque semaine », et à sa droite « Chaque mardi à 9 h · Changer… » en bleu. La ligne « Renouvellement » finit par « Du 03/11 au 10/11 ».</dd>
+<dt>Pourquoi</dt><dd>Un lien bleu dans un en-tête de groupe est un geste du web ; Réglages Système met le réglage dans la ligne, sous forme de menu local. Partout ailleurs l'app écrit les dates en toutes lettres (« samedi 7 novembre »).</dd>
+<dt>Proposition</dt><dd>Section « Renouvellement chaque semaine », une ligne « Moment » avec un menu local « Mardi à 9 h ». La ligne d'état dit « Fait mardi 3 novembre · prochain mardi 10 ».</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:65px;--x:100;--y:292;--s:.44"><img src="captures-mac-0.24.0/assistant-30b-reglages-ecran-a-relancer.webp" alt="Chaque semaine, lien Changer"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui"><div class="gh">Renouvellement chaque semaine</div><div class="sg">
+<div class="sr"><div class="t">Moment</div><span class="pop">Mardi à 9 h</span></div>
+<div class="sr"><div><div class="t">Dernier</div><div class="d">macOS redemande parfois l'accès à l'écran : mieux vaut ce rendez-vous qu'un appel.</div></div><span class="r">mardi 3 novembre</span></div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r30">
+<header><span class="n">30</span><div class="h"><h3>Rien d'autorisé : le bandeau et la ligne disent la même chose</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Minutes</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>assistant-31-reglages-rien-autorise.webp</code> · <code>Onboarding.swift:64</code>, <code>:235</code> ; <code>EmptyCalls.swift:25</code></dd>
+<dt>Vu</dt><dd>Bandeau : « Pour enregistrer vos conversations, autorisez le micro et le son des apps. » [Autoriser]. Juste dessous, la ligne Autorisations : « À autoriser : le micro et le son des apps ». L'icône d'alerte est grise, comme une icône décorative.</dd>
+<dt>Pourquoi</dt><dd>Même fait deux fois dans la vue. « À autoriser : … » est la forme « État : explication » que <code>TEXTES.md</code> écarte. Une alerte grise ne se distingue pas d'une illustration ; Réglages Système met un point orange ou rouge.</dd>
+<dt>Proposition</dt><dd>Bandeau gardé, icône en <code>Palette.warning</code>. La ligne Autorisations reprend son résumé ordinaire et prend un point <code>Palette.warning</code> à droite, devant le chevron, comme une pastille de Réglages Système.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:100px;--x:100;--y:12;--s:.44"><img src="captures-mac-0.24.0/assistant-31-reglages-rien-autorise.webp" alt="Bandeau et ligne en double"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui stack"><div class="sg"><div class="sr"><span><span style="color:var(--warn)">⚠︎</span> Pour enregistrer vos conversations, autorisez le micro et le son des apps.</span><span class="btn">Autoriser</span></div></div>
+<div class="sg"><div class="sr"><div><div class="t">Autorisations</div><div class="d">Micro, son des apps et écran</div></div><span class="r"><span class="rec" style="background:var(--warn)"></span><span class="chev">›</span></span></div></div></div></figure>
+</div>
+</article>
+
+<article class="reco" id="r31">
+<header><span class="n">31</span><div class="h"><h3>Téléphones : les réglages d'un téléphone avant son nom</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Heures</span><span class="tag axe">Sens</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>assistant-33-reglages-telephones.webp</code>, <code>-defile-1.png</code>, <code>-defile-2.png</code>, <code>telephones.webp</code> · <code>Onboarding.swift:577-610</code>, <code>AddPhone.swift:186</code>, <code>Wizard.swift:163</code></dd>
+<dt>Vu</dt><dd>Sous « Téléphones reliés » : quatre réglages, puis, en dernier, « Google Pixel 7 · Vu aujourd'hui à 22:29. » [Retirer]. À quoi s'appliquent les réglages s'il y a deux téléphones ? Plus bas, « Android : Aucun téléphone branché · Branchez votre Pixel en USB » alors qu'un Pixel est relié (par le Wi-Fi). « Ajouter un téléphone » [Ajouter…] répète le verbe. Les coches bleues de « Ce qui est enregistré sur Android » ont l'air de cases à cocher.</dd>
+<dt>Pourquoi</dt><dd>Réglages Système › Bluetooth montre l'appareil d'abord, ses réglages ensuite (bouton ⓘ). « Aucun téléphone branché » à côté d'un téléphone relié se lit comme une contradiction. Une coche bleue dans un groupe de réglages est un contrôle sur le Mac ; si on ne peut pas la décocher, ce n'en est pas un.</dd>
+<dt>Proposition</dt><dd>Une carte par téléphone : en tête son nom, son état (« Relié par le Wi-Fi · vu à 22:29 ») et un ⋯ (Retirer), puis ses réglages. Un seul bouton « Ajouter un téléphone… » sous la liste, comme « Ajouter… » de Bluetooth. La ligne USB ne parle que de l'USB : « Aucun téléphone branché en USB ». Coches remplacées par le texte « Enregistré ».</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:206px;--x:100;--y:455;--s:.44"><img src="captures-mac-0.24.0/assistant-33-reglages-telephones.webp" alt="Réglages d'un téléphone avant son nom"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui"><div class="sg">
+<div class="sr"><div><div class="t" style="font-weight:600">Google Pixel 7</div><div class="d">Relié par le Wi-Fi · vu à 22:29</div></div><span class="ic-b">⋯</span></div>
+<div class="sr"><div class="t">Quand il enregistre seul</div><span class="pop">Tout le temps</span></div>
+<div class="sr"><div class="t">Le Mac enregistre aussi</div><span class="tg"></span></div>
+<div class="sr"><div><div class="t">Capter ses appels par le Wi-Fi</div><div class="d">Le débogage sans fil reste allumé sur le téléphone.</div></div><span class="tg"></span></div></div>
+<div style="margin-top:8px"><span class="btn">Ajouter un téléphone…</span></div></div></figure>
+</div>
+<p class="contre">« Quand le téléphone enregistre seul » vient de <code>358bc24</code> (4 novembre) ; les positions du menu ont été tranchées par Gildas le 6 novembre (<code>TEXTES.md</code>, vocabulaire). La proposition garde les positions et le mot « Enregistrement » ; elle ne raccourcit le titre que parce que le téléphone est nommé en tête de carte.</p>
+</article>
+
+<article class="reco" id="r32">
+<header><span class="n">32</span><div class="h"><h3>Réglages pleine fenêtre, Groupes à droite : deux façons d'entrer et de sortir</h3>
+<div class="tags"><span class="tag">Détail</span><span class="tag">Heures</span><span class="tag axe">Familiarité</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>reglages.webp</code> (pleine fenêtre, barre latérale masquée) contre <code>groupes.webp</code> (à droite, barre latérale visible) · <code>Wizard.swift:60-70</code></dd>
+<dt>Vu</dt><dd>⌘, remplace toute la fenêtre par une liste centrée avec un retour ‹ ; Groupes, ouvert depuis cette liste, revient à la disposition à deux colonnes, avec son propre ‹. On descend sur deux niveaux (Réglages › Intégrations › Agents) par une liste et des chevrons, à la façon d'un iPhone.</dd>
+<dt>Pourquoi</dt><dd>Réglages Système (depuis macOS 13) et les réglages des apps d'Apple montrent les rubriques dans une barre latérale, et la page à droite : on voit où l'on est, on change de rubrique d'un clic, sans retour. La fenêtre a déjà une barre latérale ; elle disparaît au moment où elle servirait.</dd>
+<dt>Proposition</dt><dd>Garder les Réglages dans la fenêtre, comme décidé, mais à la façon de Réglages Système : la colonne de gauche liste les rubriques (Autorisations, Groupes, Couverture, Intégrations, Général) pendant que ⌘, est ouvert ; la page à droite ; Échap ramène aux conversations. Groupes devient une rubrique comme les autres.</dd>
+</dl>
+<p class="contre">Les Réglages dans la fenêtre, sans fenêtre à part, sont un choix de <code>9c489e0</code> (27 octobre). La proposition le garde ; elle change seulement ce que montre la colonne pendant qu'ils sont ouverts.</p>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="shot" style="--w:385px;--h:120px;--x:0;--y:0;--s:.3"><img src="captures-mac-0.24.0/reglages.webp" alt="Réglages pleine fenêtre"></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="ui win" style="display:grid;grid-template-columns:130px 1fr;min-height:150px">
+<div style="background:var(--card);padding:8px 6px"><div class="row" style="padding:3px 6px">Autorisations</div><div class="row" style="padding:3px 6px">Groupes</div><div class="row" style="padding:3px 6px">Couverture</div><div class="row sel" style="padding:3px 6px">Intégrations</div><div class="row" style="padding:3px 6px">Général</div></div>
+<div style="padding:10px"><div class="ttl" style="margin-bottom:6px">Intégrations</div><div class="sg"><div class="sr"><span class="t">Agents</span><span class="chev">›</span></div><div class="sr"><span class="t">Copies dans un dossier</span><span class="chev">›</span></div></div></div></div></figure>
+</div>
+</article>
+
+<!-- ============================================================ -->
+<h2 id="s-a11y">VoiceOver</h2>
+
+<article class="reco" id="r33">
+<header><span class="n">33</span><div class="h"><h3>VoiceOver : l'icône dit « Au repos », la pastille ne dit rien</h3>
+<div class="tags"><span class="tag gene">Gêne</span><span class="tag">Minutes</span><span class="tag axe">Fonction</span></div></div></header>
+<dl>
+<dt>Où</dt><dd><code>App.swift:839</code> (icône) · <code>Pastille.swift:164-180</code> (point, chrono, panneau) · <code>CallCard.swift:157-158</code> (ligne de liste)</dd>
+<dt>Vu</dt><dd>L'icône de la barre des menus a pour description « Au repos » ou « Enregistrement » : VoiceOver annonce « Au repos, bouton », sans le nom de l'app. Le point rouge et le chrono de la pastille ne sont pas des éléments accessibles nommés ; le panneau n'a pas de titre. La ligne de liste combine ses enfants et met <code>appLabel</code> en indication : le nom de l'app arrive en dernier, après une pause.</dd>
+<dt>Pourquoi</dt><dd>Avec VoiceOver, on parcourt la barre des menus par le nom des apps : « Au repos » ne se retrouve pas. Pendant un appel, savoir qu'on est enregistré est la seule information de la pastille, et elle est muette. C'est aussi une question de consentement : la personne doit pouvoir vérifier.</dd>
+<dt>Proposition</dt><dd>Icône : « Callrecorder » au repos, « Callrecorder, enregistrement de Teams, 12 minutes » pendant. Pastille : un élément « Enregistrement de Teams, 12 minutes » (valeur mise à jour chaque minute, pas chaque seconde), puis ses deux boutons. Ligne : le nom de l'app passe du <em>hint</em> au libellé, après le titre.</dd>
+</dl>
+<div class="ba">
+<figure><figcaption>Avant</figcaption><div class="vo stack" style="gap:4px"><div>▸ <b>Au repos</b>, bouton</div><div>▸ (pastille) <b>Capturer l'appel</b>, bouton</div><div>▸ <b>Arrêter l'enregistrement</b>, bouton</div></div></figure>
+<figure class="after"><figcaption>Après</figcaption><div class="vo stack" style="gap:4px"><div>▸ <b>Callrecorder, enregistrement de Teams, 12 minutes</b>, bouton</div><div>▸ <b>Enregistrement de Teams, 12 minutes</b></div><div>▸ <b>Capturer l'appel</b>, bouton · <b>Arrêter l'enregistrement</b>, bouton</div></div></figure>
+</div>
+</article>
+
+<p class="legend" style="margin-top:36px">33 recommandations. Rien n'a été changé dans le code. Les captures sont celles de la 0.24.0 publiée ; les numéros de ligne, ceux de la branche <code>recos-design</code> au 8 novembre 2026.</p>
+
+</main>
+</body>
+</html>
