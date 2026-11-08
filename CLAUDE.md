@@ -13,6 +13,10 @@ seule.
 
 Un texte ou un titre changé exprès ne revient pas à son ancienne forme sans que Gildas le demande. Le 6 novembre 2026, une relecture a remis le titre long de l'accueil, raccourci par Gildas trois jours plus tôt. Avant de changer un texte, regarder d'où il vient (`git log -S '<texte>'`). Avant de fusionner : `python3 scripts/retours.py`, depuis la branche de travail. S'il signale un retour voulu, le dire dans le message d'un commit : « Revient sur <hash> : <raison> ».
 
+## Le logo et le nom
+
+Les règles sont dans `DESIGN.md › Logo et nom` du dépôt de l'app (callrecorder-app). Le cartouche se pose par `<span class="marque">callrecorder</span>`, jamais redessiné ailleurs ; une icône est l'un des fichiers de `marque/icone/` de l'app, recopié tel quel ; « Callrecorder » dans le texte. Avant de fusionner, depuis la branche de travail : `python3 ~/callrecord/scripts/marque.py --site .` (s'il dit un écart, le corriger).
+
 ## Les captures
 
 Une capture garde la forme et la matière de ce qu'elle montre.
