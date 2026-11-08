@@ -133,7 +133,7 @@
     }, { rootMargin: "-30% 0px -60% 0px" });
     links.forEach((a, id) => io.observe(document.getElementById(id)));
   })();
-  // Les écrans du téléphone en clair ou en sombre, pour toute la page, gardés d'une visite à l'autre.
+  // Les écrans en clair ou en sombre : toutes les bascules ensemble, gardées d'une visite à l'autre.
   (() => {
     const boutons = [...document.querySelectorAll(".bascule button")];
     const applique = mode => {
