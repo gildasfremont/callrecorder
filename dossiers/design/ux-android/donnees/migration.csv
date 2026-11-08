@@ -1,0 +1,101 @@
+fichier,ligne,quoi,actuel,nouveau,change
+CallService.kt,129,couleur,#FFD32F2F,enregistrement (P15),oui
+ConversationScreen.kt,56,texte,17 sp,titre-objet (16 sp medium),oui
+ConversationScreen.kt,57,texte,13 sp,soutien (14 sp),oui
+ConversationScreen.kt,61,texte,15 sp,corps (16 sp),oui
+ConversationScreen.kt,64,texte,16 sp,corps (16 sp),non
+ConversationScreen.kt,67,rayon,12,carte (12),non
+ConversationScreen.kt,68,espacement,10 dp,12 dp,oui
+ConversationScreen.kt,68,espacement,10 dp,12 dp,oui
+ConversationScreen.kt,68,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,68,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,81,couleur,LinkService.ACCENT,look.accent (P03),oui
+ConversationScreen.kt,81,rayon,22,pilule (48 dp → 24),oui
+ConversationScreen.kt,83,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,83,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,83,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,83,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,87,couleur,LinkService.ACCENT,look.accent (P03),oui
+ConversationScreen.kt,88,couleur,LinkService.ACCENT,look.accent (P03),oui
+ConversationScreen.kt,98,texte,12 sp,accessoire (12 sp),non
+ConversationScreen.kt,102,rayon,12,carte (12),non
+ConversationScreen.kt,103,espacement,10 dp,12 dp,oui
+ConversationScreen.kt,103,espacement,10 dp,12 dp,oui
+ConversationScreen.kt,105,taille,44 dp,48 dp (P10),oui
+ConversationScreen.kt,105,taille,44 dp,48 dp (P10),oui
+ConversationScreen.kt,121,espacement,14 dp,16 dp,oui
+ConversationScreen.kt,130,rayon,24,pilule : 64 dp → 32 (aujourd'hui 24 : pas une capsule),oui
+ConversationScreen.kt,173,rayon,20,pilule (56 dp → 28),oui
+ConversationScreen.kt,178,texte,12 sp,outil (12 sp medium),oui
+ConversationScreen.kt,183,état,alpha 0.4,"isEnabled = false + desactive 0,38 (P09)",oui
+ConversationScreen.kt,274,couleur,#FFFFFFFF,sur-accent (P03),oui
+ConversationScreen.kt,320,texte,13 sp medium,décor 13 dp,oui
+ConversationScreen.kt,324,texte,15 sp medium,titre-groupe (14 sp medium),oui
+ConversationScreen.kt,325,couleur,ink(0.5),secondaire (P08),oui
+ConversationScreen.kt,325,texte,13 sp,accessoire (12 sp),oui
+ConversationScreen.kt,326,texte,16 sp,corps (16 sp),non
+ConversationScreen.kt,355,couleur,#1F000000,"teinte 0,12",oui
+ConversationScreen.kt,355,rayon,18,pilule (36 dp → 18) : inchangé,non
+HomeScreen.kt,64,rayon,26,pilule (52 → 26) : inchangé,non
+HomeScreen.kt,71,texte,16 sp,corps (16 sp),non
+HomeScreen.kt,114,rayon,24,pilule : inchangé,non
+HomeScreen.kt,114,rayon,24,pilule : inchangé,non
+HomeScreen.kt,240,espacement,6 dp,8 dp,oui
+HomeScreen.kt,240,texte,14 sp medium,titre-groupe (14 sp medium),non
+HomeScreen.kt,242,couleur,LinkService.ACCENT,look.accent (P03),oui
+HomeScreen.kt,242,couleur,LinkService.ACCENT,look.accent (P03),oui
+HomeScreen.kt,252,rayon,8,ligne (8),non
+HomeScreen.kt,253,couleur,#1F000000,"teinte 0,12",oui
+HomeScreen.kt,253,couleur,LinkService.ACCENT,look.accent (P03),oui
+HomeScreen.kt,267,rayon,8,ligne (8),non
+HomeScreen.kt,269,taille,44 dp,"44 dp (vignette, non touchable) : inchangé",non
+HomeScreen.kt,269,taille,44 dp,"44 dp (vignette, non touchable) : inchangé",non
+HomeScreen.kt,272,texte,16 sp,corps (16 sp),non
+HomeScreen.kt,273,texte,14 sp,soutien (14 sp),non
+HomeScreen.kt,284,texte,16 sp medium,titre-objet (16 sp medium),non
+HomeScreen.kt,289,texte,12 sp,outil (12 sp medium),oui
+HomeScreen.kt,312,rayon,24,pilule ; choisi = accent plein (P08),oui
+HomeScreen.kt,312,rayon,24,pilule ; choisi = accent plein (P08),oui
+HomeScreen.kt,316,couleur,LinkService.ACCENT,look.accent (P03),oui
+HomeScreen.kt,316,texte,15 sp,corps (16 sp),oui
+HomeScreen.kt,318,couleur,ink(0.45),secondaire ou piste,oui
+Look.kt,48,couleur,ink(0.45),secondaire ou piste,oui
+Look.kt,50,couleur,LinkService.ACCENT,look.accent (P03),oui
+Pastille.kt,42,rayon,24,pilule : inchangé,non
+Screen.kt,37,texte,16 sp,corps (16 sp),non
+Screen.kt,65,rayon,24,pilule : inchangé,non
+Screen.kt,87,couleur,#FF25D366,"whatsapp (variante par thème, P08)",oui
+Screen.kt,88,couleur,#FF3B45FD,signal (variante par thème),oui
+Screen.kt,89,couleur,#FF26A5E4,telegram (variante par thème),oui
+Screen.kt,90,couleur,#FF00897B,meet,oui
+Screen.kt,91,couleur,ink(0.55),secondaire,oui
+Screen.kt,112,espacement,6 dp,8 dp,oui
+Screen.kt,133,texte,16 sp,corps (16 sp),non
+Screen.kt,142,rayon,8,ligne (8),non
+Screen.kt,146,texte,16 sp,corps (16 sp),non
+Screen.kt,147,texte,15 sp,soutien (14 sp),oui
+Screen.kt,148,couleur,ink(0.4),secondaire (P08),oui
+SettingsScreen.kt,32,texte,14 sp,soutien (14 sp),non
+SettingsScreen.kt,35,texte,16 sp,corps (16 sp),non
+SettingsScreen.kt,38,couleur,LinkService.ACCENT,look.accent (P03),oui
+SettingsScreen.kt,43,espacement,10 dp,12 dp,oui
+SettingsScreen.kt,55,texte,14 sp,soutien (14 sp),non
+SettingsScreen.kt,58,texte,14 sp,action-texte (14 sp medium),oui
+SettingsScreen.kt,62,couleur,LinkService.ACCENT,look.accent (P03),oui
+SettingsScreen.kt,65,rayon,8,ligne (8),non
+SettingsScreen.kt,75,rayon,12,carte (12),non
+SettingsScreen.kt,87,texte,13 sp,soutien (14 sp),oui
+SettingsScreen.kt,93,rayon,12,carte (12),non
+SettingsScreen.kt,110,texte,16 sp,corps (16 sp),non
+SettingsScreen.kt,117,rayon,12,carte (12),non
+SettingsScreen.kt,121,texte,14 sp medium,titre-groupe (14 sp medium),non
+SettingsScreen.kt,125,texte,17 sp,titre-ecran (22 sp),oui
+SetupScreen.kt,16,texte,17 sp medium,titre-ecran (22 sp),oui
+SetupScreen.kt,17,texte,15 sp,corps (16 sp),oui
+SetupScreen.kt,20,texte,16 sp,action-texte (14 sp medium),oui
+SetupScreen.kt,24,couleur,#FFFFFFFF,sur-accent (P03),oui
+SetupScreen.kt,25,couleur,LinkService.ACCENT,look.accent (P03),oui
+SetupScreen.kt,25,rayon,24,pilule : inchangé,non
+SetupScreen.kt,28,espacement,20 dp,24 dp,oui
+SetupScreen.kt,28,espacement,20 dp,24 dp,oui
+SetupScreen.kt,31,couleur,#FFFFFFFF,sur-accent (P03),oui

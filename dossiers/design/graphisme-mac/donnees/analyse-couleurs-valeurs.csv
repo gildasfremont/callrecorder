@@ -1,0 +1,63 @@
+valeur,occurrences
+.secondary,157
+Color.accentColor,32
+Color.primary,23
+Palette.warning,17
+.tertiary,14
+Color.secondary,11
+.primary,11
+Palette.live,11
+Color.clear,9
+Card.fill,8
+.white,7
+Hover.fill,7
+TranscriptReaderView.me,6
+Thumb.edge,6
+Color.white,5
+Color(nsColor: .windowBackgroundColor),5
+TranscriptReaderView.them,4
+Chip.fill,4
+Chosen.fill,4
+.orange,4
+Palette.success,4
+Color(nsColor: NSColor(name: nil),3
+Thumb.fill,3
+Hover.pressed,3
+NSColor.labelColor,2
+NSColor.black,2
+.green,2
+me,2
+.black,2
+Card.hover,2
+NSColor(srgbRed: CGFloat(c.0),1
+NSColor.controlAccentColor,1
+NSColor.findHighlightColor,1
+NSColor.systemOrange,1
+"Color(red: 0.38, green: 0.29, blue: 0.95)",1
+Color(nsColor: .secondaryLabelColor),1
+Color(white: 0.15),1
+"Color(red: r / 255, green: g / 255, blue: b / 255)",1
+NSColor.systemTeal,1
+"NSColor(white: 0.97, alpha: 1)",1
+Color.black,1
+Color(nsColor: .findHighlightColor),1
+Color(white: 0.13),1
+"Color(red: 0.36, green: 0.46, blue: 0.72)",1
+"Color(red: 0.62, green: 0.5, blue: 0.75)",1
+"Color(red: 0.95, green: 0.97, blue: 1)",1
+"Color(red: 0.35, green: 0.55, blue: 0.85)",1
+"Color(red: 0.86, green: 0.25, blue: 0.3)",1
+Color(nsColor: .textBackgroundColor),1
+NSColor.systemRed,1
+StorageBar.chosen,1
+StorageBar.part,1
+NSColor.secondaryLabelColor,1
+"NSColor(srgbRed: 0x5E / 255, green: 0xA8 / 255, blue: 1, alpha: 1)",1
+"NSColor(srgbRed: 0, green: 0x60 / 255, blue: 0xDF / 255, alpha: 1)",1
+them,1
+"NSColor(srgbRed: 1, green: 0xC7 / 255, blue: 0x9A / 255, alpha: 1)",1
+"NSColor(srgbRed: 0x8A / 255, green: 0x3D / 255, blue: 0x06 / 255, alph",1
+.purple,1
+.pink,1
+.teal,1
+"Color(red: 0.12, green: 0.2, blue: 0.4)",1

@@ -1,0 +1,21 @@
+mesure,avant,apres
+textes mesurés,1500,1652
+textes sous WCAG 2 AA (1.4.3),18,0
+textes sous APCA (seuil Bronze),199,111
+contraste WCAG le plus bas,3.69,4.86
+tailles de texte distinctes à 375,15,14
+tailles de texte distinctes à 1440,17,15
+"styles de texte distincts à 1440 (famille, taille, graisse, interligne, couleur)",42,38
+cibles sous 24 px sans espace (WCAG 2.5.8),2,1
+captures Fonctionnalités et Versions à 375 : échelle min,0.24,0.43
+captures Fonctionnalités et Versions à 375 : échelle max,1.01,0.95
+"captures sous ×0,8 à 375",31,13
+"captures au-dessus de ×1,05 à 375",0,0
+captures Fonctionnalités et Versions à 1440 : échelle min,0.33,0.81
+captures Fonctionnalités et Versions à 1440 : échelle max,1.89,1
+"captures sous ×0,8 à 1440",22,0
+"captures au-dessus de ×1,05 à 1440",4,0
+"violations axe (nœuds, 5 pages × 2 largeurs)",118,0
+règles axe en échec,5,0
+hauteur des pages à 1440 (px),"{""accueil"": 5248, ""fonctionnalites"": 9002, ""guides"": 2448, ""versions"": 11928, ""confidentialite"": 2454}","{""accueil"": 5167, ""fonctionnalites"": 9007, ""guides"": 2564, ""versions"": 14658, ""confidentialite"": 3005}"
+hauteur des pages à 375 (px),"{""accueil"": 5481, ""fonctionnalites"": 8317, ""guides"": 2865, ""versions"": 16153, ""confidentialite"": 4173}","{""accueil"": 5760, ""fonctionnalites"": 8528, ""guides"": 2961, ""versions"": 16695, ""confidentialite"": 4634}"

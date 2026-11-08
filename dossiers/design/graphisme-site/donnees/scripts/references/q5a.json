@@ -1,0 +1,110 @@
+[
+ {
+  "site": "apple",
+  "url": "https://support.apple.com/fr-fr/guide/mac-help/mchlp1066/mac",
+  "h1": {
+   "texte": "Autoriser un ordinateur distant à accéder à votre Mac",
+   "x": 312,
+   "droite": 1129,
+   "w": 817,
+   "y": 284,
+   "texteX": 312,
+   "textAlign": "left",
+   "fontSize": "40px"
+  },
+  "paragraphe": {
+   "x": 312,
+   "droite": 1129,
+   "w": 817,
+   "y": 381
+  },
+  "sommaires": [],
+  "capture": "apple-sommaire-1440.webp"
+ },
+ {
+  "site": "linear",
+  "url": "https://linear.app/docs/conceptual-model",
+  "h1": {
+   "texte": "Concepts",
+   "x": 372,
+   "droite": 1022,
+   "w": 650,
+   "y": 112,
+   "texteX": 372,
+   "textAlign": "start",
+   "fontSize": "32px"
+  },
+  "paragraphe": {
+   "x": 372,
+   "droite": 1022,
+   "w": 650,
+   "y": 172
+  },
+  "sommaires": [
+   {
+    "x": 0,
+    "droite": 280,
+    "w": 280,
+    "liens": 66,
+    "cls": "eKExYq_container",
+    "tag": "NAV"
+   },
+   {
+    "x": 1098,
+    "droite": 1348,
+    "w": 250,
+    "liens": 13,
+    "cls": "_em0sW_toc jjY06q_aside",
+    "tag": "ASIDE"
+   }
+  ],
+  "capture": "linear-sommaire-1440.webp"
+ },
+ {
+  "site": "raycast",
+  "url": "https://manual.raycast.com/hotkey",
+  "h1": {
+   "texte": "Shortcut to Nowhere",
+   "x": 658,
+   "droite": 1042,
+   "w": 384,
+   "y": 282,
+   "texteX": 658,
+   "textAlign": "center",
+   "fontSize": "40px"
+  },
+  "paragraphe": {
+   "x": 658,
+   "droite": 1042,
+   "w": 384,
+   "y": 346
+  },
+  "sommaires": [
+   {
+    "x": 0,
+    "droite": 260,
+    "w": 260,
+    "liens": 97,
+    "cls": "sidebar-module__lUN8Fa__sidebar",
+    "tag": "ASIDE"
+   },
+   {
+    "x": 0,
+    "droite": 260,
+    "w": 260,
+    "liens": 94,
+    "cls": "sidebar-module__lUN8Fa__nav",
+    "tag": "NAV"
+   },
+   {
+    "x": 24,
+    "droite": 236,
+    "w": 212,
+    "liens": 94,
+    "cls": "sidebar-module__lUN8Fa__list",
+    "tag": "UL"
+   }
+  ],
+  "capture": "raycast-sommaire-1440.webp"
+ }
+]

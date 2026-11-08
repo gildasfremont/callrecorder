@@ -1,0 +1,23 @@
+texte,fond,occurrences,wcag_min,apca_lc_min,tailles,echecs_wcag,echecs_apca,fond_complexe,exemples
+#8a8576,#ffffff,18,3.69,64.5,12 12.5 16.768,18,18,,"accueil@375 span.sub « · Banque Aurore, 28 oct. » | accueil@375 span.sub « · Banque Ferrand, 23 oct. » | accueil@375 span.sub « · Caisse Régionale Sud, 21 oct. »"
+#0064d2,#e6f0fc,3,4.86,67.5,12,0,3,,versions@375 span.latest « Dernière » | versions@768 span.latest « Dernière » | versions@1440 span.latest « Dernière »
+#0064d2,#edf2f8,99,4.97,69,14 15 16 17,0,99,,accueil@375 a « Toutes les fonctionnalités » | accueil@375 a « gildas.fyi » | accueil@375 a « LinkedIn »
+#6b6759,#faf9f5,12,5.37,74.7,10.8 11.04 11.25 11.5 15.0912 15.4266,0,12,,accueil@375 span « Claude » | accueil@375 div.tool « 5 appels lus : la revue budgétaire et 4 appels ave » | accueil@375 div.tool « 1 réunion lue : revue mensuelle avec Transports Mo »
+#566175,#edf2f8,55,5.55,73,14 15,0,55,,accueil@375 p.req « macOS 15 ou plus récent · Mac M1 ou plus récent » | accueil@375 p.dock-label « Retient ce qui se dit sur » | accueil@375 p.dock-label « et s’en souvient pour »
+#0064d2,#ffffff,12,5.59,77.1,16,0,0,,guides@375 a «  » | guides@375 a «  » | guides@375 a « Google Drive pour ordinateur »
+#566175,#f3f4f6,12,5.69,74.7,14,0,12,,guides@375 code «  » | guides@375 code « calls » | guides@375 code « /Applications/CallRecorder.app/Contents/MacOS/Call »
+#566175,#f4f7fb,6,5.81,76.1,15,0,0,,accueil@375 p « Claude ne voit pas vos appels ? Quittez et relance » | accueil@375 p « Une erreur ? Collez le texte du Terminal dans votr » | accueil@768 p « Claude ne voit pas vos appels ? Quittez et relance »
+#566175,#ffffff,214,6.25,81.1,11.6667 13 14 16,0,0,,"accueil@375 p « Une ligne à copier, deux autorisations, celle de l » | accueil@375 p « Zoom, Teams, Meet, FaceTime, WhatsApp et les appel » | accueil@375 p « Un rendez-vous dans une salle, sans visio : posez  »"
+#2c3a50,#edf2f8,108,10.21,88.3,17 18 19 20 23,0,0,,"accueil@375 p.lead « Vos conversations mémorisées, transcrites sur votr » | accueil@375 p « Votre assistant la consulte quand vous lui posez u » | fonctionnalites@375 p « Demandez à Claude « Qu'est-ce que j'ai promis à Pa »"
+#2c3a50,#f3f4f6,9,10.46,90,14,0,0,,guides@375 code «  » | guides@375 code « ~/.cursor/mcp.json » | guides@375 code « ~/.gemini/settings.json »
+#2c3a50,#ffffff,198,11.49,96.4,16,0,0,,accueil@375 b « Autoriser » | guides@375 li «  » | guides@375 li «  »
+#142338,#dfe5ef,6,12.51,87.1,14 15,0,0,,accueil@375 button « Réunions » | accueil@375 button « Notes vocales » | accueil@768 button « Réunions »
+#142338,#e0e6ee,1,12.59,87.5,15,0,0,,fonctionnalites@1440 a « Assistants IA »
+#29261b,#f0eee6,9,13.03,91.9,12 12.5 16.768,0,0,,"accueil@375 div.ask « Pour le conseil du 20 : qu'est-ce que les banques  » | accueil@375 div.ask « À la revue de jeudi, qu'est-ce que Transports More » | accueil@375 div.ask « Range ce que je me suis dicté cette semaine. »"
+#e8e8e8,#1e1e1e,3,13.61,91.1,13,0,0,,accueil@375 code#cmd « curl -fsSL https://github.com/gildasfremont/callre » | accueil@768 code#cmd « curl -fsSL https://github.com/gildasfremont/callre » | accueil@1440 code#cmd « curl -fsSL https://github.com/gildasfremont/callre »
+#142338,#eff1f6,3,14.03,94.5,14 15,0,0,,accueil@375 button « Pas de Claude » | accueil@768 button « Pas de Claude » | accueil@1440 button « Pas de Claude »
+#142338,#edf2f8,148,14.06,94.6,15 17 28 30.72 36 38 40 43.008 56.832 60 84,0,0,,accueil@375 a « Fonctionnalités » | accueil@375 h1 « Souvenez-vous de tout » | accueil@375 h2 « Vos appels rejoignent votre mémoire »
+#29261b,#faf9f5,15,14.37,98.4,12 12.5 16.768,0,0,,"accueil@375 p « Deux banques sur trois renouvellent, mais pas aux  » | accueil@375 p.next « En revue budgétaire, vous avez dit « rien d'inquié » | accueil@375 p « Trois engagements, le premier dès mercredi : »"
+#29261b,#ffffff,33,15.14,102,12 12.5 16.768,0,0,,"accueil@375 li « « On renouvelle, mais avec un covenant sur la dett » | accueil@375 li « « On peut monter à trois millions si vous nous don » | accueil@375 li « « Le comité ne se réunit pas avant décembre. » · C »"
+#142338,#ffffff,535,15.82,102.7,12 12.5 14 15 16 16.768 17 18 21 24,0,0,,accueil@375 span.marque « callrecorder » | accueil@375 a.button « Installer » | accueil@375 button « Appels et visios »
+#ffffff,#202020,1,16.29,105.8,13,0,0,"linear-gradient(to right, rgba(44, 44, 4",accueil@1440 span.hint « Copier »

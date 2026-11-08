@@ -1,0 +1,101 @@
+{
+ "base": {
+  "textes": 311,
+  "wcag_echecs": 24,
+  "apca_echecs": 6,
+  "coupes": 4,
+  "cibles": 204,
+  "cibles_sous_48": 6,
+  "debordements": 0
+ },
+ "base+nuit": {
+  "textes": 46,
+  "wcag_echecs": 1,
+  "apca_echecs": 25,
+  "coupes": 1,
+  "cibles": 25,
+  "cibles_sous_48": 0,
+  "debordements": 0
+ },
+ "clair": {
+  "textes": 305,
+  "wcag_echecs": 22,
+  "apca_echecs": 6,
+  "coupes": 4,
+  "cibles": 202,
+  "cibles_sous_48": 6,
+  "debordements": 0
+ },
+ "clair+nuit": {
+  "textes": 46,
+  "wcag_echecs": 1,
+  "apca_echecs": 25,
+  "coupes": 1,
+  "cibles": 25,
+  "cibles_sous_48": 0,
+  "debordements": 0
+ },
+ "etroit": {
+  "textes": 303,
+  "wcag_echecs": 22,
+  "apca_echecs": 6,
+  "coupes": 10,
+  "cibles": 201,
+  "cibles_sous_48": 36,
+  "debordements": 0
+ },
+ "etroit+nuit": {
+  "textes": 46,
+  "wcag_echecs": 1,
+  "apca_echecs": 25,
+  "coupes": 2,
+  "cibles": 25,
+  "cibles_sous_48": 0,
+  "debordements": 0
+ },
+ "large": {
+  "textes": 305,
+  "wcag_echecs": 22,
+  "apca_echecs": 6,
+  "coupes": 0,
+  "cibles": 202,
+  "cibles_sous_48": 6,
+  "debordements": 0
+ },
+ "large+nuit": {
+  "textes": 46,
+  "wcag_echecs": 1,
+  "apca_echecs": 25,
+  "coupes": 0,
+  "cibles": 25,
+  "cibles_sous_48": 0,
+  "debordements": 0
+ },
+ "sombre": {
+  "textes": 357,
+  "wcag_echecs": 5,
+  "apca_echecs": 183,
+  "coupes": 5,
+  "cibles": 229,
+  "cibles_sous_48": 6,
+  "debordements": 0
+ },
+ "texte200": {
+  "textes": 290,
+  "wcag_echecs": 18,
+  "apca_echecs": 5,
+  "coupes": 38,
+  "cibles": 201,
+  "cibles_sous_48": 3,
+  "debordements": 0
+ },
+ "texte200+nuit": {
+  "textes": 46,
+  "wcag_echecs": 1,
+  "apca_echecs": 25,
+  "coupes": 4,
+  "cibles": 25,
+  "cibles_sous_48": 0,
+  "debordements": 0
+ }
+}

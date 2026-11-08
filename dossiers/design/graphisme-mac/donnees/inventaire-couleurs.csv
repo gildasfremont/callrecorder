@@ -1,0 +1,403 @@
+fichier,ligne,extrait,hors_ecran,valeur
+Accessibility.swift,50,"func rgb(_ c: (Int, Int, Int)) -> NSColor { NSColor(srgbRed: CGFloat(c.0) / 255, green: CGFloat(c.1) / 255, blue: CGFloat(c.2) / 255, alpha: 1) }",,NSColor(srgbRed: CGFloat(c.0)
+Accessibility.swift,51,return Color(nsColor: NSColor(name: nil) { a in,,Color(nsColor: NSColor(name: nil)
+AddPhone.swift,47,"if shown != .ready, let pitch = Self.pitch { Text(pitch).foregroundStyle(.secondary) }",,.secondary
+AddPhone.swift,62,".font(.subheadline).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)",,.secondary
+AddPhone.swift,111,.foregroundStyle(done || now ? Color.white : Color.secondary),,Color.white
+AddPhone.swift,111,.foregroundStyle(done || now ? Color.white : Color.secondary),,Color.secondary
+AddPhone.swift,113,.background(Circle().fill(done || now ? Color.accentColor : Color.secondary.opacity(0.15))),,Color.accentColor
+AddPhone.swift,113,.background(Circle().fill(done || now ? Color.accentColor : Color.secondary.opacity(0.15))),,Color.secondary
+AddPhone.swift,115,Text(title).font(now ? .body.weight(.semibold) : .body).foregroundStyle(now ? .primary : .secondary),,.primary
+AddPhone.swift,115,Text(title).font(now ? .body.weight(.semibold) : .body).foregroundStyle(now ? .primary : .secondary),,.secondary
+AddPhone.swift,118,"Text(detail).font(.subheadline).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)",,.secondary
+AddPhone.swift,130,"Image(systemName: ""checkmark.circle.fill"").font(.system(size: 36)).foregroundStyle(Color.accentColor)",,Color.accentColor
+AddPhone.swift,132,"Text(alone).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)",,.secondary
+AddPhone.swift,165,.padding(8).background(RoundedRectangle(cornerRadius: 8).fill(.white)),,.white
+AddPhone.swift,169,.font(.subheadline).foregroundStyle(.secondary),,.secondary
+AddPhone.swift,171,".font(.subheadline).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)",,.secondary
+AddPhone.swift,197,"let host = NSHostingView(rootView: view.background(Color(nsColor: .windowBackgroundColor)).environment(\.controlActiveState, .key))",,Color(nsColor: .windowBackgroundColor)
+AgentSpend.swift,20,Color.clear.frame(height: 0),,Color.clear
+AgentSpend.swift,43,.font(.callout.monospacedDigit()).foregroundStyle(.secondary),,.secondary
+AskAI.swift,156,layer?.backgroundColor = NSColor.controlAccentColor.withAlphaComponent(0.12).cgColor,,NSColor.controlAccentColor
+AskAI.swift,224,"let s = NSMutableAttributedString(string: text, attributes: [.font: font, .foregroundColor: NSColor.labelColor, .paragraphStyle: p])",,NSColor.labelColor
+AskAI.swift,229,"s.addAttributes([.backgroundColor: NSColor.findHighlightColor, .foregroundColor: NSColor.black], range: r)",,NSColor.findHighlightColor
+AskAI.swift,229,"s.addAttributes([.backgroundColor: NSColor.findHighlightColor, .foregroundColor: NSColor.black], range: r)",,NSColor.black
+AskAI.swift,232,"s.addAttributes([.backgroundColor: NSColor.systemOrange, .foregroundColor: NSColor.black], range: current)",,NSColor.systemOrange
+AskAI.swift,232,"s.addAttributes([.backgroundColor: NSColor.systemOrange, .foregroundColor: NSColor.black], range: current)",,NSColor.black
+AskAI.swift,265,Text(v.label).font(.caption.weight(.semibold)).foregroundStyle(.secondary),,.secondary
+AskAI.swift,266,"if v.current { Text(""affichée"").font(.caption).foregroundStyle(.tertiary) }",,.tertiary
+AskAI.swift,280,"Text(""Une seule transcription"").font(.caption).foregroundStyle(.secondary)",,.secondary
+CallApps.swift,19,"CallApp(key: ""facetime"", name: ""FaceTime"", paths: [""/System/Applications/FaceTime.app""], symbol: ""video.fill"", color: .green),",,.green
+CallApps.swift,23,"CallApp(key: ""loom"", name: ""Loom"", paths: [""/Applications/Loom.app""], symbol: ""record.circle"", color: Color(red: 0.38, green: 0.29, blue: 0.95)),",,"Color(red: 0.38, green: 0.29, blue: 0.95)"
+CallApps.swift,48,"Image(systemName: app.symbol).font(.system(size: 18, weight: .semibold)).foregroundStyle(.white)",,.white
+CallCard.swift,110,.foregroundStyle(t.found ? .primary : .secondary),,.primary
+CallCard.swift,110,.foregroundStyle(t.found ? .primary : .secondary),,.secondary
+CallCard.swift,114,"Image(systemName: ""hand.raised"").font(.caption).foregroundStyle(Palette.warning)",,Palette.warning
+CallCard.swift,126,.foregroundStyle(.secondary),,.secondary
+CallCard.swift,144,.foregroundStyle(.secondary),,.secondary
+CallCard.swift,202,Text(time + model.journalSummary(day)).foregroundStyle(.secondary),,.secondary
+CallCard.swift,204,"Text(time + ""Écartée"").foregroundStyle(.secondary)",,.secondary
+CallCard.swift,209,".foregroundStyle(m.status == ""recording"" ? Palette.live : .secondary)",,Palette.live
+CallCard.swift,209,".foregroundStyle(m.status == ""recording"" ? Palette.live : .secondary)",,.secondary
+CallCard.swift,212,"Text(time + ""● En cours · "" + CLI.duration(m.duration)).foregroundStyle(Palette.live)",,Palette.live
+CallCard.swift,215,Text(time + model.status(m)).foregroundStyle(.secondary),,.secondary
+CallCard.swift,220,.foregroundStyle(.secondary),,.secondary
+CallCard.swift,225,.foregroundStyle(Palette.warning),,Palette.warning
+CallCard.swift,229,.foregroundStyle(.secondary),,.secondary
+CallCard.swift,236,"Text(time + CLI.duration(m.duration) + (who.isEmpty ? """" : "" · "" + who)).foregroundStyle(.secondary)",,.secondary
+CallCard.swift,273,private static let glyph = Color(nsColor: .secondaryLabelColor),,Color(nsColor: .secondaryLabelColor)
+CallCard.swift,302,.foregroundStyle(me ? TranscriptReaderView.me : TranscriptReaderView.them),,me
+CallCard.swift,302,.foregroundStyle(me ? TranscriptReaderView.me : TranscriptReaderView.them),,TranscriptReaderView.me
+CallCard.swift,302,.foregroundStyle(me ? TranscriptReaderView.me : TranscriptReaderView.them),,TranscriptReaderView.them
+CallCard.swift,304,.background(Circle().fill((me ? TranscriptReaderView.me : TranscriptReaderView.them).opacity(0.16))),,TranscriptReaderView.me
+CallCard.swift,304,.background(Circle().fill((me ? TranscriptReaderView.me : TranscriptReaderView.them).opacity(0.16))),,TranscriptReaderView.them
+CallCard.swift,326,.background(Circle().fill(Color(nsColor: .windowBackgroundColor)).padding(-1.5)),,Color(nsColor: .windowBackgroundColor)
+CallCard.swift,348,Thumb.fill,,Thumb.fill
+CallCard.swift,355,.overlay(shape.strokeBorder(Thumb.edge)),,Thumb.edge
+CallCard.swift,366,Color(white: 0.15),,Color(white: 0.15)
+CallFacts.swift,99,Text(size(t.file)).font(.callout).monospacedDigit().foregroundStyle(.secondary),,.secondary
+CallFacts.swift,145,Text(c.voice).font(.callout).foregroundStyle(.secondary),,.secondary
+CallFacts.swift,166,"SettingsRow(""Répliques corrigées"") { Text(""\(n)"").font(.callout).monospacedDigit().foregroundStyle(.secondary) }",,.secondary
+CallFacts.swift,211,"icon: AnyView(Image(systemName: icon(e)).font(.system(size: 13)).foregroundStyle(.secondary).frame(width: 22, height: 22).accessibilityHidden(true))) {",,.secondary
+CallFacts.swift,212,Text(TranscriptExport.clock(CLI.clock(e.at.timeIntervalSince(m.start)))).font(.caption.monospacedDigit()).foregroundStyle(.secondary),,.secondary
+CallFacts.swift,215,.buttonStyle(.hoverCircle).foregroundStyle(.secondary),,.secondary
+CallFacts.swift,245,"private func count(_ n: Int) -> some View { Text(""\(n)"").font(.callout).monospacedDigit().foregroundStyle(.secondary) }",,.secondary
+CallFacts.swift,275,Text(CallFactsView.stamp.string(from: v.date)).font(.callout).foregroundStyle(.secondary),,.secondary
+CallFacts.swift,276,"if v == reader.selected { Image(systemName: ""checkmark"").font(.callout.weight(.semibold)).foregroundStyle(.secondary) }",,.secondary
+CallFilter.swift,38,"func rgb(_ r: Double, _ g: Double, _ b: Double) -> Color { Color(red: r / 255, green: g / 255, blue: b / 255) }",,"Color(red: r / 255, green: g / 255, blue: b / 255)"
+CallsSnapshots.swift,61,"for (k, (at, title, tint)) in [(40.0, ""Accueil"", NSColor.systemTeal), (330, ""Page produit"", .systemOrange)].enumerated() {",oui,NSColor.systemTeal
+CallsSnapshots.swift,63,"NSColor(white: 0.97, alpha: 1).setFill(); r.fill()",oui,"NSColor(white: 0.97, alpha: 1)"
+CallsWindow.swift,98,.font(.callout).foregroundStyle(.secondary),,.secondary
+CallsWindow.swift,110,Text(Self.dayLabel(day.id)).font(.callout.weight(.semibold)).foregroundStyle(.secondary),,.secondary
+CallsWindow.swift,123,.foregroundStyle(.secondary),,.secondary
+CallsWindow.swift,150,.font(.callout).foregroundStyle(.secondary),,.secondary
+CallsWindow.swift,174,Text(p.name).font(.callout.weight(.semibold)).foregroundStyle(.secondary).lineLimit(1),,.secondary
+CallsWindow.swift,269,Color.clear,,Color.clear
+CallsWindow.swift,296,"Color.clear.glassEffect(.regular, in: ConcentricRectangle(corners: .concentric, isUniform: true))",,Color.clear
+CaptureViewer.swift,131,"Text(""Aucune capture"").foregroundStyle(.secondary)",,.secondary
+CaptureViewer.swift,136,.background(Color.black.opacity(0.18)),,Color.black
+CaptureViewer.swift,183,".font(.system(size: 10, weight: .medium)).foregroundStyle(.white)",,.white
+CaptureViewer.swift,190,".strokeBorder(i == viewer.index ? Color.accentColor : .clear, lineWidth: 2))",,Color.accentColor
+CaptureViewer.swift,225,.foregroundStyle(quoteHover ? Color.accentColor : .secondary),,Color.accentColor
+CaptureViewer.swift,225,.foregroundStyle(quoteHover ? Color.accentColor : .secondary),,.secondary
+CaptureViewer.swift,239,"Text(""Texte lu"").font(.callout.weight(.semibold)).foregroundStyle(.secondary)",,.secondary
+CaptureViewer.swift,241,.font(.callout).foregroundStyle(.secondary),,.secondary
+ClaudeReceipt.swift,32,"Label(line.text, systemImage: line.icon).foregroundStyle(.secondary)",,.secondary
+ColumnTools.swift,121,content.background(Capsule().fill(Chip.fill)),,Chip.fill
+ColumnTools.swift,143,"Color.clear.glassEffect(.regular.interactive(), in: Circle())",,Color.clear
+ColumnTools.swift,171,.background(Capsule().fill(off ? .clear : pressed ? Hover.pressed : hover ? Hover.fill : .clear),,Hover.pressed
+ColumnTools.swift,171,.background(Capsule().fill(off ? .clear : pressed ? Hover.pressed : hover ? Hover.fill : .clear),,Hover.fill
+ColumnTools.swift,200,.background(Capsule().fill(on ? Chosen.fill : .clear)),,Chosen.fill
+ColumnTools.swift,204,.foregroundStyle(on ? .primary : .secondary),,.primary
+ColumnTools.swift,204,.foregroundStyle(on ? .primary : .secondary),,.secondary
+Coverage.swift,90,.foregroundStyle(Palette.warning),,Palette.warning
+Coverage.swift,140,"if p.testing { Badge(text: ""Mode essai"", tone: .orange) }",,.orange
+Coverage.swift,175,.foregroundStyle(ok ? Palette.success : Palette.warning),,Palette.success
+Coverage.swift,175,.foregroundStyle(ok ? Palette.success : Palette.warning),,Palette.warning
+DotCalendar.swift,41,Text(d).font(.caption2).foregroundStyle(.secondary),,.secondary
+DotCalendar.swift,73,if let day = cells[i] { cell(day) } else { Color.clear.frame(height: 32) },,Color.clear
+DotCalendar.swift,99,.foregroundStyle(isSelected ? Color.white : has ? Color.primary : Color.secondary),,Color.white
+DotCalendar.swift,99,.foregroundStyle(isSelected ? Color.white : has ? Color.primary : Color.secondary),,Color.primary
+DotCalendar.swift,99,.foregroundStyle(isSelected ? Color.white : has ? Color.primary : Color.secondary),,Color.secondary
+DotCalendar.swift,101,if isSelected { RoundedRectangle(cornerRadius: Row.radius).fill(Color.accentColor) },,Color.accentColor
+DotCalendar.swift,102,else if isToday { RoundedRectangle(cornerRadius: Row.radius).strokeBorder(Color.secondary.opacity(0.6)) },,Color.secondary
+EmptyCalls.swift,25,"Image(systemName: ""exclamationmark.triangle"").foregroundStyle(.secondary).accessibilityHidden(true)",,.secondary
+EmptyCalls.swift,27,Text(EmptyCalls.headline).font(.callout.weight(.semibold)).foregroundStyle(Color.primary),,Color.primary
+EmptyCalls.swift,32,"Circle().fill(Palette.warning).frame(width: 8, height: 8).padding(.horizontal, 3).accessibilityHidden(true)",,Palette.warning
+EmptyCalls.swift,33,Text(name).font(.caption.weight(.medium)).foregroundStyle(Color.primary),,Color.primary
+EmptyCalls.swift,40,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,Card.fill
+ExportPage.swift,105,"SettingsRow(""À exporter"") { Text(""\(model.going)"").font(.callout).monospacedDigit().foregroundStyle(.secondary) }",,.secondary
+ExportPage.swift,107,"SettingsRow(s.why) { Text(""\(s.count)"").font(.callout).monospacedDigit().foregroundStyle(.secondary) }",,.secondary
+GroupsView.swift,78,"Image(systemName: ""magnifyingglass"").foregroundStyle(.secondary)",,.secondary
+GroupsView.swift,86,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,186,.background(Capsule().fill(on ? Color.accentColor : Chip.fill)),,Color.accentColor
+GroupsView.swift,186,.background(Capsule().fill(on ? Color.accentColor : Chip.fill)),,Chip.fill
+GroupsView.swift,187,.foregroundStyle(on ? Color.white : Color.primary),,Color.white
+GroupsView.swift,187,.foregroundStyle(on ? Color.white : Color.primary),,Color.primary
+GroupsView.swift,252,.font(.callout).foregroundStyle(.secondary),,.secondary
+GroupsView.swift,262,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,372,"Text(""\(calls.count)"").font(.callout.monospacedDigit()).foregroundStyle(.tertiary)",,.tertiary
+GroupsView.swift,379,"Text(""Accessible à \(Self.models)"").font(.callout).foregroundStyle(.secondary)",,.secondary
+GroupsView.swift,393,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,407,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,423,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,432,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,443,.font(.callout).foregroundStyle(.tertiary),,.tertiary
+GroupsView.swift,445,".background(RoundedRectangle(cornerRadius: 10).strokeBorder(Color.primary.opacity(0.12), style: StrokeStyle(lineWidth: 1, dash: [5, 5])))",,Color.primary
+GroupsView.swift,465,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Color.accentColor.opacity(targeted ? 0.08 : 0))),,Color.accentColor
+GroupsView.swift,559,"else { Image(systemName: ""sparkles"").font(.callout).foregroundStyle(.secondary) }",,.secondary
+GroupsView.swift,570,.foregroundStyle(.secondary),,.secondary
+GroupsView.swift,649,".background(Color(nsColor: .windowBackgroundColor), in: RoundedRectangle(cornerRadius: Thumb.radius))",,Color(nsColor: .windowBackgroundColor)
+GroupsView.swift,661,.font(.callout).foregroundStyle(.secondary).lineLimit(1),,.secondary
+GroupsView.swift,664,"Image(systemName: ""chevron.right"").font(.callout.weight(.semibold)).foregroundStyle(.tertiary).opacity(hover ? 1 : 0)",,.tertiary
+GroupsView.swift,693,Text(pile.title).font(.callout.weight(.semibold)).foregroundStyle(.secondary),,.secondary
+GroupsView.swift,694,"Text(""\(pile.calls.count)"").font(.callout.monospacedDigit()).foregroundStyle(.tertiary)",,.tertiary
+GroupsView.swift,695,"Image(systemName: ""chevron.down"").font(.callout.weight(.semibold)).foregroundStyle(.tertiary)",,.tertiary
+Hover.swift,7,static let fill = Color.primary.opacity(0.06),,Color.primary
+Hover.swift,8,static let pressed = Color.primary.opacity(0.11),,Color.primary
+Hover.swift,21,.fill(hover && !off ? Hover.fill : .clear),,Hover.fill
+Hover.swift,44,.background(shape.fill(configuration.isPressed ? Hover.pressed : hover && enabled ? Hover.fill : .clear)),,Hover.pressed
+Hover.swift,44,.background(shape.fill(configuration.isPressed ? Hover.pressed : hover && enabled ? Hover.fill : .clear)),,Hover.fill
+Hover.swift,99,".overlay(RoundedRectangle(cornerRadius: radius).strokeBorder(Color.primary.opacity(hover ? 0.35 : 0), lineWidth: 1))",,Color.primary
+JournalPane.swift,223,"Text(""Aucune parole reconnue"").font(.callout).foregroundStyle(.secondary)",,.secondary
+JournalPane.swift,230,"logo: AnyView(Image(systemName: ""waveform"").font(.system(size: 15)).foregroundStyle(.secondary)),",,.secondary
+JournalPane.swift,412,.foregroundStyle(.secondary),,.secondary
+JournalPane.swift,428,Text(Self.time.string(from: at)).font(.caption2.monospacedDigit()).foregroundStyle(.tertiary),,.tertiary
+JournalPane.swift,430,"Text(""Jusqu'à "" + Self.time.string(from: end) + "" · "" + text).font(.callout).foregroundStyle(.secondary)",,.secondary
+JournalPane.swift,438,Text(Self.time.string(from: m.start)).font(.caption2.monospacedDigit()).foregroundStyle(.tertiary),,.tertiary
+JournalPane.swift,441,Text(CLI.duration(m.duration)).font(.callout).foregroundStyle(.secondary),,.secondary
+JournalPane.swift,442,"Image(systemName: ""arrow.up.right"").font(.caption).foregroundStyle(.secondary)",,.secondary
+JournalPane.swift,467,s[a..<b].backgroundColor = Color(nsColor: .findHighlightColor),,Color(nsColor: .findHighlightColor)
+JournalPane.swift,474,playing ? Color.accentColor.opacity(0.12) : focused ? Color.accentColor.opacity(0.08) : hovered ? Hover.fill : .clear,,Color.accentColor
+JournalPane.swift,474,playing ? Color.accentColor.opacity(0.12) : focused ? Color.accentColor.opacity(0.08) : hovered ? Hover.fill : .clear,,Color.accentColor
+JournalPane.swift,474,playing ? Color.accentColor.opacity(0.12) : focused ? Color.accentColor.opacity(0.08) : hovered ? Hover.fill : .clear,,Hover.fill
+JournalPane.swift,493,.foregroundStyle(playing ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.tertiary)),,Color.accentColor
+JournalPane.swift,493,.foregroundStyle(playing ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.tertiary)),,.tertiary
+JournalPane.swift,497,.foregroundStyle(Color.accentColor),,Color.accentColor
+JournalPane.swift,526,"((named ? Text(turn.who).fontWeight(.semibold).foregroundColor(turn.who == ""Moi"" ? TranscriptReaderView.me : nil) + Text(""   "") : Text(""""))",,TranscriptReaderView.me
+JournalPane.swift,530,.foregroundStyle(quiet ? .secondary : .primary),,.secondary
+JournalPane.swift,530,.foregroundStyle(quiet ? .secondary : .primary),,.primary
+JournalPane.swift,566,Text(first.text).font(.callout).foregroundStyle(.tertiary).lineLimit(1),,.tertiary
+JournalPane.swift,570,.foregroundStyle(.secondary),,.secondary
+JournalPane.swift,579,"Image(systemName: ""arrow.up.right"").font(.caption).foregroundStyle(.secondary)",,.secondary
+JournalPane.swift,598,"+ Text(""  "" + CLI.duration(moment.end.timeIntervalSince(moment.at))).font(.callout).foregroundStyle(.secondary))",,.secondary
+JournalPane.swift,650,"c.fill(Path(CGRect(x: Self.labels - 2, y: y(m) - 1, width: Self.band + 4, height: 2)), with: .color(Palette.warning))",,Palette.warning
+JournalPane.swift,655,Capsule().fill(Color.accentColor),,Color.accentColor
+JournalPane.swift,660,"Color.clear.frame(width: 1, height: 1)",,Color.clear
+JournalPane.swift,698,.foregroundStyle(.tertiary),,.tertiary
+KindThumb.swift,47,.overlay(shape.strokeBorder(Thumb.edge)),,Thumb.edge
+KindThumb.swift,58,Thumb.fill,,Thumb.fill
+KindThumb.swift,61,.foregroundStyle(.secondary),,.secondary
+KindThumb.swift,69,Thumb.fill,,Thumb.fill
+KindThumb.swift,71,.fill(Color(white: 0.13)),,Color(white: 0.13)
+KindThumb.swift,74,".fill(LinearGradient(colors: [Color(red: 0.36, green: 0.46, blue: 0.72), Color(red: 0.62, green: 0.5, blue: 0.75)],",,"Color(red: 0.36, green: 0.46, blue: 0.72)"
+KindThumb.swift,74,".fill(LinearGradient(colors: [Color(red: 0.36, green: 0.46, blue: 0.72), Color(red: 0.62, green: 0.5, blue: 0.75)],",,"Color(red: 0.62, green: 0.5, blue: 0.75)"
+KindThumb.swift,78,"Capsule().fill(.black).frame(width: 10, height: 3.5).padding(.top, 7)",,.black
+KindThumb.swift,80,"Circle().fill(.black).frame(width: 3.5, height: 3.5).padding(.top, 7)",,.black
+KindThumb.swift,95,"ctx.fill(Path(CGRect(origin: .zero, size: size)), with: .color(Color(red: 0.95, green: 0.97, blue: 1)))",,"Color(red: 0.95, green: 0.97, blue: 1)"
+KindThumb.swift,99,"with: .color(Color(red: 0.35, green: 0.55, blue: 0.85).opacity(0.7)))",,"Color(red: 0.35, green: 0.55, blue: 0.85)"
+KindThumb.swift,102,"ctx.fill(Path(CGRect(x: margin * scale, y: 0, width: 0.7, height: size.height)), with: .color(Color(red: 0.86, green: 0.25, blue: 0.3)))",,"Color(red: 0.86, green: 0.25, blue: 0.3)"
+LevelMeter.swift,35,var tint: Color = Palette.live,,Palette.live
+MetricsPage.swift,96,"Text(unit.isEmpty ? ""\(n)"" : ""\(n) \(unit)"").font(.callout).monospacedDigit().foregroundStyle(.secondary)",,.secondary
+MetricsPage.swift,119,"Text(failure).font(.callout).foregroundStyle(Palette.warning).padding(.horizontal, 4)",,Palette.warning
+MetricsPage.swift,121,"HStack(spacing: 8) { Spinner(); Text(""Relevé en cours…"").foregroundStyle(.secondary) }",,.secondary
+MetricsPage.swift,137,"HStack(spacing: 8) { Spinner(); Text(""Relevé en cours…"").font(.caption).foregroundStyle(.secondary) }.padding(.horizontal, 4)",,.secondary
+MetricsPage.swift,139,"Text(failure).font(.caption).foregroundStyle(Palette.warning).padding(.horizontal, 4)",,Palette.warning
+MetricsPage.swift,141,"Text(""Relevé du \(Self.stamp.string(from: at))"").font(.caption).foregroundStyle(.secondary).padding(.horizontal, 4)",,.secondary
+NotesPane.swift,57,Text(CallsView.dayLabel(group.day)).font(.callout.weight(.semibold)).foregroundStyle(.secondary),,.secondary
+NotesPane.swift,85,"logo: filtered.map { AnyView(CallLogo(meta: $0)) } ?? AnyView(Image(systemName: ""note.text"").font(.system(size: 15)).foregroundStyle(.secondary)),",,.secondary
+NotesPane.swift,124,Text(CLI.duration(m.duration)).font(.callout).foregroundStyle(.secondary),,.secondary
+NotesPane.swift,137,.foregroundStyle(copied == m.id ? Color.accentColor : .secondary),,Color.accentColor
+NotesPane.swift,137,.foregroundStyle(copied == m.id ? Color.accentColor : .secondary),,.secondary
+NotesPane.swift,153,.foregroundStyle(.secondary),,.secondary
+NotesPane.swift,162,.foregroundStyle(text == nil ? .secondary : .primary),,.secondary
+NotesPane.swift,162,.foregroundStyle(text == nil ? .secondary : .primary),,.primary
+NotesPane.swift,167,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,Chosen.fill
+NotesPane.swift,167,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,Card.hover
+NotesPane.swift,167,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,Card.fill
+NotesPane.swift,187,"Text(""Conversations"").font(.callout.weight(.semibold)).foregroundStyle(.secondary)",,.secondary
+NotesPane.swift,198,"Text(""\(e.count) note\(e.count > 1 ? ""s"" : """")"").foregroundStyle(.secondary).monospacedDigit()",,.secondary
+NotesPane.swift,201,.background(RoundedRectangle(cornerRadius: Row.radius).fill(model.notesCall == e.call.id ? Color.accentColor.opacity(0.12) : .clear)),,Color.accentColor
+NotesPane.swift,246,.foregroundStyle(copied == key ? Color.accentColor : .secondary),,Color.accentColor
+NotesPane.swift,246,.foregroundStyle(copied == key ? Color.accentColor : .secondary),,.secondary
+NotesPane.swift,261,.foregroundStyle(.secondary),,.secondary
+NotesPane.swift,279,.font(.callout).foregroundStyle(.secondary),,.secondary
+NotesPane.swift,288,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,Chosen.fill
+NotesPane.swift,288,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,Card.hover
+NotesPane.swift,288,.background(RoundedRectangle(cornerRadius: Card.radius).fill(playing ? Chosen.fill : shown ? Card.hover : Card.fill)),,Card.fill
+NotesPane.swift,361,"Circle().fill(Palette.live).frame(width: 9, height: 9)",,Palette.live
+NotesPane.swift,364,.font(.callout.weight(.semibold).monospacedDigit()).foregroundStyle(Palette.live),,Palette.live
+NotesPane.swift,365,"LevelBars(levels: meter.levels, tint: Palette.live).frame(width: 140, height: 16)",,Palette.live
+NotesPane.swift,375,.foregroundStyle(text.isEmpty ? .secondary : .primary),,.secondary
+NotesPane.swift,375,.foregroundStyle(text.isEmpty ? .secondary : .primary),,.primary
+NotesPane.swift,380,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Palette.live.opacity(0.08))),,Palette.live
+NotesPane.swift,403,"Text(""+"").font(.system(size: 12, weight: .medium)).foregroundStyle(.secondary).fixedSize()",,.secondary
+NotesPane.swift,445,.foregroundStyle(.secondary),,.secondary
+NotesPane.swift,450,.background(RoundedRectangle(cornerRadius: 4).fill(Color.primary.opacity(0.08))),,Color.primary
+Onboarding.swift,73,"Image(systemName: ""exclamationmark.triangle"").foregroundStyle(.secondary)",,.secondary
+Onboarding.swift,85,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,Card.fill
+Onboarding.swift,129,Text(DiskUsage.text(n)).font(.callout).foregroundStyle(.secondary).monospacedDigit(),,.secondary
+Onboarding.swift,183,if let a = Coverage.alert(connected: []) { Text(a).font(.callout).foregroundStyle(Palette.warning) },,Palette.warning
+Onboarding.swift,223,"if pending > 0 { Badge(text: ""\(pending)"", tone: .orange) }",,.orange
+Onboarding.swift,317,"if weekly.running { Spinner(); Text(""En cours…"").font(.caption).foregroundStyle(.secondary) }",,.secondary
+Onboarding.swift,318,"else if weekly.afterCall { Text(""Après la conversation"").font(.callout).foregroundStyle(.secondary) }",,.secondary
+Onboarding.swift,320,else { Text(weekly.period).font(.callout).foregroundStyle(.secondary) },,.secondary
+Onboarding.swift,449,"if update.installing { Spinner(); Text(""Installation…"").font(.caption).foregroundStyle(.secondary) }",,.secondary
+Onboarding.swift,466,"Image(systemName: site.symbol).font(.system(size: 15)).foregroundStyle(.secondary).frame(width: 22, height: 22)",,.secondary
+Onboarding.swift,615,"Image(systemName: ""checkmark.circle.fill"").foregroundStyle(Color.accentColor)",,Color.accentColor
+Onboarding.swift,618,"Image(systemName: ""checkmark.circle.fill"").foregroundStyle(Color.accentColor)",,Color.accentColor
+Onboarding.swift,630,.foregroundStyle(done ? Color.white : Color.secondary),,Color.white
+Onboarding.swift,630,.foregroundStyle(done ? Color.white : Color.secondary),,Color.secondary
+Onboarding.swift,632,.background(Circle().fill(done ? Color.accentColor : Color.secondary.opacity(0.15))),,Color.accentColor
+Onboarding.swift,632,.background(Circle().fill(done ? Color.accentColor : Color.secondary.opacity(0.15))),,Color.secondary
+Onboarding.swift,635,"if done { Image(systemName: ""checkmark"").foregroundStyle(Color.accentColor) }",,Color.accentColor
+Onboarding.swift,642,"Label(""Autorisé"", systemImage: ""checkmark"").font(.callout).foregroundStyle(.secondary)",,.secondary
+Onboarding.swift,648,"return Label(renewed ? ""Renouvelé"" : ""Autorisé"", systemImage: ""checkmark"").font(.callout).foregroundStyle(.secondary)",,.secondary
+Onboarding.swift,662,"Text(weekly.schedule + "" ·"").foregroundStyle(.secondary)",,.secondary
+Onboarding.swift,679,"Text(""Un moment calme, devant le Mac, sans appel."").font(.subheadline).foregroundStyle(.secondary)",,.secondary
+Onboarding.swift,691,.font(.body.weight(.bold)).foregroundStyle(Color.accentColor),,Color.accentColor
+Onboarding.swift,783,Text(why).font(.callout).foregroundStyle(Palette.warning),,Palette.warning
+Onboarding.swift,789,"Text(""Donnez-lui cette consigne :"").font(.caption).foregroundStyle(.secondary)",,.secondary
+Onboarding.swift,793,.background(RoundedRectangle(cornerRadius: 6).fill(Color(nsColor: .textBackgroundColor))),,Color(nsColor: .textBackgroundColor)
+Onboarding.swift,802,"HStack { Spinner(); Text(""Recherche de Claude sur ce Mac…"").foregroundStyle(.secondary) }",,.secondary
+Pastille.swift,76,"if let name = actions.captureName { button(name, ""camera.viewfinder"", tint: .secondary, capture) }",,.secondary
+Pastille.swift,77,"button(actions.stopName, ""stop.circle"", tint: Palette.live, stop)",,Palette.live
+Pastille.swift,167,dot.layer?.backgroundColor = NSColor.systemRed.cgColor,,NSColor.systemRed
+PeopleView.swift,75,.font(.callout).foregroundStyle(.secondary),,.secondary
+PeopleView.swift,80,.font(.callout).foregroundStyle(.secondary),,.secondary
+PeopleView.swift,86,.font(.headline).foregroundStyle(.secondary),,.secondary
+PeopleView.swift,90,Text(c.name).foregroundStyle(.secondary),,.secondary
+PeopleView.swift,118,"Image(systemName: ""magnifyingglass"").foregroundStyle(.secondary)",,.secondary
+PeopleView.swift,124,"Text(""\(count) personne\(count > 1 ? ""s"" : """")"").font(.callout).foregroundStyle(.secondary).monospacedDigit()",,.secondary
+PeopleView.swift,183,Text(summary(p)).font(.callout).foregroundStyle(.secondary).lineLimit(isOpen ? nil : 1),,.secondary
+PeopleView.swift,242,Text(Dates.day.string(from: m.start)).foregroundStyle(.secondary),,.secondary
+PeopleView.swift,301,Text(label).font(.caption).foregroundStyle(.secondary),,.secondary
+PeopleView.swift,378,.foregroundStyle(.secondary),,.secondary
+RecordingsPanel.swift,21,"button(r.note ? ""Terminer la note"" : ""Arrêter l'enregistrement"", ""stop.circle"", tint: Palette.live,",,Palette.live
+RecordingsPanel.swift,61,.background(RoundedRectangle(cornerRadius: Self.radius).fill(on ? Chosen.fill : .clear)),,Chosen.fill
+RecordingsPanel.swift,65,.foregroundStyle(tint ?? (on ? .primary : .secondary)),,.primary
+RecordingsPanel.swift,65,.foregroundStyle(tint ?? (on ? .primary : .secondary)),,.secondary
+RecordingsPanel.swift,92,Text(CallsView.dayLabel(day.id)).font(.callout.weight(.semibold)).foregroundStyle(.secondary),,.secondary
+RecordingsPanel.swift,100,"if model.days.isEmpty, model.calls.isEmpty { Text(""Aucune conversation encore"").foregroundStyle(.secondary) }",,.secondary
+RecordingsPanel.swift,114,"Text(""Mise à jour"").font(.caption.weight(.semibold)).foregroundStyle(Color.accentColor)",,Color.accentColor
+RecordingsPanel.swift,116,.background(Capsule().fill(Color.accentColor.opacity(0.14))),,Color.accentColor
+SettingsGuide.swift,102,"if drag { Text(""Absent de la liste ? Glissez cette icône dedans."").font(.callout).foregroundStyle(.secondary) }",,.secondary
+SettingsGuide.swift,106,"Image(systemName: ""xmark"").font(.caption.weight(.semibold)).foregroundStyle(.secondary)",,.secondary
+SettingsParts.swift,11,"if Self.still { Image(systemName: ""circle.dotted"").foregroundStyle(.secondary) } else { ProgressView().controlSize(.small) }",,.secondary
+SettingsParts.swift,41,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,Card.fill
+SettingsParts.swift,43,"Text(footer).font(.subheadline).foregroundStyle(.secondary).padding(.horizontal, 4)",,.secondary
+SettingsParts.swift,100,"Text(callService ? ""Allumé"" : ""Éteint"").foregroundStyle(.secondary)",,.secondary
+SettingsParts.swift,116,"if PhoneLink.state(id)?[""test""] as? Bool == true { Badge(text: ""Mode essai"", tone: .orange) }",,.orange
+SettingsParts.swift,158,"if let detail { Text(detail).font(.subheadline).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true) }",,.secondary
+SettingsParts.swift,162,"if open != nil { Image(systemName: ""chevron.right"").font(.caption.bold()).foregroundStyle(.tertiary) }",,.tertiary
+SettingsParts.swift,169,.background(RoundedRectangle(cornerRadius: Row.radius).fill(hover && open != nil ? Hover.fill : .clear).padding(4)),,Hover.fill
+SettingsParts.swift,186,case .green: Palette.success,,.green
+SettingsParts.swift,186,case .green: Palette.success,,Palette.success
+SettingsParts.swift,187,case .orange: Palette.warning,,.orange
+SettingsParts.swift,187,case .orange: Palette.warning,,Palette.warning
+SettingsParts.swift,188,default: Color.primary.opacity(0.7),,Color.primary
+SettingsParts.swift,196,"else if let icon { Image(systemName: icon).font(.caption.bold()) } else { Circle().fill(tone == .secondary ? Color.secondary : tone).frame(width: 7, height: 7) ",,.secondary
+SettingsParts.swift,196,"else if let icon { Image(systemName: icon).font(.caption.bold()) } else { Circle().fill(tone == .secondary ? Color.secondary : tone).frame(width: 7, height: 7) ",,Color.secondary
+SettingsParts.swift,201,.background(Capsule().fill((tone == .secondary ? Color.secondary : tone).opacity(0.16))),,.secondary
+SettingsParts.swift,201,.background(Capsule().fill((tone == .secondary ? Color.secondary : tone).opacity(0.16))),,Color.secondary
+SignalsView.swift,82,"Image(systemName: ""hand.raised"").font(.callout).foregroundStyle(closed ? Color.secondary : Palette.warning).accessibilityHidden(true)",,Color.secondary
+SignalsView.swift,82,"Image(systemName: ""hand.raised"").font(.callout).foregroundStyle(closed ? Color.secondary : Palette.warning).accessibilityHidden(true)",,Palette.warning
+SignalsView.swift,83,Text(SignalsModel.meaning(w)).font(.callout.weight(.semibold)).foregroundStyle(closed ? .secondary : .primary),,.secondary
+SignalsView.swift,83,Text(SignalsModel.meaning(w)).font(.callout.weight(.semibold)).foregroundStyle(closed ? .secondary : .primary),,.primary
+SignalsView.swift,85,if closed { Text(w.status.prefix(1).uppercased() + w.status.dropFirst()).font(.caption).foregroundStyle(.secondary) },,.secondary
+SignalsView.swift,88,"Text(""« \(quote) »"").font(Reading.font).lineSpacing(Reading.spacing).foregroundStyle(closed ? .secondary : .primary)",,.secondary
+SignalsView.swift,88,"Text(""« \(quote) »"").font(Reading.font).lineSpacing(Reading.spacing).foregroundStyle(closed ? .secondary : .primary)",,.primary
+SignalsView.swift,91,"Text(line).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)",,.secondary
+SignalsView.swift,111,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,Card.fill
+SignalsView.swift,143,".foregroundStyle(.secondary).padding(.horizontal, 4)",,.secondary
+SignalsView.swift,157,.buttonStyle(.hover(8)).foregroundStyle(.secondary),,.secondary
+SignalsView.swift,170,"Text(footer).font(.subheadline).foregroundStyle(.secondary).padding(.horizontal, 4).fixedSize(horizontal: false, vertical: true)",,.secondary
+SignalsView.swift,189,"Image(systemName: ""hand.raised"").foregroundStyle(Palette.warning).accessibilityHidden(true)",,Palette.warning
+SignalsView.swift,191,"Text(w.time.map(TranscriptExport.clock) ?? """").font(.caption.monospacedDigit()).foregroundStyle(.secondary)",,.secondary
+SignalsView.swift,208,.background(RoundedRectangle(cornerRadius: Card.radius).fill(model.toConfirm.isEmpty ? Color.clear : Palette.warning.opacity(0.1))),,Color.clear
+SignalsView.swift,208,.background(RoundedRectangle(cornerRadius: Card.radius).fill(model.toConfirm.isEmpty ? Color.clear : Palette.warning.opacity(0.1))),,Palette.warning
+StatusPage.swift,72,"Text(""\(n)"").font(.callout).monospacedDigit().foregroundStyle(warn && n > 0 ? Palette.warning : .secondary)",,Palette.warning
+StatusPage.swift,72,"Text(""\(n)"").font(.callout).monospacedDigit().foregroundStyle(warn && n > 0 ? Palette.warning : .secondary)",,.secondary
+StatusPage.swift,88,"HStack(spacing: 8) { Spinner(); Text(""Lecture du journal…"").foregroundStyle(.secondary) }",,.secondary
+StatusPage.swift,112,.foregroundStyle(ok ? Palette.success : Palette.warning),,Palette.success
+StatusPage.swift,112,.foregroundStyle(ok ? Palette.success : Palette.warning),,Palette.warning
+StoragePages.swift,74,"Color.clear.frame(height: 0).alert(asked.map(confirmTitle) ?? """", isPresented: Binding(get: { asked != nil }, set: { if !$0 { asked = nil } }), presenting: aske",,Color.clear
+StoragePages.swift,95,"Text(""+ "" + DiskUsage.text(gained)).foregroundStyle(Palette.success).fontWeight(.semibold).transition(Motion.pop)",,Palette.success
+StoragePages.swift,115,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Card.fill)),,Card.fill
+StoragePages.swift,125,label().font(.subheadline).foregroundStyle(.secondary),,.secondary
+StoragePages.swift,140,.fill(s == chosen ? StorageBar.chosen : StorageBar.part),,StorageBar.chosen
+StoragePages.swift,140,.fill(s == chosen ? StorageBar.chosen : StorageBar.part),,StorageBar.part
+StoragePages.swift,142,"Rectangle().fill(Color.accentColor).frame(width: width * CGFloat(gain) / CGFloat(max(1, bytes)))",,Color.accentColor
+StoragePages.swift,161,"Text(DiskUsage.text(Cleanup.bytes(items, s))).monospacedDigit().foregroundStyle(on ? AnyShapeStyle(.white.opacity(0.8)) : AnyShapeStyle(.secondary))",,.secondary
+StoragePages.swift,165,.background(Capsule().fill(on ? Color.accentColor : Chip.fill)),,Color.accentColor
+StoragePages.swift,165,.background(Capsule().fill(on ? Color.accentColor : Chip.fill)),,Chip.fill
+StoragePages.swift,166,.foregroundStyle(on ? Color.white : Color.primary),,Color.white
+StoragePages.swift,166,.foregroundStyle(on ? Color.white : Color.primary),,Color.primary
+StoragePages.swift,196,let count = scope == Cleanup.everything ? nil : AnyView(Text(detail(scope)).font(.subheadline).foregroundStyle(.secondary)),,.secondary
+StoragePages.swift,222,.font(.callout).foregroundStyle(.secondary).monospacedDigit(),,.secondary
+StoragePages.swift,259,Text(DiskUsage.text(bytes)).font(.callout).foregroundStyle(.secondary).monospacedDigit(),,.secondary
+Style.swift,17,static let fill = Color.primary.opacity(0.05),,Color.primary
+Style.swift,19,static let hover = Color.primary.opacity(0.08),,Color.primary
+Style.swift,26,static let edge = Color.primary.opacity(0.1),,Color.primary
+Style.swift,28,static let fill = Color.primary.opacity(0.05),,Color.primary
+Style.swift,41,static let fill = Color.primary.opacity(0.07),,Color.primary
+Style.swift,50,static let part = Color.primary.opacity(0.18),,Color.primary
+Style.swift,51,static let chosen = Color.primary.opacity(0.42),,Color.primary
+Style.swift,57,static let fill = Color.primary.opacity(0.12),,Color.primary
+TranscriptReader.swift,21,"let title = NSMutableAttributedString(string: p[0] + ""\t"", attributes: [.font: font, .paragraphStyle: style, .foregroundColor: NSColor.labelColor])",,NSColor.labelColor
+TranscriptReader.swift,22,"title.append(NSAttributedString(string: p.last!, attributes: [.font: digits, .paragraphStyle: style, .foregroundColor: NSColor.secondaryLabelColor]))",,NSColor.secondaryLabelColor
+TranscriptReader.swift,487,.font(.caption.monospacedDigit()).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,539,.foregroundStyle(muted ? Color.secondary : tint),,Color.secondary
+TranscriptReader.swift,544,.foregroundStyle(muted ? .tertiary : .secondary),,.tertiary
+TranscriptReader.swift,544,.foregroundStyle(muted ? .tertiary : .secondary),,.secondary
+TranscriptReader.swift,917,.foregroundStyle(open ? .secondary : .primary),,.secondary
+TranscriptReader.swift,917,.foregroundStyle(open ? .secondary : .primary),,.primary
+TranscriptReader.swift,936,.font(.caption.monospacedDigit()).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,955,.foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1001,.font(.callout).foregroundStyle(.secondary).multilineTextAlignment(.center),,.secondary
+TranscriptReader.swift,1076,.background(RoundedRectangle(cornerRadius: Card.radius).fill(Palette.warning.opacity(0.14))),,Palette.warning
+TranscriptReader.swift,1082,"Text(""Aucune parole reconnue"").foregroundStyle(.secondary).padding(12)",,.secondary
+TranscriptReader.swift,1090,Rectangle().fill(Color.primary.opacity(0.1)).frame(height: 1),,Color.primary
+TranscriptReader.swift,1092,.font(.caption).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1171,static let me = Color(nsColor: NSColor(name: nil) { a in,,me
+TranscriptReader.swift,1171,static let me = Color(nsColor: NSColor(name: nil) { a in,,Color(nsColor: NSColor(name: nil)
+TranscriptReader.swift,1173,"? NSColor(srgbRed: 0x5E / 255, green: 0xA8 / 255, blue: 1, alpha: 1)",,"NSColor(srgbRed: 0x5E / 255, green: 0xA8 / 255, blue: 1, alpha: 1)"
+TranscriptReader.swift,1174,": NSColor(srgbRed: 0, green: 0x60 / 255, blue: 0xDF / 255, alpha: 1)",,"NSColor(srgbRed: 0, green: 0x60 / 255, blue: 0xDF / 255, alpha: 1)"
+TranscriptReader.swift,1178,static let them = Color(nsColor: NSColor(name: nil) { a in,,them
+TranscriptReader.swift,1178,static let them = Color(nsColor: NSColor(name: nil) { a in,,Color(nsColor: NSColor(name: nil)
+TranscriptReader.swift,1180,"? NSColor(srgbRed: 1, green: 0xC7 / 255, blue: 0x9A / 255, alpha: 1)",,"NSColor(srgbRed: 1, green: 0xC7 / 255, blue: 0x9A / 255, alpha: 1)"
+TranscriptReader.swift,1181,": NSColor(srgbRed: 0x8A / 255, green: 0x3D / 255, blue: 0x06 / 255, alpha: 1)",,"NSColor(srgbRed: 0x8A / 255, green: 0x3D / 255, blue: 0x06 / 255, alph"
+TranscriptReader.swift,1216,.foregroundStyle(playing ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.tertiary)),,Color.accentColor
+TranscriptReader.swift,1216,.foregroundStyle(playing ? AnyShapeStyle(Color.accentColor) : AnyShapeStyle(.tertiary)),,.tertiary
+TranscriptReader.swift,1227,".foregroundStyle(line.who == ""Moi"" ? Self.me : Color.primary)",,Color.primary
+TranscriptReader.swift,1233,.foregroundStyle(playing ? Color.accentColor : Color.secondary),,Color.accentColor
+TranscriptReader.swift,1233,.foregroundStyle(playing ? Color.accentColor : Color.secondary),,Color.secondary
+TranscriptReader.swift,1278,.background(RoundedRectangle(cornerRadius: Row.radius).fill(playing ? Color.accentColor.opacity(0.12) : reader.focus == line.id ? Color.accentColor.opacity(0.08,,Color.accentColor
+TranscriptReader.swift,1278,.background(RoundedRectangle(cornerRadius: Row.radius).fill(playing ? Color.accentColor.opacity(0.12) : reader.focus == line.id ? Color.accentColor.opacity(0.08,,Color.accentColor
+TranscriptReader.swift,1278,.background(RoundedRectangle(cornerRadius: Row.radius).fill(playing ? Color.accentColor.opacity(0.12) : reader.focus == line.id ? Color.accentColor.opacity(0.08,,Hover.fill
+TranscriptReader.swift,1278,.background(RoundedRectangle(cornerRadius: Row.radius).fill(playing ? Color.accentColor.opacity(0.12) : reader.focus == line.id ? Color.accentColor.opacity(0.08,,Color.clear
+TranscriptReader.swift,1313,"private static let voices: [Color] = [.green, .purple, .pink, .teal, .indigo]",,.purple
+TranscriptReader.swift,1313,"private static let voices: [Color] = [.green, .purple, .pink, .teal, .indigo]",,.pink
+TranscriptReader.swift,1313,"private static let voices: [Color] = [.green, .purple, .pink, .teal, .indigo]",,.teal
+TranscriptReader.swift,1362,"Text(""×\(stack.count)"").font(.caption.weight(.semibold)).foregroundStyle(.white)",,.white
+TranscriptReader.swift,1372,"Text(""+\(stacks.count - 2)"").font(.title3.weight(.semibold)).foregroundStyle(.white)",,.white
+TranscriptReader.swift,1385,RoundedRectangle(cornerRadius: Thumb.radius).fill(Color(nsColor: .windowBackgroundColor)),,Color(nsColor: .windowBackgroundColor)
+TranscriptReader.swift,1386,.overlay(RoundedRectangle(cornerRadius: Thumb.radius).strokeBorder(Thumb.edge)),,Thumb.edge
+TranscriptReader.swift,1394,.overlay(RoundedRectangle(cornerRadius: Thumb.radius).strokeBorder(Thumb.edge)),,Thumb.edge
+TranscriptReader.swift,1409,.foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1411,.background(Circle().fill(Chip.fill)),,Chip.fill
+TranscriptReader.swift,1415,"Text(""Contexte"").font(.callout.weight(.semibold)).foregroundStyle(.secondary)",,.secondary
+TranscriptReader.swift,1416,Text(TranscriptExport.clock(CLI.clock(d.at))).font(.caption.monospacedDigit()).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1439,"Text(reader.cfg.autoTranscribe ? ""Transcription à la fin de l'enregistrement"" : ""À transcrire une fois l'enregistrement fini"").foregroundStyle(.secondary)",,.secondary
+TranscriptReader.swift,1441,"Text(""Rien n'a été enregistré : aucun son n'est arrivé."").foregroundStyle(.secondary)",,.secondary
+TranscriptReader.swift,1443,"Text(""L'enregistrement est à la corbeille : plus rien à transcrire."").foregroundStyle(.secondary)",,.secondary
+TranscriptReader.swift,1468,.font(.callout).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1494,.font(.callout).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1498,.font(.caption).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1505,"Image(systemName: ""checkmark.circle.fill"").foregroundStyle(Color.accentColor)",,Color.accentColor
+TranscriptReader.swift,1507,"Text(""· nouvelle version ouverte"").font(.callout).foregroundStyle(.secondary)",,.secondary
+TranscriptReader.swift,1633,.background(Circle().fill(pressed ? Hover.pressed : hover ? Hover.fill : .clear).padding(4)),,Hover.pressed
+TranscriptReader.swift,1633,.background(Circle().fill(pressed ? Hover.pressed : hover ? Hover.fill : .clear).padding(4)),,Hover.fill
+TranscriptReader.swift,1699,content.background(shape.fill(Card.fill)),,Card.fill
+TranscriptReader.swift,1743,static func fill(_ scheme: ColorScheme) -> Color { Color.primary.opacity(scheme == .dark ? 0.16 : 0.09) },,Color.primary
+TranscriptReader.swift,1774,.foregroundStyle(Palette.live),,Palette.live
+TranscriptReader.swift,1778,.font(.callout.monospacedDigit()).foregroundStyle(Palette.live),,Palette.live
+TranscriptReader.swift,1785,"source(""mic.fill"", ""Micro"", micMeter.levels, TranscriptReaderView.me)",,TranscriptReaderView.me
+TranscriptReader.swift,1789,"systemMeter.levels, TranscriptReaderView.them)",,TranscriptReaderView.them
+TranscriptReader.swift,1792,"source(""iphone"", phone, phoneMeter.levels, TranscriptReaderView.me)",,TranscriptReaderView.me
+TranscriptReader.swift,1821,".foregroundStyle(line.who == ""Moi"" || line.who == ""Micro"" ? TranscriptReaderView.me : TranscriptReaderView.them)",,TranscriptReaderView.me
+TranscriptReader.swift,1821,".foregroundStyle(line.who == ""Moi"" || line.who == ""Micro"" ? TranscriptReaderView.me : TranscriptReaderView.them)",,TranscriptReaderView.them
+TranscriptReader.swift,1825,.font(.caption.monospacedDigit()).foregroundStyle(.secondary),,.secondary
+TranscriptReader.swift,1828,.foregroundStyle(line.last ? .secondary : .primary),,.secondary
+TranscriptReader.swift,1828,.foregroundStyle(line.last ? .secondary : .primary),,.primary
+TranscriptReader.swift,1882,.overlay(RoundedRectangle(cornerRadius: Thumb.radius).strokeBorder(Thumb.edge)),,Thumb.edge
+TranscriptReader.swift,1885,"Text(""×\(stack.count)"").font(.caption.weight(.semibold)).foregroundStyle(.white)",,.white
+TranscriptReader.swift,1904,"Text(label).font(.caption).foregroundStyle(.secondary).lineLimit(1).frame(width: 110, alignment: .leading)",,.secondary
+TranscriptReader.swift,1966,.foregroundStyle(.white),,.white
+TranscriptReader.swift,1968,".background(Circle().fill(Color.accentColor).shadow(color: .black.opacity(0.15), radius: 1, y: 1))",,Color.accentColor
+TranscriptReader.swift,1988,.overlay(RoundedRectangle(cornerRadius: 2.5).strokeBorder(Thumb.edge)),,Thumb.edge
+TranscriptReader.swift,1994,".foregroundStyle(Color(red: 0.12, green: 0.2, blue: 0.4))",,"Color(red: 0.12, green: 0.2, blue: 0.4)"
+Waveform.swift,154,with: .color(Color.accentColor.opacity(0.14))),,Color.accentColor
+Waveform.swift,167,color = played && inside ? Color.accentColor : Color.primary.opacity(inside ? (span == nil ? 0.25 : 0.5) : 0.12),,Color.accentColor
+Waveform.swift,167,color = played && inside ? Color.accentColor : Color.primary.opacity(inside ? (span == nil ? 0.25 : 0.5) : 0.12),,Color.primary
+WizardSnapshots.swift,22,"let view = NSHostingView(rootView: WizardView(w: w).background(Color(nsColor: .windowBackgroundColor)).environment(\.controlActiveState, .key))",oui,Color(nsColor: .windowBackgroundColor)

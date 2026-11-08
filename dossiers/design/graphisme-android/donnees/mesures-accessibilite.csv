@@ -1,0 +1,1647 @@
+variante,ecran,classe,icone,description,importante,cliquable,titre,w,h
+base,accueil-ecoute,ImageButton,,Liste,oui,True,False,52,48
+base,accueil-ecoute,ImageButton,,Calendrier,oui,True,False,52,48
+base,accueil-ecoute,ImageButton,,Rechercher,oui,True,False,48,48
+base,accueil-ecoute,ImageView,ic_onde,,non,False,False,20,20
+base,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-ecoute,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,accueil-ecoute,ImageView,ic_enregistrer,,non,False,False,24,24
+base,accueil-ecoute,LinearLayout,,Réglages,oui,True,False,388,48
+base,accueil-ecoute,ImageView,ic_reglages,,non,False,False,24,24
+base,accueil-enregistre,ImageButton,,Liste,oui,True,False,52,48
+base,accueil-enregistre,ImageButton,,Calendrier,oui,True,False,52,48
+base,accueil-enregistre,ImageButton,,Rechercher,oui,True,False,48,48
+base,accueil-enregistre,ImageView,ic_micro,,non,False,False,20,20
+base,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil-enregistre,LinearLayout,,Arrêter l'enregistrement,oui,True,False,388,48
+base,accueil-enregistre,ImageView,ic_arreter,,non,False,False,24,24
+base,accueil-enregistre,LinearLayout,,Prendre une photo,oui,True,False,388,48
+base,accueil-enregistre,ImageView,ic_photo,,non,False,False,24,24
+base,accueil-vide,ImageButton,,Liste,oui,True,False,52,48
+base,accueil-vide,ImageButton,,Calendrier,oui,True,False,52,48
+base,accueil-vide,ImageButton,,Rechercher,oui,True,False,48,48
+base,accueil-vide,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,accueil-vide,ImageView,ic_enregistrer,,non,False,False,24,24
+base,accueil-vide,LinearLayout,,Réglages,oui,True,False,388,48
+base,accueil-vide,ImageView,ic_reglages,,non,False,False,24,24
+base,accueil,ImageButton,,Liste,oui,True,False,52,48
+base,accueil,ImageButton,,Calendrier,oui,True,False,52,48
+base,accueil,ImageButton,,Rechercher,oui,True,False,48,48
+base,accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+base,accueil,LinearLayout,,Réglages,oui,True,False,388,48
+base,accueil,ImageView,ic_reglages,,non,False,False,24,24
+base,aucune-parole,ImageButton,,Retour,oui,True,False,48,48
+base,aucune-parole,ImageView,ic_micro,,auto,False,False,18,18
+base,aucune-parole,ImageButton,,Plus,oui,True,False,48,48
+base,aucune-parole,LinearLayout,,Rechercher,oui,True,False,76,56
+base,aucune-parole,ImageView,ic_chercher,,non,False,False,22,22
+base,aucune-parole,LinearLayout,,Copier,oui,True,False,76,56
+base,aucune-parole,ImageView,ic_copier,,non,False,False,22,22
+base,aucune-parole,LinearLayout,,Télécharger,oui,True,False,76,56
+base,aucune-parole,ImageView,ic_telecharger,,non,False,False,22,22
+base,aucune-parole,LinearLayout,,Détails,oui,True,False,76,56
+base,aucune-parole,ImageView,ic_details,,non,False,False,22,22
+base,avant-transcription,ImageButton,,Retour,oui,True,False,48,48
+base,avant-transcription,ImageView,ic_reunion,,auto,False,False,18,18
+base,avant-transcription,ImageButton,,Plus,oui,True,False,48,48
+base,avant-transcription,LinearLayout,,Rechercher,oui,True,False,76,56
+base,avant-transcription,ImageView,ic_chercher,,non,False,False,22,22
+base,avant-transcription,LinearLayout,,Copier,oui,True,False,76,56
+base,avant-transcription,ImageView,ic_copier,,non,False,False,22,22
+base,avant-transcription,LinearLayout,,Télécharger,oui,True,False,76,56
+base,avant-transcription,ImageView,ic_telecharger,,non,False,False,22,22
+base,avant-transcription,LinearLayout,,Détails,oui,True,False,76,56
+base,avant-transcription,ImageView,ic_details,,non,False,False,22,22
+base,calendrier,ImageButton,,Liste,oui,True,False,52,48
+base,calendrier,ImageButton,,Calendrier,oui,True,False,52,48
+base,calendrier,ImageButton,,Rechercher,oui,True,False,48,48
+base,calendrier,ImageButton,,Mois précédent,oui,True,False,48,48
+base,calendrier,ImageButton,,Mois suivant,oui,True,False,48,48
+base,calendrier,LinearLayout,,Dimanche 1 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Lundi 2 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mardi 3 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mercredi 4 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,"Jeudi 5 novembre, des conversations",oui,True,False,53,48
+base,calendrier,LinearLayout,,"Vendredi 6 novembre, des conversations",oui,True,False,53.3,48
+base,calendrier,LinearLayout,,"Samedi 7 novembre, des conversations",oui,True,False,53.3,48
+base,calendrier,LinearLayout,,"Aujourd'hui · dimanche 8 novembre, des conversations",oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Lundi 9 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mardi 10 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mercredi 11 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Jeudi 12 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Vendredi 13 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Samedi 14 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Dimanche 15 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Lundi 16 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mardi 17 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mercredi 18 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Jeudi 19 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Vendredi 20 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Samedi 21 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Dimanche 22 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Lundi 23 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mardi 24 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Mercredi 25 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Jeudi 26 novembre,oui,True,False,53,48
+base,calendrier,LinearLayout,,Vendredi 27 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Samedi 28 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Dimanche 29 novembre,oui,True,False,53.3,48
+base,calendrier,LinearLayout,,Lundi 30 novembre,oui,True,False,53,48
+base,calendrier,ImageView,ic_reunion,,non,False,False,20,20
+base,calendrier,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,calendrier,ImageView,ic_enregistrer,,non,False,False,24,24
+base,calendrier,LinearLayout,,Réglages,oui,True,False,388,48
+base,calendrier,ImageView,ic_reglages,,non,False,False,24,24
+clair,accueil-ecoute,ImageButton,,Liste,oui,True,False,52,48
+clair,accueil-ecoute,ImageButton,,Calendrier,oui,True,False,52,48
+clair,accueil-ecoute,ImageButton,,Rechercher,oui,True,False,48,48
+clair,accueil-ecoute,ImageView,ic_onde,,non,False,False,20,20
+clair,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-ecoute,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,accueil-ecoute,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,accueil-ecoute,LinearLayout,,Réglages,oui,True,False,388,48
+clair,accueil-ecoute,ImageView,ic_reglages,,non,False,False,24,24
+clair,accueil-enregistre,ImageButton,,Liste,oui,True,False,52,48
+clair,accueil-enregistre,ImageButton,,Calendrier,oui,True,False,52,48
+clair,accueil-enregistre,ImageButton,,Rechercher,oui,True,False,48,48
+clair,accueil-enregistre,ImageView,ic_micro,,non,False,False,20,20
+clair,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil-enregistre,LinearLayout,,Arrêter l'enregistrement,oui,True,False,388,48
+clair,accueil-enregistre,ImageView,ic_arreter,,non,False,False,24,24
+clair,accueil-enregistre,LinearLayout,,Prendre une photo,oui,True,False,388,48
+clair,accueil-enregistre,ImageView,ic_photo,,non,False,False,24,24
+clair,accueil-vide,ImageButton,,Liste,oui,True,False,52,48
+clair,accueil-vide,ImageButton,,Calendrier,oui,True,False,52,48
+clair,accueil-vide,ImageButton,,Rechercher,oui,True,False,48,48
+clair,accueil-vide,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,accueil-vide,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,accueil-vide,LinearLayout,,Réglages,oui,True,False,388,48
+clair,accueil-vide,ImageView,ic_reglages,,non,False,False,24,24
+clair,accueil,ImageButton,,Liste,oui,True,False,52,48
+clair,accueil,ImageButton,,Calendrier,oui,True,False,52,48
+clair,accueil,ImageButton,,Rechercher,oui,True,False,48,48
+clair,accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,accueil,LinearLayout,,Réglages,oui,True,False,388,48
+clair,accueil,ImageView,ic_reglages,,non,False,False,24,24
+clair,aucune-parole,ImageButton,,Retour,oui,True,False,48,48
+clair,aucune-parole,ImageView,ic_micro,,auto,False,False,18,18
+clair,aucune-parole,ImageButton,,Plus,oui,True,False,48,48
+clair,aucune-parole,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,aucune-parole,ImageView,ic_chercher,,non,False,False,22,22
+clair,aucune-parole,LinearLayout,,Copier,oui,True,False,76,56
+clair,aucune-parole,ImageView,ic_copier,,non,False,False,22,22
+clair,aucune-parole,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,aucune-parole,ImageView,ic_telecharger,,non,False,False,22,22
+clair,aucune-parole,LinearLayout,,Détails,oui,True,False,76,56
+clair,aucune-parole,ImageView,ic_details,,non,False,False,22,22
+clair,avant-transcription,ImageButton,,Retour,oui,True,False,48,48
+clair,avant-transcription,ImageView,ic_reunion,,auto,False,False,18,18
+clair,avant-transcription,ImageButton,,Plus,oui,True,False,48,48
+clair,avant-transcription,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,avant-transcription,ImageView,ic_chercher,,non,False,False,22,22
+clair,avant-transcription,LinearLayout,,Copier,oui,True,False,76,56
+clair,avant-transcription,ImageView,ic_copier,,non,False,False,22,22
+clair,avant-transcription,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,avant-transcription,ImageView,ic_telecharger,,non,False,False,22,22
+clair,avant-transcription,LinearLayout,,Détails,oui,True,False,76,56
+clair,avant-transcription,ImageView,ic_details,,non,False,False,22,22
+clair,calendrier,ImageButton,,Liste,oui,True,False,52,48
+clair,calendrier,ImageButton,,Calendrier,oui,True,False,52,48
+clair,calendrier,ImageButton,,Rechercher,oui,True,False,48,48
+clair,calendrier,ImageButton,,Mois précédent,oui,True,False,48,48
+clair,calendrier,ImageButton,,Mois suivant,oui,True,False,48,48
+clair,calendrier,LinearLayout,,Dimanche 1 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Lundi 2 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mardi 3 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mercredi 4 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,"Jeudi 5 novembre, des conversations",oui,True,False,53,48
+clair,calendrier,LinearLayout,,"Vendredi 6 novembre, des conversations",oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,"Samedi 7 novembre, des conversations",oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,"Aujourd'hui · dimanche 8 novembre, des conversations",oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Lundi 9 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mardi 10 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mercredi 11 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Jeudi 12 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Vendredi 13 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Samedi 14 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Dimanche 15 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Lundi 16 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mardi 17 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mercredi 18 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Jeudi 19 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Vendredi 20 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Samedi 21 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Dimanche 22 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Lundi 23 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mardi 24 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Mercredi 25 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Jeudi 26 novembre,oui,True,False,53,48
+clair,calendrier,LinearLayout,,Vendredi 27 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Samedi 28 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Dimanche 29 novembre,oui,True,False,53.3,48
+clair,calendrier,LinearLayout,,Lundi 30 novembre,oui,True,False,53,48
+clair,calendrier,ImageView,ic_reunion,,non,False,False,20,20
+clair,calendrier,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,calendrier,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,calendrier,LinearLayout,,Réglages,oui,True,False,388,48
+clair,calendrier,ImageView,ic_reglages,,non,False,False,24,24
+clair,conversation-recherche,ImageButton,,Retour,oui,True,False,48,48
+clair,conversation-recherche,ImageView,ic_reunion,,auto,False,False,18,18
+clair,conversation-recherche,ImageButton,,Plus,oui,True,False,48,48
+clair,conversation-recherche,ImageButton,,Lire,oui,True,False,44,44
+clair,conversation-recherche,SeekBar,,Position dans le son,oui,False,False,308,26
+clair,conversation-recherche,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,conversation-recherche,ImageView,ic_chercher,,non,False,False,22,22
+clair,conversation-recherche,LinearLayout,,Copier,oui,True,False,76,56
+clair,conversation-recherche,ImageView,ic_copier,,non,False,False,22,22
+clair,conversation-recherche,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,conversation-recherche,ImageView,ic_telecharger,,non,False,False,22,22
+clair,conversation-recherche,LinearLayout,,Détails,oui,True,False,76,56
+clair,conversation-recherche,ImageView,ic_details,,non,False,False,22,22
+clair,conversation,ImageButton,,Retour,oui,True,False,48,48
+clair,conversation,ImageView,ic_reunion,,auto,False,False,18,18
+clair,conversation,ImageButton,,Plus,oui,True,False,48,48
+clair,conversation,ImageButton,,Lire,oui,True,False,44,44
+clair,conversation,SeekBar,,Position dans le son,oui,False,False,308,26
+clair,conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,conversation,ImageView,ic_chercher,,non,False,False,22,22
+clair,conversation,LinearLayout,,Copier,oui,True,False,76,56
+clair,conversation,ImageView,ic_copier,,non,False,False,22,22
+clair,conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,conversation,ImageView,ic_telecharger,,non,False,False,22,22
+clair,conversation,LinearLayout,,Détails,oui,True,False,76,56
+clair,conversation,ImageView,ic_details,,non,False,False,22,22
+clair,direct-rien,ImageButton,,Retour,oui,True,False,48,48
+clair,direct-rien,ImageView,ic_micro,,auto,False,False,18,18
+clair,icones-entete-sans-texte,ImageButton,,Retour,oui,True,False,48,48
+clair,icones-entete-sans-texte,ImageView,ic_telegram,,auto,False,False,18,18
+clair,icones-entete-sans-texte,ImageButton,,Plus,oui,True,False,48,48
+clair,icones-entete-sans-texte,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,icones-entete-sans-texte,ImageView,ic_chercher,,non,False,False,22,22
+clair,icones-entete-sans-texte,LinearLayout,,Copier,oui,True,False,76,56
+clair,icones-entete-sans-texte,ImageView,ic_copier,,non,False,False,22,22
+clair,icones-entete-sans-texte,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,icones-entete-sans-texte,ImageView,ic_telecharger,,non,False,False,22,22
+clair,icones-entete-sans-texte,LinearLayout,,Détails,oui,True,False,76,56
+clair,icones-entete-sans-texte,ImageView,ic_details,,non,False,False,22,22
+clair,icones-entete,ImageButton,,Retour,oui,True,False,48,48
+clair,icones-entete,ImageView,ic_signal,,auto,False,False,18,18
+clair,icones-entete,ImageButton,,Plus,oui,True,False,48,48
+clair,icones-entete,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,icones-entete,ImageView,ic_chercher,,non,False,False,22,22
+clair,icones-entete,LinearLayout,,Copier,oui,True,False,76,56
+clair,icones-entete,ImageView,ic_copier,,non,False,False,22,22
+clair,icones-entete,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,icones-entete,ImageView,ic_telecharger,,non,False,False,22,22
+clair,icones-entete,LinearLayout,,Détails,oui,True,False,76,56
+clair,icones-entete,ImageView,ic_details,,non,False,False,22,22
+clair,icones-recherche,EditText,,Rechercher,oui,True,False,332,42.7
+clair,icones-recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+clair,icones-recherche,ImageView,ic_signal,,non,False,False,20,20
+clair,icones-recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,icones-recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,icones-recherche,LinearLayout,,Réglages,oui,True,False,388,48
+clair,icones-recherche,ImageView,ic_reglages,,non,False,False,24,24
+clair,icones,ImageButton,,Liste,oui,True,False,52,48
+clair,icones,ImageButton,,Calendrier,oui,True,False,52,48
+clair,icones,ImageButton,,Rechercher,oui,True,False,48,48
+clair,icones,ImageView,ic_whatsapp,,non,False,False,20,20
+clair,icones,ImageView,ic_signal,,non,False,False,20,20
+clair,icones,ImageView,ic_telegram,,non,False,False,20,20
+clair,icones,ImageView,ic_meet,,non,False,False,20,20
+clair,icones,ImageView,ic_telephone,,non,False,False,20,20
+clair,icones,ImageView,ic_reunion,,non,False,False,20,20
+clair,icones,ImageView,ic_micro,,non,False,False,20,20
+clair,icones,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,icones,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,icones,LinearLayout,,Réglages,oui,True,False,388,48
+clair,icones,ImageView,ic_reglages,,non,False,False,24,24
+clair,journal-vide,ImageButton,,Retour,oui,True,False,48,48
+clair,journal-vide,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,journal-vide,ImageView,ic_chercher,,non,False,False,22,22
+clair,journal-vide,LinearLayout,,Copier,oui,True,False,76,56
+clair,journal-vide,ImageView,ic_copier,,non,False,False,22,22
+clair,mise-en-route,ImageView,,,non,False,False,64,64
+clair,pas-encore-transcrite,ImageButton,,Retour,oui,True,False,48,48
+clair,pas-encore-transcrite,ImageView,ic_micro,,auto,False,False,18,18
+clair,pas-encore-transcrite,ImageButton,,Plus,oui,True,False,48,48
+clair,pas-encore-transcrite,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,pas-encore-transcrite,ImageView,ic_chercher,,non,False,False,22,22
+clair,pas-encore-transcrite,LinearLayout,,Copier,oui,True,False,76,56
+clair,pas-encore-transcrite,ImageView,ic_copier,,non,False,False,22,22
+clair,pas-encore-transcrite,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,pas-encore-transcrite,ImageView,ic_telecharger,,non,False,False,22,22
+clair,pas-encore-transcrite,LinearLayout,,Détails,oui,True,False,76,56
+clair,pas-encore-transcrite,ImageView,ic_details,,non,False,False,22,22
+clair,recherche,EditText,,Rechercher,oui,True,False,332,42.7
+clair,recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+clair,recherche,ImageView,ic_reunion,,non,False,False,20,20
+clair,recherche,ImageView,ic_reunion,,non,False,False,20,20
+clair,recherche,ImageView,ic_reunion,,non,False,False,20,20
+clair,recherche,ImageView,ic_reunion,,non,False,False,20,20
+clair,recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,recherche,LinearLayout,,Réglages,oui,True,False,388,48
+clair,recherche,ImageView,ic_reglages,,non,False,False,24,24
+clair,reglages,ImageButton,,Retour,oui,True,False,48,48
+clair,reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,57.3
+clair,reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+clair,reglages,ImageView,chevron,,non,False,False,16,16
+clair,reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+clair,reglages,ImageView,chevron,,non,False,False,16,16
+clair,site-accueil,ImageButton,,Liste,oui,True,False,52,48
+clair,site-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+clair,site-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+clair,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+clair,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair,site-accueil,ImageView,ic_whatsapp,,non,False,False,20,20
+clair,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+clair,site-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,site-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,site-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+clair,site-accueil,ImageView,ic_reglages,,non,False,False,24,24
+clair,site-notes,ImageButton,,Liste,oui,True,False,52,48
+clair,site-notes,ImageButton,,Calendrier,oui,True,False,52,48
+clair,site-notes,ImageButton,,Rechercher,oui,True,False,48,48
+clair,site-notes,ImageView,ic_onde,,non,False,False,20,20
+clair,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+clair,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+clair,site-notes,ImageView,ic_whatsapp,,non,False,False,20,20
+clair,site-notes,ImageView,ic_telephone,,non,False,False,20,20
+clair,site-notes,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair,site-notes,ImageView,ic_enregistrer,,non,False,False,24,24
+clair,site-notes,LinearLayout,,Réglages,oui,True,False,388,48
+clair,site-notes,ImageView,ic_reglages,,non,False,False,24,24
+clair,site-reunion,ImageButton,,Retour,oui,True,False,48,48
+clair,site-reunion,ImageView,ic_micro,,auto,False,False,18,18
+clair,site-reunion,ImageButton,,Plus,oui,True,False,48,48
+clair,site-reunion,ImageButton,,Lire,oui,True,False,44,44
+clair,site-reunion,SeekBar,,Position dans le son,oui,False,False,308,26
+clair,site-reunion,LinearLayout,,Rechercher,oui,True,False,76,56
+clair,site-reunion,ImageView,ic_chercher,,non,False,False,22,22
+clair,site-reunion,LinearLayout,,Copier,oui,True,False,76,56
+clair,site-reunion,ImageView,ic_copier,,non,False,False,22,22
+clair,site-reunion,LinearLayout,,Télécharger,oui,True,False,76,56
+clair,site-reunion,ImageView,ic_telecharger,,non,False,False,22,22
+clair,site-reunion,LinearLayout,,Détails,oui,True,False,76,56
+clair,site-reunion,ImageView,ic_details,,non,False,False,22,22
+clair+nuit,sombre-accueil,ImageButton,,Liste,oui,True,False,52,48
+clair+nuit,sombre-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+clair+nuit,sombre-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+clair+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+clair+nuit,sombre-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+clair+nuit,sombre-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+clair+nuit,sombre-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+clair+nuit,sombre-accueil,ImageView,ic_reglages,,non,False,False,24,24
+clair+nuit,sombre-conversation,ImageButton,,Retour,oui,True,False,48,48
+clair+nuit,sombre-conversation,ImageView,ic_reunion,,auto,False,False,18,18
+clair+nuit,sombre-conversation,ImageButton,,Plus,oui,True,False,48,48
+clair+nuit,sombre-conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+clair+nuit,sombre-conversation,ImageView,ic_chercher,,non,False,False,22,22
+clair+nuit,sombre-conversation,LinearLayout,,Copier,oui,True,False,76,56
+clair+nuit,sombre-conversation,ImageView,ic_copier,,non,False,False,22,22
+clair+nuit,sombre-conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+clair+nuit,sombre-conversation,ImageView,ic_telecharger,,non,False,False,22,22
+clair+nuit,sombre-conversation,LinearLayout,,Détails,oui,True,False,76,56
+clair+nuit,sombre-conversation,ImageView,ic_details,,non,False,False,22,22
+clair+nuit,sombre-reglages,ImageButton,,Retour,oui,True,False,48,48
+clair+nuit,sombre-reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,57.3
+clair+nuit,sombre-reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+clair+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+clair+nuit,sombre-reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+clair+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+base,conversation-en-direct,ImageButton,,Retour,oui,True,False,48,48
+base,conversation-en-direct,ImageView,ic_micro,,auto,False,False,18,18
+base,conversation-recherche,ImageButton,,Retour,oui,True,False,48,48
+base,conversation-recherche,ImageView,ic_reunion,,auto,False,False,18,18
+base,conversation-recherche,ImageButton,,Plus,oui,True,False,48,48
+base,conversation-recherche,ImageButton,,Lire,oui,True,False,44,44
+base,conversation-recherche,SeekBar,,Position dans le son,oui,False,False,308,26
+base,conversation-recherche,LinearLayout,,Rechercher,oui,True,False,76,56
+base,conversation-recherche,ImageView,ic_chercher,,non,False,False,22,22
+base,conversation-recherche,LinearLayout,,Copier,oui,True,False,76,56
+base,conversation-recherche,ImageView,ic_copier,,non,False,False,22,22
+base,conversation-recherche,LinearLayout,,Télécharger,oui,True,False,76,56
+base,conversation-recherche,ImageView,ic_telecharger,,non,False,False,22,22
+base,conversation-recherche,LinearLayout,,Détails,oui,True,False,76,56
+base,conversation-recherche,ImageView,ic_details,,non,False,False,22,22
+base,conversation,ImageButton,,Retour,oui,True,False,48,48
+base,conversation,ImageView,ic_reunion,,auto,False,False,18,18
+base,conversation,ImageButton,,Plus,oui,True,False,48,48
+base,conversation,ImageButton,,Lire,oui,True,False,44,44
+base,conversation,SeekBar,,Position dans le son,oui,False,False,308,26
+base,conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+base,conversation,ImageView,ic_chercher,,non,False,False,22,22
+base,conversation,LinearLayout,,Copier,oui,True,False,76,56
+base,conversation,ImageView,ic_copier,,non,False,False,22,22
+base,conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+base,conversation,ImageView,ic_telecharger,,non,False,False,22,22
+base,conversation,LinearLayout,,Détails,oui,True,False,76,56
+base,conversation,ImageView,ic_details,,non,False,False,22,22
+base,direct-rien,ImageButton,,Retour,oui,True,False,48,48
+base,direct-rien,ImageView,ic_micro,,auto,False,False,18,18
+etroit,accueil-ecoute,ImageButton,,Liste,oui,True,False,52,48
+etroit,accueil-ecoute,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,accueil-ecoute,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,accueil-ecoute,ImageView,ic_onde,,non,False,False,20,20
+etroit,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-ecoute,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,accueil-ecoute,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,accueil-ecoute,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,accueil-ecoute,ImageView,ic_reglages,,non,False,False,24,24
+etroit,accueil-enregistre,ImageButton,,Liste,oui,True,False,52,48
+etroit,accueil-enregistre,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,accueil-enregistre,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,accueil-enregistre,ImageView,ic_micro,,non,False,False,20,20
+etroit,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil-enregistre,LinearLayout,,Arrêter l'enregistrement,oui,True,False,336,48
+etroit,accueil-enregistre,ImageView,ic_arreter,,non,False,False,24,24
+etroit,accueil-enregistre,LinearLayout,,Prendre une photo,oui,True,False,336,48
+etroit,accueil-enregistre,ImageView,ic_photo,,non,False,False,24,24
+etroit,accueil-vide,ImageButton,,Liste,oui,True,False,52,48
+etroit,accueil-vide,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,accueil-vide,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,accueil-vide,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,accueil-vide,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,accueil-vide,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,accueil-vide,ImageView,ic_reglages,,non,False,False,24,24
+etroit,accueil,ImageButton,,Liste,oui,True,False,52,48
+etroit,accueil,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,accueil,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,accueil,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,accueil,ImageView,ic_reglages,,non,False,False,24,24
+etroit,aucune-parole,ImageButton,,Retour,oui,True,False,48,48
+etroit,aucune-parole,ImageView,ic_micro,,auto,False,False,18,18
+etroit,aucune-parole,ImageButton,,Plus,oui,True,False,48,48
+etroit,aucune-parole,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,aucune-parole,ImageView,ic_chercher,,non,False,False,22,22
+etroit,aucune-parole,LinearLayout,,Copier,oui,True,False,76,56
+etroit,aucune-parole,ImageView,ic_copier,,non,False,False,22,22
+etroit,aucune-parole,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,aucune-parole,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,aucune-parole,LinearLayout,,Détails,oui,True,False,76,56
+etroit,aucune-parole,ImageView,ic_details,,non,False,False,22,22
+etroit,avant-transcription,ImageButton,,Retour,oui,True,False,48,48
+etroit,avant-transcription,ImageView,ic_reunion,,auto,False,False,18,18
+etroit,avant-transcription,ImageButton,,Plus,oui,True,False,48,48
+etroit,avant-transcription,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,avant-transcription,ImageView,ic_chercher,,non,False,False,22,22
+etroit,avant-transcription,LinearLayout,,Copier,oui,True,False,76,56
+etroit,avant-transcription,ImageView,ic_copier,,non,False,False,22,22
+etroit,avant-transcription,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,avant-transcription,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,avant-transcription,LinearLayout,,Détails,oui,True,False,76,56
+etroit,avant-transcription,ImageView,ic_details,,non,False,False,22,22
+etroit,calendrier,ImageButton,,Liste,oui,True,False,52,48
+etroit,calendrier,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,calendrier,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,calendrier,ImageButton,,Mois précédent,oui,True,False,48,48
+etroit,calendrier,ImageButton,,Mois suivant,oui,True,False,48,48
+etroit,calendrier,LinearLayout,,Dimanche 1 novembre,oui,True,False,46,48
+etroit,calendrier,LinearLayout,,Lundi 2 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mardi 3 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mercredi 4 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,"Jeudi 5 novembre, des conversations",oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,"Vendredi 6 novembre, des conversations",oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,"Samedi 7 novembre, des conversations",oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,"Aujourd'hui · dimanche 8 novembre, des conversations",oui,True,False,46,48
+etroit,calendrier,LinearLayout,,Lundi 9 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mardi 10 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mercredi 11 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Jeudi 12 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Vendredi 13 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Samedi 14 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Dimanche 15 novembre,oui,True,False,46,48
+etroit,calendrier,LinearLayout,,Lundi 16 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mardi 17 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mercredi 18 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Jeudi 19 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Vendredi 20 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Samedi 21 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Dimanche 22 novembre,oui,True,False,46,48
+etroit,calendrier,LinearLayout,,Lundi 23 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mardi 24 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Mercredi 25 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Jeudi 26 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Vendredi 27 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Samedi 28 novembre,oui,True,False,45.7,48
+etroit,calendrier,LinearLayout,,Dimanche 29 novembre,oui,True,False,46,48
+etroit,calendrier,LinearLayout,,Lundi 30 novembre,oui,True,False,45.7,48
+etroit,calendrier,ImageView,ic_reunion,,non,False,False,20,20
+etroit,calendrier,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,calendrier,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,calendrier,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,calendrier,ImageView,ic_reglages,,non,False,False,24,24
+etroit,conversation-recherche,ImageButton,,Retour,oui,True,False,48,48
+etroit,conversation-recherche,ImageView,ic_reunion,,auto,False,False,18,18
+etroit,conversation-recherche,ImageButton,,Plus,oui,True,False,48,48
+etroit,conversation-recherche,ImageButton,,Lire,oui,True,False,44,44
+etroit,conversation-recherche,SeekBar,,Position dans le son,oui,False,False,256,26
+etroit,conversation-recherche,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,conversation-recherche,ImageView,ic_chercher,,non,False,False,22,22
+etroit,conversation-recherche,LinearLayout,,Copier,oui,True,False,76,56
+etroit,conversation-recherche,ImageView,ic_copier,,non,False,False,22,22
+etroit,conversation-recherche,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,conversation-recherche,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,conversation-recherche,LinearLayout,,Détails,oui,True,False,76,56
+etroit,conversation-recherche,ImageView,ic_details,,non,False,False,22,22
+etroit,conversation,ImageButton,,Retour,oui,True,False,48,48
+etroit,conversation,ImageView,ic_reunion,,auto,False,False,18,18
+etroit,conversation,ImageButton,,Plus,oui,True,False,48,48
+etroit,conversation,ImageButton,,Lire,oui,True,False,44,44
+etroit,conversation,SeekBar,,Position dans le son,oui,False,False,256,26
+etroit,conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,conversation,ImageView,ic_chercher,,non,False,False,22,22
+etroit,conversation,LinearLayout,,Copier,oui,True,False,76,56
+etroit,conversation,ImageView,ic_copier,,non,False,False,22,22
+etroit,conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,conversation,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,conversation,LinearLayout,,Détails,oui,True,False,76,56
+etroit,conversation,ImageView,ic_details,,non,False,False,22,22
+etroit,direct-rien,ImageButton,,Retour,oui,True,False,48,48
+etroit,direct-rien,ImageView,ic_micro,,auto,False,False,18,18
+etroit,icones-entete-sans-texte,ImageButton,,Retour,oui,True,False,48,48
+etroit,icones-entete-sans-texte,ImageView,ic_telegram,,auto,False,False,18,18
+etroit,icones-entete-sans-texte,ImageButton,,Plus,oui,True,False,48,48
+etroit,icones-entete-sans-texte,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,icones-entete-sans-texte,ImageView,ic_chercher,,non,False,False,22,22
+etroit,icones-entete-sans-texte,LinearLayout,,Copier,oui,True,False,76,56
+etroit,icones-entete-sans-texte,ImageView,ic_copier,,non,False,False,22,22
+etroit,icones-entete-sans-texte,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,icones-entete-sans-texte,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,icones-entete-sans-texte,LinearLayout,,Détails,oui,True,False,76,56
+etroit,icones-entete-sans-texte,ImageView,ic_details,,non,False,False,22,22
+etroit,icones-entete,ImageButton,,Retour,oui,True,False,48,48
+etroit,icones-entete,ImageView,ic_signal,,auto,False,False,18,18
+etroit,icones-entete,ImageButton,,Plus,oui,True,False,48,48
+etroit,icones-entete,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,icones-entete,ImageView,ic_chercher,,non,False,False,22,22
+etroit,icones-entete,LinearLayout,,Copier,oui,True,False,76,56
+etroit,icones-entete,ImageView,ic_copier,,non,False,False,22,22
+etroit,icones-entete,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,icones-entete,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,icones-entete,LinearLayout,,Détails,oui,True,False,76,56
+etroit,icones-entete,ImageView,ic_details,,non,False,False,22,22
+etroit,icones-recherche,EditText,,Rechercher,oui,True,False,280,42.7
+etroit,icones-recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+etroit,icones-recherche,ImageView,ic_signal,,non,False,False,20,20
+etroit,icones-recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,icones-recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,icones-recherche,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,icones-recherche,ImageView,ic_reglages,,non,False,False,24,24
+etroit,icones,ImageButton,,Liste,oui,True,False,52,48
+etroit,icones,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,icones,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,icones,ImageView,ic_whatsapp,,non,False,False,20,20
+etroit,icones,ImageView,ic_signal,,non,False,False,20,20
+etroit,icones,ImageView,ic_telegram,,non,False,False,20,20
+etroit,icones,ImageView,ic_meet,,non,False,False,20,20
+etroit,icones,ImageView,ic_telephone,,non,False,False,20,20
+etroit,icones,ImageView,ic_reunion,,non,False,False,20,20
+etroit,icones,ImageView,ic_micro,,non,False,False,20,20
+etroit,icones,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,icones,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,icones,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,icones,ImageView,ic_reglages,,non,False,False,24,24
+etroit,journal-vide,ImageButton,,Retour,oui,True,False,48,48
+etroit,journal-vide,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,journal-vide,ImageView,ic_chercher,,non,False,False,22,22
+etroit,journal-vide,LinearLayout,,Copier,oui,True,False,76,56
+etroit,journal-vide,ImageView,ic_copier,,non,False,False,22,22
+etroit,mise-en-route,ImageView,,,non,False,False,64,64
+etroit,pas-encore-transcrite,ImageButton,,Retour,oui,True,False,48,48
+etroit,pas-encore-transcrite,ImageView,ic_micro,,auto,False,False,18,18
+etroit,pas-encore-transcrite,ImageButton,,Plus,oui,True,False,48,48
+etroit,pas-encore-transcrite,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,pas-encore-transcrite,ImageView,ic_chercher,,non,False,False,22,22
+etroit,pas-encore-transcrite,LinearLayout,,Copier,oui,True,False,76,56
+etroit,pas-encore-transcrite,ImageView,ic_copier,,non,False,False,22,22
+etroit,pas-encore-transcrite,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,pas-encore-transcrite,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,pas-encore-transcrite,LinearLayout,,Détails,oui,True,False,76,56
+etroit,pas-encore-transcrite,ImageView,ic_details,,non,False,False,22,22
+etroit,recherche,EditText,,Rechercher,oui,True,False,280,42.7
+etroit,recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+etroit,recherche,ImageView,ic_reunion,,non,False,False,20,20
+etroit,recherche,ImageView,ic_reunion,,non,False,False,20,20
+etroit,recherche,ImageView,ic_reunion,,non,False,False,20,20
+etroit,recherche,ImageView,ic_reunion,,non,False,False,20,20
+etroit,recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,recherche,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,recherche,ImageView,ic_reglages,,non,False,False,24,24
+etroit,reglages,ImageButton,,Retour,oui,True,False,48,48
+etroit,reglages,LinearLayout,,Enregistrer les appels,oui,True,False,328,57.3
+etroit,reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,320,48
+etroit,reglages,ImageView,chevron,,non,False,False,16,16
+etroit,reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,320,48
+etroit,reglages,ImageView,chevron,,non,False,False,16,16
+etroit,site-accueil,ImageButton,,Liste,oui,True,False,52,48
+etroit,site-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,site-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+etroit,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit,site-accueil,ImageView,ic_whatsapp,,non,False,False,20,20
+etroit,site-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,site-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,site-accueil,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,site-accueil,ImageView,ic_reglages,,non,False,False,24,24
+etroit,site-notes,ImageButton,,Liste,oui,True,False,52,48
+etroit,site-notes,ImageButton,,Calendrier,oui,True,False,52,48
+etroit,site-notes,ImageButton,,Rechercher,oui,True,False,48,48
+etroit,site-notes,ImageView,ic_onde,,non,False,False,20,20
+etroit,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+etroit,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+etroit,site-notes,ImageView,ic_whatsapp,,non,False,False,20,20
+etroit,site-notes,ImageView,ic_telephone,,non,False,False,20,20
+etroit,site-notes,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit,site-notes,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit,site-notes,LinearLayout,,Réglages,oui,True,False,336,48
+etroit,site-notes,ImageView,ic_reglages,,non,False,False,24,24
+etroit,site-reunion,ImageButton,,Retour,oui,True,False,48,48
+etroit,site-reunion,ImageView,ic_micro,,auto,False,False,18,18
+etroit,site-reunion,ImageButton,,Plus,oui,True,False,48,48
+etroit,site-reunion,ImageButton,,Lire,oui,True,False,44,44
+etroit,site-reunion,SeekBar,,Position dans le son,oui,False,False,256,26
+etroit,site-reunion,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit,site-reunion,ImageView,ic_chercher,,non,False,False,22,22
+etroit,site-reunion,LinearLayout,,Copier,oui,True,False,76,56
+etroit,site-reunion,ImageView,ic_copier,,non,False,False,22,22
+etroit,site-reunion,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit,site-reunion,ImageView,ic_telecharger,,non,False,False,22,22
+etroit,site-reunion,LinearLayout,,Détails,oui,True,False,76,56
+etroit,site-reunion,ImageView,ic_details,,non,False,False,22,22
+etroit+nuit,sombre-accueil,ImageButton,,Liste,oui,True,False,52,48
+etroit+nuit,sombre-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+etroit+nuit,sombre-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+etroit+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+etroit+nuit,sombre-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,336,48
+etroit+nuit,sombre-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+etroit+nuit,sombre-accueil,LinearLayout,,Réglages,oui,True,False,336,48
+etroit+nuit,sombre-accueil,ImageView,ic_reglages,,non,False,False,24,24
+etroit+nuit,sombre-conversation,ImageButton,,Retour,oui,True,False,48,48
+etroit+nuit,sombre-conversation,ImageView,ic_reunion,,auto,False,False,18,18
+etroit+nuit,sombre-conversation,ImageButton,,Plus,oui,True,False,48,48
+etroit+nuit,sombre-conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+etroit+nuit,sombre-conversation,ImageView,ic_chercher,,non,False,False,22,22
+etroit+nuit,sombre-conversation,LinearLayout,,Copier,oui,True,False,76,56
+etroit+nuit,sombre-conversation,ImageView,ic_copier,,non,False,False,22,22
+etroit+nuit,sombre-conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+etroit+nuit,sombre-conversation,ImageView,ic_telecharger,,non,False,False,22,22
+etroit+nuit,sombre-conversation,LinearLayout,,Détails,oui,True,False,76,56
+etroit+nuit,sombre-conversation,ImageView,ic_details,,non,False,False,22,22
+etroit+nuit,sombre-reglages,ImageButton,,Retour,oui,True,False,48,48
+etroit+nuit,sombre-reglages,LinearLayout,,Enregistrer les appels,oui,True,False,328,57.3
+etroit+nuit,sombre-reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,320,48
+etroit+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+etroit+nuit,sombre-reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,320,48
+etroit+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+base,icones-entete-sans-texte,ImageButton,,Retour,oui,True,False,48,48
+base,icones-entete-sans-texte,ImageView,ic_telegram,,auto,False,False,18,18
+base,icones-entete-sans-texte,ImageButton,,Plus,oui,True,False,48,48
+base,icones-entete-sans-texte,LinearLayout,,Rechercher,oui,True,False,76,56
+base,icones-entete-sans-texte,ImageView,ic_chercher,,non,False,False,22,22
+base,icones-entete-sans-texte,LinearLayout,,Copier,oui,True,False,76,56
+base,icones-entete-sans-texte,ImageView,ic_copier,,non,False,False,22,22
+base,icones-entete-sans-texte,LinearLayout,,Télécharger,oui,True,False,76,56
+base,icones-entete-sans-texte,ImageView,ic_telecharger,,non,False,False,22,22
+base,icones-entete-sans-texte,LinearLayout,,Détails,oui,True,False,76,56
+base,icones-entete-sans-texte,ImageView,ic_details,,non,False,False,22,22
+base,icones-entete,ImageButton,,Retour,oui,True,False,48,48
+base,icones-entete,ImageView,ic_signal,,auto,False,False,18,18
+base,icones-entete,ImageButton,,Plus,oui,True,False,48,48
+base,icones-entete,LinearLayout,,Rechercher,oui,True,False,76,56
+base,icones-entete,ImageView,ic_chercher,,non,False,False,22,22
+base,icones-entete,LinearLayout,,Copier,oui,True,False,76,56
+base,icones-entete,ImageView,ic_copier,,non,False,False,22,22
+base,icones-entete,LinearLayout,,Télécharger,oui,True,False,76,56
+base,icones-entete,ImageView,ic_telecharger,,non,False,False,22,22
+base,icones-entete,LinearLayout,,Détails,oui,True,False,76,56
+base,icones-entete,ImageView,ic_details,,non,False,False,22,22
+base,icones-recherche,EditText,,Rechercher,oui,True,False,332,42.7
+base,icones-recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+base,icones-recherche,ImageView,ic_signal,,non,False,False,20,20
+base,icones-recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,icones-recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+base,icones-recherche,LinearLayout,,Réglages,oui,True,False,388,48
+base,icones-recherche,ImageView,ic_reglages,,non,False,False,24,24
+base,icones,ImageButton,,Liste,oui,True,False,52,48
+base,icones,ImageButton,,Calendrier,oui,True,False,52,48
+base,icones,ImageButton,,Rechercher,oui,True,False,48,48
+base,icones,ImageView,ic_whatsapp,,non,False,False,20,20
+base,icones,ImageView,ic_signal,,non,False,False,20,20
+base,icones,ImageView,ic_telegram,,non,False,False,20,20
+base,icones,ImageView,ic_meet,,non,False,False,20,20
+base,icones,ImageView,ic_telephone,,non,False,False,20,20
+base,icones,ImageView,ic_reunion,,non,False,False,20,20
+base,icones,ImageView,ic_micro,,non,False,False,20,20
+base,icones,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,icones,ImageView,ic_enregistrer,,non,False,False,24,24
+base,icones,LinearLayout,,Réglages,oui,True,False,388,48
+base,icones,ImageView,ic_reglages,,non,False,False,24,24
+base,journal-vide,ImageButton,,Retour,oui,True,False,48,48
+base,journal-vide,LinearLayout,,Rechercher,oui,True,False,76,56
+base,journal-vide,ImageView,ic_chercher,,non,False,False,22,22
+base,journal-vide,LinearLayout,,Copier,oui,True,False,76,56
+base,journal-vide,ImageView,ic_copier,,non,False,False,22,22
+large,accueil-ecoute,ImageButton,,Liste,oui,True,False,52,48
+large,accueil-ecoute,ImageButton,,Calendrier,oui,True,False,52,48
+large,accueil-ecoute,ImageButton,,Rechercher,oui,True,False,48,48
+large,accueil-ecoute,ImageView,ic_onde,,non,False,False,20,20
+large,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-ecoute,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,accueil-ecoute,ImageView,ic_enregistrer,,non,False,False,24,24
+large,accueil-ecoute,LinearLayout,,Réglages,oui,True,False,576,48
+large,accueil-ecoute,ImageView,ic_reglages,,non,False,False,24,24
+large,accueil-enregistre,ImageButton,,Liste,oui,True,False,52,48
+large,accueil-enregistre,ImageButton,,Calendrier,oui,True,False,52,48
+large,accueil-enregistre,ImageButton,,Rechercher,oui,True,False,48,48
+large,accueil-enregistre,ImageView,ic_micro,,non,False,False,20,20
+large,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil-enregistre,LinearLayout,,Arrêter l'enregistrement,oui,True,False,576,48
+large,accueil-enregistre,ImageView,ic_arreter,,non,False,False,24,24
+large,accueil-enregistre,LinearLayout,,Prendre une photo,oui,True,False,576,48
+large,accueil-enregistre,ImageView,ic_photo,,non,False,False,24,24
+large,accueil-vide,ImageButton,,Liste,oui,True,False,52,48
+large,accueil-vide,ImageButton,,Calendrier,oui,True,False,52,48
+large,accueil-vide,ImageButton,,Rechercher,oui,True,False,48,48
+large,accueil-vide,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,accueil-vide,ImageView,ic_enregistrer,,non,False,False,24,24
+large,accueil-vide,LinearLayout,,Réglages,oui,True,False,576,48
+large,accueil-vide,ImageView,ic_reglages,,non,False,False,24,24
+large,accueil,ImageButton,,Liste,oui,True,False,52,48
+large,accueil,ImageButton,,Calendrier,oui,True,False,52,48
+large,accueil,ImageButton,,Rechercher,oui,True,False,48,48
+large,accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+large,accueil,LinearLayout,,Réglages,oui,True,False,576,48
+large,accueil,ImageView,ic_reglages,,non,False,False,24,24
+large,aucune-parole,ImageButton,,Retour,oui,True,False,48,48
+large,aucune-parole,ImageView,ic_micro,,auto,False,False,18,18
+large,aucune-parole,ImageButton,,Plus,oui,True,False,48,48
+large,aucune-parole,LinearLayout,,Rechercher,oui,True,False,76,56
+large,aucune-parole,ImageView,ic_chercher,,non,False,False,22,22
+large,aucune-parole,LinearLayout,,Copier,oui,True,False,76,56
+large,aucune-parole,ImageView,ic_copier,,non,False,False,22,22
+large,aucune-parole,LinearLayout,,Télécharger,oui,True,False,76,56
+large,aucune-parole,ImageView,ic_telecharger,,non,False,False,22,22
+large,aucune-parole,LinearLayout,,Détails,oui,True,False,76,56
+large,aucune-parole,ImageView,ic_details,,non,False,False,22,22
+large,avant-transcription,ImageButton,,Retour,oui,True,False,48,48
+large,avant-transcription,ImageView,ic_reunion,,auto,False,False,18,18
+large,avant-transcription,ImageButton,,Plus,oui,True,False,48,48
+large,avant-transcription,LinearLayout,,Rechercher,oui,True,False,76,56
+large,avant-transcription,ImageView,ic_chercher,,non,False,False,22,22
+large,avant-transcription,LinearLayout,,Copier,oui,True,False,76,56
+large,avant-transcription,ImageView,ic_copier,,non,False,False,22,22
+large,avant-transcription,LinearLayout,,Télécharger,oui,True,False,76,56
+large,avant-transcription,ImageView,ic_telecharger,,non,False,False,22,22
+large,avant-transcription,LinearLayout,,Détails,oui,True,False,76,56
+large,avant-transcription,ImageView,ic_details,,non,False,False,22,22
+large,calendrier,ImageButton,,Liste,oui,True,False,52,48
+large,calendrier,ImageButton,,Calendrier,oui,True,False,52,48
+large,calendrier,ImageButton,,Rechercher,oui,True,False,48,48
+large,calendrier,ImageButton,,Mois précédent,oui,True,False,48,48
+large,calendrier,ImageButton,,Mois suivant,oui,True,False,48,48
+large,calendrier,LinearLayout,,Dimanche 1 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Lundi 2 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mardi 3 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mercredi 4 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,"Jeudi 5 novembre, des conversations",oui,True,False,80,48
+large,calendrier,LinearLayout,,"Vendredi 6 novembre, des conversations",oui,True,False,80,48
+large,calendrier,LinearLayout,,"Samedi 7 novembre, des conversations",oui,True,False,80,48
+large,calendrier,LinearLayout,,"Aujourd'hui · dimanche 8 novembre, des conversations",oui,True,False,80,48
+large,calendrier,LinearLayout,,Lundi 9 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mardi 10 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mercredi 11 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Jeudi 12 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Vendredi 13 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Samedi 14 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Dimanche 15 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Lundi 16 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mardi 17 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mercredi 18 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Jeudi 19 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Vendredi 20 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Samedi 21 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Dimanche 22 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Lundi 23 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mardi 24 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Mercredi 25 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Jeudi 26 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Vendredi 27 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Samedi 28 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Dimanche 29 novembre,oui,True,False,80,48
+large,calendrier,LinearLayout,,Lundi 30 novembre,oui,True,False,80,48
+large,calendrier,ImageView,ic_reunion,,non,False,False,20,20
+large,calendrier,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,calendrier,ImageView,ic_enregistrer,,non,False,False,24,24
+large,calendrier,LinearLayout,,Réglages,oui,True,False,576,48
+large,calendrier,ImageView,ic_reglages,,non,False,False,24,24
+large,conversation-recherche,ImageButton,,Retour,oui,True,False,48,48
+large,conversation-recherche,ImageView,ic_reunion,,auto,False,False,18,18
+large,conversation-recherche,ImageButton,,Plus,oui,True,False,48,48
+large,conversation-recherche,ImageButton,,Lire,oui,True,False,44,44
+large,conversation-recherche,SeekBar,,Position dans le son,oui,False,False,496,26
+large,conversation-recherche,LinearLayout,,Rechercher,oui,True,False,76,56
+large,conversation-recherche,ImageView,ic_chercher,,non,False,False,22,22
+large,conversation-recherche,LinearLayout,,Copier,oui,True,False,76,56
+large,conversation-recherche,ImageView,ic_copier,,non,False,False,22,22
+large,conversation-recherche,LinearLayout,,Télécharger,oui,True,False,76,56
+large,conversation-recherche,ImageView,ic_telecharger,,non,False,False,22,22
+large,conversation-recherche,LinearLayout,,Détails,oui,True,False,76,56
+large,conversation-recherche,ImageView,ic_details,,non,False,False,22,22
+large,conversation,ImageButton,,Retour,oui,True,False,48,48
+large,conversation,ImageView,ic_reunion,,auto,False,False,18,18
+large,conversation,ImageButton,,Plus,oui,True,False,48,48
+large,conversation,ImageButton,,Lire,oui,True,False,44,44
+large,conversation,SeekBar,,Position dans le son,oui,False,False,496,26
+large,conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+large,conversation,ImageView,ic_chercher,,non,False,False,22,22
+large,conversation,LinearLayout,,Copier,oui,True,False,76,56
+large,conversation,ImageView,ic_copier,,non,False,False,22,22
+large,conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+large,conversation,ImageView,ic_telecharger,,non,False,False,22,22
+large,conversation,LinearLayout,,Détails,oui,True,False,76,56
+large,conversation,ImageView,ic_details,,non,False,False,22,22
+large,direct-rien,ImageButton,,Retour,oui,True,False,48,48
+large,direct-rien,ImageView,ic_micro,,auto,False,False,18,18
+large,icones-entete-sans-texte,ImageButton,,Retour,oui,True,False,48,48
+large,icones-entete-sans-texte,ImageView,ic_telegram,,auto,False,False,18,18
+large,icones-entete-sans-texte,ImageButton,,Plus,oui,True,False,48,48
+large,icones-entete-sans-texte,LinearLayout,,Rechercher,oui,True,False,76,56
+large,icones-entete-sans-texte,ImageView,ic_chercher,,non,False,False,22,22
+large,icones-entete-sans-texte,LinearLayout,,Copier,oui,True,False,76,56
+large,icones-entete-sans-texte,ImageView,ic_copier,,non,False,False,22,22
+large,icones-entete-sans-texte,LinearLayout,,Télécharger,oui,True,False,76,56
+large,icones-entete-sans-texte,ImageView,ic_telecharger,,non,False,False,22,22
+large,icones-entete-sans-texte,LinearLayout,,Détails,oui,True,False,76,56
+large,icones-entete-sans-texte,ImageView,ic_details,,non,False,False,22,22
+large,icones-entete,ImageButton,,Retour,oui,True,False,48,48
+large,icones-entete,ImageView,ic_signal,,auto,False,False,18,18
+large,icones-entete,ImageButton,,Plus,oui,True,False,48,48
+large,icones-entete,LinearLayout,,Rechercher,oui,True,False,76,56
+large,icones-entete,ImageView,ic_chercher,,non,False,False,22,22
+large,icones-entete,LinearLayout,,Copier,oui,True,False,76,56
+large,icones-entete,ImageView,ic_copier,,non,False,False,22,22
+large,icones-entete,LinearLayout,,Télécharger,oui,True,False,76,56
+large,icones-entete,ImageView,ic_telecharger,,non,False,False,22,22
+large,icones-entete,LinearLayout,,Détails,oui,True,False,76,56
+large,icones-entete,ImageView,ic_details,,non,False,False,22,22
+large,icones-recherche,EditText,,Rechercher,oui,True,False,520,42.7
+large,icones-recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+large,icones-recherche,ImageView,ic_signal,,non,False,False,20,20
+large,icones-recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,icones-recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+large,icones-recherche,LinearLayout,,Réglages,oui,True,False,576,48
+large,icones-recherche,ImageView,ic_reglages,,non,False,False,24,24
+large,icones,ImageButton,,Liste,oui,True,False,52,48
+large,icones,ImageButton,,Calendrier,oui,True,False,52,48
+large,icones,ImageButton,,Rechercher,oui,True,False,48,48
+large,icones,ImageView,ic_whatsapp,,non,False,False,20,20
+large,icones,ImageView,ic_signal,,non,False,False,20,20
+large,icones,ImageView,ic_telegram,,non,False,False,20,20
+large,icones,ImageView,ic_meet,,non,False,False,20,20
+large,icones,ImageView,ic_telephone,,non,False,False,20,20
+large,icones,ImageView,ic_reunion,,non,False,False,20,20
+large,icones,ImageView,ic_micro,,non,False,False,20,20
+large,icones,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,icones,ImageView,ic_enregistrer,,non,False,False,24,24
+large,icones,LinearLayout,,Réglages,oui,True,False,576,48
+large,icones,ImageView,ic_reglages,,non,False,False,24,24
+large,journal-vide,ImageButton,,Retour,oui,True,False,48,48
+large,journal-vide,LinearLayout,,Rechercher,oui,True,False,76,56
+large,journal-vide,ImageView,ic_chercher,,non,False,False,22,22
+large,journal-vide,LinearLayout,,Copier,oui,True,False,76,56
+large,journal-vide,ImageView,ic_copier,,non,False,False,22,22
+large,mise-en-route,ImageView,,,non,False,False,64,64
+large,pas-encore-transcrite,ImageButton,,Retour,oui,True,False,48,48
+large,pas-encore-transcrite,ImageView,ic_micro,,auto,False,False,18,18
+large,pas-encore-transcrite,ImageButton,,Plus,oui,True,False,48,48
+large,pas-encore-transcrite,LinearLayout,,Rechercher,oui,True,False,76,56
+large,pas-encore-transcrite,ImageView,ic_chercher,,non,False,False,22,22
+large,pas-encore-transcrite,LinearLayout,,Copier,oui,True,False,76,56
+large,pas-encore-transcrite,ImageView,ic_copier,,non,False,False,22,22
+large,pas-encore-transcrite,LinearLayout,,Télécharger,oui,True,False,76,56
+large,pas-encore-transcrite,ImageView,ic_telecharger,,non,False,False,22,22
+large,pas-encore-transcrite,LinearLayout,,Détails,oui,True,False,76,56
+large,pas-encore-transcrite,ImageView,ic_details,,non,False,False,22,22
+large,recherche,EditText,,Rechercher,oui,True,False,520,42.7
+large,recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+large,recherche,ImageView,ic_reunion,,non,False,False,20,20
+large,recherche,ImageView,ic_reunion,,non,False,False,20,20
+large,recherche,ImageView,ic_reunion,,non,False,False,20,20
+large,recherche,ImageView,ic_reunion,,non,False,False,20,20
+large,recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+large,recherche,LinearLayout,,Réglages,oui,True,False,576,48
+large,recherche,ImageView,ic_reglages,,non,False,False,24,24
+large,reglages,ImageButton,,Retour,oui,True,False,48,48
+large,reglages,LinearLayout,,Enregistrer les appels,oui,True,False,568,57.3
+large,reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,560,48
+large,reglages,ImageView,chevron,,non,False,False,16,16
+large,reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,560,48
+large,reglages,ImageView,chevron,,non,False,False,16,16
+large,site-accueil,ImageButton,,Liste,oui,True,False,52,48
+large,site-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+large,site-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+large,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+large,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large,site-accueil,ImageView,ic_whatsapp,,non,False,False,20,20
+large,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+large,site-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,site-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+large,site-accueil,LinearLayout,,Réglages,oui,True,False,576,48
+large,site-accueil,ImageView,ic_reglages,,non,False,False,24,24
+large,site-notes,ImageButton,,Liste,oui,True,False,52,48
+large,site-notes,ImageButton,,Calendrier,oui,True,False,52,48
+large,site-notes,ImageButton,,Rechercher,oui,True,False,48,48
+large,site-notes,ImageView,ic_onde,,non,False,False,20,20
+large,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+large,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+large,site-notes,ImageView,ic_whatsapp,,non,False,False,20,20
+large,site-notes,ImageView,ic_telephone,,non,False,False,20,20
+large,site-notes,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large,site-notes,ImageView,ic_enregistrer,,non,False,False,24,24
+large,site-notes,LinearLayout,,Réglages,oui,True,False,576,48
+large,site-notes,ImageView,ic_reglages,,non,False,False,24,24
+large,site-reunion,ImageButton,,Retour,oui,True,False,48,48
+large,site-reunion,ImageView,ic_micro,,auto,False,False,18,18
+large,site-reunion,ImageButton,,Plus,oui,True,False,48,48
+large,site-reunion,ImageButton,,Lire,oui,True,False,44,44
+large,site-reunion,SeekBar,,Position dans le son,oui,False,False,496,26
+large,site-reunion,LinearLayout,,Rechercher,oui,True,False,76,56
+large,site-reunion,ImageView,ic_chercher,,non,False,False,22,22
+large,site-reunion,LinearLayout,,Copier,oui,True,False,76,56
+large,site-reunion,ImageView,ic_copier,,non,False,False,22,22
+large,site-reunion,LinearLayout,,Télécharger,oui,True,False,76,56
+large,site-reunion,ImageView,ic_telecharger,,non,False,False,22,22
+large,site-reunion,LinearLayout,,Détails,oui,True,False,76,56
+large,site-reunion,ImageView,ic_details,,non,False,False,22,22
+large+nuit,sombre-accueil,ImageButton,,Liste,oui,True,False,52,48
+large+nuit,sombre-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+large+nuit,sombre-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+large+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+large+nuit,sombre-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,576,48
+large+nuit,sombre-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+large+nuit,sombre-accueil,LinearLayout,,Réglages,oui,True,False,576,48
+large+nuit,sombre-accueil,ImageView,ic_reglages,,non,False,False,24,24
+large+nuit,sombre-conversation,ImageButton,,Retour,oui,True,False,48,48
+large+nuit,sombre-conversation,ImageView,ic_reunion,,auto,False,False,18,18
+large+nuit,sombre-conversation,ImageButton,,Plus,oui,True,False,48,48
+large+nuit,sombre-conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+large+nuit,sombre-conversation,ImageView,ic_chercher,,non,False,False,22,22
+large+nuit,sombre-conversation,LinearLayout,,Copier,oui,True,False,76,56
+large+nuit,sombre-conversation,ImageView,ic_copier,,non,False,False,22,22
+large+nuit,sombre-conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+large+nuit,sombre-conversation,ImageView,ic_telecharger,,non,False,False,22,22
+large+nuit,sombre-conversation,LinearLayout,,Détails,oui,True,False,76,56
+large+nuit,sombre-conversation,ImageView,ic_details,,non,False,False,22,22
+large+nuit,sombre-reglages,ImageButton,,Retour,oui,True,False,48,48
+large+nuit,sombre-reglages,LinearLayout,,Enregistrer les appels,oui,True,False,568,57.3
+large+nuit,sombre-reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,560,48
+large+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+large+nuit,sombre-reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,560,48
+large+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+base,mise-en-route,ImageView,,,non,False,False,64,64
+base,pas-encore-transcrite,ImageButton,,Retour,oui,True,False,48,48
+base,pas-encore-transcrite,ImageView,ic_micro,,auto,False,False,18,18
+base,pas-encore-transcrite,ImageButton,,Plus,oui,True,False,48,48
+base,pas-encore-transcrite,LinearLayout,,Rechercher,oui,True,False,76,56
+base,pas-encore-transcrite,ImageView,ic_chercher,,non,False,False,22,22
+base,pas-encore-transcrite,LinearLayout,,Copier,oui,True,False,76,56
+base,pas-encore-transcrite,ImageView,ic_copier,,non,False,False,22,22
+base,pas-encore-transcrite,LinearLayout,,Télécharger,oui,True,False,76,56
+base,pas-encore-transcrite,ImageView,ic_telecharger,,non,False,False,22,22
+base,pas-encore-transcrite,LinearLayout,,Détails,oui,True,False,76,56
+base,pas-encore-transcrite,ImageView,ic_details,,non,False,False,22,22
+base,recherche,EditText,,Rechercher,oui,True,False,332,42.7
+base,recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+base,recherche,ImageView,ic_reunion,,non,False,False,20,20
+base,recherche,ImageView,ic_reunion,,non,False,False,20,20
+base,recherche,ImageView,ic_reunion,,non,False,False,20,20
+base,recherche,ImageView,ic_reunion,,non,False,False,20,20
+base,recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+base,recherche,LinearLayout,,Réglages,oui,True,False,388,48
+base,recherche,ImageView,ic_reglages,,non,False,False,24,24
+base,reglages,ImageButton,,Retour,oui,True,False,48,48
+base,reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,57.3
+base,reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+base,reglages,ImageView,chevron,,non,False,False,16,16
+base,reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+base,reglages,ImageView,chevron,,non,False,False,16,16
+base,site-accueil,ImageButton,,Liste,oui,True,False,52,48
+base,site-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+base,site-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+base,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+base,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base,site-accueil,ImageView,ic_whatsapp,,non,False,False,20,20
+base,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+base,site-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,site-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+base,site-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+base,site-accueil,ImageView,ic_reglages,,non,False,False,24,24
+base,site-notes,ImageButton,,Liste,oui,True,False,52,48
+base,site-notes,ImageButton,,Calendrier,oui,True,False,52,48
+base,site-notes,ImageButton,,Rechercher,oui,True,False,48,48
+base,site-notes,ImageView,ic_onde,,non,False,False,20,20
+base,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+base,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+base,site-notes,ImageView,ic_whatsapp,,non,False,False,20,20
+base,site-notes,ImageView,ic_telephone,,non,False,False,20,20
+base,site-notes,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base,site-notes,ImageView,ic_enregistrer,,non,False,False,24,24
+base,site-notes,LinearLayout,,Réglages,oui,True,False,388,48
+base,site-notes,ImageView,ic_reglages,,non,False,False,24,24
+base,site-reunion,ImageButton,,Retour,oui,True,False,48,48
+base,site-reunion,ImageView,ic_micro,,auto,False,False,18,18
+base,site-reunion,ImageButton,,Plus,oui,True,False,48,48
+base,site-reunion,ImageButton,,Lire,oui,True,False,44,44
+base,site-reunion,SeekBar,,Position dans le son,oui,False,False,308,26
+base,site-reunion,LinearLayout,,Rechercher,oui,True,False,76,56
+base,site-reunion,ImageView,ic_chercher,,non,False,False,22,22
+base,site-reunion,LinearLayout,,Copier,oui,True,False,76,56
+base,site-reunion,ImageView,ic_copier,,non,False,False,22,22
+base,site-reunion,LinearLayout,,Télécharger,oui,True,False,76,56
+base,site-reunion,ImageView,ic_telecharger,,non,False,False,22,22
+base,site-reunion,LinearLayout,,Détails,oui,True,False,76,56
+base,site-reunion,ImageView,ic_details,,non,False,False,22,22
+base+nuit,sombre-accueil,ImageButton,,Liste,oui,True,False,52,48
+base+nuit,sombre-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+base+nuit,sombre-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+base+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+base+nuit,sombre-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+base+nuit,sombre-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+base+nuit,sombre-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+base+nuit,sombre-accueil,ImageView,ic_reglages,,non,False,False,24,24
+base+nuit,sombre-conversation,ImageButton,,Retour,oui,True,False,48,48
+base+nuit,sombre-conversation,ImageView,ic_reunion,,auto,False,False,18,18
+base+nuit,sombre-conversation,ImageButton,,Plus,oui,True,False,48,48
+base+nuit,sombre-conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+base+nuit,sombre-conversation,ImageView,ic_chercher,,non,False,False,22,22
+base+nuit,sombre-conversation,LinearLayout,,Copier,oui,True,False,76,56
+base+nuit,sombre-conversation,ImageView,ic_copier,,non,False,False,22,22
+base+nuit,sombre-conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+base+nuit,sombre-conversation,ImageView,ic_telecharger,,non,False,False,22,22
+base+nuit,sombre-conversation,LinearLayout,,Détails,oui,True,False,76,56
+base+nuit,sombre-conversation,ImageView,ic_details,,non,False,False,22,22
+base+nuit,sombre-reglages,ImageButton,,Retour,oui,True,False,48,48
+base+nuit,sombre-reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,57.3
+base+nuit,sombre-reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+base+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+base+nuit,sombre-reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+base+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+sombre,accueil-ecoute,ImageButton,,Liste,oui,True,False,52,48
+sombre,accueil-ecoute,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,accueil-ecoute,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,accueil-ecoute,ImageView,ic_onde,,non,False,False,20,20
+sombre,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-ecoute,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,accueil-ecoute,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,accueil-ecoute,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,accueil-ecoute,ImageView,ic_reglages,,non,False,False,24,24
+sombre,accueil-enregistre,ImageButton,,Liste,oui,True,False,52,48
+sombre,accueil-enregistre,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,accueil-enregistre,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,accueil-enregistre,ImageView,ic_micro,,non,False,False,20,20
+sombre,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil-enregistre,LinearLayout,,Arrêter l'enregistrement,oui,True,False,388,48
+sombre,accueil-enregistre,ImageView,ic_arreter,,non,False,False,24,24
+sombre,accueil-enregistre,LinearLayout,,Prendre une photo,oui,True,False,388,48
+sombre,accueil-enregistre,ImageView,ic_photo,,non,False,False,24,24
+sombre,accueil-vide,ImageButton,,Liste,oui,True,False,52,48
+sombre,accueil-vide,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,accueil-vide,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,accueil-vide,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,accueil-vide,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,accueil-vide,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,accueil-vide,ImageView,ic_reglages,,non,False,False,24,24
+sombre,accueil,ImageButton,,Liste,oui,True,False,52,48
+sombre,accueil,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,accueil,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,accueil,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,accueil,ImageView,ic_reglages,,non,False,False,24,24
+sombre,aucune-parole,ImageButton,,Retour,oui,True,False,48,48
+sombre,aucune-parole,ImageView,ic_micro,,auto,False,False,18,18
+sombre,aucune-parole,ImageButton,,Plus,oui,True,False,48,48
+sombre,aucune-parole,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,aucune-parole,ImageView,ic_chercher,,non,False,False,22,22
+sombre,aucune-parole,LinearLayout,,Copier,oui,True,False,76,56
+sombre,aucune-parole,ImageView,ic_copier,,non,False,False,22,22
+sombre,aucune-parole,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,aucune-parole,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,aucune-parole,LinearLayout,,Détails,oui,True,False,76,56
+sombre,aucune-parole,ImageView,ic_details,,non,False,False,22,22
+sombre,avant-transcription,ImageButton,,Retour,oui,True,False,48,48
+sombre,avant-transcription,ImageView,ic_reunion,,auto,False,False,18,18
+sombre,avant-transcription,ImageButton,,Plus,oui,True,False,48,48
+sombre,avant-transcription,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,avant-transcription,ImageView,ic_chercher,,non,False,False,22,22
+sombre,avant-transcription,LinearLayout,,Copier,oui,True,False,76,56
+sombre,avant-transcription,ImageView,ic_copier,,non,False,False,22,22
+sombre,avant-transcription,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,avant-transcription,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,avant-transcription,LinearLayout,,Détails,oui,True,False,76,56
+sombre,avant-transcription,ImageView,ic_details,,non,False,False,22,22
+sombre,calendrier,ImageButton,,Liste,oui,True,False,52,48
+sombre,calendrier,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,calendrier,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,calendrier,ImageButton,,Mois précédent,oui,True,False,48,48
+sombre,calendrier,ImageButton,,Mois suivant,oui,True,False,48,48
+sombre,calendrier,LinearLayout,,Dimanche 1 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Lundi 2 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mardi 3 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mercredi 4 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,"Jeudi 5 novembre, des conversations",oui,True,False,53,48
+sombre,calendrier,LinearLayout,,"Vendredi 6 novembre, des conversations",oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,"Samedi 7 novembre, des conversations",oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,"Aujourd'hui · dimanche 8 novembre, des conversations",oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Lundi 9 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mardi 10 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mercredi 11 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Jeudi 12 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Vendredi 13 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Samedi 14 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Dimanche 15 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Lundi 16 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mardi 17 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mercredi 18 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Jeudi 19 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Vendredi 20 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Samedi 21 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Dimanche 22 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Lundi 23 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mardi 24 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Mercredi 25 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Jeudi 26 novembre,oui,True,False,53,48
+sombre,calendrier,LinearLayout,,Vendredi 27 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Samedi 28 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Dimanche 29 novembre,oui,True,False,53.3,48
+sombre,calendrier,LinearLayout,,Lundi 30 novembre,oui,True,False,53,48
+sombre,calendrier,ImageView,ic_reunion,,non,False,False,20,20
+sombre,calendrier,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,calendrier,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,calendrier,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,calendrier,ImageView,ic_reglages,,non,False,False,24,24
+sombre,conversation-en-direct,ImageButton,,Retour,oui,True,False,48,48
+sombre,conversation-en-direct,ImageView,ic_micro,,auto,False,False,18,18
+sombre,conversation-recherche,ImageButton,,Retour,oui,True,False,48,48
+sombre,conversation-recherche,ImageView,ic_reunion,,auto,False,False,18,18
+sombre,conversation-recherche,ImageButton,,Plus,oui,True,False,48,48
+sombre,conversation-recherche,ImageButton,,Lire,oui,True,False,44,44
+sombre,conversation-recherche,SeekBar,,Position dans le son,oui,False,False,308,26
+sombre,conversation-recherche,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,conversation-recherche,ImageView,ic_chercher,,non,False,False,22,22
+sombre,conversation-recherche,LinearLayout,,Copier,oui,True,False,76,56
+sombre,conversation-recherche,ImageView,ic_copier,,non,False,False,22,22
+sombre,conversation-recherche,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,conversation-recherche,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,conversation-recherche,LinearLayout,,Détails,oui,True,False,76,56
+sombre,conversation-recherche,ImageView,ic_details,,non,False,False,22,22
+sombre,conversation,ImageButton,,Retour,oui,True,False,48,48
+sombre,conversation,ImageView,ic_reunion,,auto,False,False,18,18
+sombre,conversation,ImageButton,,Plus,oui,True,False,48,48
+sombre,conversation,ImageButton,,Lire,oui,True,False,44,44
+sombre,conversation,SeekBar,,Position dans le son,oui,False,False,308,26
+sombre,conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,conversation,ImageView,ic_chercher,,non,False,False,22,22
+sombre,conversation,LinearLayout,,Copier,oui,True,False,76,56
+sombre,conversation,ImageView,ic_copier,,non,False,False,22,22
+sombre,conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,conversation,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,conversation,LinearLayout,,Détails,oui,True,False,76,56
+sombre,conversation,ImageView,ic_details,,non,False,False,22,22
+sombre,direct-rien,ImageButton,,Retour,oui,True,False,48,48
+sombre,direct-rien,ImageView,ic_micro,,auto,False,False,18,18
+sombre,icones-entete-sans-texte,ImageButton,,Retour,oui,True,False,48,48
+sombre,icones-entete-sans-texte,ImageView,ic_telegram,,auto,False,False,18,18
+sombre,icones-entete-sans-texte,ImageButton,,Plus,oui,True,False,48,48
+sombre,icones-entete-sans-texte,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,icones-entete-sans-texte,ImageView,ic_chercher,,non,False,False,22,22
+sombre,icones-entete-sans-texte,LinearLayout,,Copier,oui,True,False,76,56
+sombre,icones-entete-sans-texte,ImageView,ic_copier,,non,False,False,22,22
+sombre,icones-entete-sans-texte,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,icones-entete-sans-texte,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,icones-entete-sans-texte,LinearLayout,,Détails,oui,True,False,76,56
+sombre,icones-entete-sans-texte,ImageView,ic_details,,non,False,False,22,22
+sombre,icones-entete,ImageButton,,Retour,oui,True,False,48,48
+sombre,icones-entete,ImageView,ic_signal,,auto,False,False,18,18
+sombre,icones-entete,ImageButton,,Plus,oui,True,False,48,48
+sombre,icones-entete,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,icones-entete,ImageView,ic_chercher,,non,False,False,22,22
+sombre,icones-entete,LinearLayout,,Copier,oui,True,False,76,56
+sombre,icones-entete,ImageView,ic_copier,,non,False,False,22,22
+sombre,icones-entete,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,icones-entete,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,icones-entete,LinearLayout,,Détails,oui,True,False,76,56
+sombre,icones-entete,ImageView,ic_details,,non,False,False,22,22
+sombre,icones-recherche,EditText,,Rechercher,oui,True,False,332,42.7
+sombre,icones-recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+sombre,icones-recherche,ImageView,ic_signal,,non,False,False,20,20
+sombre,icones-recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,icones-recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,icones-recherche,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,icones-recherche,ImageView,ic_reglages,,non,False,False,24,24
+sombre,icones,ImageButton,,Liste,oui,True,False,52,48
+sombre,icones,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,icones,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,icones,ImageView,ic_whatsapp,,non,False,False,20,20
+sombre,icones,ImageView,ic_signal,,non,False,False,20,20
+sombre,icones,ImageView,ic_telegram,,non,False,False,20,20
+sombre,icones,ImageView,ic_meet,,non,False,False,20,20
+sombre,icones,ImageView,ic_telephone,,non,False,False,20,20
+sombre,icones,ImageView,ic_reunion,,non,False,False,20,20
+sombre,icones,ImageView,ic_micro,,non,False,False,20,20
+sombre,icones,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,icones,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,icones,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,icones,ImageView,ic_reglages,,non,False,False,24,24
+sombre,journal-vide,ImageButton,,Retour,oui,True,False,48,48
+sombre,journal-vide,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,journal-vide,ImageView,ic_chercher,,non,False,False,22,22
+sombre,journal-vide,LinearLayout,,Copier,oui,True,False,76,56
+sombre,journal-vide,ImageView,ic_copier,,non,False,False,22,22
+sombre,mise-en-route,ImageView,,,non,False,False,64,64
+sombre,pas-encore-transcrite,ImageButton,,Retour,oui,True,False,48,48
+sombre,pas-encore-transcrite,ImageView,ic_micro,,auto,False,False,18,18
+sombre,pas-encore-transcrite,ImageButton,,Plus,oui,True,False,48,48
+sombre,pas-encore-transcrite,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,pas-encore-transcrite,ImageView,ic_chercher,,non,False,False,22,22
+sombre,pas-encore-transcrite,LinearLayout,,Copier,oui,True,False,76,56
+sombre,pas-encore-transcrite,ImageView,ic_copier,,non,False,False,22,22
+sombre,pas-encore-transcrite,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,pas-encore-transcrite,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,pas-encore-transcrite,LinearLayout,,Détails,oui,True,False,76,56
+sombre,pas-encore-transcrite,ImageView,ic_details,,non,False,False,22,22
+sombre,recherche,EditText,,Rechercher,oui,True,False,332,42.7
+sombre,recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+sombre,recherche,ImageView,ic_reunion,,non,False,False,20,20
+sombre,recherche,ImageView,ic_reunion,,non,False,False,20,20
+sombre,recherche,ImageView,ic_reunion,,non,False,False,20,20
+sombre,recherche,ImageView,ic_reunion,,non,False,False,20,20
+sombre,recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,recherche,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,recherche,ImageView,ic_reglages,,non,False,False,24,24
+sombre,reglages,ImageButton,,Retour,oui,True,False,48,48
+sombre,reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,57.3
+sombre,reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+sombre,reglages,ImageView,chevron,,non,False,False,16,16
+sombre,reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+sombre,reglages,ImageView,chevron,,non,False,False,16,16
+sombre,site-accueil,ImageButton,,Liste,oui,True,False,52,48
+sombre,site-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,site-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+sombre,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,site-accueil,ImageView,ic_whatsapp,,non,False,False,20,20
+sombre,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+sombre,site-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,site-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,site-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,site-accueil,ImageView,ic_reglages,,non,False,False,24,24
+sombre,site-notes,ImageButton,,Liste,oui,True,False,52,48
+sombre,site-notes,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,site-notes,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,site-notes,ImageView,ic_onde,,non,False,False,20,20
+sombre,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+sombre,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+sombre,site-notes,ImageView,ic_whatsapp,,non,False,False,20,20
+sombre,site-notes,ImageView,ic_telephone,,non,False,False,20,20
+sombre,site-notes,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,site-notes,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,site-notes,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,site-notes,ImageView,ic_reglages,,non,False,False,24,24
+sombre,site-reunion,ImageButton,,Retour,oui,True,False,48,48
+sombre,site-reunion,ImageView,ic_micro,,auto,False,False,18,18
+sombre,site-reunion,ImageButton,,Plus,oui,True,False,48,48
+sombre,site-reunion,ImageButton,,Lire,oui,True,False,44,44
+sombre,site-reunion,SeekBar,,Position dans le son,oui,False,False,308,26
+sombre,site-reunion,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,site-reunion,ImageView,ic_chercher,,non,False,False,22,22
+sombre,site-reunion,LinearLayout,,Copier,oui,True,False,76,56
+sombre,site-reunion,ImageView,ic_copier,,non,False,False,22,22
+sombre,site-reunion,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,site-reunion,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,site-reunion,LinearLayout,,Détails,oui,True,False,76,56
+sombre,site-reunion,ImageView,ic_details,,non,False,False,22,22
+sombre,sombre-accueil,ImageButton,,Liste,oui,True,False,52,48
+sombre,sombre-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+sombre,sombre-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+sombre,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+sombre,sombre-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+sombre,sombre-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+sombre,sombre-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+sombre,sombre-accueil,ImageView,ic_reglages,,non,False,False,24,24
+sombre,sombre-conversation,ImageButton,,Retour,oui,True,False,48,48
+sombre,sombre-conversation,ImageView,ic_reunion,,auto,False,False,18,18
+sombre,sombre-conversation,ImageButton,,Plus,oui,True,False,48,48
+sombre,sombre-conversation,LinearLayout,,Rechercher,oui,True,False,76,56
+sombre,sombre-conversation,ImageView,ic_chercher,,non,False,False,22,22
+sombre,sombre-conversation,LinearLayout,,Copier,oui,True,False,76,56
+sombre,sombre-conversation,ImageView,ic_copier,,non,False,False,22,22
+sombre,sombre-conversation,LinearLayout,,Télécharger,oui,True,False,76,56
+sombre,sombre-conversation,ImageView,ic_telecharger,,non,False,False,22,22
+sombre,sombre-conversation,LinearLayout,,Détails,oui,True,False,76,56
+sombre,sombre-conversation,ImageView,ic_details,,non,False,False,22,22
+sombre,sombre-reglages,ImageButton,,Retour,oui,True,False,48,48
+sombre,sombre-reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,57.3
+sombre,sombre-reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+sombre,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+sombre,sombre-reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+sombre,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+texte200,accueil-ecoute,ImageButton,,Liste,oui,True,False,52,48
+texte200,accueil-ecoute,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,accueil-ecoute,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,accueil-ecoute,ImageView,ic_onde,,non,False,False,20,20
+texte200,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-ecoute,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-ecoute,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,accueil-ecoute,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,accueil-ecoute,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,accueil-ecoute,ImageView,ic_reglages,,non,False,False,24,24
+texte200,accueil-enregistre,ImageButton,,Liste,oui,True,False,52,48
+texte200,accueil-enregistre,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,accueil-enregistre,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,accueil-enregistre,ImageView,ic_micro,,non,False,False,20,20
+texte200,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-enregistre,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil-enregistre,LinearLayout,,Arrêter l'enregistrement,oui,True,False,388,48
+texte200,accueil-enregistre,ImageView,ic_arreter,,non,False,False,24,24
+texte200,accueil-enregistre,LinearLayout,,Prendre une photo,oui,True,False,388,48
+texte200,accueil-enregistre,ImageView,ic_photo,,non,False,False,24,24
+texte200,accueil-vide,ImageButton,,Liste,oui,True,False,52,48
+texte200,accueil-vide,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,accueil-vide,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,accueil-vide,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,accueil-vide,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,accueil-vide,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,accueil-vide,ImageView,ic_reglages,,non,False,False,24,24
+texte200,accueil,ImageButton,,Liste,oui,True,False,52,48
+texte200,accueil,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,accueil,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,accueil,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,accueil,ImageView,ic_reglages,,non,False,False,24,24
+texte200,aucune-parole,ImageButton,,Retour,oui,True,False,48,48
+texte200,aucune-parole,ImageView,ic_micro,,auto,False,False,18,18
+texte200,aucune-parole,ImageButton,,Plus,oui,True,False,48,48
+texte200,aucune-parole,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,aucune-parole,ImageView,ic_chercher,,non,False,False,22,22
+texte200,aucune-parole,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,aucune-parole,ImageView,ic_copier,,non,False,False,22,22
+texte200,aucune-parole,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,aucune-parole,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,aucune-parole,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,aucune-parole,ImageView,ic_details,,non,False,False,22,22
+texte200,avant-transcription,ImageButton,,Retour,oui,True,False,48,48
+texte200,avant-transcription,ImageView,ic_reunion,,auto,False,False,18,18
+texte200,avant-transcription,ImageButton,,Plus,oui,True,False,48,48
+texte200,avant-transcription,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,avant-transcription,ImageView,ic_chercher,,non,False,False,22,22
+texte200,avant-transcription,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,avant-transcription,ImageView,ic_copier,,non,False,False,22,22
+texte200,avant-transcription,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,avant-transcription,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,avant-transcription,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,avant-transcription,ImageView,ic_details,,non,False,False,22,22
+texte200,calendrier,ImageButton,,Liste,oui,True,False,52,48
+texte200,calendrier,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,calendrier,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,calendrier,ImageButton,,Mois précédent,oui,True,False,48,48
+texte200,calendrier,ImageButton,,Mois suivant,oui,True,False,48,48
+texte200,calendrier,LinearLayout,,Dimanche 1 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Lundi 2 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mardi 3 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mercredi 4 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,"Jeudi 5 novembre, des conversations",oui,True,False,53,48
+texte200,calendrier,LinearLayout,,"Vendredi 6 novembre, des conversations",oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,"Samedi 7 novembre, des conversations",oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,"Aujourd'hui · dimanche 8 novembre, des conversations",oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Lundi 9 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mardi 10 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mercredi 11 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Jeudi 12 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Vendredi 13 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Samedi 14 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Dimanche 15 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Lundi 16 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mardi 17 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mercredi 18 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Jeudi 19 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Vendredi 20 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Samedi 21 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Dimanche 22 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Lundi 23 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mardi 24 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Mercredi 25 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Jeudi 26 novembre,oui,True,False,53,48
+texte200,calendrier,LinearLayout,,Vendredi 27 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Samedi 28 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Dimanche 29 novembre,oui,True,False,53.3,48
+texte200,calendrier,LinearLayout,,Lundi 30 novembre,oui,True,False,53,48
+texte200,calendrier,ImageView,ic_reunion,,non,False,False,20,20
+texte200,calendrier,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,calendrier,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,calendrier,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,calendrier,ImageView,ic_reglages,,non,False,False,24,24
+texte200,conversation-recherche,ImageButton,,Retour,oui,True,False,48,48
+texte200,conversation-recherche,ImageView,ic_reunion,,auto,False,False,18,18
+texte200,conversation-recherche,ImageButton,,Plus,oui,True,False,48,48
+texte200,conversation-recherche,ImageButton,,Lire,oui,True,False,44,44
+texte200,conversation-recherche,SeekBar,,Position dans le son,oui,False,False,308,26
+texte200,conversation-recherche,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,conversation-recherche,ImageView,ic_chercher,,non,False,False,22,22
+texte200,conversation-recherche,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,conversation-recherche,ImageView,ic_copier,,non,False,False,22,22
+texte200,conversation-recherche,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,conversation-recherche,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,conversation-recherche,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,conversation-recherche,ImageView,ic_details,,non,False,False,22,22
+texte200,conversation,ImageButton,,Retour,oui,True,False,48,48
+texte200,conversation,ImageView,ic_reunion,,auto,False,False,18,18
+texte200,conversation,ImageButton,,Plus,oui,True,False,48,48
+texte200,conversation,ImageButton,,Lire,oui,True,False,44,44
+texte200,conversation,SeekBar,,Position dans le son,oui,False,False,308,26
+texte200,conversation,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,conversation,ImageView,ic_chercher,,non,False,False,22,22
+texte200,conversation,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,conversation,ImageView,ic_copier,,non,False,False,22,22
+texte200,conversation,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,conversation,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,conversation,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,conversation,ImageView,ic_details,,non,False,False,22,22
+texte200,direct-rien,ImageButton,,Retour,oui,True,False,48,48
+texte200,direct-rien,ImageView,ic_micro,,auto,False,False,18,18
+texte200,icones-entete-sans-texte,ImageButton,,Retour,oui,True,False,48,48
+texte200,icones-entete-sans-texte,ImageView,ic_telegram,,auto,False,False,18,18
+texte200,icones-entete-sans-texte,ImageButton,,Plus,oui,True,False,48,48
+texte200,icones-entete-sans-texte,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,icones-entete-sans-texte,ImageView,ic_chercher,,non,False,False,22,22
+texte200,icones-entete-sans-texte,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,icones-entete-sans-texte,ImageView,ic_copier,,non,False,False,22,22
+texte200,icones-entete-sans-texte,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,icones-entete-sans-texte,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,icones-entete-sans-texte,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,icones-entete-sans-texte,ImageView,ic_details,,non,False,False,22,22
+texte200,icones-entete,ImageButton,,Retour,oui,True,False,48,48
+texte200,icones-entete,ImageView,ic_signal,,auto,False,False,18,18
+texte200,icones-entete,ImageButton,,Plus,oui,True,False,48,48
+texte200,icones-entete,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,icones-entete,ImageView,ic_chercher,,non,False,False,22,22
+texte200,icones-entete,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,icones-entete,ImageView,ic_copier,,non,False,False,22,22
+texte200,icones-entete,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,icones-entete,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,icones-entete,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,icones-entete,ImageView,ic_details,,non,False,False,22,22
+texte200,icones-recherche,EditText,,Rechercher,oui,True,False,332,58.3
+texte200,icones-recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+texte200,icones-recherche,ImageView,ic_signal,,non,False,False,20,20
+texte200,icones-recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,icones-recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,icones-recherche,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,icones-recherche,ImageView,ic_reglages,,non,False,False,24,24
+texte200,icones,ImageButton,,Liste,oui,True,False,52,48
+texte200,icones,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,icones,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,icones,ImageView,ic_whatsapp,,non,False,False,20,20
+texte200,icones,ImageView,ic_signal,,non,False,False,20,20
+texte200,icones,ImageView,ic_telegram,,non,False,False,20,20
+texte200,icones,ImageView,ic_meet,,non,False,False,20,20
+texte200,icones,ImageView,ic_telephone,,non,False,False,20,20
+texte200,icones,ImageView,ic_reunion,,non,False,False,20,20
+texte200,icones,ImageView,ic_micro,,non,False,False,20,20
+texte200,icones,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,icones,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,icones,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,icones,ImageView,ic_reglages,,non,False,False,24,24
+texte200,journal-vide,ImageButton,,Retour,oui,True,False,48,48
+texte200,journal-vide,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,journal-vide,ImageView,ic_chercher,,non,False,False,22,22
+texte200,journal-vide,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,journal-vide,ImageView,ic_copier,,non,False,False,22,22
+texte200,mise-en-route,ImageView,,,non,False,False,64,64
+texte200,pas-encore-transcrite,ImageButton,,Retour,oui,True,False,48,48
+texte200,pas-encore-transcrite,ImageView,ic_micro,,auto,False,False,18,18
+texte200,pas-encore-transcrite,ImageButton,,Plus,oui,True,False,48,48
+texte200,pas-encore-transcrite,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,pas-encore-transcrite,ImageView,ic_chercher,,non,False,False,22,22
+texte200,pas-encore-transcrite,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,pas-encore-transcrite,ImageView,ic_copier,,non,False,False,22,22
+texte200,pas-encore-transcrite,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,pas-encore-transcrite,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,pas-encore-transcrite,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,pas-encore-transcrite,ImageView,ic_details,,non,False,False,22,22
+texte200,recherche,EditText,,Rechercher,oui,True,False,332,58.3
+texte200,recherche,ImageButton,,Fermer la recherche,oui,True,False,48,48
+texte200,recherche,ImageView,ic_reunion,,non,False,False,20,20
+texte200,recherche,ImageView,ic_reunion,,non,False,False,20,20
+texte200,recherche,ImageView,ic_reunion,,non,False,False,20,20
+texte200,recherche,ImageView,ic_reunion,,non,False,False,20,20
+texte200,recherche,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,recherche,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,recherche,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,recherche,ImageView,ic_reglages,,non,False,False,24,24
+texte200,reglages,ImageButton,,Retour,oui,True,False,48,48
+texte200,reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,118.3
+texte200,reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+texte200,reglages,ImageView,chevron,,non,False,False,16,16
+texte200,reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+texte200,reglages,ImageView,chevron,,non,False,False,16,16
+texte200,site-accueil,ImageButton,,Liste,oui,True,False,52,48
+texte200,site-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,site-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,site-accueil,ImageView,ic_telephone,,non,False,False,20,20
+texte200,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,site-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200,site-accueil,ImageView,ic_whatsapp,,non,False,False,20,20
+texte200,site-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,site-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,site-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,site-accueil,ImageView,ic_reglages,,non,False,False,24,24
+texte200,site-notes,ImageButton,,Liste,oui,True,False,52,48
+texte200,site-notes,ImageButton,,Calendrier,oui,True,False,52,48
+texte200,site-notes,ImageButton,,Rechercher,oui,True,False,48,48
+texte200,site-notes,ImageView,ic_onde,,non,False,False,20,20
+texte200,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+texte200,site-notes,ImageView,ic_reunion,,non,False,False,20,20
+texte200,site-notes,ImageView,ic_whatsapp,,non,False,False,20,20
+texte200,site-notes,ImageView,ic_telephone,,non,False,False,20,20
+texte200,site-notes,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200,site-notes,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200,site-notes,LinearLayout,,Réglages,oui,True,False,388,48
+texte200,site-notes,ImageView,ic_reglages,,non,False,False,24,24
+texte200,site-reunion,ImageButton,,Retour,oui,True,False,48,48
+texte200,site-reunion,ImageView,ic_micro,,auto,False,False,18,18
+texte200,site-reunion,ImageButton,,Plus,oui,True,False,48,48
+texte200,site-reunion,ImageButton,,Lire,oui,True,False,44,44
+texte200,site-reunion,SeekBar,,Position dans le son,oui,False,False,308,26
+texte200,site-reunion,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200,site-reunion,ImageView,ic_chercher,,non,False,False,22,22
+texte200,site-reunion,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200,site-reunion,ImageView,ic_copier,,non,False,False,22,22
+texte200,site-reunion,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200,site-reunion,ImageView,ic_telecharger,,non,False,False,22,22
+texte200,site-reunion,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200,site-reunion,ImageView,ic_details,,non,False,False,22,22
+texte200+nuit,sombre-accueil,ImageButton,,Liste,oui,True,False,52,48
+texte200+nuit,sombre-accueil,ImageButton,,Calendrier,oui,True,False,52,48
+texte200+nuit,sombre-accueil,ImageButton,,Rechercher,oui,True,False,48,48
+texte200+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200+nuit,sombre-accueil,ImageView,ic_reunion,,non,False,False,20,20
+texte200+nuit,sombre-accueil,LinearLayout,,Enregistrer une réunion,oui,True,False,388,48
+texte200+nuit,sombre-accueil,ImageView,ic_enregistrer,,non,False,False,24,24
+texte200+nuit,sombre-accueil,LinearLayout,,Réglages,oui,True,False,388,48
+texte200+nuit,sombre-accueil,ImageView,ic_reglages,,non,False,False,24,24
+texte200+nuit,sombre-conversation,ImageButton,,Retour,oui,True,False,48,48
+texte200+nuit,sombre-conversation,ImageView,ic_reunion,,auto,False,False,18,18
+texte200+nuit,sombre-conversation,ImageButton,,Plus,oui,True,False,48,48
+texte200+nuit,sombre-conversation,LinearLayout,,Rechercher,oui,True,False,120.7,57.3
+texte200+nuit,sombre-conversation,ImageView,ic_chercher,,non,False,False,22,22
+texte200+nuit,sombre-conversation,LinearLayout,,Copier,oui,True,False,76,57.3
+texte200+nuit,sombre-conversation,ImageView,ic_copier,,non,False,False,22,22
+texte200+nuit,sombre-conversation,LinearLayout,,Télécharger,oui,True,False,125.3,57.3
+texte200+nuit,sombre-conversation,ImageView,ic_telecharger,,non,False,False,22,22
+texte200+nuit,sombre-conversation,LinearLayout,,Détails,oui,True,False,76,57.3
+texte200+nuit,sombre-conversation,ImageView,ic_details,,non,False,False,22,22
+texte200+nuit,sombre-reglages,ImageButton,,Retour,oui,True,False,48,48
+texte200+nuit,sombre-reglages,LinearLayout,,Enregistrer les appels,oui,True,False,380,118.3
+texte200+nuit,sombre-reglages,LinearLayout,,"Calendrier, Non relié",oui,True,False,372,48
+texte200+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16
+texte200+nuit,sombre-reglages,LinearLayout,,"Mac, MacBook Air",oui,True,False,372,48
+texte200+nuit,sombre-reglages,ImageView,chevron,,non,False,False,16,16

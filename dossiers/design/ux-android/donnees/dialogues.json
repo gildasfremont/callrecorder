@@ -1,0 +1,67 @@
+[
+ {
+  "nom": "details",
+  "titre": "Point produit",
+  "message": "Aujourd'hui · dimanche 8 novembre, 13:23\n47 min\nSophie Marchand, Karim Benali\nSur MacBook Air et sur ce téléphone",
+  "positif": "OK",
+  "positif-couleur": "#FF475D92"
+ },
+ {
+  "nom": "menu-plus",
+  "entrees": [
+   "Supprimer"
+  ]
+ },
+ {
+  "nom": "supprimer",
+  "titre": "Supprimer la conversation ?",
+  "message": "Elle est effacée de ce téléphone seulement. Elle reste sur MacBook Air.",
+  "positif": "Supprimer",
+  "positif-couleur": "#FFC41E14",
+  "negatif": "Annuler",
+  "negatif-couleur": "#FF475D92"
+ },
+ {
+  "nom": "supprimer-pas-encore-arrivee",
+  "titre": "Supprimer la conversation ?",
+  "message": "Elle n'est pas encore arrivée sur MacBook Air : elle sera perdue.",
+  "positif": "Supprimer",
+  "positif-couleur": "#FFC41E14",
+  "negatif": "Annuler",
+  "negatif-couleur": "#FF475D92"
+ },
+ {
+  "nom": "appels",
+  "titre": "",
+  "message": "1. Touchez CallRecorder dans la liste.\n2. Allumez-le.\n\nSi c'est grisé : ouvrez les infos de l'app, touchez ⋮, puis Autoriser les paramètres restreints.",
+  "positif": "Ouvrir l'accessibilité",
+  "positif-couleur": "#FF475D92",
+  "neutre": "Ouvrir les infos de l'app",
+  "neutre-couleur": "#FF475D92"
+ },
+ {
+  "nom": "mac-connecte",
+  "titre": "MacBook Air",
+  "message": "Connecté.",
+  "positif": "OK",
+  "positif-couleur": "#FF475D92",
+  "neutre": "Scanner un code",
+  "neutre-couleur": "#FF475D92"
+ },
+ {
+  "nom": "mac-injoignable-deux-en-attente",
+  "titre": "MacBook Air",
+  "message": "Pas joignable pour l'instant : ce que vous enregistrez reste sur ce téléphone.\n\n2 enregistrements attendent de partir.",
+  "positif": "OK",
+  "positif-couleur": "#FF475D92",
+  "neutre": "Scanner un code",
+  "neutre-couleur": "#FF475D92"
+ },
+ {
+  "nom": "calendrier-du-mac",
+  "titre": "Calendrier",
+  "message": "Le calendrier relié à MacBook Air.",
+  "positif": "OK",
+  "positif-couleur": "#FF475D92"
+ }
+]

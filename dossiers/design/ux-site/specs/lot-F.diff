@@ -1,0 +1,210 @@
+diff --git a/style.css b/style.css
+index 7d8b22e..ce4f563 100644
+--- a/style.css
++++ b/style.css
+@@ -38,8 +38,7 @@ a:hover { text-decoration: underline; }
+   border: 0; box-shadow: 0 0 0 1px rgba(20,40,80,.16), 0 1px 1px rgba(20,40,80,.08);
+   cursor: pointer;
+ }
+-.button.default { background: linear-gradient(#2a86f5, #0064d2); color: #fff; box-shadow: 0 0 0 .5px rgba(0,60,180,.5), 0 1px 1px rgba(20,40,80,.12); }
+-.button.large { font-size: 18px; padding: 14px 26px; border-radius: 10px; }
++
+ /* Bouton principal du haut : plus grand, avec l'icône de l'app. */
+ .button.hero {
+   display: inline-flex; align-items: center; gap: 14px;
+@@ -57,7 +56,7 @@ a:hover { text-decoration: underline; }
+ .button.hero:hover { filter: none; box-shadow: 0 0 0 1px rgba(20,40,80,.14), 0 4px 12px rgba(20,40,80,.08); }
+ .button.hero:hover::after { background-color: #dfe7f1; }
+ .button.hero:active { background: #f7f7f8; }
+-.button-icon { width: 40px; height: 40px; flex: none; margin: 0; filter: drop-shadow(0 1px 2px rgba(20,40,80,.25)); }
++
+ a.button:hover { text-decoration: none; filter: brightness(1.04); }
+ 
+ /* En-tête, comme un écran « À propos ». Le titre, le sous-titre et le micro se règlent sur un même corps, celui du
+@@ -95,13 +94,12 @@ a.button:hover { text-decoration: none; filter: brightness(1.04); }
+    s'élargit pas sous le pouce. Au-delà de 760 px, la conversation déborde de .wrap et doit rester entière. */
+ @media (max-width: 760px) { .wrap { overflow-x: clip; } }
+ .about h1 { font-family: var(--display); font-size: var(--corps); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 7em; margin: 0 0 48px; }
+-/* Mini logos des marques citées, dans le fil du texte */
+-img.logo { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: .22em; }
++
+ .nobr { white-space: nowrap; }
+ /* Retours à la ligne : titres et textes centrés équilibrés, paragraphes sans mot seul en fin de bloc. */
+ p, li, h3 { text-wrap: pretty; hyphens: manual; }
+-h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
+-.about .req { font-size: 15px; color: var(--secondary); margin-top: 16px; }
++h1, h2, .about .lead, .intro p, .req { text-wrap: balance; }
++
+ /* Le bouton d'installation, sous les illustrations : on a vu ce que ça fait avant qu'on propose de l'installer. */
+ .cta { text-align: center; margin-top: 136px; }
+ .cta .req { font-size: 15px; color: var(--secondary); margin: 16px 0 0; text-wrap: balance; }
+@@ -116,11 +114,6 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
+   border-radius: 2.03% / 3.3%; border: .5px solid rgba(20,40,80,.25);
+   box-shadow: 0 22px 50px -16px rgba(20,40,80,.28);
+ }
+-.stage .detail {
+-  position: absolute; right: 0; bottom: 0; width: 60%; height: auto; display: block;
+-  border-radius: 2.2% / 3.3%; border: .5px solid rgba(20,40,80,.25);
+-  box-shadow: 0 26px 60px -18px rgba(20,40,80,.32), 0 8px 18px -10px rgba(20,40,80,.18);
+-}
+ 
+ /* Onglets au-dessus de l'illustration : un contrôle segmenté de macOS. */
+ .tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(30,60,120,.07); }
+@@ -163,34 +156,10 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
+ .claude .quotes { list-style: none; padding: 0; margin: 0; }
+ .claude .quotes li + li { margin-top: .4em; }
+ .claude .next { margin: .7em 0 0; }
+-/* En tête : la pile des outils d'appel × les assistants. */
+-.pair { display: flex; justify-content: center; align-items: flex-start; gap: clamp(12px, 3vw, 28px); margin: 0 0 56px; }
+-.pair figure { margin: 0; text-align: center; display: flex; flex-direction: column; align-self: stretch; }
+-.pair figcaption { margin-top: auto !important; padding-top: 6px; white-space: nowrap; }
+-.pair figure > img { width: clamp(46px, 11vw, 112px); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 8px 14px rgba(20,40,80,.14)); }
+-.pair figcaption { font-size: 14px; color: var(--secondary); margin-top: 6px; }
+-.pair .times { font-family: var(--display); font-size: clamp(24px, 5vw, 52px); line-height: clamp(46px, 11vw, 112px); color: var(--secondary); margin: 0 clamp(4px, 1.5vw, 16px); }
+-.pair .times img { display: inline-block; box-sizing: content-box; width: .5em; height: auto; padding: 0 .039em; vertical-align: middle; }
+-/* Les icônes en éventail, comme des cartes tenues en main. */
+-.pile { display: flex; justify-content: center; padding: 0 0 0 calc(clamp(34px, 9.6vw, 98px) * .22); }
+-.pile span {
+-  width: clamp(34px, 9.6vw, 98px); aspect-ratio: 1; margin-left: calc(clamp(34px, 9.6vw, 98px) * -.22);
+-  margin-top: clamp(4px, .7vw, 7px); border-radius: 23%; overflow: hidden; background: #fff;
+-  box-shadow: 0 0 0 1px rgba(20,40,80,.08), 0 8px 18px -6px rgba(20,40,80,.28);
+-}
+-.pile span:nth-child(1) { transform: rotate(-9deg) translateY(6px); }
+-.pile span:nth-child(2) { transform: rotate(-4deg) translateY(1px); }
+-.pile span:nth-child(4) { transform: rotate(4deg) translateY(1px); }
+-.pile span:nth-child(5) { transform: rotate(9deg) translateY(6px); }
+-.pile img { width: 100%; height: 100%; display: block; }
+-.pile .meet img { padding: 18%; box-sizing: border-box; }
+-/* Les icônes à l'encre et au lavis : l'image déborde de la tuile pour garder le trait du bord. */
+-.pile span:has(img[src*="encre/"]) { background: none; box-shadow: none; overflow: visible; border-radius: 0; }
+-.pile img[src*="encre/"] { width: 112.5%; height: auto; margin: -6.25%; max-width: none; filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
+-.pair figure > img.encre { box-sizing: border-box; padding: calc(clamp(46px, 11vw, 112px) * .025); filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
++
+ .about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: min(560px, var(--mat-gauche) - 24px); margin: -24px 0 0; }
+ @media (max-width: 640px) {
+-  .pair { gap: 8px; }
++
+   .claude { position: relative; right: auto; bottom: auto; width: auto; margin: -24px 8px 0; font-size: 12.5px; }
+ }
+ 
+@@ -202,7 +171,6 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
+ .intro p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); margin: 0 0 14px; }
+ .intro p:last-child { margin-bottom: 0; }
+ .req.warn { color: #b25000; }
+-.said { font-size: clamp(20px, 2.6vw, 24px); line-height: 1.45; text-align: center; max-width: 640px; margin: 0 auto; }
+ 
+ /* Groupes à la Réglages Système */
+ .group-label { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 10px 14px; }
+@@ -212,10 +180,8 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
+ }
+ .row { padding: 18px 20px; }
+ .row + .row { border-top: 1px solid var(--separator); margin-left: 20px; padding-left: 0; }
+-.row h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+-.row h3:only-child { margin: 0; }
+-.row p { font-size: 16px; color: var(--secondary); margin: 0; }
+ 
++.row p { font-size: 16px; color: var(--secondary); margin: 0; }
+ 
+ /* Dock sous l'illustration : les apps et services dont les appels sont enregistrés. Le nom s'affiche au survol. */
+ .dock {
+@@ -248,10 +214,7 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
+ .intro .req.warn { color: #b25000; }
+ .install { margin-top: 56px; }
+ /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
+-/* Le cartouche au-dessus d'un titre de partie : de quoi elle parle, en deux mots. */
+-.intro p.tag { display: inline-block; margin: 0 0 32px; padding: 5px 12px; border-radius: 999px; background: #e6eef9; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+-.or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
+-.install .group-label { margin-top: 0; }
++
+ .steps li b { font-weight: 600; color: var(--text); }
+ /* Les étapes dans un cadre, comme un groupe des Réglages ; l'aide en dessous, hors du cadre. */
+ .install .card { background: var(--group); border-radius: 16px; box-shadow: 0 0 0 1px var(--border); padding: 30px 32px 0; overflow: hidden; }
+@@ -314,24 +277,12 @@ kbd {
+   font: 600 14px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); white-space: nowrap;
+   padding: 3px 7px; border-radius: 6px; background: var(--group); box-shadow: 0 0 0 1px var(--border), 0 1px 0 1px var(--border);
+ }
+-/* Le téléchargement : l'icône, le nom, la version et la taille, un bouton bleu. */
+-.download { display: flex; align-items: center; gap: 16px; padding: 16px 16px 16px 18px; }
+-.download > img { width: 64px; height: 64px; flex: none; filter: drop-shadow(0 2px 4px rgba(20,40,80,.2)); }
+-.download div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+-.download b { font-size: 18px; font-weight: 600; }
+-.download span { font-size: 14px; color: var(--secondary); }
+-.download .dl { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; padding: 11px 18px; border-radius: 9px; }
+-.download .dl::before { content: ""; width: 14px; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v9M4 7.5 8 11.5l4-4M3 14h10'/%3E%3C/svg%3E") center / contain no-repeat; }
+-@media (max-width: 480px) { .download { flex-wrap: wrap; } .download .dl { width: 100%; justify-content: center; } }
+-.file { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 20px; }
+-.file span { font: 15px var(--mono); }
+-.notes { font-size: 15px; color: var(--secondary); text-align: center; max-width: 620px; margin: 40px auto 0; }
+ 
+ footer { padding: 160px 0 96px; }
+ footer .col { font-size: 15px; color: var(--secondary); }
+-footer h3 { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 10px; }
++
+ footer p { margin: 0 0 8px; }
+-footer .signature { margin-top: 40px; color: var(--text); }
++
+ .author { display: flex; align-items: flex-end; gap: 28px; margin: 64px 0 -96px; }
+ .author img { display: block; }
+ .author img { flex: none; width: 168px; height: auto; }
+@@ -343,7 +294,7 @@ footer .signature { margin-top: 40px; color: var(--text); }
+ .author .bubble { min-width: 0; }
+ .author .bubble p { margin: 0; }
+ /* Le message pour Gildas : en haut, ce qui ne va pas s'il y a lieu, puis le texte, puis Dicter et Envoyer. */
+-.author .bubble .sign { margin-top: 10px; font-weight: 500; }
++
+ .author .open-message { display: inline-block; margin-top: 14px; }
+ .author .open-message[hidden], .message[hidden], .rec-bar[hidden] { display: none; }
+ .message { margin-top: 14px; }
+@@ -433,13 +384,13 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display:
+ @media (max-width: 980px) {
+   .stage { padding-bottom: 0; }
+   .stage > img { width: 100%; }
+-  .stage .detail { position: relative; width: 80%; margin: -48px 0 0 auto; }
++
+ }
+ 
+ @media (max-width: 760px) {
+   .stage { margin-top: 72px; padding-bottom: 0; }
+   .stage > img { width: 100%; }
+-  .stage .detail { position: relative; width: 94%; margin: -40px 0 0 auto; }
++
+   section { padding-top: 112px; }
+   section.follow { padding-top: 40px; }
+   .version { grid-template-columns: minmax(0, 1fr); }
+@@ -468,15 +419,13 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display:
+ .page-head h1 { font-family: var(--display); font-size: clamp(36px, 5.6vw, 60px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 500; margin: 0 0 20px; }
+ .page-head p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); max-width: 640px; margin: 0 auto; text-wrap: balance; }
+ .page-head + section { padding-top: 80px; }
+-section.tight { padding-top: 64px; }
++
+ .group + .group-label { margin-top: 48px; }
+ 
+ /* Lien discret vers la suite, sous un bloc. */
+ .more { text-align: center; font-size: 17px; margin: 40px 0 0; }
+ .more a::after { content: " →"; }
+ 
+-/* Accueil : la dernière version, sous l'installation. */
+-
+ /* Fonctionnalités : une par bloc, le texte puis la capture, plus large que le texte. */
+ .feature { padding-top: 120px; }
+ .feature:first-of-type { padding-top: 80px; }
+@@ -490,7 +439,7 @@ section.tight { padding-top: 64px; }
+ .feature figure.narrow { max-width: 620px; }
+ .feature figure.strip { max-width: 760px; }
+ .feature figure.strip img { border-radius: 9px; }
+-.feature figure.plain img { border: 0; box-shadow: none; border-radius: 0; }
++
+ .feature figure + figure { margin-top: 20px; }
+ @media (max-width: 760px) { .feature { padding-top: 88px; } }
+ 
+@@ -583,8 +532,8 @@ html { scroll-padding-top: 24px; }
+ }
+ 
+ /* Une image qui porte son contour (coins transparents, fenêtre, pastille) : ni cadre, ni arrondi imposé, ni ombre
+-   rectangulaire. L'ombre suit sa forme, et sa matière reste celle de la capture. Voir CLAUDE.md, « Les captures ». */
+-.stage > img.decoupe, .stage .detail.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe, details.row .answer img.decoupe {
++rectangulaire. L'ombre suit sa forme, et sa matière reste celle de la capture. Voir CLAUDE.md, « Les captures ». */
++.stage > img.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe, details.row .answer img.decoupe {
+   border: 0; border-radius: 0; box-shadow: none;
+   filter: drop-shadow(0 1px 1px rgba(20,40,80,.14)) drop-shadow(0 14px 22px rgba(20,40,80,.22));
+ }

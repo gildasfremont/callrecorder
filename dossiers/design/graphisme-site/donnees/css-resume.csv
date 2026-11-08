@@ -1,0 +1,366 @@
+categorie,valeur,occurrences,lieux
+approche,-0.01em,3,style.css:194 style.css:443 style.css:537
+approche,-.01em,1,style.css:43
+approche,-0.025em,1,style.css:91
+approche,.02em,1,style.css:246
+approche,-0.02em,1,style.css:458
+couleur,#fff,9,style.css:38 style.css:45 style.css:123 style.css:152 style.css:172 style.css:226 style.css:267 style.css:273 style.css:446
+couleur,"rgba(20,40,80,.25)",5,style.css:57 style.css:110 style.css:115 style.css:479 style.css:534
+couleur,"rgba(20,40,80,.2)",5,style.css:225 style.css:313 style.css:410 style.css:419 style.css:479
+couleur,"rgba(20,40,80,.16)",4,style.css:35 style.css:129 style.css:585 style.css:585
+couleur,"rgba(20,40,80,.08)",4,style.css:35 style.css:54 style.css:173 style.css:218
+couleur,"rgba(20,40,80,.12)",4,style.css:38 style.css:123 style.css:123 style.css:234
+couleur,"rgba(20,40,80,.14)",3,style.css:54 style.css:164 style.css:579
+couleur,"rgba(20,40,80,.3)",3,style.css:129 style.css:219 style.css:419
+couleur,"rgba(20,40,80,.1)",2,style.css:46 style.css:582
+couleur,"rgba(20,40,80,.04)",2,style.css:46 style.css:503
+couleur,"rgba(20,40,80,.28)",2,style.css:111 style.css:173
+couleur,"rgba(20,40,80,.18)",2,style.css:116 style.css:238
+couleur,#6b6759,2,style.css:144 style.css:147
+couleur,#e6e2d6,2,style.css:147 style.css:152
+couleur,"rgba(20,40,80,.09)",2,style.css:183 style.css:184
+couleur,#b25000,2,style.css:198 style.css:242
+couleur,"rgba(20,40,80,.15)",2,style.css:234 style.css:274
+couleur,#2c2c2e,2,style.css:259 style.css:266
+couleur,"rgba(224,53,43,.22)",2,style.css:367 style.css:386
+couleur,#93a0b4,2,style.css:401 style.css:401
+couleur,"rgba(237,242,248,.88)",2,style.css:513 style.css:514
+couleur,#ffffff,1,style.css:34
+couleur,#2a86f5,1,style.css:38
+couleur,#0064d2,1,style.css:38
+couleur,"rgba(0,60,180,.5)",1,style.css:38
+couleur,#eaf0f7,1,style.css:51
+couleur,#dfe7f1,1,style.css:55
+couleur,#f7f7f8,1,style.css:56
+couleur,"rgba(20,40,80,.32)",1,style.css:116
+couleur,"rgba(30,60,120,.07)",1,style.css:120
+couleur,#29261b,1,style.css:137
+couleur,#faf9f5,1,style.css:137
+couleur,"rgba(0,0,0,.25)",1,style.css:138
+couleur,"rgba(0,0,0,.38)",1,style.css:139
+couleur,"rgba(0,0,0,.2)",1,style.css:139
+couleur,#ebe8de,1,style.css:142
+couleur,#dcdad3,1,style.css:143
+couleur,#f0eee6,1,style.css:146
+couleur,#8a8576,1,style.css:156
+couleur,"rgba(255,255,255,.6)",1,style.css:218
+couleur,"rgba(240,240,240,.95)",1,style.css:233
+couleur,#e6eef9,1,style.css:246
+couleur,#1e1e1e,1,style.css:257
+couleur,#e8e8e8,1,style.css:262
+couleur,"rgba(44,44,46,0)",1,style.css:266
+couleur,"rgba(20,40,80,.35)",1,style.css:274
+couleur,#f4f7fb,1,style.css:290
+couleur,#8a5a00,1,style.css:347
+couleur,currentcolor,1,style.css:358
+couleur,#e0352b,1,style.css:366
+couleur,"rgba(20,40,80,.05)",1,style.css:409
+couleur,#e6f0fc,1,style.css:420
+couleur,"rgba(20,40,80,.06)",1,style.css:504
+couleur,"rgba(20,40,80,.22)",1,style.css:579
+dimension,100%,15,style.css:109 style.css:179 style.css:179 style.css:217 style.css:223 style.css:223 style.css:256 style.css:319 style.css:373 style.css:410 style.css:418 style.css:419 style.css:425 style.css:431 style.css:479
+dimension,0,5,style.css:314 style.css:333 style.css:337 style.css:550 style.css:561
+dimension,16px,4,style.css:297 style.css:297 style.css:358 style.css:358
+dimension,14px,4,style.css:318 style.css:318 style.css:385 style.css:385
+dimension,80%,3,style.css:225 style.css:225 style.css:426
+dimension,760px,2,style.css:28 style.css:481
+dimension,34px,2,style.css:50 style.css:50
+dimension,40px,2,style.css:57 style.css:57
+dimension,1.15em,2,style.css:93 style.css:93
+dimension,.85em,2,style.css:143 style.css:143
+dimension,1.25em,2,style.css:148 style.css:148
+dimension,1.4em,2,style.css:150 style.css:150
+dimension,640px,2,style.css:199 style.css:459
+dimension,"clamp(22px, 5.6vw, 56px)",2,style.css:222 style.css:222
+dimension,24px,2,style.css:303 style.css:303
+dimension,64px,2,style.css:313 style.css:313
+dimension,620px,2,style.css:322 style.css:480
+dimension,420px,2,style.css:333 style.css:488
+dimension,22px,2,style.css:336 style.css:336
+dimension,10px,2,style.css:366 style.css:366
+dimension,240px,2,style.css:373 style.css:418
+dimension,9px,2,style.css:386 style.css:386
+dimension,8px,2,style.css:400 style.css:400
+dimension,50%,2,style.css:544 style.css:548
+dimension,1080px,1,style.css:27
+dimension,var(--micro),1,style.css:78
+dimension,7em,1,style.css:91
+dimension,1048px,1,style.css:106
+dimension,60%,1,style.css:114
+dimension,23cqw,1,style.css:129
+dimension,58%,1,style.css:135
+dimension,85%,1,style.css:146
+dimension,"clamp(46px, 11vw, 112px)",1,style.css:164
+dimension,.5em,1,style.css:167
+dimension,"clamp(34px, 9.6vw, 98px)",1,style.css:171
+dimension,112.5%,1,style.css:183
+dimension,"min(560px, var(--mat-gauche) - 24px)",1,style.css:185
+dimension,700px,1,style.css:195
+dimension,1px,1,style.css:238
+dimension,168px,1,style.css:331
+dimension,84px,1,style.css:373
+dimension,112px,1,style.css:389
+dimension,560px,1,style.css:410
+dimension,94%,1,style.css:432
+dimension,26px,1,style.css:445
+dimension,960px,1,style.css:478
+dimension,188px,1,style.css:523
+dimension,860px,1,style.css:531
+dimension,232px,1,style.css:533
+dimension,54%,1,style.css:536
+dimension,180px,1,style.css:541
+dimension,37%,1,style.css:542
+dimension,340px,1,style.css:543
+dimension,44%,1,style.css:545
+dimension,330px,1,style.css:546
+dimension,46%,1,style.css:547
+dimension,250px,1,style.css:552
+dimension,34%,1,style.css:553
+dimension,260px,1,style.css:554
+dimension,42%,1,style.css:555
+dimension,70%,1,style.css:566
+dimension,76%,1,style.css:567
+dimension,62%,1,style.css:568
+dimension,92%,1,style.css:569
+dimension,82%,1,style.css:572
+dimension,144px,1,style.css:585
+espacement,0,157,style.css:19 style.css:27 style.css:27 style.css:28 style.css:57 style.css:69 style.css:91 style.css:91 style.css:101 style.css:101 style.css:106 style.css:114 style.css:114 style.css:120 style.css:124 style.css:124 style.css:146 style.css:146 style.css:147 style.css:147 style.css:151 style.css:151 style.css:154 style.css:154 style.css:155 style.css:157 style.css:157 style.css:159 style.css:159 style.css:161 style.css:161 style.css:162 style.css:164 style.css:167 style.css:185 style.css:185 style.css:188 style.css:192 style.css:192 style.css:194 style.css:194 style.css:195 style.css:196 style.css:196 style.css:197 style.css:199 style.css:202 style.css:202 style.css:208 style.css:209 style.css:209 style.css:210 style.css:211 style.css:217 style.css:227 style.css:229 style.css:241 style.css:241 style.css:246 style.css:246 style.css:247 style.css:247 style.css:248 style.css:251 style.css:252 style.css:252 style.css:256 style.css:265 style.css:265 style.css:265 style.css:265 style.css:265 style.css:290 style.css:291 style.css:295 style.css:295 style.css:300 style.css:300 style.css:300 style.css:301 style.css:301 style.css:303 style.css:322 style.css:324 style.css:326 style.css:326 style.css:327 style.css:327 style.css:329 style.css:333 style.css:333 style.css:334 style.css:335 style.css:335 style.css:338 style.css:346 style.css:366 style.css:379 style.css:381 style.css:386 style.css:392 style.css:397 style.css:404 style.css:405 style.css:406 style.css:406 style.css:407 style.css:407 style.css:408 style.css:410 style.css:424 style.css:426 style.css:426 style.css:430 style.css:432 style.css:432 style.css:440 style.css:440 style.css:445 style.css:445 style.css:446 style.css:457 style.css:457 style.css:458 style.css:458 style.css:459 style.css:465 style.css:465 style.css:474 style.css:474 style.css:476 style.css:476 style.css:478 style.css:491 style.css:491 style.css:493 style.css:493 style.css:494 style.css:505 style.css:506 style.css:512 style.css:512 style.css:523 style.css:523 style.css:525 style.css:531 style.css:531 style.css:536 style.css:538 style.css:538 style.css:542 style.css:551 style.css:553 style.css:557 style.css:562 style.css:571 style.css:584
+espacement,16px,20,style.css:27 style.css:33 style.css:98 style.css:101 style.css:228 style.css:247 style.css:256 style.css:265 style.css:290 style.css:312 style.css:312 style.css:312 style.css:312 style.css:389 style.css:389 style.css:440 style.css:476 style.css:493 style.css:531 style.css:570
+espacement,20px,19,style.css:194 style.css:207 style.css:208 style.css:241 style.css:320 style.css:334 style.css:394 style.css:400 style.css:404 style.css:404 style.css:414 style.css:440 style.css:458 style.css:484 style.css:548 style.css:562 style.css:567 style.css:570 style.css:570
+espacement,12px,17,style.css:44 style.css:44 style.css:122 style.css:246 style.css:256 style.css:320 style.css:373 style.css:375 style.css:418 style.css:448 style.css:474 style.css:494 style.css:502 style.css:512 style.css:560 style.css:562 style.css:584
+espacement,14px,15,style.css:39 style.css:42 style.css:44 style.css:196 style.css:202 style.css:252 style.css:320 style.css:320 style.css:320 style.css:341 style.css:343 style.css:353 style.css:410 style.css:452 style.css:584
+espacement,8px,15,style.css:121 style.css:122 style.css:187 style.css:188 style.css:217 style.css:293 style.css:317 style.css:327 style.css:345 style.css:375 style.css:383 style.css:420 style.css:448 style.css:452 style.css:491
+espacement,6px,14,style.css:142 style.css:163 style.css:165 style.css:217 style.css:238 style.css:238 style.css:274 style.css:353 style.css:353 style.css:353 style.css:381 style.css:410 style.css:414 style.css:502
+espacement,10px,13,style.css:50 style.css:202 style.css:227 style.css:233 style.css:274 style.css:326 style.css:335 style.css:340 style.css:373 style.css:375 style.css:406 style.css:407 style.css:538
+espacement,18px,11,style.css:207 style.css:252 style.css:252 style.css:312 style.css:317 style.css:389 style.css:389 style.css:394 style.css:394 style.css:562 style.css:570
+espacement,32px,10,style.css:246 style.css:251 style.css:290 style.css:500 style.css:524 style.css:536 style.css:536 style.css:550 style.css:557 style.css:557
+espacement,24px,7,style.css:44 style.css:252 style.css:256 style.css:334 style.css:335 style.css:491 style.css:491
+espacement,2px,7,style.css:120 style.css:216 style.css:285 style.css:288 style.css:303 style.css:314 style.css:501
+espacement,28px,7,style.css:125 style.css:295 style.css:300 style.css:329 style.css:389 style.css:545 style.css:566
+espacement,40px,7,style.css:301 style.css:322 style.css:328 style.css:434 style.css:465 style.css:478 style.css:568
+espacement,56px,6,style.css:103 style.css:124 style.css:161 style.css:193 style.css:243 style.css:256
+espacement,5px,6,style.css:246 style.css:288 style.css:384 style.css:384 style.css:384 style.css:409
+espacement,48px,5,style.css:91 style.css:265 style.css:462 style.css:494 style.css:499
+espacement,80px,5,style.css:120 style.css:460 style.css:472 style.css:500 style.css:523
+espacement,3px,4,style.css:120 style.css:309 style.css:366 style.css:446
+espacement,4px,4,style.css:209 style.css:233 style.css:292 style.css:408
+espacement,50%,4,style.css:232 style.css:272 style.css:400 style.css:542
+espacement,9px,3,style.css:33 style.css:384 style.css:387
+espacement,96px,3,style.css:106 style.css:324 style.css:457
+espacement,22px,3,style.css:121 style.css:301 style.css:336
+espacement,.35em,3,style.css:147 style.css:153 style.css:154
+espacement,-24px,3,style.css:185 style.css:188 style.css:569
+espacement,7px,3,style.css:296 style.css:309 style.css:420
+espacement,11px,3,style.css:317 style.css:353 style.css:384
+espacement,64px,3,style.css:329 style.css:333 style.css:461
+espacement,36px,3,style.css:536 style.css:550 style.css:557
+espacement,120px,2,style.css:102 style.css:471
+espacement,88px,2,style.css:103 style.css:485
+espacement,1.2em,2,style.css:145 style.css:154
+espacement,1.4em,2,style.css:145 style.css:145
+espacement,.95em,2,style.css:146 style.css:152
+espacement,.75em,2,style.css:147 style.css:152
+espacement,.7em,2,style.css:149 style.css:159
+espacement,160px,2,style.css:192 style.css:324
+espacement,30px,2,style.css:251 style.css:555
+espacement,-96px,2,style.css:329 style.css:389
+espacement,1px,2,style.css:409 style.css:420
+espacement,-40px,2,style.css:432 style.css:555
+espacement,60px,2,style.css:553 style.css:558
+espacement,26px,1,style.css:39
+espacement,var(--micro-gauche),1,style.css:78
+espacement,calc(var(--about-top) + 1.04 * var(--corps) - .412 * var(--micro)),1,style.css:79
+espacement,.22em,1,style.css:93
+espacement,136px,1,style.css:100
+espacement,"max(-4%, calc((100% - 100vw) / 2 + 8px))",1,style.css:129
+espacement,15cqw,1,style.css:129
+espacement,"max(-6%, calc((100% - 100vw) / 2 + 16px))",1,style.css:135
+espacement,-8%,1,style.css:135
+espacement,.8em,1,style.css:142
+espacement,1em,1,style.css:142
+espacement,3em,1,style.css:144
+espacement,1.1em,1,style.css:146
+espacement,.6em,1,style.css:146
+espacement,.5em,1,style.css:147
+espacement,.9em,1,style.css:147
+espacement,.1em,1,style.css:150
+espacement,.55em,1,style.css:151
+espacement,.15em,1,style.css:155
+espacement,.4em,1,style.css:158
+espacement,"clamp(12px, 3vw, 28px)",1,style.css:161
+espacement,"0 clamp(4px, 1.5vw, 16px)",1,style.css:166
+espacement,.039em,1,style.css:167
+espacement,"0 0 0 calc(clamp(34px, 9.6vw, 98px) * .22)",1,style.css:169
+espacement,"calc(clamp(34px, 9.6vw, 98px) * -.22)",1,style.css:171
+espacement,"clamp(4px, .7vw, 7px)",1,style.css:172
+espacement,18%,1,style.css:180
+espacement,-6.25%,1,style.css:183
+espacement,"calc(clamp(46px, 11vw, 112px) * .025)",1,style.css:184
+espacement,104px,1,style.css:217
+espacement,10%,1,style.css:225
+espacement,14%,1,style.css:226
+espacement,168px,1,style.css:227
+espacement,calc(100% + 14px),1,style.css:232
+espacement,-18px,1,style.css:252
+espacement,calc(100% + 6px),1,style.css:272
+espacement,-32px,1,style.css:290
+espacement,-10px,1,style.css:336
+espacement,2.5px,1,style.css:386
+espacement,13px,1,style.css:387
+espacement,44px,1,style.css:394
+espacement,-6px,1,style.css:400
+espacement,-2px,1,style.css:403
+espacement,1.3em,1,style.css:407
+espacement,-48px,1,style.css:426
+espacement,72px,1,style.css:430
+espacement,112px,1,style.css:433
+espacement,0.5em,1,style.css:445
+espacement,0.55em,1,style.css:445
+espacement,"clamp(14px, 3vw, 28px)",1,style.css:449
+espacement,var(--about-top),1,style.css:453
+espacement,-236px,1,style.css:523
+espacement,-44px,1,style.css:545
+espacement,-34px,1,style.css:548
+espacement,-36px,1,style.css:567
+espacement,-20px,1,style.css:572
+espacement,-28px,1,style.css:572
+famille,-apple-system,6,style.css:22 style.css:121 style.css:267 style.css:273 style.css:308 style.css:373
+famille,var(--display),5,style.css:91 style.css:166 style.css:194 style.css:458 style.css:537
+famille,var(--mono),3,style.css:262 style.css:321 style.css:409
+famille,Archivo,1,style.css:443
+graisse,600,18,style.css:43 style.css:144 style.css:202 style.css:209 style.css:246 style.css:247 style.css:249 style.css:267 style.css:273 style.css:286 style.css:308 style.css:315 style.css:326 style.css:395 style.css:411 style.css:415 style.css:420 style.css:475
+graisse,500,11,style.css:32 style.css:91 style.css:121 style.css:194 style.css:304 style.css:340 style.css:355 style.css:443 style.css:458 style.css:504 style.css:537
+graisse,400,1,style.css:416
+interligne,1,5,style.css:32 style.css:121 style.css:267 style.css:273 style.css:308
+interligne,1.55,3,style.css:22 style.css:285 style.css:538
+interligne,1.4,3,style.css:262 style.css:346 style.css:409
+interligne,1.45,2,style.css:199 style.css:373
+interligne,1.04,1,style.css:91
+interligne,"clamp(46px, 11vw, 112px)",1,style.css:166
+interligne,1.2,1,style.css:194
+interligne,1.6,1,style.css:301
+interligne,1.5,1,style.css:334
+interligne,calc(26px - 2 * var(--trait)),1,style.css:445
+interligne,1.08,1,style.css:458
+interligne,1.25,1,style.css:537
+mouvement,transform .15s,2,style.css:223 style.css:401
+mouvement,"box-shadow .15s ease, background .15s ease",1,style.css:47
+mouvement,background-color .15s ease,1,style.css:52
+mouvement,"background .15s, transform .1s",1,style.css:257
+mouvement,opacity .15s,1,style.css:267
+mouvement,rise 1.6s ease-out forwards,1,style.css:275
+mouvement,transform .25s ease,1,style.css:515
+mouvement,none,1,style.css:518
+ombre,none,5,style.css:54 style.css:129 style.css:182 style.css:483 style.css:578
+ombre,"drop-shadow(0 2px 3px rgba(20,40,80,.09))",2,style.css:183 style.css:184
+ombre,0 0 0 1px var(--border),2,style.css:205 style.css:251
+ombre,"0 0 0 1px rgba(20,40,80,.16), 0 1px 1px rgba(20,40,80,.08)",1,style.css:35
+ombre,"0 0 0 .5px rgba(0,60,180,.5), 0 1px 1px rgba(20,40,80,.12)",1,style.css:38
+ombre,"0 0 0 1px rgba(20,40,80,.1), 0 2px 4px rgba(20,40,80,.04)",1,style.css:46
+ombre,"0 0 0 1px rgba(20,40,80,.14), 0 4px 12px rgba(20,40,80,.08)",1,style.css:54
+ombre,"drop-shadow(0 1px 2px rgba(20,40,80,.25))",1,style.css:57
+ombre,brightness(1.04),1,style.css:58
+ombre,"0 22px 50px -16px rgba(20,40,80,.28)",1,style.css:111
+ombre,"0 26px 60px -18px rgba(20,40,80,.32), 0 8px 18px -10px rgba(20,40,80,.18)",1,style.css:116
+ombre,"0 0 0 .5px rgba(20,40,80,.12), 0 1px 3px rgba(20,40,80,.12)",1,style.css:123
+ombre,"drop-shadow(0 22px 28px rgba(20,40,80,.3)) drop-shadow(0 6px 10px rgba(20,40,80,.16))",1,style.css:129
+ombre,"0 30px 70px -20px rgba(0,0,0,.38), 0 10px 22px -12px rgba(0,0,0,.2)",1,style.css:139
+ombre,"drop-shadow(0 8px 14px rgba(20,40,80,.14))",1,style.css:164
+ombre,"0 0 0 1px rgba(20,40,80,.08), 0 8px 18px -6px rgba(20,40,80,.28)",1,style.css:173
+ombre,"0 16px 40px -18px rgba(20,40,80,.3)",1,style.css:219
+ombre,"0 1px 2px rgba(20,40,80,.2)",1,style.css:225
+ombre,"0 0 0 1px rgba(20,40,80,.12), 0 4px 12px rgba(20,40,80,.15)",1,style.css:234
+ombre,"0 0 0 .5px rgba(20,40,80,.15), 0 8px 20px -8px rgba(20,40,80,.35)",1,style.css:274
+ombre,inset 0 0 0 1px var(--border),1,style.css:305
+ombre,"0 0 0 1px var(--border), 0 1px 0 1px var(--border)",1,style.css:309
+ombre,"drop-shadow(0 2px 4px rgba(20,40,80,.2))",1,style.css:313
+ombre,inset 0 0 0 1px var(--accent),1,style.css:363
+ombre,"0 0 0 calc(2px + var(--niveau, 0) * 7px) rgba(224,53,43,.22)",1,style.css:367
+ombre,"0 0 0 calc(2px + var(--niveau, 0) * 5px) rgba(224,53,43,.22)",1,style.css:386
+ombre,"0 8px 20px -10px rgba(20,40,80,.3)",1,style.css:419
+ombre,"0 22px 50px -16px rgba(20,40,80,.25)",1,style.css:479
+ombre,"0 0 0 100vmax rgba(237,242,248,.88)",1,style.css:514
+ombre,"0 0 0 1px var(--border), 0 10px 30px -18px rgba(20,40,80,.25)",1,style.css:534
+ombre,"drop-shadow(0 1px 1px rgba(20,40,80,.14)) drop-shadow(0 14px 22px rgba(20,40,80,.22))",1,style.css:579
+ombre,"drop-shadow(0 10px 18px rgba(20,40,80,.1))",1,style.css:582
+ombre,"drop-shadow(0 1px 1px rgba(20,40,80,.16)) drop-shadow(0 6px 10px rgba(20,40,80,.16))",1,style.css:585
+opacite,0,4,style.css:267 style.css:278 style.css:280 style.css:283
+opacite,1,3,style.css:269 style.css:279 style.css:283
+opacite,.45,1,style.css:377
+plan,-1,1,style.css:77
+plan,2,1,style.css:126
+plan,3,1,style.css:129
+plan,10,1,style.css:512
+rayon,0,9,style.css:129 style.css:182 style.css:266 style.css:266 style.css:336 style.css:336 style.css:336 style.css:483 style.css:578
+rayon,10px,6,style.css:39 style.css:120 style.css:256 style.css:266 style.css:266 style.css:373
+rayon,7px,5,style.css:33 style.css:233 style.css:274 style.css:419 style.css:502
+rayon,50%,4,style.css:50 style.css:143 style.css:303 style.css:366
+rayon,6px,3,style.css:309 style.css:336 style.css:420
+rayon,9px,3,style.css:317 style.css:410 style.css:482
+rayon,3.3%,2,style.css:110 style.css:115
+rayon,12px,2,style.css:204 style.css:479
+rayon,999px,2,style.css:246 style.css:354
+rayon,4px,2,style.css:297 style.css:409
+rayon,20px,2,style.css:334 style.css:534
+rayon,18px,1,style.css:44
+rayon,2.03%,1,style.css:110
+rayon,2.2%,1,style.css:115
+rayon,8px,1,style.css:121
+rayon,11px,1,style.css:138
+rayon,1em,1,style.css:146
+rayon,.6em,1,style.css:147
+rayon,.7em,1,style.css:152
+rayon,23%,1,style.css:172
+rayon,22px,1,style.css:218
+rayon,22.5%,1,style.css:225
+rayon,16px,1,style.css:251
+rayon,5px,1,style.css:288
+rayon,0.45em,1,style.css:446
+rayon,0.75em,1,style.css:447
+rupture,640px,8,style.css:103 style.css:122 style.css:186 style.css:252 style.css:372 style.css:382 style.css:389 style.css:559
+rupture,760px,3,style.css:429 style.css:454 style.css:485
+rupture,480px,2,style.css:319 style.css:448
+rupture,452px,1,style.css:88
+rupture,980px,1,style.css:423
+rupture,1000px,1,style.css:498
+rupture,1600px,1,style.css:521
+taille,15px,17,style.css:32 style.css:98 style.css:101 style.css:121 style.css:202 style.css:241 style.css:247 style.css:290 style.css:321 style.css:322 style.css:325 style.css:326 style.css:335 style.css:389 style.css:449 style.css:476 style.css:502
+taille,14px,10,style.css:122 style.css:165 style.css:227 style.css:308 style.css:316 style.css:345 style.css:384 style.css:409 style.css:416 style.css:564
+taille,16px,8,style.css:211 style.css:285 style.css:317 style.css:334 style.css:373 style.css:404 style.css:443 style.css:538
+taille,17px,7,style.css:22 style.css:209 style.css:301 style.css:395 style.css:465 style.css:474 style.css:493
+taille,13px,7,style.css:234 style.css:246 style.css:262 style.css:267 style.css:273 style.css:304 style.css:369
+taille,18px,3,style.css:39 style.css:315 style.css:563
+taille,"clamp(18px, 2.1vw, 20px)",2,style.css:196 style.css:459
+taille,12px,2,style.css:288 style.css:420
+taille,inherit,2,style.css:355 style.css:381
+taille,24px,2,style.css:494 style.css:537
+taille,"clamp(18px, 2.2vw, 21px)",1,style.css:43
+taille,var(--corps),1,style.css:91
+taille,"clamp(12px, 1.6cqw, 17px)/1.5 -apple-system, BlinkMacSystemFont, ""Helvetica Neue"", Arial, sans-serif",1,style.css:136
+taille,.92em,1,style.css:144
+taille,.9em,1,style.css:147
+taille,"clamp(24px, 5vw, 52px)",1,style.css:166
+taille,"clamp(19px, 2.3vw, 23px)",1,style.css:185
+taille,12.5px,1,style.css:188
+taille,"clamp(28px, 4vw, 38px)",1,style.css:194
+taille,"clamp(20px, 2.6vw, 24px)",1,style.css:199
+taille,"clamp(36px, 5.6vw, 60px)",1,style.css:458
+variable,#edf2f8,1,style.css:3
+variable,#ffffff,1,style.css:4
+variable,#142338,1,style.css:5
+variable,#566175,1,style.css:6
+variable,#2c3a50,1,style.css:7
+variable,#d9e2ee,1,style.css:8
+variable,"rgba(20,40,80,.14)",1,style.css:9
+variable,#0064d2,1,style.css:10
+variable,"ui-monospace, ""SF Mono"", SFMono-Regular, Menlo, monospace",1,style.css:11
+variable,"""Host Grotesk"", -apple-system, BlinkMacSystemFont, ""Helvetica Neue"", Arial, sans-serif",1,style.css:13
+variable,"clamp(40px, 7.4vw, 84px)",1,style.css:70
+variable,calc(5.4 * var(--corps)),1,style.css:71
+variable,"max(3.4 * var(--corps), 180px)",1,style.css:72
+variable,"max(var(--titre) + .5 * var(--corps), (100% + var(--titre) - var(--micro)) / 2)",1,style.css:73
+variable,calc(var(--micro-gauche) + .848 * var(--micro)),1,style.css:74
+variable,"max(var(--titre) + .5 * var(--corps), 100% + 16px - .7 * var(--micro))",1,style.css:89
+variable,0.115em,1,style.css:445
+variable,96px,1,style.css:453
+variable,56px,1,style.css:454

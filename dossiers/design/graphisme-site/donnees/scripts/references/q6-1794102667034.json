@@ -1,0 +1,78 @@
+[
+ {
+  "site": "apple",
+  "url": "https://www.apple.com/fr/apple-one/",
+  "trouve": 7,
+  "question1": "Comment m’abonner à Apple One ?",
+  "items": [
+   {
+    "tag": "LI",
+    "y": 4037,
+    "h": 76,
+    "x": 393,
+    "w": 654,
+    "bt": "0px none rgb(29, 29, 31)",
+    "bb": "1px solid rgba(255, 255, 255, 0.2)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "boxShadow": "none"
+   },
+   {
+    "tag": "LI",
+    "y": 4113,
+    "h": 111,
+    "x": 393,
+    "w": 654,
+    "bt": "0px none rgb(29, 29, 31)",
+    "bb": "1px solid rgba(255, 255, 255, 0.2)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "boxShadow": "none"
+   },
+   {
+    "tag": "LI",
+    "y": 4224,
+    "h": 76,
+    "x": 393,
+    "w": 654,
+    "bt": "0px none rgb(29, 29, 31)",
+    "bb": "1px solid rgba(255, 255, 255, 0.2)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "boxShadow": "none"
+   },
+   {
+    "tag": "LI",
+    "y": 4300,
+    "h": 76,
+    "x": 393,
+    "w": 654,
+    "bt": "0px none rgb(29, 29, 31)",
+    "bb": "1px solid rgba(255, 255, 255, 0.2)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px",
+    "boxShadow": "none"
+   }
+  ],
+  "declencheur": {
+   "tag": "BUTTON",
+   "y": 4057,
+   "h": 35,
+   "x": 393,
+   "w": 654,
+   "bt": "0px none rgb(255, 255, 255)",
+   "bb": "0px none rgb(255, 255, 255)",
+   "bg": "rgba(0, 0, 0, 0)",
+   "radius": "0px",
+   "boxShadow": "none"
+  },
+  "ecarts": [
+   0,
+   0,
+   0
+  ],
+  "hr": 0,
+  "pseudo": "0px/0px/auto/rgba(0, 0, 0, 0)",
+  "capture": "apple-faq-1440.webp"
+ }
+]

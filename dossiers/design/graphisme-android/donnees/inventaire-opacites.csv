@@ -1,0 +1,16 @@
+fichier,ligne,valeur,role,contexte
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,89,0.12,ink(),progressBackgroundTintList = ColorStateList.valueOf(look.ink(0.12))
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,183,0.4,View.alpha,copyButton.alpha = if (all.isEmpty()) 0.4f else 1f
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,325,0.5,ink(),"val at = label("""", 13f, look.ink(0.5))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/ConversationScreen.kt,355,0.122,alpha composé sur une couleur,"h.mark.background = look.mass(18, color = (color and 0x00FFFFFF) or 0x1F000000)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,114,0.12,mass() fond,"b.background = if (on) pressable(look.mass(24, 0.12)) else flat(24)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,253,0.122,alpha composé sur une couleur,setColor((LinkService.ACCENT and 0x00FFFFFF) or 0x1F000000)
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,267,0.07,mass() fond,"background = plate ?: look.mass(8, 0.07)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,312,0.12,mass() fond,"background = if (selected) pressable(look.mass(24, 0.12)) else flat(24)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/HomeScreen.kt,318,0.45,ink(),background = GradientDrawable().apply { shape = GradientDrawable.OVAL; setColor(if (has) look.ink(0.45) else 0) }
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Look.kt,48,0.45,ink(),"NEUTRAL, STOPPED -> l.ink(0.45)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,53,0.12,ink(),"fun pressable(d: GradientDrawable) = RippleDrawable(ColorStateList.valueOf(look.ink(0.12)), d, null)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,56,0.12,ink(),"fun flat(radius: Number = 12) = RippleDrawable(ColorStateList.valueOf(look.ink(0.12)), null, look.mass(radius, color = 0xFF000000.toInt()))"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,91,0.55,ink(),else -> look.ink(0.55)
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,96,0.07,mass() fond,"background = look.mass(size / 5.5, 0.07)"
+phone/android/app/src/main/java/fyi/gildas/callrecorder/Screen.kt,148,0.4,ink(),"addView(icon(R.drawable.chevron, look.ink(0.4), 16), LinearLayout.LayoutParams(dp(16), dp(16)).apply { marginStart = dp(6) })"

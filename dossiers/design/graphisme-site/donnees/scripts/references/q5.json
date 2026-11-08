@@ -1,0 +1,49 @@
+[
+ {
+  "site": "raycast",
+  "url": "https://manual.raycast.com/snippets",
+  "h1": {
+   "texte": "Snippets",
+   "x": 335,
+   "droite": 1115,
+   "w": 780,
+   "y": 76,
+   "texteX": 335,
+   "textAlign": "start",
+   "fontSize": "36px"
+  },
+  "paragraphe": {
+   "x": 335,
+   "droite": 1115,
+   "w": 780,
+   "y": 164
+  },
+  "sommaires": [
+   {
+    "x": 0,
+    "droite": 260,
+    "w": 260,
+    "liens": 97,
+    "cls": "sidebar-module__lUN8Fa__sidebar",
+    "tag": "ASIDE"
+   },
+   {
+    "x": 0,
+    "droite": 260,
+    "w": 260,
+    "liens": 94,
+    "cls": "sidebar-module__lUN8Fa__nav",
+    "tag": "NAV"
+   },
+   {
+    "x": 24,
+    "droite": 236,
+    "w": 212,
+    "liens": 94,
+    "cls": "sidebar-module__lUN8Fa__list",
+    "tag": "UL"
+   }
+  ],
+  "capture": "raycast-sommaire-1440.webp"
+ }
+]

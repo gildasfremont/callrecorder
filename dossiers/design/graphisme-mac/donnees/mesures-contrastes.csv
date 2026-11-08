@@ -1,0 +1,53 @@
+mode,texte,fond,texte_hex,fond_hex,taille_pt,graisse,usage,ou,quand,wcag,wcag_requis,wcag_ok,apca_lc,apca_requis,apca_ok,source
+clair,primaire,contenu,#262626,#FFFFFF,14,400,"Répliques, notes (Reading.font)","TranscriptReader.swift, NotesPane.swift",toujours,15.08,4.5,oui,102.0,75,oui,pixel 0.24.0 + AppKit
+clair,primaire,colonne,#252525,#F7F7F7,13,400,Titre d'une ligne de la liste,CallCard.swift,toujours,14.3,4.5,oui,97.5,75,oui,pixel 0.24.0 + AppKit
+clair,secondaire,colonne,#7C7C7C,#F7F7F7,12,400,Heure · durée · personnes sous le titre,CallCard.swift,chaque ligne,3.92,4.5,NON,64.2,75,NON,pixel 0.24.0 + AppKit
+clair,secondaire,colonne,#7C7C7C,#F7F7F7,12,600,En-tête de jour (« Mercredi 28 octobre »),CallsWindow.swift,chaque jour,3.92,4.5,NON,64.2,75,NON,pixel 0.24.0 + AppKit
+clair,secondaire,ligne choisie,#6E6E6E,#DCDCDC,12,400,Sous-titre de la ligne choisie,CallCard.swift,une ligne,3.72,4.5,NON,54.7,75,NON,pixel 0.24.0 + AppKit
+clair,secondaire,contenu,#808080,#FFFFFF,10,400,Heure d'une réplique (.caption),TranscriptReader.swift,chaque réplique,3.98,4.5,NON,67.1,75,NON,pixel 0.24.0 + AppKit
+clair,secondaire,carte,#7A7A7A,#F4F4F4,10,400,Détail d'une ligne de Réglages (.caption),SettingsParts.swift,chaque réglage,3.9,4.5,NON,63.2,75,NON,pixel 0.24.0 + AppKit
+clair,secondaire,contenu,#808080,#FFFFFF,10,400,Pied d'un groupe de Réglages,SettingsParts.swift,chaque groupe,3.98,4.5,NON,67.1,75,NON,pixel 0.24.0 + AppKit
+clair,tertiaire,contenu,#BDBDBD,#FFFFFF,12,400,« Glissez ici des conversations » (groupe vide),GroupsView.swift,groupe vide,1.88,4.5,NON,35.8,75,NON,pixel 0.24.0 + AppKit
+clair,tertiaire,contenu,#BDBDBD,#FFFFFF,11,400,Nombre d'un groupe (« 12 »),GroupsView.swift,chaque groupe,1.88,4.5,NON,35.8,75,NON,pixel 0.24.0 + AppKit
+clair,secondaire,contenu,#808080,#FFFFFF,17,600,"État vide (titre, ContentUnavailableView)",EmptyCalls.swift,rien de choisi,3.98,4.5,NON,67.1,60,oui,pixel 0.24.0 + AppKit
+clair,Palette.live,colonne,#C41E14,#F7F7F7,12,400,« ● En cours · 12 min »,CallCard.swift,pendant un appel,5.53,4.5,oui,72.9,75,NON,pixel 0.24.0 + AppKit
+clair,Palette.live,carte,#C41E14,#F4F4F4,13,400,Chrono de la carte d'enregistrement,TranscriptReader.swift,pendant un appel,5.39,4.5,oui,71.1,75,NON,pixel 0.24.0 + AppKit
+clair,Palette.warning,carte,#A0470A,#F4F4F4,12,400,« à la corbeille dans 2 jours »,TranscriptReader.swift,audio bientôt effacé,5.62,4.5,oui,73.6,75,NON,pixel 0.24.0 + AppKit
+clair,Palette.success,carte,#147333,#F4F4F4,12,400,"Badges « Fait », coches",StatusPage.swift,rare,5.41,4.5,oui,72.7,75,NON,pixel 0.24.0 + AppKit
+clair,Moi (me),contenu,#0060DF,#FFFFFF,13,600,Nom « Moi » au-dessus d'une réplique,TranscriptReader.swift,chaque tour de parole,5.62,4.5,oui,77.1,75,oui,pixel 0.24.0 + AppKit
+clair,Moi (me),avatar Moi,#0060DF,#DBE9FB,12,600,Initiales « GF » sur l'avatar,TranscriptReader.swift,chaque tour de parole,4.56,4.5,oui,63.1,75,NON,pixel 0.24.0 + AppKit
+clair,en face (them),avatar en face,#8A3D06,#EFE4DC,12,600,Initiales de la personne en face,TranscriptReader.swift,chaque tour de parole,6.1,4.5,oui,70.9,75,NON,pixel 0.24.0 + AppKit
+clair,blanc,accent,#FFFFFF,#3478F6,12,400,Filtre de groupe choisi (« Client Atelier Verne »),GroupsView.swift:186,filtre actif,4.07,4.5,NON,72.8,75,NON,pixel 0.24.0 + AppKit
+clair,blanc,accent,#FFFFFF,#3478F6,12,600,Jour choisi du calendrier,DotCalendar.swift:99,calendrier,4.07,4.5,NON,72.8,75,NON,pixel 0.24.0 + AppKit
+clair,blanc,"noir 0,6 sur capture sombre",#FFFFFF,#18191B,10,500,Heure sur une vignette de capture,CaptureViewer.swift:183,visionneuse,17.56,4.5,oui,106.6,75,oui,pixel 0.24.0 + AppKit
+clair,noir,surlignage (findHighlight),#000000,#FFFF00,14,400,Mot trouvé dans une réplique,AskAI.swift:229,recherche,19.56,4.5,oui,101.4,75,oui,pixel 0.24.0 + AppKit
+clair,noir,orange système,#000000,#FF9500,14,400,Occurrence courante de la recherche,AskAI.swift:232,recherche,9.55,4.5,oui,61.2,75,NON,pixel 0.24.0 + AppKit
+clair,primaire,bandeau micro,#242321,#F0E6DF,12,400,« Le micro n'a rien enregistré. »,TranscriptReader.swift,appel sans son,12.83,4.5,oui,88.9,75,oui,pixel 0.24.0 + AppKit
+clair,accent,contenu,#3478F6,#FFFFFF,12,400,"Lien « Changer… », « Les options pour les développeurs »",SettingsParts.swift,Réglages,4.07,4.5,NON,67.3,75,NON,pixel 0.24.0 + AppKit
+clair,"secondaire à 0,6 (contour aujourd'hui)",colonne,#ADADAD,#F7F7F7,12,400,"Contour du jour courant (non-texte, 3:1 requis)",DotCalendar.swift:101,calendrier,2.1,3.0,NON,39.5,15,oui,pixel 0.24.0 + AppKit
+sombre,primaire,contenu,#DDDDDD,#1E1E1E,14,400,"Répliques, notes (Reading.font)","TranscriptReader.swift, NotesPane.swift",toujours,12.3,4.5,oui,84.3,75,oui,"AppKit, fond estimé"
+sombre,primaire,colonne,#DFDFDF,#2A2A2A,13,400,Titre d'une ligne de la liste,CallCard.swift,toujours,10.78,4.5,oui,83.5,75,oui,"AppKit, fond estimé"
+sombre,secondaire,colonne,#9F9F9F,#2A2A2A,12,400,Heure · durée · personnes sous le titre,CallCard.swift,chaque ligne,5.43,4.5,oui,46.6,75,NON,"AppKit, fond estimé"
+sombre,secondaire,colonne,#9F9F9F,#2A2A2A,12,600,En-tête de jour (« Mercredi 28 octobre »),CallsWindow.swift,chaque jour,5.43,4.5,oui,46.6,75,NON,"AppKit, fond estimé"
+sombre,secondaire,ligne choisie,#A9A9A9,#404040,12,400,Sous-titre de la ligne choisie,CallCard.swift,une ligne,4.43,4.5,NON,46.0,75,NON,"AppKit, fond estimé"
+sombre,secondaire,contenu,#9A9A9A,#1E1E1E,10,400,Heure d'une réplique (.caption),TranscriptReader.swift,chaque réplique,5.91,4.5,oui,45.7,75,NON,"AppKit, fond estimé"
+sombre,secondaire,carte,#9E9E9E,#282828,10,400,Détail d'une ligne de Réglages (.caption),SettingsParts.swift,chaque réglage,5.54,4.5,oui,46.5,75,NON,"AppKit, fond estimé"
+sombre,secondaire,contenu,#9A9A9A,#1E1E1E,10,400,Pied d'un groupe de Réglages,SettingsParts.swift,chaque groupe,5.91,4.5,oui,45.7,75,NON,"AppKit, fond estimé"
+sombre,tertiaire,contenu,#565656,#1E1E1E,12,400,« Glissez ici des conversations » (groupe vide),GroupsView.swift,groupe vide,2.28,4.5,NON,14.8,75,NON,"AppKit, fond estimé"
+sombre,tertiaire,contenu,#565656,#1E1E1E,11,400,Nombre d'un groupe (« 12 »),GroupsView.swift,chaque groupe,2.28,4.5,NON,14.8,75,NON,"AppKit, fond estimé"
+sombre,secondaire,contenu,#9A9A9A,#1E1E1E,17,600,"État vide (titre, ContentUnavailableView)",EmptyCalls.swift,rien de choisi,5.91,4.5,oui,45.7,60,NON,"AppKit, fond estimé"
+sombre,Palette.live,colonne,#FF453A,#2A2A2A,12,400,« ● En cours · 12 min »,CallCard.swift,pendant un appel,4.21,4.5,NON,37.8,75,NON,"AppKit, fond estimé"
+sombre,Palette.live,carte,#FF453A,#282828,13,400,Chrono de la carte d'enregistrement,TranscriptReader.swift,pendant un appel,4.35,4.5,NON,38.3,75,NON,"AppKit, fond estimé"
+sombre,Palette.warning,carte,#FF9F0A,#282828,12,400,« à la corbeille dans 2 jours »,TranscriptReader.swift,audio bientôt effacé,7.21,4.5,oui,59.3,75,NON,"AppKit, fond estimé"
+sombre,Palette.success,carte,#32D74B,#282828,12,400,"Badges « Fait », coches",StatusPage.swift,rare,7.74,4.5,oui,63.1,75,NON,"AppKit, fond estimé"
+sombre,Moi (me),contenu,#5EA8FF,#1E1E1E,13,600,Nom « Moi » au-dessus d'une réplique,TranscriptReader.swift,chaque tour de parole,6.76,4.5,oui,51.9,75,NON,"AppKit, fond estimé"
+sombre,Moi (me),avatar Moi,#5EA8FF,#2D3F54,12,600,Initiales « GF » sur l'avatar,TranscriptReader.swift,chaque tour de parole,4.36,4.5,NON,44.7,75,NON,"AppKit, fond estimé"
+sombre,en face (them),avatar en face,#FFC79A,#54473C,12,600,Initiales de la personne en face,TranscriptReader.swift,chaque tour de parole,5.96,4.5,oui,66.6,75,NON,"AppKit, fond estimé"
+sombre,blanc,accent,#FFFFFF,#0A84FF,12,400,Filtre de groupe choisi (« Client Atelier Verne »),GroupsView.swift:186,filtre actif,3.65,4.5,NON,68.8,75,NON,"AppKit, fond estimé"
+sombre,blanc,accent,#FFFFFF,#0A84FF,12,600,Jour choisi du calendrier,DotCalendar.swift:99,calendrier,3.65,4.5,NON,68.8,75,NON,"AppKit, fond estimé"
+sombre,blanc,"noir 0,6 sur capture sombre",#FFFFFF,#18191B,10,500,Heure sur une vignette de capture,CaptureViewer.swift:183,visionneuse,17.56,4.5,oui,106.6,75,oui,"AppKit, fond estimé"
+sombre,noir,surlignage (findHighlight),#000000,#FFFF00,14,400,Mot trouvé dans une réplique,AskAI.swift:229,recherche,19.56,4.5,oui,101.4,75,oui,"AppKit, fond estimé"
+sombre,noir,orange système,#000000,#FF9F0A,14,400,Occurrence courante de la recherche,AskAI.swift:232,recherche,10.22,4.5,oui,64.3,75,NON,"AppKit, fond estimé"
+sombre,primaire,bandeau micro,#E1E0DD,#392D1C,12,400,« Le micro n'a rien enregistré. »,TranscriptReader.swift,appel sans son,10.09,4.5,oui,82.8,75,oui,"AppKit, fond estimé"
+sombre,accent,contenu,#0A84FF,#1E1E1E,12,400,"Lien « Changer… », « Les options pour les développeurs »",SettingsParts.swift,Réglages,4.57,4.5,oui,36.6,75,NON,"AppKit, fond estimé"
+sombre,"secondaire à 0,6 (contour aujourd'hui)",colonne,#707070,#2A2A2A,12,400,"Contour du jour courant (non-texte, 3:1 requis)",DotCalendar.swift:101,calendrier,2.91,3.0,NON,23.7,15,oui,"AppKit, fond estimé"

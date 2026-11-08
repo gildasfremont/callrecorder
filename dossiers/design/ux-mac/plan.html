@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan · UX Mac</title><link rel="stylesheet" href="style.css"></head>
+<body><!-- dossier:cadre (scripts/dossiers.py habille) -->
+<link rel="stylesheet" href="../../commun/dossier.css">
+<header class="dz-cadre"><div class="dz-in"><nav class="dz-fil" aria-label="Dossiers"><a href="../../index.html">Dossiers</a><span aria-hidden="true">›</span><span>Relectures design</span><span aria-hidden="true">›</span><b>Mac · ux</b><span>8 novembre 2026</span></nav><nav class="dz-parties" aria-label="Parties du dossier"><a href="index.html">Synthèse</a><a href="inventaire.html">Preuves</a><a href="prototypes.html">Avant et après</a><a href="problemes.html">Risques</a><a href="plan.html" aria-current="page">Pas vérifié</a></nav></div></header>
+<!-- /dossier:cadre -->
+<header class="top"><div class="in"><a href="index.html">Synthèse</a><a href="inventaire.html">Inventaire</a><a href="mesures.html">Mesures</a><a href="problemes.html">Problèmes et recos</a><a href="prototypes.html">Prototypes</a><a href="systeme.html">Système et migration</a><a href="plan.html" class="on">Plan</a><span class="sp"></span><button type="button" id="theme" aria-label="Basculer clair ou sombre">Clair / sombre</button></div></header>
+<main>
+<h1>Plan</h1>
+<p class="sub">Sept lots, dans l'ordre. Chacun est un sujet au sens de <code>CLAUDE.md</code> (une branche, une worktree, une PR), livrable seul sur <code>main</code> par <code>scripts/livre.sh</code>, prouvé par <code>scripts/tests.sh</code> et <code>scripts/compare.sh</code> (captures avant/après). Efforts pour un développeur qui connaît le code, captures et relecture comprises. Total : environ 12 jours, dont 1,5 attend une décision de Gildas.</p>
+
+<div class="tw"><table><thead><tr><th>Lot</th><th>Problèmes</th><th class="n">Effort</th><th>Dépend de</th><th>Risques</th><th>Touche un choix tranché</th></tr></thead><tbody>
+<tr><td><b>A. Lisible par tous</b><br><span class="small">sujet <code>accessibilite</code></span></td><td><a href="problemes.html#p01">1</a>, <a href="problemes.html#p04">4</a>, <a href="problemes.html#p06">6</a>, <a href="problemes.html#p23">23</a></td><td class="n">1,5 j</td><td>—</td><td>Les teintes des voix changent sur toutes les captures de réunion : refaire la maquette prod (skill <code>maquette-prod</code>) à la release. Le bleu de « Moi » en sombre s'éclaircit : vérifier qu'il reste distinct de l'accent. Les zones de clic agrandies peuvent se chevaucher (chevron et ⋯ d'un groupe).</td><td>Non. <code>DESIGN.md</code> s'engage déjà sur 4,5:1 pour <code>Palette</code>.</td></tr>
+<tr><td><b>B. Les mots et le clavier</b><br><span class="small">sujet <code>menus</code></span></td><td><a href="problemes.html#p02">2</a>, <a href="problemes.html#p08">8</a>, <a href="problemes.html#p11">11</a>, <a href="problemes.html#p19">19</a></td><td class="n">1 j</td><td>—</td><td>Le site et les guides citent « Paramètres › Apps et sites » (<code>b56f9b6</code>) et ⌘L : à corriger dans le dépôt du site, même jour. <code>scripts/retours.py</code> doit passer. ⌘N ne doit pas être pris par le champ de recherche.</td><td>« Paramètres » (<code>f4a32e1</code>), « Base de données externe » (<code>6a58bcc</code>), ⌘L (<code>b56f9b6</code>), fn D (<code>0286f57</code>, gardé). Aucun n'a de raison écrite ; la reco les dit dans le commit (« Revient sur … : … » n'est pas nécessaire, ce ne sont pas des retours).</td></tr>
+<tr><td><b>C. Lire une conversation</b><br><span class="small">sujet <code>lecture</code></span></td><td><a href="problemes.html#p03">3</a>, <a href="problemes.html#p07">7</a>, <a href="problemes.html#p09">9</a>, <a href="problemes.html#p20">20</a>, <a href="problemes.html#p22">22</a>, <a href="problemes.html#p24">24</a>, <a href="problemes.html#p25">25</a>, <a href="problemes.html#p26">26</a></td><td class="n">2 j</td><td>B (raccourci ⇧⌘N de la page Notes)</td><td>Le problème 3 croise l'essai <code>callFacts</code> : à son échéance dans <code>ESSAIS.md</code>, sortir l'essai rend le libellé sans objet. Les textes d'erreur (20) se vérifient sur un dossier en lecture seule.</td><td>Le libellé « vN · genre » (<code>e623f52</code>), dans le sens de <code>35b9624</code>. <code>Thumb.fill</code> pour les lignes (<code>0286f57</code>).</td></tr>
+<tr><td><b>D. Pendant l'appel</b><br><span class="small">sujet <code>barre-des-menus</code></span></td><td><a href="problemes.html#p05">5</a>, <a href="problemes.html#p12">12</a>, <a href="problemes.html#p13">13</a>, <a href="problemes.html#p14">14</a></td><td class="n">1,5 j</td><td>A (libellés VoiceOver de la pastille)</td><td>Les notifications et la barre des menus ne se capturent pas hors écran : essai à la main sur la dev (Gildas cobaye, <code>CLAUDE.md</code>). « Remettre » restaure un appel interrompu : vérifier l'audio partiel.</td><td>Le panneau au clic gauche (<code>081993f</code>) est gardé.</td></tr>
+<tr><td><b>E. Réglages, page par page</b><br><span class="small">sujet <code>reglages</code></span></td><td><a href="problemes.html#p15">15</a>, <a href="problemes.html#p16">16</a>, <a href="problemes.html#p18">18</a></td><td class="n">1,5 j</td><td>B (noms des pages)</td><td>Plusieurs téléphones : seulement en démo (<code>PhoneLink.pretend</code>). La ligne des agents dit ce qui part chez un fournisseur : <b>ajouter au journal de l'issue RGPD #31</b> (règle de <code>CLAUDE.md</code>).</td><td>« Enregistrement » et ses positions (Gildas, 6 novembre) : gardés.</td></tr>
+<tr><td><b>F. Le système</b><br><span class="small">vue par vue, au fil des autres lots</span></td><td><a href="problemes.html#p10">10</a>, <a href="problemes.html#p21">21</a>, <a href="problemes.html#p28">28</a></td><td class="n">3 j</td><td>A à E (chaque vue retouchée y passe)</td><td>256 changements dans 30 fichiers (<a href="systeme.html#migration">table</a>) : un écart de 1 ou 2 pt changé sans regarder la vue. D'où : jamais en masse, toujours avec <code>compare.sh</code>. <code>DESIGN.md</code> mis à jour au premier commit.</td><td>Les tailles de <code>DESIGN.md</code> (« <code>.caption</code> : information secondaire ») changent : c'est une règle de conception, à dire dans le commit.</td></tr>
+<tr><td><b>G. À trancher par Gildas</b></td><td><a href="problemes.html#p17">17</a>, <a href="problemes.html#p27">27</a></td><td class="n">1,5 j</td><td>E</td><td>Navigation des Réglages : une journée, touche toutes les pages. Calendrier : ordre voulu depuis 0.2.0.</td><td>Réglages dans la fenêtre (<code>9c489e0</code>, gardé) ; ordre du calendrier (<code>c037d1a</code>, commentaire <code>DotCalendar.swift:29</code>).</td></tr>
+</tbody></table></div>
+
+<h2>Ordre et raisons</h2>
+<ol>
+<li><b>A d'abord</b> : les défauts mesurables (contraste, cibles, VoiceOver) touchent des personnes qui, aujourd'hui, ne peuvent pas lire ou viser ; et ces changements sont petits, sans débat de goût.</li>
+<li><b>B</b> ensuite : une heure de textes et de menus qui rend l'app reconnaissable au clavier ; les autres lots en dépendent (noms des pages, ⇧⌘N).</li>
+<li><b>C, D, E</b> en parallèle possible : trois sujets, trois worktrees, aucun fichier commun sauf <code>TranscriptReader.swift</code> (C) et <code>App.swift</code> (D) — vérifier par <code>git rebase origin/main</code> avant chaque livraison.</li>
+<li><b>F</b> ne se fait pas seul : chaque vue retouchée par A à E migre à ce moment-là vers le système ; une dernière passe ramasse les vues restantes.</li>
+<li><b>G</b> attend une réponse de Gildas : les deux propositions sont prêtes (prototypes, options).</li>
+</ol>
+
+<h2>Ce qui reste à vérifier sur un Mac</h2>
+<ul>
+<li>Le libellé réellement lu par VoiceOver pour les cinq boutons sans <code>accessibilityLabel</code> (Accessibility Inspector).</li>
+<li>Les couleurs proposées avec « Augmenter le contraste » et « Réduire la transparence ».</li>
+<li>La navigation au clavier complète (Tab avec « Navigation au clavier » activée dans Réglages Système) : la liste, les cartes de Réglages, la barre flottante. Non mesurée ici.</li>
+<li>Le fond de la barre latérale en sombre (estimé #2B2B2B) : refaire <code>mesures.py</code> avec une capture sombre.</li>
+</ul>
+</main>
+<script>
+(function(){var r=document.documentElement,k='ux-mac-theme';try{var s=localStorage.getItem(k);if(s)r.dataset.theme=s;}catch(e){}
+document.getElementById('theme').onclick=function(){var d=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+r.dataset.theme=d==='dark'?'light':'dark';try{localStorage.setItem(k,r.dataset.theme);}catch(e){}};})();
+</script>
+</body></html>

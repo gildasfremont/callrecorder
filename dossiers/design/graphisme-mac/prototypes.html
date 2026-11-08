@@ -1,0 +1,329 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prototypes de l'app Mac</title><meta name="color-scheme" content="light dark">
+<style>
+:root{--bg:#fff;--page:#f2f2f4;--fg:#1d1d1f;--sec:rgba(0,0,0,.56);--chip:rgba(0,0,0,.07);--line:rgba(0,0,0,.08);--accentdoc:#0a66d8;--mark:#d6336c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#1c1c1e;--page:#121214;--fg:#f2f2f2;--sec:rgba(255,255,255,.62);--chip:rgba(255,255,255,.09);--line:rgba(255,255,255,.1);--accentdoc:#4aa3ff;--mark:#ff6fa3}}
+:root[data-theme=dark]{--bg:#1c1c1e;--page:#121214;--fg:#f2f2f2;--sec:rgba(255,255,255,.62);--chip:rgba(255,255,255,.09);--line:rgba(255,255,255,.1);--accentdoc:#4aa3ff;--mark:#ff6fa3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accentdoc)}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--page) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav div{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+nav b{margin-right:12px;font-size:14px}nav a{font-size:13.5px;text-decoration:none;color:var(--sec);padding:4px 10px;border-radius:99px}nav a.on{background:var(--chip);color:var(--fg)}
+main{max-width:1180px;margin:0 auto;padding:32px 16px 80px}
+h1{font-size:30px;margin:0 0 10px}h2{font-size:21px;margin:44px 0 6px}
+p{max-width:820px}.lead{font-size:17px;color:var(--sec)}
+code{font:12.5px ui-monospace,Menlo,monospace;background:var(--chip);padding:1px 4px;border-radius:4px}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}.ctl button{font:inherit;font-size:13px;border:0;border-radius:99px;padding:5px 12px;background:var(--chip);color:var(--fg);cursor:pointer}.ctl button.on{background:var(--fg);color:var(--page)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+.cell{min-width:0}.cell>.lbl{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--sec);margin:0 0 6px}
+.scroll{overflow-x:auto;padding-bottom:4px}
+.note{font-size:13.5px;color:var(--sec)}
+/* ---------- macOS, valeurs de l'app ---------- */
+.mac{--win:#fff;--side:#f7f7f7;--l1:rgba(0,0,0,.85);--l2:rgba(0,0,0,.50);--l3:rgba(0,0,0,.26);--rest:rgba(0,0,0,.05);--hover:rgba(0,0,0,.08);--chosen:rgba(0,0,0,.12);--chipf:rgba(0,0,0,.07);--edge:rgba(0,0,0,.10);
+ --accent:#3478F6;--live:#C41E14;--warn:#A0470A;--ok:#147333;--me:#0060DF;--them:#8A3D06;--glass:rgba(255,255,255,.78);--shadow:0 1px 4px rgba(0,0,0,.14);--sep:rgba(0,0,0,.1);
+ font:13px/1.3 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;color:var(--l1);background:var(--win);border-radius:12px;overflow:hidden;
+ box-shadow:0 0 0 .5px rgba(0,0,0,.25),0 12px 30px rgba(0,0,0,.18);position:relative;text-align:left}
+.mac.dk{--win:#1e1e1e;--side:#2a2a2a;--l1:rgba(255,255,255,.85);--l2:rgba(255,255,255,.55);--l3:rgba(255,255,255,.25);--rest:rgba(255,255,255,.05);--hover:rgba(255,255,255,.08);--chosen:rgba(255,255,255,.12);--chipf:rgba(255,255,255,.08);--edge:rgba(255,255,255,.12);
+ --accent:#0A84FF;--live:#FF453A;--warn:#FF9F0A;--ok:#32D74B;--me:#5EA8FF;--them:#FFC79A;--glass:rgba(60,60,62,.78);--shadow:0 1px 4px rgba(0,0,0,.5);--sep:rgba(255,255,255,.1)}
+.mac.dk.apres{--live:#FF6961}
+.mac svg{display:block}
+.tb{height:52px;display:flex;align-items:center;gap:10px;padding:0 14px}
+.lights{display:flex;gap:8px;margin-right:10px}.lights i{width:12px;height:12px;border-radius:50%;background:#ff5f57}.lights i:nth-child(2){background:#febc2e}.lights i:nth-child(3){background:#28c840}
+.ib{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--l1)}
+.ib.cart{width:36px;height:28px;border-radius:14px}.ib.on{background:var(--chosen)}
+.seg{display:inline-flex;background:var(--chipf);border-radius:99px;padding:2px}.seg i{width:40px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:99px;color:var(--l2)}.seg i.on{background:var(--win);color:var(--l1);box-shadow:var(--shadow)}
+.title{font-size:15px;font-weight:600;color:var(--l1);display:flex;align-items:center;gap:8px}
+.win{display:flex;height:560px}
+.side{width:360px;flex:none;background:var(--side);display:flex;flex-direction:column;position:relative;margin:0 0 8px 8px;border-radius:12px}
+.list{flex:1;overflow:hidden;padding:6px 8px}
+.day{font-size:12px;font-weight:600;color:var(--l2);padding:12px 8px 4px}
+.row{display:flex;gap:10px;align-items:center;padding:6px 8px;border-radius:8px}
+.row.sel{background:var(--chosen)}
+.rt{font-size:13px;color:var(--l1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.rt.dim{color:var(--l2)}
+.rs{font-size:12px;color:var(--l2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-variant-numeric:tabular-nums}
+.th{width:48px;height:30px;border-radius:5px;flex:none;background:var(--rest);box-shadow:inset 0 0 0 1px var(--edge);display:flex;align-items:center;justify-content:center;color:var(--l2);position:relative;background-repeat:no-repeat}
+.th img{width:16px;height:16px}.th .bd{position:absolute;right:-4px;bottom:-4px;width:15px;height:15px;border-radius:50%;background:var(--win);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}.th .bd img{width:11px;height:11px}
+.th.cap{background-image:url(../captures-mac-0.24.0/lecture.webp);background-size:1280px auto;background-position:-24px -149px}
+.th.seyes{background:#f2f7ff repeating-linear-gradient(transparent 0 3.4px,rgba(89,140,217,.7) 3.4px 4px);}
+.th.seyes::after{content:"";position:absolute;left:10px;top:0;bottom:0;width:.7px;background:#db4050}
+.th.phone{background:var(--rest);overflow:hidden}.th.phone::before{content:"";position:absolute;left:6px;right:6px;top:3px;bottom:-6px;border-radius:10px 10px 0 0;background:#212121}
+.th.phone::after{content:"";position:absolute;left:8px;right:8px;top:5px;bottom:-6px;border-radius:8px 8px 0 0;background:linear-gradient(#5c75b8,#9e80bf)}
+.th.meet{font-size:13px;font-weight:600;color:var(--l2);font-variant-numeric:tabular-nums}
+.foot{padding:6px 10px 10px;position:relative}
+.foot .fl{display:flex;gap:10px;align-items:center;padding:7px 8px;color:var(--l2);font-size:13px}
+.fade{position:absolute;left:0;right:0;top:-30px;height:30px;background:linear-gradient(transparent,var(--side));pointer-events:none}
+.main{flex:1;min-width:0;display:flex;flex-direction:column;position:relative}
+.card{background:var(--rest);border-radius:12px}
+.player{display:flex;align-items:center;gap:12px;padding:10px 14px;margin:6px 14px 4px}
+.play{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 1px 1px rgba(0,0,0,.15)}
+.time{font-size:12px;color:var(--l2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.lanes{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0}.lane{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--l2)}
+.lane .w{flex:1;height:14px;background:linear-gradient(var(--c),var(--c)) center/100% 1.5px no-repeat}
+.lane .w b{display:inline-block;height:14px;width:12px;background:repeating-linear-gradient(90deg,var(--c) 0 1.5px,transparent 1.5px 3px);margin-left:var(--x)}
+.reading{flex:1;overflow:hidden;padding:8px 14px 70px 14px}
+.turn{display:flex;gap:12px;margin:12px 0}
+.av{width:32px;height:32px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.who{font-size:13px;font-weight:600}.who small{font-weight:400;color:var(--l2);font-size:10px;margin-left:6px;font-variant-numeric:tabular-nums}
+.txt{font-size:14px;line-height:19px}
+.shot{width:160px;height:100px;border-radius:5px;margin-top:6px;background:url(../captures-mac-0.24.0/lecture.webp) -566px -149px/1280px auto no-repeat;box-shadow:0 0 0 1px var(--edge)}
+.bbar{position:absolute;right:14px;bottom:12px;display:flex;gap:8px;align-items:center}
+.gl{background:var(--glass);backdrop-filter:blur(10px);box-shadow:var(--shadow),inset 0 0 0 .5px var(--edge);border-radius:99px;display:flex;align-items:center;color:var(--l1)}
+.gl i{width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.pill{height:36px;padding:0 14px;gap:6px;font-size:13px}
+.npile{position:relative;width:27px;height:21px}.npile s{position:absolute;width:22px;height:16px;border-radius:2.5px;background:#f2f7ff repeating-linear-gradient(transparent 0 3.5px,rgba(89,140,217,.7) 3.5px 4px);box-shadow:0 0 0 1px rgba(0,0,0,.1)}
+.npile b{position:absolute;left:0;bottom:0;width:22px;height:16px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#1f3366}
+.badge{font-size:10px;font-weight:600;font-variant-numeric:tabular-nums;background:var(--chipf);border-radius:99px;padding:1px 6px;color:var(--l1)}
+.live{color:var(--live)}
+.empty{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--l2);text-align:center;padding:20px}
+.empty .big{font-size:26px;font-weight:700;color:var(--l2);line-height:1.15}
+.empty .t3{font-size:15px;color:var(--l2)}
+.empty .t2{font-size:17px;font-weight:600;color:var(--l2)}
+.banner{display:flex;gap:8px;align-items:center;padding:8px 12px;border-radius:12px;margin:8px 14px;font-size:12px}
+.set{padding:10px 40px 30px;overflow:hidden;height:520px}
+.gh{font-size:13px;font-weight:600;margin:0 4px 8px}
+.srow{display:flex;align-items:center;gap:10px;padding:10px 14px;min-height:40px}
+.srow .d{font-size:10px;color:var(--l2);margin-top:2px;line-height:1.35}
+.grow{flex:1;min-width:0}.chev{color:var(--l3);font-size:15px}
+.pic{width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.tile{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff}
+.btn{font:inherit;font-size:13px;border:0;border-radius:6px;padding:3px 10px;background:var(--chosen);color:var(--l1);white-space:nowrap}
+.btn.def{background:var(--accent);color:#fff}
+.sw{width:36px;height:17px;border-radius:9px;background:var(--chosen);position:relative;flex:none}.sw::after{content:"";position:absolute;width:15px;height:15px;top:1px;left:1px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.sw.on{background:var(--accent)}.sw.on::after{left:20px}.sw.sm{width:32px;height:19px;border-radius:10px}.sw.sm::after{width:17px;height:17px}.sw.sm.on::after{left:14px}
+.foot2{font-size:11px;color:var(--l2);margin:6px 4px 0}
+.field{background:var(--win);border-radius:8px;padding:8px 10px;font-size:12px;line-height:1.45}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,monospace;font-size:11.5px}
+.gap{position:relative}.gap::after{content:attr(data-g);position:absolute;right:-36px;top:50%;transform:translateY(-50%);font-size:10px;font-weight:700;color:var(--mark)}
+.notecard{padding:12px 14px;margin:0 0 10px}
+.strip{display:flex;flex-direction:column;gap:8px;padding:14px}
+.sth{width:84px;height:52px;border-radius:5px;position:relative;background:url(../captures-mac-0.24.0/lecture.webp) -295px -78px/663px auto;box-shadow:0 0 0 1px var(--edge)}
+.sth.on{box-shadow:0 0 0 2px var(--accent)}
+.sth i{position:absolute;left:3px;bottom:3px;font-style:normal;font-size:10px;font-weight:500;color:#fff;background:rgba(0,0,0,.6);border-radius:3px;padding:0 4px;font-variant-numeric:tabular-nums}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-size:12px;padding:10px 14px;gap:2px}
+.cal .h{color:var(--l2);font-weight:600;font-size:11px;padding-bottom:6px}
+.cal .d{min-height:32px;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--l2);font-variant-numeric:tabular-nums}
+.cal .d.has{color:var(--l1)}.cal .d.b{font-weight:600}.cal .d.sel{background:var(--accent);color:#fff}
+.cal .d.today{box-shadow:inset 0 0 0 1px var(--tc)}
+.cal .d u{display:flex;gap:2px;height:5px}.cal .d u s{width:5px;height:5px;border-radius:50%;background:currentColor}
+.mb{display:flex;justify-content:flex-end;gap:14px;font-size:13px;padding:4px 12px;background:var(--glass);font-variant-numeric:tabular-nums;align-items:center}
+.pas{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 2px 0 14px;border-radius:20px;background:var(--glass);box-shadow:0 4px 14px rgba(0,0,0,.25);font-weight:500;font-variant-numeric:tabular-nums}
+.pas .dot{width:8px;height:8px;border-radius:50%;background:var(--live)}.pas i{width:36px;height:36px;display:flex;align-items:center;justify-content:center}
+.notif{display:flex;gap:10px;align-items:flex-start;background:var(--glass);border-radius:16px;padding:12px;width:340px;box-shadow:0 6px 18px rgba(0,0,0,.2);font-size:13px}
+.notif img{width:32px;height:32px}.notif .na{font-size:11px;color:var(--l2)}
+.stage{padding:20px;background:linear-gradient(135deg,#8ea2c4,#c4b2d6);display:flex;flex-direction:column;gap:16px;align-items:flex-start;min-height:260px}
+.mac.dk .stage{background:linear-gradient(135deg,#2b3550,#3f3550)}
+</style></head><body>
+<!-- dossier:cadre (scripts/dossiers.py habille) -->
+<link rel="stylesheet" href="../../commun/dossier.css">
+<header class="dz-cadre"><div class="dz-in"><nav class="dz-fil" aria-label="Dossiers"><a href="../../index.html">Dossiers</a><span aria-hidden="true">›</span><span>Relectures design</span><span aria-hidden="true">›</span><b>Mac · graphisme</b><span>8 novembre 2026</span></nav><nav class="dz-parties" aria-label="Parties du dossier"><a href="index.html">Synthèse</a><a href="inventaire.html">Preuves</a><a href="prototypes.html" aria-current="page">Avant et après</a><a href="problemes.html">Risques</a><span class="dz-absent" title="Le dossier ne dit pas ce qu&#x27;il n&#x27;a pas pu vérifier ; son plan dit comment vérifier chaque lot.">Pas vérifié : manque</span></nav></div></header>
+<!-- /dossier:cadre -->
+<nav><div><b>Graphisme · app Mac 0.24.0</b><a href="index.html">Synthèse</a><a href="inventaire.html">Inventaire</a><a href="mesures.html">Mesures</a><a href="problemes.html">Problèmes et recos</a><a class="on" href="prototypes.html">Prototypes</a><a href="systeme.html">Système et migration</a><a href="plan.html">Plan</a></div></nav>
+<main>
+<h1>Prototypes</h1>
+<p class="lead">Les écrans retouchés, en HTML/CSS, avec les valeurs de l'app : tailles en points (1 pt = 1 px ici), styles de texte de macOS (body 13, callout 12, caption 10, Reading 14), fonds en opacité de <code>primary</code>, <code>Palette</code>, rayons 5 / 8 / 12, vignettes 48×30, avatars 32, boutons de barre 36. Les textes sont ceux du corpus fictif. Chaque écran se montre avant et après, en clair et en sombre.</p>
+<div class="ctl" id="ctl"><button data-m="cote" class="on">Avant et après, côte à côte</button><button data-m="clair">Clair seulement</button><button data-m="sombre">Sombre seulement</button></div>
+<p class="note">Chaque écran est réduit à la largeur de sa colonne ; « Clair seulement » ou « Sombre seulement » les montrent plus grands. Le sombre est construit avec les valeurs d'AppKit et les fonds estimés (aucune capture sombre n'existe) : il montre ce que le code produit, à confirmer à l'écran. L'avant reconstruit fidèlement les captures 0.24.0 ; on peut le comparer à l'image d'origine par le lien sous chaque titre.</p>
+<div id="screens"></div>
+</main>
+<script>
+const L = "../../../Resources/logos/";
+const I = {
+ side:'<svg width="18" height="16" viewBox="0 0 18 16"><rect x="1" y="1.5" width="16" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6.5 1.5v13M3 5h2M3 7.5h2M3 10h2" stroke="currentColor" stroke-width="1.2"/></svg>',
+ list:'<svg width="18" height="14" viewBox="0 0 18 14"><circle cx="2" cy="2" r="1.2" fill="currentColor"/><circle cx="2" cy="7" r="1.2" fill="currentColor"/><circle cx="2" cy="12" r="1.2" fill="currentColor"/><path d="M6 2h11M6 7h11M6 12h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+ cal:'<svg width="17" height="16" viewBox="0 0 17 16"><rect x="1" y="2" width="15" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M1 6h15" stroke="currentColor" stroke-width="1.3"/><g fill="currentColor"><circle cx="5" cy="9" r=".8"/><circle cx="8.5" cy="9" r=".8"/><circle cx="12" cy="9" r=".8"/><circle cx="5" cy="12" r=".8"/><circle cx="8.5" cy="12" r=".8"/></g></svg>',
+ search:'<svg width="17" height="17" viewBox="0 0 17 17"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m11.2 11.2 4.3 4.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+ play:'<svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 1.5v9l7.5-4.5z" fill="currentColor"/></svg>',
+ chev:'<svg width="11" height="7" viewBox="0 0 11 7"><path d="m1 1 4.5 4.5L10 1" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+ spk:'<svg width="13" height="11" viewBox="0 0 13 11"><path d="M1 4h2.5L7 1v9L3.5 7H1z" fill="currentColor"/><path d="M9 3.5a3 3 0 0 1 0 4M10.5 2a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>',
+ clip:'<svg width="16" height="19" viewBox="0 0 16 19"><rect x="1.5" y="3" width="13" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="5" y="1" width="6" height="3.5" rx="1" fill="var(--win)" stroke="currentColor" stroke-width="1.3"/></svg>',
+ copy:'<svg width="17" height="17" viewBox="0 0 17 17"><rect x="5.5" y="5.5" width="10" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M3 11.5H2.5A1.5 1.5 0 0 1 1 10V2.5A1.5 1.5 0 0 1 2.5 1H10a1.5 1.5 0 0 1 1.5 1.5V3" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>',
+ share:'<svg width="15" height="19" viewBox="0 0 15 19"><path d="M7.5 1v11M4 4.5 7.5 1 11 4.5M4.5 7.5H2.5a1 1 0 0 0-1 1V17a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V8.5a1 1 0 0 0-1-1h-2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ note:'<svg width="17" height="18" viewBox="0 0 17 18"><rect x="1.5" y="1" width="14" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M5 6h7M5 9h7M5 12h4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+ phone:'<svg width="14" height="14" viewBox="0 0 16 16"><path d="M5.5 1.5 3 2c-.9.2-1.4 1.1-1.2 2 1.4 5 5.3 8.9 10.2 10.2.9.2 1.8-.3 2-1.2l.5-2.5-3.3-1.5-1.5 1.6C7.6 9.7 6.3 8.4 5.4 6.3L7 4.8z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>',
+ iphone:'<svg width="15" height="15" viewBox="0 0 16 16"><rect x="4" y="1" width="8" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="6.5" y="2.6" width="3" height="1" rx=".5" fill="currentColor"/></svg>',
+ p2:'<svg width="16" height="14" viewBox="0 0 16 14"><circle cx="5.5" cy="4" r="2.4" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="11" cy="4.5" r="2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M1 12.5c.5-2.6 2.2-3.8 4.5-3.8s4 1.2 4.5 3.8M10.2 8.2c2.2 0 3.7 1 4.3 3.6" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>',
+ micslash:'<svg width="28" height="30" viewBox="0 0 24 26"><path d="M12 2a3.5 3.5 0 0 0-3.5 3.5v6a3.5 3.5 0 0 0 7 0v-6A3.5 3.5 0 0 0 12 2zM5 11.5a7 7 0 0 0 14 0M12 18.5V23M3 3l18 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+ handset:'<svg width="40" height="40" viewBox="0 0 16 16"><path d="M5.5 1.5 3 2c-.9.2-1.4 1.1-1.2 2 1.4 5 5.3 8.9 10.2 10.2.9.2 1.8-.3 2-1.2l.5-2.5-3.3-1.5-1.5 1.6C7.6 9.7 6.3 8.4 5.4 6.3L7 4.8z" fill="none" stroke="currentColor" stroke-width=".7" stroke-linejoin="round"/></svg>',
+ tri:'<svg width="16" height="15" viewBox="0 0 16 15"><path d="M8 1.2 15 13.8H1z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 5.5v4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11.6" r=".8" fill="currentColor"/></svg>',
+ trif:'<svg width="16" height="15" viewBox="0 0 16 15"><path d="M8 1.2 15 13.8H1z" fill="var(--warn)" stroke="var(--warn)" stroke-width="1.3" stroke-linejoin="round"/><path d="M8 5.5v4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.6" r=".9" fill="#fff"/></svg>',
+ check:'<svg width="14" height="12" viewBox="0 0 14 12"><path d="m1.5 6.5 3.5 4 7.5-9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ checkc:'<svg width="15" height="15" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7.5" fill="var(--ok)"/><path d="M4.8 8.3 7 10.5l4.3-4.8" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+ shield:'<svg width="15" height="17" viewBox="0 0 15 17"><path d="M7.5 1 13.5 3.5v4.5c0 4-2.6 6.8-6 8-3.4-1.2-6-4-6-8V3.5z" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="5" y="7.5" width="5" height="4" rx="1" fill="currentColor"/><path d="M6 7.5V6.3a1.5 1.5 0 0 1 3 0v1.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>',
+ stack:'<svg width="14" height="17" viewBox="0 0 14 17"><rect x="1.5" y="5" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M3 3h8M4.5 1h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>',
+ radio:'<svg width="22" height="14" viewBox="0 0 22 14"><circle cx="11" cy="7" r="1.6" fill="currentColor"/><path d="M7.5 3.5a5 5 0 0 0 0 7M14.5 3.5a5 5 0 0 1 0 7M4.5 1a8.5 8.5 0 0 0 0 12M17.5 1a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+ link:'<svg width="16" height="16" viewBox="0 0 16 16"><path d="M7 9a3 3 0 0 0 4.2 0l2.5-2.5a3 3 0 0 0-4.2-4.2L8.3 3.5M9 7a3 3 0 0 0-4.2 0L2.3 9.5a3 3 0 0 0 4.2 4.2l1.2-1.2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>',
+ gear:'<svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M8 1v2.2M8 12.8V15M1 8h2.2M12.8 8H15M3 3l1.6 1.6M11.4 11.4 13 13M3 13l1.6-1.6M11.4 4.6 13 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>',
+ hand:'<svg width="12" height="12" viewBox="0 0 12 12"><path d="M3 6.5V3a.8.8 0 0 1 1.6 0v3V1.8a.8.8 0 0 1 1.6 0v4V2.5a.8.8 0 0 1 1.6 0v4.3V4a.8.8 0 0 1 1.6 0v4c0 2.2-1.6 3.5-3.6 3.5-1.5 0-2.4-.7-3.2-2L1.4 7.4a.8.8 0 0 1 1.3-.9z" fill="#fff"/></svg>',
+ folder:'<svg width="12" height="10" viewBox="0 0 12 10"><path d="M.5 2A1 1 0 0 1 1.5 1h3l1.2 1.2h4.8a1 1 0 0 1 1 1V8.5a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1z" fill="#fff"/></svg>',
+ ant:'<svg width="13" height="11" viewBox="0 0 22 16"><circle cx="11" cy="6" r="2" fill="#fff"/><path d="M11 8v7M7.5 2.5a5 5 0 0 0 0 7M14.5 2.5a5 5 0 0 1 0 7M4.5 0a8.5 8.5 0 0 0 0 12M17.5 0a8.5 8.5 0 0 1 0 12" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>',
+ linkw:'<svg width="12" height="12" viewBox="0 0 16 16"><path d="M7 9a3 3 0 0 0 4.2 0l2.5-2.5a3 3 0 0 0-4.2-4.2L8.3 3.5M9 7a3 3 0 0 0-4.2 0L2.3 9.5a3 3 0 0 0 4.2 4.2l1.2-1.2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>',
+ gearw:'<svg width="12" height="12" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3.5" fill="#fff"/><path d="M8 .5v3M8 12.5v3M.5 8h3M12.5 8h3M2.7 2.7l2.1 2.1M11.2 11.2l2.1 2.1M2.7 13.3l2.1-2.1M11.2 4.8l2.1-2.1" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>',
+ plus:'<svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
+ compose:'<svg width="18" height="17" viewBox="0 0 18 17"><path d="M14 9.5v5a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 1 14.5v-10A1.5 1.5 0 0 1 2.5 3H8" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="m7 10.5.5-2.6L14 1.4a1.4 1.4 0 0 1 2 2L9.5 9.9z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>',
+ filter:'<svg width="16" height="12" viewBox="0 0 16 12"><path d="M1 1.5h14M3.5 6h9M6 10.5h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>',
+ playc:'<svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M9.5 7.5v9l7-4.5z" fill="currentColor"/></svg>',
+ cam:'<svg width="17" height="17" viewBox="0 0 16 16"><path d="M1.5 5V2.5h3M11.5 2.5h3V5M14.5 11v2.5h-3M4.5 13.5h-3V11" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="8" r="2.4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>',
+ stopc:'<svg width="18" height="18" viewBox="0 0 16 16"><circle cx="8" cy="8" r="6.8" fill="none" stroke="var(--live)" stroke-width="1.3"/><rect x="5.6" y="5.6" width="4.8" height="4.8" rx=".8" fill="var(--live)"/></svg>',
+ stopf:'<svg width="13" height="13" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="2.5" fill="currentColor"/></svg>',
+ minus:'<svg width="15" height="15" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M4.5 8h7" stroke="currentColor" stroke-width="1.3"/></svg>',
+ spin:'<svg width="14" height="14" viewBox="0 0 14 14"><g stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M7 1v2.5" opacity=".9"/><path d="M11.2 2.8 9.5 4.5" opacity=".75"/><path d="M13 7h-2.5" opacity=".6"/><path d="m11.2 11.2-1.7-1.7" opacity=".5"/><path d="M7 13v-2.5" opacity=".4"/><path d="m2.8 11.2 1.7-1.7" opacity=".3"/><path d="M1 7h2.5" opacity=".25"/><path d="m2.8 2.8 1.7 1.7" opacity=".2"/></g></svg>',
+};
+const lights='<div class="lights"><i></i><i></i><i></i></div>';
+const logo=(n)=>`<img src="${L}${n}.png" alt="">`;
+function thumbA(k){ // avant : KindThumb + logos
+  return {seyes:'<span class="th seyes"></span>',cap:`<span class="th cap"><span class="bd">${logo('teams')}</span></span>`,phone:'<span class="th phone"></span>',wa:`<span class="th">${logo('whatsapp')}</span>`,meet:`<span class="th">${logo('meet')}</span>`,reunion:'<span class="th meet">09:30</span>'}[k];}
+function thumbB(k){ // après : une grammaire
+  return {seyes:`<span class="th">${I.note.replace('width="17" height="18"','width="14" height="15"')}</span>`,cap:`<span class="th cap"><span class="bd">${logo('teams')}</span></span>`,phone:`<span class="th">${I.iphone}</span>`,wa:`<span class="th">${logo('whatsapp')}</span>`,meet:`<span class="th">${logo('meet')}</span>`,reunion:`<span class="th">${I.p2}</span>`}[k];}
+const row=(th,t,s,cls='',tcls='')=>`<div class="row ${cls}">${th}<div style="min-width:0"><div class="rt ${tcls}">${t}</div><div class="rs">${s}</div></div></div>`;
+
+const S = [];
+// ------------------------------------------------------------------ S1 : la fenêtre
+S.push({id:"fenetre",t:"Fenêtre Conversations : liste et conversation",src:"lecture.webp",fiches:"P13, P14, P10, P15, P16, P18, P25, P26, P12",w:1000,f:(v)=>{
+ const A=v==='avant', th=A?thumbA:thumbB;
+ const mode=A?`<span class="ib cart on">${I.list}</span><span class="ib cart">${I.cal}</span>`:`<span class="seg"><i class="on">${I.list}</i><i>${I.cal}</i></span>`;
+ const enc=A?`<span class="live">22:55 · ● En cours · 12 min</span>`:`22:55 · <span class="live">● En cours</span> · 12:02`;
+ const notes=A?`<span class="npile"><s style="left:5px;top:0"></s><s style="left:2.5px;top:2.5px"></s><s style="left:0;top:5px"></s><b>3</b></span>`:`<span style="display:flex;gap:4px;align-items:center">${I.note}<span class="badge">3</span></span>`;
+ const time1=A?'<span class="time">00:00 / 34:00</span>':'<span class="time">0:00</span>';
+ const time2=A?'':'<span class="time">−34:00</span>';
+ const bbar=A?`<span class="gl"><i>${I.search}</i></span><span class="gl"><i>${I.clip}</i></span><span class="gl"><i>${I.share}</i></span><span class="gl pill">v1 · Transcription ${I.chev}</span>`
+            :`<span class="gl"><i>${I.search}</i><i>${I.copy}</i><i>${I.share}</i></span><span class="gl pill">Transcription ${I.chev}</span>`;
+ return `<div class="tb" style="padding-right:8px">${lights}<span class="ib">${I.side}</span>${mode}<span style="width:120px"></span><span class="ib">${I.search}</span>
+  <span class="title" style="margin-left:24px"><img src="${L}teams.png" style="width:18px;height:18px">Revue budgétaire</span><span style="flex:1"></span><span class="ib">${notes}</span></div>
+ <div class="win"><div class="side"><div class="list">
+  <div class="day">Aujourd'hui · samedi 7 novembre</div>
+  ${row(th('meet'),"Point d'avancement · refonte du site",enc)}
+  ${row(th('seyes'),"Notes","22:36 · 4 notes")}
+  ${row(th('cap'),"Revue budgétaire","15:48 · 34 min · Sophie Marchand, Karim Benali, Julie Roussel","sel")}
+  <div class="day">Mercredi 28 octobre</div>
+  ${row(th('phone'),"Banque Aurore · chargé d'affaires","11:20 · 6 min · Thomas Girard")}
+  ${row(th('reunion'),"Réunion d'équipe","09:30 · 48 min · 5 voix")}
+  <div class="day">Jeudi 22 octobre</div>
+  ${row(th('wa'),"Appel WhatsApp","18:07 · 6 min · "+(A?"pas transcrite":"Pas encore transcrite"),"",A?"dim":"")}
+  ${row(th('wa'),"Paul Mercier · expert-comptable","14:00 · 9 min · Paul Mercier")}
+  <div class="day">Mercredi 21 octobre</div>
+ </div><div class="foot">${A?'':'<div class="fade"></div>'}<div class="fl">◉&nbsp; Enregistrer une réunion</div><div class="fl">${I.gear}&nbsp;Réglages</div></div></div>
+ <div class="main"><div class="card player"><span class="play">${I.play}</span>${time1}<div class="lanes">
+   <div class="lane" style="--c:color-mix(in srgb,var(--me) 55%,transparent)"><span style="color:var(--me)">${I.spk}</span>Moi<span class="w"><b style="--x:12%"></b><b style="--x:28%"></b><b style="--x:22%"></b></span></div>
+   <div class="lane" style="--c:color-mix(in srgb,var(--them) 55%,transparent)"><span style="color:var(--them)">${I.spk}</span>Interlocuteurs<span class="w"><b style="--x:4%"></b><b style="--x:14%"></b><b style="--x:7%"></b><b style="--x:12%"></b></span></div></div>${time2}<span style="color:var(--l2);${A?'':'width:28px;height:28px;display:flex;align-items:center;justify-content:center'}">${I.chev}</span></div>
+  <div class="reading">
+   <div class="turn"><span class="av" style="background:color-mix(in srgb,var(--them) 14%,transparent);color:var(--them)">SM</span><div><div class="who">Sophie Marchand<small>00:04</small></div><div class="txt">On commence par la trésorerie. Où en est la ligne de crédit&#8239;?</div></div></div>
+   <div class="turn"><span class="av" style="background:color-mix(in srgb,var(--me) 14%,transparent);color:var(--me)">GF</span><div><div class="who" style="color:var(--me)">Moi<small>00:10</small></div><div class="txt">Les banques nous font attendre, mais rien d'inquiétant.</div></div></div>
+   <div class="turn"><span class="av" style="background:color-mix(in srgb,var(--them) 14%,transparent);color:var(--them)">SM</span><div><div class="who">Sophie Marchand<small>00:17</small></div><div class="txt">Il me faut une réponse claire pour le conseil du 20.</div><div class="shot"></div></div></div>
+   <div class="turn"><span class="av" style="background:color-mix(in srgb,var(--them) 14%,transparent);color:var(--them)">KB</span><div><div class="who">Karim Benali<small>00:25</small></div><div class="txt">Côté budget, la masse salariale dépasse de deux points.</div></div></div>
+  </div><div class="bbar">${bbar}</div></div></div>`;}});
+// ------------------------------------------------------------------ S2 : Claude relit
+S.push({id:"claude",t:"Carte « Claude relit la transcription »",src:"claudeia.webp",fiches:"P09",w:640,f:(v)=>{
+ const A=v==='avant';
+ return `<div style="padding:14px">${A?`<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;gap:10px;align-items:center;color:var(--l2)">${I.spin}<b style="font-size:12px;color:var(--l1)">Claude relit la transcription</b><span style="font-size:12px">· encore 45 s</span></div><div style="font-size:10px;color:var(--l2)">Il reçoit la transcription et les captures. Sa version s'ouvrira à la place de celle-ci, qui reste.</div><div style="height:4px;border-radius:2px;background:var(--chipf)"><div style="width:23%;height:100%;border-radius:2px;background:color-mix(in srgb,var(--l1) 45%,transparent)"></div></div></div>`
+ :`<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:12px">Claude relit la transcription</b><span style="font-size:12px;color:var(--l2);font-variant-numeric:tabular-nums">encore 45 s</span></div><div style="height:4px;border-radius:2px;background:var(--chipf)"><div style="width:23%;height:100%;border-radius:2px;background:var(--accent)"></div></div><div style="font-size:10px;color:var(--l2)">Celle-ci reste lisible en attendant.</div></div>`}
+ <div style="display:flex;justify-content:flex-end;margin-top:14px"><span class="gl pill">${A?`<span style="color:var(--l2)">${I.spin}</span>v1 · Transcription`:'Transcription'} ${I.chev}</span></div></div>`;}});
+// ------------------------------------------------------------------ S3 : états vides
+S.push({id:"vides",t:"États vides du panneau de droite",src:"vide.webp",fiches:"P07",w:900,f:(v)=>{
+ const A=v==='avant';
+ const a=A?`<div class="empty"><span style="color:var(--l3)">${I.handset}</span><div class="big">Aucune conversation<br>sélectionnée</div></div>`:`<div class="empty"><div class="t3">Aucune conversation sélectionnée</div></div>`;
+ const b=A?`<div style="flex:1;display:flex;flex-direction:column"><div class="banner" style="background:color-mix(in srgb,var(--warn) 14%,transparent)"><span>${I.micslash.replace('width="28" height="30"','width="13" height="14"')}</span>Le micro n'a rien enregistré.</div><div class="empty"><div style="font-size:13px">Rien n'a été enregistré&#8239;: aucun son n'est arrivé.</div></div></div>`
+  :`<div class="empty"><span>${I.micslash}</span><div class="t2">Rien n'a été enregistré</div><div style="font-size:13px">Aucun son n'est arrivé du micro.</div></div>`;
+ const c=`<div class="empty"><span style="color:var(--l3)"><svg width="34" height="30" viewBox="0 0 34 30"><path d="M3 15h4l3-8 4 16 4-12 3 6 3-2h7M4 3l26 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><div class="${A?'big':'t2'}" style="${A?'font-size:24px':''}">Rien à lire</div><div style="font-size:13px">L'enregistrement est à la corbeille et n'a pas été transcrit.</div><button class="btn" style="margin-top:6px">Supprimer</button></div>`;
+ return `<div style="display:grid;grid-template-columns:1fr 1fr 1fr;height:300px">${[a,b,c].map((x,i)=>`<div style="display:flex;flex-direction:column;${i?'border-left:1px dashed var(--sep)':''}">${x}</div>`).join('')}</div>`;}});
+// ------------------------------------------------------------------ S4 : Réglages, accueil
+S.push({id:"reglages",t:"Réglages : accueil, rien d'autorisé",src:"assistant-31-reglages-rien-autorise.webp",fiches:"P08, P20",w:760,f:(v)=>{
+ const A=v==='avant';
+ const ic=(sym,color,w)=>A?`<span class="pic">${sym}</span>`:`<span class="tile" style="background:${color}">${w}</span>`;
+ const r=(icon,t,d,right='')=>`<div class="srow">${icon}<div class="grow"><div>${t}</div>${d?`<div class="d" style="font-size:11px">${d}</div>`:''}</div><span style="font-size:12px;color:var(--l2)">${right}</span><span class="chev">›</span></div>`;
+ const banner=A?`<div class="card" style="display:flex;gap:10px;align-items:center;padding:12px 14px;margin-bottom:24px"><span style="color:var(--l2)">${I.tri}</span><b style="flex:1;font-weight:600;font-size:13px">Pour enregistrer vos conversations, autorisez le micro et le son des apps.</b><button class="btn">Autoriser</button></div>`
+  :`<div style="display:flex;gap:10px;align-items:center;padding:12px 14px;margin-bottom:24px;border-radius:12px;background:color-mix(in srgb,var(--warn) 14%,transparent)">${I.trif}<b style="flex:1;font-weight:600;font-size:13px">Pour enregistrer vos conversations, autorisez le micro et le son des apps.</b><button class="btn def">Autoriser</button></div>`;
+ return `<div class="tb">${lights}<span class="ib" style="background:var(--chipf)">‹</span><span class="title">Réglages</span></div><div class="set" style="height:auto;padding:6px 40px 30px">${banner}<div class="card">
+ ${r(ic(I.shield,'#0a7aff',I.hand),'Autorisations',A?'À autoriser : le micro et le son des apps':'Micro et son des apps à autoriser')}
+ ${r(ic(I.stack,'#f29b00',I.folder),'Groupes','Perso, Pro')}
+ ${r(ic(I.radio,'#30b14a',I.ant),'Couverture','')}
+ ${r(ic(I.link,'#8e5bd9',I.linkw),'Intégrations','Rien de relié')}
+ ${r(ic(I.gear,'#8e8e93',I.gearw),A?'Paramètres':'Général','Audio gardé 7 jours','203 Mo')}</div></div>`;}});
+// ------------------------------------------------------------------ S5 : Autorisations
+S.push({id:"autorisations",t:"Réglages › Autorisations : ce qui est fait",src:"assistant-30b-reglages-ecran-a-relancer.webp",fiches:"P08, P24",w:760,f:(v)=>{
+ const A=v==='avant';
+ const ok=A?`<span style="display:flex;gap:6px;align-items:center;color:var(--l2)">${I.check}Autorisé</span>`:`<span style="display:flex;gap:6px;align-items:center;color:var(--l2)">${I.checkc}Autorisé</span>`;
+ return `<div class="set" style="height:auto"><div class="card">
+ <div class="srow"><div class="grow"><div>Micro</div><div class="d" style="font-size:11px">Votre voix</div></div>${ok}</div>
+ <div class="srow"><div class="grow"><div>Son des apps</div><div class="d" style="font-size:11px">La voix de vos interlocuteurs</div></div>${ok}</div>
+ <div class="srow"><div class="grow"><div>Écran</div><div class="d" style="font-size:11px">Dans Réglages Système, activez Callrecorder, puis «&#8239;Quitter et rouvrir&#8239;»</div></div><button class="btn">Relancer Callrecorder</button></div></div>
+ <div style="display:flex;justify-content:space-between;margin:24px 4px 8px"><b>Chaque semaine</b><span style="font-size:12px;color:var(--l2)">Chaque mardi à 9 h · <span style="color:var(--accent)">Changer…</span></span></div>
+ <div class="card"><div class="srow"><div class="grow"><div>Renouvellement</div><div class="d" style="font-size:11px">macOS redemande parfois l'accès à l'écran. Ce rendez-vous évite que ce soit en pleine conversation.</div></div><span style="font-size:12px;color:var(--l2);white-space:nowrap">${A?'Du 03/11 au 10/11':'3 – 10 novembre'}</span></div></div></div>`;}});
+// ------------------------------------------------------------------ S6 : Agents (rythme, consigne)
+S.push({id:"agents",t:"Réglages › Agents : rythme et consigne",src:"assistant-36c-reglages-claude-codex-non-relie.webp",fiches:"P19, P23, P04",w:760,f:(v)=>{
+ const A=v==='avant';
+ const sw=A?'<span class="sw on"></span>':'<span class="sw sm on"></span>';
+ return `<div class="set" style="height:auto;padding:10px 60px 24px 40px"><div class="gh">Claude</div><div class="card">
+ <div class="srow"><div class="grow"><div>Améliorer chaque transcription</div><div class="d">Corriger les noms propres, trouver le titre et les participants, ranger la conversation dans son groupe. La transcription et les captures partent chez Anthropic.</div></div>${sw}</div>
+ <div class="srow"><div class="grow"><div>Modèle</div><div class="d">Opus, le plus juste</div></div><button class="btn">Par défaut ⌃⌄</button></div></div>
+ <div class="gap" data-g="${A?'76 pt':'52 pt'}" style="height:${A?48:24}px"></div>
+ <div class="gh">Claude Desktop</div><div class="card"><div class="srow"><span class="grow">Pas encore relancé</span><button class="btn">Relancer Claude Desktop</button></div></div>
+ <div style="height:24px"></div><div class="gh">${A?'Autre agent (Cursor, Gemini CLI…)':'Autre agent'}</div><div class="card" style="padding:12px 14px">
+ <div class="d" style="margin:0 0 8px">Donnez-lui cette consigne&#8239;:</div>
+ <div class="field">${A?'Ajoute à ta configuration le serveur MCP de CallRecorder, mon enregistreur d\'appels local. Transport stdio, nom « calls », commande « /Applications/CallRecorder.app/Contents/MacOS/CallRecorder », argument « mcp ». Il permet de lister mes appels…'
+  :'Ajoute à ta configuration le serveur MCP de Callrecorder, mon enregistreur d\'appels local. Il permet de lister mes appels, lire leurs transcriptions et en lancer de nouvelles.<div class="mono" style="margin-top:6px;line-height:1.6">transport&nbsp;stdio<br>nom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;calls<br>commande&nbsp;&nbsp;/Applications/CallRecorder.app/Contents/MacOS/CallRecorder<br>argument&nbsp;&nbsp;mcp</div>'}</div>
+ <div style="display:flex;gap:8px;margin-top:10px"><button class="btn" style="display:flex;gap:6px;align-items:center">${A?I.clip.replace('width="16" height="19"','width="12" height="14"'):I.copy.replace('width="17" height="17"','width="13" height="13"')}Copier la consigne</button><button class="btn" style="display:flex;gap:6px;align-items:center">${A?I.clip.replace('width="16" height="19"','width="12" height="14"'):I.copy.replace('width="17" height="17"','width="13" height="13"')}Copier la configuration MCP</button></div></div>
+ ${A?'':'<div class="foot2">Cursor, Gemini CLI… : le même accès, à ajouter dans les réglages de l\'agent.</div>'}</div>`;}});
+// ------------------------------------------------------------------ S7 : Groupes
+S.push({id:"groupes",t:"Groupes : nombres, consigne, interrupteurs",src:"groupes.webp",fiches:"P01, P04",w:760,f:(v)=>{
+ const A=v==='avant', n=A?'var(--l3)':'var(--l2)';
+ const sw=A?'<span class="sw"></span>':'<span class="sw sm"></span>';
+ const head=(t,c)=>`<div style="display:flex;align-items:center;gap:8px;margin:14px 4px 8px"><b>${t}</b><span style="color:${n};font-size:12px;font-variant-numeric:tabular-nums">${c}</span><span style="flex:1"></span><span style="font-size:12px;color:var(--l2)">Accessible à Claude</span>${sw}<span style="color:var(--l2);${A?'':'width:28px;height:28px;display:flex;align-items:center;justify-content:center'}">${I.chev}</span></div>`;
+ return `<div class="set" style="height:auto;padding:6px 40px 24px">${head('Perso',1)}${row(A?thumbA('wa'):thumbB('wa'),'Appel WhatsApp','18:07 · 6 min · '+(A?'pas transcrite':'Pas encore transcrite'),'',A?'dim':'')}
+ ${head('Pro',0)}<div style="border:1.5px dashed var(--sep);border-radius:12px;padding:16px;text-align:center;font-size:12px;color:${n}">Glissez ici des conversations de la liste.</div>
+ ${head('Client Atelier Verne',3)}<div style="font-size:12px;color:var(--l2);margin:0 4px 6px">Refonte de la boutique en ligne, du devis à la mise en ligne</div>${row(A?thumbA('meet'):thumbB('meet'),'Découverte client · Atelier Verne','18:07 · 47 min · Paul Verne')}</div>`;}});
+// ------------------------------------------------------------------ S8 : Notes
+S.push({id:"notes",t:"Notes : création, lecture, citation coupée",src:"notes.webp",fiches:"P34",w:820,f:(v)=>{
+ const A=v==='avant';
+ const pl=A?`<span class="play" style="width:26px;height:26px">${I.play}</span>`:`<span style="color:var(--l2)">${I.playc}</span>`;
+ const card=(h,q,s,src)=>`<div class="card notecard"><div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">${pl}<b style="font-variant-numeric:tabular-nums">${h}</b></div><div class="txt">${q}</div><div class="rs" style="margin-top:6px;display:flex;gap:6px;align-items:center"><img src="${L}${src}.png" style="width:13px;height:13px">${s}</div></div>`;
+ return `<div class="tb">${lights}<span class="title">${I.note} Notes</span><span style="flex:1"></span><span class="ib" style="background:var(--chipf)">${I.filter}</span>${A?'':`<span class="ib">${I.compose}</span>`}</div>
+ <div style="padding:6px 20px 20px;position:relative;min-height:400px"><div class="day" style="padding-left:4px">Aujourd'hui · samedi 7 novembre</div>
+ ${card('22:28','«&#8239;Tu peux me sortir le détail par service pour lundi&#8239;?&#8239;»','Revue budgétaire · Moi · 0:33','teams')}
+ ${card('22:27',A?'«&#8239;la masse salariale dépasse de deux points.&#8239;»':'«&#8239;…&#8239;la masse salariale dépasse de deux points.&#8239;»','Revue budgétaire · Karim Benali · 0:25','teams')}
+ ${card('22:26','«&#8239;Il me faut une réponse claire pour le conseil du 20.&#8239;»','Revue budgétaire · Sophie Marchand · 0:17','teams')}
+ ${A?`<span class="gl" style="position:absolute;right:16px;bottom:14px;width:52px;height:52px;justify-content:center">${I.plus}</span>`:''}</div>`;}});
+// ------------------------------------------------------------------ S9 : Visionneuse
+S.push({id:"visionneuse",t:"Visionneuse : bande des captures et réplique",src:"captures.webp",fiches:"P35",w:760,f:(v)=>{
+ const A=v==='avant'; const tt=A?['15:48','15:48','15:48']:['0:03','0:17','0:46'];
+ return `<div style="display:flex;height:330px"><div class="strip">${tt.map((t,i)=>`<span class="sth${i==0?' on':''}"><i>${t}</i></span>`).join('')}</div>
+ <div style="flex:1;display:flex;flex-direction:column"><div style="flex:1;display:flex;align-items:center;justify-content:center;${A?'background:color-mix(in srgb,#000 18%,transparent)':''}"><div style="width:330px;height:206px;border-radius:8px;background:url(../captures-mac-0.24.0/lecture.webp) -1170px -309px/2650px auto;box-shadow:0 6px 12px rgba(0,0,0,.25)"></div></div>
+ <div style="padding:12px 18px;font-size:13px"><span style="${A?'text-decoration:underline;color:var(--l2)':'color:var(--accent)'};font-variant-numeric:tabular-nums">${A?'00:03':'0:03'}</span>&nbsp; «&#8239;On commence par la trésorerie, où en est la ligne de crédit&#8239;?&#8239;»</div></div></div>`;}});
+// ------------------------------------------------------------------ S10 : Calendrier
+S.push({id:"calendrier",t:"Calendrier de la colonne",src:"calendrier.webp",fiches:"P06, P17",w:420,f:(v)=>{
+ const A=v==='avant', has={2:1,6:1,7:1,9:1,14:1,16:1,21:1,22:2,23:1,27:1,28:1};
+ let h='<div class="side" style="margin:0;width:auto;border-radius:0;--tc:'+(A?'color-mix(in srgb,var(--l2) 60%,transparent)':'var(--accent)')+'"><div class="cal">'+['L','M','M','J','V','S','D'].map(d=>`<div class="h">${d}</div>`).join('');
+ h+='<div></div><div></div><div></div>';
+ for(let d=1;d<=31;d++){const n=has[d]||0, today=d===12, sel=d===28; const cls=['d',n?'has':'',(A&&(n||today))||(!A&&today)?'b':'',sel?'sel':'',today&&!sel?'today':''].join(' ');
+  h+=`<div class="${cls}"><span>${d}</span><u>${'<s></s>'.repeat(n)}</u></div>`;}
+ return h+'</div><div style="font-size:11px;color:var(--l2);padding:0 14px 12px">Jour courant : le 12 ; jour choisi : le 28.</div></div>';}});
+// ------------------------------------------------------------------ S11 : barre des menus, pastille, notification
+S.push({id:"hors",t:"Barre des menus, pastille volante, notification",src:"",fiches:"P10, P32, P33",w:620,f:(v)=>{
+ const A=v==='avant', t=A?'72:05':'1:12:05';
+ return `<div class="mb"><span>${I.search}</span><span class="live">◉ ${t}</span><span>sam. 7 nov. 22:55</span></div><div class="stage">
+ <span class="pas"><span class="dot"></span><span>${t}</span><i style="color:var(--l2)">${I.cam}</i><i>${A?I.stopc:I.stopf}</i></span>
+ <div class="notif"><img src="../../depot/Resources/icone-micro.webp" alt=""><div style="flex:1"><div class="na">${A?'CallRecorder':'Callrecorder'}</div><b>${A?'CallRecorder':'Vérifier l\'accès à l\'écran'}</b><div>${A?'macOS peut redemander l\'accès à l\'écran. Vérifier maintenant plutôt qu\'en plein appel&#8239;?':'macOS peut le redemander en plein appel.'}</div></div>${A?'':'<button class="btn" style="align-self:center">Vérifier</button>'}</div>
+ <div style="font-size:12px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.4)">Menu : ${A?'«&#8239;Réunion — 72:05&#8239;»':'«&#8239;Réunion · 1:12:05&#8239;»'}</div></div>`;}});
+
+function render(mode){
+ const out=[];
+ for(const s of S){
+  const modes = mode==='cote'?[['avant','lt'],['apres','lt'],['avant','dk'],['apres','dk']]:mode==='clair'?[['avant','lt'],['apres','lt']]:[['avant','dk'],['apres','dk']];
+  out.push(`<h2 id="${s.id}">${s.t}</h2><p class="note">Fiches : ${s.fiches.split(', ').map(f=>`<a href="problemes.html#${f}">${f}</a>`).join(', ')}${s.src?` · capture d'origine : <a href="../captures-mac-0.24.0/${s.src}">${s.src}</a>`:' · non capturé : reconstruit depuis le code'}</p><div class="grid">`);
+  for(const [v,th] of modes){
+   out.push(`<div class="cell"><div class="lbl">${v==='avant'?'Avant':'Après'} · ${th==='lt'?'clair':'sombre'}</div><div class="scroll"><div class="mac ${th==='dk'?'dk':''} ${v}" style="width:${s.w}px">${s.f(v)}</div></div></div>`);
+  }
+  out.push('</div>');
+ }
+ document.getElementById('screens').innerHTML=out.join('');
+ fit();
+}
+function fit(){document.querySelectorAll('.scroll').forEach(sc=>{const m=sc.firstElementChild;const w=parseFloat(m.style.width);m.style.zoom=Math.min(1,sc.clientWidth/w).toFixed(3);});}
+window.addEventListener('resize',fit);
+let mode='cote';
+try{mode=localStorage.getItem('proto-mode')||'cote'}catch(e){}
+document.querySelectorAll('#ctl button').forEach(b=>{b.classList.toggle('on',b.dataset.m===mode);b.onclick=()=>{mode=b.dataset.m;try{localStorage.setItem('proto-mode',mode)}catch(e){};document.querySelectorAll('#ctl button').forEach(x=>x.classList.toggle('on',x===b));render(mode)}});
+render(mode);
+</script>
+</body></html>

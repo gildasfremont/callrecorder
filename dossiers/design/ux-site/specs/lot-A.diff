@@ -1,0 +1,511 @@
+diff --git a/confidentialite/index.html b/confidentialite/index.html
+index 6b40861..1ce981e 100644
+--- a/confidentialite/index.html
++++ b/confidentialite/index.html
+@@ -27,6 +27,7 @@
+ <link rel="stylesheet" href="../style.css?v=137">
+ </head>
+ <body>
++<a class="evitement" href="#contenu">Aller au contenu</a>
+ 
+ <div class="wrap">
+   <nav class="nav" aria-label="Site">
+@@ -36,6 +37,7 @@
+       <a class="button" href="../#installation">Installer</a>
+     </div>
+   </nav>
++  <main id="contenu">
+ 
+   <header class="page-head">
+     <h1>Données et confidentialité</h1>
+@@ -58,6 +60,7 @@
+     </div>
+   </section>
+ 
++  </main>
+   <footer>
+     <div class="col">
+       <div class="links">
+diff --git a/fonctionnalites/index.html b/fonctionnalites/index.html
+index dfb6539..b642577 100644
+--- a/fonctionnalites/index.html
++++ b/fonctionnalites/index.html
+@@ -27,6 +27,7 @@
+ <link rel="stylesheet" href="../style.css?v=137">
+ </head>
+ <body>
++<a class="evitement" href="#contenu">Aller au contenu</a>
+ 
+ <div class="wrap">
+   <nav class="nav" aria-label="Site">
+@@ -36,6 +37,7 @@
+       <a class="button" href="../#installation">Installer</a>
+     </div>
+   </nav>
++  <main id="contenu">
+ 
+   <header class="page-head">
+     <h1>Fonctionnalités</h1>
+@@ -160,6 +162,7 @@
+     </div>
+   </div>
+ 
++  </main>
+   <footer>
+     <div class="col">
+       <div class="links">
+diff --git a/guides/index.html b/guides/index.html
+index 98348e1..b606efd 100644
+--- a/guides/index.html
++++ b/guides/index.html
+@@ -27,6 +27,7 @@
+ <link rel="stylesheet" href="../style.css?v=137">
+ </head>
+ <body>
++<a class="evitement" href="#contenu">Aller au contenu</a>
+ 
+ <div class="wrap">
+   <nav class="nav" aria-label="Site">
+@@ -36,6 +37,7 @@
+       <a class="button" href="../#installation">Installer</a>
+     </div>
+   </nav>
++  <main id="contenu">
+ 
+   <header class="page-head">
+     <h1>Guides</h1>
+@@ -51,7 +53,7 @@
+             <li>Quittez et relancez Claude.</li>
+             <li>Demandez-lui par exemple : « Qu'est-ce que j'ai promis à Paul jeudi ? »</li>
+           </ol>
+-          <img class="decoupe extrait" src="../img/guides/claude.webp" loading="lazy" alt="La page Agents des Réglages : améliorer chaque transcription, et le modèle de Claude.">
++          <img class="decoupe extrait" width="1370" height="237" src="../img/guides/claude.webp" loading="lazy" alt="La page Agents des Réglages : améliorer chaque transcription, et le modèle de Claude.">
+         </div></details>
+         <details class="row" id="autre-assistant"><summary>Relier vos appels à un autre assistant</summary><div class="answer">
+           <p>Codex est relié comme Claude, sans rien faire&nbsp;; c'est encore une bêta. Cursor, VS Code, Gemini CLI, LM Studio et les autres assistants compatibles MCP peuvent lire vos appels de la même façon. Callrecorder est un serveur MCP local.</p>
+@@ -65,7 +67,7 @@
+         </div></details>
+         <details class="row" id="autorisations"><summary>Revoir les autorisations et les réglages</summary><div class="answer">
+           <p>S'il manque le micro ou le son des apps, une carte en tête de la liste des conversations le dit, avec <b>Ouvrir les Réglages</b>. En bas à gauche de la fenêtre Conversations, cliquez sur <b>Réglages</b> (ou ⌘,) : ils prennent la place des conversations. En haut, une ligne dit si vos conversations sont bien enregistrées, et sinon ce qui manque, avec <b>Copier la commande</b> : collée dans le Terminal, elle redemande les autorisations une à une, comme à l'installation, et vérifie l'enregistrement par un texte lu, transcrit et affiché en regard. Chaque autorisation se donne aussi d'un clic dans <b>Autorisations</b>, et quand Réglages Système s'ouvre, un petit panneau s'y colle pour indiquer quoi faire. On règle là aussi les agents, la durée de conservation de l'audio, le dossier des conversations, l'espace qu'elles occupent sur le Mac et l'icône de la barre des menus.</p>
+-          <img class="decoupe extrait" src="../img/guides/configuration.webp?v=3" loading="lazy" alt="Les Réglages, dans la fenêtre Conversations : les autorisations, les intégrations et les paramètres.">
++          <img class="decoupe extrait" width="1360" height="312" src="../img/guides/configuration.webp?v=3" loading="lazy" alt="Les Réglages, dans la fenêtre Conversations : les autorisations, les intégrations et les paramètres.">
+         </div></details>
+         <details class="row" id="apps-sites"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
+           <p>Dans les <b>Réglages</b>, en bas à gauche de la fenêtre Conversations, ouvrez <b>Paramètres › Apps et sites</b> : chaque app a son interrupteur. Dans un navigateur, chaque site se coupe à part : Google Meet, Zoom, Teams, WhatsApp Web, Slack… Il est reconnu au titre de la fenêtre ; <b>Autres sites</b> couvre les appels qu'on ne reconnaît pas.</p>
+@@ -96,21 +98,21 @@
+         <details class="row" id="iphone"><summary>Enregistrer les appels de votre iPhone</summary><div class="answer">
+           <p>Grâce à Continuité, le Mac sert de combiné à votre iPhone : la voix passe par son micro et ses haut-parleurs, et Callrecorder l'enregistre.</p>
+           <ol>
+-            <li>Sur l'iPhone : Réglages&nbsp;&gt; Téléphone&nbsp;&gt; Appels sur d'autres appareils, cochez votre Mac.</li>
++            <li>Sur l'iPhone : <b>Réglages&nbsp;› Téléphone&nbsp;› Appels sur d'autres appareils</b>, cochez votre Mac.</li>
+             <li>Vérifiez que l'iPhone et le Mac utilisent le même compte Apple et sont sur le même Wi-Fi.</li>
+             <li>Prenez ou passez vos appels sur le Mac, dans l'app Téléphone (FaceTime avant macOS 26), ou décrochez l'appel qui s'y affiche.</li>
+           </ol>
+           <p>Un appel décroché sur l'iPhone lui-même ne passe pas par le Mac : il n'est pas enregistré.</p>
+         </div></details>
+         <details class="row" id="arreter"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
+-          <p>Pendant l'appel, cliquez sur l'icône de Callrecorder dans la barre des menus : <b>Arrêter l'enregistrement</b>, en bas, le termine. Pour l'effacer, faites un clic droit sur l'icône &gt; <b>Supprimer cet appel</b>. Après l'appel, choisissez-le dans la fenêtre Conversations et appuyez sur <b>⌘⌫</b>, ou faites un clic droit &gt; <b>Supprimer l'appel</b> : il part à la corbeille du Mac. Édition &gt; <b>Annuler</b> (⌘Z) le remet.</p>
++          <p>Pendant l'appel, cliquez sur l'icône de Callrecorder dans la barre des menus : <b>Arrêter l'enregistrement</b>, en bas, le termine. Pour l'effacer, faites un clic droit sur l'icône&nbsp;› <b>Supprimer cet appel</b>. Après l'appel, choisissez-le dans la fenêtre Conversations et appuyez sur <b>⌘⌫</b>, ou faites un clic droit&nbsp;› <b>Supprimer l'appel</b> : il part à la corbeille du Mac. <b>Édition&nbsp;› Annuler</b> (⌘Z) le remet.</p>
+         </div></details>
+       </div>
+       <p class="group-label">Au quotidien</p>
+       <div class="group">
+         <details class="row" id="retrouver"><summary>Retrouver et réécouter une conversation</summary><div class="answer">
+           <p>Cliquez sur l'icône de Callrecorder dans la barre des menus : vos conversations s'affichent, et un clic sur l'une d'elles ouvre la fenêtre Conversations. À gauche, la liste des conversations ; l'icône du calendrier, en haut, mène à un jour. Cliquez sur une conversation : elle s'affiche à droite, avec la lecture en haut. <b>Espace</b> lit ou met en pause, et un clic sur la forme d'onde ou sur une réplique va au bon moment. Un double-clic ouvre l'appel dans sa propre fenêtre.</p>
+-          <img class="decoupe" src="../img/guides/appels.png" loading="lazy" alt="La fenêtre Conversations : une ligne par appel à gauche, avec sa première capture, son titre et sa durée, et l'appel choisi à droite.">
++          <img class="decoupe" width="2560" height="1100" src="../img/guides/appels.png" loading="lazy" alt="La fenêtre Conversations : une ligne par appel à gauche, avec sa première capture, son titre et sa durée, et l'appel choisi à droite.">
+         </div></details>
+         <details class="row" id="passages"><summary>Faire une note d'un passage, l'envoyer à Claude ou le corriger</summary><div class="answer">
+           <p>Dans la transcription d'un appel, surlignez quelques mots&nbsp;: trois boutons apparaissent en bas à gauche, et la lecture ne joue plus que ce passage.</p>
+@@ -119,17 +121,17 @@
+             <li><b>Envoyer à Claude</b> ouvre une conversation avec le passage et ce qui l'entoure&nbsp;: les répliques d'avant et d'après, ce qui était à l'écran. Le chevron propose Cowork, ChatGPT ou de copier le tout.</li>
+             <li><b>Modifier</b> corrige la réplique sur place (Entrée pour garder, Échap pour annuler)&nbsp;: c'est une nouvelle transcription, la précédente reste dans le menu des transcriptions. Le chevron l'attribue à une autre personne, ou montre ce que chaque transcription avait entendu.</li>
+           </ul>
+-          <img class="decoupe" src="../img/guides/notes.webp" loading="lazy" alt="La page Notes : des passages tirés d'appels, chacun avec l'appel d'où il vient, qui parle et le moment.">
++          <img class="decoupe" width="1610" height="1420" src="../img/guides/notes.webp" loading="lazy" alt="La page Notes : des passages tirés d'appels, chacun avec l'appel d'où il vient, qui parle et le moment.">
+           <p>Pour écouter une seule voix, ouvrez le chevron au bout du lecteur et choisissez <b>Séparer les pistes</b>&nbsp;: une rangée par voix, et le haut-parleur de chacune la coupe à l'écoute.</p>
+-          <img class="decoupe extrait" src="../img/guides/pistes.webp" loading="lazy" alt="Le lecteur d'un appel, pistes séparées : Moi et Interlocuteurs, chacune avec son haut-parleur.">
++          <img class="decoupe extrait" width="1576" height="128" src="../img/guides/pistes.webp" loading="lazy" alt="Le lecteur d'un appel, pistes séparées : Moi et Interlocuteurs, chacune avec son haut-parleur.">
+         </div></details>
+         <details class="row" id="retranscrire"><summary>Retranscrire, ou améliorer avec Claude</summary><div class="answer">
+           <p>Ouvrez le menu des transcriptions de l'appel, en haut à droite (<b>v1 · Transcription</b>). <b>Nouvelle transcription</b> fait réécouter l'appel. <b>Améliorer avec Claude</b> fait relire la dernière transcription par Claude, avec l'écran de l'appel. Chaque passage est une nouvelle version, et les précédentes restent dans ce menu.</p>
+-          <img class="decoupe" src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : Copier, Exporter et le menu des transcriptions (v1 · Transcription).">
++          <img class="decoupe" width="540" height="120" src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : Copier, Exporter et le menu des transcriptions (v1 · Transcription).">
+         </div></details>
+         <details class="row" id="exporter"><summary>Copier ou exporter une transcription</summary><div class="answer">
+           <p>Dans la fenêtre de l'appel, <b>Copier</b> (⇧⌘C) met toute la transcription dans le presse-papiers. <b>Exporter</b> l'enregistre en texte, Word, Markdown ou sous-titres (aussi dans Fichier › Exporter la transcription). Les transcriptions sont aussi dans le dossier CallRecordings de votre dossier personnel, en Markdown.</p>
+-          <img class="decoupe" src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : les boutons Copier et Exporter, puis le menu des transcriptions.">
++          <img class="decoupe" width="540" height="120" src="../img/guides/fenetre-appel.png?v=3" loading="lazy" alt="En bas à droite d'un appel : les boutons Copier et Exporter, puis le menu des transcriptions.">
+         </div></details>
+       </div>
+       <p class="group-label">Ranger et garder</p>
+@@ -146,7 +148,7 @@
+             <li>Dans la barre latérale de la fenêtre qui s'ouvre, cliquez sur <b>Google Drive</b> (ou iCloud Drive, Dropbox), ouvrez <b>Mon Drive</b> ou un dossier à l'intérieur, puis cliquez sur <b>Déplacer ici</b>.</li>
+           </ol>
+           <p>Callrecorder y déplace le dossier CallRecordings avec tous vos appels, puis redémarre. La ligne indique alors où ils sont, par exemple <b>Google Drive › Mon Drive › CallRecordings</b>.</p>
+-          <img src="../img/guides/dossier.png" loading="lazy" alt="La ligne Dossier des conversations des Réglages, sur Google Drive, avec le bouton Changer….">
++          <img width="1380" height="105" src="../img/guides/dossier.png" loading="lazy" alt="La ligne Dossier des conversations des Réglages, sur Google Drive, avec le bouton Changer….">
+           <p>Les nouveaux appels sont envoyés en ligne à mesure qu'ils s'enregistrent. Quand l'audio d'un appel arrive à expiration, il part dans la corbeille du service. Le changement de dossier attend la fin de l'appel ou de la transcription en cours. Pour revenir en arrière, choisissez à nouveau votre dossier personnel.</p>
+           <p>Vos appels sont alors stockés chez Google, Apple ou Dropbox, et plus seulement sur votre Mac. Tous y partent, y compris ceux des groupes gardés hors des IA&nbsp;: pour n'envoyer que certains groupes, faites plutôt une copie (Réglages › Intégrations › Base de données externe).</p>
+         </div></details>
+@@ -169,6 +171,7 @@
+     </div>
+   </section>
+ 
++  </main>
+   <footer>
+     <div class="col">
+       <div class="links">
+diff --git a/index.html b/index.html
+index f9ee9a4..a904dd6 100644
+--- a/index.html
++++ b/index.html
+@@ -4,7 +4,7 @@
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="color-scheme" content="light only">
+-<title>Callrecorder</title>
++<title>Callrecorder · Souvenez-vous de tout</title>
+ <meta name="description" content="Callrecorder se souvient de vos appels Zoom, Teams, Google Meet, FaceTime et WhatsApp, de vos réunions et de vos notes vocales : une mémoire que vos assistants IA consultent.">
+ <meta property="og:type" content="website">
+ <meta property="og:locale" content="fr_FR">
+@@ -27,6 +27,7 @@
+ <link rel="stylesheet" href="style.css?v=137">
+ </head>
+ <body>
++<a class="evitement" href="#contenu">Aller au contenu</a>
+ 
+ <div class="wrap">
+   <nav class="nav nav-home" aria-label="Site">
+@@ -36,6 +37,7 @@
+       <a class="button" href="#installation">Installer</a>
+     </div>
+   </nav>
++  <main id="contenu">
+   <div class="about">
+     <h1>Souvenez-vous de tout</h1>
+     <p class="lead">Vos conversations mémorisées, transcrites sur votre Mac sans y penser et accessibles à vos assistants IA.</p>
+@@ -58,9 +60,9 @@
+       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
+       <div class="body">
+         <div class="ask">Pour le conseil du 20&nbsp;: qu'est-ce que les banques m'ont vraiment dit sur la ligne de crédit ce mois-ci&nbsp;?</div>
+-        <div class="tool"><img src="img/icone-micro.webp?v=9" alt="">5 appels lus : la revue budgétaire et 4 appels avec les banques</div>
++        <div class="tool"><img width="256" height="256" src="img/icone-micro.webp?v=9" alt="">5 appels lus : la revue budgétaire et 4 appels avec les banques</div>
+         <div class="answer">
+-          <img src="img/logos/claude.webp" alt="">
++          <img width="64" height="64" src="img/logos/claude.webp" alt="">
+           <div>
+             <p>Deux banques sur trois renouvellent, mais pas aux mêmes conditions&nbsp;:</p>
+             <div class="mail">
+@@ -79,9 +81,9 @@
+       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
+       <div class="body">
+         <div class="ask">À la revue de jeudi, qu'est-ce que Transports Morel s'est engagé à faire, et pour quand&nbsp;?</div>
+-        <div class="tool"><img src="img/icone-micro.webp?v=9" alt="">1 réunion lue : revue mensuelle avec Transports Morel, 29 oct.</div>
++        <div class="tool"><img width="256" height="256" src="img/icone-micro.webp?v=9" alt="">1 réunion lue : revue mensuelle avec Transports Morel, 29 oct.</div>
+         <div class="answer">
+-          <img src="img/logos/claude.webp" alt="">
++          <img width="64" height="64" src="img/logos/claude.webp" alt="">
+           <div>
+             <p>Trois engagements, le premier dès mercredi&nbsp;:</p>
+             <div class="mail">
+@@ -100,9 +102,9 @@
+       <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
+       <div class="body">
+         <div class="ask">Range ce que je me suis dicté cette semaine.</div>
+-        <div class="tool"><img src="img/icone-micro.webp?v=9" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
++        <div class="tool"><img width="256" height="256" src="img/icone-micro.webp?v=9" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
+         <div class="answer">
+-          <img src="img/logos/claude.webp" alt="">
++          <img width="64" height="64" src="img/logos/claude.webp" alt="">
+           <div>
+             <div class="mail">
+               <b>À faire</b>
+@@ -129,36 +131,36 @@
+ 
+   <div class="cta">
+     <a class="button hero" href="#installation">Installer Callrecorder</a>
+-    <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
++    <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
+   </div>
+ 
+   <p class="dock-label">Retient ce qui se dit sur</p>
+   <div class="dock" aria-label="Applications d'appel prises en charge">
+-      <span class="app tile" data-name="Zoom"><img src="img/pile/zoom.png" alt="Zoom"></span>
+-      <span class="app tile" data-name="Microsoft Teams"><img src="img/pile/teams.png" alt="Microsoft Teams"></span>
+-      <span class="app tile glyph" data-name="Google Meet"><img src="img/pile/meet.webp" alt="Google Meet"></span>
+-      <span class="app tile" data-name="WhatsApp"><img src="img/pile/whatsapp.webp" alt="WhatsApp"></span>
+-      <span class="app tile" data-name="Slack"><img src="img/pile/slack.png" alt="Slack"></span>
+-      <span class="app" data-name="FaceTime"><img src="img/logos/facetime.png" alt="FaceTime"></span>
+-      <span class="app tile" data-name="Téléphone (iPhone)"><img src="img/dock/telephone.png" alt="Téléphone"></span>
+-      <span class="app tile" data-name="Webex"><img src="img/dock/webex.png" alt="Webex"></span>
+-      <span class="app tile" data-name="Messenger"><img src="img/dock/messenger.png" alt="Messenger"></span>
+-      <span class="app tile" data-name="Loom"><img src="img/dock/loom.png" alt="Loom"></span>
+-      <span class="app tile" data-name="Doctolib"><img src="img/dock/doctolib.png" alt="Doctolib"></span>
+-      <span class="app tile" data-name="Jitsi Meet"><img src="img/dock/jitsi.png" alt="Jitsi Meet"></span>
++      <span class="app tile" data-name="Zoom"><img width="256" height="256" src="img/pile/zoom.png" alt="Zoom"></span>
++      <span class="app tile" data-name="Microsoft Teams"><img width="256" height="256" src="img/pile/teams.png" alt="Microsoft Teams"></span>
++      <span class="app tile glyph" data-name="Google Meet"><img width="192" height="192" src="img/pile/meet.webp" alt="Google Meet"></span>
++      <span class="app tile" data-name="WhatsApp"><img width="256" height="256" src="img/pile/whatsapp.webp" alt="WhatsApp"></span>
++      <span class="app tile" data-name="Slack"><img width="256" height="256" src="img/pile/slack.png" alt="Slack"></span>
++      <span class="app" data-name="FaceTime"><img width="256" height="256" src="img/logos/facetime.png" alt="FaceTime"></span>
++      <span class="app tile" data-name="Téléphone (iPhone)"><img width="256" height="256" src="img/dock/telephone.png" alt="Téléphone"></span>
++      <span class="app tile" data-name="Webex"><img width="256" height="256" src="img/dock/webex.png" alt="Webex"></span>
++      <span class="app tile" data-name="Messenger"><img width="256" height="256" src="img/dock/messenger.png" alt="Messenger"></span>
++      <span class="app tile" data-name="Loom"><img width="256" height="256" src="img/dock/loom.png" alt="Loom"></span>
++      <span class="app tile" data-name="Doctolib"><img width="256" height="256" src="img/dock/doctolib.png" alt="Doctolib"></span>
++      <span class="app tile" data-name="Jitsi Meet"><img width="256" height="256" src="img/dock/jitsi.png" alt="Jitsi Meet"></span>
+       <span class="sep"></span>
+-      <span class="app" data-name="Safari"><img src="img/logos/safari.png" alt="Safari"></span>
+-      <span class="app" data-name="Google Chrome"><img src="img/logos/chrome.png" alt="Google Chrome"></span>
++      <span class="app" data-name="Safari"><img width="256" height="256" src="img/logos/safari.png" alt="Safari"></span>
++      <span class="app" data-name="Google Chrome"><img width="256" height="256" src="img/logos/chrome.png" alt="Google Chrome"></span>
+   </div>
+   <p class="dock-label">et s’en souvient pour</p>
+   <div class="dock llm-dock" aria-label="Assistants compatibles avec Callrecorder">
+-      <span class="app" data-name="Claude"><img src="img/logos/claude-app.png" alt="Claude"></span>
+-      <span class="app" data-name="Codex"><img src="img/logos/codex.png" alt="Codex"></span>
+-      <span class="app tile" data-name="Cursor"><img src="img/dock/cursor.png" alt="Cursor"></span>
+-      <span class="app tile glyph" data-name="VS Code"><img src="img/dock/vscode.png" alt="VS Code"></span>
+-      <span class="app tile" data-name="Gemini CLI"><img src="img/dock/gemini.png" alt="Gemini CLI"></span>
+-      <span class="app tile" data-name="LM Studio"><img src="img/dock/lmstudio.png" alt="LM Studio"></span>
+-      <span class="app tile" data-name="Hermes Agent"><img src="img/logos/hermes.png" alt="Hermes Agent"></span>
++      <span class="app" data-name="Claude"><img width="256" height="256" src="img/logos/claude-app.png" alt="Claude"></span>
++      <span class="app" data-name="Codex"><img width="256" height="256" src="img/logos/codex.png" alt="Codex"></span>
++      <span class="app tile" data-name="Cursor"><img width="192" height="192" src="img/dock/cursor.png" alt="Cursor"></span>
++      <span class="app tile glyph" data-name="VS Code"><img width="256" height="256" src="img/dock/vscode.png" alt="VS Code"></span>
++      <span class="app tile" data-name="Gemini CLI"><img width="256" height="256" src="img/dock/gemini.png" alt="Gemini CLI"></span>
++      <span class="app tile" data-name="LM Studio"><img width="192" height="192" src="img/dock/lmstudio.png" alt="LM Studio"></span>
++      <span class="app tile" data-name="Hermes Agent"><img width="48" height="48" src="img/logos/hermes.png" alt="Hermes Agent"></span>
+   </div>
+ 
+   <section>
+@@ -170,12 +172,12 @@
+ 
+   <section class="follow">
+     <ul class="benefits">
+-        <li class="o-jack text-right"><div><span>Une seule installation</span><p>Une ligne à copier, deux autorisations, celle de l'écran si vous voulez les captures. Ensuite, il démarre avec votre Mac.</p></div><img src="img/benefices/jack.webp?v=2" width="1200" height="198" loading="lazy" alt="Une fiche jack dessinée à l'encre et à l'aquarelle, qui entre par la gauche et pointe vers le texte."></li>
+-        <li class="o-cassettes"><div><span>Une mémoire qui se constitue toute seule</span><p>Zoom, Teams, Meet, FaceTime, WhatsApp et les appels de votre iPhone pris sur le Mac&nbsp;: chaque appel est retenu dès qu'il commence, et transcrit dès qu'il se termine.</p></div><img src="img/benefices/cassettes.webp?v=3" width="1000" height="746" loading="lazy" alt="Une pile de six cassettes audio dessinées à l'encre et à l'aquarelle ; sur la tranche de chacune, un bout de scotch porte le logo d’une app et le nom de l’appel tapé à la machine : Revue budgétaire sur Teams, Banque Ferrand sur Zoom, Codir du lundi sur Meet, Karim sur WhatsApp, Point produit sur Slack, Banque Aurore sur Teams."></li>
+-        <li id="reunions" class="o-reunion text-right"><div><span>Ce qui se dit autour d'une table</span><p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table et cliquez sur Enregistrer une réunion. La conversation rejoint votre mémoire comme un appel.</p></div><img src="img/reunion.webp?v=8" width="900" height="600" loading="lazy" alt="Deux personnes dessinées à l'encre et à l'aquarelle, face à face à une table : lui, en veste bleue, se gratte la tête ; elle, en chemise vermillon, parle avec les mains ; chacun a sa bulle ; sur la table, une bande de papier où leurs lignes alternent dans leurs couleurs."></li>
+-        <li id="telephones" class="o-telephones"><div><span>Les appels de votre iPhone</span><p>Prenez-les sur le Mac, ils rejoignent votre mémoire. Rien à installer sur l'iPhone.</p></div></li>
+-        <li class="o-telephone text-right"><div><span>Raccrochez&nbsp;: votre assistant est déjà au courant</span><p>Demandez ce qui a été promis, décidé ou oublié&nbsp;: Claude, Codex et les autres assistants consultent votre mémoire et vous répondent, avec l'appel et l'heure de chaque citation. Rien à copier-coller.</p></div><img src="img/benefices/telephone.webp?v=5" width="1099" height="660" loading="lazy" alt="Le haut d'un téléphone dessiné à l'encre et à l'aquarelle, ouvert sur Claude, une question en cours."></li>
+-        <li class="o-ordinateur"><div><span>L'audio reste sur votre Mac</span><p>La transcription se fait sur place, sans compte ni serveur. L'audio ne part en ligne que si vous y placez vos conversations.</p></div><img src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l'encre et à l'aquarelle, une liste d'appels à l'écran."></li>
++        <li class="o-jack text-right"><div><h3>Une seule installation</h3><p>Une ligne à copier, deux autorisations, celle de l'écran si vous voulez les captures. Ensuite, il démarre avec votre Mac.</p></div><img src="img/benefices/jack.webp?v=2" width="1200" height="198" loading="lazy" alt="Une fiche jack dessinée à l'encre et à l'aquarelle, qui entre par la gauche et pointe vers le texte."></li>
++        <li class="o-cassettes"><div><h3>Une mémoire qui se constitue toute seule</h3><p>Zoom, Teams, Meet, FaceTime, WhatsApp et les appels de votre iPhone pris sur le Mac&nbsp;: chaque appel est retenu dès qu'il commence, et transcrit dès qu'il se termine.</p></div><img src="img/benefices/cassettes.webp?v=3" width="1000" height="746" loading="lazy" alt="Une pile de six cassettes audio dessinées à l'encre et à l'aquarelle ; sur la tranche de chacune, un bout de scotch porte le logo d’une app et le nom de l’appel tapé à la machine : Revue budgétaire sur Teams, Banque Ferrand sur Zoom, Codir du lundi sur Meet, Karim sur WhatsApp, Point produit sur Slack, Banque Aurore sur Teams."></li>
++        <li id="reunions" class="o-reunion text-right"><div><h3>Ce qui se dit autour d'une table</h3><p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table et cliquez sur Enregistrer une réunion. La conversation rejoint votre mémoire comme un appel.</p></div><img src="img/reunion.webp?v=8" width="900" height="600" loading="lazy" alt="Deux personnes dessinées à l'encre et à l'aquarelle, face à face à une table : lui, en veste bleue, se gratte la tête ; elle, en chemise vermillon, parle avec les mains ; chacun a sa bulle ; sur la table, une bande de papier où leurs lignes alternent dans leurs couleurs."></li>
++        <li id="telephones" class="o-telephones"><div><h3>Les appels de votre iPhone</h3><p>Prenez-les sur le Mac, ils rejoignent votre mémoire. Rien à installer sur l'iPhone.</p></div></li>
++        <li class="o-telephone text-right"><div><h3>Raccrochez&nbsp;: votre assistant est déjà au courant</h3><p>Demandez ce qui a été promis, décidé ou oublié&nbsp;: Claude, Codex et les autres assistants consultent votre mémoire et vous répondent, avec l'appel et l'heure de chaque citation. Rien à copier-coller.</p></div><img src="img/benefices/telephone.webp?v=5" width="1099" height="660" loading="lazy" alt="Le haut d'un téléphone dessiné à l'encre et à l'aquarelle, ouvert sur Claude, une question en cours."></li>
++        <li class="o-ordinateur"><div><h3>L'audio reste sur votre Mac</h3><p>La transcription se fait sur place, sans compte ni serveur. L'audio ne part en ligne que si vous y placez vos conversations.</p></div><img src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l'encre et à l'aquarelle, une liste d'appels à l'écran."></li>
+     </ul>
+     <p class="more"><a href="fonctionnalites/">Toutes les fonctionnalités</a></p>
+   </section>
+@@ -192,7 +194,7 @@
+         <button class="cmdline" type="button" data-copy="cmd" title="Copier la ligne"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><span class="hint" aria-hidden="true">Copier</span></button>
+         <div class="card">
+           <div class="tabs install-tabs" role="tablist" aria-label="Votre assistant">
+-            <button role="tab" aria-selected="true" data-scenario="claude"><img src="img/logos/claude.webp" alt="">Claude installé</button>
++            <button role="tab" aria-selected="true" data-scenario="claude"><img width="64" height="64" src="img/logos/claude.webp" alt="">Claude installé</button>
+             <button role="tab" aria-selected="false" data-scenario="seul">Pas de Claude</button>
+           </div>
+           <ol class="steps" data-scenario="claude">
+@@ -212,7 +214,9 @@
+         </div>
+       </div>
+     </div>
++  </section>
+ 
++  </main>
+   <footer>
+     <div class="col">
+       <div class="links">
+diff --git a/style.css b/style.css
+index 1bc6577..7d8b22e 100644
+--- a/style.css
++++ b/style.css
+@@ -14,6 +14,9 @@
+ }
+ 
+ * { box-sizing: border-box; }
++/* Lien d'évitement : hors de l'écran, il apparaît en haut à gauche au premier Tab. */
++.evitement { position: absolute; left: 16px; top: -48px; z-index: 20; padding: 8px 14px; border-radius: 7px; background: #fff; color: var(--text); box-shadow: 0 0 0 1px var(--border), 0 4px 12px rgba(20,40,80,.15); }
++.evitement:focus { top: 12px; }
+ html { -webkit-text-size-adjust: 100%; overflow-x: clip; }
+ body {
+   margin: 0;
+@@ -88,6 +91,9 @@ a.button:hover { text-decoration: none; filter: brightness(1.04); }
+ @media (max-width: 452px) {
+   .about { --micro-gauche: max(var(--titre) + .5 * var(--corps), 100% + 16px - .7 * var(--micro)); }
+ }
++/* Ce qui dépasse exprès (le micro, le Pixel, la conversation avec Claude) est coupé au bord de l'écran : la page ne
++   s'élargit pas sous le pouce. Au-delà de 760 px, la conversation déborde de .wrap et doit rester entière. */
++@media (max-width: 760px) { .wrap { overflow-x: clip; } }
+ .about h1 { font-family: var(--display); font-size: var(--corps); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 7em; margin: 0 0 48px; }
+ /* Mini logos des marques citées, dans le fil du texte */
+ img.logo { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: .22em; }
+@@ -153,7 +159,7 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
+ .claude .mail b { display: block; margin-bottom: .35em; }
+ .claude ul { margin: .35em 0 0; padding-left: 1.2em; }
+ .claude li { margin: .15em 0; }
+-.claude .sub { color: #8a8576; }
++.claude .sub { color: #736e60; }
+ .claude .quotes { list-style: none; padding: 0; margin: 0; }
+ .claude .quotes li + li { margin-top: .4em; }
+ .claude .next { margin: .7em 0 0; }
+@@ -398,7 +404,7 @@ details.row + details.row summary { padding-left: 0; }
+ details.row summary::-webkit-details-marker { display: none; }
+ details.row summary::after {
+   content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+-  border-right: 2px solid #93a0b4; border-bottom: 2px solid #93a0b4; transform: rotate(45deg); transition: transform .15s;
++  border-right: 2px solid #7f8ca1; border-bottom: 2px solid #7f8ca1; transform: rotate(45deg); transition: transform .15s;
+ }
+ details.row[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+ details.row .answer { padding: 0 20px 20px; font-size: 16px; color: var(--body); }
+@@ -412,11 +418,15 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display:
+ 
+ /* Versions : la plus récente en haut, la date et les nouveautés, une capture quand il y a quelque chose à voir. */
+ .version { display: grid; grid-template-columns: 132px minmax(0, 1fr); gap: 6px 20px; }
+-.version .num { font-weight: 600; }
+-.version .num small { display: block; font-weight: 400; font-size: 14px; color: var(--secondary); }
++.version .num { font: 600 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif; letter-spacing: 0; margin: 0; }
++.version .num a { color: inherit; }
++.version .num time { display: block; font-weight: 400; font-size: 14px; color: var(--secondary); }
+ .version p { color: var(--body); }
+ .version a.thumb { display: block; margin-top: 12px; width: 240px; max-width: 100%; }
+-.version a.thumb img { width: 100%; height: auto; display: block; border-radius: 7px; border: .5px solid rgba(20,40,80,.2); box-shadow: 0 8px 20px -10px rgba(20,40,80,.3); }
++/* Une vignette « nue » garde la largeur de ses attributs (résolution double), jamais agrandie : 300 px pour la 0.24.0, pas 568. */
++.version a.thumb:not(.nue) img { width: 100%; }
++.version a.thumb.nue img { max-width: 100%; }
++.version a.thumb img { height: auto; display: block; border-radius: 7px; border: .5px solid rgba(20,40,80,.2); box-shadow: 0 8px 20px -10px rgba(20,40,80,.3); }
+ .version .latest { display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: #e6f0fc; color: var(--accent); font-size: 12px; font-weight: 600; vertical-align: 2px; }
+ 
+ /* En dessous de 980 px, la transcription passe sous la capture au lieu de la recouvrir. */
+@@ -448,7 +458,7 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display:
+ @media (max-width: 480px) { .nav { gap: 8px; } .nav .links { gap: 12px; } }
+ .nav .links { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; }
+ .nav .links a { color: var(--text); }
+-.nav .links a[aria-current="page"] { color: var(--secondary); }
++.nav .links a[aria-current="page"] { color: var(--text); font-weight: 600; }
+ .nav .links .button { padding: 8px 14px; }
+ .about { --about-top: 96px; padding-top: var(--about-top); }
+ @media (max-width: 760px) { .about { --about-top: 56px; } }
+@@ -534,7 +544,7 @@ html { scroll-padding-top: 24px; }
+   background: var(--group); border-radius: 20px; box-shadow: 0 0 0 1px var(--border), 0 10px 30px -18px rgba(20,40,80,.25);
+ }
+ .benefits li > div { width: 54%; padding: 32px 0 32px 36px; }
+-.benefits span { display: block; font-family: var(--display); font-size: 24px; line-height: 1.25; font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; }
++.benefits h3 { display: block; margin: 0; font-family: var(--display); font-size: 24px; line-height: 1.25; font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; }
+ .benefits p { margin: 10px 0 0; font-size: 16px; line-height: 1.55; color: var(--secondary); }
+ .benefits img { position: absolute; height: auto; }
+ /* Chaque objet à sa place : coupé par le bord droit ou le bas, à peu près du même poids. */
+@@ -560,7 +570,7 @@ html { scroll-padding-top: 24px; }
+   .benefits { gap: 12px; }
+   .benefits li, .benefits li[class] { min-height: 0; display: flex; flex-direction: column; }
+   .benefits li > div, .benefits li.text-right > div, .benefits li.o-cassettes > div { width: auto; margin-left: 0; padding: 18px 20px 12px; }
+-  .benefits span { font-size: 18px; }
++  .benefits h3 { font-size: 18px; }
+   .benefits p { font-size: 14px; }
+   .benefits img { position: relative; align-self: flex-end; margin-top: auto; }
+   .benefits li.o-jack img { width: 70%; left: auto; align-self: flex-start; bottom: auto; margin-bottom: 28px; transform: none; }
+diff --git a/versions/index.html b/versions/index.html
+index 6100382..286bcc3 100644
+--- a/versions/index.html
++++ b/versions/index.html
+@@ -27,6 +27,7 @@
+ <link rel="stylesheet" href="../style.css?v=137">
+ </head>
+ <body>
++<a class="evitement" href="#contenu">Aller au contenu</a>
+ 
+ <div class="wrap">
+   <nav class="nav" aria-label="Site">
+@@ -36,6 +37,7 @@
+       <a class="button" href="../#installation">Installer</a>
+     </div>
+   </nav>
++  <main id="contenu">
+ 
+   <header class="page-head">
+     <h1>Versions</h1>
+@@ -45,46 +47,47 @@
+   <section class="versions-page">
+     <div class="col">
+       <div class="group">
+-        <div class="row version"><div class="num">0.24.0<span class="latest">Dernière</span><small>7 novembre 2026</small></div><div><p>Le téléphone Android arrive, en bêta&nbsp;: son app enregistre vos réunions et vos appels, puis les envoie au Mac. Seul le Pixel 7 sous Android 17 a été essayé&nbsp;; sur un autre téléphone, vérifiez le premier appel enregistré. Une nouvelle icône. Après un plantage, les pistes d'un enregistrement se réparent seules au lancement. Avec la suppression manuelle, la version légère du son reste jusqu'à ce que vous la supprimiez.</p><a class="thumb nue" href="../img/versions/0.24.0.webp"><img class="decoupe" src="../img/versions/0.24.0.webp" width="300" height="379" loading="lazy" alt="L'app Android de la 0.24.0 pendant un enregistrement : la liste des conversations et Arrêter l'enregistrement."></a></div></div>
+-        <div class="row version"><div class="num">0.23.0<small>7 novembre 2026</small></div><div><p>Vous choisissez combien de temps garder le son. Une fois transcrite, une conversation prend beaucoup moins de place&nbsp;: une heure de visio passe de 178 à 41&nbsp;Mo. Vous pouvez donc la garder bien plus longtemps&nbsp;: le nouveau choix «&nbsp;Suppression manuelle&nbsp;» la laisse sur votre Mac jusqu'à ce que vous la supprimiez. Le son d'origine, lui, part un jour après la transcription.</p><a class="thumb nue" href="../img/versions/0.23.0.webp"><img class="decoupe" src="../img/versions/0.23.0.webp" width="680" height="209" loading="lazy" alt="Le réglage Conservation de l'audio de la 0.23.0, sur Suppression manuelle."></a></div></div>
+-        <div class="row version"><div class="num">0.22.0<small>7 novembre 2026</small></div><div><p>Pendant un enregistrement, une pastille flotte par-dessus vos fenêtres&nbsp;: le temps, Capturer et Arrêter. Elle se déplace, ne prend ni le clavier ni le premier plan, et reste hors des partages d'écran. Vous pouvez la masquer dans les Réglages. Les transcriptions ne perdent plus de lignes, l'app résiste mieux aux fichiers abîmés, et ses textes sont plus courts et plus justes.</p><a class="thumb nue" href="../img/versions/0.22.0.webp"><img class="decoupe petite" src="../img/versions/0.22.0.webp" width="144" height="40" loading="lazy" alt="La pastille de la 0.22.0 : un point rouge, le temps écoulé, Capturer et Arrêter."></a></div></div>
+-        <div class="row version"><div class="num">0.21.0<small>6 novembre 2026</small></div><div><p>Une relecture de Claude qui échouait sur les noms accentués ne s'arrête plus en route. L'installation ne pose plus de questions sur ce qui part du Mac. Les textes de l'app sont plus courts et plus justes, et plusieurs causes de plantage sont corrigées.</p><a class="thumb" href="../img/versions/0.21.0.webp"><img class="decoupe extrait" src="../img/versions/0.21.0.webp" loading="lazy" alt="Réglages › Agents de la 0.21.0 : améliorer chaque transcription, et ce qui part chez Anthropic."></a></div></div>
+-        <div class="row version"><div class="num">0.20.0<small>5 novembre 2026</small></div><div><p>Callrecorder n'enregistre plus les appels Android&nbsp;: il fallait garder le téléphone branché au Mac, ce qui ne tient pas dans une journée normale. Une app Android se prépare en bêta. Les appels Android déjà enregistrés restent dans votre mémoire, et les appels de l'iPhone ne changent pas.</p><a class="thumb" href="../img/versions/0.20.0.webp"><img class="decoupe extrait" src="../img/versions/0.20.0.webp" loading="lazy" alt="Réglages › Téléphones de la 0.20.0 : l'iPhone, par l'app Téléphone du Mac."></a></div></div>
+-        <div class="row version"><div class="num">0.19.0<small>4 novembre 2026</small></div><div><p>Votre voix est reconnue dans vos conversations&nbsp;: vos phrases deviennent «&nbsp;Moi&nbsp;», même en réunion, et la relecture de Claude nomme les autres voix. L'empreinte de votre voix reste sur le Mac&nbsp;; couper Réglages › Paramètres › Reconnaître ma voix l'efface. La fenêtre Appels devient Conversations (⌘L), et vos réglages d'enregistrement se retrouvent sous Paramètres › Enregistrement. La forme d'onde s'affiche dès l'ouverture d'une conversation, et la colonne de la liste est plus large.</p><a class="thumb" href="../img/versions/0.19.0.webp"><img src="../img/versions/0.19.0.webp" loading="lazy" alt="Réglages › Paramètres de la 0.19.0 : le groupe Enregistrement, avec Apps et sites, Téléphones, la notification après chaque conversation et la ligne Reconnaître ma voix, activée"></a></div></div>
+-        <div class="row version"><div class="num">0.16.0<small>1<sup>er</sup> novembre 2026</small></div><div><p>La recherche de la fenêtre Appels trouve aussi ce qui a été dit&nbsp;: la réplique s'affiche sous l'appel, les mots surlignés, et l'appel s'ouvre à ce moment. Un téléphone Android se lie par un QR code, qui lui donne aussi le Wi-Fi du Mac, ou par le câble, sans question. Pour Claude, l'app devient une mémoire&nbsp;: il cherche dans ce qui a été dit et retrouve les personnes de vos appels, chaque information avec son appel. Corrections&nbsp;: filtrée sur un groupe, la page Notes ne montre que ses notes&nbsp;; la poignée de la colonne est plus large.</p><a class="thumb" href="../img/versions/0.16.0.webp"><img class="decoupe" src="../img/versions/0.16.0.webp" loading="lazy" alt="La recherche de la 0.16.0 : le mot « covenant » trouvé dans l'appel avec la Banque Aurore, la réplique de Thomas Girard sous l'appel, le mot en gras"></a></div></div>
+-        <div class="row version"><div class="num">0.15.0<small>1<sup>er</sup> novembre 2026</small></div><div><p>Capture d'écran à la demande pendant un appel ou une réunion&nbsp;: un bouton, la barre des menus ou fn + S. Chaque capture garde le fichier ou la page montrés, en lien dans la transcription («&nbsp;Contexte&nbsp;»). Nouvelle fenêtre des captures. Corrections&nbsp;: en réunion, une même personne n'est plus comptée deux fois&nbsp;; en plein écran, la loupe reste en place.</p><a class="thumb" href="../img/versions/0.15.0.webp"><img class="decoupe" src="../img/versions/0.15.0.webp" loading="lazy" alt="La fenêtre des captures de la 0.15.0 : les vignettes en colonne à gauche, la capture de la visio en grand, puis la réplique de ce moment"></a></div></div>
+-        <div class="row version"><div class="num">0.14.2<small>1<sup>er</sup> novembre 2026</small></div><div><p>Les vocaux WhatsApp ne sont plus importés sans votre accord. Les versions 0.14.0 et 0.14.1 lisaient le dossier de WhatsApp dès qu'il était installé, et macOS vous demandait sans explication d'autoriser «&nbsp;l'accès aux données d'autres apps&nbsp;». L'import se met désormais dans Réglages › Enregistrements › Vocaux WhatsApp, coupé au départ, et la ligne prévient de la demande de macOS. Si vous refusez, l'import se coupe et la demande ne revient plus. Correction&nbsp;: l'appel de test ne s'arrête plus dans la seconde qui suit son lancement, et votre voix n'y est plus jugée «&nbsp;non reconnue&nbsp;» à tort.</p><a class="thumb" href="../img/versions/0.14.2.webp"><img class="decoupe extrait" src="../img/versions/0.14.2.webp" loading="lazy" alt="Réglages › Enregistrements de la 0.14.2 : la ligne Vocaux WhatsApp, coupée, qui prévient que macOS demandera l'accès aux données de WhatsApp"></a></div></div>
+-        <div class="row version"><div class="num">0.14.1<small>1<sup>er</sup> novembre 2026</small></div><div><p>Correction&nbsp;: dans Réglages › Enregistrements › Espace occupé, un type vide n'est plus affiché «&nbsp;Zéro ko&nbsp;». Les appels de plus d'un mois, dont l'audio est parti à la corbeille, ne citent que leurs transcriptions et leur contexte.</p></div></div>
+-        <div class="row version"><div class="num">0.14.0<small>1<sup>er</sup> novembre 2026</small></div><div><p>Après chaque appel, une notification permet de le ranger dans un groupe ou de le supprimer sans ouvrir l'app. Les appels supprimés se remettent depuis Réglages › Enregistrements › Récemment supprimés. Les autorisations du micro, du son et de l'écran se renouvellent chaque semaine au moment que vous choisissez, plutôt que d'être redemandées par macOS en plein appel. Les vocaux WhatsApp que vous vous envoyez deviennent des notes transcrites. Les Réglages montrent l'espace que vos appels occupent sur le Mac, par type (audio, transcriptions, contexte) et par ancienneté. La conservation, le dossier des appels et la prise de note rapide rejoignent le groupe Enregistrements. Nouvelle icône à l'aquarelle.</p><a class="thumb" href="../img/versions/0.14.0.webp"><img class="decoupe extrait" src="../img/versions/0.14.0.webp" loading="lazy" alt="Réglages › Enregistrements › Espace occupé de la 0.14.0 : l'audio, les transcriptions et le contexte, puis la place des appels de moins d'une semaine, d'une semaine à un mois et de plus d'un mois"></a></div></div>
+-        <div class="row version"><div class="num">0.13.0<small>31 octobre 2026</small></div><div><p>Surlignez un passage d'une transcription&nbsp;: créez-en une note, envoyez-le à Claude avec son contexte, ou corrigez-le sur place (l'attribuer à une autre personne, comparer les versions). Le lecteur ne joue alors que ce passage. Les notes tirées d'un appel rejoignent vos notes, avec l'appel d'où elles viennent&nbsp;; filtrez-les par appel. Les pistes peuvent s'afficher séparément, chacune qu'on coupe à l'écoute. L'icône retrouve celle d'avant.</p><a class="thumb" href="../img/versions/0.13.0.webp"><img class="decoupe" src="../img/versions/0.13.0.webp" loading="lazy" alt="Les notes de la 0.13.0 : des passages tirés du Point hebdo produit et d'appels clients, chacun sous-titré de l'appel, de qui parle et du moment"></a></div></div>
+-        <div class="row version"><div class="num">0.12.0<small>30 octobre 2026</small></div><div><p>Claude range chaque appel dans le bon groupe, en suivant le sous-titre de vos groupes&nbsp;; un groupe gardé hors des IA ne lui est jamais montré. Les groupes montrent leurs 5 derniers appels, les plus anciens en piles par mois, et se replient d'un clic. Notes dictées avec fn + D. Icônes revues, dont celle de l'app&nbsp;; <b>Télécharger</b> devient <b>Exporter</b>. Un enregistrement raté ne tourne plus sans fin, et une piste muette ne bloque plus la transcription.</p><a class="thumb" href="../img/versions/0.12.0.webp"><img src="../img/versions/0.12.0.webp" loading="lazy" alt="Les groupes de la 0.12.0 : Équipe produit montre ses 5 derniers appels, puis les plus anciens en piles par mois, Octobre et Septembre"></a></div></div>
+-        <div class="row version"><div class="num">0.11.0<small>30 octobre 2026</small></div><div><p>Copiez vos appels dans Google Drive, iCloud Drive ou un autre dossier, tous ou seulement certains groupes&nbsp;: Réglages › Outils et intégrations › Autres outils. Claude ou ChatGPT avec leur connecteur Google Drive, Zapier ou un script les y retrouvent, avec un index et un mode d'emploi. Les groupes gardés hors des IA ne sont jamais copiés.</p><a class="thumb" href="../img/versions/0.11.0.webp"><img class="decoupe" src="../img/versions/0.11.0.webp" loading="lazy" alt="Réglages › Autres outils de la 0.11.0 : ajouter une copie des appels dans un dossier en ligne, et ce qu'il y a dans une copie"></a></div></div>
+-        <div class="row version"><div class="num">0.10.1<small>30 octobre 2026</small></div><div><p>Les mises à jour se trouvent maintenant dans Réglages › Général&nbsp;: la version installée, Rechercher une mise à jour, et Installer… quand une nouvelle version attend. Une étiquette «&nbsp;Mise à jour&nbsp;» au bout du bouton Réglages le signale.</p><a class="thumb" href="../img/versions/0.10.1.webp"><img src="../img/versions/0.10.1.webp" loading="lazy" alt="Réglages › Général de la 0.10.1 : la ligne Version, l'étiquette Mise à jour et le bouton Installer…"></a></div></div>
+-        <div class="row version"><div class="num">0.10.0<small>30 octobre 2026</small></div><div><p>En réunion, chaque voix a désormais son nom et sa couleur&nbsp;: «&nbsp;Voix 1&nbsp;», «&nbsp;Voix 2&nbsp;»… Callrecorder les distingue selon l'endroit d'où vient le son. Vos appels peuvent aussi vivre dans le dossier de votre choix, Google Drive ou iCloud par exemple&nbsp;: Réglages › Général › Dossier des appels › Changer…</p><a class="thumb" href="../img/versions/0.10.0.webp"><img class="decoupe extrait" src="../img/versions/0.10.0.webp" loading="lazy" alt="Réglages › Général de la 0.10.0 : le dossier des appels dans Google Drive"></a></div></div>
+-        <div class="row version"><div class="num">0.9.0<small>29 octobre 2026</small></div><div><p>Enregistrez vos réunions en face à face&nbsp;: un clic sur «&nbsp;Enregistrer une réunion&nbsp;», et la conversation est transcrite comme un appel. Un clic sur l'icône de la barre des menus ouvre vos appels. La transcription est prête quelques secondes après la fin d'un appel, chaque passage dans sa langue.</p><a class="thumb" href="../img/versions/0.9.0.webp"><img class="decoupe" src="../img/versions/0.9.0.webp" loading="lazy" alt="Le bas de la liste des appels de la 0.9.0 : Enregistrer une réunion, au-dessus des Réglages"></a></div></div>
+-        <div class="row version"><div class="num">0.8.0<small>29 octobre 2026</small></div><div><p>Codex reçoit l'accès à vos appels comme Claude, sans rien régler. C'est une bêta&nbsp;: si vous l'utilisez, dites-moi ce qui coince. L'installation se fait désormais par le Terminal, en trois étapes guidées. En cas d'échec, l'installation dit en français quoi faire.</p><a class="thumb" href="../img/versions/0.8.0.webp"><img class="decoupe extrait" src="../img/versions/0.8.0.webp" loading="lazy" alt="La page Claude des Réglages de la 0.8.0 : l'accès de Claude et Codex à vos appels"></a></div></div>
+-        <div class="row version"><div class="num">0.7.1<small>29 octobre 2026</small></div><div><p>La liste des appels flotte dans un panneau de verre, comme la barre latérale de Finder sur macOS 26. Le titre de l'appel, précédé du logo de son app ou de son site, se coupe quand la fenêtre rétrécit. Copier, Télécharger et les versions de la transcription flottent en bas à droite, sur le texte. Icônes plus grandes et survols plus nets.</p><a class="thumb" href="../img/versions/0.7.1.webp"><img class="decoupe" src="../img/versions/0.7.1.webp" loading="lazy" alt="Le bas de la fenêtre Appels de la 0.7.1 : la liste dans son panneau de verre, Copier, Télécharger et les versions qui flottent sur le texte"></a></div></div>
+-        <div class="row version"><div class="num">0.7.0<small>29 octobre 2026</small></div><div><p>Groupes : rangez vos appels dans Réglages › Groupes, filtrez la recherche par groupe, et gardez un groupe hors de Claude. Fenêtre Appels repensée : la liste sous la barre d'outils, la recherche qui s'ouvre depuis la loupe (⌘F), et la liste qui se replie pour ne garder que l'appel. Réglages aux mesures de Réglages Système. Menu des versions d'une transcription plus lisible, avec la date à droite.</p><a class="thumb" href="../img/versions/0.7.0.webp"><img class="decoupe" src="../img/versions/0.7.0.webp" loading="lazy" alt="Le haut de la fenêtre Appels de la 0.7.0 : la barre d'outils au-dessus de la liste, avec la loupe de la recherche"></a></div></div>
+-        <div class="row version"><div class="num">0.6.2<small>27 octobre 2026</small></div><div><p>Corrections : la fenêtre Appels revient à l'écran si elle s'ouvrait en dehors ; les Réglages n'encombrent plus le journal du système ; après l'appel de test, une alerte prévient si votre voix ou celle de l'interlocuteur n'a pas été captée, et propose de recommencer.</p></div></div>
+-        <div class="row version"><div class="num">0.6.1<small>27 octobre 2026</small></div><div><p>Premier lancement plus simple : la fenêtre Appels s'ouvre sur les autorisations qui manquent et l'appel de test, qui se fait dans sa propre fenêtre puis devient un appel comme les autres. Transcription en fil avec avatars, l'enregistrement aligné sur le texte, chaque phrase à l'heure où elle est dite ; la relecture de Claude s'ouvre d'elle-même. Réglages resserrés. Corrections : la transcription d'Apple qui échouait juste après un appel, des exemplaires de l'app relancés en double au démarrage, l'accès de Claude Desktop perdu après une réinstallation.</p></div></div>
+-        <div class="row version"><div class="num">0.6.0<small>27 octobre 2026</small></div><div><p>Une seule fenêtre : vos appels à gauche, en liste ou en calendrier, et l'appel choisi à droite, qui s'ouvre aussitôt. Les transcriptions d'un appel dans un menu. Choisissez les apps et les sites dont les appels sont enregistrés. Des menus et des raccourcis comme dans toute app Mac : Espace pour lire, ⌘Z pour remettre un appel supprimé, les Réglages en bas à gauche de la fenêtre (⌘,). S'il manque le micro ou le son des apps, les Réglages s'ouvrent et montrent quoi autoriser. Après chaque appel, Claude peut améliorer la transcription : noms propres corrigés, titre et participants, dans une nouvelle version. Plus de qualité max : la transcription d'Apple, relue par Claude, fait aussi bien que Whisper. Plus lisible avec VoiceOver, Réduire les animations et Augmenter le contraste.</p><a class="thumb" href="../img/versions/0.6.0.webp"><img class="decoupe" src="../img/versions/0.6.0.webp" loading="lazy" alt="La fenêtre Appels, avec l'appel choisi à droite"></a></div></div>
+-        <div class="row version"><div class="num">0.5.5<small>26 octobre 2026</small></div><div><p>Une ligne par appel, avec sa première capture, l'app et la durée. Fenêtre de l'appel : la transcription calée sur l'enregistrement, les captures à côté des répliques, les silences visibles, un texte plus lisible. Plusieurs transcriptions par appel ; une nouvelle se prépare au centre de la fenêtre, avec les mots à reconnaître et Faire remplir par Claude, et on la regarde se faire. Nombreuses corrections.</p><a class="thumb" href="../img/versions/0.5.5.webp"><img src="../img/versions/0.5.5.webp" loading="lazy" alt="La fenêtre d'un appel"></a></div></div>
+-        <div class="row version"><div class="num">0.5.4<small>26 octobre 2026</small></div><div><p>Cartes des appels : toute la carte ouvre la fenêtre de l'appel, avec un extrait de quelques répliques. Fenêtre de l'appel : les captures dans une colonne à droite, les répliques espacées selon le temps écoulé.</p></div></div>
+-        <div class="row version"><div class="num">0.5.3<small>26 octobre 2026</small></div><div><p>Les appels Android s'enregistrent sans rien installer : l'outil scrcpy est livré dans l'app.</p></div></div>
+-        <div class="row version"><div class="num">0.5.2<small>26 octobre 2026</small></div><div><p>Appels Android : le numéro et le nom de l'interlocuteur, retrouvés même quand le téléphone est rebranché après l'appel.</p></div></div>
+-        <div class="row version"><div class="num">0.5.0<small>26 octobre 2026</small></div><div><p>Enregistre les appels de l'iPhone (app Téléphone du Mac) et des Pixel branchés en USB. Transcription rapide par la reconnaissance vocale d'Apple sur macOS 26 ; qualité max par Whisper, nourrie des mots lus à l'écran.</p><a class="thumb" href="../img/versions/0.5.0.webp"><img src="../img/versions/0.5.0.webp" loading="lazy" alt="La partie Téléphones de la configuration"></a></div></div>
+-        <div class="row version"><div class="num">0.4.0<small>25 octobre 2026</small></div><div><p>Nouvelle fenêtre des appels : calendrier, cartes avec l'enregistrement à écouter, les captures et un extrait de la transcription. Une fenêtre par appel, avec la transcription liée à l'enregistrement, les captures, la copie et l'export. Après 7 jours, seul l'audio part à la corbeille. Suppression d'un appel annulable pendant 5 secondes.</p><a class="thumb" href="../img/versions/0.4.0.webp"><img src="../img/versions/0.4.0.webp" loading="lazy" alt="La nouvelle fenêtre des appels"></a></div></div>
+-        <div class="row version"><div class="num">0.3.5<small>25 octobre 2026</small></div><div><p>Fond de l'installation simplifié.</p><a class="thumb" href="../img/installation.png"><img src="../img/installation.png" loading="lazy" alt="Le fond de la fenêtre d'installation"></a></div></div>
+-        <div class="row version"><div class="num">0.3.4<small>25 octobre 2026</small></div><div><p>Un panneau collé à Réglages Système indique quoi faire pour chaque autorisation. Claude relancé après la connexion, assistant remis au premier plan, journal d'installation (désactivable), répliques mieux découpées.</p></div></div>
+-        <div class="row version"><div class="num">0.3.3<small>24 octobre 2026</small></div><div><p>Relance fiable après une mise à jour.</p></div></div>
+-        <div class="row version"><div class="num">0.3.2<small>24 octobre 2026</small></div><div><p>Relance fiable après l'autorisation de l'écran.</p></div></div>
+-        <div class="row version"><div class="num">0.3.1<small>24 octobre 2026</small></div><div><p>Enregistre aussi les appels Slack, Webex et Loom.</p></div></div>
+-        <div class="row version"><div class="num">0.3.0<small>24 octobre 2026</small></div><div><p>Première version publique : enregistrement automatique, transcription sur le Mac, assistant de configuration avec appel de test.</p></div></div>
++        <div class="row version" id="0.24.0"><h2 class="num"><a href="#0.24.0">0.24.0</a><span class="latest">Dernière</span><time datetime="2026-11-07">7 novembre 2026</time></h2><div><p>Le téléphone Android arrive, en bêta&nbsp;: son app enregistre vos réunions et vos appels, puis les envoie au Mac. Seul le Pixel 7 sous Android 17 a été essayé&nbsp;; sur un autre téléphone, vérifiez le premier appel enregistré. Une nouvelle icône. Après un plantage, les pistes d'un enregistrement se réparent seules au lancement. Avec la suppression manuelle, la version légère du son reste jusqu'à ce que vous la supprimiez.</p><a class="thumb nue" href="../img/versions/0.24.0.webp"><img class="decoupe" src="../img/versions/0.24.0.webp" width="300" height="379" loading="lazy" alt="L'app Android de la 0.24.0 pendant un enregistrement : la liste des conversations et Arrêter l'enregistrement."></a></div></div>
++        <div class="row version" id="0.23.0"><h2 class="num"><a href="#0.23.0">0.23.0</a><time datetime="2026-11-07">7 novembre 2026</time></h2><div><p>Vous choisissez combien de temps garder le son. Une fois transcrite, une conversation prend beaucoup moins de place&nbsp;: une heure de visio passe de 178 à 41&nbsp;Mo. Vous pouvez donc la garder bien plus longtemps&nbsp;: le nouveau choix «&nbsp;Suppression manuelle&nbsp;» la laisse sur votre Mac jusqu'à ce que vous la supprimiez. Le son d'origine, lui, part un jour après la transcription.</p><a class="thumb nue" href="../img/versions/0.23.0.webp"><img class="decoupe" src="../img/versions/0.23.0.webp" width="680" height="209" loading="lazy" alt="Le réglage Conservation de l'audio de la 0.23.0, sur Suppression manuelle."></a></div></div>
++        <div class="row version" id="0.22.0"><h2 class="num"><a href="#0.22.0">0.22.0</a><time datetime="2026-11-07">7 novembre 2026</time></h2><div><p>Pendant un enregistrement, une pastille flotte par-dessus vos fenêtres&nbsp;: le temps, Capturer et Arrêter. Elle se déplace, ne prend ni le clavier ni le premier plan, et reste hors des partages d'écran. Vous pouvez la masquer dans les Réglages. Les transcriptions ne perdent plus de lignes, l'app résiste mieux aux fichiers abîmés, et ses textes sont plus courts et plus justes.</p><a class="thumb nue" href="../img/versions/0.22.0.webp"><img class="decoupe petite" src="../img/versions/0.22.0.webp" width="144" height="40" loading="lazy" alt="La pastille de la 0.22.0 : un point rouge, le temps écoulé, Capturer et Arrêter."></a></div></div>
++        <div class="row version" id="0.21.0"><h2 class="num"><a href="#0.21.0">0.21.0</a><time datetime="2026-11-06">6 novembre 2026</time></h2><div><p>Une relecture de Claude qui échouait sur les noms accentués ne s'arrête plus en route. L'installation ne pose plus de questions sur ce qui part du Mac. Les textes de l'app sont plus courts et plus justes, et plusieurs causes de plantage sont corrigées.</p><a class="thumb" href="../img/versions/0.21.0.webp"><img class="decoupe extrait" width="1360" height="288" src="../img/versions/0.21.0.webp" loading="lazy" alt="Réglages › Agents de la 0.21.0 : améliorer chaque transcription, et ce qui part chez Anthropic."></a></div></div>
++        <div class="row version" id="0.20.0"><h2 class="num"><a href="#0.20.0">0.20.0</a><time datetime="2026-11-05">5 novembre 2026</time></h2><div><p>Callrecorder n'enregistre plus les appels Android&nbsp;: il fallait garder le téléphone branché au Mac, ce qui ne tient pas dans une journée normale. Une app Android se prépare en bêta. Les appels Android déjà enregistrés restent dans votre mémoire, et les appels de l'iPhone ne changent pas.</p><a class="thumb" href="../img/versions/0.20.0.webp"><img class="decoupe extrait" width="1360" height="322" src="../img/versions/0.20.0.webp" loading="lazy" alt="Réglages › Téléphones de la 0.20.0 : l'iPhone, par l'app Téléphone du Mac."></a></div></div>
++        <div class="row version" id="0.19.0"><h2 class="num"><a href="#0.19.0">0.19.0</a><time datetime="2026-11-04">4 novembre 2026</time></h2><div><p>Votre voix est reconnue dans vos conversations&nbsp;: vos phrases deviennent «&nbsp;Moi&nbsp;», même en réunion, et la relecture de Claude nomme les autres voix. L'empreinte de votre voix reste sur le Mac&nbsp;; couper Réglages › Paramètres › Reconnaître ma voix l'efface. La fenêtre Appels devient Conversations (⌘L), et vos réglages d'enregistrement se retrouvent sous Paramètres › Enregistrement. La forme d'onde s'affiche dès l'ouverture d'une conversation, et la colonne de la liste est plus large.</p><a class="thumb" href="../img/versions/0.19.0.webp"><img width="1640" height="670" src="../img/versions/0.19.0.webp" loading="lazy" alt="Réglages › Paramètres de la 0.19.0 : le groupe Enregistrement, avec Apps et sites, Téléphones, la notification après chaque conversation et la ligne Reconnaître ma voix, activée"></a></div></div>
++        <div class="row version" id="0.16.0"><h2 class="num"><a href="#0.16.0">0.16.0</a><time datetime="2026-11-01">1<sup>er</sup> novembre 2026</time></h2><div><p>La recherche de la fenêtre Appels trouve aussi ce qui a été dit&nbsp;: la réplique s'affiche sous l'appel, les mots surlignés, et l'appel s'ouvre à ce moment. Un téléphone Android se lie par un QR code, qui lui donne aussi le Wi-Fi du Mac, ou par le câble, sans question. Pour Claude, l'app devient une mémoire&nbsp;: il cherche dans ce qui a été dit et retrouve les personnes de vos appels, chaque information avec son appel. Corrections&nbsp;: filtrée sur un groupe, la page Notes ne montre que ses notes&nbsp;; la poignée de la colonne est plus large.</p><a class="thumb" href="../img/versions/0.16.0.webp"><img class="decoupe" width="990" height="620" src="../img/versions/0.16.0.webp" loading="lazy" alt="La recherche de la 0.16.0 : le mot « covenant » trouvé dans l'appel avec la Banque Aurore, la réplique de Thomas Girard sous l'appel, le mot en gras"></a></div></div>
++        <div class="row version" id="0.15.0"><h2 class="num"><a href="#0.15.0">0.15.0</a><time datetime="2026-11-01">1<sup>er</sup> novembre 2026</time></h2><div><p>Capture d'écran à la demande pendant un appel ou une réunion&nbsp;: un bouton, la barre des menus ou fn + S. Chaque capture garde le fichier ou la page montrés, en lien dans la transcription («&nbsp;Contexte&nbsp;»). Nouvelle fenêtre des captures. Corrections&nbsp;: en réunion, une même personne n'est plus comptée deux fois&nbsp;; en plein écran, la loupe reste en place.</p><a class="thumb" href="../img/versions/0.15.0.webp"><img class="decoupe" width="2360" height="1582" src="../img/versions/0.15.0.webp" loading="lazy" alt="La fenêtre des captures de la 0.15.0 : les vignettes en colonne à gauche, la capture de la visio en grand, puis la réplique de ce moment"></a></div></div>
++        <div class="row version" id="0.14.2"><h2 class="num"><a href="#0.14.2">0.14.2</a><time datetime="2026-11-01">1<sup>er</sup> novembre 2026</time></h2><div><p>Les vocaux WhatsApp ne sont plus importés sans votre accord. Les versions 0.14.0 et 0.14.1 lisaient le dossier de WhatsApp dès qu'il était installé, et macOS vous demandait sans explication d'autoriser «&nbsp;l'accès aux données d'autres apps&nbsp;». L'import se met désormais dans Réglages › Enregistrements › Vocaux WhatsApp, coupé au départ, et la ligne prévient de la demande de macOS. Si vous refusez, l'import se coupe et la demande ne revient plus. Correction&nbsp;: l'appel de test ne s'arrête plus dans la seconde qui suit son lancement, et votre voix n'y est plus jugée «&nbsp;non reconnue&nbsp;» à tort.</p><a class="thumb" href="../img/versions/0.14.2.webp"><img class="decoupe extrait" width="1373" height="593" src="../img/versions/0.14.2.webp" loading="lazy" alt="Réglages › Enregistrements de la 0.14.2 : la ligne Vocaux WhatsApp, coupée, qui prévient que macOS demandera l'accès aux données de WhatsApp"></a></div></div>
++        <div class="row version" id="0.14.1"><h2 class="num"><a href="#0.14.1">0.14.1</a><time datetime="2026-11-01">1<sup>er</sup> novembre 2026</time></h2><div><p>Correction&nbsp;: dans Réglages › Enregistrements › Espace occupé, un type vide n'est plus affiché «&nbsp;Zéro ko&nbsp;». Les appels de plus d'un mois, dont l'audio est parti à la corbeille, ne citent que leurs transcriptions et leur contexte.</p></div></div>
++        <div class="row version" id="0.14.0"><h2 class="num"><a href="#0.14.0">0.14.0</a><time datetime="2026-11-01">1<sup>er</sup> novembre 2026</time></h2><div><p>Après chaque appel, une notification permet de le ranger dans un groupe ou de le supprimer sans ouvrir l'app. Les appels supprimés se remettent depuis Réglages › Enregistrements › Récemment supprimés. Les autorisations du micro, du son et de l'écran se renouvellent chaque semaine au moment que vous choisissez, plutôt que d'être redemandées par macOS en plein appel. Les vocaux WhatsApp que vous vous envoyez deviennent des notes transcrites. Les Réglages montrent l'espace que vos appels occupent sur le Mac, par type (audio, transcriptions, contexte) et par ancienneté. La conservation, le dossier des appels et la prise de note rapide rejoignent le groupe Enregistrements. Nouvelle icône à l'aquarelle.</p><a class="thumb" href="../img/versions/0.14.0.webp"><img class="decoupe extrait" width="1360" height="847" src="../img/versions/0.14.0.webp" loading="lazy" alt="Réglages › Enregistrements › Espace occupé de la 0.14.0 : l'audio, les transcriptions et le contexte, puis la place des appels de moins d'une semaine, d'une semaine à un mois et de plus d'un mois"></a></div></div>
++        <div class="row version" id="0.13.0"><h2 class="num"><a href="#0.13.0">0.13.0</a><time datetime="2026-10-31">31 octobre 2026</time></h2><div><p>Surlignez un passage d'une transcription&nbsp;: créez-en une note, envoyez-le à Claude avec son contexte, ou corrigez-le sur place (l'attribuer à une autre personne, comparer les versions). Le lecteur ne joue alors que ce passage. Les notes tirées d'un appel rejoignent vos notes, avec l'appel d'où elles viennent&nbsp;; filtrez-les par appel. Les pistes peuvent s'afficher séparément, chacune qu'on coupe à l'écoute. L'icône retrouve celle d'avant.</p><a class="thumb" href="../img/versions/0.13.0.webp"><img class="decoupe" width="1610" height="1420" src="../img/versions/0.13.0.webp" loading="lazy" alt="Les notes de la 0.13.0 : des passages tirés du Point hebdo produit et d'appels clients, chacun sous-titré de l'appel, de qui parle et du moment"></a></div></div>
++        <div class="row version" id="0.12.0"><h2 class="num"><a href="#0.12.0">0.12.0</a><time datetime="2026-10-30">30 octobre 2026</time></h2><div><p>Claude range chaque appel dans le bon groupe, en suivant le sous-titre de vos groupes&nbsp;; un groupe gardé hors des IA ne lui est jamais montré. Les groupes montrent leurs 5 derniers appels, les plus anciens en piles par mois, et se replient d'un clic. Notes dictées avec fn + D. Icônes revues, dont celle de l'app&nbsp;; <b>Télécharger</b> devient <b>Exporter</b>. Un enregistrement raté ne tourne plus sans fin, et une piste muette ne bloque plus la transcription.</p><a class="thumb" href="../img/versions/0.12.0.webp"><img width="1370" height="1194" src="../img/versions/0.12.0.webp" loading="lazy" alt="Les groupes de la 0.12.0 : Équipe produit montre ses 5 derniers appels, puis les plus anciens en piles par mois, Octobre et Septembre"></a></div></div>
++        <div class="row version" id="0.11.0"><h2 class="num"><a href="#0.11.0">0.11.0</a><time datetime="2026-10-30">30 octobre 2026</time></h2><div><p>Copiez vos appels dans Google Drive, iCloud Drive ou un autre dossier, tous ou seulement certains groupes&nbsp;: Réglages › Outils et intégrations › Autres outils. Claude ou ChatGPT avec leur connecteur Google Drive, Zapier ou un script les y retrouvent, avec un index et un mode d'emploi. Les groupes gardés hors des IA ne sont jamais copiés.</p><a class="thumb" href="../img/versions/0.11.0.webp"><img class="decoupe" width="2560" height="1578" src="../img/versions/0.11.0.webp" loading="lazy" alt="Réglages › Autres outils de la 0.11.0 : ajouter une copie des appels dans un dossier en ligne, et ce qu'il y a dans une copie"></a></div></div>
++        <div class="row version" id="0.10.1"><h2 class="num"><a href="#0.10.1">0.10.1</a><time datetime="2026-10-30">30 octobre 2026</time></h2><div><p>Les mises à jour se trouvent maintenant dans Réglages › Général&nbsp;: la version installée, Rechercher une mise à jour, et Installer… quand une nouvelle version attend. Une étiquette «&nbsp;Mise à jour&nbsp;» au bout du bouton Réglages le signale.</p><a class="thumb" href="../img/versions/0.10.1.webp"><img width="1370" height="235" src="../img/versions/0.10.1.webp" loading="lazy" alt="Réglages › Général de la 0.10.1 : la ligne Version, l'étiquette Mise à jour et le bouton Installer…"></a></div></div>
++        <div class="row version" id="0.10.0"><h2 class="num"><a href="#0.10.0">0.10.0</a><time datetime="2026-10-30">30 octobre 2026</time></h2><div><p>En réunion, chaque voix a désormais son nom et sa couleur&nbsp;: «&nbsp;Voix 1&nbsp;», «&nbsp;Voix 2&nbsp;»… Callrecorder les distingue selon l'endroit d'où vient le son. Vos appels peuvent aussi vivre dans le dossier de votre choix, Google Drive ou iCloud par exemple&nbsp;: Réglages › Général › Dossier des appels › Changer…</p><a class="thumb" href="../img/versions/0.10.0.webp"><img class="decoupe extrait" width="1360" height="591" src="../img/versions/0.10.0.webp" loading="lazy" alt="Réglages › Général de la 0.10.0 : le dossier des appels dans Google Drive"></a></div></div>
++        <div class="row version" id="0.9.0"><h2 class="num"><a href="#0.9.0">0.9.0</a><time datetime="2026-10-29">29 octobre 2026</time></h2><div><p>Enregistrez vos réunions en face à face&nbsp;: un clic sur «&nbsp;Enregistrer une réunion&nbsp;», et la conversation est transcrite comme un appel. Un clic sur l'icône de la barre des menus ouvre vos appels. La transcription est prête quelques secondes après la fin d'un appel, chaque passage dans sa langue.</p><a class="thumb" href="../img/versions/0.9.0.webp"><img class="decoupe" width="915" height="384" src="../img/versions/0.9.0.webp" loading="lazy" alt="Le bas de la liste des appels de la 0.9.0 : Enregistrer une réunion, au-dessus des Réglages"></a></div></div>
++        <div class="row version" id="0.8.0"><h2 class="num"><a href="#0.8.0">0.8.0</a><time datetime="2026-10-29">29 octobre 2026</time></h2><div><p>Codex reçoit l'accès à vos appels comme Claude, sans rien régler. C'est une bêta&nbsp;: si vous l'utilisez, dites-moi ce qui coince. L'installation se fait désormais par le Terminal, en trois étapes guidées. En cas d'échec, l'installation dit en français quoi faire.</p><a class="thumb" href="../img/versions/0.8.0.webp"><img class="decoupe extrait" width="1360" height="382" src="../img/versions/0.8.0.webp" loading="lazy" alt="La page Claude des Réglages de la 0.8.0 : l'accès de Claude et Codex à vos appels"></a></div></div>
++        <div class="row version" id="0.7.1"><h2 class="num"><a href="#0.7.1">0.7.1</a><time datetime="2026-10-29">29 octobre 2026</time></h2><div><p>La liste des appels flotte dans un panneau de verre, comme la barre latérale de Finder sur macOS 26. Le titre de l'appel, précédé du logo de son app ou de son site, se coupe quand la fenêtre rétrécit. Copier, Télécharger et les versions de la transcription flottent en bas à droite, sur le texte. Icônes plus grandes et survols plus nets.</p><a class="thumb" href="../img/versions/0.7.1.webp"><img class="decoupe" width="2560" height="258" src="../img/versions/0.7.1.webp" loading="lazy" alt="Le bas de la fenêtre Appels de la 0.7.1 : la liste dans son panneau de verre, Copier, Télécharger et les versions qui flottent sur le texte"></a></div></div>
++        <div class="row version" id="0.7.0"><h2 class="num"><a href="#0.7.0">0.7.0</a><time datetime="2026-10-29">29 octobre 2026</time></h2><div><p>Groupes : rangez vos appels dans Réglages › Groupes, filtrez la recherche par groupe, et gardez un groupe hors de Claude. Fenêtre Appels repensée : la liste sous la barre d'outils, la recherche qui s'ouvre depuis la loupe (⌘F), et la liste qui se replie pour ne garder que l'appel. Réglages aux mesures de Réglages Système. Menu des versions d'une transcription plus lisible, avec la date à droite.</p><a class="thumb" href="../img/versions/0.7.0.webp"><img class="decoupe" width="2560" height="275" src="../img/versions/0.7.0.webp" loading="lazy" alt="Le haut de la fenêtre Appels de la 0.7.0 : la barre d'outils au-dessus de la liste, avec la loupe de la recherche"></a></div></div>
++        <div class="row version" id="0.6.2"><h2 class="num"><a href="#0.6.2">0.6.2</a><time datetime="2026-10-27">27 octobre 2026</time></h2><div><p>Corrections : la fenêtre Appels revient à l'écran si elle s'ouvrait en dehors ; les Réglages n'encombrent plus le journal du système ; après l'appel de test, une alerte prévient si votre voix ou celle de l'interlocuteur n'a pas été captée, et propose de recommencer.</p></div></div>
++        <div class="row version" id="0.6.1"><h2 class="num"><a href="#0.6.1">0.6.1</a><time datetime="2026-10-27">27 octobre 2026</time></h2><div><p>Premier lancement plus simple : la fenêtre Appels s'ouvre sur les autorisations qui manquent et l'appel de test, qui se fait dans sa propre fenêtre puis devient un appel comme les autres. Transcription en fil avec avatars, l'enregistrement aligné sur le texte, chaque phrase à l'heure où elle est dite ; la relecture de Claude s'ouvre d'elle-même. Réglages resserrés. Corrections : la transcription d'Apple qui échouait juste après un appel, des exemplaires de l'app relancés en double au démarrage, l'accès de Claude Desktop perdu après une réinstallation.</p></div></div>
++        <div class="row version" id="0.6.0"><h2 class="num"><a href="#0.6.0">0.6.0</a><time datetime="2026-10-27">27 octobre 2026</time></h2><div><p>Une seule fenêtre : vos appels à gauche, en liste ou en calendrier, et l'appel choisi à droite, qui s'ouvre aussitôt. Les transcriptions d'un appel dans un menu. Choisissez les apps et les sites dont les appels sont enregistrés. Des menus et des raccourcis comme dans toute app Mac : Espace pour lire, ⌘Z pour remettre un appel supprimé, les Réglages en bas à gauche de la fenêtre (⌘,). S'il manque le micro ou le son des apps, les Réglages s'ouvrent et montrent quoi autoriser. Après chaque appel, Claude peut améliorer la transcription : noms propres corrigés, titre et participants, dans une nouvelle version. Plus de qualité max : la transcription d'Apple, relue par Claude, fait aussi bien que Whisper. Plus lisible avec VoiceOver, Réduire les animations et Augmenter le contraste.</p><a class="thumb" href="../img/versions/0.6.0.webp"><img class="decoupe" width="2560" height="1568" src="../img/versions/0.6.0.webp" loading="lazy" alt="La fenêtre Appels, avec l'appel choisi à droite"></a></div></div>
++        <div class="row version" id="0.5.5"><h2 class="num"><a href="#0.5.5">0.5.5</a><time datetime="2026-10-26">26 octobre 2026</time></h2><div><p>Une ligne par appel, avec sa première capture, l'app et la durée. Fenêtre de l'appel : la transcription calée sur l'enregistrement, les captures à côté des répliques, les silences visibles, un texte plus lisible. Plusieurs transcriptions par appel ; une nouvelle se prépare au centre de la fenêtre, avec les mots à reconnaître et Faire remplir par Claude, et on la regarde se faire. Nombreuses corrections.</p><a class="thumb" href="../img/versions/0.5.5.webp"><img width="2360" height="1574" src="../img/versions/0.5.5.webp" loading="lazy" alt="La fenêtre d'un appel"></a></div></div>
++        <div class="row version" id="0.5.4"><h2 class="num"><a href="#0.5.4">0.5.4</a><time datetime="2026-10-26">26 octobre 2026</time></h2><div><p>Cartes des appels : toute la carte ouvre la fenêtre de l'appel, avec un extrait de quelques répliques. Fenêtre de l'appel : les captures dans une colonne à droite, les répliques espacées selon le temps écoulé.</p></div></div>
++        <div class="row version" id="0.5.3"><h2 class="num"><a href="#0.5.3">0.5.3</a><time datetime="2026-10-26">26 octobre 2026</time></h2><div><p>Les appels Android s'enregistrent sans rien installer : l'outil scrcpy est livré dans l'app.</p></div></div>
++        <div class="row version" id="0.5.2"><h2 class="num"><a href="#0.5.2">0.5.2</a><time datetime="2026-10-26">26 octobre 2026</time></h2><div><p>Appels Android : le numéro et le nom de l'interlocuteur, retrouvés même quand le téléphone est rebranché après l'appel.</p></div></div>
++        <div class="row version" id="0.5.0"><h2 class="num"><a href="#0.5.0">0.5.0</a><time datetime="2026-10-26">26 octobre 2026</time></h2><div><p>Enregistre les appels de l'iPhone (app Téléphone du Mac) et des Pixel branchés en USB. Transcription rapide par la reconnaissance vocale d'Apple sur macOS 26 ; qualité max par Whisper, nourrie des mots lus à l'écran.</p><a class="thumb" href="../img/versions/0.5.0.webp"><img width="1640" height="1240" src="../img/versions/0.5.0.webp" loading="lazy" alt="La partie Téléphones de la configuration"></a></div></div>
++        <div class="row version" id="0.4.0"><h2 class="num"><a href="#0.4.0">0.4.0</a><time datetime="2026-10-25">25 octobre 2026</time></h2><div><p>Nouvelle fenêtre des appels : calendrier, cartes avec l'enregistrement à écouter, les captures et un extrait de la transcription. Une fenêtre par appel, avec la transcription liée à l'enregistrement, les captures, la copie et l'export. Après 7 jours, seul l'audio part à la corbeille. Suppression d'un appel annulable pendant 5 secondes.</p><a class="thumb" href="../img/versions/0.4.0.webp"><img width="2200" height="1504" src="../img/versions/0.4.0.webp" loading="lazy" alt="La nouvelle fenêtre des appels"></a></div></div>
++        <div class="row version" id="0.3.5"><h2 class="num"><a href="#0.3.5">0.3.5</a><time datetime="2026-10-25">25 octobre 2026</time></h2><div><p>Fond de l'installation simplifié.</p><a class="thumb" href="../img/installation.png"><img width="1320" height="1404" src="../img/installation.png" loading="lazy" alt="Le fond de la fenêtre d'installation"></a></div></div>
++        <div class="row version" id="0.3.4"><h2 class="num"><a href="#0.3.4">0.3.4</a><time datetime="2026-10-25">25 octobre 2026</time></h2><div><p>Un panneau collé à Réglages Système indique quoi faire pour chaque autorisation. Claude relancé après la connexion, assistant remis au premier plan, journal d'installation (désactivable), répliques mieux découpées.</p></div></div>
++        <div class="row version" id="0.3.3"><h2 class="num"><a href="#0.3.3">0.3.3</a><time datetime="2026-10-24">24 octobre 2026</time></h2><div><p>Relance fiable après une mise à jour.</p></div></div>
++        <div class="row version" id="0.3.2"><h2 class="num"><a href="#0.3.2">0.3.2</a><time datetime="2026-10-24">24 octobre 2026</time></h2><div><p>Relance fiable après l'autorisation de l'écran.</p></div></div>
++        <div class="row version" id="0.3.1"><h2 class="num"><a href="#0.3.1">0.3.1</a><time datetime="2026-10-24">24 octobre 2026</time></h2><div><p>Enregistre aussi les appels Slack, Webex et Loom.</p></div></div>
++        <div class="row version" id="0.3.0"><h2 class="num"><a href="#0.3.0">0.3.0</a><time datetime="2026-10-24">24 octobre 2026</time></h2><div><p>Première version publique : enregistrement automatique, transcription sur le Mac, assistant de configuration avec appel de test.</p></div></div>
+       </div>
+       </div>
+     </div>
+   </section>
+ 
++  </main>
+   <footer>
+     <div class="col">
+       <div class="links">

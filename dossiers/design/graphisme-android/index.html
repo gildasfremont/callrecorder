@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Android graphisme</title>
+<style>
+:root{
+  --bg:#f4f5f7; --card:#fff; --sunk:#eceef1; --text:#1b1d21; --muted:#5a616d; --faint:#8a909a; --line:rgba(0,0,0,.09);
+  --accent:#0b5cc4; --gene:#9a4206; --gene-bg:#fbeee3; --ok:#1d7a3a; --ok-bg:#e5f4ea; --ko:#b3261e; --ko-bg:#fbe9e7;
+  --mark:#fff2b3;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131416; --card:#1d1f22; --sunk:#26292d; --text:#eceef1; --muted:#a6acb6; --faint:#7d838d; --line:rgba(255,255,255,.1);
+    --accent:#6aa8ff; --gene:#ffb06a; --gene-bg:#3a2513; --ok:#6fd38a; --ok-bg:#16301f; --ko:#ff8a80; --ko-bg:#3b1715; --mark:#5a4a00;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131416; --card:#1d1f22; --sunk:#26292d; --text:#eceef1; --muted:#a6acb6; --faint:#7d838d; --line:rgba(255,255,255,.1);
+  --accent:#6aa8ff; --gene:#ffb06a; --gene-bg:#3a2513; --ok:#6fd38a; --ok-bg:#16301f; --ko:#ff8a80; --ko-bg:#3b1715; --mark:#5a4a00;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)} a.src{font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap}
+.wrap{max-width:1120px;margin:0 auto;padding:24px 16px 80px}
+nav.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.top .in{max-width:1120px;margin:0 auto;padding:10px 16px;display:flex;gap:6px 16px;flex-wrap:wrap;align-items:baseline}
+nav.top b{margin-right:8px}
+nav.top a{text-decoration:none;font-size:15px;color:var(--muted)} nav.top a.on{color:var(--text);font-weight:600}
+h1{font-size:32px;line-height:1.15;margin:12px 0 8px;font-weight:700;letter-spacing:-.01em}
+h2{font-size:23px;line-height:1.25;margin:40px 0 10px;font-weight:650}
+h3{font-size:18px;line-height:1.3;margin:24px 0 8px;font-weight:600}
+p,li{max-width:76ch}
+.lede{color:var(--muted);font-size:17px}
+.card{background:var(--card);border-radius:14px;padding:18px 20px;margin:14px 0}
+code{font:13px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--sunk);padding:1px 5px;border-radius:5px}
+pre{font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--sunk);padding:12px 14px;border-radius:10px;overflow-x:auto;white-space:pre}
+.tw{overflow-x:auto;margin:10px 0;border-radius:12px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:7px 10px;vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;background:var(--sunk);position:sticky;top:0}
+tbody tr:nth-child(even){background:color-mix(in srgb,var(--sunk) 45%,transparent)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:var(--ok);font-weight:600} .ko{color:var(--ko);font-weight:600}
+.pill{display:inline-block;font-size:12.5px;padding:1px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);white-space:nowrap}
+.pill.gene{background:var(--gene-bg);color:var(--gene)} .pill.ko{background:var(--ko-bg);color:var(--ko)} .pill.ok{background:var(--ok-bg);color:var(--ok)}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px;box-shadow:inset 0 0 0 1px rgba(127,127,127,.35)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px} .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.kpi div{background:var(--card);border-radius:12px;padding:12px 14px} .kpi b{display:block;font-size:26px;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:14px}
+figure{margin:12px 0} figure img{max-width:100%;height:auto;border-radius:10px;display:block} figcaption{font-size:13px;color:var(--muted);margin-top:6px}
+[id]{scroll-margin-top:60px}
+.prob{background:var(--card);border-radius:16px;padding:20px 22px;margin:22px 0}
+.prob h2{margin-top:0}
+.prob dl{display:grid;grid-template-columns:170px 1fr;gap:8px 18px;margin:12px 0}
+.prob dt{color:var(--muted);font-size:14px;padding-top:2px} .prob dd{margin:0;min-width:0}
+td pre{white-space:pre-wrap;word-break:break-word;margin:0;padding:6px 8px;font-size:12px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.opt{background:var(--sunk);border-radius:12px;padding:10px 12px;font-size:14.5px}
+.opt.choisi{outline:2px solid var(--ok)}
+.opt b{display:block;margin-bottom:4px}
+.against{border-left:3px solid var(--gene);padding-left:10px}
+.toc{columns:2;column-gap:28px} .toc li{break-inside:avoid;margin:2px 0}
+details summary{cursor:pointer;color:var(--accent)}
+.small{font-size:13.5px;color:var(--muted)}
+@media (max-width:760px){
+  .grid2,.grid3{grid-template-columns:1fr} .kpi{grid-template-columns:1fr 1fr} .toc{columns:1}
+  .prob dl{grid-template-columns:1fr} .prob dt{padding-top:8px}
+  h1{font-size:26px}
+}
+</style>
+</head>
+<body>
+<!-- dossier:cadre (scripts/dossiers.py habille) -->
+<link rel="stylesheet" href="../../commun/dossier.css">
+<header class="dz-cadre"><div class="dz-in"><nav class="dz-fil" aria-label="Dossiers"><a href="../../index.html">Dossiers</a><span aria-hidden="true">›</span><span>Relectures design</span><span aria-hidden="true">›</span><b>Android · graphisme</b><span>8 novembre 2026</span></nav><nav class="dz-parties" aria-label="Parties du dossier"><a href="index.html" aria-current="page">Synthèse</a><a href="inventaire.html">Preuves</a><a href="prototypes.html">Avant et après</a><a href="problemes.html">Risques</a><span class="dz-absent" title="Le dossier ne dit pas ce qu&#x27;il n&#x27;a pas pu vérifier ; son plan dit comment vérifier sans téléphone.">Pas vérifié : manque</span></nav></div></header>
+<!-- /dossier:cadre -->
+<nav class="top"><div class="in"><b>Android · graphisme</b><a href="index.html" class=on>Synthèse</a><a href="inventaire.html">Inventaire</a><a href="mesures.html">Mesures</a><a href="problemes.html">Problèmes et recos</a><a href="prototypes.html">Prototypes</a><a href="systeme.html">Système et migration</a><a href="plan.html">Plan</a></div></nav>
+<div class="wrap">
+<h1>App Android : dossier graphique</h1>
+<p class="lede">Relecture graphique complète de l'app Android de Callrecorder, par un graphiste habitué à Android : inventaire de tout ce qu'elle dessine, mesures, problèmes et recommandations sourcées, prototypes, système unifié avec sa migration, plan. Branche <code>recos-design</code>, 8 novembre 2026. Ce dossier part de la <a href="../graphisme-android.html">première liste</a> (17 recos), qu'il remplace.</p>
+<div class="kpi"><div><b>46</b><span>états d'écran (24 au banc, 22 lus dans le code)</span></div><div><b>553</b><span>valeurs inventoriées dans le code, avec fichier:ligne</span></div><div><b>5 202</b><span>mesures (contrastes, cibles, sémantique, typographie)</span></div><div><b>24</b><span>recos retenues, et 1 examinée puis écartée</span></div></div>
+<div class="kpi"><div><b>6</b><span>variantes relevées : clair, sombre, 360 dp, 600 dp, texte 200 %</span></div><div><b>52</b><span>prototypes (13 écrans × avant/après × clair/sombre)</span></div><div><b>78</b><span>changements dans la table de migration</span></div><div><b>4</b><span>lots, environ 4 jours de travail</span></div></div>
+<h2>Les dix problèmes qui comptent le plus</h2>
+<div class="tw"><table><thead><tr><th></th><th>Problème</th><th>Chiffre</th><th>Gravité</th></tr></thead><tbody><tr><td><a href="problemes.html#P02">P02</a></td><td>En sombre, le bleu de l'app reste celui du clair</td><td>« ● Écoute depuis » à 2,98:1, « Relier un calendrier » à 2,61:1, aujourd'hui à 2,08:1 ; 7 usages de la constante.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P01">P01</a></td><td>Les voix d'une réunion ont toutes la même couleur</td><td>100 % des voix autres que Moi en <code>#A0470A</code> ; le Mac en a 5.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P03">P03</a></td><td>À 200 % de texte, la barre du bas, l'en-tête et les ronds se coupent</td><td>38 textes coupés à 200 % contre 4 à 100 % ; 4 mots collés dans la barre du bas.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P14">P14</a></td><td>Les logos WhatsApp et Telegram disparaissent en clair</td><td>WhatsApp 1,56:1, Telegram 2,17:1 (clair) ; Signal 2,24:1 (sombre) ; seuil 3:1.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P05">P05</a></td><td>« En cours » perd son rouge en ouvrant la conversation</td><td>Rouge dans la liste, <code>#99000000</code> dans l'en-tête.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P04">P04</a></td><td>Le lecteur : curseur coupé, piste de 26 dp, bouton de 44 dp</td><td>Demi-disque à 00:00 ; 2 cibles sous 48 dp.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P06">P06</a></td><td>La notification d'enregistrement montre une barre de chargement</td><td>Barre indéterminée + « Depuis 14:02 » + heure d'en-tête ; icône de pause pour « Arrêter ».</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P07">P07</a></td><td>Trois petits textes sous 4,5:1 en clair</td><td>Heures des répliques 3,88:1 sur chaque réplique ; « M » 4,31:1 ; aujourd'hui 3,93:1 ; secondaire sombre à Lc 54.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P08">P08</a></td><td>Aucun titre pour TalkBack</td><td>0 titre sur 1 084 vues.</td><td><span class="pill gene">gêne</span></td></tr><tr><td><a href="problemes.html#P09">P09</a></td><td>Cinq cibles sous 48 dp</td><td>Lire 44, champs 41,7 et 42,7, piste 26, jours du calendrier 45,7 à 360 dp.</td><td><span class="pill">détail</span></td></tr></tbody></table></div>
+<h2>Ce qui tient bien</h2><div class="card"><p>La liste par jour et ses vignettes de 44 dp ; toutes les cibles d'icône à 48 dp ; l'absence de filets ; les masses en opacités du texte, fidèles au Mac ; la barre flottante du bas ; la pastille à deux gestes ; des contrastes de texte sains en clair (27 couples uniques sur 30 passent WCAG et APCA) ; les images décoratives toutes cachées à TalkBack ; tous les boutons d'icône nommés. Les recos ne touchent pas à cela.</p></div>
+<h2>Comment ce dossier a été fait</h2><div class="card"><ol>
+<li><b>Lu</b> : DESIGN.md, TEXTES.md, SPEC-telephone.md, marque/README.md, les captures du Mac 0.24.0, tout le code de <code>phone/android</code> (5 399 lignes) et l'historique complet des choix (<code>git log -S</code> sur 916 commits).</li>
+<li><b>Relevé</b> : une copie du banc, hors du dépôt, rejoue 24 états en 6 variantes et relève l'arbre des vues ; un script lit le code pour inventorier chaque valeur. Aucune ligne du code de l'app n'est changée.</li>
+<li><b>Mesuré</b> : WCAG 2.2 et APCA pour chaque texte dessiné et chaque icône, cibles, débordements, sémantique, typographie, poids.</li>
+<li><b>Sourcé</b> : chaque reco cite un critère WCAG, une page Android, le code source de Material Components (Typography.md, List.md, datepicker/styles.xml, ProgressIndicator.md, FloatingToolbar.md) ou une règle de DESIGN.md. Les pages de m3.material.io ne se lisent pas sans JavaScript : elles ne sont pas citées. Les comportements d'apps Google que je n'ai pas pu vérifier ne sont pas cités non plus.</li>
+<li><b>Prototypé</b> : 13 écrans en HTML/CSS au dp près, avant et après, clair et sombre.</li></ol></div>
+<h2>Sommaire</h2><ol class="toc">
+<li><a href="inventaire.html">Inventaire</a> : états, composants, tailles, graisses, couleurs, opacités, espacements, rayons, icônes, textes</li>
+<li><a href="mesures.html">Mesures</a> : contrastes textes et non-textes, cibles, débordements, sémantique, typographie, poids</li>
+<li><a href="problemes.html">Problèmes et recos</a> : 25 fiches, spécifications avant → après, critères d'acceptation</li>
+<li><a href="prototypes.html">Prototypes</a> : 13 écrans × 4</li>
+<li><a href="systeme.html">Système et migration</a> : échelle, couleurs, espacements, composants, 78 changements fichier par fichier</li>
+<li><a href="plan.html">Plan</a> : 4 lots, efforts, risques, choix déjà tranchés</li>
+<li><a href="donnees/">donnees/</a> : CSV et JSON bruts, outils du relevé</li></ol>
+</div>
+</body>
+</html>
