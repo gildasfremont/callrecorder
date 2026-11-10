@@ -42,4 +42,4 @@ Depuis la branche de travail, en plus de `retours.py` et `marque.py` :
 - `python3 scripts/images.py --verifie` : chaque `<img>` déclare `width` et `height`, chaque grande image a son `srcset` (S02, S18). Sans `--verifie`, il refait les variantes réduites (`nom-<largeur>w.webp`) après qu'une image a changé.
 - `python3 scripts/typo.py` : apostrophes courbes, insécables avant `: ; ? ! › »` (S35, S11).
 
-Le sombre suit le système sur les pages qui déclarent `<meta name="color-scheme" content="light dark">`. Les pages de version (faites par `dossiers.py`) restent claires tant qu'elles déclarent `light only`.
+Le sombre suit le système sur les pages qui déclarent `<meta name="color-scheme" content="light dark">` : toutes, depuis le 10 novembre 2026, pages de version comprises. `dossiers.py` (callrecorder-app) doit écrire `light dark` : s'il écrit encore `light only`, une page de version refaite revient au clair. Les couleurs d'un schéma (`.dz-schema`) restent écrites en clair dans le dessin ; `versions/version.css` leur donne le jeton qui répond en sombre, une couleur nouvelle dans un schéma s'y ajoute.

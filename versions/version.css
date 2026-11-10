@@ -1,9 +1,10 @@
 /* La page d'une version sur le site (versions/<version>/ et versions/a-venir/), au-dessus de style.css du site.
    Elle n'ajoute rien que le site n'ait déjà : ses couleurs, sa grotesque pour les titres, ses groupes blancs, son
-   sommaire (.with-toc, .toc) et ses bascules (.tabs), repris tels quels. Pas de filets, pas de capitales. */
+   sommaire (.with-toc, .toc) et ses bascules (.tabs), repris tels quels. Pas de filets, pas de capitales.
+   Claire, et sombre quand le système l'est, comme le reste du site : chaque couleur est un jeton de style.css. */
 
 .page-version .page-head .statut { margin: 0 auto 18px; max-width: none; text-align: center; }
-.page-version .statut span { display: inline-block; padding: 2px 9px; border-radius: 6px; background: #e6f0fc; color: var(--accent); font-size: 13px; font-weight: 600; }
+.page-version .statut span { display: inline-block; padding: 2px 9px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-size: 13px; font-weight: 600; }
 
 /* Le contenu commence à la hauteur du sommaire, comme dans Fonctionnalités. */
 .page-version .contenu { padding-top: 80px; min-width: 0; }
@@ -35,7 +36,7 @@
 .page-version figure { margin: 0; min-width: 0; }
 .page-version .dz-carte > figure { margin-top: 24px; }
 .page-version .dz-carte > figure + p { margin-top: 20px; }
-.page-version figure img { display: block; width: 100%; height: auto; border-radius: 12px; border: .5px solid rgba(20,40,80,.2); box-shadow: 0 16px 36px -18px rgba(20,40,80,.3); background: #f5f5f5; }
+.page-version figure img { display: block; width: 100%; height: auto; border-radius: 12px; border: .5px solid rgb(var(--line) / .2); box-shadow: 0 16px 36px -18px rgb(var(--shade) / .3); background: var(--sunken); }
 .page-version figcaption { font-size: 14px; color: var(--secondary); text-align: center; margin-top: 10px; }
 .page-version figure.dz-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 600px; }
 .page-version figure.dz-duo > div { min-width: 0; }
@@ -43,10 +44,26 @@
 .page-version figure a:hover { text-decoration: none; }
 /* Une capture déjà détourée (la vignette d'une version) garde son contour : une ombre qui le suit, rien d'autre. */
 .page-version figure.dz-vignette { max-width: 520px; }
-.page-version figure.dz-vignette img { width: auto; max-width: 100%; border: 0; border-radius: 0; box-shadow: none; background: none; filter: drop-shadow(0 10px 18px rgba(20,40,80,.14)); }
+.page-version figure.dz-vignette img { width: auto; max-width: 100%; border: 0; border-radius: 0; box-shadow: none; background: none; filter: drop-shadow(0 10px 18px rgb(var(--shade) / .14)); }
 /* Un schéma : sur téléphone, il défile plutôt que de rapetisser son texte. */
 .page-version figure.dz-schema { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 24px; }
 .page-version figure.dz-schema svg { display: block; width: 100%; min-width: 600px; height: auto; }
+/* Ses couleurs sont écrites en clair dans le dessin (dossiers.py) : en sombre, chacune prend le jeton qui lui répond. */
+@media (prefers-color-scheme: dark) {
+  :root:has(meta[name="color-scheme"][content~="dark"]) .dz-schema {
+    & [fill="#142338"] { fill: var(--text); }
+    & [fill="#566175"] { fill: var(--secondary); }
+    & [fill="#0064d2"] { fill: var(--accent); }
+    & [fill="#8a3c00"] { fill: var(--warn); }
+    & [stroke="#0064d2"] { stroke: var(--accent); }
+    & [stroke="#566175"] { stroke: var(--secondary); }
+    & rect[fill="#edf2f8"] { fill: var(--window); }
+    & rect[fill="#ffffff"] { fill: var(--group); }
+    & rect[fill="#142338"] { fill: var(--control); }
+    & rect[fill="#dce9fb"] { fill: var(--accent-soft); }
+    & rect[fill="#f6e7dc"] { fill: var(--warn-soft); }
+  }
+}
 
 /* Tous les écrans du téléphone */
 .page-version .dz-ecrans { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 36px 24px; }
