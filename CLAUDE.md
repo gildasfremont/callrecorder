@@ -33,3 +33,13 @@ Une capture garde la forme et la matière de ce qu'elle montre.
 - **La matière** : le verre et le givre se photographient par-dessus un vrai contenu, pour qu'on voie ce qui transparaît. À plat, sur rien, ils deviennent un gris opaque. L'app : `SNAPSHOT_SERVER=1 PASTILLE_FOND=… calls snapshot-pastille`, puis `scripts/decoupe.py` dans callrecorder-app, qui réunit le contour et la matière.
 - **La netteté** : un petit objet s'affiche à sa taille, en résolution double, jamais agrandi.
 - Vérifier sur la page, sur fond clair et sur fond sombre si la page en a un.
+
+## Les contrôles avant de fusionner
+
+Depuis la branche de travail, en plus de `retours.py` et `marque.py` :
+
+- `python3 scripts/contraste.py` : chaque jeton de texte tient 4,5:1 sur chaque fond, et `--edge` 3:1, en clair et en sombre (S06). Une couleur nouvelle devient un jeton de `:root`, et de son pendant sombre.
+- `python3 scripts/images.py --verifie` : chaque `<img>` déclare `width` et `height`, chaque grande image a son `srcset` (S02, S18). Sans `--verifie`, il refait les variantes réduites (`nom-<largeur>w.webp`) après qu'une image a changé.
+- `python3 scripts/typo.py` : apostrophes courbes, insécables avant `: ; ? ! › »` (S35, S11).
+
+Le sombre suit le système sur les pages qui déclarent `<meta name="color-scheme" content="light dark">`. Les pages de version (faites par `dossiers.py`) restent claires tant qu'elles déclarent `light only`.

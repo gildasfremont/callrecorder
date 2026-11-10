@@ -158,13 +158,13 @@
   // Le bouton garde le focus, même dans Safari qui ne le donne pas au clic : la barre d'espace le rappuie.
   toggle.addEventListener('click', function () { if (rec) stop(); else start(); toggle.focus(); });
 
-  // Avec la dictée, le focus va sur Dicter : la barre d'espace la lance. Sans, il va dans le texte. Elle ne démarre
-  // jamais toute seule.
+  // À l'ouverture, le curseur est dans le texte : on tape tout de suite (S17). Dicter garde son bouton, et la barre
+  // d'espace quand il a le focus. La dictée ne démarre jamais toute seule.
   function begin() {
     form.classList.remove('sent');
     fit();
     if (Recognition) { toggle.textContent = 'Dicter'; toggle.classList.remove('on'); key.textContent = 'Espace pour dicter'; }
-    (Recognition ? toggle : box).focus({ preventScroll: true });
+    box.focus({ preventScroll: true });
     say();
     toEnd(true);
   }
