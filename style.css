@@ -13,6 +13,7 @@
   --accent: #0064d2;
   --accent-soft: #e6eef9;     /* le fond d'une étiquette à l'accent */
   --warn: #a34a00;
+  --warn-soft: #f6e7dc;       /* le fond d'une étiquette à l'avertissement */
   --problem: #8a5a00;
   --edge: #7d8aa0;            /* un trait qui doit se voir : chevron, bord de champ, onglet choisi (3:1) */
   --line: 20 40 80;           /* traits fins et voiles, en rgb(var(--line) / a) */
@@ -27,8 +28,8 @@
   --t-small: 13px; --t-note: 15px; --t-ui: 16px; --t-body: 17px; --t-lead: clamp(18px, 2.1vw, 20px);
   --focus: 0 0 0 3px rgb(0 100 210 / .45);
 }
-/* Le sombre suit le système, sur les pages qui le déclarent (<meta name="color-scheme" content="light dark">). Les
-   pages de version, faites par dossiers.py, restent claires tant qu'elles ne le déclarent pas. */
+/* Le sombre suit le système, sur les pages qui le déclarent (<meta name="color-scheme" content="light dark">) :
+   toutes, pages de version comprises. */
 @media (prefers-color-scheme: dark) {
   :root:has(meta[name="color-scheme"][content~="dark"]) {
     --window: #0e1520;
@@ -42,6 +43,7 @@
     --accent: #5aa5ff;
     --accent-soft: #16233a;
     --warn: #ff9d4d;
+    --warn-soft: #33210f;
     --problem: #e0b25a;
     --edge: #7d8aa0;
     --line: 200 215 235;

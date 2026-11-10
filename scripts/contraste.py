@@ -9,7 +9,7 @@ import os, re, sys
 CSS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "style.css")
 TEXTES = ["--text", "--body", "--secondary", "--accent", "--warn", "--problem"]
 FONDS = ["--window", "--group", "--sunken", "--control"]
-PAIRES = [("--accent", "--accent-soft", 4.5)] + [("--edge", f, 3.0) for f in ("--window", "--group", "--control")]
+PAIRES = [("--accent", "--accent-soft", 4.5), ("--warn", "--warn-soft", 4.5)] + [("--edge", f, 3.0) for f in ("--window", "--group", "--control")]
 
 
 def jetons(bloc):
