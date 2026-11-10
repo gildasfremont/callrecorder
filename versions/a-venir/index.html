@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>À venir · Callrecorder</title>
-<meta name="description" content="Rien de nouveau depuis la 0.27.0 pour l&#x27;instant. Ce qui sera prêt pour la prochaine version s&#x27;ajoutera ici, avant de vous arriver.">
+<meta name="description" content="Rien de nouveau depuis la 0.28.0 pour l&#x27;instant. Ce qui sera prêt pour la prochaine version s&#x27;ajoutera ici, avant de vous arriver.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Callrecorder">
 <meta property="og:title" content="À venir · Callrecorder">
-<meta property="og:description" content="Rien de nouveau depuis la 0.27.0 pour l&#x27;instant. Ce qui sera prêt pour la prochaine version s&#x27;ajoutera ici, avant de vous arriver.">
+<meta property="og:description" content="Rien de nouveau depuis la 0.28.0 pour l&#x27;instant. Ce qui sera prêt pour la prochaine version s&#x27;ajoutera ici, avant de vous arriver.">
 <meta property="og:url" content="https://gildasfremont.github.io/callrecorder/versions/a-venir/">
 <meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/versions.jpg?v=3">
 <meta property="og:image:width" content="1200">
@@ -41,13 +41,15 @@
   <header class="page-head">
     <p class="statut"><span>Pas encore publié</span></p>
     <h1>À venir</h1>
-    <p>Rien de nouveau depuis la 0.27.0 pour l'instant. Ce qui sera prêt pour la prochaine version s'ajoutera ici, avant de vous arriver.</p>
+    <p>Rien de nouveau depuis la 0.28.0 pour l'instant. Ce qui sera prêt pour la prochaine version s'ajoutera ici, avant de vous arriver.</p>
   </header>
 
   <div class="with-toc">
     <aside class="toc">
       <nav aria-label="À venir">
         <a href="#en-essai">En essai</a>
+        <a href="#recherches">Recherches en cours</a>
+        <a href="#ecrans">Tous les écrans du téléphone qui changent</a>
       </nav>
     </aside>
     <div class="contenu">
@@ -57,8 +59,8 @@
 <div class="dz-grille">
 
 <article class="dz-carte">
-  <h3>Où s'est passée chaque conversation</h3>
-  <p>Le téléphone et le Mac notent où ils sont pendant ce qu'ils enregistrent, sans lancer de recherche de position&nbsp;: quelques points, jamais un tracé. Le nom du lieu s'affichera avec chaque conversation.</p>
+  <h3>Le Journal d'un jour, en lignes</h3>
+  <p>Une ligne par moment de la journée, avec son heure, son titre et sa durée, qui s'ouvre sur ce qui s'y est dit, sur le Mac comme sur le téléphone.</p>
 </article>
 
 
@@ -66,12 +68,6 @@
   <h3>Le détail d'une conversation</h3>
   <p>Un bouton Détail (⌘I) sur chaque conversation ouvre tout ce que l'app en sait&nbsp;: ses transcriptions, d'où vient le son, qui parle, la relecture de Claude, et ce que vos assistants en ont lu.</p>
   <figure><a href="img/on-detail-facetime-tout.webp"><img src="img/on-detail-facetime-tout.webp" alt="La page Détail d'un appel FaceTime fictif : transcriptions, sources du son, voix, relecture de Claude."></a></figure>
-</article>
-
-<article class="dz-carte">
-  <h3>Les réserves des personnes enregistrées</h3>
-  <p>Quand quelqu'un dit «&nbsp;ne m'enregistre pas&nbsp;» ou «&nbsp;ne le donne pas à une IA&nbsp;», l'app le repère. Vous le voyez dans la liste et en tête de la conversation, puis vous le confirmez ou l'écartez. Une page des Réglages les rassemble.</p>
-  <figure><a href="img/on-reserves-page.webp"><img src="img/on-reserves-page.webp" alt="La page Réserves, sur des conversations fictives."></a></figure>
 </article>
 
 <article class="dz-carte">
@@ -87,17 +83,105 @@
 </article>
 
 <article class="dz-carte">
-  <h3>Faire de la place, en voyant ce que ça coûte</h3>
-  <p>Réglages&nbsp;›&nbsp;Espace occupé montre la place que prend l'audio, ses parts, et ce que chaque geste rendrait avant que vous le fassiez. Une notification prévient quand il reste moins de 5&nbsp;Go sur le Mac, puis moins de 1&nbsp;Go.</p>
-  <figure><a href="img/on-stockage.webp"><img src="img/on-stockage.webp" alt="La page Espace occupé, sur des conversations fictives."></a></figure>
-</article>
-
-<article class="dz-carte">
   <h3>Et aussi</h3>
-  <p>L'export d'une transcription en PDF, une page État qui résume la semaine et ce qui attend, et de meilleures transcriptions des sons faibles.</p>
+  <ul>
+    <li>Une page État qui résume la semaine et ce qui attend.</li>
+    <li>Les voix mises en avant à la réécoute.</li>
+  </ul>
 </article>
 </div>
 
+</div>
+<div class="partie" id="recherches">
+<h2>Recherches en cours</h2>
+<p class="dz-sous">Ce qui est cherché, et ce qui est déjà mesuré. Une recherche peut ne rien donner&nbsp;: rien n'est promis ni daté.</p>
+<div class="dz-grille">
+<article class="dz-carte dz-recherche">
+  <h3>Qui parle, sur le téléphone</h3>
+  <p>Le téléphone peut-il dire qui parle pendant qu&#x27;il enregistre, sans attendre le Mac ?</p>
+  <div class="dz-mesures"><div><b>77 %</b><span>de votre voix reconnue comme la vôtre sur de vraies réunions, contre 4 % avant</span></div><div><b>2/3 d&#x27;un cœur</b><span>du téléphone pendant qu&#x27;on parle, et environ 9 % de batterie par heure de parole</span></div></div>
+  <p>Un essai tourne sur le téléphone de développement. Mieux distinguer la parole du silence a tout changé. Une même personne se coupe encore en plusieurs voix : le Mac refait donc le travail sur l&#x27;enregistrement entier, plus juste, et le téléphone ne sert qu&#x27;à montrer tout de suite qui parle.</p>
+  <p class="dz-date">Au 10 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Savoir qu&#x27;une conversation commence</h3>
+  <p>Le téléphone peut-il reconnaître, pendant qu&#x27;elle a lieu, une conversation qui mérite un meilleur son, sans bouton ni rendez-vous ?</p>
+  <div class="dz-mesures"><div><b>82 sur 88</b><span>conversations reconnues, en 2 minutes environ</span></div><div><b>4 fois moins</b><span>de calcul en n&#x27;écoutant qu&#x27;une fenêtre toutes les 6 secondes, pour le même résultat</span></div></div>
+  <p>Une règle simple est en essai sur le téléphone de développement : quand vous parlez et qu&#x27;une autre voix parle aussi, il monte la qualité en une à deux minutes, et l&#x27;écoute légère continue dessous. Les conversations des autres, autour de vous, la trompent encore une fois sur deux.</p>
+  <p class="dz-date">Au 10 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>L&#x27;écho, sans casque</h3>
+  <p>Sans casque, ce que joue le Mac revient dans son micro. Peut-on retirer cet écho du son lui-même, et pas seulement les phrases en double ?</p>
+  <div class="dz-mesures"><div><b>20 mots</b><span>d&#x27;écho restants sur deux heures d&#x27;appels, contre 51 avec le filtre d&#x27;aujourd&#x27;hui</span></div><div><b>6 minutes</b><span>de calcul pour une heure d&#x27;appel</span></div></div>
+  <p>Un petit modèle de 2,3 Mo, qui tourne sur le Mac après l&#x27;appel, est en essai sur la version de développement. Le son d&#x27;origine reste intact : seule la transcription utilise le son nettoyé.</p>
+  <p class="dz-date">Au 10 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Reconnaître votre voix</h3>
+  <p>L&#x27;empreinte de votre voix vous reconnaît-elle partout : au casque, au téléphone, dans une salle ?</p>
+  <div class="dz-mesures"><div><b>8,7 %</b><span>d&#x27;erreur sur les appels du téléphone, avec une empreinte prise au casque</span></div><div><b>27 %</b><span>d&#x27;erreur en réunion, au micro posé sur la table</span></div></div>
+  <p>Prise au casque, elle vous reconnaît aussi sur le téléphone. Dans une salle, elle se trompe encore une fois sur quatre : elle ne corrige donc jamais seule qui a parlé. Pour aller plus loin, il manque une réunion où l&#x27;on sait qui parle quand.</p>
+  <p class="dz-date">Au 9 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Quel moteur de transcription</h3>
+  <p>Un autre moteur que celui du Mac transcrirait-il mieux le français ?</p>
+  <div class="dz-mesures"><div><b>7 %</b><span>des mots justes du Mac manqués par le meilleur moteur ouvert essayé, au casque</span></div><div><b>23 %</b><span>des corrections tombent dans les 3,5 % de mots où deux moteurs divergent</span></div></div>
+  <p>Pas sur un son propre : celui du Mac reste devant. Sur une voix lointaine, personne ne sait encore, les moteurs ne s&#x27;accordent pas entre eux. Leur désaccord sert déjà à montrer où relire.</p>
+  <p class="dz-date">Au 9 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Ne garder que la parole</h3>
+  <p>L&#x27;écoute de fond est surtout faite de silence. Peut-on ne garder que les passages où l&#x27;on parle, sans rien perdre ?</p>
+  <div class="dz-mesures"><div><b>14 %</b><span>de parole dans 96 heures d&#x27;écoute du téléphone</span></div><div><b>4 fois moins</b><span>de place : 1,35 Go deviennent 0,32 Go en gardant la parole, à 2 secondes près</span></div></div>
+  <p>Mesuré, rien de changé dans l&#x27;app. Avant de laisser partir le reste du son, il faut savoir si le texte d&#x27;une voix lointaine est assez sûr.</p>
+  <p class="dz-date">Au 9 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Séparer les voix d&#x27;une pièce</h3>
+  <p>En réunion, un modèle peut-il rendre une voix lointaine plus claire à la réécoute, sans l&#x27;effacer ?</p>
+  <div class="dz-mesures"><div><b>0,3 à 0,8 fois</b><span>le temps réel pour le meilleur séparateur essayé : trop lent pour tourner en arrière-plan</span></div></div>
+  <p>La recherche commence. Les modèles essayés jusqu&#x27;ici sont trop lents pour le Mac, ou effacent les voix lointaines ; un seul les garde à peu près.</p>
+  <p class="dz-date">Au 10 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Les lieux de la journée</h3>
+  <p>Peut-on retracer une journée par ses lieux, sans lancer de recherche de position ni garder de tracé ?</p>
+  <div class="dz-mesures"><div><b>1 à 6 points</b><span>par enregistrement d&#x27;écoute, précis de 9 mètres à 1,7 kilomètre</span></div></div>
+  <p>Le téléphone de développement note les positions qu&#x27;il connaît déjà, la borne Wi-Fi et le Bluetooth d&#x27;une voiture. Reste à composer séjours et trajets, et à mesurer ce que ça coûte en batterie.</p>
+  <p class="dz-date">Au 9 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Chercher par le sens</h3>
+  <p>Vos assistants peuvent-ils retrouver un passage dit autrement que les mots qu&#x27;ils cherchent ?</p>
+  <div class="dz-mesures"><div><b>16 sur 21</b><span>questions trouvent la bonne réplique parmi les cinq premières, contre 5 avec les mots seuls</span></div></div>
+  <p>Un modèle qui tourne sur le Mac, sans rien envoyer, est en essai sur la version de développement.</p>
+  <p class="dz-date">Au 5 novembre 2026</p>
+</article>
+
+<article class="dz-carte dz-recherche">
+  <h3>Une journée, un seul fil</h3>
+  <p>Comment montrer une journée entière, enregistrements et écoute de fond, sans la montrer deux fois ?</p>
+  <div class="dz-mesures"><div><b>20 à 49</b><span>lignes par journée, dont près de la moitié pour ce qui joue autour</span></div></div>
+  <p>En maquettes : un fil continu qui traverse les jours, une seule recherche, le calendrier comme simple sélecteur. Rien n&#x27;est codé.</p>
+  <p class="dz-date">Au 10 novembre 2026</p>
+</article>
+</div>
+
+</div>
+<div class="partie" id="ecrans">
+<h2>Tous les écrans du téléphone qui changent</h2>
+<p class="dz-sous">Avant à gauche, après à droite, puis les écrans nouveaux, sur des conversations fictives.</p>
+<div class="dz-ecrans"><figure><a href="img/android-accueil-ecoute.webp"><img src="img/android-accueil-ecoute.webp" loading="lazy" alt="Accueil, pendant l&#x27;écoute : avant à gauche, après à droite"></a><figcaption>Accueil, pendant l&#x27;écoute</figcaption></figure><figure><a href="img/android-accueil-enregistre.webp"><img src="img/android-accueil-enregistre.webp" loading="lazy" alt="Accueil, pendant un enregistrement : avant à gauche, après à droite"></a><figcaption>Accueil, pendant un enregistrement</figcaption></figure><figure><a href="img/android-conversation-en-direct.webp"><img src="img/android-conversation-en-direct.webp" loading="lazy" alt="Une conversation en cours : avant à gauche, après à droite"></a><figcaption>Une conversation en cours</figcaption></figure><figure><a href="img/android-conversation-texte-double.webp"><img src="img/android-conversation-texte-double.webp" loading="lazy" alt="Conversation texte double : avant à gauche, après à droite"></a><figcaption>Conversation texte double</figcaption></figure><figure><a href="img/android-conversation.webp"><img src="img/android-conversation.webp" loading="lazy" alt="Une conversation : avant à gauche, après à droite"></a><figcaption>Une conversation</figcaption></figure><figure><a href="img/android-enregistre-accueil.webp"><img src="img/android-enregistre-accueil.webp" loading="lazy" alt="Enregistre accueil : avant à gauche, après à droite"></a><figcaption>Enregistre accueil</figcaption></figure><figure><a href="img/android-enregistre-conversation.webp"><img src="img/android-enregistre-conversation.webp" loading="lazy" alt="Enregistre conversation : avant à gauche, après à droite"></a><figcaption>Enregistre conversation</figcaption></figure><figure><a href="img/android-enregistre-et-lecture.webp"><img src="img/android-enregistre-et-lecture.webp" loading="lazy" alt="Enregistre et lecture : avant à gauche, après à droite"></a><figcaption>Enregistre et lecture</figcaption></figure><figure><a href="img/android-enregistre-journal-jour.webp"><img src="img/android-enregistre-journal-jour.webp" loading="lazy" alt="Le Journal d&#x27;un jour, pendant un enregistrement : avant à gauche, après à droite"></a><figcaption>Le Journal d&#x27;un jour, pendant un enregistrement</figcaption></figure><figure><a href="img/android-enregistre-journal.webp"><img src="img/android-enregistre-journal.webp" loading="lazy" alt="Enregistre journal : avant à gauche, après à droite"></a><figcaption>Enregistre journal</figcaption></figure><figure><a href="img/android-enregistre-reglages.webp"><img src="img/android-enregistre-reglages.webp" loading="lazy" alt="Enregistre reglages : avant à gauche, après à droite"></a><figcaption>Enregistre reglages</figcaption></figure><figure><a href="img/android-icones-entete-sans-texte.webp"><img src="img/android-icones-entete-sans-texte.webp" loading="lazy" alt="L&#x27;en-tête d&#x27;une conversation pas encore transcrite : avant à gauche, après à droite"></a><figcaption>L&#x27;en-tête d&#x27;une conversation pas encore transcrite</figcaption></figure><figure><a href="img/android-icones-entete.webp"><img src="img/android-icones-entete.webp" loading="lazy" alt="L&#x27;en-tête d&#x27;une conversation : avant à gauche, après à droite"></a><figcaption>L&#x27;en-tête d&#x27;une conversation</figcaption></figure><figure><a href="img/android-icones.webp"><img src="img/android-icones.webp" loading="lazy" alt="La liste, avec l&#x27;app de chaque conversation : avant à gauche, après à droite"></a><figcaption>La liste, avec l&#x27;app de chaque conversation</figcaption></figure><figure><a href="img/android-site-reunion.webp"><img src="img/android-site-reunion.webp" loading="lazy" alt="Une réunion (image du site) : avant à gauche, après à droite"></a><figcaption>Une réunion (image du site)</figcaption></figure><figure><a href="img/android-nouveau-lecture-vitesse.webp"><img src="img/android-nouveau-lecture-vitesse.webp" loading="lazy" alt="Lecture vitesse"></a><figcaption>Lecture vitesse</figcaption></figure></div>
 </div>
 
     </div>
