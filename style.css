@@ -1,16 +1,55 @@
-/* L'interface d'un utilitaire macOS sur un fond bleu très pâle : groupes blancs, boutons système, captures de l'app. Thème clair uniquement. */
+/* L'interface d'un utilitaire macOS sur un fond bleu très pâle : groupes blancs, boutons système, captures de l'app.
+   Clair, et sombre quand le système l'est (S43). Chaque couleur est un jeton ; les jetons de texte tiennent 4,5:1 sur le
+   fond et sur la carte, dans les deux thèmes : scripts/contraste.py le mesure (S06). */
 :root {
-  --window: #edf2f8;
-  --group: #ffffff;
+  --window: #edf2f8;          /* le fond de la page */
+  --group: #ffffff;           /* les cartes, les groupes, la bulle */
+  --sunken: #f4f7fb;          /* un pied de carte, à peine gris */
+  --control: #ffffff;         /* un bouton, l'onglet choisi */
+  --control-hover: #eaf0f7;
   --text: #142338;
-  --secondary: #566175;
   --body: #2c3a50;
-  --separator: #d9e2ee;
-  --border: rgba(20,40,80,.14);
+  --secondary: #566175;
   --accent: #0064d2;
+  --accent-soft: #e6eef9;     /* le fond d'une étiquette à l'accent */
+  --warn: #a34a00;
+  --problem: #8a5a00;
+  --edge: #7d8aa0;            /* un trait qui doit se voir : chevron, bord de champ, onglet choisi (3:1) */
+  --line: 20 40 80;           /* traits fins et voiles, en rgb(var(--line) / a) */
+  --shade: 20 40 80;          /* ombres, en rgb(var(--shade) / a) */
+  --border: rgb(var(--line) / .14);
+  --nav-bg: rgb(237 242 248 / .88);
+  --dock-bg: rgb(255 255 255 / .6);
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace;
   /* Titres : une grotesque récente et soignée, en graisse moyenne ; le reste garde la police du système. */
   --display: "Host Grotesk", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  /* Cinq tailles de texte, plus les titres (S40). */
+  --t-small: 13px; --t-note: 15px; --t-ui: 16px; --t-body: 17px; --t-lead: clamp(18px, 2.1vw, 20px);
+  --focus: 0 0 0 3px rgb(0 100 210 / .45);
+}
+/* Le sombre suit le système, sur les pages qui le déclarent (<meta name="color-scheme" content="light dark">). Les
+   pages de version, faites par dossiers.py, restent claires tant qu'elles ne le déclarent pas. */
+@media (prefers-color-scheme: dark) {
+  :root:has(meta[name="color-scheme"][content~="dark"]) {
+    --window: #0e1520;
+    --group: #18212e;
+    --sunken: #1f2a38;
+    --control: #263243;
+    --control-hover: #2e3b4e;
+    --text: #eef3f9;
+    --body: #cdd6e2;
+    --secondary: #9ba8ba;
+    --accent: #5aa5ff;
+    --accent-soft: #16233a;
+    --warn: #ff9d4d;
+    --problem: #e0b25a;
+    --edge: #7d8aa0;
+    --line: 200 215 235;
+    --shade: 0 0 0;
+    --nav-bg: rgb(14 21 32 / .88);
+    --dock-bg: rgb(38 50 67 / .6);
+    --focus: 0 0 0 3px rgb(90 165 255 / .55);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -29,32 +68,32 @@ a:hover { text-decoration: underline; }
 
 /* Boutons système */
 .button {
-  display: inline-block; font-size: 15px; font-weight: 500; line-height: 1;
+  display: inline-block; font-size: var(--t-note); font-weight: 500; line-height: 1;
   padding: 9px 16px; border-radius: 7px;
-  background: #ffffff; color: var(--text);
-  border: 0; box-shadow: 0 0 0 1px rgba(20,40,80,.16), 0 1px 1px rgba(20,40,80,.08);
+  background: var(--control); color: var(--text);
+  border: 0; box-shadow: 0 0 0 1px rgb(var(--line) / .16), 0 1px 1px rgb(var(--shade) / .08);
   cursor: pointer;
 }
-.button.default { background: linear-gradient(#2a86f5, #0064d2); color: #fff; box-shadow: 0 0 0 .5px rgba(0,60,180,.5), 0 1px 1px rgba(20,40,80,.12); }
+.button.default { background: linear-gradient(#2a86f5, #0064d2); color: #fff; box-shadow: 0 0 0 .5px rgba(0,60,180,.5), 0 1px 1px rgb(var(--shade) / .12); }
 .button.large { font-size: 18px; padding: 14px 26px; border-radius: 10px; }
 /* Bouton principal du haut : plus grand, avec l'icône de l'app. */
 .button.hero {
   display: inline-flex; align-items: center; gap: 14px;
   font-size: clamp(18px, 2.2vw, 21px); font-weight: 600; letter-spacing: -.01em;
   padding: 12px 14px 12px 24px; border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 0 0 1px rgba(20,40,80,.1), 0 2px 4px rgba(20,40,80,.04);
+  background: var(--control);
+  box-shadow: 0 0 0 1px rgb(var(--line) / .1), 0 2px 4px rgb(var(--shade) / .04);
   transition: box-shadow .15s ease, background .15s ease;
 }
 .button.hero::after {
   content: ""; flex: none; width: 34px; height: 34px; margin-left: 10px; border-radius: 50%;
-  background: #eaf0f7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23142338' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3v9M4 8.5 8 12.5l4-4'/%3E%3C/svg%3E") center / 16px no-repeat;
+  background: var(--control-hover) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23142338' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3v9M4 8.5 8 12.5l4-4'/%3E%3C/svg%3E") center / 16px no-repeat;
   transition: background-color .15s ease;
 }
-.button.hero:hover { filter: none; box-shadow: 0 0 0 1px rgba(20,40,80,.14), 0 4px 12px rgba(20,40,80,.08); }
-.button.hero:hover::after { background-color: #dfe7f1; }
-.button.hero:active { background: #f7f7f8; }
-.button-icon { width: 40px; height: 40px; flex: none; margin: 0; filter: drop-shadow(0 1px 2px rgba(20,40,80,.25)); }
+.button.hero:hover { filter: none; box-shadow: 0 0 0 1px rgb(var(--line) / .14), 0 4px 12px rgb(var(--shade) / .08); }
+.button.hero:hover::after { filter: brightness(.96); }
+.button.hero:active { background: var(--control-hover); }
+.button-icon { width: 40px; height: 40px; flex: none; margin: 0; filter: drop-shadow(0 1px 2px rgb(var(--shade) / .25)); }
 a.button:hover { text-decoration: none; filter: brightness(1.04); }
 
 /* En-tête, comme un écran « À propos ». Le titre, le sous-titre et le micro se règlent sur un même corps, celui du
@@ -88,17 +127,24 @@ a.button:hover { text-decoration: none; filter: brightness(1.04); }
 @media (max-width: 452px) {
   .about { --micro-gauche: max(var(--titre) + .5 * var(--corps), 100% + 16px - .7 * var(--micro)); }
 }
+/* Le bord de l'écran coupe le micro sans élargir la page (S13) : la coupe se fait sur .about, prolongé jusqu'au bord
+   droit de l'écran par la marge de .wrap ; le mât descend toujours (overflow-x seulement). */
+@media (max-width: 760px) {
+  .about { overflow-x: clip; margin-right: -16px; padding-right: 16px; }
+}
 .about h1 { font-family: var(--display); font-size: var(--corps); line-height: 1.04; letter-spacing: -0.025em; font-weight: 500; max-width: 7em; margin: 0 0 48px; }
 /* Mini logos des marques citées, dans le fil du texte */
 img.logo { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: .22em; }
 .nobr { white-space: nowrap; }
+/* Le trait d'union du titre, dessiné large par la grotesque : ramené à la largeur d'un trait d'union de texte (S41). */
+.about h1 .trait { display: inline-block; transform: scaleX(.62); margin: 0 -.09em; }
 /* Retours à la ligne : titres et textes centrés équilibrés, paragraphes sans mot seul en fin de bloc. */
 p, li, h3 { text-wrap: pretty; hyphens: manual; }
 h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
-.about .req { font-size: 15px; color: var(--secondary); margin-top: 16px; }
+.about .req { font-size: var(--t-note); color: var(--secondary); margin-top: 16px; }
 /* Le bouton d'installation, sous les illustrations : on a vu ce que ça fait avant qu'on propose de l'installer. */
 .cta { text-align: center; margin-top: 136px; }
-.cta .req { font-size: 15px; color: var(--secondary); margin: 16px 0 0; text-wrap: balance; }
+.cta .req { font-size: var(--t-note); color: var(--secondary); margin: 16px 0 0; text-wrap: balance; }
 .cta + .dock-label { margin-top: 120px; }
 @media (max-width: 640px) { .cta { margin-top: 56px; } .cta + .dock-label { margin-top: 88px; } }
 
@@ -107,26 +153,27 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 /* L'arrondi des fenêtres de macOS 26 (26 points sur une fenêtre de 1280 × 789), à l'échelle de l'image. */
 .stage > img {
   width: 100%; height: auto; display: block;
-  border-radius: 2.03% / 3.3%; border: .5px solid rgba(20,40,80,.25);
-  box-shadow: 0 22px 50px -16px rgba(20,40,80,.28);
+  border-radius: 2.03% / 3.3%; border: .5px solid rgb(var(--line) / .25);
+  box-shadow: 0 22px 50px -16px rgb(var(--shade) / .28);
 }
 .stage .detail {
   position: absolute; right: 0; bottom: 0; width: 60%; height: auto; display: block;
-  border-radius: 2.2% / 3.3%; border: .5px solid rgba(20,40,80,.25);
-  box-shadow: 0 26px 60px -18px rgba(20,40,80,.32), 0 8px 18px -10px rgba(20,40,80,.18);
+  border-radius: 2.2% / 3.3%; border: .5px solid rgb(var(--line) / .25);
+  box-shadow: 0 26px 60px -18px rgb(var(--shade) / .32), 0 8px 18px -10px rgb(var(--shade) / .18);
 }
 
 /* Onglets au-dessus de l'illustration : un contrôle segmenté de macOS. */
-.tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgba(30,60,120,.07); }
-.tabs button { font: 500 15px/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--text); background: none; border: 0; border-radius: 8px; padding: 8px 22px; white-space: nowrap; cursor: pointer; }
-@media (max-width: 640px) { .tabs button { padding: 8px 12px; font-size: 14px; } }
-.tabs button[aria-selected="true"] { background: #fff; box-shadow: 0 0 0 .5px rgba(20,40,80,.12), 0 1px 3px rgba(20,40,80,.12); }
+.tabs { display: flex; width: fit-content; margin: 80px auto 0; padding: 3px; gap: 2px; border-radius: 10px; background: rgb(var(--line) / .07); }
+/* Le corps et la marge des onglets suivent la largeur, sans palier : trois onglets tiennent à 320 px (S13, S15). */
+.tabs button { font: 500 clamp(13px, 3.6vw, 15px)/1 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; color: var(--text); background: none; border: 0; border-radius: 8px; padding: 8px clamp(6px, 4vw - 6px, 22px); white-space: nowrap; cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--control); box-shadow: 0 0 0 1px var(--edge), 0 1px 3px rgb(var(--shade) / .12); }
+.tabs button:not([aria-selected="true"]):hover { background: rgb(var(--line) / .06); }
 .about + .tabs { margin: 56px 0 0; }
 .tabs + .stage { margin-top: 28px; }
 .stage .claude { z-index: 2; }
 .claude[hidden] { display: none; }
 /* Devant la liste du Mac, un Pixel 7 sur la même liste : l'app Android. L'image garde son contour, l'ombre le suit. */
-.stage > img.pixel { position: absolute; z-index: 3; left: max(-4%, calc((100% - 100vw) / 2 + 8px)); top: 15cqw; width: 23cqw; height: auto; border: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 22px 28px rgba(20,40,80,.3)) drop-shadow(0 6px 10px rgba(20,40,80,.16)); }
+.stage > img.pixel { position: absolute; z-index: 3; left: max(-4%, calc((100% - 100vw) / 2 + 8px)); top: 15cqw; width: 23cqw; height: auto; border: 0; border-radius: 0; box-shadow: none; filter: drop-shadow(0 22px 28px rgb(var(--shade) / .3)) drop-shadow(0 6px 10px rgb(var(--shade) / .16)); }
 .stage .pixel[hidden] { display: none; }
 
 /* Par-dessus la fenêtre Appels : une conversation avec Claude qui s'appuie sur un appel enregistré. */
@@ -153,15 +200,17 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .claude .mail b { display: block; margin-bottom: .35em; }
 .claude ul { margin: .35em 0 0; padding-left: 1.2em; }
 .claude li { margin: .15em 0; }
-.claude .sub { color: #8a8576; }
+.claude .sub { color: #6e6a5c; }
 .claude .quotes { list-style: none; padding: 0; margin: 0; }
 .claude .quotes li + li { margin-top: .4em; }
+/* La source sous la citation, sur sa propre ligne (S37). */
+.claude .quotes .sub { display: block; font-size: .92em; }
 .claude .next { margin: .7em 0 0; }
 /* En tête : la pile des outils d'appel × les assistants. */
 .pair { display: flex; justify-content: center; align-items: flex-start; gap: clamp(12px, 3vw, 28px); margin: 0 0 56px; }
 .pair figure { margin: 0; text-align: center; display: flex; flex-direction: column; align-self: stretch; }
 .pair figcaption { margin-top: auto !important; padding-top: 6px; white-space: nowrap; }
-.pair figure > img { width: clamp(46px, 11vw, 112px); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 8px 14px rgba(20,40,80,.14)); }
+.pair figure > img { width: clamp(46px, 11vw, 112px); height: auto; display: block; margin: 0 auto; filter: drop-shadow(0 8px 14px rgb(var(--shade) / .14)); }
 .pair figcaption { font-size: 14px; color: var(--secondary); margin-top: 6px; }
 .pair .times { font-family: var(--display); font-size: clamp(24px, 5vw, 52px); line-height: clamp(46px, 11vw, 112px); color: var(--secondary); margin: 0 clamp(4px, 1.5vw, 16px); }
 .pair .times img { display: inline-block; box-sizing: content-box; width: .5em; height: auto; padding: 0 .039em; vertical-align: middle; }
@@ -170,7 +219,7 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .pile span {
   width: clamp(34px, 9.6vw, 98px); aspect-ratio: 1; margin-left: calc(clamp(34px, 9.6vw, 98px) * -.22);
   margin-top: clamp(4px, .7vw, 7px); border-radius: 23%; overflow: hidden; background: #fff;
-  box-shadow: 0 0 0 1px rgba(20,40,80,.08), 0 8px 18px -6px rgba(20,40,80,.28);
+  box-shadow: 0 0 0 1px rgb(var(--line) / .08), 0 8px 18px -6px rgb(var(--shade) / .28);
 }
 .pile span:nth-child(1) { transform: rotate(-9deg) translateY(6px); }
 .pile span:nth-child(2) { transform: rotate(-4deg) translateY(1px); }
@@ -180,8 +229,8 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
 .pile .meet img { padding: 18%; box-sizing: border-box; }
 /* Les icônes à l'encre et au lavis : l'image déborde de la tuile pour garder le trait du bord. */
 .pile span:has(img[src*="encre/"]) { background: none; box-shadow: none; overflow: visible; border-radius: 0; }
-.pile img[src*="encre/"] { width: 112.5%; height: auto; margin: -6.25%; max-width: none; filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
-.pair figure > img.encre { box-sizing: border-box; padding: calc(clamp(46px, 11vw, 112px) * .025); filter: drop-shadow(0 2px 3px rgba(20,40,80,.09)); }
+.pile img[src*="encre/"] { width: 112.5%; height: auto; margin: -6.25%; max-width: none; filter: drop-shadow(0 2px 3px rgb(var(--shade) / .09)); }
+.pair figure > img.encre { box-sizing: border-box; padding: calc(clamp(46px, 11vw, 112px) * .025); filter: drop-shadow(0 2px 3px rgb(var(--shade) / .09)); }
 .about .lead { font-size: clamp(19px, 2.3vw, 23px); color: var(--body); max-width: min(560px, var(--mat-gauche) - 24px); margin: -24px 0 0; }
 @media (max-width: 640px) {
   .pair { gap: 8px; }
@@ -193,36 +242,35 @@ section { padding: 160px 0 0; }
 section.follow { padding-top: 56px; }
 h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height: 1.2; letter-spacing: -0.01em; font-weight: 500; margin: 0 0 20px; }
 .intro { text-align: center; max-width: 700px; margin: 0 auto; }
-.intro p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); margin: 0 0 14px; }
+.intro p { font-size: var(--t-lead); color: var(--body); margin: 0 0 14px; }
 .intro p:last-child { margin-bottom: 0; }
-.req.warn { color: #b25000; }
+.req.warn { color: var(--warn); }
 .said { font-size: clamp(20px, 2.6vw, 24px); line-height: 1.45; text-align: center; max-width: 640px; margin: 0 auto; }
 
 /* Groupes à la Réglages Système */
-.group-label { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 10px 14px; }
+.group-label { font-size: var(--t-note); font-weight: 600; color: var(--text); margin: 0 0 10px 14px; }
 .group {
   background: var(--group); border-radius: 12px;
   box-shadow: 0 0 0 1px var(--border);
 }
 .row { padding: 18px 20px; }
-.row + .row { border-top: 1px solid var(--separator); margin-left: 20px; padding-left: 0; }
-.row h3 { font-size: 17px; font-weight: 600; margin: 0 0 4px; }
+.row h3 { font-size: var(--t-body); font-weight: 600; margin: 0 0 4px; }
 .row h3:only-child { margin: 0; }
-.row p { font-size: 16px; color: var(--secondary); margin: 0; }
+.row p { font-size: var(--t-ui); color: var(--secondary); margin: 0; }
 
 
 /* Dock sous l'illustration : les apps et services dont les appels sont enregistrés. Le nom s'affiche au survol. */
 .dock {
   display: flex; justify-content: center; align-items: flex-end; gap: 2px;
   width: fit-content; max-width: 100%; margin: 104px auto 0; padding: 6px 8px;
-  background: rgba(255,255,255,.6); border: 1px solid rgba(20,40,80,.08); border-radius: 22px;
-  box-shadow: 0 16px 40px -18px rgba(20,40,80,.3);
+  background: var(--dock-bg); border: 1px solid rgb(var(--line) / .08); border-radius: 22px;
+  box-shadow: 0 16px 40px -18px rgb(var(--shade) / .3);
   -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
 }
 .dock .app { position: relative; display: block; width: clamp(22px, 5.6vw, 56px); height: clamp(22px, 5.6vw, 56px); flex: none; }
 .dock .app img { width: 100%; height: 100%; display: block; transition: transform .15s; }
 /* Icônes de l'App Store, carrées : arrondies et rentrées comme celles de macOS. */
-.dock .app.tile img { width: 80%; height: 80%; margin: 10%; border-radius: 22.5%; box-shadow: 0 1px 2px rgba(20,40,80,.2); }
+.dock .app.tile img { width: 80%; height: 80%; margin: 10%; border-radius: 22.5%; box-shadow: 0 1px 2px rgb(var(--shade) / .2); }
 .dock .app.glyph img { background: #fff; padding: 14%; box-sizing: border-box; }
 .dock-label { text-align: center; font-size: 14px; color: var(--secondary); margin: 168px 0 10px; }
 .dock + .dock-label { margin-top: 16px; }
@@ -230,21 +278,21 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 .dock .app:hover img { transform: translateY(-6px) scale(1.12); }
 .dock .app::after {
   content: attr(data-name); position: absolute; bottom: calc(100% + 14px); left: 50%; transform: translateX(-50%);
-  padding: 4px 10px; border-radius: 7px; background: rgba(240,240,240,.95); color: var(--text);
-  font-size: 13px; white-space: nowrap; box-shadow: 0 0 0 1px rgba(20,40,80,.12), 0 4px 12px rgba(20,40,80,.15);
+  padding: 4px 10px; border-radius: 7px; background: var(--control); color: var(--text);
+  font-size: var(--t-small); white-space: nowrap; box-shadow: 0 0 0 1px rgb(var(--line) / .12), 0 4px 12px rgb(var(--shade) / .15);
   display: none; pointer-events: none;
 }
 .dock .app:hover::after { display: block; }
-.dock .sep { width: 1px; align-self: stretch; margin: 6px 6px; background: rgba(20,40,80,.18); flex: none; }
+.dock .sep { width: 1px; align-self: stretch; margin: 6px 6px; background: rgb(var(--line) / .18); flex: none; }
 
 /* Installation : intitulé au-dessus du groupe, commande dans le groupe, explication en dessous. */
-.intro .req { font-size: 15px; color: var(--secondary); margin: 20px 0 0; }
-.intro .req.warn { color: #b25000; }
+.intro .req { font-size: var(--t-note); color: var(--secondary); margin: 20px 0 0; }
+.intro .req.warn { color: var(--warn); }
 .install { margin-top: 56px; }
 /* Installation par le Terminal : une fenêtre sombre, comme le Terminal de macOS. */
 /* Le cartouche au-dessus d'un titre de partie : de quoi elle parle, en deux mots. */
-.intro p.tag { display: inline-block; margin: 0 0 32px; padding: 5px 12px; border-radius: 999px; background: #e6eef9; color: var(--accent); font-size: 13px; font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
-.or { text-align: center; font-size: 15px; font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
+.intro p.tag { display: inline-block; margin: 0 0 32px; padding: 5px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: var(--t-small); font-weight: 600; letter-spacing: .02em; text-transform: uppercase; }
+.or { text-align: center; font-size: var(--t-note); font-weight: 600; color: var(--secondary); margin: 0 0 16px; }
 .install .group-label { margin-top: 0; }
 .steps li b { font-weight: 600; color: var(--text); }
 /* Les étapes dans un cadre, comme un groupe des Réglages ; l'aide en dessous, hors du cadre. */
@@ -258,7 +306,6 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 }
 .cmdline:hover { background: #2c2c2e; }
 .cmdline:active { transform: scale(.995); }
-.cmdline:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .cmdline code { display: block; font: 13px/1.4 var(--mono); color: #e8e8e8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 /* Au survol, « Copier » en bout de ligne, sur un fondu qui recouvre la fin de la commande. */
 .cmdline .hint {
@@ -270,8 +317,8 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 /* « Copié », qui monte au-dessus du clic et s'efface. */
 .cmdline .copied {
   position: absolute; left: 50%; bottom: calc(100% + 6px); translate: -50% 0; pointer-events: none;
-  font: 600 13px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: #fff;
-  padding: 6px 10px; border-radius: 7px; box-shadow: 0 0 0 .5px rgba(20,40,80,.15), 0 8px 20px -8px rgba(20,40,80,.35);
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, sans-serif; color: var(--text); background: var(--control);
+  padding: 6px 10px; border-radius: 7px; box-shadow: 0 0 0 .5px rgb(var(--line) / .15), 0 8px 20px -8px rgb(var(--shade) / .35);
   animation: rise 1.6s ease-out forwards;
 }
 @keyframes rise {
@@ -282,12 +329,12 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 @media (prefers-reduced-motion: reduce) {
   @keyframes rise { 0%, 100% { opacity: 0; } 15%, 55% { opacity: 1; } }
 }
-.steps .sub { display: block; font-size: 16px; line-height: 1.55; color: var(--secondary); margin-top: 2px; }
+.steps .sub { display: block; font-size: var(--t-ui); line-height: 1.55; color: var(--secondary); margin-top: 2px; }
 .steps .sub b { font-weight: 600; color: var(--body); }
 /* Les touches, petites : un repère, pas un dessin de clavier. */
 .steps kbd { font-size: 12px; padding: 2px 5px; border-radius: 5px; vertical-align: 1px; }
 /* L'aide, au pied du cadre, sur un fond à peine gris (pas de filet). */
-.install .help { margin: 0 -32px; padding: 16px 32px; background: #f4f7fb; font-size: 15px; color: var(--secondary); }
+.install .help { margin: 0 -32px; padding: 16px 32px; background: var(--sunken); font-size: var(--t-note); color: var(--secondary); }
 .install .help p { margin: 0; }
 .install .help p + p { margin-top: 4px; }
 .install .steps { margin-bottom: 8px; }
@@ -298,10 +345,10 @@ h2 { font-family: var(--display); font-size: clamp(28px, 4vw, 38px); line-height
 .install [hidden] { display: none; }
 /* Les trois gestes de l'installation, numérotés ; les touches dessinées comme sur le clavier. */
 .steps { list-style: none; counter-reset: step; margin: 0 0 28px; padding: 0; }
-.steps > li { counter-increment: step; position: relative; padding-left: 40px; font-size: 17px; line-height: 1.6; color: var(--body); margin: 0 0 22px; }
+.steps > li { counter-increment: step; position: relative; padding-left: 40px; font-size: var(--t-body); line-height: 1.6; color: var(--body); margin: 0 0 22px; }
 .steps > li::before {
   content: counter(step); position: absolute; left: 0; top: 2px; width: 24px; height: 24px; border-radius: 50%;
-  display: grid; place-items: center; color: var(--secondary); font-size: 13px; font-weight: 500;
+  display: grid; place-items: center; color: var(--secondary); font-size: var(--t-small); font-weight: 500;
   box-shadow: inset 0 0 0 1px var(--border);
 }
 kbd {
@@ -310,20 +357,20 @@ kbd {
 }
 /* Le téléchargement : l'icône, le nom, la version et la taille, un bouton bleu. */
 .download { display: flex; align-items: center; gap: 16px; padding: 16px 16px 16px 18px; }
-.download > img { width: 64px; height: 64px; flex: none; filter: drop-shadow(0 2px 4px rgba(20,40,80,.2)); }
+.download > img { width: 64px; height: 64px; flex: none; filter: drop-shadow(0 2px 4px rgb(var(--shade) / .2)); }
 .download div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
 .download b { font-size: 18px; font-weight: 600; }
 .download span { font-size: 14px; color: var(--secondary); }
-.download .dl { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; padding: 11px 18px; border-radius: 9px; }
+.download .dl { display: inline-flex; align-items: center; gap: 8px; font-size: var(--t-ui); padding: 11px 18px; border-radius: 9px; }
 .download .dl::before { content: ""; width: 14px; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 2v9M4 7.5 8 11.5l4-4M3 14h10'/%3E%3C/svg%3E") center / contain no-repeat; }
 @media (max-width: 480px) { .download { flex-wrap: wrap; } .download .dl { width: 100%; justify-content: center; } }
 .file { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 14px 14px 20px; }
 .file span { font: 15px var(--mono); }
-.notes { font-size: 15px; color: var(--secondary); text-align: center; max-width: 620px; margin: 40px auto 0; }
+.notes { font-size: var(--t-note); color: var(--secondary); text-align: center; max-width: 620px; margin: 40px auto 0; }
 
 footer { padding: 160px 0 96px; }
-footer .col { font-size: 15px; color: var(--secondary); }
-footer h3 { font-size: 15px; font-weight: 600; color: var(--text); margin: 0 0 10px; }
+footer .col { font-size: var(--t-note); color: var(--secondary); }
+footer h3 { font-size: var(--t-note); font-weight: 600; color: var(--text); margin: 0 0 10px; }
 footer p { margin: 0 0 8px; }
 footer .signature { margin-top: 40px; color: var(--text); }
 .author { display: flex; align-items: flex-end; gap: 28px; margin: 64px 0 -96px; }
@@ -331,8 +378,8 @@ footer .signature { margin-top: 40px; color: var(--text); }
 .author img { flex: none; width: 168px; height: auto; }
 /* La bulle et, dessous, les liens : une colonne qui finit au-dessus du bas du portrait. */
 .author .says { min-width: 0; max-width: 420px; margin: 0 0 64px; }
-.author .bubble { position: relative; margin: 0; padding: 20px 24px; border-radius: 20px; background: var(--group); color: var(--text); font-size: 16px; line-height: 1.5; }
-.author .contact { margin: 10px 0 0 24px; font-size: 15px; }
+.author .bubble { position: relative; margin: 0; padding: 20px 24px; border-radius: 20px; background: var(--group); color: var(--text); font-size: var(--t-ui); line-height: 1.5; }
+.author .contact { margin: 10px 0 0 24px; font-size: var(--t-note); }
 .author .bubble::before { content: ""; position: absolute; left: -10px; bottom: 22px; width: 22px; height: 22px; background: var(--group); border-radius: 0 0 0 6px; transform: rotate(45deg); }
 .author .bubble { min-width: 0; }
 .author .bubble p { margin: 0; }
@@ -344,7 +391,7 @@ footer .signature { margin-top: 40px; color: var(--text); }
 /* Au-dessus du texte, seulement ce qui ne va pas (micro, envoi). Pendant la dictée, le bouton suffit. */
 .rec-bar { margin-bottom: 8px; font-size: 14px; color: var(--secondary); }
 .author .rec-state { margin: 0; line-height: 1.4; }
-.rec-state.problem { color: #8a5a00; }
+.rec-state.problem { color: var(--problem); }
 /* Dicter : une pastille avec un micro, en bas à gauche face à Envoyer. Pendant la dictée, le micro devient un rond
    rouge dont le halo suit le volume de la voix (--niveau, de 0 à 1, posé par note.js) ; le bouton dit Pause. L'icône
    est un pseudo-élément : le texte du bouton change sans la perdre. À côté, quand le bouton a le focus, on dit que la
@@ -359,19 +406,16 @@ footer .signature { margin-top: 40px; color: var(--text); }
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'%3E%3Crect x='9' y='2.5' width='6' height='11.5' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'%3E%3Crect x='9' y='2.5' width='6' height='11.5' rx='3'/%3E%3Cpath d='M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5v4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .rec-toggle:hover { border-color: var(--accent); }
-/* Le focus, qu'on garde pour la barre d'espace : une bordure bleue plus épaisse plutôt que l'anneau du navigateur. */
-.rec-toggle:focus-visible { outline: none; border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .rec-toggle[hidden] { display: none; }
 .rec-toggle.on::before {
   -webkit-mask: none; mask: none; width: 10px; height: 10px; margin: 0 3px; border-radius: 50%; background: #e0352b;
   box-shadow: 0 0 0 calc(2px + var(--niveau, 0) * 7px) rgba(224,53,43,.22);
 }
-.rec-key { font-size: 13px; color: var(--secondary); visibility: hidden; }
+.rec-key { font-size: var(--t-small); color: var(--secondary); visibility: hidden; }
 .rec-toggle:focus + .rec-key { visibility: visible; }
 .rec-toggle[hidden] + .rec-key { display: none; }
 @media (hover: none), (max-width: 640px) { .rec-key { display: none; } }
-.message textarea { display: block; box-sizing: border-box; width: 100%; min-height: 84px; max-height: 240px; resize: none; padding: 10px 12px; border: 0; border-radius: 10px; background: var(--window); color: var(--text); font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
-.message textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.message textarea { display: block; box-sizing: border-box; width: 100%; min-height: 84px; max-height: 240px; resize: none; padding: 10px 12px; border: 1px solid var(--edge); border-radius: 10px; background: var(--control); color: var(--text); font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
 .message-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 10px; }
 .message-actions .send { margin-left: auto; }
 .message .send:disabled { opacity: .45; cursor: default; }
@@ -386,28 +430,26 @@ footer .signature { margin-top: 40px; color: var(--text); }
   .rec-toggle.on::before { width: 9px; height: 9px; margin: 0 2.5px; box-shadow: 0 0 0 calc(2px + var(--niveau, 0) * 5px) rgba(224,53,43,.22); }
   .message .send { padding: 9px 13px; }
 }
-@media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .says { flex: 1; margin-bottom: 28px; } .author .bubble { font-size: 15px; padding: 16px 18px; } .author .contact { margin-left: 18px; } }
+@media (max-width: 640px) { .author { gap: 16px; margin-bottom: -96px; } .author img { width: 112px; } .author .says { flex: 1; margin-bottom: 28px; } .author .bubble { font-size: var(--t-note); padding: 16px 18px; } .author .contact { margin-left: 18px; } }
 
 /* Guides : une question par ligne, la réponse se déplie. */
 details.row { padding: 0; }
 details.row summary {
   list-style: none; cursor: pointer; padding: 18px 44px 18px 20px; position: relative;
-  font-size: 17px; font-weight: 600;
+  font-size: var(--t-body); font-weight: 600;
 }
-details.row + details.row summary { padding-left: 0; }
 details.row summary::-webkit-details-marker { display: none; }
 details.row summary::after {
   content: ""; position: absolute; right: 20px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
-  border-right: 2px solid #93a0b4; border-bottom: 2px solid #93a0b4; transform: rotate(45deg); transition: transform .15s;
+  border-right: 2px solid var(--edge); border-bottom: 2px solid var(--edge); transform: rotate(45deg); transition: transform .15s;
 }
 details.row[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
-details.row .answer { padding: 0 20px 20px; font-size: 16px; color: var(--body); }
-details.row + details.row .answer { padding-left: 0; }
+details.row .answer { padding: 0 20px 20px; font-size: var(--t-ui); color: var(--body); }
 details.row .answer p { margin: 0 0 10px; }
 details.row .answer ol { margin: 0 0 10px; padding-left: 1.3em; }
 details.row .answer li { margin: 4px 0; }
-details.row .answer code { font: 14px/1.4 var(--mono); background: rgba(20,40,80,.05); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
-details.row .answer img { width: 100%; max-width: 560px; height: auto; display: block; margin: 14px 0 6px; border-radius: 9px; border: .5px solid rgba(20,40,80,.2); }
+details.row .answer code { font: 14px/1.4 var(--mono); background: rgb(var(--line) / .05); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+details.row .answer img { width: 100%; max-width: 560px; height: auto; display: block; margin: 14px 0 6px; border-radius: 9px; border: .5px solid rgb(var(--line) / .2); }
 .answer b { font-weight: 600; color: var(--text); }
 
 /* Versions : la plus récente en haut, la date et les nouveautés, une capture quand il y a quelque chose à voir. */
@@ -417,8 +459,8 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display: 
 .version .num a.detail { display: block; margin-top: 2px; font-weight: 400; font-size: 14px; }
 .version p { color: var(--body); }
 .version a.thumb { display: block; margin-top: 12px; width: 240px; max-width: 100%; }
-.version a.thumb img { width: 100%; height: auto; display: block; border-radius: 7px; border: .5px solid rgba(20,40,80,.2); box-shadow: 0 8px 20px -10px rgba(20,40,80,.3); }
-.version .latest { display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: #e6f0fc; color: var(--accent); font-size: 12px; font-weight: 600; vertical-align: 2px; }
+.version a.thumb img { width: 100%; height: auto; display: block; border-radius: 7px; border: .5px solid rgb(var(--line) / .2); box-shadow: 0 8px 20px -10px rgb(var(--shade) / .3); }
+.version .latest { display: inline-block; margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; vertical-align: 2px; }
 
 /* En dessous de 980 px, la transcription passe sous la capture au lieu de la recouvrir. */
 @media (max-width: 980px) {
@@ -441,15 +483,15 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display: 
 .nav { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 20px 0 0; }
 .nav .home { display: inline-flex; align-items: baseline; color: var(--text); }
 .nav .home:hover { text-decoration: none; }
-.nav .home .marque { font-family: Archivo, var(--display); font-weight: 500; font-stretch: 112%; font-size: 16px; letter-spacing: -0.01em; user-select: none;
+.nav .home .marque { font-family: Archivo, var(--display); font-weight: 500; font-stretch: 112%; font-size: var(--t-ui); letter-spacing: -0.01em; user-select: none;
   /* Cartouche : trait de l'épaisseur des fûts d'Archivo 500 (0,115 em), coins continus façon Apple. */
   --trait: 0.115em; box-sizing: border-box; height: 26px; line-height: calc(26px - 2 * var(--trait)); padding: 0 0.5em 0 0.55em;
-  margin: 3px 0; background: #fff; border: var(--trait) solid var(--text); border-radius: 0.45em; }
+  margin: 3px 0; background: var(--group); border: var(--trait) solid var(--text); border-radius: 0.45em; }
 @supports (corner-shape: squircle) { .nav .home .marque { border-radius: 0.75em; corner-shape: squircle; } }
 @media (max-width: 480px) { .nav { gap: 8px; } .nav .links { gap: 12px; } }
-.nav .links { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; }
+.nav .links { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: var(--t-note); }
 .nav .links a { color: var(--text); }
-.nav .links a[aria-current="page"] { color: var(--secondary); }
+.nav .links a[aria-current="page"] { color: var(--text); font-weight: 600; }
 .nav .links .button { padding: 8px 14px; }
 .about { --about-top: 96px; padding-top: var(--about-top); }
 @media (max-width: 760px) { .about { --about-top: 56px; } }
@@ -457,13 +499,13 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display: 
 /* En-tête des pages intérieures : un titre et une phrase, centrés. */
 .page-head { text-align: center; padding: 96px 0 0; }
 .page-head h1 { font-family: var(--display); font-size: clamp(36px, 5.6vw, 60px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 500; margin: 0 0 20px; }
-.page-head p { font-size: clamp(18px, 2.1vw, 20px); color: var(--body); max-width: 640px; margin: 0 auto; text-wrap: balance; }
+.page-head p { font-size: var(--t-lead); color: var(--body); max-width: 640px; margin: 0 auto; text-wrap: balance; }
 .page-head + section { padding-top: 80px; }
 section.tight { padding-top: 64px; }
 .group + .group-label { margin-top: 48px; }
 
 /* Lien discret vers la suite, sous un bloc. */
-.more { text-align: center; font-size: 17px; margin: 40px 0 0; }
+.more { text-align: center; font-size: var(--t-body); margin: 40px 0 0; }
 .more a::after { content: " →"; }
 
 /* Accueil : la dernière version, sous l'installation. */
@@ -472,12 +514,12 @@ section.tight { padding-top: 64px; }
 .feature { padding-top: 120px; }
 .feature:first-of-type { padding-top: 80px; }
 .feature .col > h2 { text-align: left; }
-.feature .col > p { font-size: 17px; color: var(--body); margin: 0 0 12px; }
+.feature .col > p { font-size: var(--t-body); color: var(--body); margin: 0 0 12px; }
 .feature .col > p b { color: var(--text); font-weight: 600; }
-.feature .meta { font-size: 15px; color: var(--secondary); margin: 16px 0 0 !important; }
-.feature .meta a + a::before { content: " · "; color: var(--secondary); }
+.feature .meta { font-size: var(--t-note); color: var(--secondary); margin: 16px 0 0 !important; }
+.feature .meta a + a::before { content: "\00a0· "; color: var(--secondary); }
 .feature figure { margin: 40px auto 0; max-width: 960px; }
-.feature figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: .5px solid rgba(20,40,80,.2); box-shadow: 0 22px 50px -16px rgba(20,40,80,.25); }
+.feature figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: .5px solid rgb(var(--line) / .2); box-shadow: 0 22px 50px -16px rgb(var(--shade) / .25); }
 .feature figure.narrow { max-width: 620px; }
 .feature figure.strip { max-width: 760px; }
 .feature figure.strip img { border-radius: 9px; }
@@ -491,7 +533,7 @@ section.tight { padding-top: 64px; }
 /* Pied de page court, le même partout. */
 footer .links { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 0 0 24px; }
 footer .links a { color: var(--text); }
-.legal p { font-size: 17px; color: var(--body); margin: 0 0 16px; }
+.legal p { font-size: var(--t-body); color: var(--body); margin: 0 0 16px; }
 .legal h2 { font-size: 24px; margin: 48px 0 12px; }
 
 /* Fonctionnalités : un menu vertical à gauche, qui reste à l'écran et suit la lecture. Sous 1000 px, il disparaît. */
@@ -500,9 +542,9 @@ footer .links a { color: var(--text); }
   .with-toc { display: grid; grid-template-columns: 188px minmax(0, 1fr); gap: 48px; align-items: start; }
   .toc { display: block; position: sticky; top: 32px; padding-top: 80px; }
   .toc nav { display: flex; flex-direction: column; gap: 2px; }
-  .toc a { font-size: 15px; color: var(--secondary); padding: 6px 12px; border-radius: 7px; }
-  .toc a:hover { color: var(--text); text-decoration: none; background: rgba(20,40,80,.04); }
-  .toc a[aria-current] { color: var(--text); font-weight: 500; background: rgba(20,40,80,.06); }
+  .toc a { font-size: var(--t-note); color: var(--secondary); padding: 6px 12px; border-radius: 7px; }
+  .toc a:hover { color: var(--text); text-decoration: none; background: rgb(var(--line) / .04); }
+  .toc a[aria-current] { color: var(--text); font-weight: 500; background: rgb(var(--line) / .06); }
   .with-toc .col { margin: 0; }
   .with-toc .feature figure { margin-left: 0; }
 }
@@ -511,8 +553,8 @@ html { scroll-padding-top: 24px; }
 /* La barre du haut se cache quand on descend et revient dès qu'on remonte (nav.js). Son fond couvre toute la largeur. */
 .nav {
   position: sticky; top: 0; z-index: 10; padding: 12px 0;
-  background: rgba(237,242,248,.88); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
-  box-shadow: 0 0 0 100vmax rgba(237,242,248,.88); clip-path: inset(0 -100vmax);
+  background: var(--nav-bg); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  box-shadow: 0 0 0 100vmax var(--nav-bg); clip-path: inset(0 -100vmax);
   transition: transform .25s ease;
 }
 .nav.hidden { transform: translateY(-100%); }
@@ -529,14 +571,14 @@ html { scroll-padding-top: 24px; }
 
 /* Accueil : les bénéfices, des cartes horizontales empilées. Le titre et un paragraphe à gauche, l'objet détouré à
    droite, qui entre par le bord ou le bas de la carte. Sur téléphone, l'objet passe sous le texte. */
-.benefits { list-style: none; margin: 0 auto; padding: 0; max-width: 860px; display: flex; flex-direction: column; gap: 16px; }
+.benefits { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; display: flex; flex-direction: column; gap: 16px; }
 .benefits li {
   position: relative; min-height: 232px; overflow: hidden;
-  background: var(--group); border-radius: 20px; box-shadow: 0 0 0 1px var(--border), 0 10px 30px -18px rgba(20,40,80,.25);
+  background: var(--group); border-radius: 20px; box-shadow: 0 0 0 1px var(--border), 0 10px 30px -18px rgb(var(--shade) / .25);
 }
 .benefits li > div { width: 54%; padding: 32px 0 32px 36px; }
-.benefits span { display: block; font-family: var(--display); font-size: 24px; line-height: 1.25; font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; }
-.benefits p { margin: 10px 0 0; font-size: 16px; line-height: 1.55; color: var(--secondary); }
+.benefits h3 { display: block; margin: 0; font-family: var(--display); font-size: 24px; line-height: 1.25; font-weight: 500; letter-spacing: -0.01em; text-wrap: balance; }
+.benefits p { margin: 10px 0 0; font-size: var(--t-ui); line-height: 1.55; color: var(--secondary); }
 .benefits img { position: absolute; height: auto; }
 /* Chaque objet à sa place : coupé par le bord droit ou le bas, à peu près du même poids. */
 .benefits li.o-jack { min-height: 180px; }
@@ -547,9 +589,9 @@ html { scroll-padding-top: 24px; }
 .benefits li.o-reunion { min-height: 330px; }
 .benefits li.o-reunion > div { width: 46%; }
 .benefits li.o-reunion img { width: 50%; left: 20px; bottom: -34px; }
-/* Les téléphones : pas d'objet, le titre à gauche, l'iPhone et l'Android côte à côte à droite. */
-.benefits li.o-telephones { min-height: 0; padding: 32px 36px; }
-.benefits li.o-telephones > div { width: auto; padding: 0; }
+/* Vos téléphones : le texte à gauche, l'objet entre par le bas à droite (S09). */
+.benefits li.o-telephones { min-height: 280px; }
+.benefits li.o-telephones img { width: 40%; right: 24px; bottom: -36px; }
 .benefits li.o-telephone { min-height: 250px; }
 .benefits li.o-telephone img { width: 34%; right: 60px; bottom: 0; }
 .benefits li.o-ordinateur { min-height: 260px; }
@@ -561,15 +603,14 @@ html { scroll-padding-top: 24px; }
   .benefits { gap: 12px; }
   .benefits li, .benefits li[class] { min-height: 0; display: flex; flex-direction: column; }
   .benefits li > div, .benefits li.text-right > div, .benefits li.o-cassettes > div { width: auto; margin-left: 0; padding: 18px 20px 12px; }
-  .benefits span { font-size: 18px; }
+  .benefits h3 { font-size: 18px; }
   .benefits p { font-size: 14px; }
   .benefits img { position: relative; align-self: flex-end; margin-top: auto; }
   .benefits li.o-jack img { width: 70%; left: auto; align-self: flex-start; bottom: auto; margin-bottom: 28px; transform: none; }
   .benefits li.o-cassettes img { width: 76%; right: 20px; bottom: auto; margin-bottom: -36px; }
   .benefits li.o-telephone img { width: 62%; left: auto; right: 40px; }
   .benefits li.o-reunion img { width: 92%; left: auto; align-self: center; bottom: auto; margin-bottom: -24px; }
-  .benefits li.o-telephones, .benefits li.o-telephones[class] { display: flex; gap: 16px; padding: 18px 20px 20px; }
-  .benefits li.o-telephones > div { padding: 0; }
+  .benefits li.o-telephones img { width: 72%; right: 16px; bottom: auto; margin-bottom: -28px; }
     .benefits li.o-ordinateur img { width: 82%; right: -20px; bottom: auto; margin-bottom: -28px; }
 }
 
@@ -577,10 +618,87 @@ html { scroll-padding-top: 24px; }
    rectangulaire. L'ombre suit sa forme, et sa matière reste celle de la capture. Voir CLAUDE.md, « Les captures ». */
 .stage > img.decoupe, .stage .detail.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe, details.row .answer img.decoupe {
   border: 0; border-radius: 0; box-shadow: none;
-  filter: drop-shadow(0 1px 1px rgba(20,40,80,.14)) drop-shadow(0 14px 22px rgba(20,40,80,.22));
+  filter: drop-shadow(0 1px 1px rgb(var(--shade) / .14)) drop-shadow(0 14px 22px rgb(var(--shade) / .22));
 }
 /* Un extrait a du texte posé sur le fond : une ombre seulement large, pour ne pas le salir. */
-.feature figure img.decoupe.extrait, .version a.thumb img.decoupe.extrait, details.row .answer img.decoupe.extrait { filter: drop-shadow(0 10px 18px rgba(20,40,80,.1)); }
+.feature figure img.decoupe.extrait, .version a.thumb img.decoupe.extrait, details.row .answer img.decoupe.extrait { filter: drop-shadow(0 10px 18px rgb(var(--shade) / .1)); }
 /* Un petit objet garde sa taille : agrandi, il perd sa netteté. Son ombre reste à son échelle. */
 .version a.thumb.nue { width: auto; display: inline-block; margin: 14px 0 12px; }
-.version a.thumb img.decoupe.petite { width: 144px; height: auto; filter: drop-shadow(0 1px 1px rgba(20,40,80,.16)) drop-shadow(0 6px 10px rgba(20,40,80,.16)); }
+.version a.thumb img.decoupe.petite { width: 144px; height: auto; filter: drop-shadow(0 1px 1px rgb(var(--shade) / .16)) drop-shadow(0 6px 10px rgb(var(--shade) / .16)); }
+
+/* Un seul anneau de focus, au clavier, sur tout ce qui se touche (S33). */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.tabs button:focus-visible, .message textarea:focus-visible { outline-offset: 1px; }
+/* « Aller au contenu » : le premier arrêt de Tab, visible seulement au clavier (S10). */
+.evitement { position: absolute; left: 16px; top: -100px; z-index: 20; padding: 10px 16px; border-radius: 9px; background: var(--control); color: var(--text); box-shadow: 0 0 0 1px var(--border), 0 8px 20px -8px rgb(var(--shade) / .35); }
+.evitement:focus { top: 12px; }
+main:focus { outline: none; }
+
+/* Des masses, pas des filets (S36) : chaque ligne d'un groupe est sa propre carte blanche, l'espace les sépare. */
+.group { background: none; box-shadow: none; display: flex; flex-direction: column; gap: 8px; }
+.group > .row { background: var(--group); border-radius: 12px; box-shadow: 0 0 0 1px var(--border); }
+/* Confidentialité : quatre masses titrées (S08). L'obligation d'informer en tête, la date de mise à jour en pied. */
+.legal .masse { background: var(--group); border-radius: 16px; box-shadow: 0 0 0 1px var(--border); padding: 28px 32px 12px; }
+.legal .masse + .masse { margin-top: 16px; }
+.legal .masse h2 { font-size: 24px; margin: 0 0 14px; }
+.legal .obligation { font-size: var(--t-lead); color: var(--text); text-align: center; text-wrap: balance; margin: 0 0 40px; }
+.legal .mise-a-jour { font-size: var(--t-note); color: var(--secondary); margin: 24px 0 0; text-align: center; }
+@media (max-width: 640px) { .legal .masse { padding: 22px 20px 6px; } }
+
+/* La commande d'installation entière, qui passe à la ligne, et « Copier » toujours visible (S01). */
+.cmdline { display: flex; align-items: center; gap: 12px; }
+.cmdline code { flex: 1; min-width: 0; white-space: normal; overflow: visible; overflow-wrap: anywhere; text-overflow: clip; }
+.cmdline .hint { position: static; flex: none; opacity: 1; padding: 6px 12px; border-radius: 7px; background: rgb(255 255 255 / .12); }
+/* Hors d'un Mac, une phrase et « Envoyer le lien » à la place de la commande (S14). */
+.ailleurs { margin: 56px 0 24px; padding: 18px 20px; border-radius: 12px; background: var(--group); box-shadow: 0 0 0 1px var(--border); display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.ailleurs p { flex: 1 1 220px; margin: 0; font-size: var(--t-ui); color: var(--body); }
+.ailleurs[hidden], .cmdline[hidden] { display: none; }
+
+/* Le sommaire des pages longues : sous 1000 px, des pastilles collées en haut, qui défilent de côté (S28). */
+@media (max-width: 999px) {
+  .toc { display: block; position: sticky; top: 0; z-index: 5; margin: 32px -16px 0; padding: 8px 16px; background: var(--nav-bg); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+  .toc nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .toc nav::-webkit-scrollbar { display: none; }
+  .toc a { flex: none; font-size: 14px; color: var(--text); padding: 7px 12px; border-radius: 999px; background: var(--group); box-shadow: 0 0 0 1px var(--border); }
+  .toc a[aria-current] { box-shadow: 0 0 0 1px var(--edge); font-weight: 600; }
+  .toc a:hover { text-decoration: none; }
+}
+
+/* Au toucher, 44 px pour chaque lien et bouton hors du fil d'un texte (S07). */
+@media (pointer: coarse) {
+  .nav .links a, footer .links a, .author .contact a, .more a, .toc a, .evitement { display: inline-flex; align-items: center; min-height: 44px; }
+  .nav .home { min-height: 44px; align-items: center; }
+  .button, .tabs button, .rec-toggle, .author .sent-status .another { min-height: 44px; }
+  .tabs button { display: inline-flex; align-items: center; }
+  footer .links { gap: 0 24px; }
+  .author .contact { margin-top: 0; }
+  details.row summary { min-height: 44px; }
+}
+/* Le Dock, au toucher : pas de bond, des icônes de 40 px sur deux rangées, le nom au toucher et au clavier (S05). */
+.dock .app:focus-visible::after, .dock .app:active::after { display: block; }
+@media (hover: none) {
+  .dock .app:hover img { transform: none; }
+  .dock .app:hover::after { display: none; }
+}
+@media (max-width: 640px) {
+  .dock { flex-wrap: wrap; justify-content: center; max-width: 360px; row-gap: 4px; }
+  .dock .app { width: 40px; height: 40px; }
+  .dock .sep { display: none; }
+}
+
+/* La barre du haut tient à 320 px : sur petit écran, Installer laisse sa place, l'accueil l'a sous les yeux (S15). */
+@media (max-width: 480px) {
+  .nav .links .button { display: none; }
+}
+
+/* En sombre, ce que le jeton ne règle pas seul. */
+@media (prefers-color-scheme: dark) {
+  :root:has(meta[name="color-scheme"][content~="dark"]) .button.hero::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23eef3f9' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3v9M4 8.5 8 12.5l4-4'/%3E%3C/svg%3E");
+  }
+}
+
+/* Le titre d'une page à sommaire s'aligne sur le bord gauche du texte, pas au centre de l'écran (S38). */
+.page-head.avec-sommaire { text-align: left; }
+@media (min-width: 1000px) and (max-width: 1599px) { .page-head.avec-sommaire { padding-left: 236px; } }
+@media (min-width: 1600px) { .page-head.avec-sommaire { max-width: 760px; margin: 0 auto; } }
