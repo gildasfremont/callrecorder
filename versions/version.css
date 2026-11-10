@@ -25,6 +25,15 @@
 .page-version .dz-carte p { font-size: 17px; color: var(--body); max-width: 640px; }
 .page-version .dz-carte .dz-risque { font-size: 15px; color: var(--secondary); }
 
+/* Une recherche en cours : la question, un à trois chiffres mesurés (le chiffre en grand, ce qu'il mesure dessous),
+   où on en est, la date de la dernière mesure. */
+.page-version .dz-mesures { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px 32px; margin-top: 20px; }
+.page-version .dz-mesures > div { min-width: 0; }
+.page-version .dz-mesures b { display: block; font-family: var(--display); font-size: 26px; line-height: 1.15; font-weight: 500; color: var(--text); }
+.page-version .dz-mesures span { display: block; margin-top: 4px; font-size: 15px; line-height: 1.45; color: var(--secondary); }
+.page-version .dz-mesures + p { margin-top: 20px; }
+.page-version .dz-carte .dz-date { font-size: 14px; color: var(--secondary); }
+
 /* Avant, après : deux colonnes de texte, l'étiquette en gris, sans fond ni cadre. */
 .page-version .dz-ab { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 32px; }
 .page-version .dz-ab > div { font-size: 16px; line-height: 1.5; color: var(--body); min-width: 0; }
