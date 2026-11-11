@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Technique · Callrecorder</title>
+<meta name="description" content="Ce qui fait tourner Callrecorder, les modèles qu’on regarde, et ce qu’on a mesuré. L’app est en pleine refonte : rien ici n’annonce une version.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Callrecorder">
+<meta property="og:title" content="Technique · Callrecorder">
+<meta property="og:description" content="Ce qui fait tourner Callrecorder, les modèles qu’on regarde, et ce qu’on a mesuré. L’app est en pleine refonte : rien ici n’annonce une version.">
+<meta property="og:url" content="https://gildasfremont.github.io/callrecorder/technique/">
+<meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg?v=3">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" sizes="16x16" href="../img/icone-micro-16.png?v=10">
+<link rel="icon" sizes="32x32" href="../img/icone-micro-32.png?v=10">
+<link rel="icon" sizes="64x64" href="../img/icone-micro-64.png?v=10">
+<link rel="apple-touch-icon" href="../img/icone-micro-180.png?v=11">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
+<link rel="stylesheet" href="../style.css?v=140">
+<link rel="stylesheet" href="../versions/version.css">
+</head>
+<body class="page-version">
+
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a class="home" href="../" aria-label="Callrecorder, accueil"><span class="marque" aria-hidden="true">callrecorder</span></a>
+    <div class="links">
+      <a href="../fonctionnalites/">Fonctionnalités</a>
+      <a class="button" href="../#installation">Installer</a>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <h1>Technique</h1>
+    <p>Ce qui fait tourner Callrecorder, les modèles qu’on regarde, et ce qu’on a mesuré. L’app est en pleine refonte : rien ici n’annonce une version.</p>
+  </header>
+
+  <div class="with-toc">
+    <aside class="toc">
+      <nav aria-label="Technique">
+        <a href="#ce-qui-tourne-et-ou">Ce qui tourne, et où</a>
+        <a href="#la-veille-des-modeles">La veille des modèles</a>
+        <a href="#les-mesures">Les mesures</a>
+      </nav>
+    </aside>
+    <div class="contenu">
+<div class="partie" id="ce-qui-tourne-et-ou">
+<h2>Ce qui tourne, et où</h2>
+<p class="dz-sous">Presque tout se calcule sur l’appareil qui enregistre. Seule la relecture par Claude part ailleurs, si vous l’avez.</p>
+<div class="dz-grille">
+<article class="dz-carte">
+  <h3>Sur le Mac</h3>
+  <ul class="dz-liste"><li><b>Transcription</b>SpeechTranscriber, le moteur d’Apple, depuis macOS 26. Avant, Whisper large-v3-turbo par whisper.cpp, avec Silero VAD pour ne garder que la parole.</li><li><b>Qui parle</b>FluidAudio, qui porte en Core ML les modèles de pyannote : tours de parole et empreintes de voix.</li><li><b>Écho sans casque</b>Un filtre adaptatif retire du micro le son joué par le Mac. En essai, LocalVQE, un petit modèle de 2,3 Mo.</li><li><b>Voix à la réécoute</b>L’isolation de voix d’Apple, jugée piste par piste, et un gain réglé réplique par réplique.</li><li><b>Bruits et parole</b>SoundAnalysis d’Apple classe ce qu’on entend à l’écoute de fond.</li><li><b>Texte à l’écran</b>Vision d’Apple lit les captures de la fenêtre d’appel.</li><li><b>Recherche par le sens</b>En essai, EmbeddingGemma 300M par ONNX Runtime, sur le Mac.</li><li><b>Relecture</b>Claude, par Claude Code s’il est connecté à votre compte : la transcription part alors chez Anthropic, sur votre forfait.</li></ul>
+</article>
+
+<article class="dz-carte">
+  <h3>Sur le téléphone</h3>
+  <ul class="dz-liste"><li><b>Transcription</b>La reconnaissance vocale de Google, sur l’appareil.</li><li><b>Parole et silence</b>Silero VAD, en ONNX.</li><li><b>Qui parle</b>En essai, WeSpeaker ResNet34-LM, en ONNX, avec l’empreinte de votre voix envoyée par le Mac.</li><li><b>Moteur</b>ONNX Runtime pour Android fait tourner les deux modèles.</li><li><b>Le reste</b>Le Mac refait qui parle sur l’enregistrement entier, plus juste, et renvoie au téléphone un son allégé.</li></ul>
+</article>
+
+<article class="dz-carte">
+  <h3>Ce qui ne quitte pas l’appareil</h3>
+  <ul class="dz-liste"><li><b>Le son</b>Enregistré, transcrit et analysé sur le Mac ou le téléphone. Il ne part que si vous placez vos conversations dans un dossier synchronisé.</li><li><b>Les voix</b>Votre empreinte reste sur vos appareils. Celles des autres servent le temps de la transcription, sans être gardées.</li><li><b>Les modèles</b>Téléchargés une fois depuis Hugging Face, puis utilisés hors ligne.</li></ul>
+</article>
+
+<article class="dz-carte">
+  <h3>La stack</h3>
+  <ul class="dz-liste"><li><b>Mac</b>Swift et SwiftUI, sur macOS 15 et plus, Apple Silicon.</li><li><b>Téléphone</b>Kotlin et Jetpack Compose, Android 10 et plus.</li><li><b>Agents</b>Un serveur MCP sur le Mac donne aux agents IA reliés l’accès à la mémoire des conversations, sauf celles gardées hors des IA.</li><li><b>Mémoire</b>Des fichiers ouverts, lisibles sans l’app : le son, la transcription en Markdown, les métadonnées en JSON.</li></ul>
+</article>
+</div>
+</div>
+<div class="partie" id="la-veille-des-modeles">
+<h2>La veille des modèles</h2>
+<p class="dz-sous">Ce qu’on regarde, et pourquoi chaque modèle nous intéresse ou non : tourner sur l’appareil, vite sur un M1 ou un Pixel, en français, sous une licence ouverte.</p>
+<div class="dz-grille dz-deux">
+<article class="dz-carte">
+  <h3>Transcription d’Apple <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour transcrire sur le Mac</p>
+  <p>Sur l’appareil, rapide, et devant les moteurs ouverts sur un son propre en français. Il ignore le vocabulaire qu’on lui donne : les noms se corrigent à la relecture.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Whisper large-v3-turbo <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour transcrire avant macOS 26</p>
+  <p>Le meilleur moteur ouvert essayé en français, mais derrière Apple sur un son propre, et il boucle parfois sur un silence. Il reste en secours.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>FluidAudio <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour dire qui parle sur le Mac</p>
+  <p>Les modèles de pyannote en Core ML, sur le Neural Engine du M1, sans Python. Ses versions récentes gardent la parole superposée par défaut : à régler avant de monter de version.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Isolation de voix d’Apple <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour mettre les voix en avant à la réécoute</p>
+  <p>Intégrée à macOS, soixante fois plus rapide que le temps réel sur un M1. Elle garde la voix proche d’un appel mais efface les voix lointaines d’une pièce : elle n’est appliquée que là où la parole y perd 3 dB au plus.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>SoundAnalysis d’Apple <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour classer les bruits et repérer la parole</p>
+  <p>Intégré à macOS, une heure de son classée en quelques secondes, et plus juste que YAMNet sur nos enregistrements.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Silero VAD <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour séparer la parole du silence</p>
+  <p>Deux mégaoctets, bien plus rapide que le temps réel sur un téléphone. Sur le téléphone, mieux distinguer la parole du silence a tout changé pour dire qui parle.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Reconnaissance vocale de Google <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour transcrire sur le téléphone</p>
+  <p>Sur l’appareil et sans rien à embarquer. Le Mac transcrit à son tour l’enregistrement qu’il reçoit.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Claude <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour relire une transcription</p>
+  <p>Il corrige les noms et les termes qu’aucun moteur n’entend, et titre la conversation. Il ne tourne pas sur l’appareil : il passe par le forfait de l’utilisateur, et seulement s’il l’a.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>LocalVQE <span class="dz-etat dz-etat-essai">En essai</span></h3>
+  <p class="dz-pour">Pour retirer l’écho sans casque</p>
+  <p>Un modèle de 2,3 Mo, ouvert, qui retire deux fois et demie plus d’écho que le filtre d’aujourd’hui, à cinq à dix fois le temps réel sur un M1.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>WeSpeaker ResNet34-LM <span class="dz-etat dz-etat-essai">En essai</span></h3>
+  <p class="dz-pour">Pour dire qui parle sur le téléphone</p>
+  <p>Ouvert, en ONNX, il tient sur un Pixel 7 plus vite que le temps réel. Il coupe encore une même personne en plusieurs voix.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>EmbeddingGemma 300M <span class="dz-etat dz-etat-essai">En essai</span></h3>
+  <p class="dz-pour">Pour chercher par le sens</p>
+  <p>Petit, multilingue, et il tourne sur le Mac sans rien envoyer. Il passe par ONNX Runtime, MLX ne se compilant pas avec nos outils.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Nemotron, transcription multilingue <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour transcrire en local, comparer à Apple</p>
+  <p>25 langues dont le français, déjà porté par FluidAudio. À mesurer en imposant la langue, sur le même banc qu’Apple.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Nemotron 3 Diarization <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour dire qui parle</p>
+  <p>Annoncé à 14,7 % d’erreur sur un banc public, contre 19,3 % pour le suivant. Sa licence ne permet que l’évaluation : un point de comparaison, pas un modèle à embarquer.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>WhisperKit <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour transcrire</p>
+  <p>Whisper en Core ML, rapide sur Apple Silicon. Whisper reste derrière Apple en français sur nos mesures : rien à gagner aujourd’hui.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Qwen3-ASR <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour transcrire</p>
+  <p>Ouvert sous Apache 2.0, en 0,6 et 1,7 milliard de paramètres. Pas encore mesuré en français.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>sherpa-onnx <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour une version Windows ou Linux</p>
+  <p>Transcription, voix et parole en ONNX, sur toutes les plateformes : la piste si l’app quitte un jour le Mac.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Reconnaissance de Google par Gemini Nano <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour transcrire sur le téléphone</p>
+  <p>Plus de langues, mais encore en alpha, et réservée aux téléphones récents : le Pixel 7 ne l’a pas.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Core AI et Create ML <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour faire tourner et entraîner nos propres modèles sur le Mac</p>
+  <p>Core AI, nouveau dans macOS 27, charge des modèles convertis depuis PyTorch ; Create ML entraîne une petite tête sur l’empreinte de son d’Apple. Aucun ne sépare les voix d’une réunion : ce modèle-là reste à trouver.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>DeepFilterNet3 <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour débruiter une voix</p>
+  <p>Mêlé au son d’origine, il garde les voix lointaines. Il n’améliore pas la transcription ; pour la réécoute, l’isolation d’Apple fait déjà le travail.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Parakeet TDT 0.6B v3 <span class="dz-etat dz-etat-ecarte">Écarté</span></h3>
+  <p class="dz-pour">Pour transcrire</p>
+  <p>Rapide et ouvert, mais il choisit sa langue seul et passe en anglais sur 12 % des mots de conversations en français.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>YAMNet <span class="dz-etat dz-etat-ecarte">Écarté</span></h3>
+  <p class="dz-pour">Pour classer les bruits sur le téléphone</p>
+  <p>Il trouve un tiers de vrais bruits en moins que SoundAnalysis, et le Mac reçoit déjà tout le son.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>SepFormer, MetricGAN+, noisereduce <span class="dz-etat dz-etat-ecarte">Écarté</span></h3>
+  <p class="dz-pour">Pour séparer ou débruiter les voix d’une pièce</p>
+  <p>SepFormer est trop lent pour un Mac en tâche de fond ; les deux autres effacent les voix lointaines.</p>
+</article>
+</div>
+</div>
+<div class="partie" id="les-mesures">
+<h2>Les mesures</h2>
+<p class="dz-sous">Faites sur un corpus fictif, ou sur de vrais enregistrements dont seuls les chiffres sortent.</p>
+<div class="dz-grille">
+<article class="dz-carte">
+  <h3>Apple face aux moteurs ouverts</h3>
+  <p>Un moteur ouvert transcrirait-il mieux le français que celui d’Apple ?</p>
+  <div class="dz-mesures"><div><b>7 %</b><span>des mots justes d’Apple manqués par Whisper, au casque</span></div><div><b>12 %</b><span>des mots de Parakeet passés en anglais</span></div><div><b>76 %</b><span>d’écart entre les deux moteurs ouverts sur une voix lointaine : personne ne sait</span></div></div>
+  <p class="dz-date">Mesuré sur 98 conversations réelles, 29 000 mots relus par Claude, le 9 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Apple, Whisper et Claude</h3>
+  <p>Faut-il garder Whisper, ou Apple suivi d’une relecture suffit-il ?</p>
+  <div class="dz-mesures"><div><b>71 contre 67</b><span>sur 100, Apple face à Whisper, jugés à l’aveugle</span></div><div><b>74</b><span>avec une relecture par Claude, quel que soit le moteur</span></div></div>
+  <p class="dz-date">Mesuré sur 14 appels réels, le 27 octobre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>L’écho, sans casque</h3>
+  <p>Un petit modèle retire-t-il mieux l’écho qu’un filtre adaptatif classique ?</p>
+  <div class="dz-mesures"><div><b>20 contre 51</b><span>mots d’écho restants, LocalVQE contre le filtre d’aujourd’hui</span></div><div><b>6 minutes</b><span>de calcul pour une heure d’appel sur un M1</span></div></div>
+  <p class="dz-date">Mesuré sur deux heures d’appels réels sans casque, avec une voix fictive ajoutée, le 10 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Qui parle, sur le téléphone</h3>
+  <p>Le téléphone peut-il dire qui parle pendant qu’il enregistre ?</p>
+  <div class="dz-mesures"><div><b>77 %</b><span>de votre voix reconnue comme la vôtre, contre 4 % avant de mieux repérer la parole</span></div><div><b>2/3 d’un cœur</b><span>du Pixel 7, et environ 9 % de batterie par heure de parole</span></div></div>
+  <p class="dz-date">Mesuré sur de vraies réunions, comparées à ce que trouve le Mac, le 10 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Trois micros sur un téléphone</h3>
+  <p>Les micros d’un même téléphone suffisent-ils à dire d’où vient une voix ?</p>
+  <div class="dz-mesures"><div><b>98 %</b><span>des demi-secondes placées au bon endroit, pour quatre places autour d’une table</span></div></div>
+  <p class="dz-date">Mesuré sur une prise réelle, téléphone posé à plat, le 5 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Reconnaître une conversation</h3>
+  <p>Le téléphone peut-il reconnaître, pendant qu’elle a lieu, une conversation à plusieurs ?</p>
+  <div class="dz-mesures"><div><b>82 sur 88</b><span>conversations reconnues, en deux minutes environ</span></div><div><b>4 fois moins</b><span>de calcul en n’écoutant qu’une fenêtre toutes les 6 secondes</span></div></div>
+  <p class="dz-date">Mesuré sur 88 conversations réelles et 340 passages d’écoute, jugés par ce que le Mac trouve après coup, le 10 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>L’empreinte de votre voix</h3>
+  <p>Une empreinte prise au casque vous reconnaît-elle partout ?</p>
+  <div class="dz-mesures"><div><b>8,7 %</b><span>d’erreur sur les appels du téléphone</span></div><div><b>27 %</b><span>d’erreur en réunion, au micro posé sur la table</span></div></div>
+  <p class="dz-date">Mesuré sur 672 répliques de 36 réunions, et 114 passages d’appels, réels, le 9 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Rehausser les voix avant de transcrire</h3>
+  <p>Débruiter ou séparer les voix avant de transcrire améliore-t-il le texte ?</p>
+  <div class="dz-mesures"><div><b>1 point</b><span>de mots justes au mieux, dans le bruit de la mesure</span></div><div><b>93 %</b><span>des mots d’une voix lointaine perdus par le débruiteur le plus agressif</span></div><div><b>0,3 à 0,8 fois</b><span>le temps réel pour séparer les voix : trop lent</span></div></div>
+  <p class="dz-date">Mesuré sur 60 phrases de synthèse posées dans le vrai fond de chaque capture, et 24 minutes réelles, le 10 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>L’isolation de voix d’Apple</h3>
+  <p>L’isolation d’Apple garde-t-elle toutes les voix ?</p>
+  <div class="dz-mesures"><div><b>0,1 à 0,6 dB</b><span>perdus par une voix proche</span></div><div><b>3 à 12 dB</b><span>perdus par une voix lointaine : elle n’y est pas appliquée</span></div><div><b>93,5 ms</b><span>de retard qu’elle ne déclare pas, retiré par l’app</span></div></div>
+  <p class="dz-date">Mesuré sur dix enregistrements réels et une voix de synthèse, le 9 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Toutes les voix au même niveau</h3>
+  <p>À la réécoute d’une réunion, chaque voix peut-elle s’entendre aussi bien ?</p>
+  <div class="dz-mesures"><div><b>13 dB à 0</b><span>d’écart entre la voix la plus forte et la plus faible</span></div><div><b>9 à 25 dB</b><span>de fond en moins entre les répliques</span></div></div>
+  <p class="dz-date">Mesuré sur dix réunions réelles, le 10 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Classer les bruits</h3>
+  <p>Le téléphone classerait-il les bruits aussi bien que le Mac ?</p>
+  <div class="dz-mesures"><div><b>89 contre 61</b><span>vrais bruits trouvés, SoundAnalysis contre YAMNet</span></div></div>
+  <p class="dz-date">Mesuré sur 24 heures d’écoute de fond réelle, le 9 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Chercher par le sens</h3>
+  <p>Un modèle local retrouve-t-il un passage dit avec d’autres mots ?</p>
+  <div class="dz-mesures"><div><b>16 sur 21</b><span>questions trouvent la bonne réplique parmi les cinq premières, contre 5 avec les mots seuls</span></div></div>
+  <p class="dz-date">Mesuré sur 21 questions sur une vraie mémoire, le 5 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Ne garder que la parole</h3>
+  <p>Combien de place prend la parole dans l’écoute de fond ?</p>
+  <div class="dz-mesures"><div><b>14 %</b><span>de parole</span></div><div><b>1,35 Go à 0,32 Go</b><span>en ne gardant que la parole, à 2 secondes près</span></div></div>
+  <p class="dz-date">Mesuré sur 96 heures d’écoute du téléphone, le 9 novembre 2026.</p>
+</article>
+</div>
+</div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="col">
+      <div class="links">
+        <a href="../fonctionnalites/">Fonctionnalités</a>
+        <a href="../guides/">Guides</a>
+        <a href="../versions/">Versions</a>
+        <a href="../technique/">Technique</a>
+        <a href="../confidentialite/">Données et confidentialité</a>
+      </div>
+      <p>L'audio est enregistré et transcrit sur votre Mac. Un assistant relié peut lire vos conversations, sauf celles gardées hors des IA.</p>
+      <div class="author">
+        <img src="../img/gildas.webp" width="480" height="498" loading="lazy" alt="Portrait dessiné à l'encre et à l'aquarelle de Gildas Frémont, bras croisés, en pull irlandais.">
+        <div class="says">
+        <div class="bubble">
+          <p>Bonjour, merci de vous intéresser à Callrecorder. Je l'ai initialement créé pour gérer mes appels, je l'améliore maintenant grâce à vos remarques.</p>
+          <button class="button open-message" type="button">Laisser un message</button>
+          <form class="message" hidden>
+            <div class="rec-bar" hidden>
+              <p class="rec-state" role="status"></p>
+            </div>
+            <textarea name="text" rows="3" maxlength="3000" placeholder="Votre message" aria-label="Votre message pour Gildas" required></textarea>
+            <div class="message-actions"><button class="rec-toggle" type="button" hidden>Dicter</button><span class="rec-key" aria-hidden="true">Espace pour dicter</span><button class="button send" type="submit" disabled>Envoyer</button></div>
+            <p class="sent-status" role="status"><span></span> <button class="another" type="button">Envoyer un autre message</button></p>
+          </form>
+        </div>
+        <p class="contact"><a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+  // Le menu suit la lecture, comme dans Fonctionnalités.
+  (() => {
+    const links = new Map([...document.querySelectorAll(".toc a")].map(a => [a.hash.slice(1), a]));
+    const seen = new Set();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id));
+      const first = [...links.keys()].find(id => seen.has(id));
+      if (first) links.forEach((a, id) => id === first ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current"));
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    links.forEach((a, id) => io.observe(document.getElementById(id)));
+  })();
+  // Les écrans en clair ou en sombre : toutes les bascules ensemble, gardées d'une visite à l'autre.
+  (() => {
+    const boutons = [...document.querySelectorAll(".bascule button")];
+    const applique = mode => {
+      boutons.forEach(b => b.setAttribute("aria-selected", b.dataset.mode === mode));
+      document.querySelectorAll("img[data-sombre]").forEach(img => {
+        img.dataset.clair ??= img.getAttribute("src");
+        img.src = mode === "sombre" ? img.dataset.sombre : img.dataset.clair;
+        const a = img.closest("a");
+        if (a) a.href = img.src;
+      });
+      try { localStorage.setItem("ecrans", mode); } catch (e) {}
+    };
+    boutons.forEach(b => b.addEventListener("click", () => applique(b.dataset.mode)));
+    try { if (localStorage.getItem("ecrans") === "sombre") applique("sombre"); } catch (e) {}
+  })();
+</script>
+<script src="../nav.js?v=2"></script>
+<script src="../note.js?v=20"></script>
+<script src="../visite.js?v=1"></script>
+</body>
+</html>
