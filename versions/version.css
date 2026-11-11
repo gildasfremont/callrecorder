@@ -81,3 +81,16 @@
 .page-version figure > .bascule { margin: 12px 0 0; }
 .page-version figure.dz-duo > .bascule { grid-column: 1 / -1; margin-top: -8px; }
 .page-version .tabs.bascule button { padding: 5px 14px; font-size: 13px; }
+
+/* La page Technique (TECHNIQUE.md) : l'état d'un modèle en étiquette après son nom, à quoi il sert en gris, des listes
+   « étiquette, texte » pour ce qui tourne où, et la veille sur deux colonnes quand la place le permet. */
+.page-version .dz-etat { display: inline-block; margin-left: 8px; padding: 1px 8px; border-radius: 6px; font-size: 13px; line-height: 1.5; font-weight: 600; vertical-align: 2px; white-space: nowrap; background: var(--sunken); color: var(--secondary); }
+.page-version .dz-etat-utilise { background: var(--accent-soft); color: var(--accent); }
+.page-version .dz-etat-essai { background: var(--warn-soft); color: var(--warn); }
+.page-version .dz-carte .dz-pour { font-size: 15px; color: var(--secondary); }
+.page-version .dz-carte > h3 + .dz-pour { margin-top: 4px; }
+.page-version .dz-liste { list-style: none; padding: 0; display: grid; gap: 12px; }
+.page-version .dz-liste li { font-size: 17px; line-height: 1.5; color: var(--body); max-width: 640px; }
+.page-version .dz-liste b { display: block; font-weight: 600; color: var(--text); }
+.page-version .dz-grille.dz-deux { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.page-version .dz-deux .dz-carte { padding: 22px 24px 24px; }
