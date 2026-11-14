@@ -202,6 +202,12 @@
 </article>
 
 <article class="dz-carte">
+  <h3>Conv-TasNet <span class="dz-etat dz-etat-suivi">Suivi</span></h3>
+  <p class="dz-pour">Pour détacher une voix lointaine des autres voix d’une pièce, à la réécoute</p>
+  <p>Petit (5 M de paramètres, 20 Mo) et rapide, 7,7 fois le temps réel sur le cloud. La version entraînée sur des mélanges bruités garde la voix lointaine et la détache d’une voix qui parle en même temps ; la sortie se choisit par l’empreinte de la voix. Poids sous licence CC BY-SA 4.0.</p>
+</article>
+
+<article class="dz-carte">
   <h3>Parakeet TDT 0.6B v3 <span class="dz-etat dz-etat-ecarte">Écarté</span></h3>
   <p class="dz-pour">Pour transcrire</p>
   <p>Rapide et ouvert, mais il choisit sa langue seul et passe en anglais sur 12 % des mots de conversations en français.</p>
@@ -214,9 +220,9 @@
 </article>
 
 <article class="dz-carte">
-  <h3>SepFormer, MetricGAN+, noisereduce <span class="dz-etat dz-etat-ecarte">Écarté</span></h3>
+  <h3>SepFormer, MossFormer2, FRCRN, MetricGAN+, noisereduce <span class="dz-etat dz-etat-ecarte">Écarté</span></h3>
   <p class="dz-pour">Pour séparer ou débruiter les voix d’une pièce</p>
-  <p>SepFormer est trop lent pour un Mac en tâche de fond ; les deux autres effacent les voix lointaines.</p>
+  <p>SepFormer, MossFormer2 et FRCRN rendent une voix lointaine plus claire que Conv-TasNet, mais tournent à 0,1 à 0,8 fois le temps réel : trop lents pour un Mac en tâche de fond. FRCRN, et parfois MossFormer2, abîment en plus la voix lointaine quand une voix proche la chevauche ; MetricGAN+ et noisereduce l’effacent toujours.</p>
 </article>
 </div>
 </div>
@@ -285,6 +291,13 @@
   <p>Débruiter ou séparer les voix avant de transcrire améliore-t-il le texte ?</p>
   <div class="dz-mesures"><div><b>1 point</b><span>de mots justes au mieux, dans la marge d’erreur de la mesure</span></div><div><b>93 %</b><span>des mots d’une voix lointaine perdus par le débruiteur le plus agressif</span></div><div><b>0,3 à 0,8 fois</b><span>le temps réel pour séparer les voix : trop lent</span></div></div>
   <p class="dz-date">Mesuré sur 60 phrases de synthèse posées dans le vrai fond de chaque capture, et 24 minutes réelles, le 10 novembre 2026.</p>
+</article>
+
+<article class="dz-carte">
+  <h3>Séparer les voix d’une pièce</h3>
+  <p>Un modèle rend-il une voix lointaine plus claire à la réécoute, sans l’effacer, assez vite pour le Mac ?</p>
+  <div class="dz-mesures"><div><b>7,7 fois</b><span>le temps réel pour Conv-TasNet, qui ne l’abîme que dans 0 à 3 % des passages</span></div><div><b>+7,8 dB</b><span>de voix lointaine détachée d’une voix proche qui parle en même temps</span></div><div><b>100 %</b><span>des passages où DeepFilterNet3, en plein, abîme la voix lointaine seule</span></div></div>
+  <p class="dz-date">Mesuré sur 90 passages de phrases de synthèse posées dans le vrai son d’un téléphone sur une table, le 14 novembre 2026.</p>
 </article>
 
 <article class="dz-carte">
