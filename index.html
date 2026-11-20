@@ -237,7 +237,7 @@
             <button class="cmdline" type="button" data-copy="cmd" title="Copier la ligne"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><span class="hint" aria-hidden="true">Copier</span></button>
             <ol class="steps">
               <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
-              <li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande.</span></li>
+              <li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Pour l’écran, macOS demande aussi Touch ID ou votre mot de passe.</span></li>
               <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip. Cette lecture devient votre premier enregistrement&nbsp;: il est dans Callrecorder, dans la barre des menus.</span></li>
             </ol>
             <p class="help">Claude ou Codex déjà sur ce Mac&nbsp;? Coupez leur accès dans Réglages&nbsp;› Agents. Seuls des chiffres techniques partent, pour améliorer l’app&nbsp;: Réglages&nbsp;› Général.</p>
@@ -367,7 +367,7 @@
       autre:   { nom: "votre IA",    lance: null,  relit: false, repond: true,  ajout: 'Cursor, Gemini CLI, LM Studio… Pour qu’elle réponde, reliez-la dans Callrecorder, Réglages&nbsp;› Agents.' },
       aucune:  { sans: true, relit: false, repond: false }
     };
-    const autoriser = '<li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande.</span></li>';
+    const autoriser = '<li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Pour l’écran, macOS demande aussi Touch ID ou votre mot de passe.</span></li>';
     const steps = a => [
       '<li><b>Coller</b><span class="sub">Le message dans ' + a.nom + (a.lance === true ? '&nbsp;: l’installation se lance, acceptez quand on vous le demande.'
         : a.lance === false ? '&nbsp;: la réponse contient une ligne à coller dans le Terminal.' : '&nbsp;: l’installation se lance, ou la réponse contient une ligne à coller dans le Terminal.') + '</span></li>',
