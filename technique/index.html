@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Technique · Callrecorder</title>
+<meta name="description" content="Modèles utilisés, veille et mesures de Callrecorder. L’app est en refonte : rien ici n’annonce une version.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Callrecorder">
+<meta property="og:title" content="Technique · Callrecorder">
+<meta property="og:description" content="Modèles utilisés, veille et mesures de Callrecorder. L’app est en refonte : rien ici n’annonce une version.">
+<meta property="og:url" content="https://gildasfremont.github.io/callrecorder/technique/">
+<meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/accueil.jpg?v=3">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" sizes="16x16" href="../img/icone-micro-16.png?v=26">
+<link rel="icon" sizes="32x32" href="../img/icone-micro-32.png?v=26">
+<link rel="icon" sizes="64x64" href="../img/icone-micro-64.png?v=26">
+<link rel="apple-touch-icon" href="../img/icone-micro-180.png?v=27">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
+<link rel="stylesheet" href="../style.css?v=140">
+<link rel="stylesheet" href="../versions/version.css">
+</head>
+<body class="page-version">
+
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a class="home" href="../" aria-label="Callrecorder, accueil"><span class="marque" aria-hidden="true">callrecorder</span></a>
+    <div class="links">
+      <a href="../fonctionnalites/">Fonctionnalités</a>
+      <a class="button" href="../#installation">Installer</a>
+    </div>
+  </nav>
+
+  <header class="page-head">
+    <h1>Technique</h1>
+    <p>Modèles utilisés, veille et mesures de Callrecorder. L’app est en refonte : rien ici n’annonce une version.</p>
+  </header>
+
+  <div class="with-toc">
+    <aside class="toc">
+      <nav aria-label="Technique">
+        <a href="#modeles-utilises">Modèles utilisés</a>
+        <a href="#veille">Veille</a>
+        <a href="#mesures">Mesures</a>
+      </nav>
+    </aside>
+    <div class="contenu">
+<div class="partie" id="modeles-utilises">
+<h2>Modèles utilisés</h2>
+<p class="dz-sous">Presque tout se calcule sur l’appareil qui enregistre. Seule la relecture par Claude part ailleurs, si vous l’avez.</p>
+<div class="dz-grille">
+<article class="dz-carte">
+  <h3>Mac</h3>
+  <ul class="dz-liste"><li><b>Transcription</b>SpeechTranscriber, le moteur d’Apple, depuis macOS 26. Avant, Whisper large-v3-turbo par whisper.cpp, avec Silero VAD pour ne garder que la parole.</li><li><b>Qui parle</b>FluidAudio, qui porte en Core ML les modèles de pyannote : tours de parole et empreintes de voix.</li><li><b>Écho sans casque</b>Un filtre adaptatif retire du micro le son joué par le Mac. En essai, LocalVQE, un petit modèle de 2,3 Mo.</li><li><b>Voix à la réécoute</b>L’isolation de voix d’Apple, jugée piste par piste, et un gain réglé réplique par réplique.</li><li><b>Bruits et parole</b>SoundAnalysis d’Apple classe les sons de l’écoute de fond.</li><li><b>Texte à l’écran</b>Vision d’Apple lit les captures de la fenêtre d’appel.</li><li><b>Recherche par le sens</b>En essai, EmbeddingGemma 300M par ONNX Runtime, sur le Mac.</li><li><b>Relecture</b>Claude, par Claude Code s’il est connecté à votre compte : la transcription part alors chez Anthropic, sur votre forfait.</li></ul>
+</article>
+
+<article class="dz-carte">
+  <h3>Téléphone</h3>
+  <ul class="dz-liste"><li><b>Parole et silence</b>Silero VAD, en ONNX.</li><li><b>Qui parle</b>En essai, WeSpeaker ResNet34-LM, en ONNX, avec l’empreinte de votre voix envoyée par le Mac.</li><li><b>Moteur</b>ONNX Runtime pour Android fait tourner les deux modèles.</li><li><b>Le reste</b>Le Mac recalcule qui parle sur l’enregistrement entier, plus justement, et renvoie au téléphone un son allégé.</li></ul>
+</article>
+
+<article class="dz-carte">
+  <h3>Données locales</h3>
+  <ul class="dz-liste"><li><b>Le son</b>Enregistré, transcrit et analysé sur le Mac ou le téléphone. Il ne part que si vous placez vos enregistrements dans un dossier synchronisé.</li><li><b>Les voix</b>Votre empreinte reste sur vos appareils. Celles des autres servent le temps de la transcription, sans être gardées.</li><li><b>Les modèles</b>Téléchargés une fois depuis Hugging Face, puis utilisés hors ligne.</li></ul>
+</article>
+
+<article class="dz-carte">
+  <h3>Stack</h3>
+  <ul class="dz-liste"><li><b>Mac</b>Swift et SwiftUI, sur macOS 15 et plus, Apple Silicon.</li><li><b>Téléphone</b>Kotlin et Jetpack Compose, Android 10 et plus.</li><li><b>Agents</b>Un serveur MCP sur le Mac ouvre la mémoire aux agents IA reliés, sauf les enregistrements qui leur sont fermés.</li><li><b>Mémoire</b>Des fichiers ouverts, lisibles sans l’app : le son, la transcription en Markdown, les métadonnées en JSON.</li></ul>
+</article>
+</div>
+</div>
+<div class="partie" id="veille">
+<h2>Veille</h2>
+<p class="dz-sous">Chaque modèle, jugé sur quatre critères : tourner sur l’appareil, vite sur un M1 ou un Pixel, en français, sous une licence ouverte.</p>
+<div class="dz-grille dz-deux">
+<article class="dz-carte">
+  <h3>Transcription d’Apple <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour transcrire sur le Mac</p>
+  <p><a href="https://developer.apple.com/documentation/speech/speechtranscriber">developer.apple.com</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>Whisper large-v3-turbo <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour transcrire avant macOS 26</p>
+  <p><a href="https://huggingface.co/ggerganov/whisper.cpp">huggingface.co</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>FluidAudio <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour dire qui parle sur le Mac</p>
+  <p><a href="https://huggingface.co/FluidInference/speaker-diarization-coreml">huggingface.co</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>Isolation de voix d’Apple <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour mettre les voix en avant à la réécoute</p>
+</article>
+
+<article class="dz-carte">
+  <h3>SoundAnalysis d’Apple <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour classer les bruits et repérer la parole</p>
+  <p><a href="https://developer.apple.com/documentation/soundanalysis">developer.apple.com</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>Silero VAD <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour séparer la parole du silence</p>
+  <p><a href="https://github.com/snakers4/silero-vad">github.com</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>EmbeddingGemma 300M <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour chercher par le sens</p>
+  <p><a href="https://huggingface.co/onnx-community/embeddinggemma-300m-ONNX">huggingface.co</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>Claude <span class="dz-etat dz-etat-utilise">Utilisé</span></h3>
+  <p class="dz-pour">Pour relire une transcription</p>
+  <p><a href="https://www.anthropic.com/claude">anthropic.com</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>LocalVQE <span class="dz-etat dz-etat-essai">En essai</span></h3>
+  <p class="dz-pour">Pour retirer l’écho sans casque</p>
+  <p><a href="https://huggingface.co/LocalAI-io/LocalVQE">huggingface.co</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>WeSpeaker ResNet34-LM <span class="dz-etat dz-etat-essai">En essai</span></h3>
+  <p class="dz-pour">Pour dire qui parle sur le téléphone</p>
+  <p><a href="https://huggingface.co/Wespeaker/wespeaker-voxceleb-resnet34-LM">huggingface.co</a></p>
+</article>
+
+<article class="dz-carte">
+  <h3>YAMNet <span class="dz-etat dz-etat-essai">En essai</span></h3>
+  <p class="dz-pour">Pour reconnaître une télévision, une radio ou une vidéo au son, sur le téléphone et sur le Mac</p>
+  <p><a href="https://www.kaggle.com/models/google/yamnet">kaggle.com</a></p>
+</article>
+</div>
+</div>
+<div class="partie" id="mesures">
+<h2>Mesures</h2>
+<p class="dz-sous">29 mesures, du 27 octobre 2026 au 20 novembre 2026, sur de vraies conversations et un corpus fictif. Un modèle n’entre dans l’app qu’après avoir été mesuré.</p>
+</div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="col">
+      <div class="links">
+        <a href="../fonctionnalites/">Fonctionnalités</a>
+        <a href="../guides/">Guides</a>
+        <a href="../versions/">Versions</a>
+        <a href="../technique/">Technique</a>
+        <a href="../confidentialite/">Données et confidentialité</a>
+      </div>
+      <p>L’audio est enregistré et transcrit sur votre Mac. Un agent relié peut lire vos enregistrements, sauf ceux des groupes fermés aux agents.</p>
+      <div class="author">
+        <img src="../img/gildas.webp" width="480" height="498" loading="lazy" alt="Portrait dessiné à l’encre et à l’aquarelle de Gildas Frémont, bras croisés, en pull irlandais.">
+        <div class="says">
+        <div class="bubble">
+          <p>Bonjour, merci de vous intéresser à Callrecorder. Je l’ai initialement créé pour gérer mes appels, je l’améliore maintenant grâce à vos remarques.</p>
+          <button class="button open-message" type="button">Laisser un message</button>
+          <form class="message" hidden>
+            <div class="rec-bar" hidden>
+              <p class="rec-state" role="status"></p>
+            </div>
+            <textarea name="text" rows="3" maxlength="3000" placeholder="Votre message" aria-label="Votre message pour Gildas" required></textarea>
+            <div class="message-actions"><button class="rec-toggle" type="button" hidden>Dicter</button><span class="rec-key" aria-hidden="true">Espace pour dicter</span><button class="button send" type="submit" disabled>Envoyer</button></div>
+            <p class="sent-status" role="status"><span></span> <button class="another" type="button">Envoyer un autre message</button></p>
+          </form>
+        </div>
+        <p class="contact"><a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<script>
+  // Le menu suit la lecture, comme dans Fonctionnalités.
+  (() => {
+    const links = new Map([...document.querySelectorAll(".toc a")].map(a => [a.hash.slice(1), a]));
+    const seen = new Set();
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id));
+      const first = [...links.keys()].find(id => seen.has(id));
+      if (first) links.forEach((a, id) => id === first ? a.setAttribute("aria-current", "true") : a.removeAttribute("aria-current"));
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    links.forEach((a, id) => io.observe(document.getElementById(id)));
+  })();
+  // Les écrans en clair ou en sombre : toutes les bascules ensemble, gardées d'une visite à l'autre.
+  (() => {
+    const boutons = [...document.querySelectorAll(".bascule button")];
+    const applique = mode => {
+      boutons.forEach(b => b.setAttribute("aria-selected", b.dataset.mode === mode));
+      document.querySelectorAll("img[data-sombre]").forEach(img => {
+        img.dataset.clair ??= img.getAttribute("src");
+        img.src = mode === "sombre" ? img.dataset.sombre : img.dataset.clair;
+        const a = img.closest("a");
+        if (a) a.href = img.src;
+      });
+      try { localStorage.setItem("ecrans", mode); } catch (e) {}
+    };
+    boutons.forEach(b => b.addEventListener("click", () => applique(b.dataset.mode)));
+    try { if (localStorage.getItem("ecrans") === "sombre") applique("sombre"); } catch (e) {}
+  })();
+</script>
+<script src="../nav.js?v=2"></script>
+<script src="../note.js?v=20"></script>
+<script src="../visite.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Guides · Callrecorder</title>
+<meta name="description" content="Les guides de Callrecorder&nbsp;: relier Claude, enregistrer une réunion ou un téléphone, retrouver un enregistrement, ranger, exporter.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Callrecorder">
+<meta property="og:title" content="Guides · Callrecorder">
+<meta property="og:description" content="Les guides de Callrecorder&nbsp;: relier Claude, enregistrer une réunion ou un téléphone, retrouver un enregistrement, ranger, exporter.">
+<meta property="og:url" content="https://gildasfremont.github.io/callrecorder/guides/">
+<meta property="og:image" content="https://gildasfremont.github.io/callrecorder/img/partage/guides.jpg?v=3">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Guides de Callrecorder.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" sizes="16x16" href="../img/icone-micro-16.png?v=11">
+<link rel="icon" sizes="32x32" href="../img/icone-micro-32.png?v=11">
+<link rel="icon" sizes="64x64" href="../img/icone-micro-64.png?v=11">
+<link rel="apple-touch-icon" href="../img/icone-micro-180.png?v=12">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
+<link rel="stylesheet" href="../style.css?v=140">
+</head>
+<body>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a class="home" href="../" aria-label="Callrecorder, accueil"><span class="marque" aria-hidden="true">callrecorder</span></a>
+    <div class="links">
+      <a href="../fonctionnalites/">Fonctionnalités</a>
+      <a href="../guides/" aria-current="page">Guides</a>
+      <a class="button" href="../#installation">Installer</a>
+    </div>
+  </nav>
+
+  <main id="contenu" tabindex="-1">
+
+  <header class="page-head">
+    <h1>Guides</h1>
+  </header>
+
+  <section>
+    <div class="col">
+      <p class="group-label">Démarrer</p>
+      <div class="group">
+        <details class="row" id="fenetre"><summary>Ouvrir la fenêtre de Callrecorder</summary><div class="answer">
+          <p>Cliquez sur l’icône de Callrecorder dans la barre des menus. Vos enregistrements s’affichent par jour&nbsp;: cliquez sur l’un d’eux pour l’ouvrir dans la fenêtre. Fenêtre&nbsp;› <b>Conversations</b> (⌘0) l’ouvre aussi.</p>
+          <p>En haut de la barre latérale se trouvent <b>Rechercher</b>, <b>Enregistrements</b> (⌘1), <b>Écoute en continu</b> (⌘2), <b>Contacts</b>, <b>Agents</b> et <b>Local</b>. En bas, <b>Intégrations</b> et <b>Autorisations</b>. En tête des pages, un onglet par appareil&nbsp;: <b>Tous</b>, ce Mac, puis chaque téléphone relié. En bas à droite, le menu de la version ouvre <b>État</b> et recherche les mises à jour.</p>
+          <img class="decoupe" srcset="../img/fenetre/liste-1280w.webp?v=1 1280w, ../img/fenetre/liste.webp?v=1 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/fenetre/liste.webp?v=1" width="2560" height="1582" loading="lazy" alt="La fenêtre de Callrecorder. À gauche, Rechercher, Enregistrements, Extraits et Contacts, puis Intégrations, Téléphone, Autorisations et Stockage. À droite, les enregistrements d’un directeur financier, par jour, chacun avec sa capture ou le logo de son app, son titre, l’heure et la durée.">
+        </div></details>
+        <details class="row" id="claude"><summary>Donner à Claude l’accès à vos enregistrements</summary><div class="answer">
+          <ol>
+            <li>Si Claude était installé avant Callrecorder, c’est déjà fait. Sinon, dans la barre latérale de la fenêtre, ouvrez <b>Intégrations</b>, puis <b>Claude</b>. Activez <b>Accès des agents à vos enregistrements</b>&nbsp;: Claude Code, Claude Desktop et Codex (en bêta) sont reliés.</li>
+            <li>Quittez Claude, puis relancez-le.</li>
+            <li>Demandez-lui par exemple&nbsp;: «&nbsp;Qu’est-ce que j’ai promis à Paul jeudi&nbsp;?&nbsp;»</li>
+          </ol>
+          <img class="decoupe extrait" src="../img/fenetre/agents.webp?v=1" width="1408" height="422" loading="lazy" alt="Intégrations, la partie Agents&nbsp;: Claude, Claude Code, Codex et Autre agent, chacun avec son état, relié ou non.">
+        </div></details>
+        <details class="row" id="autre-assistant"><summary>Relier vos enregistrements à un autre agent IA</summary><div class="answer">
+          <p>Codex est relié comme Claude, sans rien faire, mais il est encore en bêta. Callrecorder est un serveur MCP local&nbsp;: Cursor, VS Code, Gemini CLI, LM Studio et les autres agents compatibles MCP peuvent lire vos enregistrements de la même façon.</p>
+          <ol>
+            <li>Dans la barre latérale de la fenêtre, ouvrez <b>Intégrations</b>, puis <b>Autre agent</b>.</li>
+            <li>Si l’agent sait modifier lui-même sa configuration, comme Cursor en mode agent, cliquez sur <b>Copier la consigne</b>. Collez-la-lui dans une conversation.</li>
+            <li>Sinon, cliquez sur <b>Copier la configuration MCP</b>. Collez-la dans le fichier de configuration de l’agent, par exemple <code>~/.cursor/mcp.json</code> ou <code>~/.gemini/settings.json</code>.</li>
+            <li>Redémarrez l’agent, puis demandez-lui&nbsp;: «&nbsp;Liste mes derniers appels&nbsp;».</li>
+          </ol>
+          <p>La configuration tient en trois lignes&nbsp;: un serveur nommé <code>calls</code>, la commande <code>/Applications/CallRecorder.app/Contents/MacOS/CallRecorder</code> et l’argument <code>mcp</code>.</p>
+        </div></details>
+        <details class="row" id="autorisations"><summary>Revoir les autorisations et les réglages</summary><div class="answer">
+          <p>Les réglages sont dans la barre latérale de la fenêtre (⌘,)&nbsp;: <b>Agents</b> et <b>Local</b> en haut, <b>Intégrations</b> et <b>Autorisations</b> en bas. Quand il manque quelque chose, un badge le signale sur l’entrée concernée, par exemple le micro sur Autorisations. Le panneau de la barre des menus le dit aussi, avec le bouton <b>Autoriser</b>.</p>
+          <p><b>Autorisations</b> donne chaque accès d’un clic. Les accès y sont rangés par usage&nbsp;: Enregistrement, Transcription, Pendant l’appel, Notifications et Protection des données. Vous y réglez aussi les apps et les sites enregistrés, la reconnaissance de votre voix, les captures d’écran, la pastille et l’icône de la barre des menus. <b>Local</b> règle la conservation de l’audio et le dossier des enregistrements, et montre la place qu’ils occupent.</p>
+        </div></details>
+        <details class="row" id="apps-sites"><summary>Choisir les apps et les sites enregistrés</summary><div class="answer">
+          <p>Dans la barre latérale, ouvrez <b>Autorisations&nbsp;› Apps et sites</b>. Chaque app a son interrupteur. Dans un navigateur, chaque site a le sien&nbsp;: Google Meet, Zoom, Teams, WhatsApp Web, Slack… Callrecorder reconnaît le site au titre de la fenêtre. <b>Autres sites</b> couvre les appels qu’il ne reconnaît pas.</p>
+        </div></details>
+        <details class="row" id="etat"><summary>Vérifier que tout s’enregistre&nbsp;: la page État</summary><div class="answer">
+          <p>En bas à droite de la fenêtre, cliquez sur la version, puis sur <b>État</b>. La page montre ce que Callrecorder a enregistré et transcrit ces 7 derniers jours, ce que les agents ont lu, les appels où le micro ou le son des apps n’a rien capté, ce qui attend et ce qui a échoué. Échap ramène aux enregistrements.</p>
+        </div></details>
+      </div>
+      <p class="group-label">Enregistrer</p>
+      <div class="group">
+        <details class="row" id="reunion"><summary>Enregistrer une réunion en face à face</summary><div class="answer">
+          <p>Posez le Mac sur la table, entre vous. Cliquez sur <b>Enregistrer</b>, en haut à droite de la fenêtre (⌘N), ou sur l’icône de Callrecorder dans la barre des menus, puis sur <b>Enregistrer une réunion</b>. Pendant la réunion, l’enregistreur remplace le bouton, avec le temps écoulé, le niveau du son, la capture, la pause et l’arrêt. Pour finir, cliquez sur <b>Arrêter l’enregistrement</b> (⌘N). La transcription suit.</p>
+          <p>Chaque voix reçoit un numéro et une couleur, «&nbsp;Voix 1&nbsp;», «&nbsp;Voix 2&nbsp;»… La vôtre devient «&nbsp;Moi&nbsp;» une fois que Callrecorder l’a apprise à partir de vos notes et de vos appels au casque. Pour donner son vrai nom à une voix, cliquez sur son nom dans la transcription.</p>
+          <img class="decoupe" srcset="../img/fenetre/enregistrement-1280w.webp?v=1 1280w, ../img/fenetre/enregistrement.webp?v=1 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/fenetre/enregistrement.webp?v=1" width="2560" height="1582" loading="lazy" alt="Une réunion en cours&nbsp;: en haut à droite, l’enregistreur remplace Enregistrer, avec l’arrêt, le temps écoulé, le niveau du son, la capture et la pause. La réunion est en tête de la liste du jour.">
+        </div></details>
+        <details class="row" id="note-vocale"><summary>Prendre une note vocale</summary><div class="answer">
+          <ol>
+            <li>Dans <b>Autorisations</b>, activez <b>Prise de note rapide</b>.</li>
+            <li>Autorisez Callrecorder dans <b>Réglages Système&nbsp;› Confidentialité et sécurité&nbsp;› Accessibilité</b>, pour que fn + D fonctionne. Le bouton <b>Ouvrir Réglages Système</b> y mène.</li>
+            <li>Dans n’importe quelle app, appuyez sur <b>fn + D</b>&nbsp;: Callrecorder enregistre une note. Parlez, puis appuyez sur <b>Entrée</b>.</li>
+          </ol>
+          <p>Sans fn + D, choisissez <b>Prendre une note</b> (⇧⌘N) dans le menu Fichier, ou faites un clic droit sur <b>Enregistrer</b>. La note est transcrite aussitôt et rangée dans le groupe <b>Notes</b>. Le filtre Notes de la recherche rassemble les notes. Claude et les autres agents la lisent comme un appel.</p>
+        </div></details>
+        <details class="row" id="capture"><summary>Capturer l’écran pendant un appel</summary><div class="answer">
+          <p>Callrecorder capture déjà la fenêtre de l’appel quand l’affichage change. Pour garder une diapositive ou un document tout de suite&nbsp;:</p>
+          <ol>
+            <li>Cliquez sur le bouton de capture de l’enregistreur, en haut à droite de la fenêtre, ou sur <b>Capturer</b> dans la pastille. Dans le panneau de la barre des menus, cliquez sur <b>Capturer l’appel</b>.</li>
+            <li>Ou, depuis n’importe quel bureau, appuyez sur <b>fn + S</b>&nbsp;: un son confirme la capture, sans ouvrir Callrecorder. Ce raccourci demande l’accès <b>Accessibilité</b>, le même que fn + D.</li>
+          </ol>
+          <p>En réunion, la capture prend la fenêtre au premier plan, une présentation ou un document par exemple. Dans l’enregistrement, chaque capture se place sous la réplique qu’elle accompagne. Cliquez sur une capture pour l’afficher en grand. Les flèches du clavier passent d’une capture à l’autre.</p>
+        </div></details>
+        <details class="row" id="iphone"><summary>Enregistrer les appels de votre iPhone</summary><div class="answer">
+          <p>Grâce à Continuité, le Mac sert de combiné à votre iPhone&nbsp;: la voix passe par le micro et les haut-parleurs du Mac, et Callrecorder l’enregistre.</p>
+          <ol>
+            <li>Sur l’iPhone, ouvrez Réglages&nbsp;› Téléphone&nbsp;› Appels sur d’autres appareils, puis activez votre Mac.</li>
+            <li>Vérifiez que l’iPhone et le Mac utilisent le même compte Apple et sont sur le même Wi-Fi.</li>
+            <li>Passez vos appels depuis le Mac, dans l’app Téléphone (FaceTime avant macOS 26), et décrochez sur le Mac ceux qui arrivent.</li>
+          </ol>
+          <p>Un appel décroché sur l’iPhone lui-même ne passe pas par le Mac&nbsp;: il n’est pas enregistré.</p>
+        </div></details>
+        <details class="row" id="android"><summary>Relier un téléphone Android (bêta)</summary><div class="answer">
+          <p>Dans la barre latérale, ouvrez <b>Écoute en continu</b>, puis cliquez sur <b>Ajouter un appareil</b>. Callrecorder vous guide pour installer son app sur le téléphone, avec un code ou un câble. Le téléphone enregistre ensuite vos appels et vos réunions, puis les envoie au Mac. Le téléphone règle lui-même quand il enregistre&nbsp;: Manuel, Événements du calendrier ou Tout le temps.</p>
+        </div></details>
+        <details class="row" id="arreter"><summary>Arrêter ou supprimer un enregistrement</summary><div class="answer">
+          <p>Pendant l’enregistrement, cliquez sur <b>Arrêter l’enregistrement</b>. Le bouton se trouve dans l’enregistreur, en haut à droite de la fenêtre (le carré, ⌘N), dans la pastille et dans le panneau de la barre des menus. Pour effacer l’enregistrement en cours, faites un clic droit sur l’icône de la barre des menus, puis choisissez <b>Supprimer cet appel</b>.</p>
+          <p>Une fois l’enregistrement terminé, choisissez-le dans la liste et appuyez sur <b>⌘⌫</b>. Vous pouvez aussi ouvrir son menu <b>⋯</b>, puis choisir <b>Supprimer…</b> L’enregistrement part à la corbeille. Pour le récupérer, cliquez sur <b>Annuler</b> dans le message qui s’affiche, ou appuyez sur ⌘Z. Les derniers enregistrements supprimés restent aussi dans <b>Local&nbsp;› Récemment supprimés</b>.</p>
+        </div></details>
+      </div>
+      <p class="group-label">Au quotidien</p>
+      <div class="group">
+        <details class="row" id="retrouver"><summary>Retrouver et réécouter un enregistrement</summary><div class="answer">
+          <p>Dans <b>Enregistrements</b>, tout se suit par jour, le plus récent en haut. Cliquez sur <b>Jours</b>, dans la barre d’outils, pour voir un jour par ligne, puis sur un jour pour y aller.</p>
+          <p>Cliquez sur un enregistrement&nbsp;: il s’ouvre par-dessus la liste, avec le lecteur en bas. <b>Espace</b> lit ou met en pause. Cliquez sur l’onde ou sur l’heure d’une réplique pour aller à ce moment. La vitesse va jusqu’à 2×. Échap, la croix ou un clic à côté referment l’enregistrement. Double-cliquez dessus pour l’ouvrir dans sa propre fenêtre (⌘O).</p>
+          <img class="decoupe" srcset="../img/appels-1280w.webp?v=2 1280w, ../img/appels.webp?v=2 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/appels.webp?v=2" width="2560" height="1582" loading="lazy" alt="La revue budgétaire sur Teams, ouverte par-dessus la liste&nbsp;: le titre, la date et les boutons en haut, les captures de la visio, les répliques horodatées de Sophie, Karim et «&nbsp;Moi&nbsp;», et le lecteur en bas, avec la vitesse et Voix.">
+        </div></details>
+        <details class="row" id="chercher"><summary>Chercher dans vos enregistrements</summary><div class="answer">
+          <p>Appuyez sur <b>⌘F</b>, ou cliquez sur <b>Rechercher</b>, en haut de la barre latérale. La recherche fouille les titres et les transcriptions, et trouve aussi les personnes et les réglages. Les enregistrements les plus pertinents viennent d’abord. Entrée ouvre le premier. Échap ou la croix du champ ferment la recherche.</p>
+          <p>Le temps de la recherche, la barre latérale devient la liste des filtres&nbsp;: une période, <b>Appels</b>, <b>Réunions</b>, <b>Notes</b>, <b>Personnes</b>, puis vos groupes. Si aucun filtre n’est allumé, tout s’affiche.</p>
+          <p>Dans un enregistrement ouvert, la loupe (⌥⌘F) cherche dans son seul texte&nbsp;: Entrée ou ⌘G passent au mot suivant, ⇧⌘G au précédent.</p>
+          <img class="decoupe" srcset="../img/fenetre/recherche-1280w.webp?v=1 1280w, ../img/fenetre/recherche.webp?v=1 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/fenetre/recherche.webp?v=1" width="2560" height="1582" loading="lazy" alt="La recherche «&nbsp;banque&nbsp;». La barre latérale montre les filtres Période, Appels, Réunions, Notes et Personnes. La page liste cinq enregistrements, les quatre appels avec une banque puis la revue budgétaire, où le mot est surligné dans une réplique.">
+          <img class="decoupe" srcset="../img/fenetre/dedans-1280w.webp?v=1 1280w, ../img/fenetre/dedans.webp?v=1 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/fenetre/dedans.webp?v=1" width="2560" height="1582" loading="lazy" alt="La revue budgétaire ouverte, avec une recherche dans son texte&nbsp;: «&nbsp;crédit&nbsp;» est surligné dans la première réplique, et le champ, au-dessus du lecteur, dit «&nbsp;1 sur 2&nbsp;».">
+        </div></details>
+        <details class="row" id="voix"><summary>Écouter une seule voix, nommer une voix</summary><div class="answer">
+          <p>Dans un enregistrement ouvert, cliquez sur <b>Voix</b>, au bout du lecteur. Chaque voix a sa ligne, avec sa couleur, son nom et son temps de parole, et l’onde prend la couleur de qui parle. Dans le menu des pistes, choisissez ce que vous entendez&nbsp;: <b>Tout entendre</b>, <b>Sans ma voix</b> ou <b>Sans en face</b>.</p>
+          <p>Pour nommer une voix, cliquez sur son nom, dans cette ligne ou dans la transcription, puis tapez son vrai nom. Pour une voix de télévision ou de radio, choisissez <b>C’est un média</b>.</p>
+          <img class="decoupe" srcset="../img/fenetre/voix-1280w.webp?v=1 1280w, ../img/fenetre/voix.webp?v=1 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/fenetre/voix.webp?v=1" width="2560" height="1582" loading="lazy" alt="La revue budgétaire ouverte, avec Voix&nbsp;: au-dessus de l’onde, une ligne par voix et son temps de parole, Moi, Sophie Marchand, Karim Benali et Julie Roussel, et le menu Tout entendre.">
+        </div></details>
+        <details class="row" id="passages"><summary>Envoyer un passage à Claude ou le corriger</summary><div class="answer">
+          <p>Dans la transcription, survolez une réplique&nbsp;: son menu <b>⋯</b> propose de l’écouter, de l’envoyer ou de la corriger. Pour un passage de plusieurs répliques, cliquez sur <b>Choisir un passage à partir d’ici</b>, puis cliquez sur la dernière en maintenant ⇧. Une barre apparaît en bas&nbsp;: <b>Écouter</b> n’y joue que ce passage.</p>
+          <ul>
+            <li><b>Envoyer à Claude</b> ouvre une conversation avec le passage et ce qui l’entoure&nbsp;: les répliques d’avant et d’après, ce qui était à l’écran. Le même menu propose aussi de l’envoyer à Cowork ou à ChatGPT, ou de copier le tout avec son contexte.</li>
+            <li><b>Modifier…</b> corrige la réplique sur place&nbsp;: Entrée valide, Échap annule. La correction crée une nouvelle transcription, et la précédente reste dans les versions. <b>Attribuer à</b> donne la réplique à une autre voix. <b>Autres transcriptions du passage…</b> montre ce que chaque transcription avait entendu.</li>
+          </ul>
+        </div></details>
+        <details class="row" id="detail"><summary>Tout ce que Callrecorder sait d’un enregistrement&nbsp;: Détail</summary><div class="answer">
+          <p>Dans un enregistrement ouvert, appuyez sur <b>⌘I</b>, ou choisissez <b>Détail</b> dans son menu <b>⋯</b>. Une feuille rassemble tout ce que Callrecorder en sait&nbsp;: l’enregistrement (titre, groupe, lieu), les réserves, le texte, le son, les voix, ce qui était montré à l’écran, ce qui était ouvert sur le Mac pendant ce temps, les agents qui l’ont lu, et ce qui s’est enregistré au même moment. Échap la referme.</p>
+        </div></details>
+        <details class="row" id="retranscrire"><summary>Retranscrire, ou relire avec Claude</summary><div class="answer">
+          <p>Ouvrez le menu <b>⋯</b> de l’enregistrement, en haut. <b>Nouvelle transcription</b> retranscrit l’enregistrement. <b>Relire avec Claude</b> fait relire la dernière transcription par Claude, qui s’aide de ce qui était à l’écran pendant l’appel. Chaque relecture crée une nouvelle version. <b>Versions</b>, dans le même menu, les liste toutes et coche celle que vous lisez.</p>
+        </div></details>
+        <details class="row" id="exporter"><summary>Copier ou exporter une transcription</summary><div class="answer">
+          <p>Dans le menu <b>⋯</b> de l’enregistrement, <b>Copier la transcription</b> (⇧⌘C) met tout le texte dans le presse-papiers. <b>Exporter</b> l’enregistre en texte, Word, PDF, Markdown ou sous-titres. La même commande se trouve dans Fichier&nbsp;› Exporter la transcription. Vos transcriptions sont aussi en Markdown dans le dossier CallRecordings de votre dossier personnel.</p>
+        </div></details>
+        <details class="row" id="reunir"><summary>Réunir deux enregistrements d’une même conversation</summary><div class="answer">
+          <p>Un appel coupé puis repris donne deux enregistrements. Pour les réunir&nbsp;:</p>
+          <ol>
+            <li>Choisissez-les d’un ⌘-clic, ou cochez le rond qui apparaît au survol, dans la marge de la liste.</li>
+            <li>Cliquez sur <b>Réunir…</b>, dans la barre qui apparaît en bas, puis sur <b>Réunir</b>.</li>
+          </ol>
+          <p>Rien n’est perdu&nbsp;: les deux enregistrements n’en font plus qu’un, et la transcription repart.</p>
+          <img class="decoupe" srcset="../img/fenetre/choix-1280w.webp?v=1 1280w, ../img/fenetre/choix.webp?v=1 2560w" sizes="(max-width: 1000px) calc(100vw - 32px), 960px" src="../img/fenetre/choix.webp?v=1" width="2560" height="1582" loading="lazy" alt="Deux appels choisis dans la liste, cochés dans la marge. En bas, la barre «&nbsp;2 enregistrements&nbsp;» avec Réunir…, Garder l’audio et Supprimer.">
+        </div></details>
+      </div>
+      <p class="group-label">Ranger et garder</p>
+      <div class="group">
+        <details class="row" id="groupes"><summary>Ranger vos enregistrements en groupes</summary><div class="answer">
+          <p>Un groupe réunit des enregistrements qui vont ensemble&nbsp;: un client, un recrutement, le perso. Pour ranger un enregistrement, ouvrez son menu <b>⋯</b>, puis <b>Groupe</b>. Vous pouvez aussi le glisser sur la barre latérale&nbsp;: le temps du geste, elle montre vos groupes et <b>Nouveau groupe</b>. Pour en ranger plusieurs, choisissez-les, puis cliquez sur <b>Groupe</b> dans la barre du bas.</p>
+          <p>Pour gérer les groupes, cliquez dans <b>Rechercher</b>, puis sur <b>Gérer les groupes…</b>, sous vos groupes. Cliquez sur <b>Ajouter un sous-titre</b> pour dire ce qu’un groupe rassemble, par exemple «&nbsp;Refonte de la boutique en ligne, du devis à la mise en ligne&nbsp;». Après chaque appel, Claude se sert de ce sous-titre comme consigne. Quand il est sûr de lui, il range l’enregistrement dans le groupe qui lui correspond, et une petite icône Claude le signale. Il ne touche jamais à un enregistrement que vous avez déjà rangé.</p>
+          <p>Pour fermer un groupe aux agents, éteignez <b>Accessible aux agents</b>. Aucun agent ne lit alors ses enregistrements, Claude compris, et aucune copie ne les emporte.</p>
+        </div></details>
+        <details class="row" id="en-ligne"><summary>Héberger vos enregistrements en ligne (Google Drive, iCloud, Dropbox)</summary><div class="answer">
+          <p>Par défaut, vos enregistrements sont rangés dans le dossier CallRecordings de votre Mac. Si vous placez ce dossier dans Google Drive, iCloud Drive ou Dropbox, il est hébergé en ligne et sauvegardé si votre Mac se perd. Vous retrouvez alors vos transcriptions sur votre téléphone et vos autres ordinateurs. Aucun compte Callrecorder n’est nécessaire&nbsp;: c’est votre propre espace en ligne.</p>
+          <ol>
+            <li>Installez l’app du service sur votre Mac, par exemple <a href="https://www.google.com/drive/download/">Google Drive pour ordinateur</a>, puis connectez-vous. iCloud Drive est déjà là si vous l’avez activé dans Réglages Système.</li>
+            <li>Dans la barre latérale de Callrecorder, ouvrez <b>Local</b>. Sous <b>Emplacements</b>, cliquez sur <b>Changer de dossier</b>.</li>
+            <li>Dans la barre latérale de la fenêtre qui s’ouvre, cliquez sur <b>Google Drive</b> (ou iCloud Drive, Dropbox). Ouvrez <b>Mon Drive</b> ou un dossier à l’intérieur, puis cliquez sur <b>Déplacer ici</b>.</li>
+          </ol>
+          <p>Callrecorder y déplace le dossier CallRecordings avec tous vos enregistrements, puis redémarre. La ligne indique alors où ils sont.</p>
+          <img class="decoupe extrait" src="../img/fenetre/stockage.webp?v=1" width="1408" height="464" loading="lazy" alt="Stockage&nbsp;: l’espace occupé, les enregistrements récemment supprimés, ceux que l’app a écartés, le dossier des enregistrements (~/CallRecordings) avec Changer…, et la place libre sur le disque.">
+          <p>Les nouveaux enregistrements partent en ligne au fur et à mesure. Quand la durée de conservation de l’audio est passée, il part dans la corbeille du service. Le changement de dossier attend la fin de l’enregistrement ou de la transcription en cours. Pour revenir en arrière, choisissez à nouveau votre dossier personnel.</p>
+          <p>Vos enregistrements sont alors stockés chez Google, Apple ou Dropbox, et plus seulement sur votre Mac. Tous y partent, y compris ceux des groupes fermés aux agents. Pour n’envoyer que certains groupes, faites plutôt une copie&nbsp;: Local&nbsp;› Emplacements&nbsp;› <b>Ajouter une copie</b></p>
+        </div></details>
+        <details class="row" id="garder-audio"><summary>Garder l’audio d’un enregistrement</summary><div class="answer">
+          <p>Une fois l’enregistrement transcrit et relu, le son d’origine s’efface et une version plus légère reste pour l’écoute. L’audio part à la corbeille au bout de 7&nbsp;jours. Vous pouvez changer cette durée dans <b>Local</b>, à <b>Conservation de l’audio</b>. Avec <b>Pour toujours</b>, il reste jusqu’à ce que vous le supprimiez. La transcription et les captures restent. Au-dessus du lecteur, un avis dit quand l’audio partira, avec <b>Garder l’audio</b>.</p>
+          <p>Pour le garder, choisissez <b>Garder l’audio</b> dans le menu <b>⋯</b> de l’enregistrement ou au clic droit dans la liste. Dans le menu Conversation, la commande s’appelle <b>Garder l’enregistrement</b>. Vous pouvez aussi le demander à Claude&nbsp;: «&nbsp;Garde l’enregistrement de cet appel&nbsp;».</p>
+        </div></details>
+      </div>
+      <p class="group-label">Si ça coince</p>
+      <div class="group">
+        <details class="row" id="claude-ne-voit-pas"><summary>Claude ne voit pas vos appels</summary><div class="answer">
+          <p>Quittez complètement Claude (⌘Q), puis relancez-le&nbsp;: il ne prend en compte l’accès à vos appels qu’au démarrage. Si rien ne change, ouvrez <b>Intégrations&nbsp;› Claude</b> dans Callrecorder et vérifiez que <b>Accès des agents à vos enregistrements</b> est activé.</p>
+        </div></details>
+        <details class="row" id="erreur-installation"><summary>Une erreur pendant l’installation</summary><div class="answer">
+          <p>Copiez tout le texte du Terminal. Collez-le dans Claude ou un autre agent&nbsp;: l’installation explique chaque échec en français, et l’agent vous dira quoi faire. Relancez ensuite la même ligne.</p>
+        </div></details>
+        <details class="row" id="mises-a-jour"><summary>Mettre Callrecorder à jour</summary><div class="answer">
+          <p>Callrecorder vous propose chaque nouvelle version. <b>Mettre à jour</b> apparaît alors dans la barre d’outils de la fenêtre, et <b>Réglages</b> porte l’étiquette «&nbsp;Mise à jour&nbsp;» dans le panneau de la barre des menus. Pour vérifier vous-même, cliquez sur la version en bas à droite de la fenêtre, puis sur <b>Rechercher les mises à jour</b>. Les changements de chaque version sont dans le <a href="../versions/">journal des versions</a>.</p>
+        </div></details>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer>
+    <div class="col">
+      <div class="links">
+        <a href="../fonctionnalites/">Fonctionnalités</a>
+        <a href="../guides/">Guides</a>
+        <a href="../versions/">Versions</a>
+        <a href="../technique/">Technique</a>
+        <a href="../confidentialite/">Données et confidentialité</a>
+      </div>
+      <p>L’audio est enregistré et transcrit sur votre Mac. Un agent relié peut lire vos enregistrements, sauf ceux des groupes fermés aux agents.</p>
+      <div class="author">
+        <img srcset="../img/gildas-340w.webp 340w, ../img/gildas.webp 480w" sizes="(max-width: 640px) 112px, 168px" src="../img/gildas.webp" width="480" height="498" loading="lazy" alt="Portrait dessiné à l’encre et à l’aquarelle de Gildas Frémont, bras croisés, en pull irlandais.">
+        <div class="says">
+        <div class="bubble">
+          <p>Bonjour, merci de vous intéresser à Callrecorder. Je l’ai initialement créé pour gérer mes appels, je l’améliore maintenant grâce à vos remarques.</p>
+          <button class="button open-message" type="button">Laisser un message</button>
+          <form class="message" hidden>
+            <div class="rec-bar" hidden>
+              <p class="rec-state" role="status"></p>
+            </div>
+            <textarea name="text" rows="3" maxlength="3000" placeholder="Votre message. Pour une réponse, ajoutez votre e-mail." aria-label="Votre message pour Gildas" required></textarea>
+            <div class="message-actions"><button class="rec-toggle" type="button" hidden>Dicter</button><span class="rec-key" aria-hidden="true">Espace pour dicter</span><button class="button send" type="submit" disabled>Envoyer</button></div>
+            <p class="sent-status" role="status"><span></span> <button class="another" type="button">Envoyer un autre message</button></p>
+          </form>
+        </div>
+        <p class="contact"><a href="https://gildas.fyi">gildas.fyi</a> · <a href="https://linkedin.com/in/gildasfremont">LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Un lien vers un guide (guides/#groupes) l'ouvre directement.
+  function openFromHash() {
+    var d = location.hash && document.getElementById(location.hash.slice(1));
+    if (d && d.tagName === "DETAILS") { d.open = true; d.scrollIntoView(); }
+  }
+  openFromHash();
+  window.addEventListener("hashchange", openFromHash);
+</script>
+<script src="../nav.js?v=3"></script>
+<script src="../note.js?v=21"></script>
+<script src="../visite.js?v=1"></script>
+</body>
+</html>
