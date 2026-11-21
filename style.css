@@ -508,7 +508,8 @@ section.tight { padding-top: 64px; }
 
 /* Lien discret vers la suite, sous un bloc. */
 .more { text-align: center; font-size: var(--t-body); margin: 40px 0 0; }
-.more a::after { content: " →"; }
+/* Une espace insécable avant la flèche : elle ne se colle pas au mot et ne part pas seule à la ligne (callrecorder-app#421, T5). */
+.more a::after { content: "\00a0→"; }
 
 /* Accueil : la dernière version, sous l'installation. */
 
