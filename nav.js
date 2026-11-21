@@ -39,3 +39,13 @@
     });
   });
 })();
+
+// Le sommaire en pastilles, sous 1000 px : tant qu'il en reste à droite, son bord s'efface (style.css, .suite).
+(() => {
+  document.querySelectorAll(".toc nav").forEach(nav => {
+    const maj = () => nav.classList.toggle("suite", nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 2);
+    maj();
+    nav.addEventListener("scroll", maj, { passive: true });
+    addEventListener("resize", maj);
+  });
+})();

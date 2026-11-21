@@ -658,8 +658,11 @@ main:focus { outline: none; }
 
 /* Le sommaire des pages longues : sous 1000 px, des pastilles collées en haut, qui défilent de côté (S28). */
 @media (max-width: 999px) {
-  .toc { display: block; position: sticky; top: 0; z-index: 5; margin: 32px -16px 0; padding: 8px 16px; background: var(--nav-bg); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
+  /* Un fond plein : le texte qui défile ne se lit pas au travers (callrecorder-app#421, M1). */
+  .toc { display: block; position: sticky; top: 0; z-index: 5; margin: 32px -16px 0; padding: 8px 16px; background: var(--window); box-shadow: 0 1px 0 var(--border); }
   .toc nav { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  /* Tant qu'il reste des pastilles à droite, le bord s'efface : on voit que la barre défile (nav.js). */
+  .toc nav.suite { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); }
   .toc nav::-webkit-scrollbar { display: none; }
   .toc a { flex: none; font-size: 14px; color: var(--text); padding: 7px 12px; border-radius: 999px; background: var(--group); box-shadow: 0 0 0 1px var(--border); }
   .toc a[aria-current] { box-shadow: 0 0 0 1px var(--edge); font-weight: 600; }
