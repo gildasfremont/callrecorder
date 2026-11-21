@@ -194,26 +194,53 @@
       </div>
 
       <div class="install">
-        <button class="cmdline" type="button" data-copy="cmd" title="Copier la ligne"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><span class="hint" aria-hidden="true">Copier</span></button>
         <div class="ailleurs" hidden><p>Callrecorder s’installe sur un Mac. Envoyez-vous le lien pour l’ouvrir sur votre Mac.</p><a class="button default" href="mailto:?subject=Callrecorder&amp;body=https%3A%2F%2Fgildasfremont.github.io%2Fcallrecorder%2F%23installation" data-partage>Envoyer le lien</a></div>
-        <div class="card">
-          <div class="tabs install-tabs" role="tablist" aria-label="Votre agent">
-            <button role="tab" aria-selected="true" data-scenario="claude"><img width="64" height="64" src="img/logos/claude.png" alt="">Claude installé</button>
-            <button role="tab" aria-selected="false" data-scenario="seul">Pas de Claude</button>
+
+        <div class="besoin" role="radiogroup" aria-label="Votre installation">
+          <button role="radio" aria-checked="false" data-besoin="ia"><b>Avec mon IA</b><span>Son app, sur le Mac, installe Callrecorder avec vous, puis relit vos conversations et y répond.</span></button>
+          <button role="radio" aria-checked="false" data-besoin="local"><b>Tout sur mon Mac</b><span>Aucune IA en ligne. Vous relisez vos conversations dans l’app.</span></button>
+        </div>
+
+        <div class="suite" data-besoin="ia" hidden>
+          <p class="question" id="q-ia">Laquelle, sur ce Mac&nbsp;?</p>
+          <p class="precision">L’app du Dock, pas le navigateur.</p>
+          <div class="agents" role="radiogroup" aria-labelledby="q-ia">
+            <button role="radio" aria-checked="false" data-agent="code"><span class="ic pile"><img src="img/logos/terminal.png" alt=""><img src="img/logos/claude.png" alt=""></span>Claude Code</button>
+            <button role="radio" aria-checked="false" data-agent="claude"><span class="ic"><img src="img/logos/claude-app.png" alt=""></span>Claude</button>
+            <button role="radio" aria-checked="false" data-agent="codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span>Codex</button>
+            <button role="radio" aria-checked="false" data-agent="chatgpt"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span>ChatGPT</button>
+            <button role="radio" aria-checked="false" data-agent="autre"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span>Une autre</button>
+            <button role="radio" aria-checked="false" data-agent="aucune"><span class="ic pile"><img src="img/logos/safari.png" alt=""><img src="img/logos/chrome.png" alt=""></span>Dans le navigateur</button>
           </div>
-          <ol class="steps" data-scenario="claude">
-            <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
-            <li><b>Suivre</b><span class="sub">Le Terminal demande les autorisations une à une (le micro, le son des apps, puis l’écran, facultatif)&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Claude a accès à vos enregistrements et, si Claude Code est connecté à votre compte, relit chacun d’eux. Tout se coupe dans la page Agents de Callrecorder. Claude Desktop, s’il est ouvert, se ferme et se rouvre tout seul.</span></li>
-            <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip&nbsp;: sa transcription s’affiche à côté, et la lecture devient votre premier enregistrement. Demandez ensuite à Claude&nbsp;: «&nbsp;Résume ma dernière conversation&nbsp;».</span></li>
-          </ol>
-          <ol class="steps" data-scenario="seul" hidden>
-            <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
-            <li><b>Suivre</b><span class="sub">Le Terminal demande les autorisations une à une (le micro, le son des apps, puis l’écran, facultatif)&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Codex, s’il est installé, a accès à vos enregistrements. Cet accès se coupe dans la page Agents de Callrecorder.</span></li>
-            <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip&nbsp;: sa transcription s’affiche à côté. Cette lecture devient votre premier enregistrement. Pour la retrouver, cliquez sur l’icône de Callrecorder, dans la barre des menus.</span></li>
-          </ol>
-          <div class="help">
-            <p data-scenario="claude">Claude ne voit pas vos appels&nbsp;? Quittez et relancez Claude.</p>
-            <p>Une erreur&nbsp;? Collez le texte du Terminal dans votre agent.</p>
+
+          <div class="carte" hidden>
+            <ul class="roles">
+              <li data-role="installe">Installe avec vous</li>
+              <li data-role="relit">Relit chaque conversation</li>
+              <li data-role="repond">Répond sur vos conversations</li>
+            </ul>
+            <p class="ajout" hidden></p>
+            <div class="avec">
+              <button class="prompt" type="button" data-copy="msg" title="Copier le message"><span id="msg">Installe Callrecorder sur mon Mac : <br><span class="url">https://gildasfremont.github.io/callrecorder/agents.md</span></span><span class="hint" aria-hidden="true">Copier</span></button>
+              <ol class="steps"></ol>
+              <p class="help">Un souci en route&nbsp;? Collez le texte de l’erreur dans votre IA. Elle ne voit pas vos conversations&nbsp;? Reliez-la dans Callrecorder, Réglages&nbsp;› Agents.</p>
+            </div>
+            <div class="sans" hidden>
+              <p class="conseil">Dans le navigateur, Claude ou ChatGPT ne voient pas votre Mac&nbsp;: ils ne peuvent ni installer Callrecorder, ni lire vos conversations. Installez l’app de Claude sur le Mac, connectez-vous avec le même compte, puis choisissez <b>Claude</b> ci-dessus.</p>
+              <p class="actions"><a class="button default" href="https://claude.ai/download">Télécharger Claude pour Mac</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="suite" data-besoin="local" hidden>
+          <div class="carte">
+            <button class="cmdline" type="button" data-copy="cmd" title="Copier la ligne"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><span class="hint" aria-hidden="true">Copier</span></button>
+            <ol class="steps">
+              <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
+              <li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Pour l’écran, macOS demande aussi Touch ID ou votre mot de passe.</span></li>
+              <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip. Cette lecture devient votre premier enregistrement&nbsp;: il est dans Callrecorder, dans la barre des menus.</span></li>
+            </ol>
+            <p class="help">Rien ne part de votre Mac, aucune IA n’est reliée. À la fin, Réglages&nbsp;› Agents s’ouvre&nbsp;: vous y reliez la vôtre si vous le voulez. Des chiffres techniques aident à améliorer l’app&nbsp;: ils ne partent que si vous le cochez, dans Réglages&nbsp;› Général.</p>
           </div>
         </div>
       </div>
@@ -318,7 +345,7 @@
     const ua = navigator.userAgent;
     const mac = /Macintosh/.test(ua) && navigator.maxTouchPoints < 2;
     if (mac) return;
-    document.querySelector(".cmdline").hidden = true;
+    document.querySelector(".install .besoin").hidden = true;
     const box = document.querySelector(".ailleurs");
     box.hidden = false;
     const link = box.querySelector("[data-partage]");
@@ -329,12 +356,47 @@
   })();
 </script>
 <script>
-  // Installation : avec Claude ou sans, les étapes et l'aide de chacun.
-  document.querySelectorAll(".install-tabs button").forEach(button => button.addEventListener("click", () => {
-    const name = button.dataset.scenario;
-    document.querySelectorAll(".install-tabs button").forEach(b => b.setAttribute("aria-selected", b === button));
-    document.querySelectorAll(".install [data-scenario]:not(button)").forEach(el => el.hidden = el.dataset.scenario !== name);
-  }));
+  // Installation, en deux questions au plus (#231) : le besoin d'abord (une IA, ou tout sur le Mac), puis l'IA.
+  (() => {
+    const claudeCode = 'Pour qu’une IA relise chaque conversation&nbsp;: <a href="https://claude.com/claude-code">Claude Code</a>, avec un abonnement Claude.';
+    const IA = {
+      code:    { nom: "Claude Code", lance: true,  relit: true,  repond: true },
+      claude:  { nom: "l’app Claude", lance: false, relit: false, repond: true,  ajout: claudeCode, reprise: "Une fois les autorisations données, Claude se ferme et se rouvre tout seul. " },
+      codex:   { nom: "Codex",       lance: true,  relit: false, repond: true,  ajout: claudeCode },
+      chatgpt: { nom: "l’app ChatGPT", lance: false, relit: false, repond: false, ajout: 'ChatGPT ne lit pas une mémoire gardée sur le Mac. Pour qu’une IA y réponde&nbsp;: <a href="https://openai.com/codex/">Codex</a>, avec le même compte.' },
+      autre:   { nom: "votre IA",    lance: null,  relit: false, repond: true,  ajout: 'Cursor, Gemini CLI, LM Studio… Pour qu’elle réponde, reliez-la dans Callrecorder, Réglages&nbsp;› Agents.' },
+      aucune:  { sans: true, relit: false, repond: false }
+    };
+    const autoriser = '<li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Pour l’écran, macOS demande aussi Touch ID ou votre mot de passe.</span></li>';
+    const steps = a => [
+      '<li><b>Coller</b><span class="sub">Le message dans ' + a.nom + (a.lance === true ? '&nbsp;: l’installation se lance, acceptez quand on vous le demande.'
+        : a.lance === false ? '&nbsp;: la réponse contient une ligne à coller dans le Terminal.' : '&nbsp;: l’installation se lance, ou la réponse contient une ligne à coller dans le Terminal.') + '</span></li>',
+      autoriser,
+      a.repond ? '<li><b>Demander</b><span class="sub">' + (a.reprise || '') + 'Après votre prochain appel, dans une nouvelle conversation avec ' + a.nom + '&nbsp;: «&nbsp;Résume ma dernière conversation&nbsp;».</span></li>' : ''
+    ].join("");
+    const ia = document.querySelector('.suite[data-besoin="ia"]'), carte = ia.querySelector(".carte");
+    const pick = (group, button) => group.forEach(b => b.setAttribute("aria-checked", b === button));
+    const besoins = [...document.querySelectorAll(".besoin [role=radio]")], agents = [...ia.querySelectorAll(".agents [role=radio]")];
+    const besoin = b => {
+      pick(besoins, b); document.querySelector(".besoin").classList.add("choisi");
+      document.querySelectorAll(".install .suite").forEach(s => s.hidden = s.dataset.besoin !== b.dataset.besoin);
+    };
+    const agent = b => {
+      pick(agents, b); ia.querySelector(".agents").classList.add("choisi");
+      const a = IA[b.dataset.agent];
+      carte.hidden = false;
+      carte.querySelector(".roles").hidden = !!a.sans;
+      carte.querySelector('[data-role="installe"]').dataset.ok = "1";
+      carte.querySelector('[data-role="relit"]').dataset.ok = a.relit ? "1" : "";
+      carte.querySelector('[data-role="repond"]').dataset.ok = a.repond ? "1" : "";
+      const ajout = carte.querySelector(".ajout"); ajout.hidden = !a.ajout; ajout.innerHTML = a.ajout || "";
+      carte.querySelector(".avec").hidden = !!a.sans; carte.querySelector(".sans").hidden = !a.sans;
+      if (!a.sans) carte.querySelector(".avec .steps").innerHTML = steps(a);
+    };
+    besoins.forEach(b => b.addEventListener("click", () => besoin(b)));
+    agents.forEach(b => b.addEventListener("click", () => agent(b)));
+    window.choisir = (q, r) => { besoin(besoins.find(b => b.dataset.besoin === q)); if (r) agent(agents.find(b => b.dataset.agent === r)); };
+  })();
 </script>
 <script>
   // Onglets Appels et visios / Réunions / Notes vocales : la capture et la conversation avec Claude de chaque exemple.
