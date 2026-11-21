@@ -503,6 +503,11 @@ details.row .answer img { width: 100%; max-width: 560px; height: auto; display: 
 .page-head h1 { font-family: var(--display); font-size: clamp(36px, 5.6vw, 60px); line-height: 1.08; letter-spacing: -0.02em; font-weight: 500; margin: 0 0 20px; }
 .page-head p { font-size: var(--t-lead); color: var(--body); max-width: 640px; margin: 0 auto; text-wrap: balance; }
 .page-head + section { padding-top: 80px; }
+/* Sur téléphone, un chapô de plusieurs lignes se lit mal centré : l'en-tête passe à gauche (callrecorder-app#421, M4). */
+@media (max-width: 599px) {
+  .page-head, .page-head p { text-align: left; }
+  .page-head p { text-wrap: pretty; }
+}
 section.tight { padding-top: 64px; }
 .group + .group-label { margin-top: 48px; }
 
