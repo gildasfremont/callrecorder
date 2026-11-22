@@ -239,6 +239,18 @@ h1, h2, .about .lead, .intro p, .req, .notes { text-wrap: balance; }
   .claude { position: relative; right: auto; bottom: auto; width: auto; margin: -24px 8px 0; font-size: 12.5px; }
 }
 
+/* L'accueil par la promesse : trois parties, chacune un titre qui dit ce que ça change et une seule image de l'app.
+   Le texte à gauche, l'image à droite ; la partie « inverse » les échange. Sur téléphone, le texte passe au-dessus. */
+.promesse { display: flex; flex-wrap: wrap; align-items: center; gap: 40px 56px; }
+.promesse.inverse { flex-direction: row-reverse; }
+.promesse .texte { flex: 1 1 300px; min-width: 0; }
+.promesse .texte p { font-size: var(--t-lead); color: var(--body); margin: 0; }
+.promesse .media { flex: 999 1 520px; min-width: 0; container-type: inline-size; }
+.promesse .media > img { width: 100%; height: auto; display: block; }
+.promesse .claude { position: static; width: auto; font-size: clamp(13px, 2.7cqw, 17px); }
+@media (max-width: 860px) { .promesse.inverse { flex-direction: row; } }
+.promesse + .more { text-align: center; margin: 96px 0 0; }
+
 /* Rythme vertical : 160 px entre les parties, 56 px entre un titre de partie et son contenu. */
 section { padding: 160px 0 0; }
 section.follow { padding-top: 56px; }
@@ -618,7 +630,7 @@ html { scroll-padding-top: 24px; }
 
 /* Une image qui porte son contour (coins transparents, fenêtre, pastille) : ni cadre, ni arrondi imposé, ni ombre
    rectangulaire. L'ombre suit sa forme, et sa matière reste celle de la capture. Voir CLAUDE.md, « Les captures ». */
-.stage > img.decoupe, .stage .detail.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe, details.row .answer img.decoupe {
+.stage > img.decoupe, .stage .detail.decoupe, .promesse img.decoupe, .feature figure img.decoupe, .version a.thumb img.decoupe, details.row .answer img.decoupe {
   border: 0; border-radius: 0; box-shadow: none;
   filter: drop-shadow(0 1px 1px rgb(var(--shade) / .14)) drop-shadow(0 14px 22px rgb(var(--shade) / .22));
 }

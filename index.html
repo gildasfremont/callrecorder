@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="style.css?v=140">
+<link rel="stylesheet" href="style.css?v=141">
 </head>
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -43,93 +43,13 @@
   <main id="contenu" tabindex="-1">
   <div class="about">
     <h1>Souvenez<span class="trait">-</span>vous de tout</h1>
-    <p class="lead">Vos conversations mémorisées, transcrites sur votre Mac sans y penser et accessibles à vos agents IA.</p>
+    <p class="lead">Tout ce qui se dit dans votre travail vous reste, mot pour mot. Vous n’avez plus qu’à écouter.</p>
     <!-- Un micro de radio tendu vers le titre ; son mât descend derrière la fenêtre de l’app. -->
     <img class="app-mic" srcset="img/micro-mat-400w.webp 400w, img/micro-mat.webp?v=4 724w" sizes="(max-width: 715px) 180px, (max-width: 1135px) 25vw, 286px" src="img/micro-mat.webp?v=4" width="724" height="2172" alt="" aria-hidden="true">
   </div>
 
-  <div class="tabs" role="tablist" aria-label="Ce dont Callrecorder se souvient">
-    <button role="tab" aria-selected="true" data-tab="appel">Appels et visios</button>
-    <button role="tab" aria-selected="false" data-tab="reunion">Réunions</button>
-    <button role="tab" aria-selected="false" data-tab="note">Notes vocales</button>
-  </div>
-
   <div class="stage">
-    <img class="decoupe" id="appels" srcset="img/appels-1280w.webp?v=2 1280w, img/appels.webp?v=2 2560w" sizes="(max-width: 1080px) calc(100vw - 32px), 1048px" src="img/appels.webp?v=2" width="2560" height="1582" alt="La fenêtre de Callrecorder, avec les appels d’octobre d’un directeur financier&nbsp;: par-dessus la liste, la revue budgétaire sur Teams avec Sophie, Karim et Julie, ses captures de la visio, les répliques horodatées de chacun et le lecteur en bas.">
-    <img class="pixel" data-tab="appel" srcset="img/pixel-7-300w.webp 300w, img/pixel-7.webp?v=3 600w" sizes="(max-width: 1080px) 23vw, 241px" src="img/pixel-7.webp?v=3" width="600" height="1270" alt="Devant, un Google Pixel 7 ouvert sur l’app Callrecorder&nbsp;: la même liste, de la revue budgétaire du 31 octobre à la Caisse Régionale Sud, avec un appel WhatsApp et deux appels téléphoniques.">
-    <img class="pixel" data-tab="reunion" hidden srcset="img/pixel-7-reunion-300w.webp 300w, img/pixel-7-reunion.webp 600w" sizes="(max-width: 1080px) 23vw, 241px" src="img/pixel-7-reunion.webp" width="600" height="1270" alt="Devant, un Google Pixel 7 qui a enregistré la revue mensuelle dans la salle, ouvert sur ses répliques&nbsp;: vous, Voix 1 et Voix 2.">
-    <img class="pixel" data-tab="note" hidden srcset="img/pixel-7-notes-300w.webp 300w, img/pixel-7-notes.webp 600w" sizes="(max-width: 1080px) 23vw, 241px" src="img/pixel-7-notes.webp" width="600" height="1270" alt="Devant, un Google Pixel 7 qui écoute depuis 8 h&nbsp;: le Journal en tête, puis les enregistrements de la semaine, dont un appel WhatsApp et un appel téléphonique.">
-    <div class="claude" data-tab="appel" role="img" aria-label="Par-dessus, une conversation avec Claude&nbsp;: avant le conseil, on lui demande ce que les banques ont vraiment dit au téléphone sur la ligne de crédit. Claude lit la revue budgétaire et quatre appels avec les banques&nbsp;: deux renouvellent, à des conditions différentes, la troisième ne décidera pas avant décembre.">
-      <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
-      <div class="body">
-        <div class="ask">Pour le conseil du 20&nbsp;: qu’est-ce que les banques m’ont vraiment dit sur la ligne de crédit ce mois-ci&nbsp;?</div>
-        <div class="tool"><img width="256" height="256" srcset="img/icone-micro-64.png 64w, img/icone-micro.webp?v=11 256w" sizes="21px" src="img/icone-micro.webp?v=11" alt="">5 appels lus&nbsp;: la revue budgétaire et 4 appels avec les banques</div>
-        <div class="answer">
-          <img width="64" height="64" src="img/logos/claude.png" alt="">
-          <div>
-            <p>Deux banques sur trois renouvellent, mais pas aux mêmes conditions&nbsp;:</p>
-            <div class="mail">
-              <ul class="quotes">
-                <li>«&nbsp;On renouvelle, mais avec un covenant sur la dette nette.&nbsp;» <span class="sub">Banque Aurore, 28 oct.</span></li>
-                <li>«&nbsp;On peut monter à trois millions si vous nous donnez vos prévisions de trésorerie.&nbsp;» <span class="sub">Banque Ferrand, 23 oct.</span></li>
-                <li>«&nbsp;Le comité ne se réunit pas avant décembre.&nbsp;» <span class="sub">Caisse Régionale Sud, 21 oct.</span></li>
-              </ul>
-            </div>
-            <p class="next">En revue budgétaire, vous avez dit «&nbsp;rien d’inquiétant&nbsp;»&nbsp;: c’est vrai pour deux banques, pas pour la Caisse Régionale. À dire à Sophie avant le conseil.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="claude" data-tab="reunion" hidden role="img" aria-label="Par-dessus, une conversation avec Claude&nbsp;: on lui demande ce que le transporteur s’est engagé à faire à la revue mensuelle, et pour quand. Claude cite trois engagements datés et relève un point sans date.">
-      <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
-      <div class="body">
-        <div class="ask">À la revue de jeudi, qu’est-ce que Transports Morel s’est engagé à faire, et pour quand&nbsp;?</div>
-        <div class="tool"><img width="256" height="256" srcset="img/icone-micro-64.png 64w, img/icone-micro.webp?v=11 256w" sizes="21px" src="img/icone-micro.webp?v=11" alt="">1 réunion lue&nbsp;: revue mensuelle avec Transports Morel, 29 oct.</div>
-        <div class="answer">
-          <img width="64" height="64" src="img/logos/claude.png" alt="">
-          <div>
-            <p>Trois engagements, le premier dès mercredi&nbsp;:</p>
-            <div class="mail">
-              <ul class="quotes">
-                <li>«&nbsp;Je vous mets un chauffeur dédié sur Lyon dès le 4 novembre.&nbsp;» <span class="sub">les retards</span></li>
-                <li>«&nbsp;Je vous envoie l’avoir d’octobre avant le 15.&nbsp;» <span class="sub">la casse</span></li>
-                <li>«&nbsp;Sept heures, c’est noté, je le mets dans le contrat.&nbsp;» <span class="sub">l’arrivée au quai</span></li>
-              </ul>
-            </div>
-            <p class="next">Le filmage des palettes au quai n’a pas de date. Je peux préparer un mail qui confirme les quatre points.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="claude" data-tab="note" hidden role="img" aria-label="Par-dessus, une conversation avec Claude&nbsp;: on lui demande de ranger les notes vocales de la semaine. Claude les classe en choses à faire, idées et perso.">
-      <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
-      <div class="body">
-        <div class="ask">Range ce que je me suis dicté cette semaine.</div>
-        <div class="tool"><img width="256" height="256" srcset="img/icone-micro-64.png 64w, img/icone-micro.webp?v=11 256w" sizes="21px" src="img/icone-micro.webp?v=11" alt="">5 notes vocales lues, du 27 au 30 oct.</div>
-        <div class="answer">
-          <img width="64" height="64" src="img/logos/claude.png" alt="">
-          <div>
-            <div class="mail">
-              <b>À faire</b>
-              <ul>
-                <li>Relancer l’agence pour les visuels du salon, avant mercredi</li>
-                <li>Vérifier le budget LinkedIn&nbsp;: 80&nbsp;% du trimestre déjà dépensés</li>
-              </ul>
-              <b>Idées</b>
-              <ul>
-                <li>Noël&nbsp;: le prénom dans l’objet du mail</li>
-                <li>Webinaire de jeudi&nbsp;: les chiffres de l’étude en premier</li>
-              </ul>
-              <b>Perso</b>
-              <ul>
-                <li>Réserver le resto pour l’anniversaire de Léa, samedi</li>
-              </ul>
-            </div>
-            <p class="next">Je peux ajouter les deux premières à vos rappels.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <img class="decoupe" srcset="img/fenetre/liste-1280w.webp 1280w, img/fenetre/liste.webp 2560w" sizes="(max-width: 1080px) calc(100vw - 32px), 1048px" src="img/fenetre/liste.webp" width="2560" height="1582" alt="La fenêtre de Callrecorder&nbsp;: les conversations d’un directeur financier, jour par jour, de la revue budgétaire d’aujourd’hui aux appels avec ses banques.">
   </div>
 
   <div class="cta">
@@ -166,30 +86,61 @@
       <span class="app tile" data-name="Hermes Agent"><img width="48" height="48" src="img/logos/hermes.png" alt="Hermes Agent"></span>
   </div>
 
-  <section>
-    <div class="intro">
-      <h2>Vos appels s’ajoutent à votre mémoire</h2>
-      <p>Votre agent la consulte quand vous lui posez une question.</p>
+  <section class="promesse">
+    <div class="texte">
+      <h2>Soyez dans la conversation, pas dans vos notes</h2>
+      <p>Regardez les gens, réfléchissez, répondez. Ce qui a été dit, qui l’a dit et quand&nbsp;: c’est retenu pour vous.</p>
+    </div>
+    <div class="media">
+      <img class="decoupe" srcset="img/appels-1280w.webp?v=2 1280w, img/appels.webp?v=2 2560w" sizes="(max-width: 860px) calc(100vw - 32px), 640px" src="img/appels.webp?v=2" width="2560" height="1582" loading="lazy" alt="La revue budgétaire sur Teams, retrouvée&nbsp;: les répliques de Sophie, Karim, Julie et les vôtres, chacune avec son heure, les captures de la visio et le lecteur pour réentendre.">
     </div>
   </section>
 
-  <section class="follow">
-    <ul class="benefits">
-        <li class="o-jack text-right"><div><h3>Une seule installation</h3><p>Une ligne à copier, deux autorisations, plus celle de l’écran si vous voulez les captures. Ensuite, Callrecorder démarre avec votre Mac.</p></div><img srcset="img/benefices/jack-700w.webp 700w, img/benefices/jack.webp?v=2 1200w" sizes="(max-width: 640px) 70vw, 290px" src="img/benefices/jack.webp?v=2" width="1200" height="198" loading="lazy" alt="Une fiche jack dessinée à l’encre et à l’aquarelle, qui entre par la gauche et pointe vers le texte."></li>
-        <li class="o-cassettes"><div><h3>Une mémoire qui se constitue toute seule</h3><p>Zoom, Teams, Meet, FaceTime, WhatsApp&nbsp;: chaque appel est enregistré dès qu’il commence, et transcrit dès qu’il se termine.</p></div><img srcset="img/benefices/cassettes-600w.webp 600w, img/benefices/cassettes.webp?v=3 1000w" sizes="(max-width: 640px) 90vw, 380px" src="img/benefices/cassettes.webp?v=3" width="1000" height="746" loading="lazy" alt="Une pile de six cassettes audio dessinées à l’encre et à l’aquarelle&nbsp;; sur la tranche de chacune, un bout de scotch porte le logo d’une app et le nom de l’appel tapé à la machine&nbsp;: Revue budgétaire sur Teams, Banque Ferrand sur Zoom, Codir du lundi sur Meet, Karim sur WhatsApp, Point produit sur Slack, Banque Aurore sur Teams."></li>
-        <li id="reunions" class="o-reunion text-right"><div><h3>Les réunions autour d’une table</h3><p>Un rendez-vous dans une salle, sans visio&nbsp;: posez le Mac sur la table et cliquez sur Enregistrer une réunion. La réunion s’ajoute à votre mémoire comme un appel.</p></div><img srcset="img/reunion-600w.webp 600w, img/reunion.webp?v=8 900w" sizes="(max-width: 640px) 90vw, 380px" src="img/reunion.webp?v=8" width="900" height="600" loading="lazy" alt="Deux personnes dessinées à l’encre et à l’aquarelle, face à face à une table&nbsp;: lui, en veste bleue, se gratte la tête&nbsp;; elle, en chemise vermillon, parle avec les mains&nbsp;; chacun a sa bulle&nbsp;; sur la table, une bande de papier où leurs lignes alternent dans leurs couleurs."></li>
-        <li id="telephones" class="o-telephones"><div><h3>Vos téléphones</h3><p>Les appels de l’iPhone, pris sur le Mac, s’ajoutent à votre mémoire, sans rien installer sur l’iPhone. Sur Android, l’app Callrecorder enregistre vos appels et vos réunions, puis les envoie au Mac. En bêta.</p></div><img srcset="img/benefices/micro-600w.webp 600w, img/benefices/micro.webp 1200w" sizes="(max-width: 640px) 90vw, 380px" src="img/benefices/micro.webp" width="1200" height="842" loading="lazy" alt="Un micro de studio sur son bras articulé, dessiné à l’encre et à l’aquarelle."></li>
-        <li class="o-telephone text-right"><div><h3>Raccrochez&nbsp;: votre agent est déjà au courant</h3><p>Demandez ce qui a été promis, décidé ou oublié&nbsp;: Claude, Codex et les autres agents consultent votre mémoire et vous répondent, avec l’appel et l’heure de chaque citation. Rien à copier-coller.</p></div><img srcset="img/benefices/telephone-600w.webp 600w, img/benefices/telephone.webp?v=5 1099w" sizes="(max-width: 640px) 90vw, 380px" src="img/benefices/telephone.webp?v=5" width="1099" height="660" loading="lazy" alt="Le haut d’un téléphone dessiné à l’encre et à l’aquarelle, ouvert sur Claude, une question en cours."></li>
-        <li class="o-ordinateur"><div><h3>L’audio reste sur votre Mac</h3><p>La transcription se fait sur place, sans compte ni serveur. L’audio ne quitte le Mac que si vous placez vos enregistrements dans Google Drive, iCloud Drive ou Dropbox.</p></div><img srcset="img/benefices/ordinateur-600w.webp 600w, img/benefices/ordinateur.webp?v=2 1200w" sizes="(max-width: 640px) 90vw, 380px" src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l’encre et à l’aquarelle, une liste d’appels à l’écran."></li>
-    </ul>
-    <p class="more"><a href="fonctionnalites/">Toutes les fonctionnalités</a></p>
+  <section class="promesse inverse">
+    <div class="texte">
+      <h2>Ce qui a été promis ne se discute plus</h2>
+      <p>Demandez à votre IA. Claude, Codex et les autres répondent avec les mots exacts, la personne et l’heure&nbsp;: plus de souvenirs qui divergent.</p>
+    </div>
+    <div class="media">
+      <div class="claude" role="img" aria-label="Une conversation avec Claude&nbsp;: on lui demande ce que le transporteur s’est engagé à faire à la revue mensuelle, et pour quand. Claude cite trois engagements datés et relève un point sans date.">
+      <div class="bar"><i></i><i></i><i></i><span>Claude</span></div>
+      <div class="body">
+        <div class="ask">À la revue de jeudi, qu’est-ce que Transports Morel s’est engagé à faire, et pour quand&nbsp;?</div>
+        <div class="tool"><img width="256" height="256" srcset="img/icone-micro-64.png 64w, img/icone-micro.webp?v=11 256w" sizes="21px" src="img/icone-micro.webp?v=11" alt="">1 réunion lue&nbsp;: revue mensuelle avec Transports Morel, 29 oct.</div>
+        <div class="answer">
+          <img width="64" height="64" src="img/logos/claude.png" alt="">
+          <div>
+            <p>Trois engagements, le premier dès mercredi&nbsp;:</p>
+            <div class="mail">
+              <ul class="quotes">
+                <li>«&nbsp;Je vous mets un chauffeur dédié sur Lyon dès le 4 novembre.&nbsp;» <span class="sub">les retards</span></li>
+                <li>«&nbsp;Je vous envoie l’avoir d’octobre avant le 15.&nbsp;» <span class="sub">la casse</span></li>
+                <li>«&nbsp;Sept heures, c’est noté, je le mets dans le contrat.&nbsp;» <span class="sub">l’arrivée au quai</span></li>
+              </ul>
+            </div>
+            <p class="next">Le filmage des palettes au quai n’a pas de date. Je peux préparer un mail qui confirme les quatre points.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
   </section>
 
+  <section class="promesse">
+    <div class="texte">
+      <h2>Une mémoire qui n’appartient qu’à vous</h2>
+      <p>Elle se construit seule et reste sur votre Mac. Vous choisissez quelle IA la lit, et elle reste faite de fichiers que vous gardez, même sans Callrecorder.</p>
+    </div>
+    <div class="media">
+      <img srcset="img/benefices/ordinateur-600w.webp 600w, img/benefices/ordinateur.webp?v=2 1200w" sizes="(max-width: 860px) 80vw, 480px" src="img/benefices/ordinateur.webp?v=2" width="1200" height="788" loading="lazy" alt="Un ordinateur des années 80 dessiné à l’encre et à l’aquarelle, une liste d’appels à l’écran.">
+    </div>
+  </section>
+  <p class="more"><a href="fonctionnalites/">Toutes les fonctionnalités</a></p>
 
   <section id="installation">
     <div class="col">
       <div class="intro">
-        <h2>Installation</h2>
+        <h2>Votre prochain appel s’en souviendra</h2>
         <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
       </div>
 
@@ -221,7 +172,7 @@
             </ul>
             <p class="ajout" hidden></p>
             <div class="avec">
-              <button class="prompt" type="button" data-copy="msg" title="Copier le message"><span id="msg">Installe Callrecorder sur mon Mac : <br><span class="url">https://gildasfremont.github.io/callrecorder/agents.md</span></span><span class="hint" aria-hidden="true">Copier</span></button>
+              <button class="prompt" type="button" data-copy="msg" title="Copier le message"><span id="msg">Installe Callrecorder sur mon Mac&nbsp;: <br><span class="url">https://gildasfremont.github.io/callrecorder/agents.md</span></span><span class="hint" aria-hidden="true">Copier</span></button>
               <ol class="steps"></ol>
               <p class="help">Un souci en route&nbsp;? Collez le texte de l’erreur dans votre IA. Elle ne voit pas vos conversations&nbsp;? Reliez-la dans Callrecorder, Réglages&nbsp;› Agents.</p>
             </div>
@@ -396,30 +347,6 @@
     besoins.forEach(b => b.addEventListener("click", () => besoin(b)));
     agents.forEach(b => b.addEventListener("click", () => agent(b)));
     window.choisir = (q, r) => { besoin(besoins.find(b => b.dataset.besoin === q)); if (r) agent(agents.find(b => b.dataset.agent === r)); };
-  })();
-</script>
-<script>
-  // Onglets Appels et visios / Réunions / Notes vocales : la capture et la conversation avec Claude de chaque exemple.
-  (() => {
-    const img = document.getElementById("appels");
-    const alts = {
-      appel: img.alt,
-      reunion: "La fenêtre de Callrecorder\u00a0: la revue mensuelle avec un transporteur, enregistrée en salle, ouverte par-dessus la liste\u00a0; sa transcription alterne «\u00a0Moi\u00a0», «\u00a0Voix\u00a01\u00a0» et «\u00a0Voix\u00a02\u00a0», chacune dans sa couleur.",
-      note: "La fenêtre de Callrecorder\u00a0: les enregistrements d’une responsable marketing, du 27 au 30 octobre, avec les notes vocales qu’elle s’est dictées, chacune avec son heure, entre ses visios et un appel."
-    };
-    const srcs = { appel: "img/appels.webp?v=2", reunion: "img/appels-reunion.webp?v=3", note: "img/appels-note.webp?v=2" };
-    // La variante réduite pour les petits écrans (scripts/images.py).
-    const small = { appel: "img/appels-1280w.webp?v=2", reunion: "img/appels-reunion-1280w.webp?v=3", note: "img/appels-note-1280w.webp?v=2" };
-    const set = tab => small[tab] + " 1280w, " + srcs[tab] + " 2560w";
-    Object.keys(srcs).forEach(tab => { const i = new Image(); i.sizes = img.sizes; i.srcset = set(tab); i.src = srcs[tab]; });
-    document.querySelectorAll(".tabs:not(.install-tabs) button").forEach(button => button.addEventListener("click", () => {
-      const tab = button.dataset.tab;
-      document.querySelectorAll(".tabs:not(.install-tabs) button").forEach(b => b.setAttribute("aria-selected", b === button));
-      document.querySelectorAll(".stage [data-tab]").forEach(c => c.hidden = c.dataset.tab !== tab);
-      img.srcset = set(tab);
-      img.src = srcs[tab];
-      img.alt = alts[tab];
-    }));
   })();
 </script>
 <script>
