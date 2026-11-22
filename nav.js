@@ -39,3 +39,60 @@
     });
   });
 })();
+
+// Le sommaire en pastilles (téléphone) : un fondu du côté où des pastilles sont cachées, pour montrer qu'il défile.
+(() => {
+  document.querySelectorAll(".toc nav").forEach(nav => {
+    const maj = () => {
+      nav.classList.toggle("avant", nav.scrollLeft > 4);
+      nav.classList.toggle("apres", nav.scrollLeft + nav.clientWidth < nav.scrollWidth - 4);
+    };
+    maj();
+    nav.addEventListener("scroll", maj, { passive: true });
+    addEventListener("resize", maj);
+    // La pastille de la partie lue reste visible.
+    new MutationObserver(() => {
+      const a = nav.querySelector("[aria-current]");
+      if (a && getComputedStyle(nav).overflowX === "auto") nav.scrollTo({ left: a.offsetLeft - 16, behavior: "smooth" });
+    }).observe(nav, { subtree: true, attributes: true, attributeFilter: ["aria-current"] });
+  });
+})();
+
+// Sur téléphone, une capture de l'app est trop petite pour être lue : au toucher, elle s'ouvre à sa taille, et se
+// parcourt du doigt. Fermer, Échap ou le geste retour du système la referment.
+(() => {
+  const captures = [...document.querySelectorAll(".stage > img, .feature figure img, details.row .answer img")];
+  if (!captures.length || !window.HTMLDialogElement) return;
+  const petit = matchMedia("(max-width: 760px)");
+  let d;
+  const ouvre = img => {
+    if (!d) {
+      d = document.createElement("dialog");
+      d.className = "agrandie";
+      d.innerHTML = '<button class="button fermer" type="button">Fermer</button><div class="defile"><img alt=""></div>';
+      d.querySelector(".fermer").addEventListener("click", () => d.close());
+      document.body.append(d);
+    }
+    const grande = d.querySelector("img");
+    grande.alt = img.alt;
+    grande.src = img.src;  // la plus grande, pas celle que le srcset a choisie pour la petite largeur
+    // À la taille d'une fenêtre de Mac vue de près : deux fois et demie la largeur de l'écran, au plus l'image entière
+    // (son width déclaré, en résolution double).
+    const pleine = (+img.getAttribute("width") || img.naturalWidth * devicePixelRatio) / 2;
+    grande.style.width = Math.round(Math.min(pleine, innerWidth * 2.5)) + "px";
+    d.showModal();
+    const s = d.querySelector(".defile");
+    s.scrollTo((s.scrollWidth - s.clientWidth) / 2, 0);
+  };
+  const pose = () => captures.forEach(img => {
+    img.classList.toggle("agrandissable", petit.matches);
+    if (petit.matches) { img.setAttribute("role", "button"); img.tabIndex = 0; }
+    else { img.removeAttribute("role"); img.removeAttribute("tabindex"); }
+  });
+  pose();
+  petit.addEventListener("change", pose);
+  captures.forEach(img => {
+    img.addEventListener("click", () => petit.matches && ouvre(img));
+    img.addEventListener("keydown", e => { if (petit.matches && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); ouvre(img); } });
+  });
+})();

@@ -94,3 +94,13 @@
 .page-version .dz-liste b { display: block; font-weight: 600; color: var(--text); }
 .page-version .dz-grille.dz-deux { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
 .page-version .dz-deux .dz-carte { padding: 22px 24px 24px; }
+
+/* Une partie longue (En essai, Recherches, les écrans) garde ses deux premières cartes ; les autres s'ouvrent d'un
+   geste, sans rien couper (dossiers.py, replie). */
+.page-version details.dz-suite { margin-top: 16px; }
+.page-version details.dz-suite > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; background: var(--group); box-shadow: 0 0 0 1px var(--border); color: var(--accent); font-size: 16px; }
+.page-version details.dz-suite > summary::-webkit-details-marker { display: none; }
+.page-version details.dz-suite > summary::after { content: "\00a0↓"; }
+.page-version details.dz-suite[open] > summary { margin-bottom: 16px; }
+.page-version details.dz-suite[open] > summary::after { content: "\00a0↑"; }
+.page-version .dz-ecrans + details.dz-suite { margin-top: 36px; }

@@ -508,7 +508,7 @@ section.tight { padding-top: 64px; }
 
 /* Lien discret vers la suite, sous un bloc. */
 .more { text-align: center; font-size: var(--t-body); margin: 40px 0 0; }
-.more a::after { content: " →"; }
+.more a::after { content: "\00a0→"; }  /* insécable : au toucher, le lien devient inline-flex et une espace ordinaire y tombe */
 
 /* Accueil : la dernière version, sous l'installation. */
 
@@ -626,6 +626,7 @@ html { scroll-padding-top: 24px; }
 .feature figure img.decoupe.extrait, .version a.thumb img.decoupe.extrait, details.row .answer img.decoupe.extrait { filter: drop-shadow(0 10px 18px rgb(var(--shade) / .1)); }
 /* Un petit objet garde sa taille : agrandi, il perd sa netteté. Son ombre reste à son échelle. */
 .version a.thumb.nue { width: auto; display: inline-block; margin: 14px 0 12px; }
+.version a.thumb.nue img:not(.petite) { width: auto; max-width: 100%; }  /* une vignette à sa taille ne dépasse pas sa carte */
 .version a.thumb img.decoupe.petite { width: 144px; height: auto; filter: drop-shadow(0 1px 1px rgb(var(--shade) / .16)) drop-shadow(0 6px 10px rgb(var(--shade) / .16)); }
 
 /* Un seul anneau de focus, au clavier, sur tout ce qui se touche (S33). */
@@ -780,3 +781,41 @@ main:focus { outline: none; }
   .prompt .url { white-space: normal; overflow-wrap: anywhere; }
 }
 .install .precision { margin: 0 auto 16px; max-width: 520px; text-align: center; font-size: var(--t-note); line-height: 1.45; color: var(--secondary); text-wrap: balance; }
+
+/* Sur téléphone (audit du 21 novembre). */
+/* Le sommaire collé en haut : un fond plein, pour que le texte qui défile ne se lise pas au travers ; un fondu au bord
+   qui a encore des pastilles cachées, pour montrer qu'il défile (nav.js pose .avant et .apres). */
+@media (max-width: 999px) {
+  .toc { background: var(--window); -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: 0 1px 0 rgb(var(--line) / .1); }
+  .toc nav.apres { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 48px), transparent); }
+  .toc nav.avant { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 48px), transparent); }
+  .toc nav.avant.apres { -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent); }
+}
+/* Moins de vide entre les blocs. */
+@media (max-width: 640px) {
+  section { padding-top: 72px; }
+  .more { margin-top: 28px; }
+  #installation .install { margin-top: 28px; }
+  .ailleurs { margin: 0; }
+  footer { padding-top: 88px; }
+}
+/* Un long paragraphe centré se lit mal : sous 600 px, l'en-tête des pages s'aligne à gauche. */
+@media (max-width: 600px) {
+  .page-head, .page-head p, .page-version .page-head .statut { text-align: left; }
+  .page-head p { text-wrap: pretty; }
+}
+/* Une capture de l'app, trop petite pour être lue sur téléphone, s'agrandit au toucher (nav.js) : elle s'ouvre à sa
+   taille, et se parcourt du doigt. */
+.agrandissable { cursor: zoom-in; }
+dialog.agrandie { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--window); color: var(--text); }
+dialog.agrandie::backdrop { background: var(--window); }
+dialog.agrandie .defile { width: 100%; height: 100%; overflow: auto; overscroll-behavior: contain; display: grid; place-items: center; }
+dialog.agrandie img { display: block; width: auto; max-width: none; height: auto; padding: 72px 16px 24px; box-sizing: content-box; }
+dialog.agrandie .fermer { position: fixed; top: 12px; right: 12px; z-index: 1; min-height: 44px; }
+/* Les versions d'avant, repliées. */
+details.anciennes { margin-top: 8px; }
+details.anciennes > summary { list-style: none; cursor: pointer; padding: 14px 18px; border-radius: 12px; background: var(--group); box-shadow: 0 0 0 1px var(--border); color: var(--accent); font-size: var(--t-ui); }
+details.anciennes > summary::-webkit-details-marker { display: none; }
+details.anciennes > summary::after { content: "\00a0↓"; }
+details.anciennes[open] > summary { margin-bottom: 8px; }
+details.anciennes[open] > summary::after { content: "\00a0↑"; }
