@@ -673,7 +673,8 @@ main:focus { outline: none; }
   .nav .home { min-height: 44px; align-items: center; }
   /* « Détails » d'une version : 44 px au doigt, sans pousser le texte de la carte. */
   .version a.detail { margin: -11px 0; }
-  .button, .tabs button, .rec-toggle, .author .sent-status .another { min-height: 44px; }
+  /* Le texte reste au milieu des 44 px, pas collé en haut. */
+  .button, .tabs button, .rec-toggle, .author .sent-status .another { min-height: 44px; align-content: center; }
   .tabs button { display: inline-flex; align-items: center; }
   footer .links { gap: 0 24px; }
   .author .contact { margin-top: 0; }
@@ -799,7 +800,7 @@ main:focus { outline: none; }
   .more { margin-top: 28px; }
   #installation .install { margin-top: 28px; }
   .ailleurs { margin: 0; }
-  footer { padding-top: 88px; }
+  footer { padding-top: 56px; }
 }
 /* Un long paragraphe centré se lit mal : sous 600 px, l'en-tête des pages s'aligne à gauche. */
 @media (max-width: 600px) {
