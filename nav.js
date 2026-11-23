@@ -4,6 +4,9 @@
   if (!nav) return;
   // Tout en haut de l'accueil, la barre n'a pas de logo (le micro du titre occupe la place) : il revient avec elle.
   const top = () => nav.classList.toggle("at-top", scrollY < 40);
+  // Les pastilles du sommaire, collées en haut elles aussi, descendent sous la barre quand elle revient (--haut-nav).
+  const haut = () => document.documentElement.style.setProperty("--haut-nav", nav.classList.contains("hidden") ? "0px" : nav.offsetHeight + "px");
+  haut();
   top();
   let last = scrollY;
   addEventListener("scroll", () => {
@@ -11,10 +14,11 @@
     top();
     if (Math.abs(y - last) < 4) return;
     nav.classList.toggle("hidden", y > last && y > nav.offsetHeight);
+    haut();
     last = y;
   }, { passive: true });
   // Le clavier ramène la barre quand un de ses liens prend le focus.
-  nav.addEventListener("focusin", () => nav.classList.remove("hidden"));
+  nav.addEventListener("focusin", () => { nav.classList.remove("hidden"); haut(); });
 })();
 
 // Les onglets (contrôle segmenté), sur toutes les pages : un seul arrêt de Tab par groupe, l'onglet choisi ; les
@@ -75,7 +79,14 @@
     }
     const grande = d.querySelector("img");
     grande.alt = img.alt;
-    grande.src = img.src;  // la plus grande, pas celle que le srcset a choisie pour la petite largeur
+    // L'image déjà chargée s'affiche tout de suite ; la plus grande (pas celle que le srcset a choisie pour la petite
+    // largeur) la remplace dès qu'elle est arrivée, sans écran vide entre les deux.
+    grande.src = img.currentSrc || img.src;
+    if (img.currentSrc && img.currentSrc !== img.src) {
+      const pleineImage = new Image();
+      pleineImage.onload = () => { if (d.open && grande.alt === img.alt) grande.src = img.src; };
+      pleineImage.src = img.src;
+    }
     // À la taille d'une fenêtre de Mac vue de près : deux fois et demie la largeur de l'écran, au plus l'image entière
     // (son width déclaré, en résolution double).
     const pleine = (+img.getAttribute("width") || img.naturalWidth * devicePixelRatio) / 2;
