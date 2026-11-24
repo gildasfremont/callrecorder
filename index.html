@@ -191,7 +191,7 @@
   <section id="installation">
     <div class="col">
       <div class="intro">
-        <h2>Installation</h2>
+        <h2>Choisissez votre assistant IA</h2>
         <p class="req" data-compat>macOS 15 ou plus récent · Mac M1 ou plus récent</p>
       </div>
 
@@ -206,7 +206,6 @@
             <button role="tab" aria-selected="false" data-agent="codex" aria-label="Codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span></button>
             <button role="tab" aria-selected="false" data-agent="chatgpt" aria-label="ChatGPT"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span></button>
             <button role="tab" aria-selected="false" data-agent="autre" aria-label="Une autre IA"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span></button>
-            <button role="tab" aria-selected="false" data-agent="aucune" aria-label="Dans le navigateur"><span class="ic pile"><img src="img/logos/safari.png" alt=""><img src="img/logos/chrome.png" alt=""></span></button>
             <button role="tab" aria-selected="false" data-agent="local" aria-label="Autre chose"><span class="ic suite" aria-hidden="true"></span></button>
           </div>
 
@@ -221,11 +220,7 @@
             <div class="avec">
               <button class="prompt" type="button" data-copy="msg" title="Copier le message"><span id="msg">Installe Callrecorder sur mon Mac&nbsp;: <br><span class="url">https://gildasfremont.github.io/<wbr>callrecorder/<wbr>agents.md</span></span><span class="hint" aria-hidden="true">Copier</span></button>
               <ol class="steps"></ol>
-              <p class="help">Un souci en route&nbsp;? Collez le texte de l’erreur dans votre IA. Elle ne voit pas vos conversations&nbsp;? Reliez-la dans Callrecorder, Réglages&nbsp;› Agents.</p>
-            </div>
-            <div class="sans" hidden>
-              <p class="conseil">Dans le navigateur, Claude ou ChatGPT ne voient pas votre Mac&nbsp;: ils ne peuvent ni installer Callrecorder, ni lire vos conversations. Installez l’app de Claude sur le Mac, connectez-vous avec le même compte, puis choisissez l’icône de <b>Claude</b>.</p>
-              <p class="actions"><a class="button default" href="https://claude.ai/download">Télécharger Claude pour Mac</a></p>
+              <p class="help">Un souci en route&nbsp;? Collez le texte de l’erreur dans votre IA. Elle ne voit pas vos conversations&nbsp;? Reliez-la dans Callrecorder, Réglages&nbsp;› Agents. Claude et ChatGPT dans le navigateur ne voient pas votre Mac&nbsp;: passez par leur app, <a href="https://claude.ai/download">Claude pour Mac</a> par exemple.</p>
             </div>
           </div>
 
@@ -364,7 +359,6 @@
       codex:   { nom: "Codex",       lance: true,  relit: false, repond: true,  ajout: claudeCode },
       chatgpt: { nom: "l’app ChatGPT", lance: false, relit: false, repond: false, ajout: 'ChatGPT ne lit pas une mémoire gardée sur le Mac. Pour qu’une IA y réponde&nbsp;: <a href="https://openai.com/codex/">Codex</a>, avec le même compte.' },
       autre:   { nom: "votre IA",    lance: null,  relit: false, repond: true,  ajout: 'Cursor, Gemini CLI, LM Studio… Pour qu’elle réponde, reliez-la dans Callrecorder, Réglages&nbsp;› Agents.' },
-      aucune:  { sans: true, relit: false, repond: false },
       local:   { local: true }
     };
     const autoriser = '<li><b>Autoriser</b><span class="sub">Callrecorder s’ouvre et demande le micro, le son des apps, puis l’écran, facultatif&nbsp;: cliquez sur <b>Autoriser</b> quand macOS le demande. Pour l’écran, macOS demande aussi Touch ID ou votre mot de passe.</span></li>';
@@ -383,13 +377,11 @@
       if (a.local) return;
       // Le nom de l'IA choisie, en titre de la carte : les onglets n'ont que l'icône.
       carte.querySelector(".titre-carte").textContent = b.getAttribute("aria-label");
-      carte.querySelector(".roles").hidden = !!a.sans;
       carte.querySelector('[data-role="installe"]').dataset.ok = "1";
       carte.querySelector('[data-role="relit"]').dataset.ok = a.relit ? "1" : "";
       carte.querySelector('[data-role="repond"]').dataset.ok = a.repond ? "1" : "";
       const ajout = carte.querySelector(".ajout"); ajout.hidden = !a.ajout; ajout.innerHTML = a.ajout || "";
-      carte.querySelector(".avec").hidden = !!a.sans; carte.querySelector(".sans").hidden = !a.sans;
-      if (!a.sans) carte.querySelector(".avec .steps").innerHTML = steps(a);
+      carte.querySelector(".avec .steps").innerHTML = steps(a);
     };
     agents.forEach(b => b.addEventListener("click", () => agent(b)));
     // Claude Code est ouvert d'emblée : les autres IA sont des onglets sur le côté.
