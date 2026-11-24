@@ -876,3 +876,8 @@ details.anciennes[open] > summary::after { content: "\00a0↑"; }
   .volets .agents .ic.suite { background: none; }
 }
 @media (max-width: 640px) { .volets .agents { top: auto; } }
+/* Le contrôle segmenté du téléphone prend la largeur de ses icônes, calé à gauche : pas étiré sur toute la ligne. */
+@media (max-width: 640px) {
+  .volets .agents { width: fit-content; max-width: 100%; justify-content: flex-start; gap: 2px; }
+  .volets .agents button { flex: 0 1 44px; width: 44px; }
+}
