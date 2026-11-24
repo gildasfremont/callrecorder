@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="style.css?v=145">
+<link rel="stylesheet" href="style.css?v=146">
 </head>
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -199,20 +199,19 @@
         <div class="ailleurs" hidden><p>Callrecorder s’installe sur un Mac. Envoyez-vous le lien pour l’ouvrir sur votre Mac.</p><a class="button default" href="mailto:?subject=Callrecorder&amp;body=https%3A%2F%2Fgildasfremont.github.io%2Fcallrecorder%2F%23installation" data-partage>Envoyer le lien</a></div>
 
         <div class="choix">
-          <p class="question" id="q-ia">Avec quelle IA, sur ce Mac&nbsp;?</p>
-          <p class="precision">L’app du Dock, pas le navigateur.</p>
           <div class="volets">
-          <div class="agents" role="tablist" aria-orientation="vertical" aria-labelledby="q-ia">
-            <button role="tab" aria-selected="false" data-agent="code"><span class="ic pile"><img src="img/logos/terminal.png" alt=""><img src="img/logos/claude.png" alt=""></span>Claude Code</button>
-            <button role="tab" aria-selected="false" data-agent="claude"><span class="ic"><img src="img/logos/claude-app.png" alt=""></span>Claude</button>
-            <button role="tab" aria-selected="false" data-agent="codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span>Codex</button>
-            <button role="tab" aria-selected="false" data-agent="chatgpt"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span>ChatGPT</button>
-            <button role="tab" aria-selected="false" data-agent="autre"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span>Une autre</button>
-            <button role="tab" aria-selected="false" data-agent="aucune"><span class="ic pile"><img src="img/logos/safari.png" alt=""><img src="img/logos/chrome.png" alt=""></span>Dans le navigateur</button>
-            <button role="tab" aria-selected="false" data-agent="local"><span class="ic app"><img width="192" height="192" src="img/icone-plein-192.png" alt=""></span>Pas d’IA</button>
+          <div class="agents" role="tablist" aria-orientation="vertical" aria-label="Votre IA, sur ce Mac">
+            <button role="tab" aria-selected="false" data-agent="code" aria-label="Claude Code"><span class="ic pile"><img src="img/logos/terminal.png" alt=""><img src="img/logos/claude.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="claude" aria-label="Claude"><span class="ic"><img src="img/logos/claude-app.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="codex" aria-label="Codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="chatgpt" aria-label="ChatGPT"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="autre" aria-label="Une autre IA"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="aucune" aria-label="Dans le navigateur"><span class="ic pile"><img src="img/logos/safari.png" alt=""><img src="img/logos/chrome.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="local" aria-label="Pas d’IA"><span class="ic app"><img width="192" height="192" src="img/icone-plein-192.png" alt=""></span></button>
           </div>
 
           <div class="carte" data-pour="ia" hidden>
+            <h3 class="titre-carte"></h3>
             <ul class="roles">
               <li data-role="installe">Installe avec vous</li>
               <li data-role="relit">Améliore chaque transcription</li>
@@ -225,12 +224,13 @@
               <p class="help">Un souci en route&nbsp;? Collez le texte de l’erreur dans votre IA. Elle ne voit pas vos conversations&nbsp;? Reliez-la dans Callrecorder, Réglages&nbsp;› Agents.</p>
             </div>
             <div class="sans" hidden>
-              <p class="conseil">Dans le navigateur, Claude ou ChatGPT ne voient pas votre Mac&nbsp;: ils ne peuvent ni installer Callrecorder, ni lire vos conversations. Installez l’app de Claude sur le Mac, connectez-vous avec le même compte, puis choisissez <b>Claude</b> ci-dessus.</p>
+              <p class="conseil">Dans le navigateur, Claude ou ChatGPT ne voient pas votre Mac&nbsp;: ils ne peuvent ni installer Callrecorder, ni lire vos conversations. Installez l’app de Claude sur le Mac, connectez-vous avec le même compte, puis choisissez l’icône de <b>Claude</b>.</p>
               <p class="actions"><a class="button default" href="https://claude.ai/download">Télécharger Claude pour Mac</a></p>
             </div>
           </div>
 
           <div class="carte" data-pour="local" hidden>
+            <h3 class="titre-carte">Pas d’IA</h3>
             <button class="cmdline" type="button" data-copy="cmd" title="Copier la ligne"><code id="cmd">curl -fsSL https://github.com/gildasfremont/callrecorder/releases/latest/download/install.sh | zsh</code><span class="hint" aria-hidden="true">Copier</span></button>
             <ol class="steps">
               <li><b>Coller</b><span class="sub">La ligne dans le Terminal&nbsp;: <kbd>⌘</kbd>&#8239;<kbd>Espace</kbd>, tapez «&nbsp;Terminal&nbsp;», puis <kbd>Entrée</kbd>.</span></li>
@@ -381,6 +381,8 @@
       const a = IA[b.dataset.agent];
       seul.hidden = !a.local; carte.hidden = !!a.local;
       if (a.local) return;
+      // Le nom de l'IA choisie, en titre de la carte : les onglets n'ont que l'icône.
+      carte.querySelector(".titre-carte").textContent = b.getAttribute("aria-label");
       carte.querySelector(".roles").hidden = !!a.sans;
       carte.querySelector('[data-role="installe"]').dataset.ok = "1";
       carte.querySelector('[data-role="relit"]').dataset.ok = a.relit ? "1" : "";

@@ -811,22 +811,34 @@ details.anciennes > summary::after { content: "\00a0↓"; }
 details.anciennes[open] > summary { margin-bottom: 8px; }
 details.anciennes[open] > summary::after { content: "\00a0↑"; }
 
-/* L'installation en onglets latéraux : Claude Code ouvert d'emblée, les autres IA dans une colonne à gauche. Sur
-   téléphone, les onglets passent en une ligne qui défile au-dessus de la carte. */
-#installation .col { max-width: 920px; }
-.volets { display: grid; grid-template-columns: 196px minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 24px; }
-.volets .agents { flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; gap: 2px; position: sticky; top: calc(var(--haut-nav, 0px) + 16px); }
-.volets .agents button { flex-direction: row; justify-content: flex-start; width: 100%; gap: 12px; padding: 8px 12px; border-radius: 12px; font-size: var(--t-note); text-align: left; }
-.volets .agents .ic { width: 30px; height: 30px; }
-.volets .agents .ic.pile img { width: 22px; height: 22px; }
+/* L'installation en onglets latéraux : Claude Code ouvert d'emblée, les autres IA en icônes dans une colonne à gauche,
+   leur nom au survol et en titre de la carte. Sur téléphone, les icônes passent en une ligne au-dessus de la carte. */
+#installation .col { max-width: 860px; }
+.volets { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; align-items: start; margin-top: 8px; }
+.volets .agents { flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; gap: 4px; position: sticky; top: calc(var(--haut-nav, 0px) + 16px); }
+.volets .agents button { position: relative; width: 56px; height: 56px; padding: 0; justify-content: center; border-radius: 14px; }
+.volets .agents .ic { width: 34px; height: 34px; }
+.volets .agents .ic.pile img { width: 25px; height: 25px; }
 .volets .agents button:hover .ic { transform: none; }
 .volets .agents button:not([aria-selected="true"]):hover { background: rgb(var(--line) / .06); }
-.volets .agents.choisi button:not([aria-selected="true"]) { opacity: .7; }
+.volets .agents.choisi button:not([aria-selected="true"]) { opacity: .55; }
 .volets .agents.choisi button:not([aria-selected="true"]):hover { opacity: 1; }
+/* Le nom au survol et au clavier, à droite de l'icône, comme dans le Dock. */
+.volets .agents button::after {
+  content: attr(aria-label); position: absolute; left: calc(100% + 10px); top: 50%; transform: translateY(-50%); z-index: 3;
+  padding: 4px 10px; border-radius: 7px; background: var(--control); color: var(--text); font-size: var(--t-small); white-space: nowrap;
+  box-shadow: 0 0 0 1px rgb(var(--line) / .12), 0 4px 12px rgb(var(--shade) / .15); display: none; pointer-events: none;
+}
+.volets .agents button:hover::after, .volets .agents button:focus-visible::after { display: block; }
+.volets .agents button[aria-selected="true"]::after { display: none; }
 .volets .carte { margin-top: 0; }
+.install .titre-carte { margin: 0 0 14px; font-family: var(--display); font-size: 24px; line-height: 1.2; font-weight: 500; letter-spacing: -0.01em; }
+@media (hover: none) { .volets .agents button::after { display: none !important; } }
 @media (max-width: 640px) {
-  .volets { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .volets .agents { position: static; flex-direction: row; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 2px 16px; }
-  .volets .agents::-webkit-scrollbar { display: none; }
-  .volets .agents button { flex: none; width: auto; padding: 8px 12px; }
+  .volets { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .volets .agents { position: static; flex-direction: row; justify-content: space-between; gap: 0; }
+  .volets .agents button { width: auto; height: auto; flex: 1 1 0; min-width: 0; max-width: 56px; aspect-ratio: 1; border-radius: 12px; }
+  .volets .agents .ic { width: min(32px, 8vw); height: min(32px, 8vw); }
+  .volets .agents .ic.pile img { width: 72%; height: 72%; }
+  .install .titre-carte { font-size: 20px; margin-bottom: 10px; }
 }
