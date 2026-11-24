@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,500&text=acdelor&display=swap">
-<link rel="stylesheet" href="style.css?v=144">
+<link rel="stylesheet" href="style.css?v=145">
 </head>
 <body>
 <a class="evitement" href="#contenu">Aller au contenu</a>
@@ -201,14 +201,15 @@
         <div class="choix">
           <p class="question" id="q-ia">Avec quelle IA, sur ce Mac&nbsp;?</p>
           <p class="precision">L’app du Dock, pas le navigateur.</p>
-          <div class="agents" role="radiogroup" aria-labelledby="q-ia">
-            <button role="radio" aria-checked="false" data-agent="code"><span class="ic pile"><img src="img/logos/terminal.png" alt=""><img src="img/logos/claude.png" alt=""></span>Claude Code</button>
-            <button role="radio" aria-checked="false" data-agent="claude"><span class="ic"><img src="img/logos/claude-app.png" alt=""></span>Claude</button>
-            <button role="radio" aria-checked="false" data-agent="codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span>Codex</button>
-            <button role="radio" aria-checked="false" data-agent="chatgpt"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span>ChatGPT</button>
-            <button role="radio" aria-checked="false" data-agent="autre"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span>Une autre</button>
-            <button role="radio" aria-checked="false" data-agent="aucune"><span class="ic pile"><img src="img/logos/safari.png" alt=""><img src="img/logos/chrome.png" alt=""></span>Dans le navigateur</button>
-            <button role="radio" aria-checked="false" data-agent="local"><span class="ic app"><img width="192" height="192" src="img/icone-plein-192.png" alt=""></span>Pas d’IA</button>
+          <div class="volets">
+          <div class="agents" role="tablist" aria-orientation="vertical" aria-labelledby="q-ia">
+            <button role="tab" aria-selected="false" data-agent="code"><span class="ic pile"><img src="img/logos/terminal.png" alt=""><img src="img/logos/claude.png" alt=""></span>Claude Code</button>
+            <button role="tab" aria-selected="false" data-agent="claude"><span class="ic"><img src="img/logos/claude-app.png" alt=""></span>Claude</button>
+            <button role="tab" aria-selected="false" data-agent="codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span>Codex</button>
+            <button role="tab" aria-selected="false" data-agent="chatgpt"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span>ChatGPT</button>
+            <button role="tab" aria-selected="false" data-agent="autre"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span>Une autre</button>
+            <button role="tab" aria-selected="false" data-agent="aucune"><span class="ic pile"><img src="img/logos/safari.png" alt=""><img src="img/logos/chrome.png" alt=""></span>Dans le navigateur</button>
+            <button role="tab" aria-selected="false" data-agent="local"><span class="ic app"><img width="192" height="192" src="img/icone-plein-192.png" alt=""></span>Pas d’IA</button>
           </div>
 
           <div class="carte" data-pour="ia" hidden>
@@ -237,6 +238,7 @@
               <li><b>Lire</b><span class="sub">Lisez le texte affiché après le bip. Cette lecture devient votre premier enregistrement&nbsp;: il est dans Callrecorder, dans la barre des menus.</span></li>
             </ol>
             <p class="help">Rien ne part de votre Mac, aucune IA n’est reliée. À la fin, Réglages&nbsp;› Agents s’ouvre&nbsp;: vous y reliez la vôtre si vous le voulez. Des chiffres techniques aident à améliorer l’app&nbsp;: ils ne partent que si vous le cochez, dans Réglages&nbsp;› Général.</p>
+          </div>
           </div>
         </div>
 
@@ -373,9 +375,9 @@
       a.repond ? '<li><b>Demander</b><span class="sub">' + (a.reprise || '') + 'Après votre prochain appel, dans une nouvelle conversation avec ' + a.nom + '&nbsp;: «&nbsp;Résume ma dernière conversation&nbsp;».</span></li>' : ''
     ].join("");
     const choix = document.querySelector(".install .choix"), carte = choix.querySelector('.carte[data-pour="ia"]'), seul = choix.querySelector('.carte[data-pour="local"]');
-    const agents = [...choix.querySelectorAll(".agents [role=radio]")];
+    const agents = [...choix.querySelectorAll(".agents [role=tab]")];
     const agent = b => {
-      agents.forEach(x => x.setAttribute("aria-checked", x === b)); choix.querySelector(".agents").classList.add("choisi");
+      agents.forEach(x => x.setAttribute("aria-selected", x === b)); choix.querySelector(".agents").classList.add("choisi");
       const a = IA[b.dataset.agent];
       seul.hidden = !a.local; carte.hidden = !!a.local;
       if (a.local) return;
@@ -388,6 +390,8 @@
       if (!a.sans) carte.querySelector(".avec .steps").innerHTML = steps(a);
     };
     agents.forEach(b => b.addEventListener("click", () => agent(b)));
+    // Claude Code est ouvert d'emblée : les autres IA sont des onglets sur le côté.
+    agent(agents[0]);
     // Pour les captures : choisir("code"), choisir("local")… (l'ancien choisir("ia", "code") marche encore).
     window.choisir = (q, r) => agent(agents.find(b => b.dataset.agent === (q === "ia" ? r : q)));
   })();
