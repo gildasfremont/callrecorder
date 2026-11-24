@@ -864,3 +864,15 @@ details.anciennes[open] > summary::after { content: "\00a0↑"; }
   .volets .agents button:first-child::after { left: 0; transform: none; }
   .volets .agents button:last-child::after { left: auto; right: 0; transform: none; }
 }
+/* Sur petit écran, les icônes forment un contrôle segmenté, comme les onglets du haut de page : une piste grise, l'onglet
+   choisi en blanc dedans. Des cases de taille fixe : l'onglet choisi ne déborde plus sur la carte (Safari étire les
+   cases à aspect-ratio). */
+@media (max-width: 640px) {
+  .volets { gap: 12px; }
+  .volets .agents { justify-content: space-between; padding: 3px; border-radius: 12px; background: rgb(var(--line) / .07); }
+  .volets .agents button { flex: 0 1 48px; width: 48px; height: 44px; max-width: none; aspect-ratio: auto; border-radius: 9px; }
+  .volets .agents button[aria-selected="true"] { background: var(--control); box-shadow: 0 0 0 1px var(--edge), 0 1px 3px rgb(var(--shade) / .12); }
+  .volets .agents .ic { width: 28px; height: 28px; }
+  .volets .agents .ic.suite { background: none; }
+}
+@media (max-width: 640px) { .volets .agents { top: auto; } }
