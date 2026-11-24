@@ -732,9 +732,9 @@ main:focus { outline: none; }
 .agents .ic.vide { border-radius: 22.5%; box-shadow: inset 0 0 0 1.5px rgb(var(--line) / .22); }
 .agents .ic.vide::before { content: "?"; position: absolute; inset: 0; display: grid; place-items: center; font: 500 20px/1 -apple-system, sans-serif; color: var(--secondary); }
 .agents button:hover .ic { transform: translateY(-3px); }
-.agents button[aria-checked="true"] { background: var(--group); box-shadow: 0 0 0 1px var(--border); }
-.agents.choisi button:not([aria-checked="true"]) { opacity: .5; }
-.agents.choisi button:not([aria-checked="true"]):hover { opacity: 1; }
+.agents button[aria-selected="true"] { background: var(--group); box-shadow: 0 0 0 1px var(--border); }
+.agents.choisi button:not([aria-selected="true"]) { opacity: .5; }
+.agents.choisi button:not([aria-selected="true"]):hover { opacity: 1; }
 
 .install .carte { margin-top: 20px; padding: 28px 32px 0; border-radius: 18px; background: var(--group); box-shadow: 0 0 0 1px var(--border); overflow: hidden; }
 .roles { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0 0 6px; padding: 0; font-size: var(--t-ui); color: var(--secondary); }
@@ -810,3 +810,57 @@ details.anciennes > summary::-webkit-details-marker { display: none; }
 details.anciennes > summary::after { content: "\00a0↓"; }
 details.anciennes[open] > summary { margin-bottom: 8px; }
 details.anciennes[open] > summary::after { content: "\00a0↑"; }
+
+/* L'installation en onglets latéraux : Claude Code ouvert d'emblée, les autres IA en icônes dans une colonne à gauche,
+   leur nom au survol et en titre de la carte. Sur téléphone, les icônes passent en une ligne au-dessus de la carte. */
+#installation .col { max-width: 860px; }
+.volets { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 16px; align-items: start; margin-top: 8px; }
+.volets .agents { flex-direction: column; flex-wrap: nowrap; justify-content: flex-start; gap: 4px; position: sticky; top: calc(var(--haut-nav, 0px) + 16px); }
+.volets .agents button { position: relative; width: 56px; height: 56px; padding: 0; justify-content: center; border-radius: 14px; }
+.volets .agents .ic { width: 34px; height: 34px; }
+.volets .agents .ic.pile img { width: 25px; height: 25px; }
+.volets .agents button:hover .ic { transform: none; }
+.volets .agents button:not([aria-selected="true"]):hover { background: rgb(var(--line) / .06); }
+.volets .agents.choisi button:not([aria-selected="true"]) { opacity: .55; }
+.volets .agents.choisi button:not([aria-selected="true"]):hover { opacity: 1; }
+/* Le nom au survol et au clavier, à droite de l'icône, comme dans le Dock. */
+.volets .agents button::after {
+  content: attr(aria-label); position: absolute; left: calc(100% + 10px); top: 50%; transform: translateY(-50%); z-index: 3;
+  padding: 4px 10px; border-radius: 7px; background: var(--control); color: var(--text); font-size: var(--t-small); white-space: nowrap;
+  box-shadow: 0 0 0 1px rgb(var(--line) / .12), 0 4px 12px rgb(var(--shade) / .15); display: none; pointer-events: none;
+}
+.volets .agents button:hover::after, .volets .agents button:focus-visible::after { display: block; }
+.volets .agents button[aria-selected="true"]::after { display: none; }
+.volets .carte { margin-top: 0; }
+.install .titre-carte { margin: 0 0 14px; font-family: var(--display); font-size: 24px; line-height: 1.2; font-weight: 500; letter-spacing: -0.01em; }
+@media (hover: none) { .volets .agents button::after { display: none !important; } }
+@media (max-width: 640px) {
+  .volets { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .volets .agents { position: static; flex-direction: row; justify-content: space-between; gap: 0; }
+  .volets .agents button { width: auto; height: auto; flex: 1 1 0; min-width: 0; max-width: 56px; aspect-ratio: 1; border-radius: 12px; }
+  .volets .agents .ic { width: min(32px, 8vw); height: min(32px, 8vw); }
+  .volets .agents .ic.pile img { width: 72%; height: 72%; }
+  .install .titre-carte { font-size: 20px; margin-bottom: 10px; }
+}
+/* « Autre chose » : des points de suspension, pour qui n'a pas trouvé son IA. */
+.agents .ic.suite { border-radius: 22.5%; background: rgb(var(--line) / .08); }
+.agents .ic.suite::before { content: ""; position: absolute; inset: 0; margin: auto; width: 4px; height: 4px; border-radius: 50%; background: var(--secondary); box-shadow: -8px 0 0 var(--secondary), 8px 0 0 var(--secondary); }
+/* Sur téléphone, le message à copier prend toute la largeur ; « Copier » passe dessous, à droite. */
+@media (max-width: 640px) {
+  .prompt { flex-direction: column; align-items: stretch; gap: 10px; }
+  .prompt .hint { align-self: flex-end; }
+  .prompt .url { overflow-wrap: normal; }
+}
+@media (max-width: 640px) {
+  .cmdline { flex-direction: column; align-items: stretch; gap: 10px; }
+  .cmdline .hint { align-self: flex-end; }
+}
+/* Le nom au survol passe toujours par-dessus la carte : la colonne d'onglets a son propre plan, au-dessus. En ligne
+   (fenêtre étroite), il s'affiche sous l'icône, centré. */
+.volets .agents { z-index: 4; }
+@media (max-width: 640px) {
+  .volets .agents { position: relative; }
+  .volets .agents button::after { left: 50%; top: calc(100% + 6px); transform: translateX(-50%); }
+  .volets .agents button:first-child::after { left: 0; transform: none; }
+  .volets .agents button:last-child::after { left: auto; right: 0; transform: none; }
+}
