@@ -855,3 +855,12 @@ details.anciennes[open] > summary::after { content: "\00a0↑"; }
   .cmdline { flex-direction: column; align-items: stretch; gap: 10px; }
   .cmdline .hint { align-self: flex-end; }
 }
+/* Le nom au survol passe toujours par-dessus la carte : la colonne d'onglets a son propre plan, au-dessus. En ligne
+   (fenêtre étroite), il s'affiche sous l'icône, centré. */
+.volets .agents { z-index: 4; }
+@media (max-width: 640px) {
+  .volets .agents { position: relative; }
+  .volets .agents button::after { left: 50%; top: calc(100% + 6px); transform: translateX(-50%); }
+  .volets .agents button:first-child::after { left: 0; transform: none; }
+  .volets .agents button:last-child::after { left: auto; right: 0; transform: none; }
+}
