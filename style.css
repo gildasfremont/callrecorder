@@ -842,3 +842,16 @@ details.anciennes[open] > summary::after { content: "\00a0↑"; }
   .volets .agents .ic.pile img { width: 72%; height: 72%; }
   .install .titre-carte { font-size: 20px; margin-bottom: 10px; }
 }
+/* « Autre chose » : des points de suspension, pour qui n'a pas trouvé son IA. */
+.agents .ic.suite { border-radius: 22.5%; background: rgb(var(--line) / .08); }
+.agents .ic.suite::before { content: ""; position: absolute; inset: 0; margin: auto; width: 4px; height: 4px; border-radius: 50%; background: var(--secondary); box-shadow: -8px 0 0 var(--secondary), 8px 0 0 var(--secondary); }
+/* Sur téléphone, le message à copier prend toute la largeur ; « Copier » passe dessous, à droite. */
+@media (max-width: 640px) {
+  .prompt { flex-direction: column; align-items: stretch; gap: 10px; }
+  .prompt .hint { align-self: flex-end; }
+  .prompt .url { overflow-wrap: normal; }
+}
+@media (max-width: 640px) {
+  .cmdline { flex-direction: column; align-items: stretch; gap: 10px; }
+  .cmdline .hint { align-self: flex-end; }
+}
