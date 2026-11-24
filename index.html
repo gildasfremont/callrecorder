@@ -201,11 +201,11 @@
         <div class="choix">
           <div class="volets">
           <div class="agents" role="tablist" aria-orientation="vertical" aria-label="Votre IA, sur ce Mac">
-            <button role="tab" aria-selected="false" data-agent="code" aria-label="Claude Code"><span class="ic pile"><img src="img/logos/terminal.png" alt=""><img src="img/logos/claude.png" alt=""></span></button>
-            <button role="tab" aria-selected="false" data-agent="claude" aria-label="Claude"><span class="ic"><img src="img/logos/claude-app.png" alt=""></span></button>
-            <button role="tab" aria-selected="false" data-agent="codex" aria-label="Codex"><span class="ic"><img src="img/logos/codex.png" alt=""></span></button>
-            <button role="tab" aria-selected="false" data-agent="chatgpt" aria-label="ChatGPT"><span class="ic"><img src="img/logos/chatgpt.png" alt=""></span></button>
-            <button role="tab" aria-selected="false" data-agent="autre" aria-label="Une autre IA"><span class="ic pile"><img src="img/dock/cursor.png" alt=""><img src="img/dock/gemini.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="code" aria-label="Claude Code"><span class="ic pile"><img width="64" height="64" src="img/logos/terminal.png" alt=""><img width="64" height="64" src="img/logos/claude.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="claude" aria-label="Claude"><span class="ic"><img width="256" height="256" src="img/logos/claude-app.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="codex" aria-label="Codex"><span class="ic"><img width="256" height="256" src="img/logos/codex.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="chatgpt" aria-label="ChatGPT"><span class="ic"><img width="256" height="256" src="img/logos/chatgpt.png" alt=""></span></button>
+            <button role="tab" aria-selected="false" data-agent="autre" aria-label="Une autre IA"><span class="ic pile"><img width="192" height="192" src="img/dock/cursor.png" alt=""><img width="256" height="256" src="img/dock/gemini.png" alt=""></span></button>
             <button role="tab" aria-selected="false" data-agent="local" aria-label="Autre chose"><span class="ic suite" aria-hidden="true"></span></button>
           </div>
 
@@ -352,11 +352,10 @@
 <script>
   // Installation, en une question (#231, callrecorder-app#510 S1) : l'IA du Mac, ou pas d'IA.
   (() => {
-    const claudeCode = 'Seul <a href="https://claude.com/claude-code">Claude Code</a>, avec un abonnement Claude, améliore chaque transcription d’office.';
     const IA = {
       code:    { nom: "Claude Code", lance: true,  relit: true,  repond: true },
-      claude:  { nom: "l’app Claude", lance: false, relit: false, repond: true,  ajout: claudeCode, reprise: "Une fois les autorisations données, Claude se ferme et se rouvre tout seul. " },
-      codex:   { nom: "Codex",       lance: true,  relit: false, repond: true,  ajout: claudeCode },
+      claude:  { nom: "l’app Claude", lance: false, relit: false, repond: true, reprise: "Une fois les autorisations données, Claude se ferme et se rouvre tout seul. " },
+      codex:   { nom: "Codex",       lance: true,  relit: false, repond: true },
       chatgpt: { nom: "l’app ChatGPT", lance: false, relit: false, repond: false, ajout: 'ChatGPT ne lit pas une mémoire gardée sur le Mac. Pour qu’une IA y réponde&nbsp;: <a href="https://openai.com/codex/">Codex</a>, avec le même compte.' },
       autre:   { nom: "votre IA",    lance: null,  relit: false, repond: true,  ajout: 'Cursor, Gemini CLI, LM Studio… Pour qu’elle réponde, reliez-la dans Callrecorder, Réglages&nbsp;› Agents.' },
       local:   { local: true }
